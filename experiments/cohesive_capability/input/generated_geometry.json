@@ -1,0 +1,28 @@
+{
+  "units": "SI",
+  "dimensions_m": [
+    0.002,
+    0.002,
+    0.004
+  ],
+  "cells": [
+    2,
+    2,
+    4
+  ],
+  "bulk_tetrahedra": 96,
+  "nodes_before_insertion": 45,
+  "interface_facets": 8,
+  "interface_area_m2": 4e-06,
+  "bulk_volume_m3": 1.6e-08,
+  "toy_material_unvalidated": true,
+  "material": {
+    "rho_kg_m3": 2500.0,
+    "E_Pa": 70000000000.0,
+    "nu": 0.22,
+    "Gc_J_m2": 7.6,
+    "sigma_c_Pa": 70000000.0,
+    "beta": 3.0,
+    "delta_c_m": 2.1714285714285712e-07
+  }
+}

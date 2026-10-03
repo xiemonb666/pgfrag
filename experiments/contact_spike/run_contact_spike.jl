@@ -1,7 +1,6 @@
 using Peridynamics
 using LinearAlgebra
 using SHA
-using TOML
 
 const ROOT = normpath(joinpath(@__DIR__, "..", "..", ".."))
 const DEFAULT_OUT = joinpath(ROOT, "relicweave-synlab", "tmp", "review_20261003",
@@ -35,6 +34,8 @@ function write_csv(path, header, rows)
     open(path, "w") do io
         println(io, join(header, ','))
         for row in rows
+            require_ok(length(row) == length(header),
+                       "STOP_CSV_SCHEMA: row width $(length(row)) differs from header width $(length(header)) for $path")
             println(io, join(csv_cell.(row), ','))
         end
     end
@@ -42,8 +43,11 @@ function write_csv(path, header, rows)
 end
 
 function append_csv(path, rows)
+    expected_width = length(split(first(readlines(path)), ','))
     open(path, "a") do io
         for row in rows
+            require_ok(length(row) == expected_width,
+                       "STOP_CSV_SCHEMA: row width $(length(row)) differs from existing header width $expected_width for $path")
             println(io, join(csv_cell.(row), ','))
         end
     end
@@ -143,6 +147,8 @@ function point_positions(dh, body_id::Symbol)
 end
 
 function verify_native_point_mapping(dh)
+    require_ok(dh.body_names == [:a, :b],
+               "native body order must match explicit names :a and :b")
     require_ok(length(dh.body_dhs) == 2 && all(length(body_dh.chunks) == 1 for body_dh in dh.body_dhs),
                "expected two bodies and one native chunk per body")
     native_local_ids = [[chunk.system.chunk_handler.point_ids[i]
@@ -421,6 +427,12 @@ function make_step_rows(dh, case_id, step, time_s, contact_b_int, bond_b_int, to
             end
         end
     end
+    require_ok(k == 16 && sort([row[4] for row in rows]) == collect(1:16),
+               "native point rows must uniquely export combined IDs 1:16")
+    expected_local_ids = Set(vcat([(string(:a), i) for i in 1:8],
+                                  [(string(:b), i) for i in 1:8]))
+    require_ok(Set((row[5], row[6]) for row in rows) == expected_local_ids,
+               "native point rows must preserve complete per-body local IDs 1:8")
     return rows
 end
 
@@ -447,19 +459,173 @@ function sum_point_contact_forces(force_by_point)
     return forces
 end
 
+function run_native_preflight(outdir, native_bound)
+    preflight_start = time()
+    preflight_dir = joinpath(outdir, "native_interface_preflight")
+    mkpath(preflight_dir)
+    point_path = joinpath(preflight_dir, "one_step_point_states.csv")
+    metric_path = joinpath(preflight_dir, "one_step_metrics.csv")
+    write_csv(point_path, point_csv_header(), Tuple[])
+    metric_header = ["step", "time_s", "min_cross_body_point_distance_m", "radius_penetration_m",
+        "native_contact_neighbor_pair_count", "min_native_contact_neighbor_distance_m",
+        "total_momentum_x_kg_mps", "total_momentum_y_kg_mps", "total_momentum_z_kg_mps",
+        "body_a_contact_force_x_N", "body_a_contact_force_y_N", "body_a_contact_force_z_N",
+        "body_b_contact_force_x_N", "body_b_contact_force_y_N", "body_b_contact_force_z_N",
+        "action_reaction_force_error_norm_N", "action_reaction_relative_error",
+        "body_a_delta_momentum_x_kg_mps", "body_a_delta_momentum_y_kg_mps", "body_a_delta_momentum_z_kg_mps",
+        "body_b_delta_momentum_x_kg_mps", "body_b_delta_momentum_y_kg_mps", "body_b_delta_momentum_z_kg_mps",
+        "body_a_contact_impulse_trapezoid_x_Ns", "body_a_contact_impulse_trapezoid_y_Ns", "body_a_contact_impulse_trapezoid_z_Ns",
+        "body_b_contact_impulse_trapezoid_x_Ns", "body_b_contact_impulse_trapezoid_y_Ns", "body_b_contact_impulse_trapezoid_z_Ns",
+        "body_a_momentum_impulse_balance_error_norm_kg_mps", "body_b_momentum_impulse_balance_error_norm_kg_mps",
+        "diagnostic_state_unchanged"]
+    write_csv(metric_path, metric_header, Tuple[])
+    progress_path = joinpath(preflight_dir, "progress.json")
+    write_json(progress_path, Dict("status" => "RUNNING", "native_steps_completed" => 0,
+                                   "fixed_cases_started" => false))
+
+    ms, body_a, body_b, _, _, _, _ = build_setup(true)
+    solver = VelocityVerlet(steps=1, stepsize=0.5 * native_bound)
+    job = Job(ms, solver)
+    dh = Peridynamics.threads_data_handler(ms, solver, Threads.nthreads())
+    export_ids = verify_native_point_mapping(dh)
+    require_ok(length(export_ids) == 16 && n_points(ms) == 16 && n_points(ms) <= MAX_POINTS,
+               "native preflight must contain exactly 16 mapped points within the point cap")
+    checked_bound = Peridynamics.calc_stable_timestep(dh, 1.0)
+    require_ok(isapprox(checked_bound, native_bound; rtol=1e-12, atol=0.0),
+               "native bond bound changed between preflight setups")
+    require_ok(solver.Δt == 0.5 * checked_bound,
+               "native preflight did not use the fixed 0.5 raw-bound step")
+    Peridynamics.init_time_solver!(solver, dh)
+    Peridynamics.initialize!(dh, solver)
+    initial_min_distance = minimum_cross_distance(point_positions(dh, :a), point_positions(dh, :b))
+    require_ok(isapprox(initial_min_distance, 2.5e-3; atol=1e-12, rtol=0.0),
+               "native preflight initial minimum point gap must be 2.5 mm")
+    require_ok(isempty(body_a.single_dim_bcs) && isempty(body_b.single_dim_bcs) &&
+               isempty(body_a.posdep_single_dim_bcs) && isempty(body_b.posdep_single_dim_bcs) &&
+               isempty(body_a.pos_single_dim_bcs) && isempty(body_b.pos_single_dim_bcs) &&
+               isempty(body_a.data_bcs) && isempty(body_b.data_bcs),
+               "native preflight must have no velocity or other boundary conditions")
+    require_ok(Threads.nthreads() == 1, "native preflight must use one Julia thread")
+    require_ok(all(iszero, reduce(vcat, [chunk.storage.b_ext for body_dh in dh.body_dhs for chunk in body_dh.chunks])),
+               "native preflight external force density must be zero")
+
+    initial_state = all_point_states(dh)
+    initial_body_momentum, initial_momentum, _ = body_momenta(initial_state)
+    initial_total = Dict{Tuple{Symbol,Int},Vector{Float64}}()
+    initial_bond = Dict{Tuple{Symbol,Int},Vector{Float64}}()
+    zero_contact_density = Dict{Tuple{Symbol,Int},Vector{Float64}}()
+    initial_contact_force = Dict{Tuple{Symbol,Int},Vector{Float64}}()
+    for p in initial_state
+        key = (Symbol(p.body), p.point_id)
+        initial_total[key] = copy(p.total_b_int)
+        initial_bond[key] = copy(p.total_b_int)
+        zero_contact_density[key] = zeros(3)
+        initial_contact_force[key] = zeros(3)
+    end
+    require_ok(length(initial_total) == 16 && length(unique(keys(initial_total))) == 16,
+               "native preflight initial (body, local_id) map must cover 16 unique points")
+    initial_rows = make_step_rows(dh, "native_interface_preflight", 0, 0.0,
+        zero_contact_density, initial_bond, initial_total, initial_contact_force, solver.Δt)
+    require_ok(length(initial_rows) == 16, "native preflight must export all 16 initial point states")
+    append_csv(point_path, initial_rows)
+    initial_neighbors = neighbor_metrics(dh)
+    append_csv(metric_path, ((0, 0.0, initial_min_distance,
+        max(0.0, CONTACT_RADIUS - initial_min_distance), initial_neighbors.count,
+        initial_neighbors.min_contact_distance,
+        initial_momentum[1], initial_momentum[2], initial_momentum[3],
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, true),))
+
+    predicted_minimum_cross_distance(dh, solver.Δt)
+    preflight_positive_bond_lengths(dh, solver.Δt)
+    Peridynamics.verlet_timestep!(dh, job.options, solver.Δt, 0.5 * solver.Δt, 1)
+    write_json(progress_path, Dict("status" => "RUNNING", "native_steps_completed" => 1,
+                                   "fixed_cases_started" => false))
+    total_b_int = capture_total_b_int(dh)
+    bond_b_int, contact_b_int, diagnostic_state_unchanged =
+        split_native_bond_and_contact_density(dh, total_b_int, solver.Δt, solver.Δt)
+    current_state = all_point_states(dh)
+    require_ok(all(isfinite(p) for row in current_state for p in row.position) &&
+               all(isfinite(v) for row in current_state for v in row.velocity),
+               "native preflight produced non-finite positions or velocities")
+    point_forces = point_contact_forces(dh, contact_b_int)
+    forces = sum_point_contact_forces(point_forces)
+    force_error = norm(forces[:a] + forces[:b])
+    force_scale = max(norm(forces[:a]), norm(forces[:b]), eps())
+    current_body_momentum, current_momentum, _ = body_momenta(current_state)
+    delta_momentum = Dict(body_id => current_body_momentum[body_id] .- initial_body_momentum[body_id]
+                          for body_id in (:a, :b))
+    trapezoid_impulse = Dict(body_id => 0.5 .* forces[body_id] .* solver.Δt for body_id in (:a, :b))
+    balance_residual = Dict(body_id => delta_momentum[body_id] .- trapezoid_impulse[body_id]
+                            for body_id in (:a, :b))
+    final_min_distance = minimum_cross_distance(point_positions(dh, :a), point_positions(dh, :b))
+    final_neighbors = neighbor_metrics(dh)
+    final_rows = make_step_rows(dh, "native_interface_preflight", 1, solver.Δt,
+        contact_b_int, bond_b_int, total_b_int, initial_contact_force, solver.Δt)
+    require_ok(length(final_rows) == 16, "native preflight must export all 16 post-step point states")
+    append_csv(point_path, final_rows)
+    append_csv(metric_path, ((1, solver.Δt, final_min_distance,
+        max(0.0, CONTACT_RADIUS - final_min_distance), final_neighbors.count,
+        final_neighbors.min_contact_distance,
+        current_momentum[1], current_momentum[2], current_momentum[3],
+        forces[:a][1], forces[:a][2], forces[:a][3], forces[:b][1], forces[:b][2], forces[:b][3],
+        force_error, force_error / force_scale,
+        delta_momentum[:a][1], delta_momentum[:a][2], delta_momentum[:a][3],
+        delta_momentum[:b][1], delta_momentum[:b][2], delta_momentum[:b][3],
+        trapezoid_impulse[:a][1], trapezoid_impulse[:a][2], trapezoid_impulse[:a][3],
+        trapezoid_impulse[:b][1], trapezoid_impulse[:b][2], trapezoid_impulse[:b][3],
+        norm(balance_residual[:a]), norm(balance_residual[:b]), diagnostic_state_unchanged),))
+    require_ok(time() - preflight_start <= WALL_LIMIT_S,
+               "STOP_WALL_LIMIT: native preflight exceeded 120 seconds")
+    # Diagnostic re-evaluation snapshots/restores the native total b_int. The saved
+    # total and point-force maps therefore remain the actual post-contact Verlet values.
+    preflight_summary = Dict{String,Any}(
+        "status" => "PASS",
+        "preflight" => "one native MultibodySetup/contact! VelocityVerlet timestep",
+        "native_backend_version" => string(Base.pkgversion(Peridynamics)),
+        "native_contact_api" => "Peridynamics.contact! and Peridynamics.verlet_timestep!",
+        "points_total" => n_points(ms),
+        "points_per_body" => 8,
+        "body_local_ids" => Dict("a" => collect(1:8), "b" => collect(1:8)),
+        "unique_export_point_ids" => collect(1:16),
+        "threads" => Threads.nthreads(),
+        "native_bond_stability_bound_dt_s" => checked_bound,
+        "native_bond_bound_scope" => "BB bond-only; not a penalty-contact stability proof",
+        "dt_s" => solver.Δt,
+        "steps" => 1,
+        "initial_min_point_distance_m" => initial_min_distance,
+        "final_min_point_distance_m" => final_min_distance,
+        "initial_native_contact_neighbor_pairs" => initial_neighbors.count,
+        "final_native_contact_neighbor_pairs" => final_neighbors.count,
+        "native_contact_force_on_a_N" => collect(forces[:a]),
+        "native_contact_force_on_b_N" => collect(forces[:b]),
+        "action_reaction_force_error_norm_N" => force_error,
+        "body_a_delta_momentum_kg_mps" => collect(delta_momentum[:a]),
+        "body_b_delta_momentum_kg_mps" => collect(delta_momentum[:b]),
+        "body_a_trapezoid_contact_impulse_Ns" => collect(trapezoid_impulse[:a]),
+        "body_b_trapezoid_contact_impulse_Ns" => collect(trapezoid_impulse[:b]),
+        "body_a_delta_momentum_minus_impulse_kg_mps" => collect(balance_residual[:a]),
+        "body_b_delta_momentum_minus_impulse_kg_mps" => collect(balance_residual[:b]),
+        "native_total_b_int_captured_before_diagnostic" => true,
+        "diagnostic_state_unchanged_and_restored" => diagnostic_state_unchanged,
+        "point_csv_rows" => 32,
+        "metric_csv_rows" => 2,
+        "wall_time_s" => time() - preflight_start)
+    write_json(joinpath(preflight_dir, "summary.json"), preflight_summary)
+    write_json(progress_path, Dict("status" => "PASS", "native_steps_completed" => 1,
+                                   "fixed_cases_started" => false))
+    println("NATIVE_INTERFACE_PREFLIGHT_PASSED steps=1 dt_s=$(solver.Δt) points=16 wall_time_s=$(preflight_summary[\"wall_time_s\"])")
+    return preflight_summary
+end
+
 function run_case(case_id, dt_factor, n_steps, with_contact, outdir, native_bound)
     case_start = time()
     case_dir = joinpath(outdir, case_id)
     mkpath(case_dir)
     point_path = joinpath(case_dir, "point_steps.csv")
     metric_path = joinpath(case_dir, "step_metrics.csv")
-    point_header = ["case_id", "step", "time_s", "export_point_id", "body", "body_local_point_id",
-        "x_m", "y_m", "z_m", "vx_mps", "vy_mps", "vz_mps", "mass_kg",
-        "native_b_int_total_x_N_m3", "native_b_int_total_y_N_m3", "native_b_int_total_z_N_m3",
-        "native_bb_bond_b_int_x_N_m3", "native_bb_bond_b_int_y_N_m3", "native_bb_bond_b_int_z_N_m3",
-        "native_contact_b_int_increment_x_N_m3", "native_contact_b_int_increment_y_N_m3", "native_contact_b_int_increment_z_N_m3",
-        "native_contact_force_x_N", "native_contact_force_y_N", "native_contact_force_z_N",
-        "native_contact_impulse_step_x_Ns", "native_contact_impulse_step_y_Ns", "native_contact_impulse_step_z_Ns"]
+    point_header = point_csv_header()
     metric_header = ["case_id", "step", "time_s", "min_cross_body_point_distance_m",
         "radius_penetration_m", "native_contact_neighbor_pair_count", "min_native_contact_neighbor_distance_m",
         "total_momentum_x_kg_mps", "total_momentum_y_kg_mps", "total_momentum_z_kg_mps",
@@ -479,7 +645,7 @@ function run_case(case_id, dt_factor, n_steps, with_contact, outdir, native_boun
         "body_b_momentum_impulse_balance_error_norm_kg_mps"]
     write_csv(point_path, point_header, Tuple[])
     write_csv(metric_path, metric_header, Tuple[])
-    ms, body_a, body_b, pos_a, pos_b, volume_a, volume_b = build_setup(with_contact)
+    ms, body_a, body_b, _, _, _, _ = build_setup(with_contact)
     total_points = n_points(ms)
     require_ok(total_points <= MAX_POINTS, "point cap exceeded: $total_points > $MAX_POINTS")
     solver = VelocityVerlet(steps=n_steps, stepsize=dt_factor * native_bound)
@@ -522,13 +688,12 @@ function run_case(case_id, dt_factor, n_steps, with_contact, outdir, native_boun
     end
     previous_contact_force = deepcopy(no_contact)
     previous_contact_force_by_body = Dict(:a => zeros(3), :b => zeros(3))
+    diagnostic_state_unchanged_all_steps = true
     initial_point_rows = make_step_rows(dh, case_id, 0, 0.0, no_contact, initial_bond, initial_total,
                                        previous_contact_force, solver.Δt)
     append!(point_rows, initial_point_rows)
     append_csv(point_path, initial_point_rows)
 
-    body_a_dh = Peridynamics.get_body_dh(dh, :a)
-    body_b_dh = Peridynamics.get_body_dh(dh, :b)
     initial_contact_metrics = neighbor_metrics(dh)
     initial_metric = (case_id, 0, 0.0, initial_min_distance,
         max(0.0, CONTACT_RADIUS - initial_min_distance), initial_contact_metrics.count,
@@ -554,6 +719,7 @@ function run_case(case_id, dt_factor, n_steps, with_contact, outdir, native_boun
         # native storage array before any integration or reporting proceeds.
         bond_b_int, contact_b_int, diagnostic_state_unchanged =
             split_native_bond_and_contact_density(dh, total_b_int, step * solver.Δt, solver.Δt)
+        diagnostic_state_unchanged_all_steps &= diagnostic_state_unchanged
         for body_id in (:a, :b)
             body_dh = Peridynamics.get_body_dh(dh, body_id)
             for chunk in body_dh.chunks
@@ -666,6 +832,8 @@ function run_case(case_id, dt_factor, n_steps, with_contact, outdir, native_boun
         "energy" => "UNKNOWN: the native short-range contact API exposes no contact potential energy; no total-energy conservation claim",
         "point_semantics" => "discrete point-to-point penalty contact; not CAD surface penetration and not fragment self-contact",
         "point_id_semantics" => "body_local_point_id is the native per-body point ID; export_point_id is a stable unique 1:16 row key assigned A=1:8 and B=9:16",
+        "native_total_b_int_captured_before_bond_diagnostic" => true,
+        "diagnostic_state_unchanged_and_restored_every_step" => diagnostic_state_unchanged_all_steps,
         "wall_time_s" => time() - case_start,
     )
     write_json(joinpath(case_dir, "summary.json"), summary)
@@ -697,6 +865,48 @@ function main(args)
         ("contact_half_dt", 0.25, 480, true),
     ]
     results = Dict{String,Any}[]
+
+    source_contact = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "physics", "short_range_force_contact.jl")
+    source_verlet = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "time_solvers", "velocity_verlet.jl")
+    source_multibody = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "discretization", "multibody_setup.jl")
+    preflight = try
+        run_native_preflight(outdir, raw_bound)
+    catch err
+        preflight_dir = joinpath(outdir, "native_interface_preflight")
+        mkpath(preflight_dir)
+        message = sprint(showerror, err, catch_backtrace())
+        open(joinpath(preflight_dir, "failure.log"), "w") do io
+            println(io, message)
+        end
+        progress_path = joinpath(preflight_dir, "progress.json")
+        progress_text = isfile(progress_path) ? read(progress_path, String) : ""
+        progress_match = match(r"\"native_steps_completed\"\s*:\s*(\d+)", progress_text)
+        completed_native_steps = progress_match === nothing ? 0 : parse(Int, progress_match.captures[1])
+        failed_preflight = Dict{String,Any}("status" => "FAILED",
+            "steps_completed" => completed_native_steps,
+            "native_bond_stability_bound_dt_s" => raw_bound,
+            "error" => sprint(showerror, err), "stacktrace" => message,
+            "fixed_cases_started" => false)
+        write_json(joinpath(preflight_dir, "summary.json"), failed_preflight)
+        aggregate = Dict{String,Any}(
+            "experiment" => "RelicWeave PG-Frag bounded native point-contact spike",
+            "status" => "PREFLIGHT_FAILED",
+            "native_backend_version" => string(Base.pkgversion(Peridynamics)),
+            "julia_version" => string(VERSION), "threads" => Threads.nthreads(),
+            "resource_caps" => Dict("max_points" => MAX_POINTS, "max_steps_per_case" => 500,
+                                     "max_wall_seconds_per_case" => WALL_LIMIT_S),
+            "native_bond_stability_bound_dt_s" => raw_bound,
+            "preflight" => failed_preflight, "cases" => Any[],
+            "source_hashes_sha256" => Dict(
+                "native_short_range_force_contact_jl" => sha256_file(source_contact),
+                "native_velocity_verlet_jl" => sha256_file(source_verlet),
+                "native_multibody_setup_jl" => sha256_file(source_multibody),
+                "experiment_runner_jl" => sha256_file(@__FILE__)))
+        write_json(joinpath(outdir, "report.json"), aggregate)
+        println("NATIVE_INTERFACE_PREFLIGHT_FAILED fixed_cases_started=false error=$(sprint(showerror, err))")
+        return 2
+    end
+
     consecutive_failures = 0
     for (case_id, factor, steps, with_contact) in cases
         try
@@ -724,9 +934,6 @@ function main(args)
         end
     end
 
-    source_contact = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "physics", "short_range_force_contact.jl")
-    source_verlet = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "time_solvers", "velocity_verlet.jl")
-    source_multibody = joinpath(ROOT, "pgfrag", "vendor", "Peridynamics.jl", "src", "discretization", "multibody_setup.jl")
     aggregate = Dict{String,Any}(
         "experiment" => "RelicWeave PG-Frag bounded native point-contact spike",
         "status" => all(x["status"] == "COMPLETED" for x in results) ? "COMPLETED" : "PARTIAL_CASE_FAILURES",
@@ -737,6 +944,7 @@ function main(args)
         "native_bond_stability_bound_dt_s" => raw_bound,
         "case_end_time_s" => 120.0 * raw_bound,
         "fixed_contact_parameters" => Dict("radius_m" => CONTACT_RADIUS, "penalty_factor" => PENALTY_FACTOR),
+        "native_interface_preflight" => preflight,
         "contact_model_scope" => "native discrete cross-body point-to-point penalty contact; no CAD surfaces and no self-contact",
         "energy_status" => "UNKNOWN: contact potential energy is unavailable; no total-energy conservation claim",
         "source_hashes_sha256" => Dict(

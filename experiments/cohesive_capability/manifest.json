@@ -1,0 +1,132 @@
+{
+  "schema": "cohesive-capability-manifest-v1",
+  "frozen_at_utc": "2026-10-03T18:48:10.641483+00:00",
+  "purpose": "Akantu extrinsic cohesive FEM tiny capability contract; not material calibration or free crack-path validation",
+  "backend": {
+    "distribution": "akantu",
+    "version": "5.0.7.post1",
+    "wheel_filename": "akantu-5.0.7.post1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "wheel_sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b",
+    "wheel_source": "https://pypi.org/pypi/akantu/json",
+    "python_version": "3.12.15",
+    "python_executable": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "numpy_version": "2.5.3",
+    "scipy_version": "1.18.1",
+    "runtime_scope": "third_party/akantu-runtime isolated under WSL Ubuntu; no global/system install"
+  },
+  "geometry": {
+    "units": "SI",
+    "dimensions_m": [
+      0.002,
+      0.002,
+      0.004
+    ],
+    "bulk_volume_m3": 1.6e-08,
+    "bulk_tetrahedra": 96,
+    "nodes_before_insertion": 45,
+    "interface_plane_z_m": 0.002,
+    "interface_area_m2": 4e-06,
+    "interface_triangles": 8,
+    "only_allowed_physical_insertion_surface": "interface",
+    "central_interface_is_api_contract_test_only": true
+  },
+  "expected_insertion_facets": 8,
+  "material": {
+    "rho_kg_m3": 2500.0,
+    "E_Pa": 70000000000.0,
+    "nu": 0.22,
+    "Gc_J_m2": 7.6,
+    "sigma_c_Pa": 70000000.0,
+    "beta": 3.0,
+    "delta_c_m": 2.1714285714285712e-07,
+    "status": "UNVALIDATED_TOY",
+    "mass_density_volume_expected_kg": 4e-05,
+    "expected_energy_if_fully_debonded_J": 3.0399999999999997e-05,
+    "source_note": "illustrative values also shown in official Akantu examples; not ceramic properties"
+  },
+  "expected_interface_dissipation_J": 3.0399999999999997e-05,
+  "preflight": {
+    "stable_time_step_s": 7.326084549265489e-08,
+    "initial_cohesive_elements": 0,
+    "initial_energies_J": {
+      "kinetic": 0.0,
+      "potential": 0.0,
+      "dissipated": 0.0,
+      "reversible": 0.0,
+      "contact": 0.0
+    },
+    "mass_shape": [
+      45,
+      3
+    ],
+    "mass_raw_sum_over_all_dof_components_kg": 0.00012,
+    "mass_component_sums_kg": [
+      4e-05,
+      4e-05,
+      4e-05
+    ],
+    "expected_mass_rhoV_kg": 4e-05,
+    "eligible_interface_facets_checked": 8,
+    "all_triangle_facet_slots": 232
+  },
+  "loading": {
+    "analysis": "explicit lumped mass",
+    "extrinsic_insertion": true,
+    "zero_load_boundary_conditions": "bottom and top z fixed at 0 m; no imposed displacement",
+    "mode": "mode-I by prescribed top z displacement; bottom z fixed",
+    "top_displacement_m": 1e-05,
+    "ramp_duration_s": 0.0001,
+    "endtime_s": 0.0001,
+    "dt_safety_factor_below_stable": 0.8
+  },
+  "cases": {
+    "zero_load": {
+      "dt_s": 5.8582308142940834e-08,
+      "steps": 1707,
+      "endtime_s": 0.0001
+    },
+    "modeI_dt": {
+      "dt_s": 5.8582308142940834e-08,
+      "steps": 1707,
+      "endtime_s": 0.0001
+    },
+    "modeI_dt2": {
+      "dt_s": 2.9291154071470417e-08,
+      "steps": 3414,
+      "endtime_s": 0.0001
+    }
+  },
+  "limits": {
+    "max_steps": 10000,
+    "max_wall_time_s_per_case": 300.0,
+    "installation_and_start_budget_min": 15
+  },
+  "acceptance": {
+    "dynamic_insertions_must_be_nonzero_in_modeI": true,
+    "native_connectivity_must_show_bilateral_cohesive_facets": true,
+    "parent_material_node_mapping": "only exact native IDs/connectivity; UNKNOWN on conflict or missing proof; never nearest-coordinate matching",
+    "complete_debond_energy_relative_error_max": 0.01,
+    "dt_refinement_relative_change_max": 0.01,
+    "mass_component_sums_retained": true,
+    "incomplete_debond_status": "NOT_REACHED"
+  },
+  "nonclaims": {
+    "contact": "NOT_RUN",
+    "roughness": "NOT_VALIDATED",
+    "free_crack_path": "NOT_VALIDATED; only a central physical interface is enabled",
+    "real_ceramic_qualification": "NOT_VALIDATED_TOY",
+    "gpu": "UNKNOWN"
+  },
+  "input_sha256": {
+    "input/block_2x2x4mm.msh": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "input/material.dat": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f",
+    "input/generated_geometry.json": "eec01312e181581c1d433b2619b6fd8a4a42677769c4dbc25053d0a2c355188b"
+  },
+  "source_sha256": {
+    "generate_inputs.py": "f68765be7eff374a3afd0cdb065e3169da473166b438614a803ca91d4fd30bbb",
+    "preflight.py": "d519a6e54d77cfb776796e02464e9252078804cdf269ea1792abb095ab51c57a",
+    "preflight.json": "ef74e00ca3122ad75985c47cdeb09b57535f70a9f8ba5e1488fc16b1ee517fbd",
+    "run_contract.py": "67dd1eb98acc5f5369b9cbf1a9bfbd7f6681068172e537768e788274cb10652d"
+  }
+}

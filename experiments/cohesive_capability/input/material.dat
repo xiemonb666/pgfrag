@@ -1,0 +1,16 @@
+model solid_mechanics_model_cohesive [
+  material elastic [
+    name = body
+    rho = 2500
+    E = 70e9
+    nu = 0.22
+    finite_deformation = false
+  ]
+  material cohesive_linear [
+    name = insertion
+    beta = 3
+    G_c = 7.6
+    sigma_c = 70e6
+    delta_c = 2.1714285714285714e-7
+  ]
+]

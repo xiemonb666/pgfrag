@@ -1,0 +1,190 @@
+{
+  "akantu_version": "5.0.7.post1",
+  "numpy_version": "2.5.3",
+  "scipy_version": "1.18.1",
+  "module_path": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/lib/python3.12/site-packages/akantu/__init__.py",
+  "python_executable": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+  "python_version": "3.12.15",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "spatial_dimension": 3,
+  "bulk_tetrahedra": 96,
+  "nodes_before_insertion": 45,
+  "cohesive_elements_before_insertion": 0,
+  "mass_array_shape": [
+    45,
+    3
+  ],
+  "mass_array_dtype": "float64",
+  "mass_raw_sum_over_all_dof_components_kg": 0.00012,
+  "mass_component_sums_kg": [
+    4e-05,
+    4e-05,
+    4e-05
+  ],
+  "expected_physical_body_mass_rhoV_kg": 4e-05,
+  "initial_energies_J": {
+    "kinetic": 0.0,
+    "potential": 0.0,
+    "dissipated": 0.0,
+    "reversible": 0.0,
+    "contact": 0.0
+  },
+  "stable_time_step_s": 7.326084549265489e-08,
+  "cohesive_model_api": [
+    "checkCohesiveStress",
+    "getEnergy",
+    "getMaterial",
+    "getMaterialByElement",
+    "getMaterialIndex",
+    "getMaterialSelector",
+    "getMesh",
+    "getNbMaterials",
+    "reassignMaterial",
+    "registerNewMaterial",
+    "setMaterialSelector"
+  ],
+  "element_inserter_type": "CohesiveElementInserter",
+  "element_inserter_api": [
+    "__class__",
+    "__delattr__",
+    "__dir__",
+    "__doc__",
+    "__eq__",
+    "__format__",
+    "__ge__",
+    "__getattribute__",
+    "__getstate__",
+    "__gt__",
+    "__hash__",
+    "__init__",
+    "__init_subclass__",
+    "__le__",
+    "__lt__",
+    "__module__",
+    "__ne__",
+    "__new__",
+    "__reduce__",
+    "__reduce_ex__",
+    "__repr__",
+    "__setattr__",
+    "__sizeof__",
+    "__str__",
+    "__subclasshook__",
+    "addPhysicalSurface",
+    "addPhysicalVolume",
+    "getCheckFacets",
+    "getInsertionFacets",
+    "setLimit"
+  ],
+  "eligible_insertion_facet_types": [
+    "ElementType._triangle_3"
+  ],
+  "eligible_insertion_facet_arrays": [
+    {
+      "element_type": "ElementType._triangle_3",
+      "type": "ndarray",
+      "shape": [
+        232,
+        1
+      ],
+      "size": 232,
+      "dtype": "bool",
+      "true_count": 0
+    }
+  ],
+  "check_facet_types": [
+    "ElementType._triangle_3"
+  ],
+  "check_facet_arrays": [
+    {
+      "element_type": "ElementType._triangle_3",
+      "type": "ndarray",
+      "shape": [
+        232,
+        1
+      ],
+      "size": 232,
+      "dtype": "bool",
+      "true_count": 8
+    }
+  ],
+  "physical_element_groups": [
+    {
+      "name": "body",
+      "element_count": 96
+    },
+    {
+      "name": "bottom",
+      "element_count": 8
+    },
+    {
+      "name": "interface",
+      "element_count": 8
+    },
+    {
+      "name": "top",
+      "element_count": 8
+    }
+  ],
+  "element_group_api": [
+    "__class__",
+    "__delattr__",
+    "__dir__",
+    "__doc__",
+    "__eq__",
+    "__format__",
+    "__ge__",
+    "__getattribute__",
+    "__getstate__",
+    "__gt__",
+    "__hash__",
+    "__init__",
+    "__init_subclass__",
+    "__le__",
+    "__len__",
+    "__lt__",
+    "__module__",
+    "__ne__",
+    "__new__",
+    "__reduce__",
+    "__reduce_ex__",
+    "__repr__",
+    "__setattr__",
+    "__sizeof__",
+    "__str__",
+    "__subclasshook__",
+    "add",
+    "addDimension",
+    "addDumpField",
+    "addDumpFieldExternal",
+    "addDumpFieldExternalToDumper",
+    "addDumpFieldToDumper",
+    "addDumpMesh",
+    "addDumpMeshToDumper",
+    "append",
+    "clear",
+    "dump",
+    "empty",
+    "fillFromNodeGroup",
+    "getElements",
+    "getName",
+    "getNodeGroup",
+    "optimize",
+    "registerDumperParaview"
+  ],
+  "element_type_names": {
+    "_hexahedron_20": "ElementType._hexahedron_20",
+    "_hexahedron_8": "ElementType._hexahedron_8",
+    "_pentahedron_15": "ElementType._pentahedron_15",
+    "_pentahedron_6": "ElementType._pentahedron_6",
+    "_point_1": "ElementType._point_1",
+    "_quadrangle_4": "ElementType._quadrangle_4",
+    "_quadrangle_8": "ElementType._quadrangle_8",
+    "_segment_2": "ElementType._segment_2",
+    "_segment_3": "ElementType._segment_3",
+    "_tetrahedron_10": "ElementType._tetrahedron_10",
+    "_tetrahedron_4": "ElementType._tetrahedron_4",
+    "_triangle_3": "ElementType._triangle_3",
+    "_triangle_6": "ElementType._triangle_6"
+  }
+}
