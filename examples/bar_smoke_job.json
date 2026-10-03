@@ -1,0 +1,37 @@
+{
+  "schema": "pgfrag.job.v1",
+  "job_id": "bar-smoke-osb-001",
+  "backend_id": "peridynamics_jl_headless_0_5_4",
+  "initial_condition": {
+    "kind": "uniform_box_bar_fixture",
+    "dimensions_mm": [6.0, 6.0, 16.0],
+    "dx_mm": 2.0,
+    "horizon_mm": 6.0
+  },
+  "material": {
+    "model": "OSB",
+    "rho_kg_m3": 2100.0,
+    "E_pa": 5000000000.0,
+    "nu": 0.24,
+    "Gc_j_m2": 45.0,
+    "calibration_status": "UNVALIDATED_PROTOTYPE",
+    "provenance": "illustrative API/solver exercise values; no specimen measurement or calibration"
+  },
+  "loading": {
+    "kind": "symmetric_axial_velocity",
+    "speed_m_s": 0.0001
+  },
+  "solver": {
+    "steps": 5,
+    "dt_s": null,
+    "safety_factor": 0.8
+  },
+  "resources": {
+    "profile": "local_smoke",
+    "max_points": 1000,
+    "max_steps": 500,
+    "threads": 1,
+    "timeout_seconds": 120
+  },
+  "output_dir": "run-output"
+}

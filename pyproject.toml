@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pgfrag-core"
+version = "0.1.0"
+description = "Independent CPU peridynamic fracture runner adapter"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+pgfrag = "pgfrag.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pgfrag = [
+  "resources/julia/Project.toml",
+  "resources/julia/Manifest.toml",
+  "resources/julia/run_fixture.jl",
+  "resources/julia/backend_provenance.json",
+  "resources/julia/vendor/Peridynamics.jl/Project.toml",
+  "resources/julia/vendor/Peridynamics.jl/LICENSE",
+  "resources/julia/vendor/Peridynamics.jl/src/**/*.jl",
+  "resources/julia/vendor/patches/*.patch"
+]

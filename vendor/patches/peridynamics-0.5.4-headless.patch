@@ -1,0 +1,166 @@
+--- a/src/auxiliary/io.jl
++++ b/src/auxiliary/io.jl
+@@ -121,66 +121,9 @@
+ # if this is not done, the export_field function will error out!
+ custom_field(::Type{<:AbstractStorage}, ::Val{field}) where {field} = false
+ 
+-function get_vtk_filebase(body::AbstractBody, root::AbstractString)
+-    body_name = replace(string(get_name(body)), " " => "_")
+-    filebase = isempty(body_name) ? "timestep" : body_name * "_timestep"
+-    vtk_filebase::String = joinpath(root, "vtk", filebase)
+-    return vtk_filebase
+-end
+-
+-function get_vtk_filebase(ms::AbstractMultibodySetup, root::AbstractString)
+-    vtk_filebase = Dict{Symbol,String}()
+-    for body_name in each_body_name(ms)
+-        vtk_filebase[body_name] = get_vtk_filebase(get_body(ms, body_name), root)
+-    end
+-    return vtk_filebase
+-end
+-
+ function _export_results(options::AbstractJobOptions, chunk::AbstractBodyChunk,
+                          chunk_id::Int, n_chunks::Int, n::Int, t::Float64)
+-    filename = get_filename(options, chunk.body_name, n)
+-    position = get_loc_position(chunk)
+-    pvtk_grid(filename, position, chunk.cells; part=chunk_id, nparts=n_chunks) do vtk
+-        export_fields!(vtk, chunk, options.fields, t)
+-        vtk["time", VTKFieldData()] = t
+-    end
+-    return nothing
+-end
+-
+-@inline function get_filename(options::AbstractJobOptions, body_name::Symbol, n::Int)
+-    return _get_filename(options.vtk_filebase, body_name, n)
+-end
+-
+-@inline function _get_filename(vtk_filebase::String, ::Symbol, n::Int)
+-    return @sprintf("%s_%d", vtk_filebase, n)
+-end
+-
+-@inline function _get_filename(vtk_filebase::Dict{Symbol,String}, body_name::Symbol, n::Int)
+-    return @sprintf("%s_%d", vtk_filebase[body_name], n)
+-end
+-
+-function export_fields!(vtk, chunk, fields::Vector{Symbol}, t)
+-    (; mat, system, storage, paramsetup) = chunk
+-    for field in fields
+-        point_data = export_field(Val(field), mat, system, storage, paramsetup, t)
+-        vtk[string(field), VTKPointData()] = point_data
+-    end
+-    return nothing
+-end
+-
+-function export_fields!(vtk, chunk, fields_spec::Dict{Symbol,Vector{Symbol}}, t)
+-    fields = fields_spec[chunk.body_name]
+-    export_fields!(vtk, chunk, fields, t)
+-    return nothing
+-end
+-
+-# this function can be specialized for each field, even custom export fields can be written!
+-function export_field(::Val{field}, mat, system, storage, paramsetup, t) where {field}
+-    return get_loc_point_data(storage, system, field)
+-end
+-
+-@inline function get_loc_position(chunk::AbstractBodyChunk)
+-    return @views chunk.storage.position[:, 1:get_n_loc_points(chunk)]
++    throw(ArgumentError("VTK export is disabled in the PGFrag headless backend; use the PGFrag CSV/NPZ result adapter"))
+ end
+ 
+ function msg_export_fields(fields::Vector{Symbol}; indentation=2)
+--- a/src/core/job.jl
++++ b/src/core/job.jl
+@@ -145,18 +145,8 @@
+ end
+ 
+ function get_job_options(spatial_setup, solver, o)
+-    root, freq = get_root_and_freq(o)
+-
+-    fields = get_export_fields(spatial_setup, solver, o)
+-    vtk_filebase = get_vtk_filebase(spatial_setup, root)
+-
+-    if isempty(root)
+-        options = JobOptions(spatial_setup)
+-    else
+-        options = JobOptions(root, freq, fields, vtk_filebase)
+-    end
+-
+-    return options
++    isempty(o) || throw(ArgumentError("Peridynamics headless backend rejects file-output Job options; use the PGFrag CSV/NPZ result adapter"))
++    return JobOptions(spatial_setup)
+ end
+ 
+ function get_root_and_freq(o::Dict{Symbol,Any})
+--- a/src/core/threads_body_data_handler.jl
++++ b/src/core/threads_body_data_handler.jl
+@@ -95,8 +95,6 @@
+     return nothing
+ end
+ 
+-get_cells(n::Int) = [MeshCell(VTKCellTypes.VTK_VERTEX, (i,)) for i in 1:n]
+-
+ function exchange_loc_to_halo!(dh::ThreadsBodyDataHandler, chunk_id::Int)
+     fields = loc_to_halo_fields(dh.chunks[chunk_id].storage)
+     isempty(fields) && return nothing
+--- a/src/discretization/body_chunk.jl
++++ b/src/discretization/body_chunk.jl
+@@ -23,7 +23,6 @@
+ - `sdbcs::Vector{SingleDimBC}`: Single dimension boundary conditions.
+ - `pdsdbcs::Vector{PosDepSingleDimBC}`: Position dependent single dimension boundary
+     conditions.
+-- `cells::Vector{MeshCell{VTKCellType,Tuple{Int64}}}`: Cells for vtk export.
+ """
+ struct BodyChunk{System<:AbstractSystem,
+                  Material<:AbstractMaterial,
+@@ -35,7 +34,6 @@
+     paramsetup::Params
+     storage::Storage
+     condhandler::ConditionHandler
+-    cells::Vector{MeshCell{VTKCellType,Tuple{Int64}}}
+ end
+ 
+ function BodyChunk(body::AbstractBody, solver::AbstractTimeSolver, pd::PointDecomposition,
+@@ -46,8 +44,7 @@
+     paramsetup = get_paramsetup(body, system.chunk_handler, param_spec)
+     storage = get_storage(mat, solver, system)
+     condhandler = ConditionHandler(body, system)
+-    cells = get_cells(get_n_loc_points(system))
+-    chunk = BodyChunk(body_name, system, mat, paramsetup, storage, condhandler, cells)
++    chunk = BodyChunk(body_name, system, mat, paramsetup, storage, condhandler)
+     return chunk
+ end
+ 
+--- a/src/Peridynamics.jl
++++ b/src/Peridynamics.jl
+@@ -1,7 +1,7 @@
+ module Peridynamics
+ 
+ using Base.Threads, Printf, LinearAlgebra, StaticArrays, PointNeighbors, ProgressMeter,
+-      WriteVTK, TimerOutputs, MPI, PrecompileTools, IterativeSolvers, LinearMaps
++      TimerOutputs, MPI, PrecompileTools, IterativeSolvers, LinearMaps
+ @static if Sys.islinux()
+     using ThreadPinning
+ end
+@@ -37,7 +37,7 @@
+ export read_inp
+ 
+ # Post processing and helpers
+-export read_vtk, process_each_export, process_each_job, mpi_isroot, mpi_barrier,
++export process_each_job, mpi_isroot, mpi_barrier,
+        force_mpi_run!, force_threads_run!, enable_mpi_timers!, disable_mpi_timers!,
+        enable_mpi_progress_bars!, reset_mpi_progress_bars!, @mpitime, @mpiroot
+ 
+@@ -151,13 +151,8 @@
+ include("physics/rk_correspondence_rotated.jl")
+ include("physics/ba_correspondence.jl")
+ 
+-include("VtkReader/VtkReader.jl")
+-using .VtkReader
+-
+ include("AbaqusMeshConverter/AbaqusMeshConverter.jl")
+ using .AbaqusMeshConverter
+-
+-include("auxiliary/process_each_export.jl")
+ 
+ try
+     include("auxiliary/precompile_workload.jl")

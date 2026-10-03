@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://relicweave.invalid/pgfrag.job.v1.schema.json",
+  "title": "PG-Frag Job v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "job_id", "backend_id", "initial_condition", "material", "loading", "solver", "resources", "output_dir"],
+  "properties": {
+    "schema": {"const": "pgfrag.job.v1"},
+    "job_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "backend_id": {"const": "peridynamics_jl_headless_0_5_4"},
+    "initial_condition": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "dimensions_mm", "dx_mm", "horizon_mm"],
+          "properties": {
+            "kind": {"const": "uniform_box_bar_fixture"},
+            "dimensions_mm": {"type": "array", "items": {"type": "number", "exclusiveMinimum": 0}, "minItems": 3, "maxItems": 3},
+            "dx_mm": {"type": "number", "exclusiveMinimum": 0},
+            "horizon_mm": {"type": "number", "exclusiveMinimum": 0}
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "package_dir", "manifest_sha256"],
+          "properties": {
+            "kind": {"const": "forge_asset_surface"},
+            "package_dir": {"type": "string", "minLength": 1},
+            "manifest_sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+          }
+        }
+      ]
+    },
+    "material": {
+      "type": "object", "additionalProperties": false,
+      "required": ["model", "rho_kg_m3", "E_pa", "nu", "Gc_j_m2", "calibration_status", "provenance"],
+      "properties": {
+        "model": {"enum": ["BB", "OSB"]},
+        "rho_kg_m3": {"type": "number", "exclusiveMinimum": 0},
+        "E_pa": {"type": "number", "exclusiveMinimum": 0},
+        "nu": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 0.5},
+        "Gc_j_m2": {"type": "number", "exclusiveMinimum": 0},
+        "calibration_status": {"const": "UNVALIDATED_PROTOTYPE"},
+        "provenance": {"type": "string", "minLength": 1}
+      }
+    },
+    "loading": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "speed_m_s"],
+      "properties": {
+        "kind": {"enum": ["zero_load", "symmetric_axial_velocity"]},
+        "speed_m_s": {"type": "number", "minimum": 0}
+      }
+    },
+    "solver": {
+      "type": "object", "additionalProperties": false,
+      "required": ["steps", "dt_s", "safety_factor"],
+      "properties": {
+        "steps": {"type": "integer", "minimum": 1},
+        "dt_s": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "safety_factor": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1}
+      }
+    },
+    "resources": {
+      "type": "object", "additionalProperties": false,
+      "required": ["profile", "max_points", "max_steps", "threads", "timeout_seconds"],
+      "properties": {
+        "profile": {"const": "local_smoke"},
+        "max_points": {"type": "integer", "minimum": 1, "maximum": 1000},
+        "max_steps": {"type": "integer", "minimum": 1, "maximum": 500},
+        "threads": {"type": "integer", "minimum": 1, "maximum": 1},
+        "timeout_seconds": {"type": "integer", "minimum": 1, "maximum": 120}
+      }
+    },
+    "output_dir": {"type": "string", "minLength": 1}
+  },
+  "not": {
+    "anyOf": [
+      {"required": ["target_fragments"]},
+      {"required": ["target_fragment_count"]},
+      {"required": ["target_pieces"]},
+      {"required": ["piece_count"]},
+      {"required": ["piece_range"]},
+      {"required": ["count_model"]}
+    ]
+  }
+}

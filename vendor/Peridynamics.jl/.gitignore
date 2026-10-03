@@ -1,0 +1,37 @@
+# Manifest.toml files
+Manifest.toml
+
+# Codecov files
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+
+# generated docs
+/docs/build/
+/docs/src/generated/
+
+# Simulation results
+/results/
+/examples/results/
+*.log
+*.vtu
+*.pvtu
+
+# Benchmark output
+/benchmark/results/
+/benchmark/baselines/
+/benchmark/hpc/results/
+
+# local debugging and development files
+/scripts/
+/paper/
+/dev/
+/plans/
+
+# OS generated files
+*.DS_Store
+*.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.vscode/settings.json
