@@ -1,0 +1,9 @@
+# Bounded native contact spike
+
+This experiment exercises the local Peridynamics.jl `MultibodySetup` and `contact!` API with two 4 mm cubes represented by eight 2 mm-spaced points each. It uses the standalone Julia 1.10.12 runtime and the existing `pgfrag/src/pgfrag/resources/julia` project, whose manifest resolves the read-only local headless fork at version `0.5.4+pgfrag.1`.
+
+Run `run_contact_spike.ps1` from PowerShell. It fixes one Julia thread, writes native solver point and force histories under `relicweave-synlab/tmp/review_20261003/implementation/pg/contact_spike`, and renders `contact_spike_actual_xz.png` from those CSV rows. It attempts exactly three configurations: a no-contact control and native contact at `0.5` and `0.25` times the raw native BB bond bound, for 240 and 480 steps respectively. All three have the same final time. The native BB bound does not establish penalty-contact stability.
+
+The CSV records actual positions, velocities, masses, native `b_int` total and native BB-only `b_int`; their difference is the native contact force-density increment. Point force is that increment multiplied by the point's own volume. Step metrics record point gap, radius penetration, momentum, contact force/impulse and action/reaction mismatch. Contact potential energy is unavailable and total energy remains `UNKNOWN`. The experiment models discrete point-to-point cross-body contact; it does not reconstruct CAD surfaces, display a crack, or test fragment self-contact.
+
+The runner checks each predicted Verlet position update for a finite, positive cross-body distance before entering native contact evaluation. Each case is capped at 128 points, 500 steps, one thread and 120 seconds. If the data export path blocks, the CSVs are appended during integration so saved progress remains reviewable.
