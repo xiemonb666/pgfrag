@@ -1,0 +1,1370 @@
+--- run_contract.original.py
++++ probe_driver.py
+@@ -1,634 +1,801 @@
+-"""Run one fixed contract case against the isolated Akantu Python wheel."""
+-
++"""Single-use, step-capped phase probe cloned from the frozen cohesive contract."""
+ from __future__ import annotations
+ 
+ import csv
+ from datetime import datetime, timezone
++import difflib
+ import hashlib
++import inspect
+ import json
+ import math
+ import os
+ from pathlib import Path
+ import platform
++import re
+ import sys
+ import time
+ import traceback
+ 
+-import akantu as aka
+ import numpy as np
+ 
+ 
+-ROOT = Path(__file__).resolve().parent
+-INPUT = ROOT / "input"
+-REVIEW = ROOT.parents[2] / "relicweave-synlab" / "tmp" / "review_20261004" / "implementation" / "cohesive_capability"
+-MANIFEST_PATH = REVIEW / "manifest.json"
++WORK = Path(__file__).resolve().parent
++REPO = WORK.parents[2]
++RUN_ID = "coarse654_20261004_01"
++RUN_DIR = REPO / "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004" / RUN_ID
++SNAPSHOT = RUN_DIR / "snapshot"
++INPUT = SNAPSHOT / "input"
++MANIFEST_PATH = SNAPSHOT / "manifest.json"
++REFERENCE = RUN_DIR / "reference"
++ORIGINAL_SCRIPT = WORK / "run_contract.original.py"
++FROZEN_SCRIPT = REPO / "pgfrag/experiments/cohesive_capability/run_contract.py"
++FROZEN_MANIFEST = REPO / "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/manifest.json"
++FROZEN_CASE = REPO / "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/modeI_dt"
++MAX_STEPS = 654
+ MAX_WALL_S = 300.0
+-MAX_STEPS = 10_000
++FOCUS_STEPS = set(range(647, 655))
++EXPECTED_RUNNER_SHA256 = "67dd1eb98acc5f5369b9cbf1a9bfbd7f6681068172e537768e788274cb10652d"
++EXPECTED_MANIFEST_SHA256 = "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68"
++ENERGY_REQUESTS = {
++    "kinetic_J": "kinetic",
++    "bulk_potential_J": "potential",
++    "cohesive_dissipated_J": "dissipated",
++    "cohesive_reversible_J": "reversible",
++    "cohesive_contact_native_key_J": "cohesive contact",
++    "contact_alias_diagnostic_J": "contact",
++}
++ENERGY_FIELDS_FOR_MATCH = (
++    "kinetic_J", "bulk_potential_J", "cohesive_dissipated_J", "cohesive_reversible_J"
++)
++MATERIAL_FIELD_RE = re.compile(r"traction|opening|separation|damage|history|maximum|internal.?variable|cohesive|stress", re.I)
+ 
+ 
+ def sha256(path: Path) -> str:
+-    digest = hashlib.sha256()
++    h = hashlib.sha256()
+     with path.open("rb") as stream:
+         for block in iter(lambda: stream.read(1024 * 1024), b""):
+-            digest.update(block)
+-    return digest.hexdigest()
++            h.update(block)
++    return h.hexdigest()
++
++
++def jsonable(value):
++    if isinstance(value, np.ndarray):
++        return value.tolist()
++    if isinstance(value, (np.integer,)):
++        return int(value)
++    if isinstance(value, (np.floating,)):
++        value = float(value)
++    if isinstance(value, float) and not math.isfinite(value):
++        return repr(value)
++    if value is None or isinstance(value, (str, bool, int, float)):
++        return value
++    if isinstance(value, (list, tuple)):
++        return [jsonable(item) for item in value]
++    if isinstance(value, dict):
++        return {str(k): jsonable(v) for k, v in value.items()}
++    return repr(value)
++
++
++def write_json(path: Path, value) -> None:
++    path.write_text(json.dumps(jsonable(value), indent=2, sort_keys=True) + "\n", encoding="utf-8")
++
++
++def verify_and_record_snapshots() -> dict:
++    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
++    items = []
++    pairs = [(FROZEN_SCRIPT, SNAPSHOT / "run_contract.original.py"),
++             (FROZEN_SCRIPT, ORIGINAL_SCRIPT),
++             (FROZEN_MANIFEST, MANIFEST_PATH),
++             (Path(__file__), SNAPSHOT / "probe_driver.executed.py"),
++             (WORK / "probe_driver.preflight.py", SNAPSHOT / "probe_driver.preflight.py")]
++    for name in ("block_2x2x4mm.msh", "material.dat", "generated_geometry.json"):
++        pairs.append((FROZEN_SCRIPT.parent / "input" / name, INPUT / name))
++    pairs.extend([
++        (FROZEN_CASE / "trace.csv", REFERENCE / "trace.csv"),
++        (FROZEN_CASE / "status.json", REFERENCE / "status.json"),
++    ])
++    for original, snapshot in pairs:
++        items.append({
++            "original_path": str(original), "snapshot_path": str(snapshot),
++            "original_exists": original.is_file(), "snapshot_exists": snapshot.is_file(),
++            "original_bytes": original.stat().st_size if original.is_file() else None,
++            "snapshot_bytes": snapshot.stat().st_size if snapshot.is_file() else None,
++            "original_sha256": sha256(original) if original.is_file() else None,
++            "snapshot_sha256": sha256(snapshot) if snapshot.is_file() else None,
++            "identical": original.is_file() and snapshot.is_file() and sha256(original) == sha256(snapshot),
++        })
++    good = all(item["identical"] for item in items)
++    original_sha = sha256(FROZEN_SCRIPT) if FROZEN_SCRIPT.is_file() else None
++    manifest_sha = sha256(MANIFEST_PATH) if MANIFEST_PATH.is_file() else None
++    integrity = {
++        "run_id": RUN_ID, "captured_utc_before_solver": datetime.now(timezone.utc).isoformat(),
++        "source_sha256_expected": EXPECTED_RUNNER_SHA256, "source_sha256_actual": original_sha,
++        "manifest_sha256_expected": EXPECTED_MANIFEST_SHA256, "manifest_sha256_actual": manifest_sha,
++        "manifest_source_expected_runner_sha256": manifest.get("source_sha256", {}).get("run_contract.py"),
++        "snapshot_pairs_identical": good, "snapshot_pairs": items,
++        "solver_attempts": 0, "solver_cap_steps": MAX_STEPS,
++    }
++    if original_sha != EXPECTED_RUNNER_SHA256 or manifest_sha != EXPECTED_MANIFEST_SHA256:
++        raise RuntimeError("frozen runner/manifest SHA mismatch; solver not started")
++    if manifest.get("source_sha256", {}).get("run_contract.py") != EXPECTED_RUNNER_SHA256:
++        raise RuntimeError("snapshot manifest source SHA mismatch; solver not started")
++    if not good:
++        raise RuntimeError("source/input/manifest/reference snapshot mismatch; solver not started")
++    for rel, expected in manifest["input_sha256"].items():
++        candidate = INPUT.parent / rel
++        if not candidate.is_file() or sha256(candidate).lower() != expected.lower():
++            raise RuntimeError(f"snapshot input hash mismatch {rel}; solver not started")
++    baseline_status = json.loads((REFERENCE / "status.json").read_text(encoding="utf-8"))
++    if sha256(REFERENCE / "trace.csv") != baseline_status.get("trace_csv_sha256"):
++        raise RuntimeError("baseline reference trace differs from frozen status; solver not started")
++    write_json(RUN_DIR / "pre_run_snapshot_integrity.json", integrity)
++    return integrity
++
++
++def make_source_diff() -> None:
++    old = ORIGINAL_SCRIPT.read_text(encoding="utf-8").splitlines(keepends=True)
++    new = Path(__file__).read_text(encoding="utf-8").splitlines(keepends=True)
++    diff = "".join(difflib.unified_diff(old, new, fromfile="run_contract.original.py", tofile="probe_driver.py"))
++    (WORK / "run_contract_instrumented.diff").write_text(diff, encoding="utf-8")
++    (RUN_DIR / "snapshot" / "run_contract_instrumented.diff").write_text(diff, encoding="utf-8")
++
++
++def inspect_public_methods(obj, field_only=False) -> dict:
++    result = {}
++    for name in sorted(n for n in dir(obj) if not n.startswith("_")):
++        if field_only and not MATERIAL_FIELD_RE.search(name):
++            continue
++        try:
++            member = getattr(obj, name)
++        except Exception as error:
++            result[name] = {"status": "attribute_error", "error": repr(error)}
++            continue
++        if not callable(member):
++            if field_only and MATERIAL_FIELD_RE.search(name):
++                result[name] = {"status": "public_property", "value": jsonable(member)}
++            continue
++        doc = inspect.getdoc(member)
++        entry = {"status": "public_method", "doc": doc[:1200] if doc else None}
++        if field_only:
++            try:
++                signature = inspect.signature(member)
++                entry["signature"] = str(signature)
++                required = [p for p in signature.parameters.values()
++                            if p.default is inspect.Parameter.empty
++                            and p.kind in (inspect.Parameter.POSITIONAL_ONLY, inspect.Parameter.POSITIONAL_OR_KEYWORD)]
++                if not required:
++                    try:
++                        entry["noarg_value"] = jsonable(member())
++                        entry["noarg_call_status"] = "ok"
++                    except Exception as error:
++                        entry["noarg_call_status"] = "error"
++                        entry["noarg_call_error"] = repr(error)
++                else:
++                    entry["noarg_call_status"] = "requires_arguments"
++            except Exception as error:
++                entry["signature_status"] = "unknown"
++                entry["signature_error"] = repr(error)
++                entry["noarg_call_status"] = "not_called_signature_unknown"
++        result[name] = entry
++    return result
++
++
++def energy_values(model) -> dict:
++    values = {}
++    for label, key in ENERGY_REQUESTS.items():
++        try:
++            value = float(model.getEnergy(key))
++            values[label] = {"status": "ok", "requested_key": key, "value_J": value}
++        except Exception as error:
++            values[label] = {"status": "unknown_or_unsupported", "requested_key": key, "error": repr(error)}
++    return values
++
++
++def material_handles(model) -> tuple[list, dict]:
++    access = {"nb_material_method": "UNKNOWN", "material_getter": "UNKNOWN", "errors": []}
++    count = None
++    nb = getattr(model, "getNbMaterials", None)
++    if not callable(nb):
++        nb = getattr(model, "getNbMaterial", None)
++    if callable(nb):
++        access["nb_material_method"] = "getNbMaterials" if hasattr(model, "getNbMaterials") else "getNbMaterial"
++        try:
++            count = int(nb())
++            access["material_count"] = count
++        except Exception as error:
++            access["errors"].append({"method": "getNbMaterial", "error": repr(error)})
++    for name in ("getMaterial", "getMaterialByName"):
++        getter = getattr(model, name, None)
++        if not callable(getter):
++            continue
++        access["material_getter"] = name
++        handles = []
++        if name == "getMaterialByName":
++            access["errors"].append({"method": name, "status": "requires known material name"})
++            continue
++        for index in range(max(1, count or 1)):
++            try:
++                handles.append(getter(index))
++            except Exception as error:
++                access["errors"].append({"method": name, "index": index, "error": repr(error)})
++                break
++        if handles:
++            return handles, access
++    getter = getattr(model, "getMaterials", None)
++    if callable(getter):
++        access["material_getter"] = "getMaterials"
++        try:
++            values = getter()
++            if isinstance(values, (list, tuple)):
++                return list(values), access
++            access["getMaterials_return_type"] = type(values).__name__
++        except Exception as error:
++            access["errors"].append({"method": "getMaterials", "error": repr(error)})
++    return [], access
++
++
++def observe_materials(model, call_fields=True) -> dict:
++    handles, access = material_handles(model)
++    observed = {}
++    for index, handle in enumerate(handles):
++        key = f"material_{index}:{type(handle).__name__}"
++        observed[key] = inspect_public_methods(handle, field_only=True) if call_fields else {}
++    return {"access": access, "fields": observed, "status": "observed" if handles else "UNKNOWN_no_public_material_handle"}
++
++
++def build_model(aka, manifest):
++    aka.parseInput(str(INPUT / "material.dat"))
++    mesh = aka.Mesh(3)
++    mesh.read(str(INPUT / "block_2x2x4mm.msh"))
++    model = aka.SolidMechanicsModelCohesive(mesh)
++    model.initFull(_analysis_method=aka._explicit_lumped_mass, _is_extrinsic=True)
++    model.assembleMassLumped()
++    inserter = model.getElementInserter()
++    inserter.addPhysicalSurface("interface")
++    model.updateAutomaticInsertion()
++    check_map = inserter.getCheckFacets()
++    eligible = int(np.count_nonzero(check_map(aka._triangle_3)))
++    eligible_total = int(check_map(aka._triangle_3).size)
++    already_inserted = int(np.count_nonzero(inserter.getInsertionFacets()(aka._triangle_3)))
++    if eligible != manifest["expected_insertion_facets"] or already_inserted != 0:
++        raise RuntimeError(f"pre-step insertion selection mismatch {eligible}/{eligible_total}; already={already_inserted}")
++    return mesh, model, eligible, eligible_total
++
++
++def preflight() -> int:
++    integrity = verify_and_record_snapshots()
++    make_source_diff()
++    import akantu as aka
++    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
++    mesh, model, eligible, eligible_total = build_model(aka, manifest)
++    material_handles_found, material_access = material_handles(model)
++    material_details = []
++    for index, material in enumerate(material_handles_found):
++        material_details.append({"index": index, "type": type(material).__name__,
++                                 "fields": inspect_public_methods(material, field_only=True)})
++    module_material_classes = {}
++    for name in sorted(n for n in dir(aka) if "material" in n.lower() and "cohes" in n.lower()):
++        obj = getattr(aka, name)
++        module_material_classes[name] = {"type": type(obj).__name__, "doc": inspect.getdoc(obj),
++                                         "public_methods": inspect_public_methods(obj) if isinstance(obj, type) else None}
++    model_public = {}
++    for name in sorted(n for n in dir(model) if not n.startswith("_") and
++                       re.search(r"material|energy|traction|opening|damage|history|stress|dump|time|displacement|velocity|force", n, re.I)):
++        member = getattr(model, name, None)
++        model_public[name] = {"type": type(member).__name__, "doc": inspect.getdoc(member) if callable(member) else None}
++    result = {
++        "preflight_status": "PASS_no_solver_steps", "solver_steps": 0,
++        "run_id": RUN_ID, "snapshot_integrity": integrity,
++        "python": sys.executable, "python_version": platform.python_version(),
++        "akantu_version": getattr(aka, "__version__", "UNKNOWN"),
++        "numpy_version": np.__version__, "eligible_interface_facets": eligible,
++        "eligible_face_slots": eligible_total, "mesh_nodes": int(mesh.getNbNodes()),
++        "initial_native_cohesive_count": int(mesh.getNbElement(type=aka._cohesive_3d_6)),
++        "model_public_api": model_public,
++        "energy_key_public_probe": energy_values(model),
++        "material_access": material_access, "material_objects": material_details,
++        "module_cohesive_material_classes": module_material_classes,
++        "dump_field_fallback": "UNKNOWN unless dump documentation exposes a cohesive traction/opening/history field; no private API used",
++    }
++    write_json(RUN_DIR / "preflight.json", result)
++    print(json.dumps({k: result[k] for k in ("preflight_status", "solver_steps", "python", "akantu_version",
++                                             "eligible_interface_facets", "eligible_face_slots", "energy_key_public_probe",
++                                             "material_access", "module_cohesive_material_classes")}, indent=2))
++    return 0
+ 
+ 
+ def array_copy(value) -> np.ndarray:
+     return np.asarray(value).copy()
+ 
+ 
+-def scalar_mass_by_dof_component(mass: np.ndarray) -> list[float]:
++def mass_components(model) -> list[float]:
++    mass = array_copy(model.getMass())
+     if mass.ndim == 2:
+-        return [float(mass[:, component].sum()) for component in range(mass.shape[1])]
++        return [float(mass[:, axis].sum()) for axis in range(mass.shape[1])]
+     return [float(mass.sum())]
+ 
+ 
+-class RampTop(aka.DirichletFunctor):
+-    def __init__(self, amplitude: float, duration: float):
+-        super().__init__(aka._z)
+-        self.axis = int(aka._z)
+-        self.amplitude = amplitude
+-        self.duration = duration
+-        self.time = 0.0
+-
+-    def set_time(self, value: float) -> None:
+-        self.time = value
+-
+-    def __call__(self, node, flags, disp, coord):
+-        flags[self.axis] = True
+-        disp[self.axis] = self.amplitude * min(max(self.time / self.duration, 0.0), 1.0)
+-
+-
+-def mesh_element_count(mesh, element_type) -> int:
+-    return int(mesh.getNbElement(type=element_type))
+-
+-
+-def mass_summary(model) -> dict:
+-    values = array_copy(model.getMass())
++def current_time_value(model):
++    getter = getattr(model, "getTime", None)
++    if not callable(getter):
++        return None
++    try:
++        return float(getter())
++    except Exception:
++        return None
++
++
++def sample_arrays(mesh, model, aka) -> dict:
++    # Every call re-fetches and copies after any possible native node duplication.
++    ntet = int(mesh.getNbElement(type=aka._tetrahedron_4))
++    ncoh = int(mesh.getNbElement(type=aka._cohesive_3d_6))
+     return {
+-        "shape": list(values.shape),
+-        "raw_sum_over_all_dof_components_kg": float(values.sum()),
+-        "component_sums_kg": scalar_mass_by_dof_component(values),
+-        "array": values,
++        "rest_nodes": array_copy(mesh.getNodes()),
++        "displacement": array_copy(model.getDisplacement()),
++        "velocity": array_copy(model.getVelocity()),
++        "internal_force": array_copy(model.getInternalForce()),
++        "bulk_tetra_connectivity": array_copy(mesh.getConnectivity(aka._tetrahedron_4)),
++        "cohesive_connectivity": (array_copy(mesh.getConnectivity(aka._cohesive_3d_6)) if ncoh else np.empty((0, 6), dtype=np.int64)),
++        "mass": array_copy(model.getMass()),
++        "mesh_nodes_count": int(mesh.getNbNodes()), "bulk_tetrahedra_count": ntet, "cohesive_elements_count": ncoh,
+     }
+ 
+ 
+-def energy_summary(model) -> dict[str, float]:
+-    names = ("kinetic", "potential", "dissipated", "reversible", "contact")
+-    return {name: float(model.getEnergy(name)) for name in names}
+-
+-
+-def read_interface_triangles(mesh_path: Path) -> list[tuple[int, int, int]]:
+-    """Read physical group 2 directly from the frozen MSH input, without spatial matching."""
+-    lines = mesh_path.read_text(encoding="ascii").splitlines()
+-    start = lines.index("$Elements") + 2
+-    end = lines.index("$EndElements")
+-    result = []
+-    for line in lines[start:end]:
+-        fields = [int(item) for item in line.split()]
+-        _element_id, element_type, tag_count = fields[:3]
+-        if element_type != 2 or tag_count < 1 or fields[3] != 2:
++def public_material_observation(handles, preflight_materials, preflight_access, preflight_classes, aka) -> dict:
++    result = {"access": preflight_access, "fields": {},
++              "status": "observed" if handles else "UNKNOWN_no_public_material_handle"}
++    for index, handle in enumerate(handles):
++        key = f"material_{index}:{type(handle).__name__}"
++        plan = preflight_materials[index] if index < len(preflight_materials) else None
++        values = {}
++        if plan is not None and plan.get("type") == type(handle).__name__:
++            for name, entry in plan.get("fields", {}).items():
++                if entry.get("noarg_call_status") == "ok":
++                    try:
++                        values[name] = {"status": "ok", "value": jsonable(getattr(handle, name)())}
++                    except Exception as error:
++                        values[name] = {"status": "error", "error": repr(error)}
++        class_plan = preflight_classes.get(type(handle).__name__, {}).get("public_methods", {})
++        # Preflight docs establish these public signatures as (type, optional ghost_type).
++        for name in ("getOpening", "getTraction"):
++            if name not in class_plan or not callable(getattr(handle, name, None)):
++                continue
++            try:
++                raw = getattr(handle, name)(aka._cohesive_3d_6)
++                try:
++                    array = np.asarray(raw).copy()
++                    field_value = {"shape": list(array.shape), "values": jsonable(array)} if array.dtype != object else jsonable(raw)
++                except Exception:
++                    field_value = jsonable(raw)
++                values[name] = {"status": "ok", "element_type": "_cohesive_3d_6", "value": field_value}
++            except Exception as error:
++                values[name] = {"status": "error", "element_type": "_cohesive_3d_6", "error": repr(error)}
++        if not values:
++            values = {"status": "UNKNOWN_no_public_opening_traction_or_zero_argument_state_getter"}
++        result["fields"][key] = values
++    return result
++
++
++def compare_probe_to_baseline(probe_rows: dict, baseline_path: Path) -> dict:
++    with baseline_path.open(newline="", encoding="utf-8-sig") as stream:
++        baseline_rows = {int(row["step"]): row for row in csv.DictReader(stream)}
++    names = {
++        "kinetic_J": "kinetic_J", "bulk_potential_J": "bulk_potential_J",
++        "cohesive_dissipated_J": "cohesive_dissipated_J", "cohesive_reversible_J": "cohesive_reversible_J",
++        "actuator_force_estimate_N": "actuator_force_estimate_N",
++        "mass_component_0_kg": "mass_component_0_kg", "mass_component_1_kg": "mass_component_1_kg",
++        "mass_component_2_kg": "mass_component_2_kg",
++        "cohesive_insertions_this_step": "cohesive_insertions_this_step",
++        "cohesive_insertions_cumulative": "cohesive_insertions_cumulative",
++        "mesh_nodes": "mesh_nodes", "bulk_tetrahedra": "bulk_tetrahedra", "cohesive_elements": "cohesive_elements",
++    }
++    energy_names = set(ENERGY_FIELDS_FOR_MATCH)
++    rows_compared = 0
++    errors = []
++    maxima = {key: {"max_abs": 0.0, "max_rel": 0.0} for key in names}
++    for step in range(1, MAX_STEPS + 1):
++        left, right = probe_rows.get(step), baseline_rows.get(step)
++        if left is None or right is None:
++            errors.append({"step": step, "reason": "missing row", "probe": left is not None, "baseline": right is not None})
+             continue
+-        result.append(tuple(node_id - 1 for node_id in fields[5:8]))
+-    return result
+-
+-
+-def parent_face_index(tetrahedra: np.ndarray, face_key: tuple[int, int, int]) -> list[int]:
+-    matches = []
+-    for element_id, tet in enumerate(tetrahedra):
+-        if len(set(face_key).intersection(int(node) for node in tet)) == 3:
+-            matches.append(element_id)
+-    return matches
+-
+-
+-def construct_native_lineage(
+-    original_nodes: np.ndarray,
+-    original_tets: np.ndarray,
+-    original_interface_faces: list[tuple[int, int, int]],
+-    final_nodes: np.ndarray,
+-    final_tets: np.ndarray,
+-    cohesive_connectivity: np.ndarray,
+-) -> dict:
+-    """Trace material ancestry through native bulk element IDs/local vertex ordinals.
+-
+-    This deliberately does not use geometric proximity. It accepts a map only when
+-    post-insertion bulk connectivity has the same element count/order and gives one
+-    conflict-free current-node -> input-material-node map under the native
+-    element-ID/local-ordinal correspondence.
+-    """
+-    n_original = len(original_nodes)
+-    if len(final_nodes) < n_original or len(final_tets) != len(original_tets):
+-        return {
+-            "status": "UNKNOWN",
+-            "reason": "post-insertion node or bulk-element cardinality is inconsistent with the native pre-insertion snapshot",
+-            "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-            "facets": [],
+-        }
+-
+-    current_to_material: dict[int, int] = {}
+-    for bulk_element_id, (source_tet, post_tet) in enumerate(zip(original_tets, final_tets)):
+-        if len(source_tet) != 4 or len(post_tet) != 4:
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": f"unexpected tetrahedron connectivity width at native bulk element {bulk_element_id}",
+-                "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                "facets": [],
+-            }
+-        for local_ordinal, (source_node, current_node) in enumerate(zip(source_tet, post_tet)):
+-            source_node = int(source_node)
+-            current_node = int(current_node)
+-            if current_node < n_original and current_node != source_node:
+-                return {
+-                    "status": "UNKNOWN",
+-                    "reason": f"native input-node ID {current_node} changed ancestry at bulk element {bulk_element_id}, local vertex {local_ordinal}",
+-                    "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                    "facets": [],
+-                }
+-            previous = current_to_material.get(current_node)
+-            if previous is not None and previous != source_node:
+-                return {
+-                    "status": "UNKNOWN",
+-                    "reason": f"current node {current_node} maps to conflicting input material IDs {previous} and {source_node}",
+-                    "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                    "facets": [],
+-                }
+-            current_to_material[current_node] = source_node
+-
+-    used_post_nodes = {int(node) for node in final_tets.flat}
+-    if not used_post_nodes.issubset(current_to_material):
+-        return {
+-            "status": "UNKNOWN",
+-            "reason": "some post-insertion bulk nodes have no cell-ID/local-ordinal material ancestry",
+-            "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-            "facets": [],
+-        }
+-    if any(current_to_material.get(node) != node for node in range(n_original)):
+-        return {
+-            "status": "UNKNOWN",
+-            "reason": "one or more original input-node IDs are absent or no longer self-identify in native bulk connectivity",
+-            "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-            "facets": [],
+-        }
+-
+-    face_to_parent = {
+-        tuple(sorted(face)): parent_face_index(original_tets, tuple(sorted(face)))
+-        for face in original_interface_faces
++        rows_compared += 1
++        for probe_key, old_key in names.items():
++            try:
++                av, bv = float(left[probe_key]), float(right[old_key])
++            except Exception as error:
++                errors.append({"step": step, "field": probe_key, "reason": "unavailable", "error": repr(error)})
++                continue
++            diff = abs(av - bv)
++            rel = diff / abs(bv) if bv else (0.0 if diff == 0 else math.inf)
++            maxima[probe_key]["max_abs"] = max(maxima[probe_key]["max_abs"], diff)
++            maxima[probe_key]["max_rel"] = max(maxima[probe_key]["max_rel"], rel)
++            if probe_key in energy_names:
++                passed = diff <= 1e-12 if bv == 0.0 else (diff <= 1e-12 and rel <= 1e-10)
++            elif "insertions" in probe_key or probe_key in ("mesh_nodes", "bulk_tetrahedra", "cohesive_elements"):
++                passed = av == bv
++            else:
++                passed = diff <= 1e-12 if bv == 0.0 else rel <= 1e-10
++            if not passed:
++                errors.append({"step": step, "field": probe_key, "probe": av, "baseline": bv,
++                               "abs_diff": diff, "relative_diff": rel})
++    return {
++        "baseline_trace_sha256": sha256(baseline_path), "rows_compared_1_through_654": rows_compared,
++        "comparison_tolerances": {"energy": "zero baseline: abs<=1e-12 J; otherwise both abs<=1e-12 J and relative<=1e-10",
++                                   "nonenergy_float": "zero baseline: abs<=1e-12; otherwise relative<=1e-10",
++                                   "counts": "exact"},
++        "maxima_by_field": maxima, "passed": rows_compared == MAX_STEPS and not errors,
++        "error_count": len(errors), "errors_first_100": errors[:100],
++        "position_comparison": "UNKNOWN_no_per_step_baseline_native_position_frames",
+     }
+-    mapped = []
+-    side_area_sums_m2 = [0.0, 0.0]
+-    side_normal_dot_products = []
+-    for cohesive_id, row in enumerate(cohesive_connectivity):
+-        if len(row) != 6:
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": f"unexpected cohesive connectivity width {len(row)}",
+-                "method": "no coordinate matching used",
+-                "facets": mapped,
+-            }
+-        side_a = [int(node) for node in row[:3]]
+-        side_b = [int(node) for node in row[3:]]
+-        if any(node not in current_to_material for node in side_a + side_b):
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": "native cohesive connectivity includes a node without cell-ID/local-ordinal material ancestry",
+-                "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                "facets": mapped,
+-            }
+-        material_side_a = tuple(sorted(current_to_material[node] for node in side_a))
+-        material_side_b = tuple(sorted(current_to_material[node] for node in side_b))
+-        if material_side_a != material_side_b or material_side_a not in face_to_parent:
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": "native cohesive sides do not map through bulk cell identity to the same declared input interface triangle",
+-                "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                "facets": mapped,
+-            }
+-        source_face = material_side_a
+-        parents = face_to_parent[source_face]
+-        if len(parents) != 2:
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": f"declared interface face has {len(parents)} input bulk parents, expected two",
+-                "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                "facets": mapped,
+-            }
+-        parent_by_side = []
+-        for side in (side_a, side_b):
+-            side_parents = [
+-                tet_id
+-                for tet_id, tet in enumerate(final_tets)
+-                if len(set(side).intersection(int(node) for node in tet)) == 3
+-            ]
+-            parent_by_side.append(side_parents)
+-        if any(len(side_parents) != 1 for side_parents in parent_by_side):
+-            return {
+-                "status": "UNKNOWN",
+-                "reason": "native post-insertion bulk connectivity does not give one parent tetrahedron per side",
+-                "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                "facets": mapped,
+-            }
+-        side_geometry = []
+-        for side_index, side in enumerate((side_a, side_b)):
+-            points = final_nodes[np.asarray(side, dtype=np.int64)]
+-            cross = np.cross(points[1] - points[0], points[2] - points[0])
+-            norm = float(np.linalg.norm(cross))
+-            if norm == 0.0:
+-                return {
+-                    "status": "UNKNOWN",
+-                    "reason": f"native cohesive element {cohesive_id} has a zero-area side",
+-                    "method": "native bulk element ID + local vertex ordinal only; no coordinate matching",
+-                    "facets": mapped,
+-                }
+-            area = 0.5 * norm
+-            normal = cross / norm
+-            side_area_sums_m2[side_index] += area
+-            side_geometry.append({"area_m2": area, "unit_normal": [float(v) for v in normal]})
+-        normal_dot = float(np.dot(side_geometry[0]["unit_normal"], side_geometry[1]["unit_normal"]))
+-        side_normal_dot_products.append(normal_dot)
+-        mapped.append(
+-            {
+-                "cohesive_element_id": cohesive_id,
+-                "parent_input_face_node_ids": list(source_face),
+-                "side_a_node_ids": side_a,
+-                "side_b_node_ids": side_b,
+-                "side_a_material_node_ids": list(current_to_material[node] for node in side_a),
+-                "side_b_material_node_ids": list(current_to_material[node] for node in side_b),
+-                "current_node_to_input_material_node_id": {
+-                    str(node): current_to_material[node]
+-                    for node in side_a + side_b
+-                },
+-                "input_parent_tetrahedron_ids": parents,
+-                "post_insert_parent_tetrahedron_ids_by_cohesive_side": parent_by_side,
+-                "rest_side_geometry": side_geometry,
+-                "rest_side_normal_dot_product": normal_dot,
+-            }
+-        )
+-    return {
+-        "status": "EXACT_FOR_CONTRACT_MESH_FROM_NATIVE_CONNECTIVITY",
+-        "reason": "post-insertion bulk tetrahedra retained the pre-insertion native element count/order and yielded a conflict-free current-node -> input-material-node map under identical native element IDs and local vertex ordinals; each cohesive side maps to the same declared input face and one bulk parent per side",
+-        "method": "native bulk element IDs + local vertex ordinals + cohesive connectivity only; no coordinate-nearest matching",
+-        "bulk_elements_before_after": [len(original_tets), len(final_tets)],
+-        "current_bulk_nodes_mapped": len(used_post_nodes),
+-        "current_nodes_with_input_material_ancestry": len(current_to_material),
+-        "current_node_to_input_material_node_id": {str(k): v for k, v in sorted(current_to_material.items())},
+-        "cohesive_rest_side_area_sums_m2": side_area_sums_m2,
+-        "cohesive_rest_side_normal_dot_products": side_normal_dot_products,
+-        "facets": mapped,
++
++
++def save_phase(phase_path: Path, dense_dir: Path, step: int, phase: str, model_time, bc_time,
++               mesh, model, aka, current_work, previous_work, insertion_delta,
++               material_cache, preflight_materials, preflight_material_access, preflight_classes, arrays=True):
++    state = sample_arrays(mesh, model, aka) if arrays else None
++    energies = energy_values(model)
++    material = public_material_observation(material_cache, preflight_materials, preflight_material_access, preflight_classes, aka)
++    record = {
++        "step": step, "phase": phase,
++        "time_before_step_s": model_time,
++        "prescribed_boundary_time_s": bc_time,
++        "prescribed_boundary_time_is_set": phase in ("B", "C", "D"),
++        "energy_getters": energies,
++        "material_fields": material,
++        "material_field_last_updated_phase": "UNKNOWN_native update/commit timing not exposed by inspected public API",
++        "external_work_estimate_J": current_work,
++        "external_work_before_D_update_J": previous_work if phase == "D" else None,
++        "external_work_update_occurs_in_phase": "D_after_solve_from_sampled_reaction_and_delta_u",
++        "cohesive_insertions_this_step": insertion_delta if phase in ("C", "D") else 0,
+     }
+-
+-
+-def main() -> int:
+-    if len(sys.argv) != 2 or sys.argv[1] not in {"zero_load", "modeI_dt", "modeI_dt2"}:
+-        raise SystemExit("usage: run_contract.py {zero_load|modeI_dt|modeI_dt2}")
+-    case_name = sys.argv[1]
+-    if not MANIFEST_PATH.exists():
+-        raise RuntimeError("Frozen manifest is required before any simulation case starts")
+-    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+-    case = manifest["cases"][case_name]
+-    output = REVIEW / case_name
+-    output.mkdir(parents=True, exist_ok=True)
++    if state is not None:
++        record.update({k: v for k, v in state.items() if not isinstance(v, np.ndarray)})
++        out = dense_dir / f"step_{step:05d}_{phase}.npz"
++        np.savez_compressed(out, **{k: v for k, v in state.items() if isinstance(v, np.ndarray)})
++        record["native_array_snapshot"] = out.name
++    with phase_path.open("a", encoding="utf-8") as stream:
++        stream.write(json.dumps(jsonable(record), sort_keys=True) + "\n")
++        stream.flush()
++        os.fsync(stream.fileno())
++    return state, energies
++
++
++def run_once() -> int:
++    if (RUN_DIR / "run_status.json").exists() or (RUN_DIR / "trace.csv").exists():
++        raise RuntimeError("single-use run output already exists; refusing to overwrite or retry")
++    integrity = verify_and_record_snapshots()
++    make_source_diff()
++    preflight_path = RUN_DIR / "preflight.json"
++    if not preflight_path.is_file():
++        raise RuntimeError("required preflight.json is absent; solver not started")
++    preflight_result = json.loads(preflight_path.read_text(encoding="utf-8"))
++    if preflight_result.get("preflight_status") != "PASS_no_solver_steps":
++        raise RuntimeError("preflight did not pass; solver not started")
++    RUN_DIR.mkdir(parents=True, exist_ok=True)
++    make_source_diff()
++    write_json(RUN_DIR / "driver_source_identity.json", {
++        "preflight_driver_sha256": sha256(WORK / "probe_driver.preflight.py"),
++        "solver_driver_sha256": sha256(Path(__file__)),
++        "preflight_evidence_source_sha256_was_not_rewritten": True,
++        "preflight_api_docs_used_for_runtime_state_reads": [
++            "SolidMechanicsModel.getNbMaterials()", "SolidMechanicsModel.getMaterial(material_id)",
++            "MaterialCohesive.getOpening(type, ghost_type)", "MaterialCohesive.getTraction(type, ghost_type)",
++        ],
++        "only_static_compile_repeated_after_adapting_accessor_count_name": True,
++    })
++    dense_dir = RUN_DIR / "dense_states"
++    dense_dir.mkdir(exist_ok=True)
+     start_utc = datetime.now(timezone.utc).isoformat()
+-    start_mono = time.monotonic()
++    start = time.monotonic()
+     status = {
+-        "case": case_name,
+-        "start_utc": start_utc,
+-        "argv": sys.argv,
+-        "cwd": os.getcwd(),
+-        "python": sys.executable,
+-        "python_version": platform.python_version(),
+-        "platform": platform.platform(),
+-        "manifest_sha256": sha256(MANIFEST_PATH),
+-        "input_hashes_valid": True,
+-        "status": "RUNNING",
++        "run_id": RUN_ID, "case": "modeI_dt", "status": "RUNNING_SINGLE_SOLVER_ATTEMPT",
++        "start_utc": start_utc, "argv": sys.argv, "cwd": os.getcwd(),
++        "python": sys.executable, "python_version": platform.python_version(),
++        "platform": platform.platform(), "solver_attempts": 1,
++        "steps_original_case": 1707, "steps_cap": MAX_STEPS, "thread_limit": "OMP_NUM_THREADS=1",
++        "dt_s": float(json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))["cases"]["modeI_dt"]["dt_s"]),
++        "pre_run_snapshot_integrity": integrity,
++        "instrumented_source_sha256": sha256(Path(__file__)),
++        "preflight_driver_sha256": sha256(WORK / "probe_driver.preflight.py"),
++        "baseline_trace_sha256": sha256(REFERENCE / "trace.csv"),
+     }
+-    for relative, expected in manifest["input_sha256"].items():
+-        actual = sha256(ROOT / relative)
+-        if actual.lower() != expected.lower():
+-            status["input_hashes_valid"] = False
+-            status["input_hash_mismatch"] = {"path": relative, "expected": expected, "actual": actual}
+-            (output / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
+-            raise RuntimeError(f"Frozen input hash mismatch: {relative}")
+-
++    write_json(RUN_DIR / "run_status.json", status)
+     try:
+-        aka.parseInput(str(INPUT / "material.dat"))
+-        mesh = aka.Mesh(3)
+-        mesh.read(str(INPUT / "block_2x2x4mm.msh"))
++        import akantu as aka
++        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
++        case = manifest["cases"]["modeI_dt"]
++        mesh, model, eligible, eligible_total = build_model(aka, manifest)
++        preflight_materials = preflight_result.get("material_objects", [])
++        preflight_classes = preflight_result.get("module_cohesive_material_classes", {})
++        material_cache, run_material_access = material_handles(model)
+         original_nodes = array_copy(mesh.getNodes())
+         original_tets = array_copy(mesh.getConnectivity(aka._tetrahedron_4))
+-        original_interface_faces = read_interface_triangles(INPUT / "block_2x2x4mm.msh")
+-        model = aka.SolidMechanicsModelCohesive(mesh)
+-        model.initFull(_analysis_method=aka._explicit_lumped_mass, _is_extrinsic=True)
+-        model.assembleMassLumped()
+-
+-        inserter = model.getElementInserter()
+-        inserter.addPhysicalSurface("interface")
+-        model.updateAutomaticInsertion()
+-        check_map = inserter.getCheckFacets()
+-        eligible = int(np.count_nonzero(check_map(aka._triangle_3)))
+-        eligible_total = int(check_map(aka._triangle_3).size)
+-        insertion_map = inserter.getInsertionFacets()
+-        already_inserted = int(np.count_nonzero(insertion_map(aka._triangle_3)))
+-        if eligible != manifest["expected_insertion_facets"] or already_inserted != 0:
+-            raise RuntimeError(
+-                f"pre-step interface selection mismatch: {eligible}/{eligible_total} check facets, "
+-                f"{already_inserted} already inserted"
+-            )
+-
+-        mass_before = mass_summary(model)
+-        initial_energies = energy_summary(model)
+-        if case_name == "zero_load":
+-            model.applyBC(aka.FixedValue(0.0, aka._z), "bottom")
+-            model.applyBC(aka.FixedValue(0.0, aka._z), "top")
+-            ramp = None
+-        else:
+-            model.applyBC(aka.FixedValue(0.0, aka._z), "bottom")
+-            ramp = RampTop(
+-                float(manifest["loading"]["top_displacement_m"]),
+-                float(manifest["loading"]["ramp_duration_s"]),
+-            )
++        np.savez_compressed(RUN_DIR / "input_native_initial.npz", rest_nodes=original_nodes,
++                            bulk_tetra_connectivity=original_tets,
++                            cohesive_connectivity=np.empty((0, 6), dtype=np.int64),
++                            mass=array_copy(model.getMass()))
+         top_node_ids = np.flatnonzero(np.abs(original_nodes[:, 2] - 4.0e-3) < 1.0e-15)
+         if len(top_node_ids) != 9:
+             raise RuntimeError(f"expected 9 top nodes, found {len(top_node_ids)}")
+-
++        model.applyBC(aka.FixedValue(0.0, aka._z), "bottom")
++
++        class RampTop(aka.DirichletFunctor):
++            def __init__(self, amplitude, duration):
++                super().__init__(aka._z)
++                self.axis, self.amplitude, self.duration, self.time = int(aka._z), amplitude, duration, 0.0
++            def set_time(self, value):
++                self.time = value
++            def __call__(self, node, flags, disp, coord):
++                flags[self.axis] = True
++                disp[self.axis] = self.amplitude * min(max(self.time / self.duration, 0.0), 1.0)
++
++        ramp = RampTop(float(manifest["loading"]["top_displacement_m"]), float(manifest["loading"]["ramp_duration_s"]))
+         dt = float(case["dt_s"])
+-        steps = int(case["steps"])
+-        if steps > MAX_STEPS:
+-            steps = MAX_STEPS
+-            status["status"] = "NOT_REACHED_STEP_LIMIT"
+         model.setTimeStep(dt)
+-
+-        trace_path = output / "trace.csv"
+-        field_names = (
+-            "step",
+-            "time_s",
+-            "imposed_top_displacement_m",
+-            "top_internal_reaction_raw_N",
+-            "actuator_force_estimate_N",
+-            "external_work_J",
+-            "kinetic_J",
+-            "bulk_potential_J",
+-            "cohesive_dissipated_J",
+-            "cohesive_reversible_J",
+-            "cohesive_contact_energy_J",
+-            "energy_ledger_residual_J",
+-            "mass_component_0_kg",
+-            "mass_component_1_kg",
+-            "mass_component_2_kg",
+-            "mesh_nodes",
+-            "bulk_tetrahedra",
+-            "cohesive_elements",
+-            "cohesive_insertions_this_step",
++        initial_mass = array_copy(model.getMass())
++        mass_before_components = [float(initial_mass[:, axis].sum()) for axis in range(initial_mass.shape[1])]
++        phase_path = RUN_DIR / "phase_evidence.jsonl"
++        trace_path = RUN_DIR / "trace.csv"
++        events_path = RUN_DIR / "events.json"
++        trace_fields = [
++            "step", "time_s", "time_before_step_s", "imposed_top_displacement_m",
++            "top_internal_reaction_raw_N", "actuator_force_estimate_N", "external_work_J",
++            "kinetic_J", "bulk_potential_J", "cohesive_dissipated_J", "cohesive_reversible_J",
++            "cohesive_contact_native_key_J", "contact_alias_diagnostic_J", "energy_ledger_residual_J",
++            "mass_component_0_kg", "mass_component_1_kg", "mass_component_2_kg",
++            "mesh_nodes", "bulk_tetrahedra", "cohesive_elements", "cohesive_insertions_this_step",
+             "cohesive_insertions_cumulative",
+-        )
+-        rows = []
+-        events = []
++        ]
+         current_work = 0.0
+         previous_force = 0.0
+         previous_displacement = 0.0
+         total_native_insertions = 0
+-        total_api_insertions = 0
+-        inserted_count_seen = mesh_element_count(mesh, aka._cohesive_3d_6)
+-        event_first_insert_step = None
+-        event_first_insert_time = None
+-        full_debond_step = None
+-        full_debond_time = None
+-        expected_dissipation = float(manifest["expected_interface_dissipation_J"])
+-        mass_before_components = mass_before["component_sums_kg"]
+-
+-        def append_row(step: int, time_value: float, native_inserted_count: int = 0) -> dict:
++        inserted_seen = int(mesh.getNbElement(type=aka._cohesive_3d_6))
++        events = []
++        probe_rows = {}
++
++        def write_d_row(writer, step, time_value, time_before, insertion_delta, internal_force=None):
+             nonlocal current_work, previous_force, previous_displacement, total_native_insertions
+-            displacement = float(manifest["loading"]["top_displacement_m"]) * min(
+-                max(time_value / float(manifest["loading"]["ramp_duration_s"]), 0.0), 1.0
+-            ) if ramp is not None else 0.0
+-            force_raw = 0.0
+-            if ramp is not None:
+-                internal = array_copy(model.getInternalForce())
+-                force_raw = float(internal[top_node_ids, 2].sum())
+-            actuator_force = -force_raw
+-            current_work += 0.5 * (previous_force + actuator_force) * (
+-                displacement - previous_displacement
+-            )
+-            previous_force = actuator_force
+-            previous_displacement = displacement
+-            energies = energy_summary(model)
+-            mass_now = mass_summary(model)["component_sums_kg"]
+-            total_native_insertions += native_inserted_count
+-            storage_and_loss = (
+-                energies["kinetic"]
+-                + energies["potential"]
+-                + energies["reversible"]
+-                + energies["dissipated"]
+-                + energies["contact"]
+-            )
++            imposed = float(manifest["loading"]["top_displacement_m"]) * min(max(time_value / float(manifest["loading"]["ramp_duration_s"]), 0.0), 1.0)
++            force = array_copy(model.getInternalForce()) if internal_force is None else internal_force
++            raw = float(force[top_node_ids, 2].sum())
++            actuator = -raw
++            before = current_work
++            current_work += 0.5 * (previous_force + actuator) * (imposed - previous_displacement)
++            previous_force, previous_displacement = actuator, imposed
++            e = energy_values(model)
++            mass = mass_components(model)
++            values = {name: (entry.get("value_J") if entry.get("status") == "ok" else None) for name, entry in e.items()}
++            total_native_insertions += insertion_delta
++            ledger_keys = ("kinetic_J", "bulk_potential_J", "cohesive_reversible_J", "cohesive_dissipated_J", "contact_alias_diagnostic_J")
++            ledger_known = all(e[k].get("status") == "ok" for k in ENERGY_REQUESTS if k in ledger_keys)
++            storage = sum(values[k] for k in ledger_keys) if ledger_known else None
+             row = {
+-                "step": step,
+-                "time_s": time_value,
+-                "imposed_top_displacement_m": displacement,
+-                "top_internal_reaction_raw_N": force_raw,
+-                "actuator_force_estimate_N": actuator_force,
+-                "external_work_J": current_work,
+-                "kinetic_J": energies["kinetic"],
+-                "bulk_potential_J": energies["potential"],
+-                "cohesive_dissipated_J": energies["dissipated"],
+-                "cohesive_reversible_J": energies["reversible"],
+-                "cohesive_contact_energy_J": energies["contact"],
+-                "energy_ledger_residual_J": current_work - storage_and_loss,
+-                "mass_component_0_kg": mass_now[0],
+-                "mass_component_1_kg": mass_now[1],
+-                "mass_component_2_kg": mass_now[2] if len(mass_now) > 2 else math.nan,
+-                "mesh_nodes": mesh.getNbNodes(),
+-                "bulk_tetrahedra": mesh_element_count(mesh, aka._tetrahedron_4),
+-                "cohesive_elements": mesh_element_count(mesh, aka._cohesive_3d_6),
+-                "cohesive_insertions_this_step": native_inserted_count,
++                "step": step, "time_s": time_value, "time_before_step_s": time_before,
++                "imposed_top_displacement_m": imposed, "top_internal_reaction_raw_N": raw,
++                "actuator_force_estimate_N": actuator, "external_work_J": current_work,
++                "kinetic_J": values.get("kinetic_J"), "bulk_potential_J": values.get("bulk_potential_J"),
++                "cohesive_dissipated_J": values.get("cohesive_dissipated_J"),
++                "cohesive_reversible_J": values.get("cohesive_reversible_J"),
++                "cohesive_contact_native_key_J": values.get("cohesive_contact_native_key_J"),
++                "contact_alias_diagnostic_J": values.get("contact_alias_diagnostic_J"),
++                "energy_ledger_residual_J": current_work - storage if storage is not None else None,
++                "mass_component_0_kg": mass[0], "mass_component_1_kg": mass[1],
++                "mass_component_2_kg": mass[2] if len(mass) > 2 else "",
++                "mesh_nodes": int(mesh.getNbNodes()),
++                "bulk_tetrahedra": int(mesh.getNbElement(type=aka._tetrahedron_4)),
++                "cohesive_elements": int(mesh.getNbElement(type=aka._cohesive_3d_6)),
++                "cohesive_insertions_this_step": insertion_delta,
+                 "cohesive_insertions_cumulative": total_native_insertions,
+             }
+-            return row
+-
+-        initial_row = append_row(0, 0.0)
+-        rows.append(initial_row)
+-        for step in range(1, steps + 1):
+-            current_time = step * dt
+-            if ramp is not None:
+-                ramp.set_time(current_time)
++            writer.writerow(row)
++            trace_stream.flush()
++            probe_rows[step] = row
++            return row, e, before
++
++        with trace_path.open("w", newline="", encoding="utf-8") as trace_stream:
++            writer = csv.DictWriter(trace_stream, fieldnames=trace_fields)
++            writer.writeheader()
++            writer.writerow({
++                "step": 0, "time_s": 0.0, "time_before_step_s": current_time_value(model),
++                "imposed_top_displacement_m": 0.0, "top_internal_reaction_raw_N": 0.0,
++                "actuator_force_estimate_N": 0.0, "external_work_J": 0.0,
++                **{k: (v.get("value_J") if v.get("status") == "ok" else None) for k, v in energy_values(model).items()},
++                "energy_ledger_residual_J": (0.0 if all(v.get("status") == "ok" for v in energy_values(model).values()) else None),
++                "mass_component_0_kg": mass_before_components[0], "mass_component_1_kg": mass_before_components[1],
++                "mass_component_2_kg": mass_before_components[2] if len(mass_before_components) > 2 else "",
++                "mesh_nodes": int(mesh.getNbNodes()), "bulk_tetrahedra": int(mesh.getNbElement(type=aka._tetrahedron_4)),
++                "cohesive_elements": 0, "cohesive_insertions_this_step": 0, "cohesive_insertions_cumulative": 0,
++            })
++            trace_stream.flush()
++
++            for step in range(1, MAX_STEPS + 1):
++                time_before = current_time_value(model)
++                prescribed_time = step * dt
++                insertion_delta = 0
++                if step in FOCUS_STEPS:
++                    save_phase(phase_path, dense_dir, step, "A", time_before, prescribed_time,
++                               mesh, model, aka, current_work, current_work, 0,
++                               material_cache, preflight_materials, run_material_access, preflight_classes)
++                ramp.set_time(prescribed_time)
+                 model.applyBC(ramp, "top")
+-            new_count = int(model.checkCohesiveStress())
+-            current_cohesive_count = mesh_element_count(mesh, aka._cohesive_3d_6)
+-            if current_cohesive_count < inserted_count_seen:
+-                raise RuntimeError("cohesive connectivity count decreased during the run")
+-            actual_added = current_cohesive_count - inserted_count_seen
+-            if new_count != actual_added:
+-                events.append(
+-                    {
+-                        "kind": "insertion_count_api_disagreement",
+-                        "step": step,
+-                        "time_s": current_time,
+-                        "checkCohesiveStress_return": new_count,
+-                        "cohesive_connectivity_count_delta": actual_added,
++                if step in FOCUS_STEPS:
++                    save_phase(phase_path, dense_dir, step, "B", time_before, prescribed_time,
++                               mesh, model, aka, current_work, current_work, 0,
++                               material_cache, preflight_materials, run_material_access, preflight_classes)
++                api_return = int(model.checkCohesiveStress())
++                cohesive_now = int(mesh.getNbElement(type=aka._cohesive_3d_6))
++                insertion_delta = cohesive_now - inserted_seen
++                if insertion_delta < 0 or api_return != insertion_delta:
++                    raise RuntimeError(f"cohesive insertion count disagreement at step {step}: api={api_return}, native_delta={insertion_delta}")
++                if insertion_delta:
++                    events.append({"step": step, "prescribed_boundary_time_s": prescribed_time,
++                                   "api_return": api_return, "cohesive_count": cohesive_now,
++                                   "mesh_nodes": int(mesh.getNbNodes())})
++                if step in FOCUS_STEPS:
++                    save_phase(phase_path, dense_dir, step, "C", time_before, prescribed_time,
++                               mesh, model, aka, current_work, current_work, insertion_delta,
++                               material_cache, preflight_materials, run_material_access, preflight_classes)
++                model.solveStep()
++                # Re-fetch post-solve state; these arrays are copied after any duplication at C.
++                d_state = sample_arrays(mesh, model, aka) if step in FOCUS_STEPS else None
++                force_for_row = d_state["internal_force"] if d_state is not None else None
++                row, d_energies, work_before = write_d_row(writer, step, prescribed_time, time_before, insertion_delta, force_for_row)
++                if step in FOCUS_STEPS:
++                    # Save D from the already re-fetched state and record energy values from the D trace sample.
++                    dense_path = dense_dir / f"step_{step:05d}_D.npz"
++                    np.savez_compressed(dense_path, **{k: v for k, v in d_state.items() if isinstance(v, np.ndarray)})
++                    phase_record = {
++                        "step": step, "phase": "D", "time_before_step_s": time_before,
++                        "solver_time_after_s": current_time_value(model),
++                        "prescribed_boundary_time_s": prescribed_time, "prescribed_boundary_time_is_set": True,
++                        "energy_getters": d_energies,
++                        "material_fields": public_material_observation(material_cache, preflight_materials, run_material_access, preflight_classes, aka),
++                        "material_field_last_updated_phase": "UNKNOWN_native update/commit timing not exposed by inspected public API",
++                        "external_work_estimate_J": current_work, "external_work_before_D_update_J": work_before,
++                        "external_work_update_occurs_in_phase": "D_after_solve_from_sampled_reaction_and_delta_u",
++                        "cohesive_insertions_this_step": insertion_delta,
++                        "native_array_snapshot": dense_path.name,
++                        "mesh_nodes_count": d_state["mesh_nodes_count"], "bulk_tetrahedra_count": d_state["bulk_tetrahedra_count"],
++                        "cohesive_elements_count": d_state["cohesive_elements_count"],
+                     }
+-                )
+-            total_api_insertions += new_count
+-            if new_count > 0 or actual_added > 0:
+-                if event_first_insert_step is None:
+-                    event_first_insert_step = step
+-                    event_first_insert_time = current_time
+-                events.append(
+-                    {
+-                        "kind": "dynamic_cohesive_insertion",
+-                        "step": step,
+-                        "time_s": current_time,
+-                        "checkCohesiveStress_return": new_count,
+-                        "cohesive_elements_after_check": current_cohesive_count,
+-                        "mesh_nodes_after_check": mesh.getNbNodes(),
+-                    }
+-                )
+-            model.solveStep()
+-            inserted_count_seen = current_cohesive_count
+-            row = append_row(step, current_time, actual_added)
+-            rows.append(row)
+-            if full_debond_step is None and expected_dissipation > 0:
+-                if row["cohesive_dissipated_J"] >= expected_dissipation * 0.999:
+-                    full_debond_step = step
+-                    full_debond_time = current_time
+-            if time.monotonic() - start_mono > MAX_WALL_S:
+-                status["status"] = "NOT_REACHED_WALL_LIMIT"
+-                events.append(
+-                    {"kind": "wall_limit", "step": step, "time_s": current_time, "limit_s": MAX_WALL_S}
+-                )
+-                break
+-
+-        with trace_path.open("w", newline="", encoding="utf-8") as stream:
+-            writer = csv.DictWriter(stream, fieldnames=field_names)
+-            writer.writeheader()
+-            writer.writerows(rows)
+-
+-        # Re-fetch and copy native arrays after insertion; do not reuse pre-insertion views.
+-        final_nodes = array_copy(mesh.getNodes())
+-        final_tets = array_copy(mesh.getConnectivity(aka._tetrahedron_4))
+-        final_cohesive_count = mesh_element_count(mesh, aka._cohesive_3d_6)
+-        final_cohesive_connectivity = (
+-            array_copy(mesh.getConnectivity(aka._cohesive_3d_6))
+-            if final_cohesive_count
+-            else np.empty((0, 6), dtype=np.int64)
+-        )
+-        final_mass = mass_summary(model)
+-        final_energy = energy_summary(model)
+-        lineage = construct_native_lineage(
+-            original_nodes,
+-            original_tets,
+-            original_interface_faces,
+-            final_nodes,
+-            final_tets,
+-            final_cohesive_connectivity,
+-        )
+-
+-        np.savez_compressed(
+-            output / "native_topology.npz",
+-            original_rest_nodes=original_nodes,
+-            original_bulk_tetra_connectivity=original_tets,
+-            original_interface_triangle_connectivity=np.asarray(original_interface_faces, dtype=np.int64),
+-            final_rest_nodes=final_nodes,
+-            final_bulk_tetra_connectivity=final_tets,
+-            final_cohesive_connectivity=final_cohesive_connectivity,
+-            final_displacement=array_copy(model.getDisplacement()),
+-            final_velocity=array_copy(model.getVelocity()),
+-            mass_before=mass_before["array"],
+-            mass_after=final_mass["array"],
+-        )
+-        (output / "events.json").write_text(json.dumps(events, indent=2) + "\n", encoding="utf-8")
+-        (output / "lineage.json").write_text(json.dumps(lineage, indent=2) + "\n", encoding="utf-8")
+-
+-        fragment_summary = {"api_present": hasattr(aka, "FragmentManager"), "status": "NOT_RUN"}
+-        if hasattr(aka, "FragmentManager"):
+-            try:
+-                fragment_manager = aka.FragmentManager(model)
+-                fragment_manager.buildFragments(1.0)
+-                fragment_summary = {
+-                    "api_present": True,
+-                    "status": "READ",
+-                    "fragment_count": int(fragment_manager.getNbFragment()),
+-                    "fragment_group_names": [group.getName() for group in fragment_manager.elementGroups()],
+-                }
+-            except Exception as error:
+-                fragment_summary = {
+-                    "api_present": True,
+-                    "status": "ERROR",
+-                    "error": repr(error),
+-                }
+-
+-        target_error = (
+-            abs(final_energy["dissipated"] - expected_dissipation) / expected_dissipation
+-            if expected_dissipation > 0
+-            else None
+-        )
+-        mass_diff = [after - before for before, after in zip(mass_before_components, final_mass["component_sums_kg"])]
+-        mass_conserved = all(abs(delta) <= 1e-14 * max(abs(before), 1e-300) for delta, before in zip(mass_diff, mass_before_components))
+-        if status["status"] == "RUNNING":
+-            status["status"] = "COMPLETED" if len(rows) == int(case["steps"]) + 1 else "NOT_REACHED"
+-        status.update(
+-            {
+-                "end_utc": datetime.now(timezone.utc).isoformat(),
+-                "elapsed_s": time.monotonic() - start_mono,
+-                "stable_time_step_s": float(model.getStableTimeStep()),
+-                "time_step_s": dt,
+-                "steps_requested": int(case["steps"]),
+-                "steps_completed": len(rows) - 1,
+-                "endtime_target_s": float(manifest["loading"]["endtime_s"]),
+-                "endtime_reached_s": (len(rows) - 1) * dt,
+-                "endtime_reached": len(rows) - 1 == int(case["steps"]),
+-                "inserted_interface_facets_expected": int(manifest["expected_insertion_facets"]),
+-                "eligible_facets_checked": eligible,
+-                "eligible_facet_slots_total": eligible_total,
+-                "dynamic_insertions_native_connectivity": total_native_insertions,
+-                "dynamic_insertions_api_returned": total_api_insertions,
+-                "cohesive_elements_final": final_cohesive_count,
+-                "mesh_nodes_before_after": [len(original_nodes), len(final_nodes)],
+-                "bulk_tetrahedra_before_after": [len(original_tets), len(final_tets)],
+-                "first_insertion_step": event_first_insert_step,
+-                "first_insertion_time_s": event_first_insert_time,
+-                "complete_debond_step_by_dissipation_target": full_debond_step,
+-                "complete_debond_time_s_by_dissipation_target": full_debond_time,
+-                "dissipated_energy_target_J": expected_dissipation,
+-                "dissipated_energy_final_J": final_energy["dissipated"],
+-                "dissipated_energy_relative_error": target_error,
+-                "mass_component_sums_before_kg": mass_before_components,
+-                "mass_component_sums_after_kg": final_mass["component_sums_kg"],
+-                "mass_component_sum_deltas_kg": mass_diff,
+-                "mass_conserved_by_component": mass_conserved,
+-                "initial_energies_J": initial_energies,
+-                "final_energies_J": final_energy,
+-                "external_work_final_J": current_work,
+-                "energy_ledger_residual_final_J": rows[-1]["energy_ledger_residual_J"],
+-                "energy_ledger_relative_residual": (
+-                    rows[-1]["energy_ledger_residual_J"] / current_work if current_work else None
+-                ),
+-                "lineage_status": lineage["status"],
+-                "native_connectivity_shape": list(final_cohesive_connectivity.shape),
+-                "native_parent_mapping_method": lineage["method"],
+-                "fragment_summary": fragment_summary,
+-                "contact_status": "NOT_RUN",
+-                "roughness_status": "NOT_VALIDATED",
+-                "material_status": "UNVALIDATED_TOY",
+-                "source_file_sha256": sha256(Path(__file__)),
+-                "trace_csv_sha256": sha256(trace_path),
+-                "native_topology_sha256": sha256(output / "native_topology.npz"),
+-            }
+-        )
+-        (output / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
++                    with phase_path.open("a", encoding="utf-8") as stream:
++                        stream.write(json.dumps(jsonable(phase_record), sort_keys=True) + "\n")
++                        stream.flush(); os.fsync(stream.fileno())
++                inserted_seen = cohesive_now
++                if time.monotonic() - start > MAX_WALL_S:
++                    raise TimeoutError(f"300 s cap reached at step {step}; no retry")
++
++        write_json(events_path, {"events": events, "early_stop_after_step": MAX_STEPS,
++                                 "not_a_complete_1707_step_baseline": True})
++        comparison = compare_probe_to_baseline(probe_rows, REFERENCE / "trace.csv")
++        write_json(RUN_DIR / "baseline_comparison.json", comparison)
++        status.update({
++            "status": "DIAGNOSTIC_EARLY_STOP_NOT_COMPLETE",
++            "end_utc": datetime.now(timezone.utc).isoformat(), "elapsed_s": time.monotonic() - start,
++            "steps_completed": MAX_STEPS, "original_case_steps": 1707, "complete_case": False,
++            "eligible_interface_facets": eligible, "eligible_facet_slots_total": eligible_total,
++            "insertions": events, "comparison_passed": comparison["passed"],
++            "native_state_capture_steps": sorted(FOCUS_STEPS), "phase_evidence": "phase_evidence.jsonl",
++            "native_material_field_update_phase": "UNKNOWN unless values are exposed by public no-argument material getters",
++            "external_work_definition": "same reaction/displacement trapezoid estimate as baseline; updated at D only, after solveStep",
++            "solver_retries": 0,
++        })
++        write_json(RUN_DIR / "run_status.json", status)
++        write_conclusion(status, comparison)
+         return 0
+     except Exception as error:
+-        status.update(
+-            {
+-                "end_utc": datetime.now(timezone.utc).isoformat(),
+-                "elapsed_s": time.monotonic() - start_mono,
+-                "status": "FAILED",
+-                "exception": repr(error),
+-                "traceback": traceback.format_exc(),
+-            }
+-        )
+-        (output / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
++        status.update({"status": "FAILED_NO_RETRY", "end_utc": datetime.now(timezone.utc).isoformat(),
++                       "elapsed_s": time.monotonic() - start, "exception": repr(error),
++                       "traceback": traceback.format_exc(), "solver_retries": 0})
++        write_json(RUN_DIR / "run_status.json", status)
++        write_conclusion(status, None)
+         raise
+ 
+ 
++def write_conclusion(status, comparison) -> None:
++    result = {
++        "run_id": RUN_ID, "status": status.get("status"),
++        "solver_attempts": status.get("solver_attempts", 1), "solver_retries": 0,
++        "steps_completed": status.get("steps_completed", 0), "complete_1707_step_case": False,
++        "first_negative_dissipated_step": "UNKNOWN_until_trace_parse",
++        "first_negative_dissipated_phase": "UNKNOWN_until_phase_parse",
++        "baseline_comparison": comparison["passed"] if comparison else "NOT_COMPLETED",
++        "baseline_position_comparison": "UNKNOWN_no_per_step_native_position_frames",
++        "native_traction_opening_damage": {"opening": "UNKNOWN_until_phase_parse", "traction": "UNKNOWN_until_phase_parse", "damage_or_history": "UNKNOWN_unless_a_public_getter was observed"},
++        "native_material_update_phase": "UNKNOWN_unless observed field values changed across phases",
++        "contact_key_audit": "see phase_evidence.jsonl: cohesive contact is canonical; contact is legacy diagnostic only",
++        "source_diff": "../experiments/cohesive_event_probe_20261004/run_contract_instrumented.diff",
++        "phase_evidence": "phase_evidence.jsonl", "full_trace": "trace.csv",
++        "source_sha256": status.get("pre_run_snapshot_integrity", {}).get("source_sha256_actual"),
++        "manifest_sha256": status.get("pre_run_snapshot_integrity", {}).get("manifest_sha256_actual"),
++        "wheel_source_identity": "UNKNOWN_installed akantu 5.0.7.post1 vs reviewed v5.0.7 tag",
++    }
++    trace_path = RUN_DIR / "trace.csv"
++    phase_path = RUN_DIR / "phase_evidence.jsonl"
++    phase_records = []
++    if phase_path.is_file():
++        try:
++            phase_records = [json.loads(line) for line in phase_path.read_text(encoding="utf-8").splitlines() if line.strip()]
++        except Exception as error:
++            result["phase_parse_error"] = repr(error)
++    phase_order = {"A": 0, "B": 1, "C": 2, "D": 3}
++    negative_phase = None
++    for record in sorted(phase_records, key=lambda r: (int(r["step"]), phase_order.get(r["phase"], 9))):
++        entry = record.get("energy_getters", {}).get("cohesive_dissipated_J", {})
++        if entry.get("status") == "ok" and float(entry["value_J"]) < 0.0:
++            negative_phase = {"step": int(record["step"]), "phase": record["phase"], "dissipated_J": float(entry["value_J"]),
++                              "time_before_step_s": record.get("time_before_step_s"),
++                              "prescribed_boundary_time_s": record.get("prescribed_boundary_time_s")}
++            break
++    if negative_phase:
++        result["first_negative_dissipated_step"] = negative_phase["step"]
++        result["first_negative_dissipated_phase"] = negative_phase
++    def native_getter_summary(field_name):
++        samples = []
++        for record in phase_records:
++            fields = record.get("material_fields", {}).get("fields", {})
++            for material_name, values in fields.items():
++                item = values.get(field_name) if isinstance(values, dict) else None
++                if isinstance(item, dict):
++                    samples.append({"step": int(record["step"]), "phase": record["phase"],
++                                    "material": material_name, "status": item.get("status"), "value": item.get("value")})
++        good = [s for s in samples if s["status"] == "ok" and isinstance(s.get("value"), dict) and "values" in s["value"]]
++        delta_650 = None
++        left = next((s for s in good if s["step"] == 650 and s["phase"] == "C"), None)
++        right = next((s for s in good if s["step"] == 650 and s["phase"] == "D"), None)
++        if left and right:
++            a, b = np.asarray(left["value"]["values"], dtype=np.float64), np.asarray(right["value"]["values"], dtype=np.float64)
++            if a.shape == b.shape:
++                delta_650 = {"max_abs_change": float(np.max(np.abs(b - a))) if a.size else 0.0,
++                             "shape": list(a.shape), "basis": "difference of directly returned native getter arrays; not a constitutive recomputation"}
++        def brief(sample):
++            if not sample:
++                return None
++            shape = sample["value"].get("shape") if isinstance(sample.get("value"), dict) else None
++            return {"step": sample["step"], "phase": sample["phase"], "material": sample["material"], "shape": shape}
++        return {"public_getter_samples_ok": len(good), "observed_material_types": sorted({s["material"] for s in samples}),
++                "first_sample": brief(good[0]) if good else None, "last_sample": brief(good[-1]) if good else None,
++                "step650_C_to_D_change": delta_650,
++                "status": "available" if good else "UNKNOWN_getter returned no capturable numeric field"}
++    if phase_records:
++        result["native_traction_opening_damage"] = {
++            "opening": native_getter_summary("getOpening"), "traction": native_getter_summary("getTraction"),
++            "damage_or_history": "UNKNOWN_no public no-argument damage/history field was identified; no private ABI or guessed field name used",
++        }
++        contact_samples = []
++        for record in phase_records:
++            energies = record.get("energy_getters", {})
++            native = energies.get("cohesive_contact_native_key_J", {})
++            alias = energies.get("contact_alias_diagnostic_J", {})
++            if record.get("step") in (650, 652) and record.get("phase") in ("C", "D"):
++                contact_samples.append({"step": record["step"], "phase": record["phase"],
++                                        "cohesive_contact_status": native.get("status"), "cohesive_contact_J": native.get("value_J"),
++                                        "contact_alias_status": alias.get("status"), "contact_alias_J": alias.get("value_J")})
++        result["contact_key_audit_samples"] = contact_samples
++    if trace_path.is_file():
++        try:
++            with trace_path.open(newline="", encoding="utf-8-sig") as stream:
++                rows = list(csv.DictReader(stream))
++            negatives = [row for row in rows if row.get("cohesive_dissipated_J") not in (None, "") and float(row["cohesive_dissipated_J"]) < 0]
++            if negatives:
++                if result["first_negative_dissipated_step"] == "UNKNOWN_until_trace_parse":
++                    result["first_negative_dissipated_step"] = int(negatives[0]["step"])
++                result["first_negative_dissipated_trace_D_J"] = float(negatives[0]["cohesive_dissipated_J"])
++                event_steps = [e["step"] for e in json.loads((RUN_DIR / "events.json").read_text(encoding="utf-8"))["events"]]
++                result["steps_after_first_insertion"] = int(negatives[0]["step"]) - min(event_steps) if event_steps else None
++        except Exception as error:
++            result["trace_parse_error"] = repr(error)
++    write_json(RUN_DIR / "probe_conclusion.json", result)
++
++
++def main() -> int:
++    if len(sys.argv) == 2 and sys.argv[1] == "--preflight":
++        return preflight()
++    if len(sys.argv) == 2 and sys.argv[1] == "--run":
++        return run_once()
++    raise SystemExit("usage: probe_driver.py --preflight | --run")
++
++
+ if __name__ == "__main__":
+-    raise SystemExit(main())
++    sys.exit(main())
