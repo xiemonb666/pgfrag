@@ -1,2 +1,7 @@
 /src/pgfrag/bond_events.py -text
 /tests/test_bond_events.py -text
+
+/src/pgfrag/energy_ledger.py -text
+/tests/test_energy_ledger.py -text
+/src/pgfrag/bias_protocol.py -text
+/tests/test_bias_protocol.py -text
