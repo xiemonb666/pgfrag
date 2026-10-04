@@ -1,0 +1,10 @@
+case_id = "tinyload_event_diagnostic"
+case_status = "SOURCE_PREPARED_AWAITING_SEPARATE_RUNTIME_APPROVAL"
+
+[load]
+kind = "symmetric_axial_velocity"
+speed_m_s = 0.0001
+axis = 3
+
+[solver]
+steps = 5

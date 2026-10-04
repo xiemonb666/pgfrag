@@ -1,0 +1,337 @@
+{
+  "schema": "pgfrag.pd.point_event_probe.manifest.v1",
+  "experiment_id": "pd_point_event_probe_20261004",
+  "prepared_utc_date": "2026-10-04",
+  "status": "SOURCE_PREPARED_STATIC_REVIEW_ONLY_AWAITING_ROOT_FINAL_FREEZE",
+  "scope": {
+    "baseline": "Existing PD baseline stays frozen; this is one isolated native OSB point-event probe.",
+    "max_material_points": 512,
+    "no_tetrahedral_crack_facets": true,
+    "no_solver_rewrite_or_restart_per_step": true,
+    "native_submit_used_once": true
+  },
+  "fixture": {
+    "primary_input_id": "coupon_uniform_voxel_5cube_125_v1",
+    "primary_points": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+    "primary_metadata": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+    "point_count": 125,
+    "declared_cube_extent_m": [
+      0.005,
+      0.005,
+      0.005
+    ],
+    "point_volume_sum_m3": 1.25E-07,
+    "volume_weighted_com_m": [
+      0.0025,
+      0.0025,
+      0.0025
+    ],
+    "primary_quadrature": "Uniform voxel cell-center; each point has a known positive 1e-9 m^3 cell weight.",
+    "jitter_candidate_input_id": "coupon_cell_jitter_5cube_seed17_v1",
+    "jitter_candidate_points": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.points.csv",
+    "jitter_semantics": "Deterministic within-cell positional jitter with retained cell quadrature weights; not exact arbitrary Voronoi volume and not a real shell.",
+    "external_input_contract": "Frozen row-order CSV point IDs plus SI xyz/positive volume and required TOML source, units, hash, point count, volume sum, COM, quadrature semantics, and optional driven point-ID sets."
+  },
+  "material": {
+    "model": "native OSBMaterial / CriticalStretch",
+    "rho_kg_m3": 2100.0,
+    "E_pa": 5000000000.0,
+    "nu": 0.24,
+    "Gc_j_m2": 45.0,
+    "calibration_status": "UNVALIDATED_PROTOTYPE"
+  },
+  "native_observer": {
+    "runtime_route": "Job(body, VelocityVerlet, EventProbeOptions); Peridynamics.submit(job; quiet=true) exactly once.",
+    "event_hooks": [
+      {
+        "signature": "export_reference_results(dh::ThreadsBodyDataHandler, options::EventProbeOptions)",
+        "native_source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+        "source_sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+        "semantics": "Native solve! invokes this before step 1; observer records initialized state at step 0 and t=0."
+      },
+      {
+        "signature": "export_results(dh::ThreadsBodyDataHandler, options::EventProbeOptions, chunk_id::Int, timestep::Int, time::Float64)",
+        "native_source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+        "source_sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116",
+        "semantics": "Native verlet_timestep! calls this after position, force, and velocity updates at every native step."
+      }
+    ],
+    "native_flow_signatures": [
+      {
+        "signature": "submit(job::Job; kwargs...)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl",
+        "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+      },
+      {
+        "signature": "_submit_threads(job::Job, n_chunks::Int)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl",
+        "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+      },
+      {
+        "signature": "solve!(dh::AbstractDataHandler, vv::VelocityVerlet, options::AbstractJobOptions)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+        "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+      },
+      {
+        "signature": "verlet_timestep!(dh::AbstractThreadsBodyDataHandler, options::AbstractJobOptions, Δt::Float64, Δt½::Float64, n::Int)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+        "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+      },
+      {
+        "signature": "Body(mat::M, position::AbstractMatrix, volume::AbstractVector)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+        "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+      },
+      {
+        "signature": "velocity_ic!(body::AbstractBody, point_set::Symbol, dimension::Union{Integer,Symbol}, value::Real)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
+        "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+      },
+      {
+        "signature": "calc_failure!(storage::OSBStorage, system::BondSystem, ::OSBMaterial, ::CriticalStretch, paramsetup::AbstractParameterSetup, i)",
+        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+        "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+      }
+    ],
+    "output_fields": "Point reference/current position, displacement, velocity, acceleration, b_int/b_ext force densities in N/m^3, damage, volume/mass; every directed bond state and canonical undirected pair state per sample; transitions are observed native state differences.",
+    "logger_compatibility": "EventProbeOptions <: AbstractJobOptions and export_allowed=false. Native init_logs/add_to_logfile short-circuit before vtk/logfile fields; experiment defines Peridynamics.log_job_options(::EventProbeOptions) because pinned source specializes that logger to JobOptions; log_data_handler/system and native timesolver messages use log_it/add_to_logfile, safe with export_allowed=false. Hook specializations still capture despite export_allowed=false.",
+    "zero_load_initial_condition": "Native velocity_ic!(body, :all_points, axis, 0.0) for axes 1:3 satisfies native pre_submission_check without constraining ongoing velocity or adding external load.",
+    "hook_contract_status": "Internal native output generics, not a documented public user callback; exact dispatch must be proven by the first separately released no-damage preflight.",
+    "internal_init_or_step_override": false,
+    "event_clock": "Step 0 after native initialize!; later samples follow native verlet_timestep! at n × accepted native Δt.",
+    "energy": "UNKNOWN when no complete term and definition exist; absent quantities are never replaced with zero.",
+    "graph_interpretation": "Native bond graph only; no physical fragment, crack-face, contact, R2, or training claim."
+  },
+  "stability": {
+    "threads": 1,
+    "max_chunks": 1,
+    "dt_mode": "AUTO_NATIVE_STABLE_BOUND",
+    "retained_check": "Compute native calc_stable_timestep on a single-chunk handler before submit, then require accepted solver.Δt to equal that bound within the frozen baseline tolerance."
+  },
+  "cases": [
+    {
+      "case_id": "zero_load_control",
+      "config": "pgfrag/experiments/pd_point_event_probe_20261004/case_zero_load_control.toml",
+      "steps": 1,
+      "runtime_status": "FIRST_RUNTIME_GATE_PENDING_ROOT_FINAL_FREEZE",
+      "zero_load": true
+    },
+    {
+      "case_id": "tinyload_event_diagnostic",
+      "config": "pgfrag/experiments/pd_point_event_probe_20261004/case_tinyload_event_diagnostic.toml",
+      "steps": 5,
+      "speed_m_s": 0.0001,
+      "runtime_status": "SEPARATE_RUNTIME_APPROVAL_REQUIRED",
+      "zero_load": false
+    }
+  ],
+  "launcher": {
+    "script": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+    "fixed_case": "zero_load_control",
+    "tinyload_reachable": false,
+    "records_numeric_julia_process_exit_code_when_observed": true,
+    "records_unknown_exit_code_as_json_null": true,
+    "records_start_wait_exception": true,
+    "preserves_child_exit_code_on_timeout": true,
+    "wrapper_exit_policy": "Actual Julia code on normal observed exit; 124 on timeout; 125 on launch/wait error, unknown child exit, or OUT violation.",
+    "timeout_seconds": 120
+  },
+  "runtime": {
+    "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+    "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "version_path_component": "julia-1.10.12; version not runtime-probed under the static-only instruction",
+    "project_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia",
+    "depot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\depot",
+    "threads": 1,
+    "precompile_tasks": 1
+  },
+  "output_paths": {
+    "out_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\OUT",
+    "out_must_be_empty_before_launch": true,
+    "snapshots_sibling": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots",
+    "receipts_sibling": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts"
+  },
+  "runtime_gate": {
+    "first_action": "One invocation, <=512 points, one native zero-load step, no damage requirement.",
+    "timeout_seconds": 120,
+    "status": "NOT_AUTHORIZED_TO_RUN_UNTIL_ROOT_FINAL_FREEZE_REVIEW",
+    "acceptance": [
+      "two samples at steps 0 and 1",
+      "one native chunk and one thread",
+      "frozen point IDs complete and unique",
+      "positive point mass closes against rho times point volume sum",
+      "accepted native dt matches native stable bound",
+      "complete reciprocal directed bond states agree with canonical states at both samples",
+      "zero-load all-points zero-velocity initial conditions satisfy native pre-submission checks without adding velocity constraints",
+      "zero-load produces no bond-activity transition",
+      "OUT remains empty; snapshots and receipt stay in sibling directories"
+    ]
+  },
+  "later_gates": [
+    {
+      "gate": "tinyload_event_diagnostic",
+      "status": "PENDING_SEPARATE_RUNTIME_APPROVAL"
+    },
+    {
+      "gate": "stock_native_zero_load_terminal_comparison",
+      "status": "OPTIONAL_FUTURE_GATE_PENDING_REVIEW"
+    }
+  ],
+  "file_hashes": [
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/README.md",
+      "role": "experiment_contract",
+      "sha256": "2efafea5b7d6811eb5e6007d2a915d9336b32ca2ecc80b2760b78cb7627a7386"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "role": "native_event_observer",
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/make_point_inputs.ps1",
+      "role": "deterministic_fixture_generator",
+      "sha256": "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/freeze_manifest.ps1",
+      "role": "manifest_builder",
+      "sha256": "0dd9128d7ebb6db22fda0b4f9a34751bed8b26c9b92a2e53cba85e80a08b3af6"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+      "role": "frozen_zero_load_launcher",
+      "sha256": "eba9c6d94b100ca2144b4f213402d450b450b10dbcec2db7f9805b81dee8b13e"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/common_case.toml",
+      "role": "common_native_solver_and_material_config",
+      "sha256": "ca2e4a64946d32f2ba6abdc1bd5b4d1768f5f7587812f3bcce490c0713a0f3bf"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/case_zero_load_control.toml",
+      "role": "first_runtime_gate_only",
+      "sha256": "a2e6694d047e70ed445ee9037bbcbabbd99095dd060ebe1c78bed674199b2178"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/case_tinyload_event_diagnostic.toml",
+      "role": "future_separately_authorized_case",
+      "sha256": "53f7aca2d222eb714c1640a27d389aa845669b7cbf26a449f831e4eb307f4a7c"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "role": "primary_frozen_points",
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "role": "primary_point_contract",
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.points.csv",
+      "role": "jitter_candidate_frozen_points",
+      "sha256": "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.metadata.toml",
+      "role": "jitter_candidate_point_contract",
+      "sha256": "47e4fe7d1d66063b2c234e48e65bae286fc4cdfda8d18b5913a3367da3a92e19"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+      "role": "native_julia_project",
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+      "role": "native_julia_lockfile",
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+      "role": "native_backend_provenance",
+      "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/run_fixture.jl",
+      "role": "frozen_baseline_runner_reference",
+      "sha256": "2468586567a2a777de155febd8b1ad9829016f682ede7b69c5f2f7a5c9952534"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/Peridynamics.jl",
+      "role": "native_package_module",
+      "sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl",
+      "role": "native_submit_sequence",
+      "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+      "role": "native_step_output_hooks",
+      "sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/job.jl",
+      "role": "native_job_and_options_contract",
+      "sha256": "6b44e29743dda45e272033c08f985cfbeed91e9f83821b02a2a25549e9c314e1"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl",
+      "role": "native_initial_force_call",
+      "sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/systems.jl",
+      "role": "native_system_logger_path",
+      "sha256": "0078283af05c365df7cccf41cee4e10bcf27a2cc44717d0f41db20f30855bda2"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/time_solvers.jl",
+      "role": "native_generic_time_solver_logger",
+      "sha256": "03dbb2371e6bc6a2036f3256c505b9d503477b5a4b9fb4580360d7dfcfeed157"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "role": "native_velocity_verlet_clock_and_step",
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "role": "native_arbitrary_point_body",
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/point_sets.jl",
+      "role": "native_point_identity_sets",
+      "sha256": "88aef64ec47026b36278c7ab266b8393c41e7e74a85c76b1a33a2aa29ec57c0f"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+      "role": "native_velocity_boundary_conditions",
+      "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
+      "role": "native_velocity_initial_conditions",
+      "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "role": "native_bond_failure_dispatch",
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "role": "native_osb_critical_stretch_failure",
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/logs.jl",
+      "role": "native_options_logger_access",
+      "sha256": "6c64b1e723adbed0dd0f55fded302b30776018851910360030b5eaebb2d6715a"
+    }
+  ]
+}

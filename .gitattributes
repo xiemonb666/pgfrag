@@ -5,3 +5,5 @@
 /tests/test_energy_ledger.py -text
 /src/pgfrag/bias_protocol.py -text
 /tests/test_bias_protocol.py -text
+
+/experiments/pd_point_event_probe_20261004/** -text
