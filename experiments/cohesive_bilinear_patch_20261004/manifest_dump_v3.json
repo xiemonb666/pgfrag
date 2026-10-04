@@ -1,0 +1,65 @@
+{
+  "case": "controlled_intrinsic_bilinear_modeI",
+  "test_class": "UNVALIDATED_TOY_CONSTITUTIVE_PATCH",
+  "observation_revision": "V3: documented public native cohesive-elements dumper only; no Python typed cohesive material getter",
+  "mesh": {
+    "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "path": "input/block_2x2x4mm.msh",
+    "bytes": 3605
+  },
+  "material": {
+    "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666",
+    "path": "input/material.dat",
+    "bytes": 423
+  },
+  "bulk": {
+    "E_Pa": 70000000000,
+    "nu": 0.22,
+    "rho_kg_m3": 2500
+  },
+  "cohesive": {
+    "law": "cohesive_bilinear",
+    "sigma_c_Pa": 70000000,
+    "G_c_J_m2": 7.6,
+    "beta": 3,
+    "kappa": 1,
+    "delta_0_m": 2.1714285714285715E-08,
+    "delta_c_theory_m": 2.1714285714285715E-07,
+    "penalty_Pa_m": 0,
+    "contact_after_breaking": false
+  },
+  "interface": {
+    "physical_surface": "interface",
+    "input_faces": 8,
+    "input_area_m2": 4E-06,
+    "initFull": "intrinsic (is_extrinsic=false)"
+  },
+  "preflight": {
+    "version": 3,
+    "source": "init_preflight_dump_v3.py",
+    "source_sha256": "49ac8220a2d24bbd73ad8735a0a377a24a3e4ee92cc168471050d36c77ac732d",
+    "source_bytes": 7592,
+    "launcher": "run_preflight_dump_v3.sh",
+    "launcher_sha256": "976d40e0395cb78d86bf0373abca65118982b4f34da94d5ac063778371a21bff",
+    "launcher_bytes": 539,
+    "dump_fields": [
+      "opening",
+      "tractions",
+      "damage",
+      "delta max"
+    ],
+    "dumper": "cohesive elements",
+    "step": 0,
+    "solver_steps": 0,
+    "solver_attempts": 0
+  },
+  "limits": {
+    "threads": 1,
+    "max_wall_s": 300,
+    "max_steps": 0,
+    "retries": 0
+  },
+  "root_authorized_change": "V3 changes only observation from unsupported Python typed Material getOpening to the official public cohesive-elements dumper. V1 and V2 failure artifacts remain untouched. Native field dump is attempted once; no solveStep.",
+  "interpretation": "Initialization and native field-availability preflight only. Intrinsic cohesive insertion/counts are controlled input, not evidence of physical fragmentation or full debond. UNVALIDATED toy constitutive patch only; no production calibration, mesh-bias result, R2, or PRETRAIN_ELIGIBLE.",
+  "native_wheel_tag_identity": "UNKNOWN"
+}

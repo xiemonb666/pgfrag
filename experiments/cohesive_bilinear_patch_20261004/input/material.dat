@@ -1,0 +1,22 @@
+model solid_mechanics_model_cohesive [
+  cohesive_inserter [
+    cohesive_surfaces = [interface]
+  ]
+  material elastic [
+    name = body
+    rho = 2500
+    E = 70e9
+    nu = 0.22
+    finite_deformation = false
+  ]
+  material cohesive_bilinear [
+    name = interface_law
+    sigma_c = 70e6
+    G_c = 7.6
+    beta = 3
+    kappa = 1
+    delta_0 = 2.1714285714285714e-8
+    penalty = 0
+    contact_after_breaking = false
+  ]
+]

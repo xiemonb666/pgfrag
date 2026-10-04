@@ -1,0 +1,120 @@
+{
+  "case": "controlled_intrinsic_bilinear_modeI",
+  "test_class": "UNVALIDATED_TOY_CONSTITUTIVE_PATCH",
+  "run_id": "controlled_intrinsic_bilinear_modeI_201_run02",
+  "mesh": {
+    "path": "input/block_2x2x4mm.msh",
+    "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "bytes": 3605,
+    "expected_input_nodes": 45,
+    "expected_bulk_tets": 96
+  },
+  "material": {
+    "path": "input/material.dat",
+    "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666",
+    "bytes": 423,
+    "bulk": {
+      "E_Pa": 70000000000,
+      "nu": 0.22,
+      "rho_kg_m3": 2500,
+      "finite_deformation": false
+    },
+    "cohesive": {
+      "law": "cohesive_bilinear",
+      "sigma_c_Pa": 70000000,
+      "G_c_J_m2": 7.6,
+      "beta": 3,
+      "kappa": 1,
+      "delta_0_m": 2.1714285714285715E-08,
+      "delta_c_theory_m": 2.1714285714285715E-07,
+      "penalty_Pa_m": 0,
+      "contact_after_breaking": false
+    },
+    "sha_matches_frozen_input_manifest_v2": true
+  },
+  "interface": {
+    "physical_surface": "interface",
+    "area_m2": 4E-06,
+    "input_face_count": 8,
+    "native_expected_cohesive_3d6": 8,
+    "native_expected_nodes": 54,
+    "native_expected_bulk_tets": 96
+  },
+  "loading": {
+    "mode": "controlled intrinsic pure Mode I; all DOFs prescribed",
+    "lower_node_count": 27,
+    "upper_node_count": 27,
+    "lower_displacement_m": "[0,0,0]",
+    "upper_displacement_m": "[0,0,s]",
+    "blocked_dofs": "true for all XYZ components on both halves",
+    "dt_s": 1E-09,
+    "points": 201,
+    "solver_steps": 201,
+    "grid": "21 points 0..delta_0 inclusive; 160 additional points delta_0..delta_c without repeating delta_0; 20 additional points delta_c..1.2delta_c without repeating delta_c",
+    "delta_c_m": 2.1714285714285715E-07,
+    "maximum_command_m": 2.6057142857142855E-07
+  },
+  "native_observation": {
+    "dumper": "cohesive elements",
+    "fields": [
+      "opening",
+      "tractions",
+      "damage",
+      "delta max"
+    ],
+    "fields_schema": "Float64; opening/tractions 3 components, damage/delta max 1 component; one average tuple per cohesive cell (8 tuples), not QP",
+    "frame_ids": "0..200, exactly one unique PVTU/Vtu pair per solved grid point"
+  },
+  "limits": {
+    "solver_attempts": 1,
+    "threads": 1,
+    "max_wall_s": 300,
+    "max_solver_steps": 400,
+    "retries": 0
+  },
+  "checks": {
+    "opening_abs_error_m": 1E-12,
+    "traction_profile_abs_error_Pa": 700000,
+    "dissipated_min_J": -1E-12,
+    "final_dissipated_relative_error_vs_GcA": 0.01,
+    "final_reversible_abs_J": 1E-12,
+    "damage_range": [
+      0,
+      1
+    ],
+    "damage_monotonic_tolerance": 1E-12,
+    "delta_max_monotonic_tolerance_m": 1E-12,
+    "uniformity": "Report/gate across all 8 native cell records; no vector sign flips"
+  },
+  "energy_balance": "NOT_APPLICABLE as pass criterion because all DOFs are prescribed; kinetic/work values diagnostic only.",
+  "sources": {
+    "driver": {
+      "path": "run_intrinsic_bilinear_modeI_201_v2.py",
+      "sha256": "f684ffe396f2ad742b8bb0673bf0deb14963382a49eb5431bb659cbcfca5c605",
+      "bytes": 15898
+    },
+    "vtk_parser": {
+      "path": "parse_cohesive_vtu.py",
+      "sha256": "b63cf69a1dce0045ad17e2d04e7ad37429d02f3b152d195818b9ce2f722830f3",
+      "bytes": 4211
+    },
+    "launcher": {
+      "path": "launch_intrinsic_bilinear_modeI_201_v2.sh",
+      "sha256": "42b30734f387732a6b4ac7bf3245e4782f0fa2adc6926eaed43d46c7762caf2e",
+      "bytes": 577
+    }
+  },
+  "planned_argv": {
+    "wsl_host": "wsl.exe -d Ubuntu -- /bin/bash /mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_bilinear_patch_20261004/launch_intrinsic_bilinear_modeI_201_v2.sh",
+    "python": [
+      "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+      "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_bilinear_patch_20261004/run_intrinsic_bilinear_modeI_201_v2.py"
+    ]
+  },
+  "provenance": {
+    "previous_v3_native_dumper_output": "V3 recursively verified four native fields; each is one cell-average tuple; tag source vs post1 wheel remains UNKNOWN",
+    "source_to_wheel_correspondence": "UNKNOWN",
+    "original_mesh_and_material": "Copied byte-for-byte into run snapshot"
+  },
+  "interpretation": "Controlled native constitutive patch only. Intrinsic cohesive insertion and any D reaching GcA are controlled input/constitutive evidence, not a physical fracture/fragment event. No calibration, mesh-bias, R2, or PRETRAIN_ELIGIBLE."
+}

@@ -1,0 +1,57 @@
+{
+  "case": "controlled_intrinsic_bilinear_modeI",
+  "test_class": "UNVALIDATED_TOY_CONSTITUTIVE_PATCH",
+  "mesh": {
+    "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "path": "input/block_2x2x4mm.msh",
+    "bytes": 3605
+  },
+  "material": {
+    "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666",
+    "path": "input/material.dat",
+    "bytes": 423
+  },
+  "bulk": {
+    "E_Pa": 70000000000,
+    "nu": 0.22,
+    "rho_kg_m3": 2500
+  },
+  "cohesive": {
+    "delta_c_theory_m": 2.1714285714285715E-07,
+    "kappa": 1,
+    "contact_after_breaking": false,
+    "penalty_Pa_m": 0,
+    "sigma_c_Pa": 70000000,
+    "delta_0_m": 2.1714285714285715E-08,
+    "G_c_J_m2": 7.6,
+    "law": "cohesive_bilinear",
+    "beta": 3
+  },
+  "interface": {
+    "input_faces": 8,
+    "physical_surface": "interface",
+    "area_m2": 4E-06
+  },
+  "loading": {
+    "points": 201,
+    "solver_steps": 201,
+    "mode": "prescribed rigid half-blocks, pure Mode I",
+    "dt_s": 1E-09,
+    "opening_grid": "21 points 0..delta_0; 160 more to delta_c; 20 more to 1.2*delta_c"
+  },
+  "limits": {
+    "solver_attempts": 1,
+    "threads": 1,
+    "max_wall_s": 300,
+    "max_steps": 400,
+    "retries": 0
+  },
+  "interpretation": "Constitutive patch test only. Initial intrinsic N=2 and D reaching Gc*A do not certify physical fracture or fragment formation. Not production-calibrated, no mesh-bias result, no R2/ PRETRAIN_ELIGIBLE.",
+  "native_wheel_tag_identity": "UNKNOWN",
+  "preflight_version": 2,
+  "preflight_source_path": "init_preflight_meshread_v2.py",
+  "preflight_source_sha256": "574fa3cd3a01dbfcefa0418102c852711c8dae8d56880e0c39091d7a2c1009ac",
+  "preflight_source_bytes": 6110,
+  "root_authorized_change": "Remove only unsupported generic-C++ createGroupsFromMeshData call; mesh.read already populates groups in installed binding; use known mesh.elementGroups() path to report interface. First failed preflight evidence remains preserved.",
+  "preflight_scope": "zero-step initialization only; no solveStep; no fallback/retry"
+}
