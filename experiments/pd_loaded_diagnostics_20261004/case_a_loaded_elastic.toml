@@ -1,0 +1,10 @@
+case_id = "loaded_elastic_response_8step"
+case_status = "DESIGN_ONLY_UNRUN"
+
+[load]
+kind = "symmetric_axial_velocity"
+speed_m_s = 0.005
+axis = 3
+
+[solver]
+steps = 8

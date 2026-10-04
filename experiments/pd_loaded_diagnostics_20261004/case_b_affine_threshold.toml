@@ -1,0 +1,38 @@
+schema = "pgfrag.pd.affine_critical_stretch_diagnostic.v1"
+case_id = "all_point_uniaxial_affine_threshold"
+case_status = "DESIGN_ONLY_UNRUN"
+
+[affine]
+map = "F = diag(1, 1, 1 + eta); x = F * X for every point from pristine reference coordinates"
+epsilon_c_source = "native point parameter εc from the pinned Peridynamics handler"
+native_time_integration = false
+manual_bond_activity_edits = false
+
+[expected_graph]
+directed_bonds = 6124
+canonical_bonds = 3062
+source = "accepted zero_load_control_run01 summary.toml"
+
+[material]
+model = "OSB / CriticalStretch"
+calibration_status = "UNVALIDATED_PROTOTYPE"
+
+[limits]
+max_points = 512
+max_chunks = 1
+native_threads = 1
+
+[[states]]
+state_id = "rest"
+epsilon_c_multiplier = 0.0
+expected_canonical_transitions = 0
+
+[[states]]
+state_id = "below"
+epsilon_c_multiplier = 0.5
+expected_canonical_transitions = 0
+
+[[states]]
+state_id = "above"
+epsilon_c_multiplier = 1.5
+expected_minimum_canonical_transitions = 1

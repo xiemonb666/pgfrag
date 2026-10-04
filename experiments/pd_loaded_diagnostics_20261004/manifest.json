@@ -1,0 +1,328 @@
+{
+  "schema": "pgfrag.pd.loaded_diagnostics.design_manifest.v1",
+  "status": "A_NARROW_GATE_PASS__B_NOT_RUN",
+  "date": "2026-10-04",
+  "runtime": {
+    "executable": "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/julia.exe",
+    "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "julia_threads": 1,
+    "timeout_seconds": 120,
+    "project": "pgfrag/src/pgfrag/resources/julia",
+    "depot": "third_party/pgfrag-runtime/depot"
+  },
+  "A": {
+    "status": "PASS_NARROW_LOADED_RESPONSE_GATE",
+    "runner": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+    "runner_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+    "case": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_a_loaded_elastic.toml",
+    "case_sha256": "98797bc6feeffcca2aac7ff54e671b23587b342140b94691b68e8948b33ccf26",
+    "common": "pgfrag/experiments/pd_loaded_diagnostics_20261004/common_loaded_case.toml",
+    "common_sha256": "381ac4564a3df101e8070ce0159c3b6d88c2a6834ca372a8e3a7ce486fdea062",
+    "launcher": "pgfrag/experiments/pd_loaded_diagnostics_20261004/launch_a_loaded_elastic.ps1",
+    "launcher_sha256": "ac51620610649ffef9bec043c5d3f1f422126b4bf86f98c6d269314af62883b5",
+    "speed_m_s": 0.005,
+    "axis": 3,
+    "steps": 8,
+    "baseline_accepted_dt_s": 4.925124976599115E-07,
+    "baseline_directed_bonds": 6124,
+    "baseline_canonical_bonds": 3062,
+    "predicted_endtime_s": 3.940099981279292E-06,
+    "predicted_nominal_strain": 9.850249953198229E-06,
+    "predicted_strain_over_epsilon_c": 0.0061088656929115265,
+    "continuum_gauge_wave_transits": 1.6502,
+    "expected_output_state_rows": {
+      "point": 1125,
+      "directed_bond": 55116,
+      "canonical_bond": 27558
+    },
+    "acceptance": [
+      "Nonzero displacement, velocity and internal force density across multiple captured states",
+      "Current coordinates agree with frozen rest coordinates and displacement",
+      "No native bond transitions",
+      "Native accepted dt is recorded and compared with zero-run01 reference"
+    ],
+    "energy": "UNKNOWN_NOT_A_GATE",
+    "physical_qualification": "NONE_UNVALIDATED_PROTOTYPE",
+    "run_id": "loaded_elastic_a8_run01",
+    "output_snapshot": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01",
+    "actual_accepted_dt_s": 4.925124976599115E-07,
+    "actual_end_time_s": 3.940099981279292E-06,
+    "sample_count_including_step_zero": 9,
+    "actual_directed_transition_count": 0,
+    "actual_canonical_transition_count": 0,
+    "actual_reciprocal_state_consistency": "PASS_AT_EVERY_CAPTURED_STEP",
+    "actual_mass_sum_kg_each_step": 0.00026249999999999966,
+    "actual_nonzero_displacement_velocity_internal_force_density": true,
+    "launch_receipt": {
+      "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/receipts/loaded_elastic_a8_run01.launch_receipt.json",
+      "bytes": 2022,
+      "sha256": "fc5574661812d6d83fe7c19e1c24d10d96d46bf0436dddc7fb78e8567459706f",
+      "wrapper_exit_code": 0,
+      "child_exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 120,
+      "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103"
+    },
+    "readonly_audit": {
+      "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/reports/loaded_elastic_a8_readonly_audit.json",
+      "bytes": 7293,
+      "sha256": "8ca43a5fc27a182de2dec5760f3c4a9b6dced82f9c5406f5cf28099dd8b468e4",
+      "status": "PASS_NARROW_LOADED_RESPONSE_GATE",
+      "max_coordinate_displacement_residual_m": 1.608322006572579E-18,
+      "nonzero_displacement": true,
+      "nonzero_velocity": true,
+      "nonzero_internal_body_force_density": true,
+      "point_rows": 1125,
+      "directed_state_rows": 55116,
+      "canonical_state_rows": 27558,
+      "directed_transition_rows": 0,
+      "canonical_transition_rows": 0
+    },
+    "outputs": [
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/point_state_history.csv",
+        "bytes": 458701,
+        "sha256": "9a0e032a3c411c9bd3b38b01ab458c7a38921b1a1461b2366ed4af48e25dfe3f"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/directed_bond_state_history.csv",
+        "bytes": 3567756,
+        "sha256": "5314389ae684dc552bf05423aecf7cc1ab6a311ff51b7ce7862339510ab82203"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/canonical_bond_state_history.csv",
+        "bytes": 1475260,
+        "sha256": "92b6294e34eaf5dfdbd13c48ba62a5f23e7f46124ab0813e842da475b4c09cd4"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/directed_bond_transitions.csv",
+        "bytes": 142,
+        "sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/canonical_bond_transitions.csv",
+        "bytes": 70,
+        "sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/loaded_elastic_a8_run01/summary.toml",
+        "bytes": 1750,
+        "sha256": "32c93b1b3dba408060b2b4a2909b1618962aa6337bd11c0ff1b0054b529d6d8a"
+      }
+    ],
+    "figure": {
+      "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/reports/loaded_elastic_a8_science.png",
+      "bytes": 113473,
+      "sha256": "b3df2be1cff05a4060d4b81112686287f9d925aa8d5511bb5af9ad9ac317764e",
+      "source": "A raw point_state_history.csv only",
+      "geometry": "Rest/current x-z overlay, displacement magnification 1x",
+      "scope": "Observer response visualization; no fracture/energy qualification"
+    }
+  },
+  "B": {
+    "status": "FROZEN_PENDING_SINGLE_RUN",
+    "driver": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe.jl",
+    "case": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_b_affine_threshold.toml",
+    "driver_sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c",
+    "native_time_integration": false,
+    "fresh_handler_each_state": true,
+    "native_call": "Peridynamics.calc_force_density!(dh, 0.0, solver.Δt)",
+    "affine_F": "diag(1,1,1+eta)",
+    "eta_multipliers": [
+      0.0,
+      0.5,
+      1.5
+    ],
+    "expected_directed_bonds_each_state": 6124,
+    "expected_canonical_bonds_each_state": 3062,
+    "acceptance": [
+      "No activity changes at eta=0 or eta=0.5*epsilon_c",
+      "At least one native threshold transition at eta=1.5*epsilon_c",
+      "Per-pair actual reference/current length and stretch plus native epsilon_c, fail-permit, before/after activity recorded",
+      "Reciprocal directed states agree for every canonical pair"
+    ],
+    "energy": "UNKNOWN_NOT_A_GATE",
+    "contact": "NOT_RUN",
+    "physical_qualification": "NONE_UNVALIDATED_PROTOTYPE",
+    "launcher": "pgfrag/experiments/pd_loaded_diagnostics_20261004/launch_b_affine_threshold.ps1",
+    "launcher_sha256": "d54d93d55f9842147885d9aada43af234339cd32ad3e85f4c7649a639c7b67db",
+    "run_id": "affine_threshold_b_run01",
+    "output_snapshot": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/snapshots/affine_threshold_b_run01",
+    "timeout_seconds": 120,
+    "julia_threads": 1,
+    "frozen_single_run_scope": "Three fresh handlers; 125-point affine states eta/native_epsilon_c 0, 0.5, 1.5; no time integration; no manual bond edits; one attempt; no physical qualification.",
+    "launcher_frozen_utc": "2026-10-04T15:37:51.4324361Z"
+  },
+  "B_early_draft_note": "Root observed an earlier draft hash prefix c1855a8c…; exact bytes were not retained and are not reconstructed. That draft was not executed. Actual preserved pre-scopefix bytes are identified in preserved_drafts.",
+  "preserved_drafts": [
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe_pre_scopefix_d7c8.jl",
+      "bytes": 12438,
+      "sha256": "d7c8c11fe9d24ff3bd395240942d625bae0e17e6cbf70619b2d87aade09f03aa",
+      "status": "DESIGN_ONLY_UNRUN"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/manifest_pre_scopefix_2c246c38.json",
+      "bytes": 10170,
+      "sha256": "2c246c38f5f298bc33d069307a8ff908a1f6a4157fc533bf152ab6632ec2a01b",
+      "status": "PRE_SCOPEFIX_MANIFEST"
+    }
+  ],
+  "basis_evidence": [
+    {
+      "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/summary.toml",
+      "bytes": 1732,
+      "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.execution_receipt.json",
+      "bytes": 15947,
+      "sha256": "cf16573ef82dc94b70de47c1c0919f094808ded2213bae8f28d5c1223fef471b"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "bytes": 23957,
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "bytes": 4923,
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "bytes": 1587,
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/common_loaded_case.toml",
+      "bytes": 491,
+      "sha256": "381ac4564a3df101e8070ce0159c3b6d88c2a6834ca372a8e3a7ce486fdea062"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_a_loaded_elastic.toml",
+      "bytes": 166,
+      "sha256": "98797bc6feeffcca2aac7ff54e671b23587b342140b94691b68e8948b33ccf26"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_b_affine_threshold.toml",
+      "bytes": 955,
+      "sha256": "baab83193430e09af79a1306292972033483f757da445d1cc53bf185676362ff"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe.jl",
+      "bytes": 12838,
+      "sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/launch_a_loaded_elastic.ps1",
+      "bytes": 6261,
+      "sha256": "ac51620610649ffef9bec043c5d3f1f422126b4bf86f98c6d269314af62883b5"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe_pre_scopefix_d7c8.jl",
+      "bytes": 12438,
+      "sha256": "d7c8c11fe9d24ff3bd395240942d625bae0e17e6cbf70619b2d87aade09f03aa"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/manifest_pre_scopefix_2c246c38.json",
+      "bytes": 10170,
+      "sha256": "2c246c38f5f298bc33d069307a8ff908a1f6a4157fc533bf152ab6632ec2a01b"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/b_driver_scopefix.diff.md",
+      "bytes": 1475,
+      "sha256": "c6f4029369fec8b52f7cbb70d5a4cc94a6e5e015e77a72399f7d86de7d74fa49"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+      "bytes": 107,
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+      "bytes": 22753,
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+      "bytes": 8223,
+      "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/material_parameters.jl",
+      "bytes": 8596,
+      "sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/parameters.jl",
+      "bytes": 4157,
+      "sha256": "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/fracture.jl",
+      "bytes": 6507,
+      "sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "bytes": 11286,
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "bytes": 14917,
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "bytes": 18152,
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body_chunk.jl",
+      "bytes": 3795,
+      "sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+      "bytes": 8327,
+      "sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl",
+      "bytes": 426,
+      "sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/storages.jl",
+      "bytes": 15633,
+      "sha256": "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+      "bytes": 26235,
+      "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "bytes": 12397,
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+    }
+  ],
+  "manifest_excludes_own_hash": true,
+  "no_solver_was_run": false,
+  "run_history": [
+    {
+      "run_id": "loaded_elastic_a8_run01",
+      "gate": "A loaded elastic response observer",
+      "result": "PASS_NARROW_LOADED_RESPONSE_GATE",
+      "solver_exit": 0,
+      "runtime_seconds": 8.5140482,
+      "scope": "No bond events; no fracture/material/contact/energy qualification"
+    }
+  ],
+  "solver_runs_performed": 1
+}
