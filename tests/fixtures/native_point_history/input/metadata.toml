@@ -1,0 +1,23 @@
+schema = "pgfrag.pd.pointset.v1"
+input_id = "hand-authored-two-point-v1"
+point_data_file = "points.csv"
+point_data_sha256 = "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3"
+coordinate_units = "m"
+volume_units = "m^3"
+coordinate_frame = "hand-authored SI fixture"
+point_id_semantics = "positive stable point IDs; CSV row order defines native body index"
+point_count = 2
+declared_volume_sum_m3 = 2e-9
+declared_com_m = [0.0005, 0, 0]
+
+[source]
+kind = "hand-authored-test-fixture"
+description = "Two point SI source for parser tests; not solver output."
+reference = "hand-authored native point history fixture"
+source_sha256 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[quadrature]
+method = "hand-authored fixture weights"
+volume_semantics = "positive test weights"
+voronoi_claim = false
+real_shell_claim = false

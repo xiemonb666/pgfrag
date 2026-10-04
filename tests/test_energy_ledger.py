@@ -18,7 +18,7 @@ from pgfrag.energy_ledger import (
 
 
 REPO = Path(__file__).resolve().parents[1]
-INPUT_PATH = REPO / "tmp" / "review_20261004" / "energy_ledger" / "input" / "audit_cases.json"
+INPUT_PATH = REPO / "tests" / "fixtures" / "energy_ledger" / "audit_cases.json"
 INPUTS = json.loads(INPUT_PATH.read_text(encoding="utf-8"))
 TOLERANCE_DATA = INPUTS["tolerances"]
 

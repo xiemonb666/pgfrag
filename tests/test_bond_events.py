@@ -17,9 +17,8 @@ from pgfrag.bond_events import (
 
 
 FIXTURE_PATH = (
-    Path(__file__).resolve().parents[1]
-    / "tmp"
-    / "review_20261004"
+    Path(__file__).resolve().parent
+    / "fixtures"
     / "bond_events"
     / "native_shaped_fixture.json"
 )
