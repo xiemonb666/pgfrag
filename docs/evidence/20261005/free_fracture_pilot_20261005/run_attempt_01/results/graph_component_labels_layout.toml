@@ -1,0 +1,13 @@
+array_shape = [4500, 97]
+byte_count = 1746000
+data_file = "graph_component_labels.i32le"
+format = "signed Int32, little-endian"
+label_meaning = "minimum point ID in the connected component of the currently active native canonical-bond graph"
+label_units = "point ID; zero is invalid and must not occur"
+point_count = 4500
+schema = "pgfrag.free_fracture_pilot.graph_labels_binary.v1"
+sha256 = "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16"
+state_count = 97
+state_index_mapping = "state_index = step + 1; step 0 is initialized native reference state"
+storage_order = "Julia column-major matrix [point_id, state_index]; point_id varies fastest"
+time_step_s = 3.75e-8

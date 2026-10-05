@@ -1,0 +1,42 @@
+{
+  "schema": "backup_coordinator.lossless_zip_receipt.v1",
+  "status": "PASS",
+  "archive": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261005\\backup_coordinator\\free_fracture_pilot_native_arrays_20261005.zip",
+  "archive_cap_bytes": 52428800,
+  "time_cap_seconds": 120.0,
+  "entries": [
+    {
+      "source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\point_state_history.f64le",
+      "entry": "results/point_state_history.f64le",
+      "uncompressed_bytes": 73332000,
+      "uncompressed_sha256": "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf",
+      "compressed_bytes": 43634964,
+      "compression_method": 8
+    },
+    {
+      "source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\graph_component_labels.i32le",
+      "entry": "results/graph_component_labels.i32le",
+      "uncompressed_bytes": 1746000,
+      "uncompressed_sha256": "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16",
+      "compressed_bytes": 5465,
+      "compression_method": 8
+    }
+  ],
+  "archive_bytes": 43640741,
+  "archive_sha256": "aca9be8a2e0b2a9d11084d2398930674a70a6edca290e50f2d2d63c34bb92191",
+  "source_postcheck": [
+    {
+      "source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\point_state_history.f64le",
+      "bytes_after": 73332000,
+      "sha256_after": "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf",
+      "unchanged": true
+    },
+    {
+      "source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\graph_component_labels.i32le",
+      "bytes_after": 1746000,
+      "sha256_after": "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16",
+      "unchanged": true
+    }
+  ],
+  "elapsed_seconds": 2.11
+}

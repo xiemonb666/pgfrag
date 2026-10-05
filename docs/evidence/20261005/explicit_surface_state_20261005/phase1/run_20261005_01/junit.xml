@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="18" time="0.309" timestamp="2026-10-05T18:19:35.558179+08:00" hostname="XieMo"><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_array_like_and_fake_array_protocol_are_rejected_without_conversion" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_arrays_are_defensively_copied_and_backed_by_immutable_bytes" time="0.008" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_both_sides_share_reference_mesh_reverse_winding_but_not_displacement" time="0.075" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_descendant_pairs_follow_patch_lineage_without_cartesian_product" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_duplicate_triangle_reversed_winding_is_rejected" time="0.001"><failure message="AssertionError: &quot;duplicate triangles&quot; does not match &quot;triangles must be a numpy.ndarray&quot;">pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_duplicate_triangle_reversed_winding_is_rejected&gt;
+
+    def test_duplicate_triangle_reversed_winding_is_rejected(self):
+        vertices = np.asarray(
+            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=np.float64
+        )
+&gt;       with self.assertRaisesRegex(surface.SurfaceStateError, "duplicate triangles"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "duplicate triangles" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:155: AssertionError</failure></testcase><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_explicitly_unknown_front_cannot_emit_even_fixture_relation" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_manually_injected_relation_cannot_bypass_same_body_gate" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_missing_parent_cross_surface_parent_and_nonincreasing_step_fail_closed" time="0.002" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_oversized_zero_stride_views_are_rejected_before_contiguous_copy" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_patch_count_budget_rejects_before_state_construction" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_positive_area_distinct_body_and_fragment_pair_is_explicitly_proxy_only" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_reassignment_is_not_a_split_and_needs_a_descendant_patch" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_same_body_internal_surface_never_creates_fragment_relation" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_schema_and_serialization_have_no_production_label_leak" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess" time="0.001"><failure message="AssertionError: &quot;nonmanifold edge&quot; does not match &quot;triangles must be a numpy.ndarray&quot;">pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess&gt;
+
+    def test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess(self):
+        vertices = np.asarray(
+            [
+                [0.0, 0.0, 0.0],
+                [1.0, 0.0, 0.0],
+                [0.0, 1.0, 0.0],
+                [0.0, -1.0, 0.0],
+                [0.0, 0.0, 1.0],
+            ],
+            dtype=np.float64,
+        )
+&gt;       with self.assertRaisesRegex(surface.SurfaceStateError, "nonmanifold edge"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "nonmanifold edge" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:176: AssertionError</failure></testcase><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_touching_front_cycles_remain_unknown_junction" time="0.001"><failure message="pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray">self = &lt;test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_touching_front_cycles_remain_unknown_junction&gt;
+
+    def test_touching_front_cycles_remain_unknown_junction(self):
+        # Two individually valid triangles touch only at one vertex. A naive
+        # edge-count check sees no nonmanifold edge, but the combined front has
+        # a multi-branch vertex and must remain explicitly unknown.
+        vertices = np.asarray(
+            [
+                [0.0, 0.0, 0.0],
+                [1.0, 0.0, 0.0],
+                [0.0, 1.0, 0.0],
+                [-1.0, 0.0, 0.0],
+                [0.0, -1.0, 0.0],
+            ],
+            dtype=np.float64,
+        )
+&gt;       patch = _patch(vertices=vertices, triangles=[[0, 1, 2], [0, 3, 4]])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:56: in _patch
+    return surface.CrackPatch(
+&lt;string&gt;:12: in __init__
+    ???
+experiments\explicit_surface_state_20261005\explicit_surface_state.py:219: in __post_init__
+    raw_triangles = _strict_ndarray_2d(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [[0, 1, 2], [0, 3, 4]], shape_tail = (3,), name = 'triangles'
+max_rows = 200000, min_rows = 1, allowed_kinds = 'iu', max_itemsize = 8
+
+    def _strict_ndarray_2d(
+        value: Any,
+        *,
+        shape_tail: tuple[int, ...],
+        name: str,
+        max_rows: int,
+        min_rows: int,
+        allowed_kinds: str,
+        max_itemsize: int,
+    ) -&gt; np.ndarray:
+        """Preflight an exact ndarray before any copy or array-like conversion."""
+    
+        if type(value) is not np.ndarray:
+&gt;           raise SurfaceStateError(f"{name} must be a numpy.ndarray")
+E           pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+experiments\explicit_surface_state_20261005\explicit_surface_state.py:84: SurfaceStateError</failure></testcase><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_wear_visibility_does_not_rewrite_historical_relation" time="0.001" /><testcase classname="experiments.explicit_surface_state_20261005.test_explicit_surface_state.ExplicitSurfaceStateTests" name="test_zero_area_and_nearly_degenerate_triangles_are_rejected" time="0.001"><failure message="AssertionError: &quot;degenerate&quot; does not match &quot;triangles must be a numpy.ndarray&quot;">pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_zero_area_and_nearly_degenerate_triangles_are_rejected&gt;
+
+    def test_zero_area_and_nearly_degenerate_triangles_are_rejected(self):
+        collinear = np.asarray(
+            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [2.0, 0.0, 0.0]], dtype=np.float64
+        )
+&gt;       with self.assertRaisesRegex(surface.SurfaceStateError, "degenerate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "degenerate" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:162: AssertionError</failure></testcase></testsuite></testsuites>

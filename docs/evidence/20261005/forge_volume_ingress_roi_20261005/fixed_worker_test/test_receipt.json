@@ -1,0 +1,135 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_focused_test_receipt.v1",
+  "status": "FOCUSED_TEST_COMPLETED_EXIT_0",
+  "started_utc": "2026-10-05T10:07:01.3896987Z",
+  "ended_utc": "2026-10-05T10:07:02.9298789Z",
+  "elapsed_seconds": 1.486503,
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--color=no",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01_supervisor\\focused_test\\junit.xml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tests\\test_report_serialization.py"
+  ],
+  "process_id": 124984,
+  "outer_timeout_seconds": 30,
+  "timeout_triggered": false,
+  "kill_attempted": false,
+  "kill_error": null,
+  "process_still_alive": false,
+  "exit_code": 0,
+  "stdout_log": "stdout.log",
+  "stdout": "...                                                                      [100%]\r\n3 passed in 1.08s\r\n",
+  "stdout_sha256": "C1BF4A8BC543B0F315B954E5CC97B6F290877F2050A2666B69C3F3331F822AFF",
+  "stderr_log": "stderr.log",
+  "stderr": null,
+  "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "junit_path": "junit.xml",
+  "junit_sha256": "24597E402C5D5CDDC5202D6CD68785A18A2B8FBDA66E75EC818DDF52353BED37",
+  "junit_summary": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "time": 0.279
+  },
+  "distinct_test_ids": [
+    "experiments.forge_volume_ingress_20261005.tests.test_report_serialization::test_total_byte_fixed_point_crosses_decimal_digit_boundary",
+    "experiments.forge_volume_ingress_20261005.tests.test_report_serialization::test_report_writer_blocks_when_total_exceeds_output_budget",
+    "experiments.forge_volume_ingress_20261005.tests.test_report_serialization::test_report_serialization_does_not_import_cad_or_ocp"
+  ],
+  "worker_sha256_before": "10A53525D095715D53EEC16406C560FB42A37740E1C4E56CF5DB85E54F080E34",
+  "worker_sha256_after": "10A53525D095715D53EEC16406C560FB42A37740E1C4E56CF5DB85E54F080E34",
+  "worker_unchanged": true,
+  "focused_test_sha256_before": "52573AB3242375393627A873577FC4EC5E56125C48F290BE5AC945045E12EABF",
+  "focused_test_sha256_after": "52573AB3242375393627A873577FC4EC5E56125C48F290BE5AC945045E12EABF",
+  "focused_test_unchanged": true,
+  "historical_source_freeze_sha256_before": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "historical_source_freeze_sha256_after": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "historical_source_freeze_unchanged": true,
+  "retained_stage_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\.forge_ingress_stage__2srs6ad",
+  "retained_stage_bytes_before": 325188.0,
+  "retained_stage_bytes_after": 325188.0,
+  "retained_stage_inventory_before": [
+    {
+      "path": "cell_in_progress.json",
+      "bytes": 2372,
+      "sha256": "5A166E9EEF48A505B9BC00880D6BC264E87430AEF1D748511E1059CC852E99E3"
+    },
+    {
+      "path": "cell_ledger.json",
+      "bytes": 118930,
+      "sha256": "605AC46FA610141F45998CF66BB4CFE6381BC74C5C3E7E93C54FD22BFE44B56D"
+    },
+    {
+      "path": "cell_ledger.partial.json",
+      "bytes": 119097,
+      "sha256": "544ED3557F0E24D68E91DD8EE5B566EEDE773D0F54B3F58633272AE2CAAC49B1"
+    },
+    {
+      "path": "material_points.json",
+      "bytes": 77304,
+      "sha256": "EA0C64B996173735185368934C2BD6DFB7734CE1990813599C8F695B89BD1C0B"
+    },
+    {
+      "path": "parent_execution_receipt.json",
+      "bytes": 2151,
+      "sha256": "97310270BE5A002B78E24B75E61D3F8C301F66B8C3095DDEF61CAF475F2A6BB5"
+    },
+    {
+      "path": "request.json",
+      "bytes": 1032,
+      "sha256": "EF3D3E668B183ECB2AF98B02E0800AB93779E9A1EF91DE9BFA151CA608334CBB"
+    },
+    {
+      "path": "worker_failure.json",
+      "bytes": 4302,
+      "sha256": "5EB4C9739430BF1F9A26E8CE6F51D0D951E879791FE10A2F37FA586A8A6C5E1E"
+    }
+  ],
+  "retained_stage_inventory_after": [
+    {
+      "path": "cell_in_progress.json",
+      "bytes": 2372,
+      "sha256": "5A166E9EEF48A505B9BC00880D6BC264E87430AEF1D748511E1059CC852E99E3"
+    },
+    {
+      "path": "cell_ledger.json",
+      "bytes": 118930,
+      "sha256": "605AC46FA610141F45998CF66BB4CFE6381BC74C5C3E7E93C54FD22BFE44B56D"
+    },
+    {
+      "path": "cell_ledger.partial.json",
+      "bytes": 119097,
+      "sha256": "544ED3557F0E24D68E91DD8EE5B566EEDE773D0F54B3F58633272AE2CAAC49B1"
+    },
+    {
+      "path": "material_points.json",
+      "bytes": 77304,
+      "sha256": "EA0C64B996173735185368934C2BD6DFB7734CE1990813599C8F695B89BD1C0B"
+    },
+    {
+      "path": "parent_execution_receipt.json",
+      "bytes": 2151,
+      "sha256": "97310270BE5A002B78E24B75E61D3F8C301F66B8C3095DDEF61CAF475F2A6BB5"
+    },
+    {
+      "path": "request.json",
+      "bytes": 1032,
+      "sha256": "EF3D3E668B183ECB2AF98B02E0800AB93779E9A1EF91DE9BFA151CA608334CBB"
+    },
+    {
+      "path": "worker_failure.json",
+      "bytes": 4302,
+      "sha256": "5EB4C9739430BF1F9A26E8CE6F51D0D951E879791FE10A2F37FA586A8A6C5E1E"
+    }
+  ],
+  "retained_stage_unchanged": true,
+  "no_cad_or_solver_run": true,
+  "rerun_allowed": false
+}

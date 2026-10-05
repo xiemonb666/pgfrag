@@ -1,0 +1,238 @@
+{
+  "authorization_scope": "One bounded local ROI geometry test; no full-vessel, physics, or native solver qualification",
+  "finalization_failure": {
+    "analysis": "_write_final_report resets output.total_bytes to zero on every fixed-point iteration, then compares the serialized report with a total computed from the zero-count serialization; it repeats the same candidate instead of feeding the new total into the next iteration.",
+    "exception_class": "IngressBlocked",
+    "ingress_report_present": false,
+    "parent_execution_receipt": {
+      "child_status": "BLOCKED",
+      "partial_ledger_status": "BLOCKED_PARENT_EXECUTION",
+      "path": "parent_execution_receipt.json",
+      "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+      "status": "BLOCKED_STAGE_RETAINED"
+    },
+    "reason": "could not stabilize report-inclusive output byte count",
+    "report_attempt_was_promoted": false,
+    "worker_failure_receipt": {
+      "path": "worker_failure.json",
+      "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+    }
+  },
+  "fixed_configuration": {
+    "candidate_cells": 96,
+    "cell_size_mm": 0.5,
+    "centroid_classifier": "OCP.BRepClass3d_SolidClassifier; all positive component centroids required IN at 1e-7 mm; no COM projection",
+    "input_schema": "forge.asset.v1",
+    "roi_aabb_mm": [
+      7.5,
+      10.5,
+      -1.0,
+      1.0,
+      4.0,
+      6.0
+    ],
+    "source_units": {
+      "frame": "right_handed_z_up",
+      "length": "mm",
+      "mass": "kg",
+      "time": "s"
+    }
+  },
+  "freeze": {
+    "input_hashes_after": [
+      {
+        "path": "manifest.json",
+        "sha256": "DF781DC6C818512AF8D66B164288AA0D5991097EA0166B85556119DE2C9FBA41"
+      },
+      {
+        "path": "fields/surface_fields.npz",
+        "sha256": "3526D706C83A37667EDEFE965C9F9C92D550BDFBD090A88B5B10539A98E0835D"
+      },
+      {
+        "path": "geometry/mesh_lineage.npz",
+        "sha256": "3C68077EA376E26DC0710068D9DEAB22423F07F1E04386F1D0EC51271AFCAD8D"
+      },
+      {
+        "path": "geometry/solid.step",
+        "sha256": "5C68BBC29B2B0BC684CC6C551C2769872C4C490D588B9A3EA2CBB98E7F74135E"
+      },
+      {
+        "path": "geometry/surface.npz",
+        "sha256": "79E05B8470A9F327CB9C015E6FEA873A286E16D2A3C88D9756BE0D9D9FCD3117"
+      },
+      {
+        "path": "metadata/face_semantics.json",
+        "sha256": "A5C6A26BA37F02DAE51C2A8083A38B3548A457FE8555452A3959DF8A7101B848"
+      },
+      {
+        "path": "metadata/wall_reference.json",
+        "sha256": "A7033BC9F3742677931B6BE142D5ED42FD871BC6CBB1F08A12682288E6D06B76"
+      },
+      {
+        "path": "validation/geometry.json",
+        "sha256": "B3972C50AA99D10F104471FD69280128A90980E15A8DCBB290BE171BEAC6BD61"
+      }
+    ],
+    "input_hashes_before": [
+      {
+        "path": "manifest.json",
+        "sha256": "DF781DC6C818512AF8D66B164288AA0D5991097EA0166B85556119DE2C9FBA41"
+      },
+      {
+        "path": "fields/surface_fields.npz",
+        "sha256": "3526D706C83A37667EDEFE965C9F9C92D550BDFBD090A88B5B10539A98E0835D"
+      },
+      {
+        "path": "geometry/mesh_lineage.npz",
+        "sha256": "3C68077EA376E26DC0710068D9DEAB22423F07F1E04386F1D0EC51271AFCAD8D"
+      },
+      {
+        "path": "geometry/solid.step",
+        "sha256": "5C68BBC29B2B0BC684CC6C551C2769872C4C490D588B9A3EA2CBB98E7F74135E"
+      },
+      {
+        "path": "geometry/surface.npz",
+        "sha256": "79E05B8470A9F327CB9C015E6FEA873A286E16D2A3C88D9756BE0D9D9FCD3117"
+      },
+      {
+        "path": "metadata/face_semantics.json",
+        "sha256": "A5C6A26BA37F02DAE51C2A8083A38B3548A457FE8555452A3959DF8A7101B848"
+      },
+      {
+        "path": "metadata/wall_reference.json",
+        "sha256": "A7033BC9F3742677931B6BE142D5ED42FD871BC6CBB1F08A12682288E6D06B76"
+      },
+      {
+        "path": "validation/geometry.json",
+        "sha256": "B3972C50AA99D10F104471FD69280128A90980E15A8DCBB290BE171BEAC6BD61"
+      }
+    ],
+    "inputs_unchanged": true,
+    "migration_receipt_sha256_after": "4C20E462F1ACEDB81AB9A1ECDD9D19A4D97359AE2D5A28456B127593D971F860",
+    "migration_receipt_sha256_before": "4C20E462F1ACEDB81AB9A1ECDD9D19A4D97359AE2D5A28456B127593D971F860",
+    "source_freeze_sha256_after": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+    "source_freeze_sha256_before": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+    "source_freeze_unchanged": true,
+    "worker_sha256": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5"
+  },
+  "local_geometry_results": {
+    "cell_size_over_nominal_wall_parameter": 0.25,
+    "cell_status_counts": {
+      "POSITIVE_COMPONENTS_CENTROIDS_IN": 80,
+      "ZERO_INTERSECTION": 16
+    },
+    "component_centroid_class_counts": {
+      "IN": 80
+    },
+    "component_topology_counts": {
+      "PASS": 80
+    },
+    "connected_component_count": 80,
+    "declared_density_kg_m3": 2100.0,
+    "difference_sum_minus_reference_mm3": -4.980904577678302e-12,
+    "pointset_count": 80,
+    "pointset_status_before_report_failure": "PASS_LOCAL_BREP_INGRESS_DIAGNOSTIC_ONLY",
+    "processed_cells": 96,
+    "qualification": "local B-rep ROI diagnostic only; not full-mother conservation, convergence, physical material validation, or physics-ready",
+    "raw_ledger_volume_reconciliation": "PASS_LOCAL_ROI_BREP_VOLUME_RECONCILIATION",
+    "reference_roi_common_volume_mm3": 8.01676271854943,
+    "reference_roi_connected_solid_count": 1,
+    "reference_roi_topology": {
+      "brep_check_valid": true,
+      "one_closed_shell": true,
+      "open_shell_count": 0,
+      "shell_count": 1,
+      "status": "PASS"
+    },
+    "sum_96_cell_common_volumes_mm3": 8.016762718544449,
+    "sum_connected_component_volumes_mm3": 8.016762718544449,
+    "sum_emitted_point_mass_kg": 1.6835201708943335e-05,
+    "sum_emitted_point_volumes_mm3": 8.016762718544445,
+    "tolerance_mm3": 8.01676271854943e-08
+  },
+  "note": "This recovery summary reports raw outcomes from the failed report-finalization run. It does not change the retained stage, assert final worker PASS, or authorize a rerun.",
+  "pilot_final_status": "BLOCKED_REPORT_FINALIZATION; local geometry ledger retained",
+  "pilot_rerun": false,
+  "retained_stage": {
+    "files": [
+      {
+        "bytes": 2372,
+        "path": "cell_in_progress.json",
+        "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+      },
+      {
+        "bytes": 118930,
+        "path": "cell_ledger.json",
+        "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+      },
+      {
+        "bytes": 119097,
+        "path": "cell_ledger.partial.json",
+        "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+      },
+      {
+        "bytes": 77304,
+        "path": "material_points.json",
+        "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+      },
+      {
+        "bytes": 2151,
+        "path": "parent_execution_receipt.json",
+        "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+      },
+      {
+        "bytes": 1032,
+        "path": "request.json",
+        "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+      },
+      {
+        "bytes": 4302,
+        "path": "worker_failure.json",
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    ],
+    "parent_receipt_sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+    "path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/.forge_ingress_stage__2srs6ad",
+    "total_bytes_including_tmp": 325188,
+    "within_20_mib": true,
+    "worker_failure_sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+  },
+  "review_date": "2026-10-05",
+  "run": {
+    "argv": [
+      "-B",
+      "-u",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\worker.py",
+      "--run-bounded-pilot",
+      "--output-dir",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01"
+    ],
+    "elapsed_seconds": 4.61623,
+    "ended_utc": "2026-10-05T09:54:57.2056112Z",
+    "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "outer_exit_code": 2,
+    "rerun_allowed": false,
+    "started_utc": "2026-10-05T09:54:52.4893633Z",
+    "stderr_log": "candidate_run01_supervisor/stderr.log",
+    "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "stdout_log": "candidate_run01_supervisor/stdout.log",
+    "stdout_sha256": "E1B9D566BDD4F8ADDEE10B19791F40142DF0D67ACC89804DE1F7FB6818B171E4",
+    "timeout": false,
+    "worker_child_exit_code": 0
+  },
+  "schema": "pgfrag.forge_volume_ingress_failed_report_recovery.v1",
+  "status": "RECOVERED_DIAGNOSTIC_FROM_FAILED_REPORT_RUN",
+  "supervisor_receipt_path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/candidate_run01_supervisor/final_receipt.json",
+  "unknown_or_unqualified": {
+    "candidate_pair_classification": "NOT_RUN_SEPARATE_GATE",
+    "fragment_extraction": "NOT_IMPLEMENTED_BY_THIS_WORKER",
+    "full_mother_discretization": "NOT_RUN",
+    "global_wall": "NOT_ESTABLISHED",
+    "mechanics_calibration": "UNVALIDATED_PROTOTYPE",
+    "native_pgfrag_integration": "NOT_CONNECTED",
+    "physics_ready": false,
+    "source_semantic_projection": "UNKNOWN_NOT_PROJECTED",
+    "surface_parent_mapping": "UNKNOWN_NOT_PROJECTED",
+    "whole_mother_conservation": "UNKNOWN_NOT_RUN"
+  }
+}

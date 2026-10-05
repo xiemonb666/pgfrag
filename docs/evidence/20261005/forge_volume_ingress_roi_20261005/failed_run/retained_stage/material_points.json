@@ -1,0 +1,3322 @@
+{
+  "frame": "right_handed_z_up",
+  "point_count": 80,
+  "points": [
+    {
+      "cell_volume_m3": 9.138370673329973e-12,
+      "mass_kg": 1.9190578413992942e-08,
+      "point_id": 1,
+      "position_m": [
+        0.007979175858938575,
+        -0.0008036843607901454,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          7.937253933193772,
+          8.0,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 0,
+        "grid_ijk": [
+          0,
+          0,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 2,
+      "position_m": [
+        0.00825,
+        -0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 1,
+        "grid_ijk": [
+          1,
+          0,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 3,
+      "position_m": [
+        0.00875,
+        -0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 2,
+        "grid_ijk": [
+          2,
+          0,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 4,
+      "position_m": [
+        0.00925,
+        -0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 3,
+        "grid_ijk": [
+          3,
+          0,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.1769617944640789e-10,
+      "mass_kg": 2.4716197683745657e-07,
+      "point_id": 5,
+      "position_m": [
+        0.009735518508101419,
+        -0.0007466710678368739,
+        0.004250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          -1.0,
+          -0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 4,
+        "grid_ijk": [
+          4,
+          0,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.302847339177883e-12,
+      "mass_kg": 2.7359794122735547e-09,
+      "point_id": 6,
+      "position_m": [
+        0.007995308700723782,
+        -0.00037502445092280865,
+        0.004250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          -0.5000000000000001,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 6,
+        "grid_ijk": [
+          0,
+          1,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 7,
+      "position_m": [
+        0.00825,
+        -0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 7,
+        "grid_ijk": [
+          1,
+          1,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 8,
+      "position_m": [
+        0.00875,
+        -0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 8,
+        "grid_ijk": [
+          2,
+          1,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 9,
+      "position_m": [
+        0.00925,
+        -0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 9,
+        "grid_ijk": [
+          3,
+          1,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235931138e-10,
+      "mass_kg": 2.603116789545539e-07,
+      "point_id": 10,
+      "position_m": [
+        0.009747929905391044,
+        -0.00024894905077857095,
+        0.004250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 10,
+        "grid_ijk": [
+          4,
+          1,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.3028473391836382e-12,
+      "mass_kg": 2.73597941228564e-09,
+      "point_id": 11,
+      "position_m": [
+        0.007995308700723796,
+        0.00037502445092151877,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 12,
+        "grid_ijk": [
+          0,
+          2,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 12,
+      "position_m": [
+        0.00825,
+        0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 13,
+        "grid_ijk": [
+          1,
+          2,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 13,
+      "position_m": [
+        0.00875,
+        0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 14,
+        "grid_ijk": [
+          2,
+          2,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 14,
+      "position_m": [
+        0.00925,
+        0.00025,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 15,
+        "grid_ijk": [
+          3,
+          2,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235896298e-10,
+      "mass_kg": 2.6031167895382223e-07,
+      "point_id": 15,
+      "position_m": [
+        0.00974792990539051,
+        0.00024894905077909826,
+        0.0042499999999999994
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.5,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.500000000000014,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 16,
+        "grid_ijk": [
+          4,
+          2,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673330028e-12,
+      "mass_kg": 1.9190578413993058e-08,
+      "point_id": 16,
+      "position_m": [
+        0.007979175858938576,
+        0.0008036843607901436,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          7.93725393319377,
+          8.0,
+          0.5,
+          1.0000000000000093,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 18,
+        "grid_ijk": [
+          0,
+          3,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 17,
+      "position_m": [
+        0.00825,
+        0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 19,
+        "grid_ijk": [
+          1,
+          3,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 18,
+      "position_m": [
+        0.00875,
+        0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 20,
+        "grid_ijk": [
+          2,
+          3,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 19,
+      "position_m": [
+        0.00925,
+        0.0007500000000000001,
+        0.00425
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 21,
+        "grid_ijk": [
+          3,
+          3,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.176961794464078e-10,
+      "mass_kg": 2.471619768374564e-07,
+      "point_id": 20,
+      "position_m": [
+        0.009735518508101419,
+        0.000746671067836873,
+        0.0042499999999999994
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.5,
+          1.0,
+          4.0,
+          4.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          0.5,
+          1.0000000000000018,
+          4.0,
+          4.5
+        ],
+        "grid_cell_index": 22,
+        "grid_ijk": [
+          4,
+          3,
+          0
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673329973e-12,
+      "mass_kg": 1.9190578413992942e-08,
+      "point_id": 21,
+      "position_m": [
+        0.007979175858938575,
+        -0.0008036843607901454,
+        0.004749999999999999
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          7.937253933193772,
+          8.0,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 24,
+        "grid_ijk": [
+          0,
+          0,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 22,
+      "position_m": [
+        0.00825,
+        -0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 25,
+        "grid_ijk": [
+          1,
+          0,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 23,
+      "position_m": [
+        0.00875,
+        -0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 26,
+        "grid_ijk": [
+          2,
+          0,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 24,
+      "position_m": [
+        0.00925,
+        -0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 27,
+        "grid_ijk": [
+          3,
+          0,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.1769617944640789e-10,
+      "mass_kg": 2.4716197683745657e-07,
+      "point_id": 25,
+      "position_m": [
+        0.009735518508101419,
+        -0.0007466710678368739,
+        0.004750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          -1.0,
+          -0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 28,
+        "grid_ijk": [
+          4,
+          0,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.302847339177883e-12,
+      "mass_kg": 2.7359794122735547e-09,
+      "point_id": 26,
+      "position_m": [
+        0.007995308700723782,
+        -0.00037502445092280865,
+        0.004750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          -0.5000000000000001,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 30,
+        "grid_ijk": [
+          0,
+          1,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 27,
+      "position_m": [
+        0.00825,
+        -0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 31,
+        "grid_ijk": [
+          1,
+          1,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 28,
+      "position_m": [
+        0.00875,
+        -0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 32,
+        "grid_ijk": [
+          2,
+          1,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 29,
+      "position_m": [
+        0.00925,
+        -0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 33,
+        "grid_ijk": [
+          3,
+          1,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235931138e-10,
+      "mass_kg": 2.603116789545539e-07,
+      "point_id": 30,
+      "position_m": [
+        0.009747929905391044,
+        -0.00024894905077857095,
+        0.004750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 34,
+        "grid_ijk": [
+          4,
+          1,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.3028473391836382e-12,
+      "mass_kg": 2.73597941228564e-09,
+      "point_id": 31,
+      "position_m": [
+        0.007995308700723796,
+        0.00037502445092151877,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 36,
+        "grid_ijk": [
+          0,
+          2,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 32,
+      "position_m": [
+        0.00825,
+        0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 37,
+        "grid_ijk": [
+          1,
+          2,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 33,
+      "position_m": [
+        0.00875,
+        0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 38,
+        "grid_ijk": [
+          2,
+          2,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 34,
+      "position_m": [
+        0.00925,
+        0.00025,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 39,
+        "grid_ijk": [
+          3,
+          2,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235896298e-10,
+      "mass_kg": 2.6031167895382223e-07,
+      "point_id": 35,
+      "position_m": [
+        0.00974792990539051,
+        0.00024894905077909826,
+        0.004749999999999999
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.5,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.500000000000014,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 40,
+        "grid_ijk": [
+          4,
+          2,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673330028e-12,
+      "mass_kg": 1.9190578413993058e-08,
+      "point_id": 36,
+      "position_m": [
+        0.007979175858938576,
+        0.0008036843607901436,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          7.93725393319377,
+          8.0,
+          0.5,
+          1.0000000000000093,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 42,
+        "grid_ijk": [
+          0,
+          3,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 37,
+      "position_m": [
+        0.00825,
+        0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 43,
+        "grid_ijk": [
+          1,
+          3,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 38,
+      "position_m": [
+        0.00875,
+        0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 44,
+        "grid_ijk": [
+          2,
+          3,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 39,
+      "position_m": [
+        0.00925,
+        0.0007500000000000001,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 45,
+        "grid_ijk": [
+          3,
+          3,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.176961794464078e-10,
+      "mass_kg": 2.471619768374564e-07,
+      "point_id": 40,
+      "position_m": [
+        0.009735518508101419,
+        0.000746671067836873,
+        0.00475
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.5,
+          1.0,
+          4.5,
+          5.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          0.5,
+          1.0000000000000018,
+          4.5,
+          5.0
+        ],
+        "grid_cell_index": 46,
+        "grid_ijk": [
+          4,
+          3,
+          1
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673329973e-12,
+      "mass_kg": 1.9190578413992942e-08,
+      "point_id": 41,
+      "position_m": [
+        0.007979175858938575,
+        -0.0008036843607901454,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          7.937253933193772,
+          8.0,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 48,
+        "grid_ijk": [
+          0,
+          0,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 42,
+      "position_m": [
+        0.00825,
+        -0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 49,
+        "grid_ijk": [
+          1,
+          0,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 43,
+      "position_m": [
+        0.00875,
+        -0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 50,
+        "grid_ijk": [
+          2,
+          0,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 44,
+      "position_m": [
+        0.00925,
+        -0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 51,
+        "grid_ijk": [
+          3,
+          0,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.1769617944640789e-10,
+      "mass_kg": 2.4716197683745657e-07,
+      "point_id": 45,
+      "position_m": [
+        0.009735518508101419,
+        -0.0007466710678368739,
+        0.005250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          -1.0,
+          -0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 52,
+        "grid_ijk": [
+          4,
+          0,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.302847339177883e-12,
+      "mass_kg": 2.7359794122735547e-09,
+      "point_id": 46,
+      "position_m": [
+        0.007995308700723782,
+        -0.00037502445092280865,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          -0.5000000000000001,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 54,
+        "grid_ijk": [
+          0,
+          1,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 47,
+      "position_m": [
+        0.00825,
+        -0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 55,
+        "grid_ijk": [
+          1,
+          1,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 48,
+      "position_m": [
+        0.00875,
+        -0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 56,
+        "grid_ijk": [
+          2,
+          1,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 49,
+      "position_m": [
+        0.00925,
+        -0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 57,
+        "grid_ijk": [
+          3,
+          1,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235931138e-10,
+      "mass_kg": 2.603116789545539e-07,
+      "point_id": 50,
+      "position_m": [
+        0.009747929905391044,
+        -0.00024894905077857095,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 58,
+        "grid_ijk": [
+          4,
+          1,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.3028473391836382e-12,
+      "mass_kg": 2.73597941228564e-09,
+      "point_id": 51,
+      "position_m": [
+        0.007995308700723796,
+        0.00037502445092151877,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 60,
+        "grid_ijk": [
+          0,
+          2,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 52,
+      "position_m": [
+        0.00825,
+        0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 61,
+        "grid_ijk": [
+          1,
+          2,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 53,
+      "position_m": [
+        0.00875,
+        0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 62,
+        "grid_ijk": [
+          2,
+          2,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 54,
+      "position_m": [
+        0.00925,
+        0.00025,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 63,
+        "grid_ijk": [
+          3,
+          2,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235896298e-10,
+      "mass_kg": 2.6031167895382223e-07,
+      "point_id": 55,
+      "position_m": [
+        0.00974792990539051,
+        0.00024894905077909826,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.5,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.500000000000014,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 64,
+        "grid_ijk": [
+          4,
+          2,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673330028e-12,
+      "mass_kg": 1.9190578413993058e-08,
+      "point_id": 56,
+      "position_m": [
+        0.007979175858938576,
+        0.0008036843607901436,
+        0.005250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          7.93725393319377,
+          8.0,
+          0.5,
+          1.0000000000000093,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 66,
+        "grid_ijk": [
+          0,
+          3,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 57,
+      "position_m": [
+        0.00825,
+        0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 67,
+        "grid_ijk": [
+          1,
+          3,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 58,
+      "position_m": [
+        0.00875,
+        0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 68,
+        "grid_ijk": [
+          2,
+          3,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 59,
+      "position_m": [
+        0.00925,
+        0.0007500000000000001,
+        0.00525
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 69,
+        "grid_ijk": [
+          3,
+          3,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.176961794464078e-10,
+      "mass_kg": 2.471619768374564e-07,
+      "point_id": 60,
+      "position_m": [
+        0.009735518508101419,
+        0.000746671067836873,
+        0.005250000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.5,
+          1.0,
+          5.0,
+          5.5
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          0.5,
+          1.0000000000000018,
+          5.0,
+          5.5
+        ],
+        "grid_cell_index": 70,
+        "grid_ijk": [
+          4,
+          3,
+          2
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673329973e-12,
+      "mass_kg": 1.9190578413992942e-08,
+      "point_id": 61,
+      "position_m": [
+        0.007979175858938575,
+        -0.0008036843607901454,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          7.937253933193772,
+          8.0,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 72,
+        "grid_ijk": [
+          0,
+          0,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 62,
+      "position_m": [
+        0.00825,
+        -0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 73,
+        "grid_ijk": [
+          1,
+          0,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 63,
+      "position_m": [
+        0.00875,
+        -0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 74,
+        "grid_ijk": [
+          2,
+          0,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 64,
+      "position_m": [
+        0.00925,
+        -0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 75,
+        "grid_ijk": [
+          3,
+          0,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.1769617944640789e-10,
+      "mass_kg": 2.4716197683745657e-07,
+      "point_id": 65,
+      "position_m": [
+        0.009735518508101419,
+        -0.0007466710678368739,
+        0.005750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          -1.0,
+          -0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 76,
+        "grid_ijk": [
+          4,
+          0,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.302847339177883e-12,
+      "mass_kg": 2.7359794122735547e-09,
+      "point_id": 66,
+      "position_m": [
+        0.007995308700723782,
+        -0.00037502445092280865,
+        0.005750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          -0.5000000000000001,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 78,
+        "grid_ijk": [
+          0,
+          1,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 67,
+      "position_m": [
+        0.00825,
+        -0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 79,
+        "grid_ijk": [
+          1,
+          1,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 68,
+      "position_m": [
+        0.00875,
+        -0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 80,
+        "grid_ijk": [
+          2,
+          1,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 69,
+      "position_m": [
+        0.00925,
+        -0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 81,
+        "grid_ijk": [
+          3,
+          1,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235931138e-10,
+      "mass_kg": 2.603116789545539e-07,
+      "point_id": 70,
+      "position_m": [
+        0.009747929905391044,
+        -0.00024894905077857095,
+        0.005750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          -0.5,
+          0.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 82,
+        "grid_ijk": [
+          4,
+          1,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.3028473391836382e-12,
+      "mass_kg": 2.73597941228564e-09,
+      "point_id": 71,
+      "position_m": [
+        0.007995308700723796,
+        0.00037502445092151877,
+        0.005749999999999999
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          7.984359711335656,
+          8.0,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 84,
+        "grid_ijk": [
+          0,
+          2,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 72,
+      "position_m": [
+        0.00825,
+        0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 85,
+        "grid_ijk": [
+          1,
+          2,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 73,
+      "position_m": [
+        0.00875,
+        0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 86,
+        "grid_ijk": [
+          2,
+          2,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 74,
+      "position_m": [
+        0.00925,
+        0.00025,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 87,
+        "grid_ijk": [
+          3,
+          2,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2395794235896298e-10,
+      "mass_kg": 2.6031167895382223e-07,
+      "point_id": 75,
+      "position_m": [
+        0.00974792990539051,
+        0.00024894905077909826,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.5,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          10.0,
+          0.0,
+          0.500000000000014,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 88,
+        "grid_ijk": [
+          4,
+          2,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 9.138370673330028e-12,
+      "mass_kg": 1.9190578413993058e-08,
+      "point_id": 76,
+      "position_m": [
+        0.007979175858938576,
+        0.0008036843607901436,
+        0.005750000000000001
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          7.5,
+          8.0,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          7.93725393319377,
+          8.0,
+          0.5,
+          1.0000000000000093,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 90,
+        "grid_ijk": [
+          0,
+          3,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 77,
+      "position_m": [
+        0.00825,
+        0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.0,
+          8.5,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 91,
+        "grid_ijk": [
+          1,
+          3,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 78,
+      "position_m": [
+        0.00875,
+        0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          8.5,
+          9.0,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 92,
+        "grid_ijk": [
+          2,
+          3,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.2499999999999998e-10,
+      "mass_kg": 2.625e-07,
+      "point_id": 79,
+      "position_m": [
+        0.00925,
+        0.0007500000000000001,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.0,
+          9.5,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 93,
+        "grid_ijk": [
+          3,
+          3,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    },
+    {
+      "cell_volume_m3": 1.176961794464078e-10,
+      "mass_kg": 2.471619768374564e-07,
+      "point_id": 80,
+      "position_m": [
+        0.009735518508101419,
+        0.000746671067836873,
+        0.00575
+      ],
+      "source": {
+        "cell_aabb_mm": [
+          9.5,
+          10.0,
+          0.5,
+          1.0,
+          5.5,
+          6.0
+        ],
+        "component_aabb_mm": [
+          9.5,
+          9.987492177719089,
+          0.5,
+          1.0000000000000018,
+          5.5,
+          6.0
+        ],
+        "grid_cell_index": 94,
+        "grid_ijk": [
+          4,
+          3,
+          3
+        ],
+        "input_brep_solid_index": 0,
+        "intersection_component_index": 0,
+        "raw_component_index": 0,
+        "source_semantic_region_code": null,
+        "source_semantic_region_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+        "surface_parent_triangle": null
+      }
+    }
+  ],
+  "provenance": {
+    "candidate_pair_classification_status": "NOT_RUN_SEPARATE_GATE",
+    "canonical_geometry_provider": "OpenCascade B-rep solid-cell intersection; no h^3 approximation",
+    "canonical_step_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "fragment_extraction_status": "NOT_IMPLEMENTED_BY_THIS_WORKER",
+    "input_payload_sha256": {
+      "fields/surface_fields.npz": "3526d706c83a37667edefe965c9f9c92d550bdfbd090a88b5b10539a98e0835d",
+      "geometry/mesh_lineage.npz": "3c68077ea376e26dc0710068d9deab22423f07f1e04386f1d0ec51271afcad8d",
+      "geometry/solid.step": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "geometry/surface.npz": "79e05b8470a9f327cb9c015e6fea873a286e16d2a3c88d9756be0d9d9fcd3117",
+      "manifest.json": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+      "metadata/face_semantics.json": "a5c6a26ba37f02dae51c2a8083a38b3548a457fe8555452a3959df8a7101b848",
+      "metadata/wall_reference.json": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+      "validation/geometry.json": "b3972c50aa99d10f104471fd69280128a90980e15a8dcbb290be171beac6bd61"
+    },
+    "mechanical_calibration_status": "UNVALIDATED_PROTOTYPE",
+    "native_pgfrag_integration_status": "NOT_CONNECTED",
+    "rho_kg_m3": 2100.0,
+    "source_coordinate_frame": "right_handed_z_up",
+    "source_length_unit": "mm",
+    "source_material_solid_index": 0,
+    "source_semantic_codes_available": {},
+    "source_semantic_projection_status": "UNKNOWN_NOT_PROJECTED",
+    "source_solid_count": 1,
+    "surface_parent_mapping_status": "UNKNOWN_NOT_PROJECTED",
+    "vf_asset_manifest_sha256": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+    "vf_asset_schema": "forge.asset.v1"
+  },
+  "schema": "pgfrag.volume_ingress.pointset_candidate.v1",
+  "status": "PASS_LOCAL_BREP_INGRESS_DIAGNOSTIC_ONLY",
+  "units": {
+    "cell_volume": "m^3",
+    "mass": "kg",
+    "position": "m",
+    "source_aabb": "mm"
+  }
+}

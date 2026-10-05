@@ -1,0 +1,4858 @@
+{
+  "blocking_reasons_so_far": [],
+  "candidate_cell_count": 96,
+  "cell_size_mm": 0.5,
+  "cells": [
+    {
+      "candidate_point_ids": [
+        1
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 1,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938574,
+            -0.8036843607901454,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.937253933193772,
+            8.0,
+            -1.0,
+            -0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673329973
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 0,
+      "grid_ijk": [
+        0,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.009138370673329973,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        2
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 2,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -1.0,
+            -0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 1,
+      "grid_ijk": [
+        1,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        3
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 3,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -1.0,
+            -0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 2,
+      "grid_ijk": [
+        2,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        4
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 4,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -1.0,
+            -0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 3,
+      "grid_ijk": [
+        3,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        5
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 5,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            -0.7466710678368739,
+            4.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            -1.0,
+            -0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640787
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 4,
+      "grid_ijk": [
+        4,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.11769617944640787,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -1.0,
+        -0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 5,
+      "grid_ijk": [
+        5,
+        0,
+        0
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        6
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 6,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723783,
+            -0.3750244509228086,
+            4.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            -0.5000000000000001,
+            0.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.001302847339177883
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 6,
+      "grid_ijk": [
+        0,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.001302847339177883,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        7
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 7,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -0.5,
+            0.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 7,
+      "grid_ijk": [
+        1,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        8
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 8,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -0.5,
+            0.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 8,
+      "grid_ijk": [
+        2,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        9
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 9,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -0.5,
+            0.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 9,
+      "grid_ijk": [
+        3,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        10
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 10,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.747929905391043,
+            -0.24894905077857094,
+            4.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            -0.5,
+            0.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235931136
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 10,
+      "grid_ijk": [
+        4,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12395794235931136,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -0.5,
+        0.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 11,
+      "grid_ijk": [
+        5,
+        1,
+        0
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        11
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 11,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723797,
+            0.37502445092151876,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            0.0,
+            0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.0013028473391836382
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 12,
+      "grid_ijk": [
+        0,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.0013028473391836382,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        12
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 12,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.0,
+            0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 13,
+      "grid_ijk": [
+        1,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        13
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 13,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.0,
+            0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 14,
+      "grid_ijk": [
+        2,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        14
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 14,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.25,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.0,
+            0.5,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 15,
+      "grid_ijk": [
+        3,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        15
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 15,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.74792990539051,
+            0.24894905077909826,
+            4.249999999999999
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            0.0,
+            0.500000000000014,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235896299
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 16,
+      "grid_ijk": [
+        4,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12395794235896299,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.0,
+        0.5,
+        4.0,
+        4.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 17,
+      "grid_ijk": [
+        5,
+        2,
+        0
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        16
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 16,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938576,
+            0.8036843607901436,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.93725393319377,
+            8.0,
+            0.5,
+            1.0000000000000093,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673330027
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 18,
+      "grid_ijk": [
+        0,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.009138370673330027,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        17
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 17,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.5,
+            1.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 19,
+      "grid_ijk": [
+        1,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        18
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 18,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.5,
+            1.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 20,
+      "grid_ijk": [
+        2,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        19
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 19,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.7500000000000001,
+            4.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.5,
+            1.0,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 21,
+      "grid_ijk": [
+        3,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        20
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 20,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            0.746671067836873,
+            4.249999999999999
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            0.5,
+            1.0000000000000018,
+            4.0,
+            4.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640781
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 22,
+      "grid_ijk": [
+        4,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.11769617944640781,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.5,
+        1.0,
+        4.0,
+        4.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 23,
+      "grid_ijk": [
+        5,
+        3,
+        0
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        21
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 21,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938574,
+            -0.8036843607901454,
+            4.749999999999999
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.937253933193772,
+            8.0,
+            -1.0,
+            -0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673329973
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 24,
+      "grid_ijk": [
+        0,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.009138370673329973,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        22
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 22,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -1.0,
+            -0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 25,
+      "grid_ijk": [
+        1,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        23
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 23,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -1.0,
+            -0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 26,
+      "grid_ijk": [
+        2,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        24
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 24,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -1.0,
+            -0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 27,
+      "grid_ijk": [
+        3,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        25
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 25,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            -0.7466710678368739,
+            4.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            -1.0,
+            -0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640787
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 28,
+      "grid_ijk": [
+        4,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.11769617944640787,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -1.0,
+        -0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 29,
+      "grid_ijk": [
+        5,
+        0,
+        1
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        26
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 26,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723783,
+            -0.3750244509228086,
+            4.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            -0.5000000000000001,
+            0.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.001302847339177883
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 30,
+      "grid_ijk": [
+        0,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.001302847339177883,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        27
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 27,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -0.5,
+            0.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 31,
+      "grid_ijk": [
+        1,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        28
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 28,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -0.5,
+            0.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 32,
+      "grid_ijk": [
+        2,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        29
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 29,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -0.5,
+            0.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 33,
+      "grid_ijk": [
+        3,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        30
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 30,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.747929905391043,
+            -0.24894905077857094,
+            4.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            -0.5,
+            0.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235931136
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 34,
+      "grid_ijk": [
+        4,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12395794235931136,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -0.5,
+        0.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 35,
+      "grid_ijk": [
+        5,
+        1,
+        1
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        31
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 31,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723797,
+            0.37502445092151876,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            0.0,
+            0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.0013028473391836382
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 36,
+      "grid_ijk": [
+        0,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.0013028473391836382,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        32
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 32,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.0,
+            0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 37,
+      "grid_ijk": [
+        1,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        33
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 33,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.0,
+            0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 38,
+      "grid_ijk": [
+        2,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        34
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 34,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.25,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.0,
+            0.5,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 39,
+      "grid_ijk": [
+        3,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        35
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 35,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.74792990539051,
+            0.24894905077909826,
+            4.749999999999999
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            0.0,
+            0.500000000000014,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235896299
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 40,
+      "grid_ijk": [
+        4,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12395794235896299,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.0,
+        0.5,
+        4.5,
+        5.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 41,
+      "grid_ijk": [
+        5,
+        2,
+        1
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        36
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 36,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938576,
+            0.8036843607901436,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.93725393319377,
+            8.0,
+            0.5,
+            1.0000000000000093,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673330027
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 42,
+      "grid_ijk": [
+        0,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.009138370673330027,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        37
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 37,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.5,
+            1.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 43,
+      "grid_ijk": [
+        1,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        38
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 38,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.5,
+            1.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 44,
+      "grid_ijk": [
+        2,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        39
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 39,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.7500000000000001,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.5,
+            1.0,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 45,
+      "grid_ijk": [
+        3,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        40
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 40,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            0.746671067836873,
+            4.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            0.5,
+            1.0000000000000018,
+            4.5,
+            5.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640781
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 46,
+      "grid_ijk": [
+        4,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.11769617944640781,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.5,
+        1.0,
+        4.5,
+        5.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 47,
+      "grid_ijk": [
+        5,
+        3,
+        1
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        41
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 41,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938574,
+            -0.8036843607901454,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.937253933193772,
+            8.0,
+            -1.0,
+            -0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673329973
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 48,
+      "grid_ijk": [
+        0,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.009138370673329973,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        42
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 42,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -1.0,
+            -0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 49,
+      "grid_ijk": [
+        1,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        43
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 43,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -1.0,
+            -0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 50,
+      "grid_ijk": [
+        2,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        44
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 44,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -1.0,
+            -0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 51,
+      "grid_ijk": [
+        3,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        45
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 45,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            -0.7466710678368739,
+            5.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            -1.0,
+            -0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640787
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 52,
+      "grid_ijk": [
+        4,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.11769617944640787,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -1.0,
+        -0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 53,
+      "grid_ijk": [
+        5,
+        0,
+        2
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        46
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 46,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723783,
+            -0.3750244509228086,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            -0.5000000000000001,
+            0.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.001302847339177883
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 54,
+      "grid_ijk": [
+        0,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.001302847339177883,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        47
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 47,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -0.5,
+            0.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 55,
+      "grid_ijk": [
+        1,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        48
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 48,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -0.5,
+            0.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 56,
+      "grid_ijk": [
+        2,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        49
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 49,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -0.5,
+            0.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 57,
+      "grid_ijk": [
+        3,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        50
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 50,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.747929905391043,
+            -0.24894905077857094,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            -0.5,
+            0.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235931136
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 58,
+      "grid_ijk": [
+        4,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12395794235931136,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -0.5,
+        0.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 59,
+      "grid_ijk": [
+        5,
+        1,
+        2
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        51
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 51,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723797,
+            0.37502445092151876,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            0.0,
+            0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.0013028473391836382
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 60,
+      "grid_ijk": [
+        0,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.0013028473391836382,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        52
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 52,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.0,
+            0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 61,
+      "grid_ijk": [
+        1,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        53
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 53,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.0,
+            0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 62,
+      "grid_ijk": [
+        2,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        54
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 54,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.25,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.0,
+            0.5,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 63,
+      "grid_ijk": [
+        3,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        55
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 55,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.74792990539051,
+            0.24894905077909826,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            0.0,
+            0.500000000000014,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235896299
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 64,
+      "grid_ijk": [
+        4,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12395794235896299,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.0,
+        0.5,
+        5.0,
+        5.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 65,
+      "grid_ijk": [
+        5,
+        2,
+        2
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        56
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 56,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938576,
+            0.8036843607901436,
+            5.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.93725393319377,
+            8.0,
+            0.5,
+            1.0000000000000093,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673330027
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 66,
+      "grid_ijk": [
+        0,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.009138370673330027,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        57
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 57,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.5,
+            1.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 67,
+      "grid_ijk": [
+        1,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        58
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 58,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.5,
+            1.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 68,
+      "grid_ijk": [
+        2,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        59
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 59,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.7500000000000001,
+            5.25
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.5,
+            1.0,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 69,
+      "grid_ijk": [
+        3,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        60
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 60,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            0.746671067836873,
+            5.250000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            0.5,
+            1.0000000000000018,
+            5.0,
+            5.5
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640781
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 70,
+      "grid_ijk": [
+        4,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.11769617944640781,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.5,
+        1.0,
+        5.0,
+        5.5
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 71,
+      "grid_ijk": [
+        5,
+        3,
+        2
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        61
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 61,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938574,
+            -0.8036843607901454,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.937253933193772,
+            8.0,
+            -1.0,
+            -0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673329973
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 72,
+      "grid_ijk": [
+        0,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.009138370673329973,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        62
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 62,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -1.0,
+            -0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 73,
+      "grid_ijk": [
+        1,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        63
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 63,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -1.0,
+            -0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 74,
+      "grid_ijk": [
+        2,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        64
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 64,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -1.0,
+            -0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 75,
+      "grid_ijk": [
+        3,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        65
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 65,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            -0.7466710678368739,
+            5.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            -1.0,
+            -0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640787
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 76,
+      "grid_ijk": [
+        4,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.11769617944640787,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -1.0,
+        -0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 77,
+      "grid_ijk": [
+        5,
+        0,
+        3
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        66
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 66,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723783,
+            -0.3750244509228086,
+            5.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            -0.5000000000000001,
+            0.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.001302847339177883
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 78,
+      "grid_ijk": [
+        0,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.001302847339177883,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        67
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 67,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            -0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            -0.5,
+            0.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 79,
+      "grid_ijk": [
+        1,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        68
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 68,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            -0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            -0.5,
+            0.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 80,
+      "grid_ijk": [
+        2,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        69
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 69,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            -0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            -0.5,
+            0.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 81,
+      "grid_ijk": [
+        3,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        70
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 70,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.747929905391043,
+            -0.24894905077857094,
+            5.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            -0.5,
+            0.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235931136
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 82,
+      "grid_ijk": [
+        4,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12395794235931136,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        -0.5,
+        0.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 83,
+      "grid_ijk": [
+        5,
+        1,
+        3
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        71
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 5,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 71,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.995308700723797,
+            0.37502445092151876,
+            5.749999999999999
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.984359711335656,
+            8.0,
+            0.0,
+            0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.0013028473391836382
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 84,
+      "grid_ijk": [
+        0,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.0013028473391836382,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        72
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 72,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.0,
+            0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 85,
+      "grid_ijk": [
+        1,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        73
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 73,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.0,
+            0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 86,
+      "grid_ijk": [
+        2,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        74
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 74,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.25,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.0,
+            0.5,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 87,
+      "grid_ijk": [
+        3,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        75
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 75,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.74792990539051,
+            0.24894905077909826,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            10.0,
+            0.0,
+            0.500000000000014,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12395794235896299
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 88,
+      "grid_ijk": [
+        4,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12395794235896299,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.0,
+        0.5,
+        5.5,
+        6.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 89,
+      "grid_ijk": [
+        5,
+        2,
+        3
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    },
+    {
+      "candidate_point_ids": [
+        76
+      ],
+      "cell_aabb_mm": [
+        7.5,
+        8.0,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 76,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            7.979175858938576,
+            0.8036843607901436,
+            5.750000000000001
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            7.93725393319377,
+            8.0,
+            0.5,
+            1.0000000000000093,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.009138370673330027
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 90,
+      "grid_ijk": [
+        0,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.009138370673330027,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        77
+      ],
+      "cell_aabb_mm": [
+        8.0,
+        8.5,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 77,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.25,
+            0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.0,
+            8.5,
+            0.5,
+            1.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 91,
+      "grid_ijk": [
+        1,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        78
+      ],
+      "cell_aabb_mm": [
+        8.5,
+        9.0,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 78,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            8.75,
+            0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            8.5,
+            9.0,
+            0.5,
+            1.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 92,
+      "grid_ijk": [
+        2,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        79
+      ],
+      "cell_aabb_mm": [
+        9.0,
+        9.5,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 79,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.25,
+            0.7500000000000001,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.0,
+            9.5,
+            0.5,
+            1.0,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.12499999999999997
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 93,
+      "grid_ijk": [
+        3,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.12499999999999997,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [
+        80
+      ],
+      "cell_aabb_mm": [
+        9.5,
+        10.0,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "POSITIVE_COMPONENTS_CENTROIDS_IN",
+      "common_face_count": 6,
+      "common_operation_status": "COMPLETED",
+      "component_records": [
+        {
+          "candidate_point_id": 80,
+          "candidate_point_status": "CANDIDATE_CENTROID_IN",
+          "centroid_mm": [
+            9.73551850810142,
+            0.746671067836873,
+            5.75
+          ],
+          "centroid_source_classification": "IN",
+          "component_aabb_mm": [
+            9.5,
+            9.987492177719089,
+            0.5,
+            1.0000000000000018,
+            5.5,
+            6.0
+          ],
+          "component_topology": {
+            "brep_check_valid": true,
+            "one_closed_shell": true,
+            "open_shell_count": 0,
+            "shell_count": 1,
+            "status": "PASS"
+          },
+          "intersection_component_index": 0,
+          "raw_component_index": 0,
+          "raw_volume_mm3": 0.11769617944640781
+        }
+      ],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 94,
+      "grid_ijk": [
+        4,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.11769617944640781,
+      "raw_connected_solid_count": 1
+    },
+    {
+      "candidate_point_ids": [],
+      "cell_aabb_mm": [
+        10.0,
+        10.5,
+        0.5,
+        1.0,
+        5.5,
+        6.0
+      ],
+      "cell_status": "ZERO_INTERSECTION",
+      "common_face_count": 0,
+      "common_operation_status": "COMPLETED",
+      "component_records": [],
+      "component_records_truncated_by_cap": false,
+      "grid_cell_index": 95,
+      "grid_ijk": [
+        5,
+        3,
+        3
+      ],
+      "raw_common_volume_mm3": 0.0,
+      "raw_connected_solid_count": 0
+    }
+  ],
+  "frozen_input_payload_hashes_before": {
+    "fields/surface_fields.npz": "3526d706c83a37667edefe965c9f9c92d550bdfbd090a88b5b10539a98e0835d",
+    "geometry/mesh_lineage.npz": "3c68077ea376e26dc0710068d9deab22423f07f1e04386f1d0ec51271afcad8d",
+    "geometry/solid.step": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "geometry/surface.npz": "79e05b8470a9f327cb9c015e6fea873a286e16d2a3c88d9756be0d9d9fcd3117",
+    "manifest.json": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+    "metadata/face_semantics.json": "a5c6a26ba37f02dae51c2a8083a38b3548a457fe8555452a3959df8a7101b848",
+    "metadata/wall_reference.json": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+    "validation/geometry.json": "b3972c50aa99d10f104471fd69280128a90980e15a8dcbb290be171beac6bd61"
+  },
+  "parent_execution_failure": {
+    "child_alive_after_stop": false,
+    "child_exit_code": 0,
+    "failure_class": "CHILD_DID_NOT_COMPLETE_PASS",
+    "launch_error": null,
+    "process_stop_errors": [],
+    "reason": "could not stabilize report-inclusive output byte count",
+    "status": "BLOCKED_PARENT_EXECUTION",
+    "timed_out": false
+  },
+  "processed_cell_count": 96,
+  "reference_roi_common": {
+    "components": [
+      {
+        "aabb_mm": [
+          7.937253933193771,
+          10.0,
+          -1.0,
+          1.0000000000000024,
+          4.0,
+          6.0
+        ],
+        "component_index": 0,
+        "topology": {
+          "brep_check_valid": true,
+          "one_closed_shell": true,
+          "open_shell_count": 0,
+          "shell_count": 1,
+          "status": "PASS"
+        },
+        "volume_mm3": 8.01676271854943
+      }
+    ],
+    "components_truncated_by_cap": false,
+    "raw_connected_solid_count": 1,
+    "raw_volume_mm3": 8.01676271854943
+  },
+  "region_mode": "EXPLICIT_DIAGNOSTIC_ROI_PARTIAL_SOURCE_INTERSECTION",
+  "roi_aabb_mm": [
+    7.5,
+    10.5,
+    -1.0,
+    1.0,
+    4.0,
+    6.0
+  ],
+  "schema": "pgfrag.volume_ingress.cell_ledger.v1",
+  "source_brep_aabb_mm": [
+    -10.0,
+    10.0,
+    -10.0,
+    10.0,
+    0.0,
+    10.0
+  ],
+  "status": "BLOCKED_PARENT_EXECUTION",
+  "status_before_parent_block": "COMPLETE_RAW_LEDGER"
+}

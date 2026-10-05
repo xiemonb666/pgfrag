@@ -1,0 +1,527 @@
+schema = "pgfrag.free_fracture_pilot.source_freeze.v1"
+freeze_status = "FROZEN_SOURCE_ONLY"
+freeze_date = "2026-10-05"
+run_status = "SOURCE_ONLY_NOT_RUN"
+case_id = "analytic_osb_free_fracture_pilot_h0600_delta1800"
+loaded_backend = "local Peridynamics.jl 0.5.4+pgfrag.1 with headless patch; no vendor changes in this task"
+point_state_format = "21-field little-endian Float64 tensor; diagnostic-only format"
+max_points = 5000
+max_steps = 180
+max_experiment_output_bytes = 199229440
+max_attempt_directory_bytes = 209715200
+pin_count = 84
+
+[baseline_reference]
+numerical_loading_gate = "INTACT_NUMERICAL_PATH_REVIEWED"
+physical_loading_validity = "UNKNOWN_UNCALIBRATED"
+intact_case_path = "pgfrag/experiments/free_evolution_coupon_20261005/fixed_case.toml"
+intact_case_sha256 = "e6aa57f3edf136970e9f7108a1df2535a1e7c0d4cb56ee89fee8d858cd3c603d"
+independent_review_path = "pgfrag/tmp/review_20261005/free_coupon_independent_review/independent_review.md"
+independent_review_sha256 = "96eb441f9afb7b07d5cc672c4be4681a7b9bf587f7a4ad291785e196e15178ec"
+baseline_native_raw_stability_bound_s = 0.00000034242302121147243
+baseline_actual_dt_s = 0.000000075
+baseline_pin_scope = "independent report and fixed-case source only; arithmetic review is not physical validity"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/backend_provenance.json"
+bytes = 8223
+sha256 = "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+role = "active Julia project or backend provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/Manifest.toml"
+bytes = 22753
+sha256 = "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+role = "active Julia project or backend provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/Project.toml"
+bytes = 107
+sha256 = "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+role = "active Julia project or backend provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/patches/peridynamics-0.5.4-headless.patch"
+bytes = 6115
+sha256 = "33dd180a5d388eb9e6a281e3fefcbe4838b8e1a1b96bb92c52aebefb7529078d"
+role = "headless backend patch provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/LICENSE"
+bytes = 1077
+sha256 = "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e"
+role = "active Julia project or backend provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/Project.toml"
+bytes = 1185
+sha256 = "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986"
+role = "active Julia project or backend provenance"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/AbaqusMeshConverter/AbaqusMeshConverter.jl"
+bytes = 3959
+sha256 = "b3d09a00fba94ea3a66e132b2bc61573cafea3fcbdf8d35d35dde1e674c836b1"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/autoinfiltrate.jl"
+bytes = 1473
+sha256 = "2ab4eaa27d72eedcb9935f1e3ba3ef390c852172f7076c7ff77b95b110b1f4ec"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/docs.jl"
+bytes = 855
+sha256 = "49993307de0cb0c0efe6a0b044c4acfcfc906486d7692fe81d6db49058ea2f49"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/errors.jl"
+bytes = 1616
+sha256 = "1a07d4a16cb04991fd20eb7bcdfa0450bca569829d0510f2e71fecaaf0390226"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/function_arguments.jl"
+bytes = 846
+sha256 = "849063710e2d5e36417896c1cd6fc1ee89a7fade0ac173544d33941c6e871bbb"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/io.jl"
+bytes = 5049
+sha256 = "19bbb3cc000907b2f8264ec2cb1a85ac1cc8cfad6a15a22995fe4eea4c76bb0a"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/logs.jl"
+bytes = 19215
+sha256 = "6c64b1e723adbed0dd0f55fded302b30776018851910360030b5eaebb2d6715a"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/mpi.jl"
+bytes = 6455
+sha256 = "87a69069a294ecae1a649e499e3c7ba396d714c1c1b7234036ea324a17849077"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/nans.jl"
+bytes = 987
+sha256 = "6aa73883be67da379f854f2306db1115de6117595066b87b8aaaff6bbcbe84ac"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/precompile_workload.jl"
+bytes = 2936
+sha256 = "c1caeee907c1e9279bc32721c4e5a11e4f20e655413acdaeb5175938acd29dcb"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/process_each_export.jl"
+bytes = 16196
+sha256 = "3e6010e541437f1323d41618c7b95c4d078f073e684b8eb043a060a0679346f1"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/static_arrays.jl"
+bytes = 5444
+sha256 = "2f89e55879e12dc63bca05ccfc8b9446910e6e98c7de54d8dc5fd91f9b1a8a1e"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl"
+bytes = 426
+sha256 = "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/halo_exchange.jl"
+bytes = 3235
+sha256 = "375f4d49d113737b93405909fe3e9dd47e6c8afb5c1240ab06c99acc2b24d140"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/job.jl"
+bytes = 6153
+sha256 = "6b44e29743dda45e272033c08f985cfbeed91e9f83821b02a2a25549e9c314e1"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/mpi_body_data_handler.jl"
+bytes = 15832
+sha256 = "84b8303ddeaa18902d40904b2e540591678a81566df38c72303e0585eefb9150"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/mpi_multibody_data_handler.jl"
+bytes = 110
+sha256 = "e32b0c3c83dab0657fcf9b6219f9b10a16b1aa52d84232533f710efb56082272"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/parameter_handler.jl"
+bytes = 2788
+sha256 = "2630c4ba6651152071d6a4b7528a88e651e02a9c37337f39bde26cc0dd30264c"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/parameters.jl"
+bytes = 4157
+sha256 = "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/storages.jl"
+bytes = 15633
+sha256 = "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/study.jl"
+bytes = 21642
+sha256 = "7adb4dc8274ac1d5702be1079c67ad72f6e0c3f3aa6a43a9dc272b3c22109c9b"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl"
+bytes = 3674
+sha256 = "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/systems.jl"
+bytes = 4211
+sha256 = "0078283af05c365df7cccf41cee4e10bcf27a2cc44717d0f41db20f30855bda2"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl"
+bytes = 8327
+sha256 = "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_multibody_data_handler.jl"
+bytes = 4349
+sha256 = "245eb4e3d8ab28c3b89f3f97df09996bee51e44520587cde14c669c7ff165bee"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/time_solvers.jl"
+bytes = 1591
+sha256 = "03dbb2371e6bc6a2036f3256c505b9d503477b5a4b9fb4580360d7dfcfeed157"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body_chunk.jl"
+bytes = 3795
+sha256 = "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl"
+bytes = 18152
+sha256 = "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_associated_system.jl"
+bytes = 7135
+sha256 = "9709c0b39515e04eba79e8b2b27ab493c26ae49a662dbc500d380d323467c3cc"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system_corrections.jl"
+bytes = 6975
+sha256 = "63c3a3c458f84dcaa0ad3345c141f67fad2ae42f165b1df3c32ecc6e9c508186"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl"
+bytes = 14917
+sha256 = "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/chunk_handler.jl"
+bytes = 4407
+sha256 = "ee37278c8966dedc3248d561e75a5897584eec9695827c521d5c7a26dc12f28d"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/condition_handler.jl"
+bytes = 1729
+sha256 = "cece417ce115927bae3ed2f80ca1fc9d6b8adedd5b7c0c2f2f83ebffd2e95499"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/decomposition.jl"
+bytes = 1943
+sha256 = "d766e8c582355a00725abd1ed17343fd0b7a2fac2de9a0947920bd8761031e22"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/interaction_system.jl"
+bytes = 22607
+sha256 = "7b70c14c7922f8a6ff7c28bd54978b471bcc0a72df59f59bfdd6f2d574e78716"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/kernels.jl"
+bytes = 2423
+sha256 = "37a68ed8ecdcc3ad77ccff08ba35a43201b7d99df6002ee732fc49a1d77261fb"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/multibody_setup.jl"
+bytes = 4899
+sha256 = "4c54404769b64ee45ab39f8bb79527fd30d49c98bf5b33d9895fae94df333def"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/point_generators.jl"
+bytes = 22121
+sha256 = "a74d09854bc8c962448341377c40b1cfeddc2e37ac99a751e6c75e9f94af5d73"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/point_sets.jl"
+bytes = 6499
+sha256 = "88aef64ec47026b36278c7ab266b8393c41e7e74a85c76b1a33a2aa29ec57c0f"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/predefined_cracks.jl"
+bytes = 3881
+sha256 = "6b2d67e1af7934016e2f40d0f695f42c3cee899229a3a65d422ec31a9341d9d2"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/zem_stabilization.jl"
+bytes = 1630
+sha256 = "ad47de68861c0419a14cadf57fc965b35a7fb950161aaefee98d1398e5b3f729"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/Peridynamics.jl"
+bytes = 6157
+sha256 = "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ba_correspondence.jl"
+bytes = 12720
+sha256 = "f1afac27e2499667cd55d1fa6af7bd6a7f05d1686d850f5061771e0df868652c"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/bond_based.jl"
+bytes = 9424
+sha256 = "23c4cb05e348e94eab32a8e1ec8fa411eb246e89b242e201b383e349617a5da0"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl"
+bytes = 26235
+sha256 = "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/constitutive_models.jl"
+bytes = 9899
+sha256 = "fd9d6ec000cda97ce00fe9034dddaf74db5efbc80ba54f1c8c9b613802056f5d"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/continuum_kinematics_inspired.jl"
+bytes = 24146
+sha256 = "5394f24e61dbc755ae5a37475b496fcb68c28cd05092196fa1129bf6daffc3d4"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/correspondence_rotated.jl"
+bytes = 7878
+sha256 = "6d2c3a1c3d32100531f44a9c7085cb31bd5c7f59de5cabf15c4072109c5862f9"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/correspondence.jl"
+bytes = 14854
+sha256 = "cbeeedb24cf3bdee319b3cc2d68c72b2fb63d7e0235a6dfd54033294d7e24b9e"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/dh_bond_based.jl"
+bytes = 7116
+sha256 = "5a9c8a313396dfc8ababde4dc488a331ed7baedf2de1657e8b86e05e519646cc"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/fracture.jl"
+bytes = 6507
+sha256 = "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/generalized_bond_based.jl"
+bytes = 8002
+sha256 = "47bbad027bf3c30caf39a12cbb6890e8039dee8e5da1f488ba1d3e1f68e929df"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl"
+bytes = 6626
+sha256 = "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/material_parameters.jl"
+bytes = 8596
+sha256 = "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl"
+bytes = 11286
+sha256 = "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/rk_correspondence_rotated.jl"
+bytes = 7164
+sha256 = "dda7924cb5b7ed455c45f58a9bcda2c6b26dedbdc9011d52bed627fb41a562cd"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/rk_correspondence.jl"
+bytes = 26617
+sha256 = "ed79647c7e075cb0755d7f973cf45f7e77d808ed0f91a65a9df7095448886c3d"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/short_range_force_contact.jl"
+bytes = 5587
+sha256 = "177250862210b0057ced9a2420c54786348de29f034e6be905bcd51ac413f72b"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/stress.jl"
+bytes = 3089
+sha256 = "e01883cfda12c83e7336979fa133b285a692f90430bd7590730d995650bfeaf9"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/dynamic_relaxation.jl"
+bytes = 14612
+sha256 = "b370aac941bae52a90fd340bef888f6242f777251d7c75ec1b004591e05eb937"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/newton_krylov.jl"
+bytes = 31150
+sha256 = "c09336de44c48b272bfa6dbec2c2ff13cc8f0ee74c80a9e0fba357d251ee8c9b"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl"
+bytes = 12397
+sha256 = "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/VtkReader/VtkReader.jl"
+bytes = 12106
+sha256 = "e729cad6adf7b85520add6766864860b4bf45776c2e887e90cbf2067a3e59f84"
+role = "loaded local Peridynamics Julia source tree"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/julia.exe"
+bytes = 167776
+sha256 = "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/libjulia-codegen.dll"
+bytes = 109179352
+sha256 = "2f39a9aa26d4bf4a473dd4f3a2896338b0252fcee693c2e53e8ece29820ba4a3"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/libjulia-internal.dll"
+bytes = 13853896
+sha256 = "5cf0f6d056afccce3d7b27886379dfe5fe1f77337b602203992eff1388cbabc1"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/libjulia.dll"
+bytes = 246384
+sha256 = "1496442586ec944db1ee46f430b9b772c582c7eee2e2a0a41a690da3ba4878f6"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/libLLVM-15jl.dll"
+bytes = 122605520
+sha256 = "3eecd4200630f06527a35207db9639368b487e3942aff5e5905ac115bebaa437"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/libopenblas64_.dll"
+bytes = 37108576
+sha256 = "694349dd3ce61e9efb728a45472aee53b44339b11da61c4a54543b2ee7a66903"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/extract/julia-1.10.12/lib/julia/sys.dll"
+bytes = 264071488
+sha256 = "190e3d9a6ffbc1b6a6d6fa311127b984f2b892083001fd8e7bde5e09c17ae0c7"
+role = "pinned Julia runtime component"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/julia-1.10.12-win64.zip"
+bytes = 183434216
+sha256 = "88177b1089a01f5254454ecbda888542d6038aba4d017a4bf8bc860322d7f9de"
+role = "Julia runtime distribution provenance"
+
+[[pins]]
+path = "third_party/pgfrag-runtime/julia-1.10.12.sha256"
+bytes = 1502
+sha256 = "7d9149b8e5acbf6eef14568570f0f8ea84d477bf38f12942d5541659f5ad7cd4"
+role = "Julia runtime distribution provenance"
+
+[[pins]]
+path = "pgfrag/experiments/free_fracture_pilot_20261005/run_free_fracture_pilot.jl"
+bytes = 82117
+sha256 = "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+role = "pilot source, fixed case, launcher, or source review"
+
+[[pins]]
+path = "pgfrag/experiments/free_fracture_pilot_20261005/fixed_case.toml"
+bytes = 3276
+sha256 = "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+role = "pilot source, fixed case, launcher, or source review"
+
+[[pins]]
+path = "pgfrag/experiments/free_fracture_pilot_20261005/run_once.ps1"
+bytes = 17288
+sha256 = "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d"
+role = "pilot source, fixed case, launcher, or source review"
+
+[[pins]]
+path = "pgfrag/tmp/review_20261005/free_fracture_pilot/SOURCE_REVIEW.md"
+bytes = 7908
+sha256 = "30f12cfd0c2235bd5c0bc34d8b79c8bea391022c71f11ff4f9fac764a088ce42"
+role = "pilot source, fixed case, launcher, or source review"
+
+[[pins]]
+path = "pgfrag/tmp/review_20261005/free_coupon_independent_review/independent_review.md"
+bytes = 3054
+sha256 = "96eb441f9afb7b07d5cc672c4be4681a7b9bf587f7a4ad291785e196e15178ec"
+role = "accepted intact baseline independent review"
+
+[[pins]]
+path = "pgfrag/experiments/free_evolution_coupon_20261005/fixed_case.toml"
+bytes = 1569
+sha256 = "e6aa57f3edf136970e9f7108a1df2535a1e7c0d4cb56ee89fee8d858cd3c603d"
+role = "accepted intact baseline fixed case"

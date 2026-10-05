@@ -1,0 +1,55 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_source_freeze.v1",
+  "status": "SOURCE_ONLY_FROZEN_AWAITING_ROOT_REVIEW",
+  "review_date": "2026-10-05",
+  "scope": "One bounded diagnostic ROI ingress preparation from the frozen forge.asset.v1 canonical cylinder; no production/native integration.",
+  "source_files": {
+    "pgfrag/experiments/forge_volume_ingress_20261005/worker.py": {
+      "sha256": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5",
+      "static_ast_parse": "PASS"
+    },
+    "pgfrag/experiments/forge_volume_ingress_20261005/CONTRACT.md": {
+      "sha256": "7151DF72D082B0D1D728F86AA118C3F396A4D6A3E545FBF5DC76F37A7118C6F7"
+    },
+    "pgfrag/experiments/forge_volume_ingress_20261005/tmp/plan.json": {
+      "sha256": "E7124CEB99489B858BB2D116FED5DD9C88960209DEE632F7D49D75E2FFEFC73A",
+      "json_parse": "PASS"
+    }
+  },
+  "frozen_input": {
+    "asset_relative_path": "vesselforge/tmp/review_20261005/geometry_resume/migration_copy/cylinder_asset_run01",
+    "manifest_sha256": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+    "canonical_step_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "migration_receipt_sha256": "4c20e462f1acedb81ab9a1ecdd9d19a4d97359ae2d5a28456b127593d971f860"
+  },
+  "fixed_pilot_configuration": {
+    "roi_aabb_mm": [7.5, 10.5, -1.0, 1.0, 4.0, 6.0],
+    "cell_size_mm": 0.5,
+    "grid_shape_xyz": [6, 4, 4],
+    "candidate_cell_count": 96,
+    "classifier_required_state": "IN",
+    "classifier_tolerance_mm": 1e-7,
+    "source_centroid_projection_fallback": false,
+    "maximum_output_bytes": 20971520,
+    "hard_timeout_seconds": 180
+  },
+  "failure_retention_review": {
+    "failed_stage_deletion_calls_found": false,
+    "worker_exception_receipt_path": "worker_failure.json",
+    "parent_execution_receipt_path": "parent_execution_receipt.json",
+    "partial_ledger_blocked_on_failure": true,
+    "active_cell_component_progress_receipt": "cell_in_progress.json",
+    "receipt_write_failure_fallback": "compact parent receipt; stage remains retained",
+    "syntax_and_json_only_review": true
+  },
+  "execution_status": {
+    "worker_executed": false,
+    "cad_kernel_invoked": false,
+    "solver_invoked": false,
+    "tests_run": false,
+    "production_files_changed": false,
+    "source_asset_changed": false,
+    "git_used": false,
+    "pilot_authorization": "WAITING_FOR_ROOT_SOURCE_REVIEW"
+  }
+}

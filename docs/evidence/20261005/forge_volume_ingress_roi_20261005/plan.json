@@ -1,0 +1,147 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_source_review.v1",
+  "status": "SOURCE_ONLY_NOT_RUN",
+  "review_date": "2026-10-05",
+  "scope": "One frozen VesselForge canonical analytic cylinder asset; prepare an isolated exact-BRep material-point ingress candidate. No production integration.",
+  "input_asset": {
+    "workspace_relative_path": "vesselforge/tmp/review_20261005/geometry_resume/migration_copy/cylinder_asset_run01",
+    "schema": "forge.asset.v1",
+    "manifest_sha256": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+    "canonical_step_path": "geometry/solid.step",
+    "canonical_step_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "payload_hashes": {
+      "fields/surface_fields.npz": "3526d706c83a37667edefe965c9f9c92d550bdfbd090a88b5b10539a98e0835d",
+      "geometry/mesh_lineage.npz": "3c68077ea376e26dc0710068d9deab22423f07f1e04386f1d0ec51271afcad8d",
+      "geometry/solid.step": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "geometry/surface.npz": "79e05b8470a9f327cb9c015e6fea873a286e16d2a3c88d9756be0d9d9fcd3117",
+      "metadata/face_semantics.json": "a5c6a26ba37f02dae51c2a8083a38b3548a457fe8555452a3959df8a7101b848",
+      "metadata/wall_reference.json": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+      "validation/geometry.json": "b3972c50aa99d10f104471fd69280128a90980e15a8dcbb290be171beac6bd61"
+    },
+    "units": {
+      "source_length": "mm",
+      "source_mass": "kg",
+      "source_time": "s",
+      "frame": "right_handed_z_up",
+      "mechanics_calibration": "UNVALIDATED_PROTOTYPE",
+      "rho_kg_m3": 2100.0,
+      "declared_wall_parameter_mm": 2.0
+    },
+    "semantics": {
+      "face_semantics_status": "PASS",
+      "face_count": 4,
+      "surface_regions": {
+        "1": "body_outer",
+        "2": "body_inner",
+        "3": "natural_rim",
+        "4": "base"
+      },
+      "wall_reference_scope": "mother source stations only",
+      "migration_receipt_path": "vesselforge/tmp/review_20261005/geometry_resume/migration_binding_result.json",
+      "migration_receipt_sha256": "4c20e462f1acedb81ab9a1ecdd9d19a4d97359ae2d5a28456b127593d971f860",
+      "migration_receipt_status": "PASS_MOTHER_STATION_BINDING",
+      "migration_bound_stations": "2/2 finite stations",
+      "global_minimum_wall_status": "NOT_ESTABLISHED",
+      "fragment_mapping_status": "UNAVAILABLE",
+      "physics_status": "UNKNOWN"
+    }
+  },
+  "geometry_budget_estimate": {
+    "source_brep_face_bounds_union_mm": [
+      -10.0,
+      10.0,
+      -10.0,
+      10.0,
+      0.0,
+      10.0
+    ],
+    "bbox_volume_mm3": 4000.0,
+    "analytic_face_inventory_volume_estimate_mm3": 1130.9733552923257,
+    "analytic_volume_formula": "pi * (10^2 - 8^2) * 10 = 360*pi",
+    "analytic_volume_source": "formula from frozen outer/inner cylindrical surfaces and height; not read from CAD runtime",
+    "estimated_bbox_material_fraction": 0.2827433388230814,
+    "estimated_mass_kg_at_declared_density": 0.002375044046113884,
+    "rejected_full_mother_coarsening": [
+      {
+        "explicit_h_mm": 2.5,
+        "bbox_candidate_cells": 256,
+        "h_over_nominal_wall_parameter": 1.25,
+        "decision": "REJECTED_FOR_QUALITY; count-cap fit does not qualify a cell size larger than the nominal wall parameter"
+      },
+      {
+        "explicit_h_mm": 3.0,
+        "bbox_candidate_cells": 196,
+        "h_over_nominal_wall_parameter": 1.5,
+        "decision": "REJECTED_FOR_QUALITY; count-cap fit does not qualify a cell size larger than the nominal wall parameter"
+      }
+    ],
+    "approved_source_only_diagnostic_roi": {
+      "roi_aabb_mm": [7.5, 10.5, -1.0, 1.0, 4.0, 6.0],
+      "cell_size_mm": 0.5,
+      "grid_shape_xyz": [6, 4, 4],
+      "candidate_cell_count": 96,
+      "roi_extends_outside_source_xmax": true,
+      "do_not_clip_roi": true,
+      "nominal_wall_parameter_mm": 2.0,
+      "h_over_nominal_wall_parameter": 0.25,
+      "nominal_cells_across_wall_parameter": 4,
+      "analytic_roi_material_volume_estimate_mm3": 8.0168,
+      "analytic_estimate_is_cad_oracle": false,
+      "cad_roi_common_and_cell_sum": "UNKNOWN_NOT_RUN"
+    },
+    "quality_claim": "NONE; h/t is descriptive against a nominal parameter, not global thickness or a resolution qualification; this is a partial local ingress probe, not whole-mother discretization"
+  },
+  "volume_conservation": {
+    "status": "UNKNOWN_NOT_RUN",
+    "future_reference": "OpenCascade B-rep solid-cell intersection volume of the source connected solid and the declared ROI AABB",
+    "future_sum": "sum of OpenCascade B-rep solid-cell intersection volumes for all connected material components across all 96 cells",
+    "future_acceptance_tolerance": {
+      "relative": 1e-8,
+      "absolute_mm3": 1e-9
+    },
+    "must_not_use": [
+      "cell-center inclusion times h^3",
+      "surface projection to rescue an outside/on/unknown centroid",
+      "unverified per-surface parent assignment for interior points"
+    ]
+  },
+  "limits": {
+    "max_candidate_cells": 256,
+    "max_material_points": 500,
+    "max_connected_solids_per_cell": 16,
+    "max_common_faces_per_cell": 512,
+    "max_output_bytes": 20971520,
+    "hard_worker_timeout_seconds": 180
+  },
+  "failure_evidence_policy": {
+    "worker_exception": "retain stage; atomically mark partial ledger BLOCKED; write worker_failure.json with frozen pins, prior-ledger hash, active-cell/component snapshot, and stage inventory",
+    "parent_launch_timeout_or_missing_receipt": "retain stage; mark or create a BLOCKED partial ledger; write parent_execution_receipt.json with timeout/exit/stop details and bounded stage inventory",
+    "cell_in_progress_snapshot": "updated before the B-rep boolean and after raw common/component volume, centroid, and source-classifier results become available",
+    "failed_stage_cleanup": "NONE; never delete a failed or timed-out stage",
+    "maximum_stage_bytes": 20971520
+  },
+  "blockers_for_any_candidate_run": [
+    "Root has selected an explicit 0.5 mm cell size and 3 x 2 x 2 mm ROI. Do not run until root reviews this frozen source revision.",
+    "ROI extends beyond the source xmax and must not be clipped; the worker must reconcile the ROI common with the sum of all 96 cell commons, including zero-intersection cells.",
+    "No CAD common, centroid classifier, connected-component, or local B-rep volume-reconciliation calculation has been executed; the 8.0168 mm^3 estimate is analytic planning context only.",
+    "Full-mother discretization and global material-volume conservation remain UNKNOWN; this partial ROI cannot establish them.",
+    "PG native initialization, candidate-pair mask, load, events, fragments, and labels remain disconnected; this worker emits no native solver job."
+  ],
+  "written_files": [
+    "pgfrag/experiments/forge_volume_ingress_20261005/CONTRACT.md",
+    "pgfrag/experiments/forge_volume_ingress_20261005/worker.py",
+    "pgfrag/experiments/forge_volume_ingress_20261005/tmp/plan.json",
+    "pgfrag/experiments/forge_volume_ingress_20261005/tmp/source_freeze.json"
+  ],
+  "execution_policy": {
+    "worker_executed": false,
+    "cad_invoked": false,
+    "tests_run": false,
+    "solver_run": false,
+    "production_or_asset_files_changed": false,
+    "git_used": false,
+    "failed_or_timed_out_stage_cleanup": "NEVER_DELETE; retain stage, blocked partial ledger, active-cell diagnostic when present, and parent receipt",
+    "root_source_review_required_before_execution": true,
+    "expected_future_output_location": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/"
+  }
+}

@@ -1,0 +1,83 @@
+schema = "pgfrag.free_fracture_pilot.case.v1"
+case_id = "analytic_osb_free_fracture_pilot_h0600_delta1800"
+run_status = "SOURCE_ONLY_NOT_RUN"
+purpose = "One bounded native free-evolution fracture diagnostic; this fixed case is source-frozen and launch remains under parent approval."
+
+[baseline_reference]
+intact_case_path = "pgfrag/experiments/free_evolution_coupon_20261005/fixed_case.toml"
+intact_case_sha256 = "e6aa57f3edf136970e9f7108a1df2535a1e7c0d4cb56ee89fee8d858cd3c603d"
+independent_review_path = "pgfrag/tmp/review_20261005/free_coupon_independent_review/independent_review.md"
+independent_review_sha256 = "96eb441f9afb7b07d5cc672c4be4681a7b9bf587f7a4ad291785e196e15178ec"
+baseline_raw_stability_bound_s = 0.00000034242302121147243
+baseline_actual_dt_s = 0.000000075
+raw_bound_source_note = "Root-reviewed actual intact-run native bound; used only for a deterministic numerical preflight comparison, not as evidence of physical validity."
+
+[geometry]
+shape = "analytic_uniform_box"
+length_x_m = 0.012
+length_y_m = 0.009
+length_z_m = 0.009
+point_spacing_h_m = 0.0006
+horizon_delta_m = 0.0018
+horizon_to_spacing_ratio = 3.0
+expected_grid_shape = [20, 15, 15]
+expected_point_count = 4500
+expected_complete_horizon_interior_points = 1134
+expected_complete_horizon_interior_ratio = 0.252
+initial_geometry_mask = "none; use the complete uniform_box lattice"
+
+[material]
+model = "OSB"
+surface_correction = "NoCorrection"
+surface_correction_status = "fixed uncorrected baseline; free-surface truncation bias remains open"
+E_pa = 5000000000.0
+nu = 0.24
+rho_kg_m3 = 2100.0
+Gc_j_m2 = 45.0
+calibration_status = "UNCALIBRATED"
+failure_enabled = true
+damage_model = "native CriticalStretch"
+
+[loading]
+control_mode = "native_velocity_grip_bc"
+axis = "x"
+numerical_loading_gate = "INTACT_NUMERICAL_PATH_REVIEWED"
+physical_loading_validity = "UNKNOWN_UNCALIBRATED"
+target_epsilon_c_multiplier = 1.5
+profile = "continuous physical-time cubic smoothstep displacement ramp, hold, unload, then fixed-grip dwell with free interior motion"
+ramp_duration_s = 0.000001
+hold_duration_s = 0.0000006
+unload_duration_s = 0.000001
+post_unload_dwell_duration_s = 0.000001
+loading_rate_classification = "short explicit dynamic diagnostic; not quasistatic"
+
+[solver]
+dt_fraction_of_native_raw_bound = 0.10951366490292391
+stable_bound_source = "Peridynamics.calc_stable_timestep(one_chunk_handler, 1.0)"
+expected_native_raw_stability_bound_s = 0.00000034242302121147243
+expected_time_step_s = 0.0000000375
+dt_selection = "fixed native_raw_bound fraction; mismatch blocks; no automatic clipping or retuning"
+integration = "native VelocityVerlet"
+thread_count = 1
+
+[output_event_budget]
+canonical_bond_csv_row_max_bytes = 96
+native_event_csv_row_max_bytes = 256
+fixed_other_output_reserve_bytes = 16777216
+event_ceiling_rule = "min(actual canonical native pair count, floor(remaining result-output budget / event row cap))"
+
+[limits]
+max_points = 5000
+max_steps = 180
+min_steps_per_phase = 8
+max_chunks = 1
+max_output_bytes = 199229440
+max_attempt_bytes = 209715200
+max_runtime_ms = 180000
+
+[interpretation]
+material_status = "UNVALIDATED_PROTOTYPE"
+fracture_dissipation_status = "NOT_COMPUTED"
+fragment_count_is_target = false
+physical_fragment_claim = false
+physical_loading_validity_claim = false

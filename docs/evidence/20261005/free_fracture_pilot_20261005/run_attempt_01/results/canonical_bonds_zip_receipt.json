@@ -1,0 +1,20 @@
+{
+  "schema": "backup_coordinator.lossless_zip_receipt.v1",
+  "status": "PASS",
+  "archive": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261005\\backup_coordinator\\free_fracture_pilot_canonical_bonds_20261005.zip",
+  "archive_cap_bytes": 52428800,
+  "time_cap_seconds": 120.0,
+  "source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\canonical_bonds.csv",
+  "entry": "results/canonical_bonds.csv",
+  "source_bytes": 12255264,
+  "source_sha256": "cc0f33ecdc350fe28c6f3bcffe506bbfa327a4df2ad84494e5aa6c38f4d8aa47",
+  "entry_uncompressed_bytes": 12255264,
+  "entry_sha256_readback": "cc0f33ecdc350fe28c6f3bcffe506bbfa327a4df2ad84494e5aa6c38f4d8aa47",
+  "compressed_bytes": 922728,
+  "compression_method": 8,
+  "archive_bytes": 922880,
+  "archive_sha256": "26db0af3e9b83ddd12a09bdde5cb62cd10432f2fa44d324230fdb12a2b335523",
+  "source_unchanged": true,
+  "streamed_compress_and_readback": true,
+  "elapsed_seconds": 0.203
+}

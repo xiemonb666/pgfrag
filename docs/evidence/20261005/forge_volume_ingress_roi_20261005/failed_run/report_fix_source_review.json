@@ -1,0 +1,43 @@
+{
+  "CAD_rerun_authorized_or_performed": false,
+  "change_scope": "Only _serialize_report_with_total and _write_final_report report byte-count convergence; no geometry, mass, ROI, classifier, source pins, worker failure logic, or stage data changed.",
+  "checks": {
+    "CAD_run_after_fix": false,
+    "focused_test_ast_parse": "PASS",
+    "git_used": false,
+    "json_metadata_parse": "PASS",
+    "retained_stage_file_set_and_hashes_unchanged": "PASS",
+    "solver_run": false,
+    "source_freeze_hash_unchanged": "PASS",
+    "source_snapshot_hashes": "PASS",
+    "tests_run": false,
+    "worker_ast_parse": "PASS"
+  },
+  "current_worker": {
+    "path": "pgfrag/experiments/forge_volume_ingress_20261005/worker.py",
+    "sha256": "10A53525D095715D53EEC16406C560FB42A37740E1C4E56CF5DB85E54F080E34"
+  },
+  "failed_stage": {
+    "bytes": 325188,
+    "input_freeze_and_payload_hashes_unchanged": true,
+    "path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/.forge_ingress_stage__2srs6ad",
+    "unchanged_since_supervisor_inventory": true
+  },
+  "focused_test": {
+    "cases": [
+      "decimal digit-boundary fixed point",
+      "output budget stop",
+      "report serialization does not import CAD/OCP"
+    ],
+    "executed": false,
+    "path": "pgfrag/experiments/forge_volume_ingress_20261005/tests/test_report_serialization.py",
+    "sha256": "52573AB3242375393627A873577FC4EC5E56125C48F290BE5AC945045E12EABF"
+  },
+  "pre_fix_worker_sha256": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5",
+  "pre_fix_worker_snapshot": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/candidate_run01_supervisor/source_snapshot_before_report_fix/worker.py",
+  "review_date": "2026-10-05",
+  "root_may_authorize_focused_test_after_review": true,
+  "schema": "pgfrag.forge_volume_ingress_report_fix_source_review.v1",
+  "source_freeze_original_sha256": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "status": "SOURCE_ONLY_NARROW_FIX_READY_FOR_ROOT_REVIEW"
+}

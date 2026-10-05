@@ -1,0 +1,73 @@
+{
+  "cell_size_mm": 0.5,
+  "current_cell": {
+    "candidate_point_ids": [],
+    "cell_aabb_mm": [
+      10.0,
+      10.5,
+      0.5,
+      1.0,
+      5.5,
+      6.0
+    ],
+    "cell_status": "ZERO_INTERSECTION",
+    "common_face_count": 0,
+    "common_operation_status": "COMPLETED",
+    "component_records": [],
+    "component_records_truncated_by_cap": false,
+    "grid_cell_index": 95,
+    "grid_ijk": [
+      5,
+      3,
+      3
+    ],
+    "raw_common_volume_mm3": 0.0,
+    "raw_connected_solid_count": 0
+  },
+  "current_component": null,
+  "frozen_input_payload_hashes_before": {
+    "fields/surface_fields.npz": "3526d706c83a37667edefe965c9f9c92d550bdfbd090a88b5b10539a98e0835d",
+    "geometry/mesh_lineage.npz": "3c68077ea376e26dc0710068d9deab22423f07f1e04386f1d0ec51271afcad8d",
+    "geometry/solid.step": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "geometry/surface.npz": "79e05b8470a9f327cb9c015e6fea873a286e16d2a3c88d9756be0d9d9fcd3117",
+    "manifest.json": "df781dc6c818512af8d66b164288aa0d5991097ea0166b85556119de2c9fba41",
+    "metadata/face_semantics.json": "a5c6a26ba37f02dae51c2a8083a38b3548a457fe8555452a3959df8a7101b848",
+    "metadata/wall_reference.json": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+    "validation/geometry.json": "b3972c50aa99d10f104471fd69280128a90980e15a8dcbb290be171beac6bd61"
+  },
+  "interpretation": "Durable diagnostic snapshot of the active or most recently completed cell; not a qualified point or native solver record.",
+  "parent_execution_failure": {
+    "child_alive_after_stop": false,
+    "child_exit_code": 0,
+    "failure_class": "CHILD_DID_NOT_COMPLETE_PASS",
+    "launch_error": null,
+    "process_stop_errors": [],
+    "reason": "could not stabilize report-inclusive output byte count",
+    "status": "BLOCKED_PARENT_EXECUTION",
+    "timed_out": false
+  },
+  "previous_cell_ledger": {
+    "completed_cell_count": 96,
+    "path": "cell_ledger.partial.json",
+    "sha256": "d2e6fc685859233337bc0605d175080cb5a0b44a638e364b3a8fac4dc7c853fd"
+  },
+  "roi_aabb_mm": [
+    7.5,
+    10.5,
+    -1.0,
+    1.0,
+    4.0,
+    6.0
+  ],
+  "schema": "pgfrag.volume_ingress.cell_progress.v1",
+  "source_brep_aabb_mm": [
+    -10.0,
+    10.0,
+    -10.0,
+    10.0,
+    0.0,
+    10.0
+  ],
+  "status": "BLOCKED_PARENT_EXECUTION",
+  "status_before_parent_block": "CELL_COMPLETED"
+}

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pgfrag.explicit-crack-surface-state.v1.schema.json",
+  "title": "Source-only explicit crack surface state candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "namespace",
+    "mechanics_qualification",
+    "mechanically_active",
+    "production_promotion",
+    "surface_intersection_status",
+    "patches",
+    "patch_assignments",
+    "proxy_relation_namespace",
+    "historical_proxy_relations",
+    "current_visibility",
+    "counts"
+  ],
+  "properties": {
+    "schema_version": {"const": "pgfrag.explicit-crack-surface-state.v1"},
+    "namespace": {"const": "fixture_proxy.explicit_surface_state.v1"},
+    "mechanics_qualification": {"const": "NOT_COUPLED"},
+    "mechanically_active": {"const": false},
+    "production_promotion": {"const": "BLOCKED_NOT_COUPLED"},
+    "surface_intersection_status": {"const": "UNKNOWN_NOT_EVALUATED"},
+    "patches": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4096,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "surface_id",
+          "patch_id",
+          "creation_step",
+          "parent_patch_id",
+          "reference_vertices_m",
+          "triangles",
+          "oriented_front_edges",
+          "front_status",
+          "reference_area_m2",
+          "geometry_sha256",
+          "negative_side",
+          "positive_side"
+        ],
+        "properties": {
+          "surface_id": {"type": "string", "minLength": 1},
+          "patch_id": {"type": "string", "minLength": 1},
+          "creation_step": {"type": "integer", "minimum": 0},
+          "parent_patch_id": {
+            "type": ["string", "null"],
+            "description": "Metadata lineage only; child geometry containment is not verified."
+          },
+          "reference_vertices_m": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 100000,
+            "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+          },
+          "triangles": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 200000,
+            "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}
+          },
+          "oriented_front_edges": {
+            "type": "array",
+            "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}
+          },
+          "front_status": {
+            "description": "Boundary-edge combinatorics only; this does not prove global front validity, nonintersection, or child containment.",
+            "enum": [
+              "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+              "UNKNOWN_NO_ORIENTED_FRONT",
+              "UNKNOWN_UNSUPPORTED_BRANCH_OR_INTERSECTION"
+            ]
+          },
+          "reference_area_m2": {"type": "number", "exclusiveMinimum": 0},
+          "geometry_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "negative_side": {"$ref": "#/$defs/side"},
+          "positive_side": {"$ref": "#/$defs/side"}
+        }
+      }
+    },
+    "patch_assignments": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["patch_id", "negative_body_id", "positive_body_id", "negative_fragment_id", "positive_fragment_id", "separated_step"],
+        "properties": {
+          "patch_id": {"type": "string", "minLength": 1},
+          "negative_body_id": {"type": "string", "minLength": 1},
+          "positive_body_id": {"type": "string", "minLength": 1},
+          "negative_fragment_id": {"type": "string", "minLength": 1},
+          "positive_fragment_id": {"type": "string", "minLength": 1},
+          "separated_step": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "proxy_relation_namespace": {"const": "fixture_proxy_relation.explicit_surface_state.v1"},
+    "historical_proxy_relations": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["relation_kind", "surface_id", "patch_id", "original_patch_id", "negative_fragment_id", "positive_fragment_id", "separated_step", "shared_reference_area_m2"],
+        "properties": {
+          "relation_kind": {
+            "const": "R2",
+            "description": "Fixture proxy relation kind only; assignment metadata is not geometric/model R2."
+          },
+          "surface_id": {"type": "string", "minLength": 1},
+          "patch_id": {"type": "string", "minLength": 1},
+          "original_patch_id": {"type": "string", "minLength": 1},
+          "negative_fragment_id": {"type": "string", "minLength": 1},
+          "positive_fragment_id": {"type": "string", "minLength": 1},
+          "separated_step": {"type": "integer", "minimum": 0},
+          "shared_reference_area_m2": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "current_visibility": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["patch_id", "visible"],
+        "properties": {"patch_id": {"type": "string", "minLength": 1}, "visible": {"type": "boolean"}}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patch_count", "triangle_count", "historical_proxy_relation_count", "mechanically_active_count"],
+      "properties": {
+        "patch_count": {"type": "integer", "minimum": 1},
+        "triangle_count": {"type": "integer", "minimum": 1},
+        "historical_proxy_relation_count": {"type": "integer", "minimum": 0},
+        "mechanically_active_count": {"const": 0}
+      }
+    }
+  },
+  "$defs": {
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["side_sign", "body_id", "fragment_id", "displacement_m"],
+      "properties": {
+        "side_sign": {"enum": [-1, 1]},
+        "body_id": {"type": "string", "minLength": 1},
+        "fragment_id": {"type": ["string", "null"]},
+        "displacement_m": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 100000,
+          "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+        }
+      }
+    }
+  }
+}
