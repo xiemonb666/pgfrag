@@ -1,0 +1,92 @@
+{
+  "artifact_id": "modeiii_j_integral_precopy_guard_v3",
+  "status": "PASS",
+  "v1_v2_and_224_sample_results_unchanged": true,
+  "preserved_baseline_checks": [
+    {
+      "label": "legacy_source_snapshot",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_v1_legacy.py",
+      "expected_sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA",
+      "current_sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA",
+      "unchanged": true
+    },
+    {
+      "label": "guarded_source_v2",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_precopy_guard_v2.py",
+      "expected_sha256": "5E4E378929EDA39D8718A18957C998D5A33126C3F34B7A2964DFB0AE53CBCD92",
+      "current_sha256": "5E4E378929EDA39D8718A18957C998D5A33126C3F34B7A2964DFB0AE53CBCD92",
+      "unchanged": true
+    },
+    {
+      "label": "source_diff",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_v2.diff",
+      "expected_sha256": "EB6E96D802B28B8F7936468B09E04B53EE1EE57251DC011B0364F5153865EEE1",
+      "current_sha256": "EB6E96D802B28B8F7936468B09E04B53EE1EE57251DC011B0364F5153865EEE1",
+      "unchanged": true
+    },
+    {
+      "label": "guard_receipt",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_receipt.json",
+      "expected_sha256": "B3B2CB6484826E4B9CD09E71FB3267D80A896363D7BE6339D763D135C808258B",
+      "current_sha256": "B3B2CB6484826E4B9CD09E71FB3267D80A896363D7BE6339D763D135C808258B",
+      "unchanged": true
+    },
+    {
+      "label": "analytic_json_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.json",
+      "expected_sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0",
+      "current_sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0",
+      "unchanged": true
+    },
+    {
+      "label": "analytic_png_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.png",
+      "expected_sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4",
+      "current_sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4",
+      "unchanged": true
+    },
+    {
+      "label": "legacy_source",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral.py",
+      "expected_sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA",
+      "current_sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA",
+      "unchanged": true
+    },
+    {
+      "label": "analytic_json_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.json",
+      "expected_sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0",
+      "current_sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0",
+      "unchanged": true
+    },
+    {
+      "label": "analytic_png_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.png",
+      "expected_sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4",
+      "current_sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4",
+      "unchanged": true
+    }
+  ],
+  "new_items": [
+    {
+      "label": "guarded_source_v3",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_precopy_guard_v3.py",
+      "sha256": "B4D5CA3734D0E44E7B8ED4BB690257C61E72C647D499003FAAE6D8FEE6880B7B"
+    },
+    {
+      "label": "focused_guard_test_v3",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/test_precopy_guard_v3.py",
+      "sha256": "98195943BD197D4C7F00DCB4BD7BF930A0A40786EECE2514BAB7FB931FA467FE"
+    },
+    {
+      "label": "source_diff_v2_to_v3",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_v3.diff",
+      "sha256": "37C3698CE34AD16861382E6A51E052BB066ACDAF61864D81DB8B32113FED6324"
+    },
+    {
+      "label": "guard_receipt_v3",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_v3_receipt.json",
+      "sha256": "B9BABAB6396225B9D1700824A530482AEE294C79C262834D283FC9E5C88CCAD7"
+    }
+  ]
+}

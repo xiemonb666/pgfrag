@@ -1,0 +1,3240 @@
+{
+  "cases": [
+    {
+      "case_id": "hollow-cylinder-t2mm-h0.5mm",
+      "cavity_crossing_segments": {
+        "adapter": "check_segments(unit_tagged_endpoints, exact_hollow_cylinder_geometry)",
+        "failure_segment_ids": [],
+        "scope": "CHECKED_SEGMENTS_ONLY; DOES_NOT_ESTABLISH_UNCHECKED_GRAPH_COVERAGE",
+        "segment_count": 48,
+        "segments": [
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487966,
+            "segment_id": "seg:c-r00-a00-z00>c-r00-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a00-z00>c-r00-a01-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487966,
+            "segment_id": "seg:c-r00-a00-z01>c-r00-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a00-z01>c-r00-a01-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487966,
+            "segment_id": "seg:c-r00-a00-z02>c-r00-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a00-z02>c-r00-a01-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487966,
+            "segment_id": "seg:c-r00-a00-z03>c-r00-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a00-z03>c-r00-a01-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004125403059848795,
+            "segment_id": "seg:c-r00-a01-z00>c-r00-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a01-z00>c-r00-a02-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004125403059848795,
+            "segment_id": "seg:c-r00-a01-z01>c-r00-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a01-z01>c-r00-a02-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004125403059848795,
+            "segment_id": "seg:c-r00-a01-z02>c-r00-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a01-z02>c-r00-a02-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004125403059848795,
+            "segment_id": "seg:c-r00-a01-z03>c-r00-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a01-z03>c-r00-a02-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487956,
+            "segment_id": "seg:c-r00-a02-z00>c-r00-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a02-z00>c-r00-a03-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487956,
+            "segment_id": "seg:c-r00-a02-z01>c-r00-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a02-z01>c-r00-a03-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487956,
+            "segment_id": "seg:c-r00-a02-z02>c-r00-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a02-z02>c-r00-a03-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00041254030598487956,
+            "segment_id": "seg:c-r00-a02-z03>c-r00-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r00-a02-z03>c-r00-a03-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a00-z00>c-r01-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a00-z00>c-r01-a01-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a00-z01>c-r01-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a00-z01>c-r01-a01-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a00-z02>c-r01-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a00-z02>c-r01-a01-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a00-z03>c-r01-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a00-z03>c-r01-a01-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00043752788458134074,
+            "segment_id": "seg:c-r01-a01-z00>c-r01-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a01-z00>c-r01-a02-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00043752788458134074,
+            "segment_id": "seg:c-r01-a01-z01>c-r01-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a01-z01>c-r01-a02-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00043752788458134074,
+            "segment_id": "seg:c-r01-a01-z02>c-r01-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a01-z02>c-r01-a02-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00043752788458134074,
+            "segment_id": "seg:c-r01-a01-z03>c-r01-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a01-z03>c-r01-a02-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a02-z00>c-r01-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a02-z00>c-r01-a03-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a02-z01>c-r01-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a02-z01>c-r01-a03-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a02-z02>c-r01-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a02-z02>c-r01-a03-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004375278845813407,
+            "segment_id": "seg:c-r01-a02-z03>c-r01-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r01-a02-z03>c-r01-a03-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00046251624301609553,
+            "segment_id": "seg:c-r02-a00-z00>c-r02-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a00-z00>c-r02-a01-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00046251624301609553,
+            "segment_id": "seg:c-r02-a00-z01>c-r02-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a00-z01>c-r02-a01-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00046251624301609553,
+            "segment_id": "seg:c-r02-a00-z02>c-r02-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a00-z02>c-r02-a01-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00046251624301609553,
+            "segment_id": "seg:c-r02-a00-z03>c-r02-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a00-z03>c-r02-a01-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160955,
+            "segment_id": "seg:c-r02-a01-z00>c-r02-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a01-z00>c-r02-a02-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160955,
+            "segment_id": "seg:c-r02-a01-z01>c-r02-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a01-z01>c-r02-a02-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160955,
+            "segment_id": "seg:c-r02-a01-z02>c-r02-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a01-z02>c-r02-a02-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160955,
+            "segment_id": "seg:c-r02-a01-z03>c-r02-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a01-z03>c-r02-a02-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160954,
+            "segment_id": "seg:c-r02-a02-z00>c-r02-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a02-z00>c-r02-a03-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160954,
+            "segment_id": "seg:c-r02-a02-z01>c-r02-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a02-z01>c-r02-a03-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160954,
+            "segment_id": "seg:c-r02-a02-z02>c-r02-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a02-z02>c-r02-a03-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004625162430160954,
+            "segment_id": "seg:c-r02-a02-z03>c-r02-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r02-a02-z03>c-r02-a03-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004875052613140216,
+            "segment_id": "seg:c-r03-a00-z00>c-r03-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a00-z00>c-r03-a01-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004875052613140216,
+            "segment_id": "seg:c-r03-a00-z01>c-r03-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a00-z01>c-r03-a01-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004875052613140216,
+            "segment_id": "seg:c-r03-a00-z02>c-r03-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a00-z02>c-r03-a01-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.0004875052613140216,
+            "segment_id": "seg:c-r03-a00-z03>c-r03-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a00-z03>c-r03-a01-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a01-z00>c-r03-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a01-z00>c-r03-a02-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a01-z01>c-r03-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a01-z01>c-r03-a02-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a01-z02>c-r03-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a01-z02>c-r03-a02-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a01-z03>c-r03-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a01-z03>c-r03-a02-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a02-z00>c-r03-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a02-z00>c-r03-a03-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a02-z01>c-r03-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a02-z01>c-r03-a03-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a02-z02>c-r03-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a02-z02>c-r03-a03-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00048750526131402153,
+            "segment_id": "seg:c-r03-a02-z03>c-r03-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:fixture-neighbor-segment:c-r03-a02-z03>c-r03-a03-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          }
+        ],
+        "status": "PASS_NO_CROSSINGS_IN_CHECKED_SEGMENTS"
+      },
+      "decision_limits": [
+        "A local precondition result is not a physicalPASS.",
+        "Three actual intervals and three centroid layers are only the declared fixture precondition; process-zone adequacy requires separate evidence.",
+        "An attractive or smooth section image is not used by any gate."
+      ],
+      "inputs": {
+        "cell_count": 64,
+        "centroid_pointweight_count": 64,
+        "declared_units": {
+          "length": "mm",
+          "mass": "kg",
+          "volume": "mm^3"
+        },
+        "fixture_cell_cap": 96,
+        "fixture_segment_cap": 128,
+        "segment_count": 48,
+        "wall_sample_count": 16
+      },
+      "local_scope": {
+        "coverage_scope": "LOCAL_WALL_PATCH_ONLY",
+        "full_domain_coverage_declared_by_input": false,
+        "full_domain_coverage_verified": false,
+        "global_pass": false,
+        "global_status": "UNKNOWN_NO_FULL_DOMAIN_COVERAGE",
+        "local_cell_geometry_complete": true,
+        "scope_note": "Only the supplied local patch and listed sample rays were examined; no local result is promoted to a whole-body result.",
+        "wall_sample_design_complete": true
+      },
+      "resolution": {
+        "actual_h_over_t_distribution": {
+          "interpretation": "Descriptive max-edge / sampled-wall-thickness ratio; it does not replace measured interval or centroid-layer evidence.",
+          "max": 0.2500000000000002,
+          "min": 0.24999999999999972,
+          "p50": 0.25000000000000017,
+          "sampled_interval_count": 64
+        },
+        "engineering_precondition": {
+          "min_actual_thickness_sampling_intervals_per_ray": 3,
+          "min_distinct_centroid_layers_per_ray": 3,
+          "process_zone_status": "REQUIRES_SEPARATE_VALIDATION",
+          "rationale": "This review declared a three-interval local mesh-precondition for the fixture; crack-process-zone adequacy is material- and model-dependent and is not inferred.",
+          "universality": "DECLARED_ENGINEERING_PRECONDITION_ONLY; NOT A UNIVERSAL CRACK-RESOLUTION RULE"
+        },
+        "local_status": "LOCAL_RESOLUTION_PRECONDITION_MET",
+        "min_observed_actual_thickness_intervals": 4,
+        "min_observed_distinct_centroid_layers": 4,
+        "physical_pass": false,
+        "physical_status": "NOT_QUALIFIED",
+        "wall_samples": [
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a00-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a00-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r03-a00-z00",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a00-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a00-z00",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a00-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a00-z00",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a00-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a00-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a00-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 6.219783176008131e-20,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a00-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a00-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a00-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z00",
+              "c-r01-a00-z00",
+              "c-r02-a00-z00",
+              "c-r03-a00-z00"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.25000000000000017
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.075:z=4.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a00-z01",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a00-z01",
+                "h_over_t": 0.24999999999999972
+              },
+              {
+                "cell_id": "c-r03-a00-z01",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a00-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a00-z01",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a00-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a00-z01",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a00-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a00-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a00-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 6.219783176008131e-20,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a00-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a00-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a00-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z01",
+              "c-r01-a00-z01",
+              "c-r02-a00-z01",
+              "c-r03-a00-z01"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.24999999999999972
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.075:z=4.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a00-z02",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a00-z02",
+                "h_over_t": 0.24999999999999972
+              },
+              {
+                "cell_id": "c-r03-a00-z02",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a00-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a00-z02",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a00-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a00-z02",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a00-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a00-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a00-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 6.219783176008131e-20,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a00-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 8.673617379884035e-19,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a00-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a00-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z02",
+              "c-r01-a00-z02",
+              "c-r02-a00-z02",
+              "c-r03-a00-z02"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.24999999999999972
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.075:z=5.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a00-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a00-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r03-a00-z03",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a00-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a00-z03",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a00-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a00-z03",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a00-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a00-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a00-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 6.219783176008131e-20,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a00-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a00-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a00-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z03",
+              "c-r01-a00-z03",
+              "c-r02-a00-z03",
+              "c-r03-a00-z03"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.25000000000000017
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.075:z=5.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a01-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a01-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r03-a01-z00",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a01-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a01-z00",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a01-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a01-z00",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a01-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a01-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a01-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221436,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 5.42365719446819e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a01-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 1.0973572542119816e-19,
+                "projected_depth_m": 0.0007514692745221436
+              },
+              {
+                "cell_id": "c-r02-a01-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 2.710505431213761e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a01-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.1726353818624857e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z00",
+              "c-r01-a01-z00",
+              "c-r02-a01-z00",
+              "c-r03-a01-z00"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.2500000000000002
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.025:z=4.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a01-z01",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a01-z01",
+                "h_over_t": 0.24999999999999978
+              },
+              {
+                "cell_id": "c-r03-a01-z01",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a01-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a01-z01",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a01-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a01-z01",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a01-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a01-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a01-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221436,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 5.42365719446819e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a01-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 1.0973572542119816e-19,
+                "projected_depth_m": 0.0007514692745221436
+              },
+              {
+                "cell_id": "c-r02-a01-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 2.710505431213761e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a01-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.1726353818624857e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z01",
+              "c-r01-a01-z01",
+              "c-r02-a01-z01",
+              "c-r03-a01-z01"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.24999999999999978
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.025:z=4.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a01-z02",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a01-z02",
+                "h_over_t": 0.24999999999999978
+              },
+              {
+                "cell_id": "c-r03-a01-z02",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a01-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a01-z02",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a01-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a01-z02",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a01-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a01-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a01-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221436,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 5.42365719446819e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a01-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 8.742758797770761e-19,
+                "projected_depth_m": 0.0007514692745221436
+              },
+              {
+                "cell_id": "c-r02-a01-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 2.710505431213761e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a01-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.1726353818624857e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z02",
+              "c-r01-a01-z02",
+              "c-r02-a01-z02",
+              "c-r03-a01-z02"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.24999999999999978
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.025:z=5.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a01-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a01-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r03-a01-z03",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a01-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a01-z03",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a01-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a01-z03",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a01-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a01-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a01-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221436,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000002e-10,
+                "lateral_offset_m": 5.42365719446819e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a01-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000001e-10,
+                "lateral_offset_m": 1.0973572542119816e-19,
+                "projected_depth_m": 0.0007514692745221436
+              },
+              {
+                "cell_id": "c-r02-a01-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000001e-10,
+                "lateral_offset_m": 2.710505431213761e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a01-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000003e-10,
+                "lateral_offset_m": 2.1726353818624857e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z03",
+              "c-r01-a01-z03",
+              "c-r02-a01-z03",
+              "c-r03-a01-z03"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.2500000000000002
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=-0.025:z=5.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a02-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a02-z00",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r03-a02-z00",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a02-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a02-z00",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a02-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a02-z00",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a02-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a02-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a02-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221453,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000004e-10,
+                "lateral_offset_m": 5.421010862427522e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a02-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000005e-10,
+                "lateral_offset_m": 1.1262671932904082e-19,
+                "projected_depth_m": 0.0007514692745221453
+              },
+              {
+                "cell_id": "c-r02-a02-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000004e-10,
+                "lateral_offset_m": 4.743384504624082e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a02-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000006e-10,
+                "lateral_offset_m": 2.168404344971009e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z00",
+              "c-r01-a02-z00",
+              "c-r02-a02-z00",
+              "c-r03-a02-z00"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.2500000000000002
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.025:z=4.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a02-z01",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a02-z01",
+                "h_over_t": 0.24999999999999978
+              },
+              {
+                "cell_id": "c-r03-a02-z01",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a02-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a02-z01",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a02-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a02-z01",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a02-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a02-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a02-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221453,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000004e-10,
+                "lateral_offset_m": 5.421010862427522e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a02-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000005e-10,
+                "lateral_offset_m": 1.1262671932904082e-19,
+                "projected_depth_m": 0.0007514692745221453
+              },
+              {
+                "cell_id": "c-r02-a02-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000004e-10,
+                "lateral_offset_m": 4.743384504624082e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a02-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000006e-10,
+                "lateral_offset_m": 2.168404344971009e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z01",
+              "c-r01-a02-z01",
+              "c-r02-a02-z01",
+              "c-r03-a02-z01"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.24999999999999978
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.025:z=4.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a02-z02",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a02-z02",
+                "h_over_t": 0.24999999999999978
+              },
+              {
+                "cell_id": "c-r03-a02-z02",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a02-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a02-z02",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a02-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a02-z02",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a02-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a02-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a02-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221453,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000004e-10,
+                "lateral_offset_m": 5.421010862427522e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a02-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000005e-10,
+                "lateral_offset_m": 8.746434487453081e-19,
+                "projected_depth_m": 0.0007514692745221453
+              },
+              {
+                "cell_id": "c-r02-a02-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000004e-10,
+                "lateral_offset_m": 4.743384504624082e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a02-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000006e-10,
+                "lateral_offset_m": 2.168404344971009e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z02",
+              "c-r01-a02-z02",
+              "c-r02-a02-z02",
+              "c-r03-a02-z02"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.24999999999999978
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.025:z=5.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r01-a02-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r02-a02-z03",
+                "h_over_t": 0.2500000000000002
+              },
+              {
+                "cell_id": "c-r03-a02-z03",
+                "h_over_t": 0.2500000000000002
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "end_depth_m": 0.0004999999999999997,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a02-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a02-z03",
+                "end_depth_m": 0.0009999999999999994,
+                "length_m": 0.0004999999999999997,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a02-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999997
+              },
+              {
+                "cell_id": "c-r02-a02-z03",
+                "end_depth_m": 0.0015000000000000007,
+                "length_m": 0.0005000000000000013,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a02-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999994
+              },
+              {
+                "cell_id": "c-r03-a02-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999998,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a02-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000007
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.00025166564134140385,
+              0.0007514692745221453,
+              0.001251288506093535,
+              0.001751120936303169
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312500000000004e-10,
+                "lateral_offset_m": 5.421010862427522e-20,
+                "projected_depth_m": 0.00025166564134140385
+              },
+              {
+                "cell_id": "c-r01-a02-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937500000000005e-10,
+                "lateral_offset_m": 1.1262671932904082e-19,
+                "projected_depth_m": 0.0007514692745221453
+              },
+              {
+                "cell_id": "c-r02-a02-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562500000000004e-10,
+                "lateral_offset_m": 4.743384504624082e-20,
+                "projected_depth_m": 0.001251288506093535
+              },
+              {
+                "cell_id": "c-r03-a02-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187500000000006e-10,
+                "lateral_offset_m": 2.168404344971009e-19,
+                "projected_depth_m": 0.001751120936303169
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z03",
+              "c-r01-a02-z03",
+              "c-r02-a02-z03",
+              "c-r03-a02-z03"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.2500000000000002,
+              "median": 0.2500000000000002,
+              "min": 0.2500000000000002
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.025:z=5.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a03-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a03-z00",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r03-a03-z00",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a03-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a03-z00",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a03-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a03-z00",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a03-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a03-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a03-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312499999999999e-10,
+                "lateral_offset_m": 1.4911629524385865e-19,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a03-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937499999999998e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a03-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562499999999999e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a03-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187499999999998e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z00",
+              "c-r01-a03-z00",
+              "c-r02-a03-z00",
+              "c-r03-a03-z00"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.25000000000000017
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.075:z=4.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a03-z01",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a03-z01",
+                "h_over_t": 0.24999999999999972
+              },
+              {
+                "cell_id": "c-r03-a03-z01",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a03-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a03-z01",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a03-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a03-z01",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a03-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a03-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a03-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312499999999999e-10,
+                "lateral_offset_m": 8.800863900967437e-19,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a03-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937499999999998e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a03-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562499999999999e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a03-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187499999999998e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z01",
+              "c-r01-a03-z01",
+              "c-r02-a03-z01",
+              "c-r03-a03-z01"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.24999999999999972
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.075:z=4.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a03-z02",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a03-z02",
+                "h_over_t": 0.24999999999999972
+              },
+              {
+                "cell_id": "c-r03-a03-z02",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a03-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a03-z02",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a03-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a03-z02",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0004999999999999996,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a03-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a03-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a03-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312499999999999e-10,
+                "lateral_offset_m": 1.4911629524385865e-19,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a03-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937499999999998e-10,
+                "lateral_offset_m": 0.0,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a03-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562499999999999e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a03-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187499999999998e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z02",
+              "c-r01-a03-z02",
+              "c-r02-a03-z02",
+              "c-r03-a03-z02"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.24999999999999972
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.075:z=5.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r01-a03-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r02-a03-z03",
+                "h_over_t": 0.25000000000000017
+              },
+              {
+                "cell_id": "c-r03-a03-z03",
+                "h_over_t": 0.25000000000000017
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "end_depth_m": 0.0004999999999999993,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r00-a03-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              },
+              {
+                "cell_id": "c-r01-a03-z03",
+                "end_depth_m": 0.0009999999999999985,
+                "length_m": 0.0004999999999999993,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r01-a03-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0004999999999999993
+              },
+              {
+                "cell_id": "c-r02-a03-z03",
+                "end_depth_m": 0.0015000000000000013,
+                "length_m": 0.0005000000000000028,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r02-a03-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0009999999999999985
+              },
+              {
+                "cell_id": "c-r03-a03-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0004999999999999991,
+                "max_edge_m": 0.0005000000000000004,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:ray-hit:c-r03-a03-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0015000000000000013
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 4,
+            "centroid_layer_depths_m": [
+              0.0002516656413414029,
+              0.0007514692745221441,
+              0.0012512885060935357,
+              0.0017511209363031684
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0312499999999999e-10,
+                "lateral_offset_m": 1.4911629524385865e-19,
+                "projected_depth_m": 0.0002516656413414029
+              },
+              {
+                "cell_id": "c-r01-a03-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.0937499999999998e-10,
+                "lateral_offset_m": 8.673617379884035e-19,
+                "projected_depth_m": 0.0007514692745221441
+              },
+              {
+                "cell_id": "c-r02-a03-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.1562499999999999e-10,
+                "lateral_offset_m": 6.776263578034403e-20,
+                "projected_depth_m": 0.0012512885060935357
+              },
+              {
+                "cell_id": "c-r03-a03-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 1.2187499999999998e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0017511209363031684
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z03",
+              "c-r01-a03-z03",
+              "c-r02-a03-z03",
+              "c-r03-a03-z03"
+            ],
+            "crossed_cell_intervals": 4,
+            "h_over_t": {
+              "max": 0.25000000000000017,
+              "median": 0.25000000000000017,
+              "min": 0.25000000000000017
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm:wall-normal-sample:theta=0.075:z=5.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          }
+        ]
+      },
+      "schema": "pgfrag.thin_wall_resolution_report.v1",
+      "source_ref": "fixture:hollow-cylinder-R8-R10mm:h0.5mm",
+      "volume_mass_consistency": {
+        "analytic_patch_reference_volume_m3": 7.2000000000000024e-09,
+        "cell_geometry_nonoverlap_count": 0,
+        "cell_geometry_partition_volume_delta_m3": -8.271806125530277e-25,
+        "mass_delta_kg": -1.6940658945086007e-20,
+        "mass_status": "PASS_DENSITY_TIMES_GEOMETRIC_VOLUME",
+        "mass_tolerance_kg": 1.5120000000000005e-15,
+        "overlapping_cell_pairs": [],
+        "per_cell_pointweight_mismatches": [],
+        "point_mass_sum_kg": 1.5119999999999987e-05,
+        "pointweight_volume_delta_m3": 0.0,
+        "rho_times_reference_volume_kg": 1.5120000000000004e-05,
+        "sum_centroid_pointweights_m3": 7.2000000000000024e-09,
+        "sum_exact_cell_geometry_volumes_m3": 7.200000000000002e-09,
+        "volume_status": "PASS_LOCAL_GEOMETRY_POINTWEIGHT_RECONCILIATION",
+        "volume_tolerance_m3": 1e-16
+      }
+    },
+    {
+      "case_id": "hollow-cylinder-t2mm-h2mm",
+      "cavity_crossing_segments": {
+        "adapter": "check_segments(unit_tagged_endpoints, exact_hollow_cylinder_geometry)",
+        "failure_segment_ids": [],
+        "scope": "CHECKED_SEGMENTS_ONLY; DOES_NOT_ESTABLISH_UNCHECKED_GRAPH_COVERAGE",
+        "segment_count": 12,
+        "segments": [
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a00-z00>c-r00-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a00-z00>c-r00-a01-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a00-z01>c-r00-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a00-z01>c-r00-a01-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a00-z02>c-r00-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a00-z02>c-r00-a01-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a00-z03>c-r00-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a00-z03>c-r00-a01-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a01-z00>c-r00-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a01-z00>c-r00-a02-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a01-z01>c-r00-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a01-z01>c-r00-a02-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a01-z02>c-r00-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a01-z02>c-r00-a02-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a01-z03>c-r00-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a01-z03>c-r00-a02-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a02-z00>c-r00-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a02-z00>c-r00-a03-z00",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a02-z01>c-r00-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a02-z01>c-r00-a03-z01",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a02-z02>c-r00-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a02-z02>c-r00-a03-z02",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          },
+          {
+            "checked_parameter_intervals": 1,
+            "endpoint_classification": "BOTH_IN_MATERIAL",
+            "length_m": 0.00045175772389368274,
+            "segment_id": "seg:c-r00-a02-z03>c-r00-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:fixture-neighbor-segment:c-r00-a02-z03>c-r00-a03-z03",
+            "status": "PASS_ENTIRE_SEGMENT_IN_MATERIAL",
+            "violating_intervals": []
+          }
+        ],
+        "status": "PASS_NO_CROSSINGS_IN_CHECKED_SEGMENTS"
+      },
+      "decision_limits": [
+        "A local precondition result is not a physicalPASS.",
+        "Three actual intervals and three centroid layers are only the declared fixture precondition; process-zone adequacy requires separate evidence.",
+        "An attractive or smooth section image is not used by any gate."
+      ],
+      "inputs": {
+        "cell_count": 16,
+        "centroid_pointweight_count": 16,
+        "declared_units": {
+          "length": "mm",
+          "mass": "kg",
+          "volume": "mm^3"
+        },
+        "fixture_cell_cap": 96,
+        "fixture_segment_cap": 128,
+        "segment_count": 12,
+        "wall_sample_count": 16
+      },
+      "local_scope": {
+        "coverage_scope": "LOCAL_WALL_PATCH_ONLY",
+        "full_domain_coverage_declared_by_input": false,
+        "full_domain_coverage_verified": false,
+        "global_pass": false,
+        "global_status": "UNKNOWN_NO_FULL_DOMAIN_COVERAGE",
+        "local_cell_geometry_complete": true,
+        "scope_note": "Only the supplied local patch and listed sample rays were examined; no local result is promoted to a whole-body result.",
+        "wall_sample_design_complete": true
+      },
+      "resolution": {
+        "actual_h_over_t_distribution": {
+          "interpretation": "Descriptive max-edge / sampled-wall-thickness ratio; it does not replace measured interval or centroid-layer evidence.",
+          "max": 1.0,
+          "min": 0.9999999999999998,
+          "p50": 0.9999999999999999,
+          "sampled_interval_count": 16
+        },
+        "engineering_precondition": {
+          "min_actual_thickness_sampling_intervals_per_ray": 3,
+          "min_distinct_centroid_layers_per_ray": 3,
+          "process_zone_status": "REQUIRES_SEPARATE_VALIDATION",
+          "rationale": "This review declared a three-interval local mesh-precondition for the fixture; crack-process-zone adequacy is material- and model-dependent and is not inferred.",
+          "universality": "DECLARED_ENGINEERING_PRECONDITION_ONLY; NOT A UNIVERSAL CRACK-RESOLUTION RULE"
+        },
+        "local_status": "UNDERRESOLVED",
+        "min_observed_actual_thickness_intervals": 1,
+        "min_observed_distinct_centroid_layers": 1,
+        "physical_pass": false,
+        "physical_status": "NOT_QUALIFIED",
+        "wall_samples": [
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a00-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z00"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.075:z=4.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a00-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z01"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.075:z=4.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a00-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z02"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.075:z=5.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a00-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a00-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 9.00605963819571e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a00-z03"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a00-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.075:z=5.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a01-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z00"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.025:z=4.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a01-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z01"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.025:z=4.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a01-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 2.2351400383409363e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z02"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.025:z=5.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a01-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a01-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.5000000000000005e-10,
+                "lateral_offset_m": 8.956979928727155e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a01-z03"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a01-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=-0.025:z=5.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a02-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.500000000000002e-10,
+                "lateral_offset_m": 2.2196788886855296e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z00"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.025:z=4.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a02-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.500000000000002e-10,
+                "lateral_offset_m": 2.2196788886855296e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z01"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.025:z=4.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a02-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.500000000000002e-10,
+                "lateral_offset_m": 2.2196788886855296e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z02"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.025:z=5.25mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "h_over_t": 1.0
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a02-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293429
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a02-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.500000000000002e-10,
+                "lateral_offset_m": 2.2196788886855296e-19,
+                "projected_depth_m": 0.0010360957084293429
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a02-z03"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 1.0,
+              "median": 1.0,
+              "min": 1.0
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a02-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.025:z=5.75mm",
+            "wall_thickness_m": 0.002,
+            "wall_thickness_mm": 2.0
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a03-z00:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z00",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.4999999999999995e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z00"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z00",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.075:z=4.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a03-z01:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z01",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.4999999999999995e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z01"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z01",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.075:z=4.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a03-z02:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z02",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.4999999999999995e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z02"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z02",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.075:z=5.25mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          },
+          {
+            "actual_cell_h_over_t_values": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "h_over_t": 0.9999999999999998
+              }
+            ],
+            "actual_interval_evidence": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "end_depth_m": 0.0020000000000000005,
+                "length_m": 0.0020000000000000005,
+                "max_edge_m": 0.002,
+                "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:ray-hit:c-r00-a03-z03:exact-radial-cell-span",
+                "start_depth_m": 0.0
+              }
+            ],
+            "actual_thickness_centroid_layer_count": 1,
+            "centroid_layer_depths_m": [
+              0.0010360957084293452
+            ],
+            "centroid_layer_evidence": [
+              {
+                "cell_id": "c-r00-a03-z03",
+                "centroid_count_combined": 1,
+                "combined_pointweight_m3": 4.4999999999999995e-10,
+                "lateral_offset_m": 2.42434975903054e-19,
+                "projected_depth_m": 0.0010360957084293452
+              }
+            ],
+            "crossed_cell_ids": [
+              "c-r00-a03-z03"
+            ],
+            "crossed_cell_intervals": 1,
+            "h_over_t": {
+              "max": 0.9999999999999998,
+              "median": 0.9999999999999998,
+              "min": 0.9999999999999998
+            },
+            "interval_gap_count": 0,
+            "interval_overlap_count": 0,
+            "interval_partition_status": "PASS_CONTIGUOUS_LOCAL_WALL_INTERVAL",
+            "sample_id": "ws-a03-z03",
+            "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm:wall-normal-sample:theta=0.075:z=5.75mm",
+            "wall_thickness_m": 0.0020000000000000005,
+            "wall_thickness_mm": 2.0000000000000004
+          }
+        ]
+      },
+      "schema": "pgfrag.thin_wall_resolution_report.v1",
+      "source_ref": "fixture:hollow-cylinder-R8-R10mm:h2mm",
+      "volume_mass_consistency": {
+        "analytic_patch_reference_volume_m3": 7.2000000000000024e-09,
+        "cell_geometry_nonoverlap_count": 0,
+        "cell_geometry_partition_volume_delta_m3": -8.271806125530277e-25,
+        "mass_delta_kg": 0.0,
+        "mass_status": "PASS_DENSITY_TIMES_GEOMETRIC_VOLUME",
+        "mass_tolerance_kg": 1.5120000000000005e-15,
+        "overlapping_cell_pairs": [],
+        "per_cell_pointweight_mismatches": [],
+        "point_mass_sum_kg": 1.5120000000000004e-05,
+        "pointweight_volume_delta_m3": -3.308722450212111e-24,
+        "rho_times_reference_volume_kg": 1.5120000000000004e-05,
+        "sum_centroid_pointweights_m3": 7.199999999999999e-09,
+        "sum_exact_cell_geometry_volumes_m3": 7.200000000000002e-09,
+        "volume_status": "PASS_LOCAL_GEOMETRY_POINTWEIGHT_RECONCILIATION",
+        "volume_tolerance_m3": 1e-16
+      }
+    }
+  ],
+  "execution": {
+    "cad_invoked": false,
+    "elapsed_seconds": 0.0036144000478088856,
+    "max_fixture_cells": 96,
+    "max_fixture_segments": 128,
+    "original_ingress_source_modified": false,
+    "solver_invoked": false,
+    "time_limit_seconds": 30
+  },
+  "historical_h8_comparison": {
+    "basis": "Known coarse edge is at least the nominal wall thickness; no sampled wall-ray or actual through-thickness layer evidence upgrades it.",
+    "case_id": "historical-h8mm-nominal-wall-comparison",
+    "h_m": 0.008,
+    "h_over_t": 4.0,
+    "nominal_wall_m": 0.002,
+    "scope": "Historical nominal-parameter comparison only; it is not a recovered mesh measurement or global wall certificate.",
+    "status": "UNDERRESOLVED"
+  },
+  "schema": "pgfrag.thin_wall_resolution_review.v1",
+  "status": "LOCAL_PRECONDITION_MET_FOR_H05_FIXTURE__H2_UNDERRESOLVED__NO_PHYSICAL_OR_GLOBAL_PASS"
+}

@@ -1,0 +1,188 @@
+{
+  "schema": "pgfrag.discretization_bias.descriptor.v1",
+  "run_id": "fixture_graph_components",
+  "evidence": {
+    "kind": "FIXTURE",
+    "scope": "FIXTURE",
+    "physical_result": false
+  },
+  "physical_frame": {
+    "common_frame_id": "fixture-VF-rest-frame-v1",
+    "coordinate_units": "mm",
+    "local_to_common": [
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "geometry": {
+    "reference": "fixture://vf-mother/cup-wall-notch",
+    "sha256": "fixture-geometry-hash-0001",
+    "units": "mm"
+  },
+  "load": {
+    "sha256": "fixture-load-hash-0001",
+    "units": "m/s",
+    "description": "FIXTURE grip waveform"
+  },
+  "material": {
+    "parameter_sha256": "fixture-material-parameters-0001",
+    "field_sha256": "fixture-rest-field-hash-0001",
+    "random_field_seed": 17,
+    "units": {
+      "E": "Pa",
+      "Gc": "J/m^2",
+      "density": "kg/m^3"
+    }
+  },
+  "solver": {
+    "build_sha256": "fixture-build-hash-0001",
+    "failure_law_sha256": "fixture-law-hash-0001",
+    "surface_correction": "FIXTURE_NoCorrection",
+    "run_status": "COMPLETE"
+  },
+  "discretization": {
+    "mesh_sha256": "fixture-mesh-graph-components-0006",
+    "h": 0.5,
+    "h_units": "mm",
+    "delta": 1.5,
+    "delta_units": "mm",
+    "dt": 1e-08,
+    "dt_units": "s",
+    "orientation_id": "orientation-r90-graph",
+    "translation_id": "translation-0"
+  },
+  "fracture": {
+    "fracture_occurred": true,
+    "history_complete": true,
+    "initiation_time": 0.002,
+    "initiation_time_units": "s",
+    "surface_extractor_sha256": "fixture-surface-extractor-0001",
+    "path_sampling_policy_sha256": "fixture-fixed-spacing-samples-0001",
+    "path_units": "mm",
+    "path_samples_local": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        -2,
+        0
+      ]
+    ],
+    "surface": {
+      "coordinate_units": "mm",
+      "vertices": [
+        {
+          "id": "r0",
+          "xyz": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "r1",
+          "xyz": [
+            0,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "r2",
+          "xyz": [
+            1,
+            -1,
+            0
+          ]
+        },
+        {
+          "id": "r3",
+          "xyz": [
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "triangles": [
+        [
+          "r0",
+          "r1",
+          "r2"
+        ],
+        [
+          "r0",
+          "r2",
+          "r3"
+        ]
+      ]
+    }
+  },
+  "fragment_evidence": {
+    "kind": "bond_graph_components",
+    "components": [
+      {
+        "id": "component-1",
+        "mass": 0.6,
+        "mass_units": "kg"
+      },
+      {
+        "id": "component-2",
+        "mass": 0.4,
+        "mass_units": "kg"
+      }
+    ]
+  },
+  "energy_terms": {
+    "external_work": {
+      "value": 1.0,
+      "units": "J"
+    },
+    "kinetic": {
+      "value": 0.1,
+      "units": "J"
+    },
+    "elastic_strain": {
+      "value": 0.8,
+      "units": "J"
+    },
+    "fracture_dissipation": {
+      "value": 0.08,
+      "units": "J"
+    },
+    "residual": {
+      "value": 0.02,
+      "units": "J"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "review_id": "wall_bias_independent_20261006",
+  "scope": {
+    "mode": "read_only_source_and_existing_artifacts",
+    "author_tests_or_implementation_executed": false,
+    "solver_or_cad_invoked": false,
+    "saved_result_readback": "one PowerShell JSON projection, <1 second"
+  },
+  "verdict": "NO_REPRODUCIBLE_FALSE_PHYSICAL_PASS_FOUND; ANALYTIC_FIXTURE_ONLY; REAL_MESH_BIAS_NOT_ELIMINATED",
+  "findings": [
+    {
+      "id": "WALL-001",
+      "severity": "accepted_for_local_precondition_scope",
+      "evidence": [
+        "pgfrag/experiments/wall_resolution_guard_20261006/thin_wall_qualification.py:266-371",
+        "pgfrag/experiments/wall_resolution_guard_20261006/thin_wall_qualification.py:614-641",
+        "pgfrag/experiments/wall_resolution_guard_20261006/thin_wall_qualification.py:702-785",
+        "pgfrag/tmp/review_20261006/wall_resolution_guard_20261006/thin_wall_qualification_report.json",
+        "pgfrag/tmp/review_20261006/wall_resolution_guard_20261006/actual_section_samples.png"
+      ],
+      "observation": "Uses crossed radial cell intervals, centroid layers, contiguous coverage, per-cell exact annular-wedge volume/pointweight and density-mass reconciliation. Whole-segment checking splits at exact radial and axial breakpoints. The report never promotes local precondition to physical/global PASS.",
+      "saved_result": {
+        "h_0_5mm": {"actual_intervals_min": 4, "centroid_layers_min": 4, "max_h_over_t": 0.25, "local_status": "LOCAL_RESOLUTION_PRECONDITION_MET"},
+        "h_2mm": {"actual_intervals_min": 1, "centroid_layers_min": 1, "max_h_over_t": 1.0, "local_status": "UNDERRESOLVED"},
+        "physical_pass": false,
+        "global_pass": false,
+        "evidence_kind": "analytic hollow-cylinder fixture, not production mesh"
+      }
+    },
+    {
+      "id": "BIAS-001",
+      "severity": "accepted_for_evaluator_plumbing_scope",
+      "evidence": [
+        "pgfrag/experiments/discretization_bias_metrics_20261006/bias_metrics.py:121-166",
+        "pgfrag/experiments/discretization_bias_metrics_20261006/bias_metrics.py:169-228",
+        "pgfrag/experiments/discretization_bias_metrics_20261006/bias_metrics.py:309-389",
+        "pgfrag/tmp/review_20261006/discretization_bias_metrics_20261006/metrics_report.json"
+      ],
+      "observation": "Pairing compares common-frame ID, geometry/load/material hashes, random-field seed and solver invariants; outputs are transformed into the common frame. No-fracture is UNKNOWN, graph-only fragment evidence is unavailable, and missing metrics/attestations block within-tolerance status. Report is fixture-only and never admitted."
+    },
+    {
+      "id": "LIMIT-001",
+      "severity": "method_limit_not_false_pass",
+      "evidence": [
+        "pgfrag/experiments/discretization_bias_metrics_20261006/bias_metrics.py:180-201",
+        "pgfrag/experiments/discretization_bias_metrics_20261006/README.md"
+      ],
+      "observation": "Crack path comparison is defined over discrete unordered samples, not continuous interpolated curves; confidence depends on the sampling policy and density. Native qualification fields are descriptor attestations for later review, not independently verified run receipts."
+    }
+  ],
+  "reproducible_severe_bug": null,
+  "required_caveat": "Three-layer thresholds are declared engineering preconditions only; real mesh bias and process-zone adequacy remain unqualified."
+}

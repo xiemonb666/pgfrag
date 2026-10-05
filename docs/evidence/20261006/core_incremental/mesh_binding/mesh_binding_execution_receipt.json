@@ -1,0 +1,99 @@
+{
+  "a12_use": {
+    "mother_geometry_or_clean_gt_available_to_inference": false,
+    "observation_only": true,
+    "pretraining_qualified": false
+  },
+  "coordinate_unit": "m",
+  "fragments": {
+    "negative": {
+      "closed_oriented": true,
+      "edge_count": 18,
+      "piece_id": "fixture_piece_negative",
+      "signed_volume_m3": 4.4399999999999995
+    },
+    "positive": {
+      "closed_oriented": true,
+      "edge_count": 18,
+      "piece_id": "fixture_piece_positive",
+      "signed_volume_m3": 3.56
+    }
+  },
+  "full_coverage_proof": "NOT_ESTABLISHED",
+  "geometry_checks": {
+    "all_mesh_edges_are_closed_with_opposite_directed_incidence": true,
+    "both_meshes_are_outward_oriented_by_positive_signed_volume": true,
+    "fragment_signed_volumes_match_declared_values": true,
+    "fragment_volume_sum_matches_original_numerically": true,
+    "mesh_bytes_match_pinned_sha256": true,
+    "mesh_faces_match_embedded_output_indices": true,
+    "mesh_vertices_match_embedded_output_coordinates": true,
+    "pair_faces_bind_to_actual_fragment_face_ids": true,
+    "pair_vertices_bind_to_actual_mesh_indices_and_mother_coordinates": true,
+    "paired_actual_area_matches_cut_surface_area": true,
+    "paired_actual_normals_are_opposed": true,
+    "paired_face_winding_is_reciprocal": true
+  },
+  "interface_area_m2": 4.354859354789773,
+  "intersection_test": "NOT_RUN",
+  "mechanics_qualification": "NOT_COUPLED",
+  "no_overlap_proof": "NOT_ESTABLISHED",
+  "paired_fracture_faces": [
+    {
+      "actual_outward_normal_dot": -1.0,
+      "area_m2": 2.1774296773948865,
+      "negative_face_id": "fixture_piece_negative:f10",
+      "negative_face_index": 10,
+      "pair_id": "explicit_cut_surface_01:triangle:0",
+      "positive_face_id": "fixture_piece_positive:f10",
+      "positive_face_index": 10
+    },
+    {
+      "actual_outward_normal_dot": -0.9999999999999999,
+      "area_m2": 2.1774296773948865,
+      "negative_face_id": "fixture_piece_negative:f11",
+      "negative_face_index": 11,
+      "pair_id": "explicit_cut_surface_01:triangle:1",
+      "positive_face_id": "fixture_piece_positive:f11",
+      "positive_face_index": 11
+    }
+  ],
+  "partition_geometry_status": "VOLUME_SUM_CONSERVED_ONLY_NO_OVERLAP_OR_FULL_COVERAGE_PROOF",
+  "physical_fracture_claim": "NOT_CLAIMED",
+  "physical_pack_count": 0,
+  "producer_boolean_claims_ignored": {
+    "output_checks_object_ignored": true,
+    "piece_topology_objects_ignored": true,
+    "reason": "This receipt is based on parsed OBJ bytes and numeric fields; producer booleans cannot establish topology or physical qualification."
+  },
+  "qualification": "FIXTURE_GEOMETRY_ONLY",
+  "schema_version": "pgfrag.mesh-binding-receipt.v1",
+  "source_assets": {
+    "fixture_output_file": "explicit_fragment_fixture_output.json",
+    "fixture_output_sha256": "0b18a24b8f58d1df516743c55cc0cb4c4a3629e5288fbcd920be3c4afecebe16",
+    "fragment_mesh_files": {
+      "negative": {
+        "file": "piece_negative.obj",
+        "sha256": "5f5e8e3556173f7f214b98d0e1cf87ec3f0ff84898d127e60ecd4b78a3e4a083",
+        "triangle_count": 12,
+        "vertex_count": 8
+      },
+      "positive": {
+        "file": "piece_positive.obj",
+        "sha256": "342e18222e59ce3e1863b606cab77841bd8035adb6da326573eba73512eec42f",
+        "triangle_count": 12,
+        "vertex_count": 8
+      }
+    },
+    "pair_ledger_file": "interface_pair_ledger.json",
+    "pair_ledger_sha256": "b5e2d578d7f56f28cdf0edf988f0755ff4002b2f3a3b9b6fe96a337672bfd9fe",
+    "separate_fragment_meshes_json_present": false
+  },
+  "validation_status": "PASS",
+  "volume_conservation": {
+    "error_m3": 0.0,
+    "fragment_volume_sum_m3": 8.0,
+    "original_volume_m3": 8.0,
+    "status": "NUMERICALLY_CONSERVED_WITHIN_TOLERANCE"
+  }
+}

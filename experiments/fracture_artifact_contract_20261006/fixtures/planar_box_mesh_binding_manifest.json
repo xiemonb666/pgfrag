@@ -1,0 +1,41 @@
+{
+  "schema_version": "pgfrag.planar-mesh-binding.v1",
+  "purpose": "bounded_readback_of_existing_planar_box_split_fixture",
+  "qualification": "FIXTURE_GEOMETRY_ONLY",
+  "mechanics_qualification": "NOT_COUPLED",
+  "physical_pack_count": 0,
+  "mesh_coordinate_unit": "m",
+  "source_fixture_dir": "../../../tmp/review_20261006/explicit_fragment_fixture_20261006",
+  "limits": {
+    "max_fragments": 2,
+    "max_vertices_total": 64,
+    "max_triangles_total": 64,
+    "max_bytes_each": 262144
+  },
+  "output_file": {
+    "file": "explicit_fragment_fixture_output.json",
+    "sha256": "0b18a24b8f58d1df516743c55cc0cb4c4a3629e5288fbcd920be3c4afecebe16"
+  },
+  "pair_ledger_file": {
+    "file": "interface_pair_ledger.json",
+    "sha256": "b5e2d578d7f56f28cdf0edf988f0755ff4002b2f3a3b9b6fe96a337672bfd9fe"
+  },
+  "fragments": [
+    {
+      "side": "negative",
+      "piece_id": "fixture_piece_negative",
+      "obj_object": "fixture_piece_negative",
+      "fracture_face_group": "explicit_cut_surface_01_fixture_cut",
+      "mesh_file": "piece_negative.obj",
+      "mesh_sha256": "5f5e8e3556173f7f214b98d0e1cf87ec3f0ff84898d127e60ecd4b78a3e4a083"
+    },
+    {
+      "side": "positive",
+      "piece_id": "fixture_piece_positive",
+      "obj_object": "fixture_piece_positive",
+      "fracture_face_group": "explicit_cut_surface_01_fixture_cut",
+      "mesh_file": "piece_positive.obj",
+      "mesh_sha256": "342e18222e59ce3e1863b606cab77841bd8035adb6da326573eba73512eec42f"
+    }
+  ]
+}

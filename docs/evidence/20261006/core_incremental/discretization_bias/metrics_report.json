@@ -1,0 +1,122 @@
+{
+  "schema": "pgfrag.discretization_bias.report.v1",
+  "study_id": "fixture-evaluator-plumbing",
+  "evidence_scope": "FIXTURE_ONLY",
+  "overall_status": "FIXTURE_ONLY",
+  "admission": "NOT_ADMITTED",
+  "bias_eliminated": false,
+  "input_errors": [],
+  "pair_results": [
+    {
+      "pair_id": "rotate",
+      "factor": "orientation",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_rotated",
+      "pairing_status": "COMPARABLE",
+      "assessment_status": "FIXTURE_ONLY",
+      "metrics": {
+        "path_symmetric_p95_mm": 0.0,
+        "path_symmetric_hausdorff_mm": 0.0,
+        "surface_area_abs_delta_mm2": 0.0,
+        "initiation_time_abs_delta_s": 0.0,
+        "energy.external_work_abs_delta_J": 0.0,
+        "energy.kinetic_abs_delta_J": 0.0,
+        "energy.elastic_strain_abs_delta_J": 0.0,
+        "energy.fracture_dissipation_abs_delta_J": 0.0,
+        "energy.residual_abs_delta_J": 0.0,
+        "fragment_mass_w1_fraction": 0.0,
+        "fragment_mass_closure_abs_delta": 0.0,
+        "reference_fragment_mass_closure_error": 0.0,
+        "candidate_fragment_mass_closure_error": 0.0,
+        "reference_parent_coverage_error": 0.01,
+        "candidate_parent_coverage_error": 0.01
+      },
+      "unavailable_metrics": [],
+      "reasons": [
+        "fixture metrics test evaluator only; no bias-removal claim"
+      ]
+    },
+    {
+      "pair_id": "translate",
+      "factor": "translation",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_translated",
+      "pairing_status": "COMPARABLE",
+      "assessment_status": "FIXTURE_ONLY",
+      "metrics": {
+        "path_symmetric_p95_mm": 0.040000000000000036,
+        "path_symmetric_hausdorff_mm": 0.040000000000000036,
+        "surface_area_abs_delta_mm2": 0.019999999999999574,
+        "initiation_time_abs_delta_s": 9.999999999999983e-05,
+        "energy.external_work_abs_delta_J": 0.030000000000000027,
+        "energy.kinetic_abs_delta_J": 0.009999999999999995,
+        "energy.elastic_strain_abs_delta_J": 0.010000000000000009,
+        "energy.fracture_dissipation_abs_delta_J": 0.009999999999999995,
+        "energy.residual_abs_delta_J": 0.0,
+        "fragment_mass_w1_fraction": 0.050000000000000044,
+        "fragment_mass_closure_abs_delta": 0.0,
+        "reference_fragment_mass_closure_error": 0.0,
+        "candidate_fragment_mass_closure_error": 0.0,
+        "reference_parent_coverage_error": 0.01,
+        "candidate_parent_coverage_error": 0.02
+      },
+      "unavailable_metrics": [],
+      "reasons": [
+        "fixture metrics test evaluator only; no bias-removal claim"
+      ]
+    },
+    {
+      "pair_id": "h-seed-mismatch",
+      "factor": "h",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_h_seed_changed",
+      "pairing_status": "INCOMPARABLE",
+      "assessment_status": "INCOMPARABLE",
+      "metrics": {},
+      "unavailable_metrics": [],
+      "reasons": [
+        "fixed invariant differs: material.field_sha256"
+      ]
+    },
+    {
+      "pair_id": "no-fracture",
+      "factor": "orientation",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_no_fracture",
+      "pairing_status": "COMPARABLE",
+      "assessment_status": "UNKNOWN",
+      "metrics": {},
+      "unavailable_metrics": [],
+      "reasons": [
+        "candidate contains no fracture event"
+      ]
+    },
+    {
+      "pair_id": "graph-only",
+      "factor": "orientation",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_graph_components",
+      "pairing_status": "COMPARABLE",
+      "assessment_status": "FIXTURE_ONLY",
+      "metrics": {
+        "path_symmetric_p95_mm": 0.0,
+        "path_symmetric_hausdorff_mm": 0.0,
+        "surface_area_abs_delta_mm2": 0.0,
+        "initiation_time_abs_delta_s": 0.0,
+        "energy.external_work_abs_delta_J": 0.0,
+        "energy.kinetic_abs_delta_J": 0.0,
+        "energy.elastic_strain_abs_delta_J": 0.0,
+        "energy.fracture_dissipation_abs_delta_J": 0.0,
+        "energy.residual_abs_delta_J": 0.0
+      },
+      "unavailable_metrics": [
+        "fragment_mass_distribution: 'bond_graph_components' is not geometric fragment evidence"
+      ],
+      "reasons": [
+        "fragment_mass_distribution: 'bond_graph_components' is not geometric fragment evidence",
+        "fixture metrics test evaluator only; no bias-removal claim"
+      ]
+    }
+  ],
+  "statement": "Fixture metrics validate evaluator plumbing only; they do not show mesh bias is absent."
+}

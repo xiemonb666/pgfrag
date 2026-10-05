@@ -1,0 +1,713 @@
+{
+  "schema_version": "pgfrag.explicit-fragment-fixture-output.v1",
+  "qualification": "FIXTURE_GEOMETRY_ONLY",
+  "mechanics_qualification": "NOT_COUPLED",
+  "production_promotion": "BLOCKED_FIXTURE_ONLY",
+  "physical_fracture_claim": "NOT_CLAIMED",
+  "relation_labels": "NONE",
+  "fixture_note": "The requested plane is the declared generative input. A split count of two is a fixture consequence and does not model physical growth or fragmentation.",
+  "original_body": {
+    "body_id": "fixture_box_01",
+    "density_kg_m3": 2400,
+    "volume_m3": 8,
+    "centroid_m": [
+      0,
+      0,
+      0
+    ],
+    "mass_kg": 19200
+  },
+  "cut_surface": {
+    "surface_id": "explicit_cut_surface_01",
+    "geometry_kind": "explicit_planar_triangle_patch",
+    "plane": {
+      "normal": [
+        0.9185141640913215,
+        0.33985024071378894,
+        0.20207311610009074
+      ],
+      "offset_m": 0.10103655805004537
+    },
+    "vertices_m": [
+      [
+        0.7,
+        -1,
+        -1
+      ],
+      [
+        -0.039999999999999925,
+        1,
+        -1
+      ],
+      [
+        -0.48,
+        1,
+        1
+      ],
+      [
+        0.2599999999999998,
+        -1,
+        1
+      ]
+    ],
+    "triangles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "area_m2": 4.354859354789773,
+    "lineage": {
+      "parent_body_id": "fixture_box_01",
+      "source_kind": "explicit_fixture_input_surface",
+      "production_fracture_event_id": null
+    }
+  },
+  "pieces": [
+    {
+      "piece_id": "fixture_piece_negative",
+      "side": "negative",
+      "vertex_ids": [
+        "negative:v0",
+        "negative:v1",
+        "negative:v2",
+        "negative:v3",
+        "negative:v4",
+        "negative:v5",
+        "negative:v6",
+        "negative:v7"
+      ],
+      "vertices_m": [
+        [
+          0.7,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1,
+          -1
+        ],
+        [
+          -0.039999999999999925,
+          1,
+          -1
+        ],
+        [
+          -1,
+          -1,
+          1
+        ],
+        [
+          0.2599999999999998,
+          -1,
+          1
+        ],
+        [
+          -0.48,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          1
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          1,
+          0,
+          5
+        ],
+        [
+          1,
+          5,
+          4
+        ],
+        [
+          3,
+          2,
+          7
+        ],
+        [
+          3,
+          7,
+          6
+        ],
+        [
+          1,
+          4,
+          7
+        ],
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          0,
+          3,
+          6
+        ],
+        [
+          0,
+          6,
+          5
+        ]
+      ],
+      "face_lineage": [
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:x_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:x_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "explicit_fracture_face_fixture",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "surface_id": "explicit_cut_surface_01",
+          "input_surface_triangle_index": 0,
+          "pair_id": "explicit_cut_surface_01:triangle:0",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "explicit_fracture_face_fixture",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "surface_id": "explicit_cut_surface_01",
+          "input_surface_triangle_index": 1,
+          "pair_id": "explicit_cut_surface_01:triangle:1",
+          "fixture_geometry_only": true
+        }
+      ],
+      "metrics": {
+        "volume_m3": 4.4399999999999995,
+        "centroid_m": [
+          -0.4171771771771772,
+          -0.11111111111111112,
+          -0.06606606606606612
+        ],
+        "mass_kg": 10655.999999999998
+      },
+      "topology": {
+        "vertex_count": 8,
+        "edge_count": 18,
+        "face_count": 12,
+        "euler_characteristic": 2,
+        "closed": true,
+        "orientable_with_consistent_winding": true,
+        "connected_components": 1
+      }
+    },
+    {
+      "piece_id": "fixture_piece_positive",
+      "side": "positive",
+      "vertex_ids": [
+        "positive:v0",
+        "positive:v1",
+        "positive:v2",
+        "positive:v3",
+        "positive:v4",
+        "positive:v5",
+        "positive:v6",
+        "positive:v7"
+      ],
+      "vertices_m": [
+        [
+          0.7,
+          -1,
+          -1
+        ],
+        [
+          -0.039999999999999925,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          -1,
+          -1
+        ],
+        [
+          0.2599999999999998,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          -0.48,
+          1,
+          1
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          7
+        ],
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          0,
+          5,
+          4
+        ],
+        [
+          1,
+          7,
+          6
+        ],
+        [
+          1,
+          6,
+          2
+        ],
+        [
+          3,
+          2,
+          6
+        ],
+        [
+          3,
+          6,
+          5
+        ],
+        [
+          0,
+          7,
+          1
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      "face_lineage": [
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:z_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_min",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:y_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:x_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "original_surface_face",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "original_body_id": "fixture_box_01",
+          "original_surface_face_id": "original:x_max",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "explicit_fracture_face_fixture",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "surface_id": "explicit_cut_surface_01",
+          "input_surface_triangle_index": 0,
+          "pair_id": "explicit_cut_surface_01:triangle:0",
+          "fixture_geometry_only": true
+        },
+        {
+          "kind": "explicit_fracture_face_fixture",
+          "label_namespace": "fixture_geometry_label.explicit_fragment.v1",
+          "surface_id": "explicit_cut_surface_01",
+          "input_surface_triangle_index": 1,
+          "pair_id": "explicit_cut_surface_01:triangle:1",
+          "fixture_geometry_only": true
+        }
+      ],
+      "metrics": {
+        "volume_m3": 3.56,
+        "centroid_m": [
+          0.5202996254681649,
+          0.13857677902621723,
+          0.08239700374531837
+        ],
+        "mass_kg": 8544
+      },
+      "topology": {
+        "vertex_count": 8,
+        "edge_count": 18,
+        "face_count": 12,
+        "euler_characteristic": 2,
+        "closed": true,
+        "orientable_with_consistent_winding": true,
+        "connected_components": 1
+      }
+    }
+  ],
+  "interface_pair_ledger": {
+    "schema_version": "pgfrag.explicit-fragment-interface-pair-ledger.v1",
+    "qualification": "FIXTURE_GEOMETRY_ONLY",
+    "surface_id": "explicit_cut_surface_01",
+    "pairing_rule": "exact input-surface triangle identity and exact canonical mother coordinates; piece-local vertex IDs are distinct",
+    "vertex_pairs": [
+      {
+        "input_surface_vertex_index": 0,
+        "mother_coordinate_m": [
+          0.7,
+          -1,
+          -1
+        ],
+        "negative_vertex_id": "negative:v0",
+        "positive_vertex_id": "positive:v0",
+        "negative_local_vertex_index": 0,
+        "positive_local_vertex_index": 0
+      },
+      {
+        "input_surface_vertex_index": 1,
+        "mother_coordinate_m": [
+          -0.039999999999999925,
+          1,
+          -1
+        ],
+        "negative_vertex_id": "negative:v3",
+        "positive_vertex_id": "positive:v1",
+        "negative_local_vertex_index": 3,
+        "positive_local_vertex_index": 1
+      },
+      {
+        "input_surface_vertex_index": 2,
+        "mother_coordinate_m": [
+          -0.48,
+          1,
+          1
+        ],
+        "negative_vertex_id": "negative:v6",
+        "positive_vertex_id": "positive:v7",
+        "negative_local_vertex_index": 6,
+        "positive_local_vertex_index": 7
+      },
+      {
+        "input_surface_vertex_index": 3,
+        "mother_coordinate_m": [
+          0.2599999999999998,
+          -1,
+          1
+        ],
+        "negative_vertex_id": "negative:v5",
+        "positive_vertex_id": "positive:v4",
+        "negative_local_vertex_index": 5,
+        "positive_local_vertex_index": 4
+      }
+    ],
+    "reciprocal_vertex_pairs": [
+      {
+        "negative_vertex_id": "positive:v0",
+        "positive_vertex_id": "negative:v0",
+        "mother_coordinate_m": [
+          0.7,
+          -1,
+          -1
+        ]
+      },
+      {
+        "negative_vertex_id": "positive:v1",
+        "positive_vertex_id": "negative:v3",
+        "mother_coordinate_m": [
+          -0.039999999999999925,
+          1,
+          -1
+        ]
+      },
+      {
+        "negative_vertex_id": "positive:v7",
+        "positive_vertex_id": "negative:v6",
+        "mother_coordinate_m": [
+          -0.48,
+          1,
+          1
+        ]
+      },
+      {
+        "negative_vertex_id": "positive:v4",
+        "positive_vertex_id": "negative:v5",
+        "mother_coordinate_m": [
+          0.2599999999999998,
+          -1,
+          1
+        ]
+      }
+    ],
+    "triangle_pairs": [
+      {
+        "pair_id": "explicit_cut_surface_01:triangle:0",
+        "input_surface_triangle_index": 0,
+        "negative_face_index": 10,
+        "positive_face_index": 10,
+        "negative_face_id": "fixture_piece_negative:f10",
+        "positive_face_id": "fixture_piece_positive:f10",
+        "mother_coordinates_m": [
+          [
+            0.7,
+            -1,
+            -1
+          ],
+          [
+            -0.039999999999999925,
+            1,
+            -1
+          ],
+          [
+            -0.48,
+            1,
+            1
+          ]
+        ],
+        "negative_outward_normal": [
+          0.9185141640913215,
+          0.3398502407137889,
+          0.20207311610009074
+        ],
+        "positive_outward_normal": [
+          -0.9185141640913215,
+          -0.3398502407137889,
+          -0.20207311610009074
+        ],
+        "outward_normal_dot": -1
+      },
+      {
+        "pair_id": "explicit_cut_surface_01:triangle:1",
+        "input_surface_triangle_index": 1,
+        "negative_face_index": 11,
+        "positive_face_index": 11,
+        "negative_face_id": "fixture_piece_negative:f11",
+        "positive_face_id": "fixture_piece_positive:f11",
+        "mother_coordinates_m": [
+          [
+            0.7,
+            -1,
+            -1
+          ],
+          [
+            -0.48,
+            1,
+            1
+          ],
+          [
+            0.2599999999999998,
+            -1,
+            1
+          ]
+        ],
+        "negative_outward_normal": [
+          0.9185141640913215,
+          0.33985024071378883,
+          0.2020731161000908
+        ],
+        "positive_outward_normal": [
+          -0.9185141640913215,
+          -0.33985024071378883,
+          -0.2020731161000908
+        ],
+        "outward_normal_dot": -0.9999999999999999
+      }
+    ]
+  },
+  "checks": {
+    "closed_outward_manifold_meshes": true,
+    "piece_euler_characteristic_2": true,
+    "volume_sum_matches_original": true,
+    "mass_sum_matches_original": true,
+    "paired_coordinates_identical": true,
+    "pair_vertex_map_reciprocal": true,
+    "interface_outward_normals_opposed": true,
+    "interface_area_matches": true,
+    "interiors_disjoint_with_positive_thickness": true,
+    "all_output_faces_have_source_labels": true,
+    "bounded_geometry_caps_respected": {
+      "total_declared_vertices": 28,
+      "maximum_vertices": 64,
+      "total_declared_faces": 26,
+      "maximum_faces": 128
+    },
+    "numerical_errors": {
+      "volume_error_m3": 0,
+      "mass_error_kg": 0,
+      "interface_area_difference_m2": 0
+    }
+  }
+}

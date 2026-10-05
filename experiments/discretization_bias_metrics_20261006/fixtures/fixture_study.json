@@ -1,0 +1,354 @@
+{
+  "schema": "pgfrag.discretization_bias.study.v1",
+  "study_id": "fixture-evaluator-plumbing",
+  "descriptors": [
+    "baseline.json",
+    "rotated.json",
+    "translated.json",
+    "h_seed_changed.json",
+    "no_fracture.json",
+    "graph_only_fragments.json"
+  ],
+  "pairs": [
+    {
+      "pair_id": "rotate",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_rotated",
+      "factor": "orientation",
+      "tolerances": {
+        "path_symmetric_p95_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "path_symmetric_hausdorff_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "surface_area_abs_delta_mm2": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "initiation_time_abs_delta_s": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_w1_fraction": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_closure_abs_delta": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.external_work_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.kinetic_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.elastic_strain_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.fracture_dissipation_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.residual_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        }
+      }
+    },
+    {
+      "pair_id": "translate",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_translated",
+      "factor": "translation",
+      "tolerances": {
+        "path_symmetric_p95_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "path_symmetric_hausdorff_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "surface_area_abs_delta_mm2": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "initiation_time_abs_delta_s": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_w1_fraction": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_closure_abs_delta": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.external_work_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.kinetic_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.elastic_strain_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.fracture_dissipation_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.residual_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        }
+      }
+    },
+    {
+      "pair_id": "h-seed-mismatch",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_h_seed_changed",
+      "factor": "h",
+      "tolerances": {
+        "path_symmetric_p95_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "path_symmetric_hausdorff_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "surface_area_abs_delta_mm2": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "initiation_time_abs_delta_s": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_w1_fraction": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_closure_abs_delta": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.external_work_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.kinetic_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.elastic_strain_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.fracture_dissipation_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.residual_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        }
+      }
+    },
+    {
+      "pair_id": "no-fracture",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_no_fracture",
+      "factor": "orientation",
+      "tolerances": {
+        "path_symmetric_p95_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "path_symmetric_hausdorff_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "surface_area_abs_delta_mm2": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "initiation_time_abs_delta_s": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_w1_fraction": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_closure_abs_delta": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.external_work_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.kinetic_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.elastic_strain_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.fracture_dissipation_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.residual_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        }
+      }
+    },
+    {
+      "pair_id": "graph-only",
+      "reference_run_id": "fixture_baseline",
+      "candidate_run_id": "fixture_graph_components",
+      "factor": "orientation",
+      "tolerances": {
+        "path_symmetric_p95_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "path_symmetric_hausdorff_mm": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "surface_area_abs_delta_mm2": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "initiation_time_abs_delta_s": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_w1_fraction": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "fragment_mass_closure_abs_delta": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_fragment_mass_closure_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "reference_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "candidate_parent_coverage_error": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.external_work_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.kinetic_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.elastic_strain_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.fracture_dissipation_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        },
+        "energy.residual_abs_delta_J": {
+          "max_abs": 1.0,
+          "basis": "FIXTURE-only plumbing tolerance; not a scientific threshold"
+        }
+      }
+    }
+  ]
+}
