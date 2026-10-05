@@ -20,3 +20,4 @@
 /tests/fixtures/native_point_history/snapshot/canonical_bond_state_history.csv -text
 /tests/fixtures/bond_events/native_shaped_fixture.json -text
 /tests/fixtures/energy_ledger/audit_cases.json -text
+/docs/evidence/20261005/** -text

@@ -1,0 +1,369 @@
+{
+  "schema": "pgfrag.native_resume.audit.v1",
+  "status": "PASS_READ_ONLY_NATIVE_THRESHOLD_AUDIT",
+  "run_id": "affine_threshold_b_run01",
+  "run_execution": {
+    "receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\receipts\\affine_threshold_b_run01.launch_receipt.json",
+    "receipt_status": "COMPLETED",
+    "wrapper_exit_code": 0,
+    "child_exit_code": 0,
+    "timed_out": false,
+    "elapsed_seconds": 4.4945669,
+    "started_utc": "2026-10-04T15:38:29.6555921Z",
+    "finished_utc": "2026-10-04T15:38:34.1501590Z",
+    "execution_disposition": "existing completed run audited; no solver rerun",
+    "native_time_integration": false,
+    "manual_bond_activity_edits": false
+  },
+  "frozen_sources": {
+    "source_pin_count": 26,
+    "all_26_current_hashes_match_receipt_before_and_after": true,
+    "pins": [
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+        "bytes": 23957,
+        "expected_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+        "actual_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+        "bytes": 4923,
+        "expected_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+        "actual_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+        "bytes": 1587,
+        "expected_sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0",
+        "actual_sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/common_loaded_case.toml",
+        "bytes": 491,
+        "expected_sha256": "381ac4564a3df101e8070ce0159c3b6d88c2a6834ca372a8e3a7ce486fdea062",
+        "actual_sha256": "381ac4564a3df101e8070ce0159c3b6d88c2a6834ca372a8e3a7ce486fdea062",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_a_loaded_elastic.toml",
+        "bytes": 166,
+        "expected_sha256": "98797bc6feeffcca2aac7ff54e671b23587b342140b94691b68e8948b33ccf26",
+        "actual_sha256": "98797bc6feeffcca2aac7ff54e671b23587b342140b94691b68e8948b33ccf26",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_b_affine_threshold.toml",
+        "bytes": 955,
+        "expected_sha256": "baab83193430e09af79a1306292972033483f757da445d1cc53bf185676362ff",
+        "actual_sha256": "baab83193430e09af79a1306292972033483f757da445d1cc53bf185676362ff",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe.jl",
+        "bytes": 12838,
+        "expected_sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c",
+        "actual_sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/launch_a_loaded_elastic.ps1",
+        "bytes": 6261,
+        "expected_sha256": "ac51620610649ffef9bec043c5d3f1f422126b4bf86f98c6d269314af62883b5",
+        "actual_sha256": "ac51620610649ffef9bec043c5d3f1f422126b4bf86f98c6d269314af62883b5",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe_pre_scopefix_d7c8.jl",
+        "bytes": 12438,
+        "expected_sha256": "d7c8c11fe9d24ff3bd395240942d625bae0e17e6cbf70619b2d87aade09f03aa",
+        "actual_sha256": "d7c8c11fe9d24ff3bd395240942d625bae0e17e6cbf70619b2d87aade09f03aa",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/manifest_pre_scopefix_2c246c38.json",
+        "bytes": 10170,
+        "expected_sha256": "2c246c38f5f298bc33d069307a8ff908a1f6a4157fc533bf152ab6632ec2a01b",
+        "actual_sha256": "2c246c38f5f298bc33d069307a8ff908a1f6a4157fc533bf152ab6632ec2a01b",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/b_driver_scopefix.diff.md",
+        "bytes": 1475,
+        "expected_sha256": "c6f4029369fec8b52f7cbb70d5a4cc94a6e5e015e77a72399f7d86de7d74fa49",
+        "actual_sha256": "c6f4029369fec8b52f7cbb70d5a4cc94a6e5e015e77a72399f7d86de7d74fa49",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+        "bytes": 107,
+        "expected_sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+        "actual_sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+        "bytes": 22753,
+        "expected_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+        "actual_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+        "bytes": 8223,
+        "expected_sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d",
+        "actual_sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/material_parameters.jl",
+        "bytes": 8596,
+        "expected_sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab",
+        "actual_sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/parameters.jl",
+        "bytes": 4157,
+        "expected_sha256": "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847",
+        "actual_sha256": "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/fracture.jl",
+        "bytes": 6507,
+        "expected_sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075",
+        "actual_sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+        "bytes": 11286,
+        "expected_sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846",
+        "actual_sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+        "bytes": 14917,
+        "expected_sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa",
+        "actual_sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+        "bytes": 18152,
+        "expected_sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421",
+        "actual_sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body_chunk.jl",
+        "bytes": 3795,
+        "expected_sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4",
+        "actual_sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+        "bytes": 8327,
+        "expected_sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116",
+        "actual_sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl",
+        "bytes": 426,
+        "expected_sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388",
+        "actual_sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/storages.jl",
+        "bytes": 15633,
+        "expected_sha256": "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c",
+        "actual_sha256": "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+        "bytes": 26235,
+        "expected_sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b",
+        "actual_sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b",
+        "matches_receipt_before_and_after": true
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+        "bytes": 12397,
+        "expected_sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+        "actual_sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+        "matches_receipt_before_and_after": true
+      }
+    ],
+    "driver_sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c",
+    "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "manifest_sha256": "cd6bccb40afbcd74ff84ebe4e80c027a5d10eed3477d766695b37880fbc358ef",
+    "manifest_still_says": "A_NARROW_GATE_PASS__B_NOT_RUN"
+  },
+  "raw_evidence": {
+    "directed_csv": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\affine_threshold_b_run01\\affine_native_bond_states.csv",
+      "bytes": 2429849,
+      "sha256": "e55b16f61a296ae092ce4e1c01166f7a5eff49735338b19e6364d25178a4af8d"
+    },
+    "canonical_csv": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\affine_threshold_b_run01\\affine_canonical_pair_states.csv",
+      "bytes": 1158067,
+      "sha256": "b4c5ae70126bb9997f28b4a766c4ae7986360246e335d6f904af0e8cafafd140"
+    },
+    "summary_toml": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\affine_threshold_b_run01\\summary.toml",
+      "bytes": 1497,
+      "sha256": "5a9f3b53eac2fe122ac820e7e43c5239d4fae490fcc4c73aa42fbd9af1963efc"
+    },
+    "a_loaded_observer_png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\reports\\loaded_elastic_a8_science.png",
+      "bytes": 113473,
+      "sha256": "b3df2be1cff05a4060d4b81112686287f9d925aa8d5511bb5af9ad9ac317764e"
+    },
+    "b_threshold_audit_png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\native_resume\\native_b_affine_threshold_audit.png",
+      "bytes": 178316,
+      "sha256": "90f4758fbaf7db226f7252df61457652fb9e83465a4f4dc96756c9143d1f49f2"
+    },
+    "stdout": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\receipts\\affine_threshold_b_run01.stdout.log",
+      "bytes": 67,
+      "sha256": "b6945596f7716d939c606a2485a5c8e6bc15359fb333010b515473874d18527c"
+    },
+    "stderr": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\receipts\\affine_threshold_b_run01.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixture_points_csv": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.points.csv",
+      "bytes": 4923,
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    "fixture_metadata_toml": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.metadata.toml",
+      "bytes": 1587,
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    "launch_receipt_sha256": "8ab04d7c70fc5a35acac70ed0907a4939a238af83e4f949435946a06bab53e35",
+    "preflight_receipt_sha256": "4a7738f0a2440ad392ad01b50354fc8d7f0040f7fffb3da2992dde300e81cc1d"
+  },
+  "fixture_and_principle_checks": {
+    "point_count": 125,
+    "lattice_axis_point_counts": [
+      5,
+      5,
+      5
+    ],
+    "uniform_spacing_m": 0.001,
+    "total_volume_m3": 1.2500000000000002e-07,
+    "horizon_to_spacing_ratio": 3.0,
+    "domain_side_m": 0.005,
+    "horizon_to_domain_side_ratio": 0.6,
+    "max_point_clearance_to_nearest_external_surface_m": 0.0025,
+    "has_any_full_horizon_interior_point": false,
+    "surface_correction": "NoCorrection default from OSBMaterial() in frozen native driver",
+    "material": {
+      "E_pa": 5000000000.0,
+      "nu": 0.24,
+      "Gc_j_m2": 45.0,
+      "rho_kg_m3": 2100.0,
+      "horizon_m": 0.003,
+      "K_pa_from_formula": 3205128205.128205
+    },
+    "epsilon_c_formula": "sqrt(5 Gc / (9 K delta))",
+    "epsilon_c_formula_result": 0.0016124515496597099,
+    "epsilon_c_native_reported": 0.0016124515496597099,
+    "directed_bonds_per_state": 6124,
+    "canonical_bonds_per_state": 3062,
+    "states": {
+      "rest": {
+        "directed_rows": 6124,
+        "canonical_pairs": 3062,
+        "fail_permit_true_directed_rows": 6124,
+        "fail_permit_false_directed_rows": 0,
+        "over_threshold_canonical_pairs": 0,
+        "broken_canonical_pairs": 0,
+        "directed_transition_count": 0,
+        "reciprocal_mismatches": 0,
+        "min_broken_stretch_over_epsilon_c": null,
+        "max_retained_stretch_over_epsilon_c": 0.0,
+        "min_stretch_over_epsilon_c": 0.0,
+        "max_stretch_over_epsilon_c": 0.0,
+        "summary_directed_transition_count": 0,
+        "summary_canonical_transition_count": 0,
+        "reciprocal_status": "PASS",
+        "eta_over_epsilon_c": 0.0
+      },
+      "below": {
+        "directed_rows": 6124,
+        "canonical_pairs": 3062,
+        "fail_permit_true_directed_rows": 6124,
+        "fail_permit_false_directed_rows": 0,
+        "over_threshold_canonical_pairs": 0,
+        "broken_canonical_pairs": 0,
+        "directed_transition_count": 0,
+        "reciprocal_mismatches": 0,
+        "min_broken_stretch_over_epsilon_c": null,
+        "max_retained_stretch_over_epsilon_c": 0.5000000000000498,
+        "min_stretch_over_epsilon_c": 0.0,
+        "max_stretch_over_epsilon_c": 0.5000000000000498,
+        "summary_directed_transition_count": 0,
+        "summary_canonical_transition_count": 0,
+        "reciprocal_status": "PASS",
+        "eta_over_epsilon_c": 0.5
+      },
+      "above": {
+        "directed_rows": 6124,
+        "canonical_pairs": 3062,
+        "fail_permit_true_directed_rows": 6124,
+        "fail_permit_false_directed_rows": 0,
+        "over_threshold_canonical_pairs": 632,
+        "broken_canonical_pairs": 632,
+        "directed_transition_count": 1264,
+        "reciprocal_mismatches": 0,
+        "min_broken_stretch_over_epsilon_c": 1.0004024638033726,
+        "max_retained_stretch_over_epsilon_c": 0.7504529540581504,
+        "min_stretch_over_epsilon_c": 0.0,
+        "max_stretch_over_epsilon_c": 1.500000000000283,
+        "summary_directed_transition_count": 1264,
+        "summary_canonical_transition_count": 632,
+        "reciprocal_status": "PASS",
+        "eta_over_epsilon_c": 1.5
+      }
+    },
+    "per_directed_row_checks": [
+      "finite positive reference/current length and finite stretch/epsilon_c",
+      "reference length equals point-coordinate geometry",
+      "current length equals x'=x, y'=y, z'=(1+eta)z prescribed affine geometry",
+      "recorded stretch equals (current-reference)/reference and independent geometry calculation",
+      "active_after equals active_before AND NOT(stretch > epsilon_c AND fail_permit)",
+      "each directed row has exactly one reciprocal row with matching native measures and states"
+    ],
+    "per_canonical_row_checks": [
+      "one canonical row per unique pair per state",
+      "canonical values/states agree with the two directed rows"
+    ]
+  },
+  "physical_scope": {
+    "qualification": "NONE; UNVALIDATED_PROTOTYPE parameters",
+    "energy": "UNKNOWN_NOT_A_GATE",
+    "contact": "NOT_RUN",
+    "free_fracture_or_fragment_claim": "NONE",
+    "interpretation": "Native CriticalStretch state transition under prescribed all-point affine deformation only; no time integration, no free crack, no material calibration."
+  },
+  "visual_review": {
+    "a_image_review": "Existing 1x rest/current overlay is consistent with nanometre-scale motion on a 5 mm coupon; displacement and force traces are labeled; image states no crack, contact, or energy-closure claim.",
+    "b_image_review": "Threshold histogram separates the 632 above-threshold broken canonical pairs from 2,430 retained pairs; reciprocal directed stretch points lie on y=x; title/footer state the all-point prescribed affine map and no-free-fracture scope.",
+    "b_image_source": "only the existing affine_native_bond_states.csv and affine_canonical_pair_states.csv; no solver run"
+  },
+  "assertions_passed": true
+}

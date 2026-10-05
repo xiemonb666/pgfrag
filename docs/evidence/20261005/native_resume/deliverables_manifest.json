@@ -1,0 +1,48 @@
+{
+  "schema": "pgfrag.native_resume.deliverables_manifest.v1",
+  "review_date": "2026-10-05",
+  "status": "READ_ONLY_B_AUDIT_PASS_NO_SOLVER_RERUN",
+  "historical_b_run_id": "affine_threshold_b_run01",
+  "historical_b_raw_csv": {
+    "directed_sha256": "e55b16f61a296ae092ce4e1c01166f7a5eff49735338b19e6364d25178a4af8d",
+    "canonical_sha256": "b4c5ae70126bb9997f28b4a766c4ae7986360246e335d6f904af0e8cafafd140"
+  },
+  "source_pin_count_verified": 26,
+  "artifacts": [
+    {
+      "path": "pgfrag/tmp/review_20261005/native_resume/report.md",
+      "bytes": 11681,
+      "sha256": "9b1f4834309d9921b6c7ed7d57fd1a98a1b20214fb8cecd855415c42a8f3a325"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/native_resume/native_resume_audit.json",
+      "bytes": 19195,
+      "sha256": "33e58103c2fa314ff842190bc8b0baa85eb6edd52b4e0ee252cff039d7829e09"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/native_resume/native_b_affine_threshold_audit.png",
+      "bytes": 178316,
+      "sha256": "90f4758fbaf7db226f7252df61457652fb9e83465a4f4dc96756c9143d1f49f2"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/pd_loaded_diagnostics/reports/loaded_elastic_a8_science.png",
+      "bytes": 113473,
+      "sha256": "b3df2be1cff05a4060d4b81112686287f9d925aa8d5511bb5af9ad9ac317764e"
+    },
+    {
+      "path": "pgfrag/experiments/native_resume_20261005/audit_native_run.py",
+      "bytes": 26445,
+      "sha256": "d1de78732dfa1740e8975461ef6e6c1e338ca3e6ce13aea11e048dae67191f2b"
+    },
+    {
+      "path": "pgfrag/experiments/native_resume_20261005/plot_existing_b_states.py",
+      "bytes": 6125,
+      "sha256": "611986d6d35699ce666a8beeaa2b1cd123bfea1809a7ea6e293d67a92da9b310"
+    },
+    {
+      "path": "pgfrag/experiments/native_resume_20261005/next_free_evolution_coupon_source_plan.md",
+      "bytes": 9579,
+      "sha256": "801b6b334a9bd3f2cdba12d607c3273cd7deabf295112bccad18cdb8f36586e2"
+    }
+  ]
+}

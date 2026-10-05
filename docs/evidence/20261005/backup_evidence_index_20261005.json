@@ -1,0 +1,55 @@
+{
+  "schema": "shardforge.backup-evidence-index.v1",
+  "repository": "pgfrag",
+  "branch": "backup/forge-work-20261003",
+  "source_snapshot_commit": "bf15835cac97a2ba032ec1872c57e6e60cb1e977",
+  "remote_head_before": "bf15835cac97a2ba032ec1872c57e6e60cb1e977",
+  "copy_plan_sha256": "fb2eff29c6205f728331132ffd7ec5c795049b8a35f944209c19c31f99431558",
+  "created_utc": "2026-10-05T04:46:31Z",
+  "entries": [
+    {
+      "source_path": "pgfrag/tmp/review_20261005/native_resume/deliverables_manifest.json",
+      "destination": "pgfrag/docs/evidence/20261005/native_resume/deliverables_manifest.json",
+      "bytes": 1913,
+      "sha256": "bf51755f70c004035094cf0e56a51d414147ef9d4d373f81bc1185befc4f87a6",
+      "category": "index",
+      "source_status": "frozen/root-reviewed",
+      "notes": "Small list of approved diagnostic deliverables; no raw CSVs included."
+    },
+    {
+      "source_path": "pgfrag/tmp/review_20261005/native_resume/native_resume_audit.json",
+      "destination": "pgfrag/docs/evidence/20261005/native_resume/native_resume_audit.json",
+      "bytes": 19195,
+      "sha256": "33e58103c2fa314ff842190bc8b0baa85eb6edd52b4e0ee252cff039d7829e09",
+      "category": "audit_json",
+      "source_status": "frozen/root-reviewed",
+      "notes": "A/B audit result; B remains NATIVE_BRANCH_DIAGNOSTIC_ONLY; this audit did not rerun the solver."
+    },
+    {
+      "source_path": "pgfrag/tmp/review_20261005/native_resume/native_b_affine_threshold_audit.png",
+      "destination": "pgfrag/docs/evidence/20261005/native_resume/native_b_affine_threshold_audit.png",
+      "bytes": 178316,
+      "sha256": "90f4758fbaf7db226f7252df61457652fb9e83465a4f4dc96756c9143d1f49f2",
+      "category": "result_png",
+      "source_status": "frozen/root-reviewed",
+      "notes": "Actual B diagnostic image, paired with the JSON audit."
+    }
+  ],
+  "attributes": {
+    "path": ".gitattributes",
+    "old_bytes": 978,
+    "old_sha256": "575dbf942df46f15b5eac56203385cf549f5ea0510395dc91ce5ae5e6f6db8a9",
+    "bytes": 1011,
+    "sha256": "a08bb1af3e96d6276a3c372594bf1a410f23b8702a7b2c496b4806c5b8a2dea8",
+    "appended_rule": "/docs/evidence/20261005/** -text"
+  },
+  "known_results_and_limits": [
+    {
+      "repo": "pgfrag",
+      "status": "NATIVE_BRANCH_DIAGNOSTIC_ONLY",
+      "note": "A/B audit and actual B PNG are narrow native diagnostics; raw CSV outputs and source runtime artifacts remain excluded."
+    }
+  ],
+  "additional_limits": [],
+  "note": "Evidence copies are byte-identical to their pinned tmp sources; raw large/native data and active writer files are excluded."
+}
