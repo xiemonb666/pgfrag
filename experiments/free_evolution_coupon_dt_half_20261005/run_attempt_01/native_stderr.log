@@ -1,0 +1,2 @@
+┌ Warning: stepsize specified! Please be sure that the CFD-condition holds!
+└ @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\time_solvers\velocity_verlet.jl:67

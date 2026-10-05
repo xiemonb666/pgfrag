@@ -1,0 +1,52 @@
+schema = "pgfrag.free_evolution_coupon.case.v1"
+case_id = "analytic_osb_reversible_coupon_h0600_delta1800"
+run_status = "SOURCE_ONLY_NOT_RUN"
+purpose = "Short reversible native engineering diagnostic; source is frozen but solver has not been run."
+
+[geometry]
+shape = "analytic_box"
+length_x_m = 0.012
+length_y_m = 0.009
+length_z_m = 0.009
+point_spacing_h_m = 0.0006
+horizon_delta_m = 0.0018
+horizon_to_spacing_ratio = 3.0
+expected_grid_shape = [20, 15, 15]
+expected_point_count = 4500
+expected_complete_horizon_interior_points = 1134
+expected_complete_horizon_interior_ratio = 0.252
+grip_definition = "one outer cell-centre layer at each x end"
+
+[material]
+model = "OSB"
+surface_correction = "NoCorrection"
+surface_correction_status = "fixed baseline; surface truncation is uncorrected"
+E_pa = 5000000000.0
+nu = 0.24
+rho_kg_m3 = 2100.0
+Gc_j_m2 = 45.0
+calibration_status = "UNCALIBRATED"
+failure_enabled = false
+
+[loading]
+control_mode = "native_velocity_grip_bc"
+axis = "x"
+target_engineering_strain = 0.0001
+profile = "continuous physical-time cubic smoothstep displacement ramp, hold, unload, then a fixed-grip dwell with free interior motion"
+ramp_duration_s = 0.000001
+hold_duration_s = 0.0000006
+unload_duration_s = 0.000001
+post_unload_dwell_duration_s = 0.000001
+
+[solver]
+dt_fraction_of_native_raw_bound = 0.25
+stable_bound_source = "Peridynamics.calc_stable_timestep(one_chunk_handler, 1.0)"
+integration = "native VelocityVerlet"
+thread_count = 1
+
+[limits]
+max_points = 5000
+max_steps = 192
+min_steps_per_phase = 8
+max_chunks = 1
+max_output_bytes = 199229440

@@ -1,0 +1,66 @@
+{
+  "test_file": "pgfrag/experiments/material_visibility_native_bridge_20261005/test_native_mask_transport.py",
+  "source_file": "pgfrag/experiments/material_visibility_native_bridge_20261005/native_mask_transport.py",
+  "documentation_file": "pgfrag/experiments/material_visibility_native_bridge_20261005/TRANSPORT.md",
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-m",
+    "pytest",
+    "-rA",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\native_transport_tests\\native_transport.junit.xml",
+    "pgfrag/experiments/material_visibility_native_bridge_20261005/test_native_mask_transport.py"
+  ],
+  "invocation_count": 1,
+  "started_utc": "2026-10-05T05:21:25.6917760+00:00",
+  "finished_utc": "2026-10-05T05:21:27.2754977+00:00",
+  "elapsed_seconds": 1.582652,
+  "exit_code": 0,
+  "pre_sha256": {
+    "native_mask_transport_py": "6779b3242ef87c13d5626a1e6d89414e1cdd7d6ed8f7e264fb01ed83edef7ea9",
+    "transport_md": "1037dae0b326f76e62591a3bf244f527a724380631db2225e371b6006c77d685",
+    "test_native_mask_transport_py": "605cc23b38616fdcb848898c907d3e3677df7e11bdbd137c927a0c0342fc6643"
+  },
+  "post_sha256": {
+    "native_mask_transport_py": "6779b3242ef87c13d5626a1e6d89414e1cdd7d6ed8f7e264fb01ed83edef7ea9",
+    "transport_md": "1037dae0b326f76e62591a3bf244f527a724380631db2225e371b6006c77d685",
+    "test_native_mask_transport_py": "605cc23b38616fdcb848898c907d3e3677df7e11bdbd137c927a0c0342fc6643"
+  },
+  "all_three_hashes_unchanged": true,
+  "junit": {
+    "sha256": "8255e74c471532b755243a9601b729ea125017ef8a0728dcb6574a7fffd015a2",
+    "path": "native_transport.junit.xml"
+  },
+  "stdout": {
+    "sha256": "e222e279355308b45791660b036e6490fb12e544e42cbfd1a88be1e2c9cb0ea3",
+    "path": "native_transport.stdout.txt"
+  },
+  "stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "path": "native_transport.stderr.txt"
+  },
+  "summary": {
+    "skipped": 0,
+    "tests_attribute": 20,
+    "errors": 0,
+    "failures": 0
+  },
+  "actual_testcase_xml_element_count": 11,
+  "distinct_testcase_ids": [
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_actual_json_sha_and_complete_toml_readback",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_duplicate_keys_and_nonfinite_json_are_rejected",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_empty_candidate_mask_and_zero_degree_states_are_preserved_as_blocked",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_external_ids_must_map_to_sequential_native_indices_and_point_hash",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_failed_compile_does_not_replace_existing_output",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_input_size_limit_rejects_before_open",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_pair_map_and_included_mask_checksums_are_recomputed",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_unknown_candidate_remains_blocked_and_never_authorizes_initialization",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_unsorted_external_ids_keep_row_order_and_map_canonical_pairs_explicitly",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_unsupported_fields_and_native_pass_claims_are_rejected",
+    "experiments.material_visibility_native_bridge_20261005.test_native_mask_transport.NativeMaskTransportTests::test_valid_compile_refuses_to_overwrite_existing_output"
+  ],
+  "distinct_testcase_id_count": 11,
+  "scope_note": "Serialization and declared-ledger validation only; raw-horizon/native application remains unverified."
+}

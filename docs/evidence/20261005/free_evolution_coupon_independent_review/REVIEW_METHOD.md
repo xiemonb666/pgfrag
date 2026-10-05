@@ -1,0 +1,9 @@
+# Independent native coupon audit
+
+This folder contains a read-only review of the single frozen native coupon result. The adapter in `independent_review.py` binds the binary by the sidecar-declared byte count and SHA-256, binds the sidecar and CSV companions by observed byte count and SHA-256, parses the fixed case directly, and validates the frozen 21-field schema and exact table headers before computing any summaries. It does not read `summary.toml` or rely on producer PASS claims.
+
+The binary layout is Julia column-major `[field, point, state]`; the adapter reshapes it into `[state, point, field]` only after byte and digest checks. All 49 states and 4,500 points are included. The 48 step intervals use the pinned native staggered VelocityVerlet time levels. Force density is multiplied by each point volume before net force or acceleration is checked. Boundary impulse is recomputed from the actual stored half velocity and the preceding full velocity and acceleration, then separated by the fixed left/right grip masks. Energy, momentum, no-failure invariants, fixed secant grip displacement, free-DOF updates, and every numeric row in `energy_reaction_history.csv` are independently recomputed.
+
+The plots show actual point positions in equal world-unit axes and scalar/energy/impulse histories. There is no displacement exaggeration and no reconstructed fracture surface. The diagnostic energy residual and brief post-unload dwell do not qualify energy closure or physical fracture. This NoFailureOSB/NoCorrection coupon is a reversible implementation diagnostic only.
+
+Run only with the explicitly authorized result root, using the VesselForge runtime Python with NumPy and Matplotlib. The output path is constrained to a child directory of this review folder; no solver, case, or production files are written.

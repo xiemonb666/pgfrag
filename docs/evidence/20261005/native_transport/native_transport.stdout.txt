@@ -1,0 +1,25 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\xiemo\Desktop\ShardForge\pgfrag
+configfile: pyproject.toml
+plugins: anyio-4.15.1, dash-4.4.1, platformdirs-4.12.2, zarr-3.4.0
+collected 11 items
+
+pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py . [  9%]
+..........                                                               [100%]
+
+=================================== PASSES ====================================
+- generated xml file: C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\native_transport_tests\native_transport.junit.xml -
+=========================== short test summary info ===========================
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_actual_json_sha_and_complete_toml_readback
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_duplicate_keys_and_nonfinite_json_are_rejected
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_empty_candidate_mask_and_zero_degree_states_are_preserved_as_blocked
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_external_ids_must_map_to_sequential_native_indices_and_point_hash
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_failed_compile_does_not_replace_existing_output
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_input_size_limit_rejects_before_open
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_pair_map_and_included_mask_checksums_are_recomputed
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_unknown_candidate_remains_blocked_and_never_authorizes_initialization
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_unsorted_external_ids_keep_row_order_and_map_canonical_pairs_explicitly
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_unsupported_fields_and_native_pass_claims_are_rejected
+PASSED pgfrag\experiments\material_visibility_native_bridge_20261005\test_native_mask_transport.py::NativeMaskTransportTests::test_valid_compile_refuses_to_overwrite_existing_output
+============================= 11 passed in 0.33s ==============================

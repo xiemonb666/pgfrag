@@ -1,0 +1,15 @@
+# Independent native coupon review
+
+The frozen result passes the independent state, energy, impulse, momentum, and output-table arithmetic checks. This is a source/result integrity pass for the no-failure diagnostic only; it does not qualify energy closure, calibrated physics, or physical fracture behavior.
+
+The reviewer decoded the sidecar-declared little-endian Float64 tensor with shape **21 × 4,500 × 49**, covering 4,500 points and 48 intervals at `dt = 7.5e-8 s`. The binary is 37,044,000 bytes and its SHA-256 matches the sidecar: `0f436e4d8cabd29f3f634334e2d1e00e920be098cafaea8a1e0a9df2b221be77`. The point-reference CSV is 520,394 bytes (`7194fadbcd2af23b3205aa4349b471d6cb9457d24ee84b88e91404af35579257`); the energy/reaction CSV is 35,057 bytes (`14202f859f098527c148d1334508432a6d1bed7ce14f7f79aae6cc62fc7c6bd4`); and the sidecar TOML is 1,811 bytes (`601bca974454cff68bb6e4a81e9a6e435fdcf7834e37f0640a45c25e8c0a513f`). The fixed-case TOML SHA-256 is `e6aa57f3edf136970e9f7108a1df2535a1e7c0d4cb56ee89fee8d858cd3c603d`.
+
+All **20 independent checks pass**. The recomputed kinetic energy differs from the native CSV by at most `1.30e-18 J`; integrated strain energy differs by at most `1.09e-19 J`. The maximum grip-path error is `1.90e-21 m` (`1.66e-15` relative to the target span), and the maximum absolute full-step momentum-identity residual is `2.64e-18 kg·m/s`. Every non-step numeric column in the energy/reaction CSV matches recomputation within a maximum absolute delta of `3.47e-18` in its respective units. Damage remains zero and each point's exact integer active-bond count matches the reference roster at all 49 states. The output directory totals 37,620,554 bytes against a 199,229,440-byte case limit. `summary.toml` content was not read or used.
+
+The final energy-balance diagnostic residual is `3.5650704e-5 J`, or **7.18% of final total energy** (`6.99%` of maximum total energy). This residual is diagnostic only and remains unqualified. The scheduled dwell begins at `2.60e-6 s`; the nearest sampled state is `2.625e-6 s`. Across that sampled dwell the kinetic energy rises by `5.07e-5 J`, strain energy falls by `5.07e-5 J`, and the final maximum free-point speed is `1.81 m/s`, so the brief dwell does not establish stationarity.
+
+The figures use actual point positions in equal world-unit axes (mm) with displacement shown by color only; there is no geometric exaggeration and no reconstructed fracture surface. The diagnostic curves show the fixed grip displacement, native and recomputed energies, actual boundary impulse, and full-step versus half-step kinetic-energy changes.
+
+Machine-readable measurements and per-check residuals are in [`audit_output/independent_review.json`](audit_output/independent_review.json). Figures: [`coupon_points_3d.png`](audit_output/coupon_points_3d.png) and [`coupon_diagnostics.png`](audit_output/coupon_diagnostics.png). Review method: [`REVIEW_METHOD.md`](REVIEW_METHOD.md).
+
+Independent adapter SHA-256: `49af27b571277a3e4799c79b7cd70a4411915361c966beadbc59601a86b218ba`.
