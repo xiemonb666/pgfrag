@@ -1,0 +1,750 @@
+{
+  "schema": "front-shadow-counterexample-results-v1",
+  "case_id": "front_shadow_counterexample_20261005",
+  "status": "HELPER_DIAGNOSTIC_PASSED",
+  "mechanics_coupling": "NOT_COUPLED",
+  "true_q0_visibility": "UNKNOWN_EDGE_CONTACT",
+  "q0_gradient_claim": "NONE; q0 has distinct one-sided algebraic value traces",
+  "q0_one_sided_values": {
+    "label": "ONE_SIDED_ALGEBRAIC_TRACE_ONLY",
+    "left_special_phi": 0.0,
+    "right_special_phi": 0.007528410117638756,
+    "right_special_phi_strictly_positive": true
+  },
+  "source_hashes": [
+    {
+      "module": "visibility3d",
+      "path": "pgfrag/experiments/explicit_visibility_20261005/visibility3d.py",
+      "sha256": "9D5097CA33CE899CF788AD43EF0740A34296216A8FD7AA490868C27FFE1EBB03"
+    },
+    {
+      "module": "mls3d_mls",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63"
+    },
+    {
+      "module": "mls3d_shape",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5"
+    }
+  ],
+  "rows": [
+    {
+      "t_m": -0.01,
+      "query_m": [
+        0.99,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4071602609511114,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "BLOCKED",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 0.0070710678118654745,
+      "support_count": 4,
+      "moment_rank": 4,
+      "moment_condition_number": 4.017197268602501,
+      "shape_status": "OK",
+      "special_phi": 0.0,
+      "special_gradient_per_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.0,
+        0.24499999999999997,
+        0.24499999999999997,
+        0.255,
+        0.255
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49999999999999994,
+          0.4999999999999999,
+          0.4999999999999999
+        ],
+        [
+          0.49999999999999994,
+          -0.4999999999999999,
+          -0.4999999999999999
+        ],
+        [
+          -0.49999999999999994,
+          0.4999999999999999,
+          -0.4999999999999999
+        ],
+        [
+          -0.49999999999999994,
+          -0.4999999999999999,
+          0.4999999999999999
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 1.1102230246251565e-16,
+        "coordinate_reproduction_residual_m": [
+          -2.220446049250313e-16,
+          0.0,
+          0.0
+        ],
+        "gradient_partition_residual_per_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coordinate_gradient_map": [
+          [
+            0.9999999999999998,
+            -5.551115123125783e-17,
+            -5.551115123125783e-17
+          ],
+          [
+            0.0,
+            0.9999999999999998,
+            0.0
+          ],
+          [
+            -2.7755575615628914e-17,
+            -5.551115123125783e-17,
+            0.9999999999999998
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            -2.220446049250313e-16,
+            -5.551115123125783e-17,
+            -5.551115123125783e-17
+          ],
+          [
+            0.0,
+            -2.220446049250313e-16,
+            0.0
+          ],
+          [
+            -2.7755575615628914e-17,
+            -5.551115123125783e-17,
+            -2.220446049250313e-16
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    },
+    {
+      "t_m": -0.001,
+      "query_m": [
+        0.999,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4135066324570253,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "BLOCKED",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 0.0007071067811865475,
+      "support_count": 4,
+      "moment_rank": 4,
+      "moment_condition_number": 4.001710938858312,
+      "shape_status": "OK",
+      "special_phi": 0.0,
+      "special_gradient_per_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.0,
+        0.24950000000000003,
+        0.24950000000000003,
+        0.2505,
+        0.2505
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          -0.5,
+          -0.5
+        ],
+        [
+          -0.5,
+          0.49999999999999994,
+          -0.49999999999999994
+        ],
+        [
+          -0.5,
+          -0.49999999999999994,
+          0.49999999999999994
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 0.0,
+        "coordinate_reproduction_residual_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gradient_partition_residual_per_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coordinate_gradient_map": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            2.7755575615628914e-17
+          ],
+          [
+            0.0,
+            8.326672684688674e-17,
+            0.9999999999999999
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.7755575615628914e-17
+          ],
+          [
+            0.0,
+            8.326672684688674e-17,
+            -1.1102230246251565e-16
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    },
+    {
+      "t_m": -0.0001,
+      "query_m": [
+        0.9999,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4141428534628318,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "BLOCKED",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 7.071067811865475e-05,
+      "support_count": 4,
+      "moment_rank": 4,
+      "moment_condition_number": 4.000171006150333,
+      "shape_status": "OK",
+      "special_phi": 0.0,
+      "special_gradient_per_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.0,
+        0.24994999999999998,
+        0.24994999999999998,
+        0.25004999999999994,
+        0.25004999999999994
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.49999999999999994,
+          0.5,
+          0.5
+        ],
+        [
+          0.49999999999999994,
+          -0.5,
+          -0.5
+        ],
+        [
+          -0.49999999999999994,
+          0.4999999999999999,
+          -0.4999999999999999
+        ],
+        [
+          -0.49999999999999994,
+          -0.4999999999999999,
+          0.4999999999999999
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 2.220446049250313e-16,
+        "coordinate_reproduction_residual_m": [
+          -2.220446049250313e-16,
+          0.0,
+          -1.1102230246251565e-16
+        ],
+        "gradient_partition_residual_per_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coordinate_gradient_map": [
+          [
+            0.9999999999999998,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            1.1102230246251565e-16
+          ],
+          [
+            -2.7755575615628914e-17,
+            1.6653345369377348e-16,
+            0.9999999999999999
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            -2.220446049250313e-16,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.1102230246251565e-16
+          ],
+          [
+            -2.7755575615628914e-17,
+            1.6653345369377348e-16,
+            -1.1102230246251565e-16
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    },
+    {
+      "t_m": 0.0001,
+      "query_m": [
+        1.0001,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4142842748188922,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 7.071067811865475e-05,
+      "support_count": 5,
+      "moment_rank": 4,
+      "moment_condition_number": 4.044888730870078,
+      "shape_status": "OK",
+      "special_phi": 0.007522394650917255,
+      "special_gradient_per_m": [
+        -0.06014678276497423,
+        0.0007793383695227899,
+        -0.060145445267718194
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.007522394650917255,
+        0.2632141906391052,
+        0.2481694013372707,
+        0.23302461203543623,
+        0.24806940133727073
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          -0.06014678276497423,
+          0.0007793383695227899,
+          -0.060145445267718194
+        ],
+        [
+          0.39474313016129514,
+          0.5013638421466649,
+          0.3947454707814932
+        ],
+        [
+          0.5150366956912436,
+          -0.5001948345923808,
+          -0.4849636386830705
+        ],
+        [
+          -0.364669738778808,
+          0.49824648866857374,
+          -0.3646727481476341
+        ],
+        [
+          -0.4849633043087565,
+          -0.5001948345923807,
+          0.5150363613169295
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 0.0,
+        "coordinate_reproduction_residual_m": [
+          0.0,
+          1.3877787807814457e-17,
+          2.220446049250313e-16
+        ],
+        "gradient_partition_residual_per_m": [
+          0.0,
+          -1.1102230246251565e-16,
+          -1.1102230246251565e-16
+        ],
+        "coordinate_gradient_map": [
+          [
+            1.0,
+            -1.6653345369377348e-16,
+            -5.551115123125783e-17
+          ],
+          [
+            5.551115123125783e-17,
+            1.0,
+            0.0
+          ],
+          [
+            -8.326672684688674e-17,
+            -5.551115123125783e-17,
+            1.0
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            0.0,
+            -1.6653345369377348e-16,
+            -5.551115123125783e-17
+          ],
+          [
+            5.551115123125783e-17,
+            0.0,
+            0.0
+          ],
+          [
+            -8.326672684688674e-17,
+            -5.551115123125783e-17,
+            0.0
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    },
+    {
+      "t_m": 0.001,
+      "query_m": [
+        1.001,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4149208458426217,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 0.0007071067811865475,
+      "support_count": 5,
+      "moment_rank": 4,
+      "moment_condition_number": 4.045845391629429,
+      "shape_status": "OK",
+      "special_phi": 0.007468326395029129,
+      "special_gradient_per_m": [
+        -0.06000491244047139,
+        0.0008154070702448522,
+        -0.05999156040085721
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.007468326395029129,
+        0.26356957119130087,
+        0.24863291840124263,
+        0.23269626561118453,
+        0.24763291840124274
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          -0.06000491244047139,
+          0.0008154070702448522,
+          -0.05999156040085721
+        ],
+        [
+          0.394991403229175,
+          0.5014269623729285,
+          0.3950147692984999
+        ],
+        [
+          0.5150012281101178,
+          -0.5002038517675612,
+          -0.48500210989978576
+        ],
+        [
+          -0.36498894700893936,
+          0.49816533409194913,
+          -0.36501898909807134
+        ],
+        [
+          -0.48499877188988205,
+          -0.5002038517675612,
+          0.5149978901002144
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 0.0,
+        "coordinate_reproduction_residual_m": [
+          0.0,
+          1.3877787807814457e-17,
+          -1.1102230246251565e-16
+        ],
+        "gradient_partition_residual_per_m": [
+          0.0,
+          1.1102230246251565e-16,
+          0.0
+        ],
+        "coordinate_gradient_map": [
+          [
+            0.9999999999999999,
+            5.551115123125783e-17,
+            -1.1102230246251565e-16
+          ],
+          [
+            -8.326672684688674e-17,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            5.551115123125783e-17,
+            1.0
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            -1.1102230246251565e-16,
+            5.551115123125783e-17,
+            -1.1102230246251565e-16
+          ],
+          [
+            -8.326672684688674e-17,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            5.551115123125783e-17,
+            0.0
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    },
+    {
+      "t_m": 0.01,
+      "query_m": [
+        1.01,
+        0.0,
+        1.0
+      ],
+      "q0_to_finite_facet_distance_m": 1.4213022197970424,
+      "visibility_statuses_source_order_s_v1_v2_v3_v4": [
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE",
+        "VISIBLE"
+      ],
+      "visibility_mask_source_order_s_v1_v2_v3_v4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "mask_locally_constant": true,
+      "mask_stability_exact_geometry_margin_m": 0.0070710678118654745,
+      "support_count": 5,
+      "moment_rank": 4,
+      "moment_condition_number": 4.055566629979799,
+      "shape_status": "OK",
+      "special_phi": 0.006934650268727027,
+      "special_gradient_per_m": [
+        -0.05859134465306323,
+        0.001170535215893279,
+        -0.0584601253505396
+      ],
+      "shape_row_source_order_s_v1_v2_v3_v4": [
+        0.006934650268727027,
+        0.26713563797027234,
+        0.2532663374328183,
+        0.22939703689536423,
+        0.24326633743281828
+      ],
+      "shape_gradient_rows_per_m_source_order_s_v1_v2_v3_v4": [
+        [
+          -0.05859134465306323,
+          0.001170535215893279,
+          -0.0584601253505396
+        ],
+        [
+          0.3974651468571393,
+          0.5020484366278133,
+          0.3976947806365557
+        ],
+        [
+          0.5146478361632657,
+          -0.5002926338039733,
+          -0.4853849686623651
+        ],
+        [
+          -0.3681694745306076,
+          0.4973662957642402,
+          -0.36846471796128594
+        ],
+        [
+          -0.4853521638367342,
+          -0.5002926338039734,
+          0.514615031337635
+        ]
+      ],
+      "affine_reproduction": {
+        "partition_of_unity_abs_error": 2.220446049250313e-16,
+        "coordinate_reproduction_residual_m": [
+          2.220446049250313e-16,
+          0.0,
+          2.220446049250313e-16
+        ],
+        "gradient_partition_residual_per_m": [
+          -5.551115123125783e-17,
+          1.1102230246251565e-16,
+          1.1102230246251565e-16
+        ],
+        "coordinate_gradient_map": [
+          [
+            0.9999999999999998,
+            1.6653345369377348e-16,
+            1.1102230246251565e-16
+          ],
+          [
+            8.326672684688674e-17,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            5.551115123125783e-17,
+            1.0000000000000002
+          ]
+        ],
+        "coordinate_gradient_map_residual": [
+          [
+            -2.220446049250313e-16,
+            1.6653345369377348e-16,
+            1.1102230246251565e-16
+          ],
+          [
+            8.326672684688674e-17,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            5.551115123125783e-17,
+            2.220446049250313e-16
+          ]
+        ],
+        "passed": true
+      },
+      "visibility_expectation_passed": true
+    }
+  ],
+  "checks": {
+    "all_six_visibility_masks_match_exact_geometry": true,
+    "all_six_rows_full_rank": true,
+    "all_six_rows_affinely_reproduce": true,
+    "special_shape_has_one_sided_jump": true,
+    "no_q0_gradient_reported": true,
+    "physical_facet_distance_q0_m": 1.4142135623730951,
+    "result": "sharp visibility causes an MLS basis jump on a source-front shadow boundary outside the finite physical facet"
+  }
+}

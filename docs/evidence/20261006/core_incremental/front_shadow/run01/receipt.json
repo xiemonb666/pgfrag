@@ -1,0 +1,42 @@
+{
+  "schema": "front-shadow-single-run-receipt-v1",
+  "attempt": "run_01",
+  "command_line": "\"C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe\" -B \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\front_shadow_counterexample_20261005\\run_front_shadow_counterexample.py\" --plot",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\front_shadow_counterexample_20261005\\run_front_shadow_counterexample.py",
+    "--plot"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "timeout_seconds": 30,
+  "hard_timeout_applied": true,
+  "timed_out": false,
+  "process_elapsed_ms": 1172,
+  "process_id": 120056,
+  "return_code": 0,
+  "stdout_file": "stdout.txt",
+  "stderr_file": "stderr.txt",
+  "stdout_text": "{\"artifact_bytes\": 225265, \"rows\": 6, \"runtime_s\": 0.9197867999318987, \"status\": \"HELPER_DIAGNOSTIC_PASSED\"}\r\n",
+  "stderr_text": null,
+  "result_status": "HELPER_DIAGNOSTIC_PASSED",
+  "result_checks": {
+    "all_six_visibility_masks_match_exact_geometry": true,
+    "all_six_rows_full_rank": true,
+    "all_six_rows_affinely_reproduce": true,
+    "special_shape_has_one_sided_jump": true,
+    "no_q0_gradient_reported": true,
+    "physical_facet_distance_q0_m": 1.4142135623730951,
+    "result": "sharp visibility causes an MLS basis jump on a source-front shadow boundary outside the finite physical facet"
+  },
+  "artifact_bytes": 375294,
+  "artifact_budget_bytes": 2097152,
+  "artifact_budget_passed": true,
+  "pin_mismatches": [],
+  "pins_unchanged": true,
+  "solver_called": false,
+  "cad_called": false,
+  "git_called": false,
+  "retry_count": 0,
+  "success": true
+}

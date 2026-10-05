@@ -1,0 +1,28 @@
+CAD_verification=NOT_RUN
+audit_contract_json_sha256=e05bb1ece896e39b13d50d8758564cc0d5b233e70be56d848d3dec93c49016fc
+blocked_probe_eligibility=BLOCKED_ZERO_DEGREE
+body_chunk_or_threads_handler=NOT_CREATED
+elapsed_seconds=0.9750001430511475
+geometry_excluded_canonical_pair_count=4
+geometry_exclusions_are_physics_events=false
+included_canonical_pair_count=56
+included_directed_bond_count=112
+independent_weighted_volume_recalculation=1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14
+label=GEOMETRY_FILTER_FIXTURE_ONLY
+limits=<=125 points; <=20000 directed raw edges; <=60 s; output <=20 MiB
+native_body=OSBMaterial single Body constructed
+native_candidates=raw native roster exactly matched independent Euclidean <= rule
+native_graph=BondSystem read back; one PointDecomposition chunk; ThreadsBodyDataHandler not constructed
+native_transport_toml_sha256=eafeb66c037c42381cb93f35e14157436531e556de7cca3a079713ce78dda451
+native_weighted_volume_readback=1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14,1.615444469043869e-14
+ordered_point_payload_sha256=0f635481d102e98c4ace79dc880e3cdfc5cbe80fe5a1ee73eac463c113c5fab7
+pair_id_ledger_count=112
+physical_failure_or_fracture=NOT_RUN
+policy_transport_native_graph_readback=NOT_RUN
+raw_canonical_pair_count=60
+raw_directed_bond_count=120
+solver_force_or_time_step=NOT_CREATED_OR_RUN
+source_artifact=fixed synthetic point cloud; no CAD input or accuracy claim
+source_marker_sha256=2091ec6772be7411e42efa37038017460050c26cbd977fc1cab9edbdcbb830fe
+weighted_volume=native calc_weighted_volume direct read-only formula matched independent post-mask recomputation
+zero_degree_probe=rejected before BondSystem admission

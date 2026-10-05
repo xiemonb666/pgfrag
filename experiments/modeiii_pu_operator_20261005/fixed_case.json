@@ -1,0 +1,157 @@
+{
+  "case_id": "modeiii_pu_uz_operator_bridge_20261005",
+  "status": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+  "classification": "ENGINEERING_MANUFACTURED_FIELD_OPERATOR_DIAGNOSTIC",
+  "scope": "continuous MLS plus unshifted normalized F1 PU enrichment; scalar Uz stiffness/field diagnostic only",
+  "units": {
+    "coordinates": "m",
+    "shape_values": "dimensionless",
+    "shape_gradients": "1/m",
+    "all_coefficient_dofs": "m",
+    "young_modulus": "Pa",
+    "stress_intensity": "Pa*sqrt(m)",
+    "volume_weights": "m^3",
+    "surface_weights": "m^2",
+    "stiffness": "N/m",
+    "quadratic_energy": "J",
+    "boundary_work": "J"
+  },
+  "geometry": {
+    "domain": "x^2 + y^2 <= R^2, -L/2 <= z <= L/2",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "z_bounds_m": [-0.005, 0.005],
+    "crack_surface": "x < 0, y = 0, -L/2 <= z <= L/2",
+    "front": "x = 0, y = 0, -L/2 <= z <= L/2",
+    "coordinate_frame": "global xyz; centered cylinder and straight z-axis front"
+  },
+  "sources": {
+    "grid_shape": [3, 3, 3],
+    "axis_coordinates_m": [-0.005, 0.0, 0.005],
+    "grid_spacing_m": 0.005,
+    "source_count": 27,
+    "source_id_format": "node-{row:03d}",
+    "unique_source_ids": true,
+    "support_radius_m": 0.025,
+    "support_radius_role": "fixed MLS numerical support length h; not a material parameter",
+    "all_front_support_source_ids": "all 27 sources",
+    "front_set_T_F": "all 27 sources; this is only a global algebraic bridge because every fixed support contains the straight front",
+    "heaviside_set_J_H": [],
+    "local_enrichment_or_fracture_qualification": false
+  },
+  "material_and_manufactured_field": {
+    "model": "isotropic linear elastic material in a restricted scalar Uz Galerkin subspace",
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "K_III_Pa_sqrt_m": 100.0,
+    "mu_Pa": "E/(2*(1+nu))",
+    "lambda_Pa": "E*nu/((1+nu)*(1-2*nu))",
+    "exact_field": "uz=A*sqrt(r)*sin(theta/2), ux=uy=0",
+    "amplitude": "A=(KIII/mu)*sqrt(2/pi), with units sqrt(m)",
+    "front_factor": "Fbar=F1/sqrt(R), dimensionless",
+    "front_coefficient": "A*sqrt(R), units m; same value for each of the 27 FRONT_F1_UNSHIFTED coefficients",
+    "base_coefficients": "all 27 BASE coefficients equal 0 m",
+    "front_coefficients": "all 27 FRONT_F1_UNSHIFTED coefficients equal A*sqrt(R) m",
+    "expected_exact_total_strain_energy_J": "KIII^2*R*L/(2*mu)"
+  },
+  "dofs": {
+    "registry_module": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+    "field_component": "UZ for every coefficient",
+    "basis_kinds": ["BASE", "FRONT_F1_UNSHIFTED"],
+    "basis_indices": {"BASE": 0, "FRONT_F1_UNSHIFTED": 1},
+    "unique_source_count": 27,
+    "coefficient_dof_count": 54,
+    "physical_units_for_every_coefficient": "m",
+    "basis_formula": {
+      "BASE": "phi_i",
+      "FRONT_F1_UNSHIFTED": "psi_i=phi_i*Fbar",
+      "FRONT_F1_UNSHIFTED_gradient": "grad(psi_i)=Fbar*grad(phi_i)+phi_i*grad(Fbar)"
+    },
+    "MLS_visibility": "continuous MLS; no visibility mask or source deletion"
+  },
+  "mls": {
+    "api": "shape_functions_3d",
+    "basis": "linear 3-D MLS",
+    "kernel": "Wendland C2",
+    "reference_origin_m": [0.0, 0.0, 0.0],
+    "reference_scale_m": 0.01,
+    "support_radius_m": 0.025,
+    "max_condition_number": 1000000000000.0,
+    "rank_relative_tolerance": 1e-12,
+    "switch_tolerance": 1e-10,
+    "duplicate_tolerance": 1e-12,
+    "visibility_mask": null,
+    "mask_locally_constant": null
+  },
+  "quadrature": {
+    "volume": {
+      "coordinate_rule": "cylindrical (r,theta,z) mapped to global xyz",
+      "radial_legendre_order": 4,
+      "theta_legendre_order": 8,
+      "theta_interval_rad": [-3.141592653589793, 3.141592653589793],
+      "z_legendre_order": 4,
+      "point_count": 128,
+      "radial_interval_m": [0.0, 0.01],
+      "z_interval_m": [-0.005, 0.005],
+      "jacobian": "r",
+      "radial_minimum_is_sample_only": true,
+      "radial_hole_or_domain_truncation": false
+    },
+    "lateral_boundary": {
+      "theta_legendre_order": 16,
+      "z_legendre_order": 4,
+      "point_count": 64,
+      "normal": "(cos(theta), sin(theta), 0)",
+      "area_jacobian": "R"
+    },
+    "end_caps": {
+      "radial_legendre_order": 4,
+      "theta_legendre_order": 8,
+      "point_count_each": 32,
+      "normals": {"top": [0.0, 0.0, 1.0], "bottom": [0.0, 0.0, -1.0]},
+      "area_jacobian": "r",
+      "scalar_uz_traction": "t_z=0 on both caps; full x/y cap tractions are recorded but excluded from restricted Uz virtual work"
+    },
+    "total_unique_query_count": 256,
+    "query_order": ["volume", "lateral", "top_cap", "bottom_cap"],
+    "all_gauss_nodes_are_interior": true,
+    "front_and_branch_cut_queries": "excluded by positive radial nodes and open-interval Gauss nodes; no epsilon offset"
+  },
+  "gauss_legendre_rules": {
+    "order_4": {
+      "nodes": [-0.8611363115940526, -0.3399810435848563, 0.3399810435848563, 0.8611363115940526],
+      "weights": [0.3478548451374538, 0.6521451548625461, 0.6521451548625461, 0.3478548451374538]
+    },
+    "order_8": {
+      "nodes": [-0.9602898564975363, -0.7966664774136267, -0.5255324099163290, -0.1834346424956498, 0.1834346424956498, 0.5255324099163290, 0.7966664774136267, 0.9602898564975363],
+      "weights": [0.1012285362903763, 0.2223810344533745, 0.3137066458778873, 0.3626837833783620, 0.3626837833783620, 0.3137066458778873, 0.2223810344533745, 0.1012285362903763]
+    },
+    "order_16": {
+      "nodes": [-0.9894009349916499, -0.9445750230732326, -0.8656312023878318, -0.7554044083550030, -0.6178762444026438, -0.4580167776572274, -0.2816035507792589, -0.09501250983763744, 0.09501250983763744, 0.2816035507792589, 0.4580167776572274, 0.6178762444026438, 0.7554044083550030, 0.8656312023878318, 0.9445750230732326, 0.9894009349916499],
+      "weights": [0.027152459411754095, 0.06225352393864789, 0.09515851168249278, 0.12462897125553388, 0.14959598881657673, 0.16915651939500254, 0.18260341504492358, 0.18945061045506859, 0.18945061045506859, 0.18260341504492358, 0.16915651939500254, 0.14959598881657673, 0.12462897125553388, 0.09515851168249278, 0.06225352393864789, 0.027152459411754095]
+    }
+  },
+  "diagnostic": {
+    "maximum_source_count": 125,
+    "maximum_total_dofs": 375,
+    "maximum_quadrature_points": 256,
+    "maximum_estimated_numeric_array_bytes": 33554432,
+    "wall_timeout_seconds": 30,
+    "assemble_one_scalar_stiffness_matrix": true,
+    "stiffness_dimension": [54, 54],
+    "run_solver": false,
+    "apply_load_to_solver": false,
+    "load_crack_face": false,
+    "visibility_mask": false,
+    "use_pseudoinverse_or_regularization": false,
+    "render_output": false,
+    "mechanics_field_qualification": false
+  },
+  "limitations": [
+    "all-site front enrichment is a global algebraic bridge only, not a local enrichment convergence or crack qualification",
+    "restricted Uz model cannot establish full 3-D equilibrium; six full-vector rigid modes are not represented",
+    "energy or exact partition reproduction alone is not a mechanics qualification",
+    "single frozen quadrature is diagnostic and has no convergence claim",
+    "no solver, displacement boundary constraints, reactions, SIF extraction, crack propagation, or material calibration"
+  ]
+}

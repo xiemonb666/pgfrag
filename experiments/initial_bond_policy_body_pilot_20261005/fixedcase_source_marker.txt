@@ -1,0 +1,3 @@
+GEOMETRY_FILTER_FIXTURE_ONLY
+This is a source-byte marker for the two-box point-cloud pilot, not a CAD file.
+No CAD accuracy or CAD classification evidence is represented by this file.

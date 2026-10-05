@@ -1,0 +1,21 @@
+{
+  "run_status": "PASS",
+  "return_code": 0,
+  "invocation": "SynPython -B test_source_frozen.py",
+  "interpreter": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "python_version": "Python 3.12.14",
+  "test_count": 8,
+  "import_policy": "standard_library_only; NumPy not imported",
+  "created_utc": "2026-10-05T20:01:37.5206663+08:00",
+  "sha256": {
+    "module_source": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "module_snapshot": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "test_source": "bf0a1ae46a4671810879ff80fc35c6b8cd01f69590dd65cb11a0810ad7e8a4eb",
+    "test_snapshot": "bf0a1ae46a4671810879ff80fc35c6b8cd01f69590dd65cb11a0810ad7e8a4eb",
+    "contract_snapshot": "3c4110dd6d2a6804c45fa1fe938592d785fd6cf3b84b83343c14492e320afab3",
+    "junit": "e89093d02063270cdd6a69aecff64cc7d8d3be332de332061176e256ac0ab010",
+    "stdout": "1b92fb038802914701cde6079c134fcd992b0a9feb6d9c4a4ad7fa875b29ba39",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "return_code": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+  }
+}

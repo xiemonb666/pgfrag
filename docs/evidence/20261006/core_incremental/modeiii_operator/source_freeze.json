@@ -1,0 +1,36 @@
+{
+  "schema": "modeiii_pu_operator_source_freeze.v1",
+  "status": "SOURCE_FREEZE_READY_AWAITING_ROOT_REVIEW",
+  "case_id": "modeiii_pu_uz_operator_bridge_20261005",
+  "source_only": true,
+  "tests_run": false,
+  "numerical_worker_run": false,
+  "solver_run": false,
+  "owned_sources": {
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "DCE0A1F3009246A52198BC0ED833ED67998144549A653E7BCE9BCC17BABD71B9",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py": "6025642FDD119A95C76D693D3EDBC4785D982731560E556CE7B13BAD109C6034",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/modeiii_operator_diagnostic.py": "AA8765B0E99DD22F474506FFC539E58A68E295AD7B9A1B4FB4F24EECEA49491A",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/README.md": "A398E2BAD4F0B6342D74B0B89F9BD5F0996BADA6A0109852B071C91178273623",
+    "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/SOURCE_REVIEW.md": "47FD8C8F53E74D02F7C457C4A6E0371C9EA7FD5C672D594FAFA29AF82310CF03"
+  },
+  "read_only_dependencies": {
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "E3DDB3B067465BB5B269576A1B8A5100E2BB92C9C924BC09C949702C19EFA9D8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D"
+  },
+  "diagnostic_limits": {
+    "sources_max": 125,
+    "dofs_max": 375,
+    "quadrature_max": 256,
+    "explicit_numeric_array_bytes_max": 33554432,
+    "wall_timeout_s": 30,
+    "fixed_source_count": 27,
+    "fixed_dof_count": 54,
+    "fixed_query_count": 256,
+    "fixed_volume_point_count": 128
+  },
+  "execution_authorization": "No tests or runtime calls until root source review; at most one later fixed-case diagnostic if root explicitly authorizes.",
+  "review_notes": "See SOURCE_REVIEW.md for the provider contract, engineering-shear convention, fail-closed behavior, fixed case, and unresolved physical qualification boundary."
+}

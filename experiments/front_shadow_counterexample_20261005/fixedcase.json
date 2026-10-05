@@ -1,0 +1,48 @@
+{
+  "schema": "front-shadow-counterexample-fixedcase-v1",
+  "case_id": "front_shadow_counterexample_20261005",
+  "classification": "FROZEN_SI_ENGINEERING_FIXTURE_NOT_PHYSICAL_FRACTURE",
+  "mechanics_coupling": "NOT_COUPLED",
+  "coordinates_units": "m",
+  "source_order": [
+    "special_s",
+    "tetra_plus_plus_plus",
+    "tetra_plus_minus_minus",
+    "tetra_minus_plus_minus",
+    "tetra_minus_minus_plus"
+  ],
+  "source_positions_m": [
+    [-1.0, 0.0, -1.0],
+    [1.5, 0.5, 1.5],
+    [1.5, -0.5, 0.5],
+    [0.5, 0.5, 0.5],
+    [0.5, -0.5, 1.5]
+  ],
+  "special_source_index": 0,
+  "triangle_facets_m": [
+    [[0.0, -1.0, 0.0], [0.0, 1.0, 0.0], [-2.0, 0.0, 0.0]]
+  ],
+  "query_family": {
+    "base_q0_m": [1.0, 0.0, 1.0],
+    "direction_m_per_parameter": [1.0, 0.0, 0.0],
+    "parameter_name": "t_m",
+    "sample_t_m": [-0.01, -0.001, -0.0001, 0.0001, 0.001, 0.01],
+    "q_of_t_m": "(1+t, 0, 1)"
+  },
+  "mls": {
+    "basis": "linear [1, (X-reference_origin)/reference_scale]",
+    "reference_origin_m": [1.0, 0.0, 1.0],
+    "reference_scale_m": 1.0,
+    "support_radius_m": 4.0,
+    "kernel": "Wendland C2: (1-q)^4(4q+1), q<1"
+  },
+  "limits": {
+    "maximum_sources": 5,
+    "maximum_queries": 6,
+    "maximum_total_artifact_bytes": 2097152,
+    "maximum_runtime_seconds": 30,
+    "solver": false,
+    "cad": false
+  },
+  "interpretation": "Independent fixed engineering counterexample; not a tuned benchmark, physical-fracture claim, or mechanics acceptance result."
+}

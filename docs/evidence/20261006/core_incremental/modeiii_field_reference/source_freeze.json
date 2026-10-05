@@ -1,0 +1,37 @@
+{
+  "freeze_id": "modeiii_field_reference_source_20261005_v2",
+  "previous_freeze_snapshot": "prior_source_freeze_v1/source_freeze.json",
+  "case_id": "straight_front_mode_iii_cylinder_20261005",
+  "classification": "ENGINEERING_MANUFACTURED_SOLUTION",
+  "review_state": "ROOT_MATH_REVIEW_ACCEPTED_TEST_AUTHORIZED",
+  "query_limit": 256,
+  "output_limit_bytes": 2097152,
+  "validation_at_freeze": {
+    "python_ast_parse": "PASS",
+    "focused_tests": "NOT_RUN",
+    "solver_or_numerical_run": "NOT_RUN"
+  },
+  "change_from_v1": "Output arrays now use immutable bytes-backed ndarrays; one test rejects setflags(write=True).",
+  "files": [
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "sha256": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/test_field_reference.py",
+      "sha256": "90D326B3708E749A514905132F906AA470729A04C123E6CFED634AF2BC8D020B"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/fixed_case.json",
+      "sha256": "38C57C6E91FCD9E4C5201E5A4652A8CE476ED565A6F362E58B8EAB047FDACF1F"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/METHOD.md",
+      "sha256": "6B28D27957B309BFE2E15A53C42C33E5571E2BDFA19ED4D14FE00A18A7341BEA"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_field_reference_20261005/SOURCE_REVIEW.md",
+      "sha256": "BB111F4FBD646EA943A74BA0789F978FEE57D20449006B4B62A354D246C3E9FE"
+    }
+  ]
+}
