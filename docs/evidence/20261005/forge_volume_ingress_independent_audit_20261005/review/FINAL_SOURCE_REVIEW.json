@@ -1,0 +1,72 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_final_source_review.v1",
+  "status": "SOURCE_READY_FOR_ONE_ROOT_AUTHORIZED_96_CELL_CAD_GEOMETRY_PROBE",
+  "review_date": "2026-10-05",
+  "pins_verified_against_source_freeze": {
+    "worker": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/worker.py",
+      "sha256": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5",
+      "matches_freeze": true
+    },
+    "contract": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/CONTRACT.md",
+      "sha256": "7151DF72D082B0D1D728F86AA118C3F396A4D6A3E545FBF5DC76F37A7118C6F7",
+      "matches_freeze": true
+    },
+    "plan": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/plan.json",
+      "sha256": "E7124CEB99489B858BB2D116FED5DD9C88960209DEE632F7D49D75E2FFEFC73A",
+      "matches_freeze": true
+    },
+    "source_freeze": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/source_freeze.json",
+      "sha256": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+      "matches_expected_pin": true
+    }
+  },
+  "resolved_prior_findings": [
+    "Failed stages are retained; no deletion call was found.",
+    "Worker exceptions write worker_failure.json and parent outcomes write parent_execution_receipt.json, with compact fallback attempted if the full receipt cannot fit.",
+    "Failure handling marks or creates a BLOCKED partial ledger and retains active-cell/component progress.",
+    "The plan now matches the root-selected ROI and failure-evidence policy."
+  ],
+  "pilot_configuration": {
+    "roi_aabb_mm": [7.5, 10.5, -1.0, 1.0, 4.0, 6.0],
+    "cell_size_mm": 0.5,
+    "grid_shape_xyz": [6, 4, 4],
+    "candidate_cell_count": 96,
+    "roi_clipped_to_source_bounds": false,
+    "classifier_acceptance": "TopAbs_IN only",
+    "classifier_tolerance_mm": 1e-7,
+    "centroid_projection_fallback": false
+  },
+  "residual_source_limitations": [
+    {
+      "severity": "nonblocking_for_one_bounded_probe",
+      "issue": "Temporary .tmp files are excluded from _write_stage_json budget preflight but included in stage inventory. A kill during write could leave a temporary file and the parent does not reject a final inventory above 20 MiB."
+    },
+    {
+      "severity": "nonblocking_for_one_bounded_probe",
+      "issue": "If both terminate and kill fail and child_alive_after_stop remains true, parent still marks and inventories the stage; check the receipt for this condition."
+    },
+    {
+      "severity": "runtime_unverified",
+      "issue": "Void-only Common API behavior and local B-rep volume reconciliation require actual CAD execution."
+    }
+  ],
+  "recommendation": {
+    "allow_one_96_cell_geometry_test": true,
+    "root_execution_authorization_still_required": true,
+    "calibration_or_full_mother_coverage_required_before_this_test": false,
+    "result_scope": "local exact-BRep ingress mechanism only"
+  },
+  "execution": {
+    "cad_worker_run": false,
+    "pytest": false,
+    "solver": false,
+    "full_suite": false,
+    "production_files_changed": false,
+    "git_used": false,
+    "original_review_preserved": true
+  }
+}

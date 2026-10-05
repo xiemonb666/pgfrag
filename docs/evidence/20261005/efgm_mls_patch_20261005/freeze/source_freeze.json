@@ -1,0 +1,113 @@
+{
+  "freeze_id": "efgm_mls_patch_20261005_source_freeze_v1",
+  "status": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+  "generated_at_utc": "2026-10-05T11:42:34.9202396+00:00",
+  "hash_algorithm": "SHA-256",
+  "manifest_hashing": "source_freeze.json excludes its own hash; source_freeze.sha256 records this manifest hash",
+  "execution_record": "No pytest, import validation, MLS evaluation, assembly, solver, benchmark, render, or crack operation was run for this package.",
+  "fixed_case": {
+    "case_id": "efgm_mls_patch_si_cube_20261005",
+    "bounds_m": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0
+      ]
+    ],
+    "grid_shape": [
+      3,
+      3,
+      3
+    ],
+    "coefficient_count": 27,
+    "displacement_dof_count": 81,
+    "quadrature": "4 x 4 x 4 tensor-product Gauss-Legendre; 64 points; total volume 8 m^3",
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "mls_support_radius_m": 2.5,
+    "support_radius_role": "fixed numerical MLS support length, not material parameter",
+    "crack_visibility": "identity/no crack; visibility args omitted",
+    "explicit_numeric_array_cap_bytes": 33554432,
+    "wall_timeout_seconds": 30
+  },
+  "scope": [
+    "Actual phase-2 shape_functions_3d to frozen elastic operator adapter.",
+    "One deferred diagnostic invocation only after root review.",
+    "No solver, load, crack, SIF, fracture, EFGM stability, or paper-reproduction claim."
+  ],
+  "files": [
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/fixed_case.json",
+      "bytes": 2432,
+      "sha256": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/mls_elastic_adapter.py",
+      "bytes": 5853,
+      "sha256": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/operator_diagnostic.py",
+      "bytes": 26049,
+      "sha256": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/README.md",
+      "bytes": 5312,
+      "sha256": "72c22e10ccf87800d56430c58438838b2b96f140db6fda0999e08de3435df7e8"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "bytes": 11181,
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "bytes": 16461,
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/README.md",
+      "bytes": 889,
+      "sha256": "ce3898b500d47354b9a65385024bf940e8ea9347ca49b1e3afee6d4b1034dd8a"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "bytes": 16768,
+      "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"
+    },
+    {
+      "role": "provenance_contract",
+      "path": "pgfrag/experiments/explicit_crack_formulation_20261005/FORMULATION_CONTRACT.md",
+      "bytes": 14017,
+      "sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb"
+    },
+    {
+      "role": "review_record",
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/SOURCE_REVIEW.md",
+      "bytes": 4662,
+      "sha256": "3d4cdf4e8ba3e279c41d503468e389137b36cf900b59770a4fa4ff70a8f65718"
+    },
+    {
+      "role": "review_record",
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/RUN_PLAN.md",
+      "bytes": 1388,
+      "sha256": "c8dbeba793c4370ec3f065d3c9142dc1b9f004c5452bcbe269cd4a40f995bf01"
+    }
+  ]
+}

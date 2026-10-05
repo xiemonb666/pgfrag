@@ -1,0 +1,522 @@
+{
+  "artifacts": [
+    {
+      "bytes": 40378,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py",
+      "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+    },
+    {
+      "bytes": 3481,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_INPUT_FREEZE.json",
+      "sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50"
+    },
+    {
+      "bytes": 13389,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_EXECUTION_RECEIPT_renderreport_retry.json",
+      "sha256": "821ecb8456f4605e3567b9939eb39308a8763e9422eb1f6972c29677e4a720a7"
+    },
+    {
+      "bytes": 12165,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_ACTUAL_AUDIT.json",
+      "sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f"
+    },
+    {
+      "bytes": 35386,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_CELL_AUDIT.csv",
+      "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+    },
+    {
+      "bytes": 26152,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_POINT_AUDIT.csv",
+      "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+    },
+    {
+      "bytes": 163235,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_XY_CELL_MAP.png",
+      "sha256": "01fb2247903d6279e0a7036143b4ecd7631ca7a7f2b5ecaf99cfd3531a1a5e34"
+    },
+    {
+      "bytes": 295712,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_CELL_VOLUME_MASS_DELTA.png",
+      "sha256": "e706fe0669f052bd15bd3e18ecdf6b67cd0814d099ec960d31d8a8fb1b7b05dc"
+    },
+    {
+      "bytes": 17294,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_FREEZE_VALIDATION_rev5.json",
+      "sha256": "ecab086b5b1b58f28f94eecfc22651a97686afc8b6e0ce5c16747e7f7ab701ad"
+    },
+    {
+      "bytes": 6317,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_LAUNCHER_PREFLIGHT_rev5.json",
+      "sha256": "eba3026c48ef67e9b6888fdcafdc90c4251f99b9d1977495b0932a10ff0bba78"
+    },
+    {
+      "bytes": 6840,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_PREFLIGHT_MISMATCH_RECEIPT.json",
+      "sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b"
+    },
+    {
+      "bytes": 10267,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_EXECUTION_RECEIPT_canonicalized_freeze.json",
+      "sha256": "589f4a7d0b35d434cae5ef3b43244b60aabd1b1f1d174f9ed29a9cca01a3202c"
+    },
+    {
+      "bytes": 7492,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_EXECUTION_RECEIPT_corrected_freeze.json",
+      "sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d"
+    },
+    {
+      "bytes": 10089,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\render_only_grid_colorbar_fix.py",
+      "sha256": "2ad6930288692065d43a6dfb7b339e797e26a645b2189794330c2e71da2f893d"
+    },
+    {
+      "bytes": 185397,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\PILOT_XY_CELL_MAP_grid_colorbar.png",
+      "sha256": "91c6862b876db16a84b5893096eeec9a30fe1add236d1610239f147f53c85b1a"
+    },
+    {
+      "bytes": 301861,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\PILOT_CELL_VOLUME_MASS_DELTA_render_only.png",
+      "sha256": "975f157d1bd2147bed7b1d82a66df8157466d724f9f071294f531f1db76a9b11"
+    },
+    {
+      "bytes": 4331,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_EXECUTION_RECEIPT.json",
+      "sha256": "31509ef1885c64d55e7692919e3259419aae6f0addf4b718c8e410bef6b32bb7"
+    },
+    {
+      "bytes": 2399,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_RECEIPT.json",
+      "sha256": "563a54e21422827d945af9aa08c04bf81fe5b715ff3acaae91cfa6f5ac8bbf9f"
+    },
+    {
+      "bytes": 0,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_STDOUT.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_STDERR.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "geometry_audit_execution": {
+    "audit_argv": [
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py"
+    ],
+    "audit_command_line": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe -B C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py",
+    "elapsed_seconds": 1.4283255999907851,
+    "full_execution_receipt_sha256": "821ecb8456f4605e3567b9939eb39308a8763e9422eb1f6972c29677e4a720a7",
+    "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005",
+    "producer_cad_solver_invoked": false,
+    "return_code": 0,
+    "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "source_and_input_hashes_post": {
+      "adapter": {
+        "bytes": 40378,
+        "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+      },
+      "analytic_source": {
+        "bytes": 9631,
+        "sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d"
+      },
+      "freeze": {
+        "bytes": 3481,
+        "sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50"
+      },
+      "launcher": {
+        "bytes": 14913,
+        "sha256": "0a4e88c3d486e37c0e3d303bae68f11ca2acc4bf8be9f2c684923b1e6393c460"
+      },
+      "method_review": {
+        "bytes": 3432,
+        "sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4"
+      },
+      "preserved_preflight_artifacts": {
+        "canonicalization_receipt": {
+          "bytes": 1212,
+          "sha256": "13cee0096e73234c87cb0af9886647ba4ac0fec4b1cce001bd3074febc28b29f"
+        },
+        "case_receipt": {
+          "bytes": 6840,
+          "sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b"
+        },
+        "failed_audit_receipt": {
+          "bytes": 7492,
+          "sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d"
+        },
+        "failed_audit_stderr": {
+          "bytes": 132,
+          "sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5"
+        },
+        "failed_audit_stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failed_receipt": {
+          "bytes": 6297,
+          "sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2"
+        },
+        "freeze_validation_rev2": {
+          "bytes": 10045,
+          "sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4"
+        },
+        "freeze_validation_rev3": {
+          "bytes": 12937,
+          "sha256": "62756fa1a6d6f373ec4ffea8e56dfb4b2ef39a046900f4016b46d1dbb656a1b8"
+        },
+        "freeze_validation_rev4": {
+          "bytes": 13357,
+          "sha256": "e6f2be2c80dcbeeffd09fd3b7df520ea643b77a8dc4bcbc8089a882dd4acea59"
+        },
+        "freeze_validation_rev5": {
+          "bytes": 17294,
+          "sha256": "ecab086b5b1b58f28f94eecfc22651a97686afc8b6e0ce5c16747e7f7ab701ad"
+        },
+        "malformed_freeze": {
+          "bytes": 3480,
+          "sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12"
+        },
+        "old_adapter": {
+          "bytes": 38101,
+          "sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5"
+        },
+        "precanonical_freeze": {
+          "bytes": 3481,
+          "sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b"
+        },
+        "preplotcompat_freeze": {
+          "bytes": 3481,
+          "sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60"
+        },
+        "preretry_adapter": {
+          "bytes": 40378,
+          "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+        },
+        "previous_partial_cell_csv": {
+          "bytes": 35386,
+          "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+        },
+        "previous_partial_point_csv": {
+          "bytes": 26152,
+          "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+        },
+        "previous_renderretry_receipt": {
+          "bytes": 10267,
+          "sha256": "589f4a7d0b35d434cae5ef3b43244b60aabd1b1f1d174f9ed29a9cca01a3202c"
+        },
+        "previous_renderretry_stderr": {
+          "bytes": 130,
+          "sha256": "94c436a6fed7957daaf7d640b22556a3f52f1b2f7db16bf153c8518aad943ae3"
+        },
+        "previous_renderretry_stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "renderfix_freeze_receipt": {
+          "bytes": 2187,
+          "sha256": "e4d2957d27584c7f41f6d66653ad0552f68918bc6aaf3b0059a2eee2205f64f6"
+        }
+      },
+      "prior_freeze": {
+        "bytes": 2913,
+        "sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e"
+      },
+      "stage_files": {
+        "cell_in_progress.json": {
+          "bytes": 2372,
+          "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+        },
+        "cell_ledger.json": {
+          "bytes": 118930,
+          "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+        },
+        "cell_ledger.partial.json": {
+          "bytes": 119097,
+          "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+        },
+        "material_points.json": {
+          "bytes": 77304,
+          "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+        },
+        "parent_execution_receipt.json": {
+          "bytes": 2151,
+          "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+        },
+        "request.json": {
+          "bytes": 1032,
+          "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+        },
+        "worker_failure.json": {
+          "bytes": 4302,
+          "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+        }
+      },
+      "summary": {
+        "bytes": 9870,
+        "sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+      }
+    },
+    "source_and_input_hashes_pre": {
+      "adapter": {
+        "bytes": 40378,
+        "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+      },
+      "analytic_source": {
+        "bytes": 9631,
+        "sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d"
+      },
+      "freeze": {
+        "bytes": 3481,
+        "sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50"
+      },
+      "launcher": {
+        "bytes": 14913,
+        "sha256": "0a4e88c3d486e37c0e3d303bae68f11ca2acc4bf8be9f2c684923b1e6393c460"
+      },
+      "method_review": {
+        "bytes": 3432,
+        "sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4"
+      },
+      "preserved_preflight_artifacts": {
+        "canonicalization_receipt": {
+          "bytes": 1212,
+          "sha256": "13cee0096e73234c87cb0af9886647ba4ac0fec4b1cce001bd3074febc28b29f"
+        },
+        "case_receipt": {
+          "bytes": 6840,
+          "sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b"
+        },
+        "failed_audit_receipt": {
+          "bytes": 7492,
+          "sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d"
+        },
+        "failed_audit_stderr": {
+          "bytes": 132,
+          "sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5"
+        },
+        "failed_audit_stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failed_receipt": {
+          "bytes": 6297,
+          "sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2"
+        },
+        "freeze_validation_rev2": {
+          "bytes": 10045,
+          "sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4"
+        },
+        "freeze_validation_rev3": {
+          "bytes": 12937,
+          "sha256": "62756fa1a6d6f373ec4ffea8e56dfb4b2ef39a046900f4016b46d1dbb656a1b8"
+        },
+        "freeze_validation_rev4": {
+          "bytes": 13357,
+          "sha256": "e6f2be2c80dcbeeffd09fd3b7df520ea643b77a8dc4bcbc8089a882dd4acea59"
+        },
+        "freeze_validation_rev5": {
+          "bytes": 17294,
+          "sha256": "ecab086b5b1b58f28f94eecfc22651a97686afc8b6e0ce5c16747e7f7ab701ad"
+        },
+        "malformed_freeze": {
+          "bytes": 3480,
+          "sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12"
+        },
+        "old_adapter": {
+          "bytes": 38101,
+          "sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5"
+        },
+        "precanonical_freeze": {
+          "bytes": 3481,
+          "sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b"
+        },
+        "preplotcompat_freeze": {
+          "bytes": 3481,
+          "sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60"
+        },
+        "preretry_adapter": {
+          "bytes": 40378,
+          "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+        },
+        "previous_partial_cell_csv": {
+          "bytes": 35386,
+          "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+        },
+        "previous_partial_point_csv": {
+          "bytes": 26152,
+          "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+        },
+        "previous_renderretry_receipt": {
+          "bytes": 10267,
+          "sha256": "589f4a7d0b35d434cae5ef3b43244b60aabd1b1f1d174f9ed29a9cca01a3202c"
+        },
+        "previous_renderretry_stderr": {
+          "bytes": 130,
+          "sha256": "94c436a6fed7957daaf7d640b22556a3f52f1b2f7db16bf153c8518aad943ae3"
+        },
+        "previous_renderretry_stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "renderfix_freeze_receipt": {
+          "bytes": 2187,
+          "sha256": "e4d2957d27584c7f41f6d66653ad0552f68918bc6aaf3b0059a2eee2205f64f6"
+        }
+      },
+      "prior_freeze": {
+        "bytes": 2913,
+        "sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e"
+      },
+      "stage_files": {
+        "cell_in_progress.json": {
+          "bytes": 2372,
+          "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+        },
+        "cell_ledger.json": {
+          "bytes": 118930,
+          "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+        },
+        "cell_ledger.partial.json": {
+          "bytes": 119097,
+          "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+        },
+        "material_points.json": {
+          "bytes": 77304,
+          "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+        },
+        "parent_execution_receipt.json": {
+          "bytes": 2151,
+          "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+        },
+        "request.json": {
+          "bytes": 1032,
+          "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+        },
+        "worker_failure.json": {
+          "bytes": 4302,
+          "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+        }
+      },
+      "summary": {
+        "bytes": 9870,
+        "sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+      }
+    },
+    "source_and_inputs_unchanged": true,
+    "status": "COMPLETED",
+    "stderr": {
+      "bytes": 262,
+      "path": "READONLY_AUDIT_STDERR_renderreport_retry.txt",
+      "sha256": "b1d1d5fd9c7ae1f4009cb9a272c7eca1491d1f710c90bfbdbf3162f4b2b51fed"
+    },
+    "stdout": {
+      "bytes": 434,
+      "path": "READONLY_AUDIT_STDOUT_renderreport_retry.txt",
+      "sha256": "583d11472b00e07c8b91aa76770a9c6083148719e1cf835d6290371a180912e9"
+    },
+    "timed_out": false,
+    "timeout_seconds": 55.0
+  },
+  "numeric_result": {
+    "all_checks_pass": true,
+    "cell_counts": {
+      "POSITIVE_COMPONENTS_CENTROIDS_IN": 80,
+      "ZERO_INTERSECTION": 16
+    },
+    "centroid_mismatch_cells": [],
+    "classifier_counts": {
+      "IN": 80
+    },
+    "max_weighted_centroid_delta_mm": 3.538680459769239e-11,
+    "promotion": {
+      "candidate_file_retained_but_not_promoted": true,
+      "final_status": "BLOCKED_REPORT_FINALIZATION; local geometry ledger retained",
+      "finalization_failure": {
+        "analysis": "_write_final_report resets output.total_bytes to zero on every fixed-point iteration, then compares the serialized report with a total computed from the zero-count serialization; it repeats the same candidate instead of feeding the new total into the next iteration.",
+        "exception_class": "IngressBlocked",
+        "ingress_report_present": false,
+        "parent_execution_receipt": {
+          "child_status": "BLOCKED",
+          "partial_ledger_status": "BLOCKED_PARENT_EXECUTION",
+          "path": "parent_execution_receipt.json",
+          "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+          "status": "BLOCKED_STAGE_RETAINED"
+        },
+        "reason": "could not stabilize report-inclusive output byte count",
+        "report_attempt_was_promoted": false,
+        "worker_failure_receipt": {
+          "path": "worker_failure.json",
+          "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+        }
+      },
+      "ingress_report_present": false,
+      "parent_receipt": {
+        "candidate_run_promoted": false,
+        "status": "BLOCKED_STAGE_RETAINED"
+      }
+    },
+    "qualification": {
+      "local_geometry_diagnostic_only": true,
+      "native_integration": "NOT_CONNECTED",
+      "scientific_material_calibration": "UNKNOWN_UNVALIDATED",
+      "solver_or_physics": "NOT_RUN",
+      "whole_mother_coverage": "UNKNOWN_NOT_RUN"
+    },
+    "rendering_status": "COMPLETE",
+    "status": "GEOMETRY_DIAGNOSTIC_AUDITED_NOT_PROMOTED",
+    "whole_roi_reconciliation": {
+      "all_volume_reconciliations_pass": true,
+      "analytic_direct_minus_grid_mm3": 0.0,
+      "cell_sum_matches_analytic": true,
+      "component_sum_matches_cell_sum": true,
+      "delivered_point_volume_sum_mm3": 8.016762718544449,
+      "emitted_mass_sum_kg": 1.6835201708943325e-05,
+      "independent_analytic_direct_roi_mm3": 8.016762718544495,
+      "independent_analytic_sum_96_cells_mm3": 8.016762718544495,
+      "point_sum_matches_analytic": true,
+      "raw_brep_reference_roi_mm3": 8.01676271854943,
+      "raw_connected_component_sum_mm3": 8.016762718544449,
+      "raw_reference_minus_cell_sum_mm3": 4.980904577678302e-12,
+      "raw_sum_96_cell_commons_mm3": 8.016762718544449,
+      "reference_matches_analytic": true,
+      "reference_matches_cell_sum": true,
+      "rho_times_point_volume_sum_kg": 1.683520170894334e-05,
+      "volume_tolerance_mm3": 8.016762718544495e-08
+    }
+  },
+  "preservation": {
+    "current_audit_pngs_and_csvs_retained": true,
+    "math_or_geometry_recomputed_after_audit": false,
+    "previous_failure_receipts_retained": true,
+    "production_source_or_frozen_stage_modified": false,
+    "rendered_from_existing_csv_and_json_only": true
+  },
+  "render_only_repair": {
+    "elapsed_seconds": 1.2336149,
+    "execution_receipt": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_EXECUTION_RECEIPT.json",
+    "execution_receipt_sha256": "31509ef1885c64d55e7692919e3259419aae6f0addf4b718c8e410bef6b32bb7",
+    "geometry_recomputed": false,
+    "input_mode": "existing audit JSON and CSV only; pinned SHA-256 checks",
+    "inputs_match_pins": true,
+    "numeric_audit_json_or_csv_modified": false,
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\render_only_grid_colorbar_fix.py",
+    "preserves_existing_pngs": true,
+    "render_receipt": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_RECEIPT.json",
+    "render_receipt_sha256": "563a54e21422827d945af9aa08c04bf81fe5b715ff3acaae91cfa6f5ac8bbf9f",
+    "return_code": 0,
+    "script_and_three_inputs_unchanged": true,
+    "sha256": "2ad6930288692065d43a6dfb7b339e797e26a645b2189794330c2e71da2f893d",
+    "status": "COMPLETED",
+    "status_from_render_receipt": "COMPLETE",
+    "timed_out": false,
+    "timeout_seconds": 28,
+    "uses_dedicated_gridspec_colorbar_axis_and_equal_xy_aspect": true,
+    "visual_note": "The revised XY map has a separate colorbar axis; XY axis units are equal. Existing figures remain unchanged.",
+    "writes_to_new_child": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005"
+  },
+  "schema": "pgfrag.forge_volume_ingress_final_execution_artifact_record.v1"
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.run03_static_preflight.v1",
+  "status": "PASS",
+  "run02_adapter_preserved": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_independent_review.py",
+    "bytes": 104983,
+    "sha256": "14179191572b25c7acdf50699c040a9493461f112d9a0b9305df0f6a2d162826"
+  },
+  "run02_audit_json": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\audit_output\\pilot_independent_review.json",
+    "bytes": 23879,
+    "sha256": "6e7be91780f6f4d92256e3bda6ad44880cc703dde1762a8996430f93454ca9a4"
+  },
+  "run02_failure_witness": "point ID 4500 reached NumPy array index 4500 in a length-4500 grid index array; native outputs remained unmodified.",
+  "declared_run03_change": "In right-grip x-layer association, each 1-based canonical pair point ID is converted once with int(point_id)-1 and only normalized indices address grid_indexes.",
+  "pairs_numpy_index_routes_reviewed": [
+    {
+      "line": 513,
+      "text": "a = find(int(pairs[edge, 0]))"
+    },
+    {
+      "line": 514,
+      "text": "b = find(int(pairs[edge, 1]))"
+    },
+    {
+      "line": 786,
+      "text": "reference_pair_length = np.linalg.norm(xyz[pairs[:, 0] - 1] - xyz[pairs[:, 1] - 1], axis=1)"
+    },
+    {
+      "line": 880,
+      "text": "edge_i0 = pairs[:, 0] - 1"
+    },
+    {
+      "line": 881,
+      "text": "edge_j0 = pairs[:, 1] - 1"
+    },
+    {
+      "line": 916,
+      "text": "f\"missing={len(missing)}, unexpected={len(unexpected)}, witness={pairs[witness_edge].tolist()}, \""
+    },
+    {
+      "line": 939,
+      "text": "raise AuditHalt(f\"step {step}: event row not supported by deformed binary coordinates: {pairs[edge].tolist()}\")"
+    },
+    {
+      "line": 955,
+      "text": "degree = np.bincount(pairs[active].ravel(), minlength=n_points + 1)[1:].astype(np.int32)"
+    },
+    {
+      "line": 1373,
+      "text": "edge_left = left_mask[pairs[:, 0] - 1] | left_mask[pairs[:, 1] - 1]"
+    },
+    {
+      "line": 1374,
+      "text": "edge_right = right_mask[pairs[:, 0] - 1] | right_mask[pairs[:, 1] - 1]"
+    },
+    {
+      "line": 1375,
+      "text": "edge_both_right = right_mask[pairs[:, 0] - 1] & right_mask[pairs[:, 1] - 1]"
+    },
+    {
+      "line": 1401,
+      "text": "for edge, (point_i, point_j) in enumerate(pairs):"
+    },
+    {
+      "line": 1403,
+      "text": "xi, xj = int(grid_indexes[0][point_i0]), int(grid_indexes[0][point_j0])"
+    },
+    {
+      "line": 1406,
+      "text": "right_layer_to_layer_pairs[key] += 1"
+    },
+    {
+      "line": 1420,
+      "text": "right_layer_to_layer_events[key] / right_layer_to_layer_pairs[key]"
+    }
+  ],
+  "invalid_numpy_ufunc_axis_calls": [],
+  "native_driver": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_free_fracture_pilot.jl",
+    "bytes": 82117,
+    "sha256": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+  },
+  "fixed_case": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\fixed_case.toml",
+    "bytes": 3276,
+    "sha256": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+  },
+  "launcher": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_once.ps1",
+    "bytes": 17288,
+    "sha256": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d"
+  },
+  "source_freeze_pin_count": 84,
+  "adapter": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pilot_independent_review.py",
+    "bytes": 105069,
+    "sha256": "36681a593d18b29b2fe5f30dab0761e1f5afece91bfb5e85130cccaa2621ab7e"
+  },
+  "runner": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\run_bounded_review.ps1",
+    "bytes": 3716,
+    "sha256": "23287fe464830f8d2e43c9a4677c1e82b4dc3c1ecda1032b38af1a0bd53f203d"
+  },
+  "snapshot_helper": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\snapshot_bindings.py",
+    "bytes": 8303,
+    "sha256": "3bf87b494232ce4cb7c546f2ae282faf21ae24a931f52f618045650d75e1b597"
+  },
+  "input_inventory": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pilot_input_hash_inventory.json",
+    "bytes": 3041,
+    "sha256": "480696292e9dc58cb368ebdb35102b1d727f716a42a215a1759cf6b678fce87d"
+  },
+  "errors": []
+}

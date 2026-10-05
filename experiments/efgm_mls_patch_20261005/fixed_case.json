@@ -1,0 +1,75 @@
+{
+  "case_id": "efgm_mls_patch_si_cube_20261005",
+  "status": "SOURCE_ONLY_AWAITING_REVIEW",
+  "scope": "one bounded elastic-operator diagnostic; no solver, load, crack, or fracture",
+  "units": {
+    "coordinates": "m",
+    "quadrature_volume": "m^3",
+    "displacement_coefficients": "m",
+    "young_modulus": "Pa",
+    "stiffness": "N/m",
+    "quadratic_energy": "J"
+  },
+  "domain": {
+    "bounds_m": [[-1.0, 1.0], [-1.0, 1.0], [-1.0, 1.0]],
+    "side_length_m": 2.0,
+    "coefficient_grid_shape": [3, 3, 3],
+    "coefficient_axis_coordinates_m": [-1.0, 0.0, 1.0],
+    "coefficient_count": 27,
+    "displacement_dof_count": 81
+  },
+  "volume_quadrature": {
+    "layout": "one tensor-product Gauss-Legendre rule on the full cube",
+    "points_per_axis": 4,
+    "point_count": 64,
+    "gauss_legendre_nodes_on_minus1_plus1": [
+      -0.8611363115940526,
+      -0.3399810435848563,
+      0.3399810435848563,
+      0.8611363115940526
+    ],
+    "gauss_legendre_weights": [
+      0.3478548451374538,
+      0.6521451548625461,
+      0.6521451548625461,
+      0.3478548451374538
+    ],
+    "total_volume_m3": 8.0
+  },
+  "material": {
+    "model": "small-strain isotropic linear elasticity",
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3
+  },
+  "mls": {
+    "api": "shape_functions_3d",
+    "basis": "linear 3-D MLS",
+    "kernel": "Wendland C2 from the frozen MLS primitive",
+    "reference_origin_m": [0.0, 0.0, 0.0],
+    "reference_scale_m": 1.0,
+    "support_radius_m": 2.5,
+    "support_radius_role": "fixed numerical MLS support length; not a material parameter",
+    "identity_visibility": "all sources considered; radial support still applies; no crack surface is loaded",
+    "visibility_mask": null,
+    "mask_locally_constant": null,
+    "max_condition_number": 1000000000000.0,
+    "rank_relative_tolerance": 1e-12,
+    "switch_tolerance": 1e-10,
+    "duplicate_tolerance": 1e-12
+  },
+  "diagnostic": {
+    "only_operator_assembly_call": true,
+    "max_displacement_dofs": 375,
+    "max_quadrature_points": 256,
+    "max_estimated_numeric_array_bytes": 33554432,
+    "wall_timeout_seconds": 30,
+    "report_all_eigenvalues": true,
+    "report_negative_eigenvalues": true,
+    "report_extra_near_zero_modes_after_six_rigid_modes": true,
+    "all_numerical_thresholds_are_diagnostic_only": true,
+    "run_solver": false,
+    "apply_load": false,
+    "load_crack_surface": false,
+    "render_output": false
+  }
+}
