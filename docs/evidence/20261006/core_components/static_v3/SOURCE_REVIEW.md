@@ -1,0 +1,11 @@
+# Mode III scalar static-solve v3 source review
+
+**Status: source-only staging-integrity change; no solver, tests, or numerical assembly run.** V1 and v2 remain separate, unchanged snapshots. V3 copies the v2 numerical solver and saved evidence, changing only its result schema/case identity and parent-side staging acceptance path.
+
+The parent never promotes a worker file after a nonzero exit or timeout. For exit code zero, it requires a present regular staging file, strict UTF-8 JSON without NaN/Infinity constants, the exact v3 result schema/case/success status, pinned dependency and worker-source hashes, and the expected finite shapes for the 54-entry load/registry, both 54×54 matrices and mean rows, both solution vectors, and all 256 off-grid reference/solution fields. The frozen 4 MiB result cap is enforced before parsing. It hashes the parsed staging bytes again immediately before promotion and refuses to overwrite an output created concurrently.
+
+Each failure path leaves any staging file untouched and writes an independent UNKNOWN receipt at the requested output path: `UNKNOWN_WALL_TIMEOUT`, `UNKNOWN_WORKER_NONZERO_EXIT`, `UNKNOWN_WORKER_DID_NOT_WRITE_JSON`, `UNKNOWN_WORKER_INVALID_JSON`, `UNKNOWN_WORKER_RESULT_CONTRACT`, or `UNKNOWN_WORKER_PROMOTION_FAILED`. A valid worker file is promoted atomically only when every success condition is satisfied. These are output-integrity checks, not numerical acceptance thresholds.
+
+The mechanics and resource contract are inherited unchanged from v2: 27 sources, 54 scalar UZ coefficients, a normalized physical-mean gauge and direct scaled 55×55 Lagrange solve; GL4×8×4 and GL4×16×4 volume levels with theta as the only refinement; fixed 64-point side and 32-point-per-cap rules; 256 off-grid points; 30 seconds; 32 MiB estimated explicit numeric arrays; and 4 MiB result JSON. Saved matrices, mean rows, applied force, ordered IDs, off-grid coordinates, exact reference fields and solved fields remain present. The output remains an unqualified manufactured antiplane diagnostic.
+
+The exact v3 source, case, README, review note, and read-only dependency hashes are recorded in `source_freeze.json`. V1 and v2 hashes are included as preserved context; neither snapshot is overwritten.

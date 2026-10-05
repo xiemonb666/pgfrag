@@ -1,0 +1,107 @@
+{
+  "schema": "rigid_plane_point_contact_toy.v1",
+  "status": "completed_bounded_diagnostic",
+  "checks": {
+    "count": 5,
+    "passed": [
+      "positive_gap_is_force_free_and_has_zero_potential",
+      "penetration_force_and_energy_match_linear_penalty",
+      "rigid_rotation_covariance_of_gap_force_and_energy",
+      "invalid_normals_rejected",
+      "invalid_si_scalar_and_nonfinite_inputs_rejected"
+    ]
+  },
+  "analytical_reference": {
+    "force_and_energy_basis": "U(g)=0.5*K*min(g,0)^2 and F=-dU/dx=-K*min(g,0)*n, for a fixed plane and unit normal n",
+    "bounce_basis": "free flight to g=0 followed by m*y_ddot=-K*y while y<0; contact duration pi*sqrt(m/K), ideal exit speed equals entry speed for the elastic model",
+    "parameters_si": {
+      "mass_kg": 1.0,
+      "stiffness_N_per_m": 100.0,
+      "initial_gap_m": 0.2,
+      "initial_velocity_m_per_s": -2.0,
+      "end_time_s": 0.48
+    },
+    "dt_levels_s": [
+      0.002,
+      0.001
+    ],
+    "dt_ratio": 0.5,
+    "total_steps_cap": 2000,
+    "no_damping_or_friction": true
+  },
+  "cases": [
+    {
+      "case_id": "dt_0p002",
+      "dt_s": 0.002,
+      "step_count": 240,
+      "exact_first_contact_time_s": 0.1,
+      "exact_contact_duration_s": 0.3141592653589793,
+      "exact_rebound_time_s": 0.4141592653589793,
+      "detected_rebound_time_s": 0.4141540372413392,
+      "rebound_time_abs_error_s": 5.228117640088126e-06,
+      "exact_rebound_velocity_m_per_s": 2.0,
+      "detected_rebound_velocity_m_per_s": 2.000000000202139,
+      "rebound_velocity_abs_error_m_per_s": 2.0213919427192195e-10,
+      "exact_elastic_contact_impulse_Ns": 4.0,
+      "numerical_trapezoid_contact_impulse_Ns": 4.00002843530751,
+      "contact_impulse_abs_error_vs_analytic_Ns": 2.8435307510399355e-05,
+      "point_delta_momentum_Ns": 4.0000284353075095,
+      "impulse_balance_error_Ns": -8.881784197001252e-16,
+      "initial_total_energy_J": 2.0,
+      "final_total_energy_J": 2.000056871019303,
+      "final_total_energy_signed_error_J": 5.6871019303184056e-05,
+      "max_abs_total_energy_error_J": 0.00020000296217004276,
+      "max_abs_total_energy_relative_error": 0.00010000148108502138,
+      "final_gap_m": 0.13169379786752114,
+      "final_velocity_m_per_s": 2.00002843530751,
+      "diagnostic_note": "energy errors are measured Verlet residuals, not a conservation pass/fail claim"
+    },
+    {
+      "case_id": "dt_0p001",
+      "dt_s": 0.001,
+      "step_count": 480,
+      "exact_first_contact_time_s": 0.1,
+      "exact_contact_duration_s": 0.3141592653589793,
+      "exact_rebound_time_s": 0.4141592653589793,
+      "detected_rebound_time_s": 0.41415795786925397,
+      "rebound_time_abs_error_s": 1.3074897253217976e-06,
+      "exact_rebound_velocity_m_per_s": 2.0,
+      "detected_rebound_velocity_m_per_s": 2.0000000000442286,
+      "rebound_velocity_abs_error_m_per_s": 4.4228620765807136e-11,
+      "exact_elastic_contact_impulse_Ns": 4.0,
+      "numerical_trapezoid_contact_impulse_Ns": 4.000013300850763,
+      "contact_impulse_abs_error_vs_analytic_Ns": 1.3300850763009464e-05,
+      "point_delta_momentum_Ns": 4.000013300850764,
+      "impulse_balance_error_Ns": 8.881784197001252e-16,
+      "initial_total_energy_J": 2.0,
+      "final_total_energy_J": 2.0000266017899833,
+      "final_total_energy_signed_error_J": 2.660178998326046e-05,
+      "max_abs_total_energy_error_J": 5.0001218842243844e-05,
+      "max_abs_total_energy_relative_error": 2.5000609421121922e-05,
+      "final_gap_m": 0.13168496001666866,
+      "final_velocity_m_per_s": 2.0000133008507635,
+      "diagnostic_note": "energy errors are measured Verlet residuals, not a conservation pass/fail claim"
+    }
+  ],
+  "refinement_and_balance": {
+    "energy_error_metric": "max absolute |(Kinetic + penalty Potential) - initial total energy| over saved Verlet samples",
+    "coarse_dt_s": 0.002,
+    "fine_dt_s": 0.001,
+    "coarse_max_abs_energy_error_J": 0.00020000296217004276,
+    "fine_max_abs_energy_error_J": 5.0001218842243844e-05,
+    "fine_over_coarse_energy_error_ratio": 0.25000239146324615,
+    "momentum_impulse_balance_abs_errors_Ns": [
+      8.881784197001252e-16,
+      8.881784197001252e-16
+    ],
+    "step_total": 720,
+    "interpretation": "reporting numerical residual and refinement ratio only; no energy-conservation pass/fail declaration"
+  },
+  "limitations": [
+    "This is a fixed infinite plane against one point mass with a scalar spring penalty.",
+    "It is an independent force and potential API, not a vessel/fragment collision engine or a production integration.",
+    "It does not implement damping, friction, moving planes, body rotation, self-contact, broad phase, or multiple contacts.",
+    "Runtime scalar/vector validation enforces bare finite SI-number inputs and a unit normal; it cannot infer whether a caller mislabeled an ordinary bare number's physical unit.",
+    "Energy errors are measured discrete Velocity-Verlet residuals; the error trend is reported and not promoted to a conservation pass/fail claim."
+  ]
+}

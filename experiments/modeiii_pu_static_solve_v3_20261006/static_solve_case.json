@@ -1,0 +1,99 @@
+{
+  "schema": "modeiii_pu_antiplane_static_solve_case.v3",
+  "case_id": "modeiii_pu_uz_static_traction_solve_20261006_v3",
+  "status": "SOURCE_ONLY_V3_AWAITING_ROOT_REVIEW",
+  "classification": "ENGINEERING_MANUFACTURED_ANTIPLANE_DIAGNOSTIC_ONLY",
+  "base_operator_case": {
+    "path": "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json",
+    "case_id": "modeiii_pu_uz_operator_bridge_20261005",
+    "sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+    "consumed_as": "fixed geometry/material/source/MLS/registry input; the operator-stage run_solver=false remains intact"
+  },
+  "field_scope": {
+    "unknown_components": ["ux", "uy"],
+    "solved_component": "uz",
+    "crack_sheet": "x<0, y=0, -L/2<=z<=L/2",
+    "front": "x=0, y=0, -L/2<=z<=L/2",
+    "branch_interval": "theta in (-pi,pi)",
+    "traction_rule": "exact sigma*n from modeiii_field_reference; scalar side t_z enters f; scalar end-cap t_z=0",
+    "end_cap_scope": "record full x/y cap tractions, exclude them from restricted uz virtual work",
+    "body_force": [0.0, 0.0, 0.0],
+    "qualification": "manufactured antiplane solve only; not full-vector equilibrium, finite crack-end solution, material calibration, fracture, or local-enrichment convergence"
+  },
+  "basis_and_gauge": {
+    "provider": "ContinuousMLSFrontProvider from the pinned modeiii_pu_operator source",
+    "registry": "DofRegistry from the pinned enriched_dof_contract source; frozen BASE and FRONT_F1_UNSHIFTED UZ keys",
+    "coefficient_count": 54,
+    "source_count": 27,
+    "exact_coefficients": "all BASE=0 m; all FRONT_F1_UNSHIFTED=A*sqrt(R) m",
+    "gauge": "c_a=(1/(pi*R^2*L))*integral_Omega psi_a dV; c^T*d=0",
+    "expected_scalar_rigid_nullity_before_gauge": 1,
+    "solve_system": "direct diagonally-scaled symmetric Lagrange multiplier system, dimension 55",
+    "forbidden": ["coefficient pin", "pseudoinverse", "ridge", "penalty regularization", "silent null-mode truncation"]
+  },
+  "quadrature": {
+    "volume_levels": [
+      {"name": "volume_gl4x8x4", "radial_GL": 4, "theta_GL": 8, "z_GL": 4, "volume_point_count": 128},
+      {"name": "volume_gl4x16x4", "radial_GL": 4, "theta_GL": 16, "z_GL": 4, "volume_point_count": 256}
+    ],
+    "volume_region": "r in [0,R], theta in (-pi,pi), z in [-L/2,L/2], Jacobian r; full cylinder, no hole, clipping, or epsilon shift",
+    "lateral_load_rule": {"theta_GL": 16, "z_GL": 4, "point_count": 64, "held_fixed_across_volume_levels": true},
+    "endcap_audit_rule": {"radial_GL": 4, "theta_GL": 8, "point_count_each": 32},
+    "max_mls_provider_queries_per_batch": 256,
+    "max_reference_field_queries_per_batch": 256,
+    "offgrid_reference": {
+      "point_count": 256,
+      "r_over_R": [0.137, 0.381, 0.619, 0.863],
+      "theta_k": "-pi + 2*pi*(k+0.37)/16 for integer k=0..15",
+      "z_over_L": [-0.337, -0.103, 0.211, 0.447],
+      "branch_face_or_front_queries": false
+    }
+  },
+  "quadrature_comparison": {
+    "refined_dimension": "theta angular quadrature",
+    "level_128": "GL4 radial x GL8 theta x GL4 z",
+    "level_256": "GL4 radial x GL16 theta x GL4 z",
+    "fixed_dimensions": ["radial GL order 4", "axial GL order 4"],
+    "anticipated_limitation": "the half-angle front enrichment and rational MLS rows carry angular content; theta refinement measures one fixed sensitivity but does not eliminate angular integration error or establish convergence",
+    "interpretation": "two frozen levels are diagnostics only; no numerical pass threshold or general qualification is assigned"
+  },
+  "diagnostics": {
+    "weak_residual": "||K*d+c*lambda-f||_2/(||K*d||_2+||c*lambda||_2+||f||_2)",
+    "physical_gauge_residual": "abs(c^T*d)/(A*sqrt(R))",
+    "force_balance": "net applied z-force divided by integral_side(abs(t_z) dS); analytic net force is zero",
+    "energy": "compare 0.5*d^T*K*d to KIII^2*R*L/(2*mu)",
+    "offgrid_error": "report max and RMS uz and grad(uz) errors; normalize by A*sqrt(R) and A/sqrt(R); uz and coordinates are in meters, grad(uz) is dimensionless strain-like, basis gradients are 1/m",
+    "analytic_coefficient_weak_defect": "S*(K*d_star-f), where d_star is the exact manufactured coefficient vector; normalized 2-norm separates quadrature defect from solve residual",
+    "scaled_spectrum": {
+      "diagonal_scaling": "S=diag(K_aa^(-1/2)); Khat=S*K*S",
+      "spectrum": "all eigenvalues of sym(Khat), for reporting only",
+      "quotient_condition": "largest eigenvalue divided by the second eigenvalue when one null mode is resolved; otherwise UNKNOWN",
+      "saddle_condition": "2-norm condition number of the scaled 55x55 Lagrange system",
+      "additional_null_policy": "if beyond-roundoff extra null candidates exist, write UNKNOWN JSON and stop before solve"
+    },
+    "thresholds": "binary64 roundoff references are labeled diagnostics only; no scientific or convergence gate is assigned"
+  },
+  "budget": {
+    "wall_timeout_seconds": 30,
+    "maximum_source_count": 125,
+    "maximum_registered_dofs": 375,
+    "maximum_volume_quadrature_points_per_assembly": 256,
+    "maximum_explicit_numeric_array_bytes": 33554432,
+    "maximum_result_json_bytes": 4194304,
+    "preflight_before_numeric_allocation": true,
+    "include_provider_rows_boundary_arrays_spectrum_and_saddle_work_in_estimate": true,
+    "include_replayable_matrix_gauge_load_and_offgrid_evidence": true,
+    "saved_result_fields": [
+      "raw full K matrix per quadrature level",
+      "physical mean row per quadrature level",
+      "applied load coefficient vector once",
+      "ordered canonical registry coefficient IDs",
+      "off-grid coordinates and analytic UZ/gradient",
+      "off-grid solved UZ/gradient per quadrature level"
+    ],
+    "retry_or_adaptive_tuning": false,
+    "maximum_volume_levels": 2
+  },
+  "not_run": ["solver", "tests", "numerical assembly", "numerical integration", "CAD", "Git"],
+  "not_claimed": ["full 3-D elasticity", "finite front-end accuracy", "curved fronts", "SIF", "propagation", "material calibration", "physical fracture", "R2", "ground truth"]
+}
