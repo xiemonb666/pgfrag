@@ -1,0 +1,22 @@
+{
+  "case_id": "same_vertex_set_different_ordered_paths",
+  "scope": "qualitative_geometry_counterexample_only",
+  "coordinate_units": "m",
+  "polyline_a": [
+    [-1, 0, 0],
+    [1, 0, 0],
+    [0, 1, 0]
+  ],
+  "polyline_b": [
+    [-1, 0, 0],
+    [0, 1, 0],
+    [1, 0, 0]
+  ],
+  "expected_qualitative": {
+    "unordered_vertex_set_hausdorff": "0 m",
+    "continuous_polyline_hausdorff": "1/sqrt(2) m (analytic truth)",
+    "continuous_polyline_hausdorff_squared": "1/2 m^2 (analytic truth)",
+    "numeric_metric_result_generated": false
+  },
+  "explanation": "The vertex sets are identical, but the line segments joining successive vertices differ. This file is a static example and is not an evaluated report."
+}

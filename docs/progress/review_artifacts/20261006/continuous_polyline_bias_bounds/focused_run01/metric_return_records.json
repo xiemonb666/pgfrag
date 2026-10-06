@@ -1,0 +1,146 @@
+{
+  "bytecode_writes_disabled": true,
+  "capture_scope": "returns_from_the_single_unittest_run_only",
+  "metric_return_count": 9,
+  "metric_returns": [
+    {
+      "metric_result_sequence": 1,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "366503875925/1099511627776",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/1000000000000000000000000000000",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "191841872555/549755813888"
+      },
+      "test_case_sequence": 1,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_cap_returns_unknown_with_certified_bounds"
+    },
+    {
+      "metric_result_sequence": 2,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "0/1",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "2/1",
+        "sample_cap": 128,
+        "samples": 6,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/1"
+      },
+      "test_case_sequence": 2,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_crossing_polyline_repartition_has_zero_lower_bound"
+    },
+    {
+      "metric_result_sequence": 3,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "0/1",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "2/1",
+        "sample_cap": 128,
+        "samples": 4,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/2"
+      },
+      "test_case_sequence": 3,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_millimetres_convert_to_the_shared_metre_frame"
+    },
+    {
+      "metric_result_sequence": 4,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/2",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "33/64"
+      },
+      "test_case_sequence": 4,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_parallel_segments_bracket_known_offset"
+    },
+    {
+      "metric_result_sequence": 5,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "9/32"
+      },
+      "test_case_sequence": 5,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_proper_rigid_pose_and_reversal_preserve_bounds"
+    },
+    {
+      "metric_result_sequence": 6,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "9/32"
+      },
+      "test_case_sequence": 5,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_proper_rigid_pose_and_reversal_preserve_bounds"
+    },
+    {
+      "metric_result_sequence": 7,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "9/32"
+      },
+      "test_case_sequence": 5,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_proper_rigid_pose_and_reversal_preserve_bounds"
+    },
+    {
+      "metric_result_sequence": 8,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "777472127993/1099511627776",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 15,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1575071724725/2199023255552"
+      },
+      "test_case_sequence": 7,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_same_vertex_set_fixture_brackets_analytic_hausdorff"
+    },
+    {
+      "metric_result_sequence": 9,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/2",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "33/64"
+      },
+      "test_case_sequence": 8,
+      "test_id": "test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_three_dimensional_offset"
+    }
+  ],
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+  "run_successful": true,
+  "test_groups_run": 8
+}

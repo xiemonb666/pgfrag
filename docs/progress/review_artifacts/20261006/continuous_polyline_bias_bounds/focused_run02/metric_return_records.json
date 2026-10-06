@@ -1,0 +1,116 @@
+{
+  "bytecode_writes_disabled": true,
+  "capture_scope": "returns_from_the_single_v2_unittest_run_only",
+  "metric_return_count": 7,
+  "metric_returns": [
+    {
+      "metric_result_sequence": 1,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "777472127993/1099511627776",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 7,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "388736063997/549755813888"
+      },
+      "test_case_sequence": 1,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_fixture_brackets_analytic_same_vertex_set_distance"
+    },
+    {
+      "metric_result_sequence": 2,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "366503875925/1099511627776",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/1000000000000000000000000000000",
+        "sample_cap": 128,
+        "samples": 128,
+        "status": "UNKNOWN_WITH_BOUNDS",
+        "upper_m": "183251937963/549755813888"
+      },
+      "test_case_sequence": 2,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_non_dyadic_offset_and_tiny_tolerance_still_hit_cap"
+    },
+    {
+      "metric_result_sequence": 3,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/2",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 4,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/2"
+      },
+      "test_case_sequence": 3,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_parallel_offset_is_exact_without_adaptive_splits"
+    },
+    {
+      "metric_result_sequence": 4,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 6,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/4"
+      },
+      "test_case_sequence": 4,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_proper_pose_and_reversed_order_preserve_tight_bounds"
+    },
+    {
+      "metric_result_sequence": 5,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 6,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/4"
+      },
+      "test_case_sequence": 4,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_proper_pose_and_reversed_order_preserve_tight_bounds"
+    },
+    {
+      "metric_result_sequence": 6,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "1/4",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 6,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "1/4"
+      },
+      "test_case_sequence": 4,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_proper_pose_and_reversed_order_preserve_tight_bounds"
+    },
+    {
+      "metric_result_sequence": 7,
+      "record": {
+        "geometry_scope": "GIVEN_PIECEWISE_LINEAR_POLYLINES_ONLY",
+        "lower_m": "0/1",
+        "physical_admission": "NOT_ADMITTED",
+        "requested_atol_m": "1/100",
+        "sample_cap": 128,
+        "samples": 4,
+        "status": "BOUNDS_WITHIN_REQUESTED_ATOL",
+        "upper_m": "0/1"
+      },
+      "test_case_sequence": 5,
+      "test_id": "test_convex_segment_upper.ConvexSegmentUpperTests.test_same_segment_and_millimetre_conversion_have_exact_zero"
+    }
+  ],
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+  "run_successful": true,
+  "test_groups_run": 5
+}

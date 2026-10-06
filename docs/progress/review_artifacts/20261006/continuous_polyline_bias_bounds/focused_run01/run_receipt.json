@@ -1,0 +1,22 @@
+{
+  "run_id": "focused_run01",
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\continuous_polyline_bias_bounds_20261006\\focused_run01\\run_tests_and_capture.py"
+  ],
+  "started_utc": "2026-10-06T13:41:50.7806889Z",
+  "finished_utc": "2026-10-06T13:41:51.3113914Z",
+  "duration_ms": 529.842,
+  "deadline_ms": 15000,
+  "timed_out": false,
+  "exit_code": 0,
+  "output_limit_bytes": 2097152,
+  "stdout_bytes": 1525,
+  "stderr_bytes": 0,
+  "output_limit_ok": true,
+  "pre_pins": "pre_pins.json",
+  "post_pins": "post_pins.json",
+  "runner_sha256": "8532296f3e559453858fe907320f65c377f05678765b79e278b2303c65be8ef1",
+  "returned_records": "metric_return_records.json"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "check_kind": "AST parse and JSON/schema structure only",
+  "cohesive_source_executed": false,
+  "scalar_law_executed": false,
+  "nodal_derivative_executed": false,
+  "future_micro_checker_executed": false,
+  "source_lines": 315,
+  "source_line_limit": 330,
+  "future_micro_checker_lines": 154,
+  "future_micro_checker_line_limit": 170,
+  "static_checker_lines": 84,
+  "static_checker_line_limit": 150,
+  "source_sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+  "future_micro_checker_sha256": "1bbae06cdd1c74e49e24680024c1113e9934c03e1d4645f0af09baccc75a2142",
+  "scalar_source_sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+  "scalar_source_pin": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+  "nodal_derivative_sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+  "nodal_derivative_pin": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+  "case_coefficients": 24,
+  "case_qps": 1,
+  "schema_sections": [
+    "dependencies",
+    "history",
+    "limits",
+    "point_fields",
+    "qualification",
+    "result_fields",
+    "rigid_evidence",
+    "status",
+    "units"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "micro_checker_executed_once": true,
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_cohesive_trace_20261006\\check_enriched_numerics_future.py"
+  ],
+  "timeout_seconds": 15.0,
+  "real_return_code": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.13764690002426505,
+  "stdout_bytes": 23569,
+  "stderr_bytes": 0,
+  "combined_raw_output_under_2_mib": true,
+  "raw_stdout_file": "raw.stdout.bin",
+  "raw_stderr_file": "raw.stderr.bin",
+  "numeric_result_file": "numeric_result.json",
+  "numeric_result_bytes": 23569,
+  "numeric_result_sha256": "c6c3770ca3073305d9e3605be8888a11ea21d378be9a2b39e115f736ba0e8690",
+  "stdout_equals_saved_json": true,
+  "parse_error": null,
+  "assembly_calls": 21,
+  "pins_before": {
+    "primitive": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+    "future_checker": "1bbae06cdd1c74e49e24680024c1113e9934c03e1d4645f0af09baccc75a2142",
+    "static_checker": "ce7f4778db524ec1775fd4bc829e7924a8746a2ae685df76d574e6a9493a4a8e",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "nodal_derivative": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "manifest": "fec25864e7c110b1186a949c886d3e46c9df880762e689ffa97f6f42714fb2f2",
+    "schema": "e7a96534b6688e8df5fa6084257f68ad1623f36281a399de9cf61f3f4cac389c",
+    "readme": "865123193fca8b9ecd5bb81e6f5c5acc90007a47cbfd7728a872a39ea9f9a0b2"
+  },
+  "pins_after": {
+    "primitive": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+    "future_checker": "1bbae06cdd1c74e49e24680024c1113e9934c03e1d4645f0af09baccc75a2142",
+    "static_checker": "ce7f4778db524ec1775fd4bc829e7924a8746a2ae685df76d574e6a9493a4a8e",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "nodal_derivative": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "manifest": "fec25864e7c110b1186a949c886d3e46c9df880762e689ffa97f6f42714fb2f2",
+    "schema": "e7a96534b6688e8df5fa6084257f68ad1623f36281a399de9cf61f3f4cac389c",
+    "readme": "865123193fca8b9ecd5bb81e6f5c5acc90007a47cbfd7728a872a39ea9f9a0b2"
+  },
+  "pins_unchanged": true
+}

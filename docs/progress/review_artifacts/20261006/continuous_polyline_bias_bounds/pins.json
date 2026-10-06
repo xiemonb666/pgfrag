@@ -1,0 +1,53 @@
+{
+  "review_id": "continuous_polyline_bias_bounds_20261006",
+  "review_mode": "STATIC_REVIEW_WITH_ONE_FOCUSED_RUN",
+  "source_experiment": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006",
+  "review_path_used": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006",
+  "static_actions": ["python_ast_parse", "json_parse", "line_count", "sha256"],
+  "not_run": ["pytest", "render", "provider", "solver"],
+  "approved_focused_run": {
+    "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/focused_run01",
+    "test_groups": 8,
+    "metric_return_records": 9,
+    "exit_code": 0,
+    "duration_ms": 529.842,
+    "timed_out": false,
+    "output_bytes": 1525,
+    "output_limit_ok": true,
+    "source_test_fixture_pins_unchanged": true
+  },
+  "historical_record": {
+    "source_snapshot": {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/source_snapshot_before_narrow_fix.py",
+      "line_count": 235,
+      "sha256": "7417ca142634dc7106a872008bd97ed7b957dd409878b0a3be3dda8b8476e7d3"
+    },
+    "prior_pin_receipt": {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/pins_before_narrow_fix.json",
+      "line_count": 30,
+      "sha256": "9decc53f919d3a74cf49be11a8cbb6bbe6c0d685a56b8ba094eb11b3d91f487c"
+    }
+  },
+  "pinned_files": [
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/continuous_polyline_bias_bounds.py",
+      "line_count": 235,
+      "sha256": "f1120332240df70e58fab20ba9fefcdac00751bcc8783f02a865cd9e45704375"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/README.md",
+      "line_count": 23,
+      "sha256": "4313f7a9696b7f75f037f233e0dae7a1df6425bc4171303c9a396822ffc4cde4"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/tests/test_continuous_polyline_bias_bounds.py",
+      "line_count": 96,
+      "sha256": "5ccd604bf414cb901ffcb9e8b29b78268b8ee5c9f4e25628b99708b84fb58da1"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/fixtures/sparse_vertex_set_counterexample.json",
+      "line_count": 22,
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ]
+}

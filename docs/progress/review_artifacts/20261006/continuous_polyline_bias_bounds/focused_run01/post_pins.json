@@ -1,0 +1,20 @@
+{
+  "captured_utc": "2026-10-06T13:41:51.3113914Z",
+  "files": [
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/continuous_polyline_bias_bounds.py",
+      "line_count": 235,
+      "sha256": "f1120332240df70e58fab20ba9fefcdac00751bcc8783f02a865cd9e45704375"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/tests/test_continuous_polyline_bias_bounds.py",
+      "line_count": 96,
+      "sha256": "5ccd604bf414cb901ffcb9e8b29b78268b8ee5c9f4e25628b99708b84fb58da1"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/fixtures/sparse_vertex_set_counterexample.json",
+      "line_count": 22,
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ]
+}

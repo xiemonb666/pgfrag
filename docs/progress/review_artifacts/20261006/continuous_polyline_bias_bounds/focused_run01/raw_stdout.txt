@@ -1,0 +1,13 @@
+test_cap_returns_unknown_with_certified_bounds (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_cap_returns_unknown_with_certified_bounds) ... ok
+test_crossing_polyline_repartition_has_zero_lower_bound (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_crossing_polyline_repartition_has_zero_lower_bound) ... ok
+test_millimetres_convert_to_the_shared_metre_frame (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_millimetres_convert_to_the_shared_metre_frame) ... ok
+test_parallel_segments_bracket_known_offset (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_parallel_segments_bracket_known_offset) ... ok
+test_proper_rigid_pose_and_reversal_preserve_bounds (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_proper_rigid_pose_and_reversal_preserve_bounds) ... ok
+test_rejects_zero_length_segment_bool_nonfinite_and_unknown_units (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_rejects_zero_length_segment_bool_nonfinite_and_unknown_units) ... ok
+test_same_vertex_set_fixture_brackets_analytic_hausdorff (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_same_vertex_set_fixture_brackets_analytic_hausdorff) ... ok
+test_three_dimensional_offset (test_continuous_polyline_bias_bounds.ContinuousPolylineBoundsTests.test_three_dimensional_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.400s
+
+OK

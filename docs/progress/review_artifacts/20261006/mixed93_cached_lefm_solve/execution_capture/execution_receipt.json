@@ -1,0 +1,60 @@
+{
+  "actual_process_return_code": 1,
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_cached_lefm_solve_20261006\\mixed93_cached_lefm_solve.py",
+    "--execute",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json"
+  ],
+  "case_authorization_delta": [
+    "execution_authorization.authorized",
+    "execution_authorization.authorized_by",
+    "execution_authorization.authorized_utc"
+  ],
+  "elapsed_seconds": 0.6208375999704003,
+  "historical_unauthorized_case_sha256": "ab57f5969a22218f4c347633ca312029ffd8ac6446200eb6c9481529e8a1c5d0",
+  "historical_unauthorized_pins_sha256": "b93cce82be3b4023a4de333b7f8755b55a44275e052751a9b38cc37fdcccb40f",
+  "input_hashes_unchanged_during_run": true,
+  "output_files": {
+    "arrays_npz": {
+      "bytes": 1569232,
+      "exists": true,
+      "sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41"
+    },
+    "result_json": {
+      "exists": false
+    }
+  },
+  "post_run_eight_pin_hashes": {
+    "cached_arrays": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "cached_result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "case": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "entry": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "global_semantic_operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "mixed_enrichment_algebra": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "mixed_lefm_field": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+    "source_pins_manifest": "c168fc96691b95ef6a4cfa54c1d17a6898abce08d5100d72cdf4e8ec0ddb0df4"
+  },
+  "pre_run_eight_pin_hashes": {
+    "cached_arrays": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "cached_result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "case": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "entry": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "global_semantic_operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "mixed_enrichment_algebra": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "mixed_lefm_field": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+    "source_pins_manifest": "c168fc96691b95ef6a4cfa54c1d17a6898abce08d5100d72cdf4e8ec0ddb0df4"
+  },
+  "schema": "mixed93_one_shot_execution_capture.v1",
+  "started_utc": "2026-10-06T13:50:10+00:00",
+  "stderr_bytes": 2586,
+  "stderr_file": "stderr.bin",
+  "stderr_text_utf8": "Traceback (most recent call last):\r\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_cached_lefm_solve_20261006\\mixed93_cached_lefm_solve.py\", line 531, in <module>\r\n    raise SystemExit(main())\r\n                     ^^^^^^\r\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_cached_lefm_solve_20261006\\mixed93_cached_lefm_solve.py\", line 527, in main\r\n    _write_result(output, metrics, arrays, result_rc)\r\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_cached_lefm_solve_20261006\\mixed93_cached_lefm_solve.py\", line 502, in _write_result\r\n    output_json.write_text(json.dumps(metrics, indent=2, sort_keys=True, allow_nan=False) + \"\\n\", encoding=\"utf-8\")\r\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\__init__.py\", line 238, in dumps\r\n    **kw).encode(obj)\r\n          ^^^^^^^^^^^\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 202, in encode\r\n    chunks = list(chunks)\r\n             ^^^^^^^^^^^^\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 432, in _iterencode\r\n    yield from _iterencode_dict(o, _current_indent_level)\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 326, in _iterencode_list\r\n    yield from chunks\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 406, in _iterencode_dict\r\n    yield from chunks\r\n  [Previous line repeated 1 more time]\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 439, in _iterencode\r\n    o = _default(o)\r\n        ^^^^^^^^^^^\r\n  File \"C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\Lib\\json\\encoder.py\", line 180, in default\r\n    raise TypeError(f'Object of type {o.__class__.__name__} '\r\nTypeError: Object of type bool is not JSON serializable\r\n",
+  "stdout_bytes": 0,
+  "stdout_file": "stdout.bin",
+  "stdout_text_utf8": "",
+  "timed_out": false,
+  "timeout_seconds": 60
+}

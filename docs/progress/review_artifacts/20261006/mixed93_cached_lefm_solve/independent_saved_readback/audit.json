@@ -1,0 +1,441 @@
+{
+  "schema": "mixed93_saved_independent_audit.v1",
+  "status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+  "dof_count": 93,
+  "kkt_order": 99,
+  "source_count": 27,
+  "global_branch_count": 4,
+  "input_paths": {
+    "failed_arrays_npz": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\arrays.npz",
+    "producer_result_json": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json",
+    "upstream_result_json": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01\\result.json",
+    "upstream_arrays_npz": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01\\arrays.npz"
+  },
+  "input_bytes": {
+    "failed_arrays_npz": 1569232
+  },
+  "saved_cache_state": "RECOVERED_CACHE_FROM_FAILED_SERIALIZATION_DIAGNOSTIC_ONLY",
+  "producer_run": {
+    "return_code": 1,
+    "elapsed_seconds": 0.6208375999704003,
+    "result_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json",
+    "result_json_present": false,
+    "failure": "metrics JSON serialization failed after NPZ save; result JSON absent"
+  },
+  "physical_fracture_status": "UNKNOWN_NOT_ASSESSED",
+  "interpretation": "TOY_ISOTROPIC_LEFM_MANUFACTURED_BENCHMARK_NOT_MATERIAL_OR_CRACK_GROWTH_QUALIFICATION",
+  "pins_pre": {
+    "frozen_entry": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "case": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "source_pins": "c168fc96691b95ef6a4cfa54c1d17a6898abce08d5100d72cdf4e8ec0ddb0df4",
+    "execution_receipt": "32bfd3dcedcf2275768c482cfd936f12482756ef3e97ebe73176167d25e4d2a1",
+    "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "d9b1de8626c37b363db57db5ef6ab2f5e585efbf122be36be2a46b2c75a39ecf",
+    "failed_arrays": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "upstream_result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "upstream_arrays": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "upstream_driver": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "field_source": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+    "enrichment_source": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "semantic_source": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+  },
+  "pins_post": {
+    "frozen_entry": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "case": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "source_pins": "c168fc96691b95ef6a4cfa54c1d17a6898abce08d5100d72cdf4e8ec0ddb0df4",
+    "execution_receipt": "32bfd3dcedcf2275768c482cfd936f12482756ef3e97ebe73176167d25e4d2a1",
+    "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "d9b1de8626c37b363db57db5ef6ab2f5e585efbf122be36be2a46b2c75a39ecf",
+    "failed_arrays": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "upstream_result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "upstream_arrays": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "upstream_driver": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "field_source": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+    "enrichment_source": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "semantic_source": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+  },
+  "reviewer_sha256": "6c16b69929197bcdd686704a9b6bf6a383b3dd5ee3084d1b1c691596dd600a0f",
+  "source_pins_manifest_sha256": "c168fc96691b95ef6a4cfa54c1d17a6898abce08d5100d72cdf4e8ec0ddb0df4",
+  "matrix_layout_spectrum_rigid_audit": {
+    "D_saved_rel": 0.0,
+    "relative_rebuild": 0.0,
+    "raw_asymmetry": 1.6994520959640075e-16,
+    "scaled_asymmetry": 2.017074606204986e-16,
+    "scaled_saved_rel": 0.0,
+    "spectrum_counts": {
+      "zero": 6,
+      "positive": 87,
+      "negative": 0,
+      "tol": 1.897797502881588e-11
+    },
+    "saved_eigenvalues_rel": 0.0,
+    "volume_m3": 3.1415926535897916e-06,
+    "analytic_cylinder_volume_m3": 3.1415926535897933e-06,
+    "rigid_saved_rel": 4.2831964559053223e-20,
+    "rigid_scaled_null_rel": 1.3770197603445237e-16,
+    "physical_C_saved_rel": 0.0,
+    "coupling_saved_rel": 2.2727650010123783e-16,
+    "physical_rigid_coupling_rank": 6
+  },
+  "consistency_gates": {
+    "matrix_and_layout": true,
+    "spectrum_and_rigid_modes": true,
+    "four_case_algebra_and_fields": true
+  },
+  "case_audits": {
+    "pure_I": {
+      "q_exact_formula_rel": 0.0,
+      "Cq_exact_vs_saved_g_rel": 0.0,
+      "analytic_saved_u_moment_vs_saved_g_rel": 0.0,
+      "Cq_vs_analytic_moment_rel": 2.367394155091891e-16,
+      "g_norm_m": 3.873958373801151e-06,
+      "g_nonzero": true,
+      "f_rebuild_rel": 0.0,
+      "traction_rebuild_rel": 0.0,
+      "KKT": {
+        "backward_rel": 1.3211427899253838e-17,
+        "saved_rhs_rel": 0.0,
+        "saved_gauge_rhs_rel": 0.0,
+        "restored_q_rel": 0.0,
+        "restored_lambda_rel": 0.0,
+        "saved_KKT_matrix_rel": 0.0,
+        "saved_Cbar_rel": 0.0,
+        "saved_Chat_rel": 0.0,
+        "saved_row_scale_rel": 0.0
+      },
+      "KKT_saved_algebra_gate": true,
+      "physical_weak_rel": 1.144228148932551e-17,
+      "physical_gauge_rel": 4.0352536730237384e-17,
+      "U_J": 4.225085449817306e-07,
+      "q_dot_f_J": 8.450170899634609e-07,
+      "g_dot_lambda_J": 7.90150644336895e-23,
+      "energy_identity_defect_J": 3.966524196540521e-22,
+      "energy_identity_rel": 4.694016539608725e-16,
+      "engineering_field_rel_L2": {
+        "volume": {
+          "displacement_rel_L2": 0.000673792335992565,
+          "strain_tensor_rel_L2": 0.005431783182310989,
+          "stress_tensor_rel_L2": 0.003402651840506361
+        },
+        "boundary": {
+          "displacement_rel_L2": 0.0008060423451260876,
+          "strain_tensor_rel_L2": 0.007537729737746235,
+          "stress_tensor_rel_L2": 0.004854977064564963
+        },
+        "offgrid": {
+          "displacement_rel_L2": 0.0007028832144574994,
+          "strain_tensor_rel_L2": 0.002418162957220807,
+          "stress_tensor_rel_L2": 0.0021686344296603425
+        }
+      },
+      "field_reconstruction_checks": {
+        "volume": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.0063143466100355e-16,
+            4.2784990704967866e-16,
+            4.730264143201935e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "boundary": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.923674514296498e-16,
+            5.442405434886743e-16,
+            5.628934194855735e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "offgrid": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            3.196076841600264e-16,
+            5.783051922782875e-16,
+            7.080768254480762e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "exact_representation_gate": true,
+      "saved_solution_field_reconstruction_gate": true,
+      "declared_engineering_field_gate": true,
+      "declared_engineering_max_rel": 0.005431783182310989
+    },
+    "pure_II": {
+      "q_exact_formula_rel": 0.0,
+      "Cq_exact_vs_saved_g_rel": 0.0,
+      "analytic_saved_u_moment_vs_saved_g_rel": 0.0,
+      "Cq_vs_analytic_moment_rel": 4.843542776833234e-16,
+      "g_norm_m": 5.294396762802933e-06,
+      "g_nonzero": true,
+      "f_rebuild_rel": 0.0,
+      "traction_rebuild_rel": 0.0,
+      "KKT": {
+        "backward_rel": 2.3162973701347575e-17,
+        "saved_rhs_rel": 0.0,
+        "saved_gauge_rhs_rel": 0.0,
+        "restored_q_rel": 0.0,
+        "restored_lambda_rel": 0.0,
+        "saved_KKT_matrix_rel": 0.0,
+        "saved_Cbar_rel": 0.0,
+        "saved_Chat_rel": 0.0,
+        "saved_row_scale_rel": 0.0
+      },
+      "KKT_saved_algebra_gate": true,
+      "physical_weak_rel": 5.580088734206793e-17,
+      "physical_gauge_rel": 5.274672611194764e-17,
+      "U_J": 1.072506973205681e-06,
+      "q_dot_f_J": 2.145013946411364e-06,
+      "g_dot_lambda_J": -1.240372764699582e-22,
+      "energy_identity_defect_J": -1.818103170978559e-21,
+      "energy_identity_rel": 8.475950349974502e-16,
+      "engineering_field_rel_L2": {
+        "volume": {
+          "displacement_rel_L2": 0.0004965436245078779,
+          "strain_tensor_rel_L2": 0.0023280790451246287,
+          "stress_tensor_rel_L2": 0.0029226733203694248
+        },
+        "boundary": {
+          "displacement_rel_L2": 0.0006007761919692803,
+          "strain_tensor_rel_L2": 0.0035128268823460766,
+          "stress_tensor_rel_L2": 0.004226278268207554
+        },
+        "offgrid": {
+          "displacement_rel_L2": 0.0005254359797120112,
+          "strain_tensor_rel_L2": 0.0017062463254186337,
+          "stress_tensor_rel_L2": 0.0022934717548220252
+        }
+      },
+      "field_reconstruction_checks": {
+        "volume": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            1.186754475840934e-16,
+            2.0830455519466898e-16,
+            2.914455101326711e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "boundary": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.1113829297868812e-16,
+            2.0572302143324368e-16,
+            3.6464023354258875e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "offgrid": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.3831318769395367e-16,
+            3.278473252247898e-16,
+            4.676627911567931e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "exact_representation_gate": true,
+      "saved_solution_field_reconstruction_gate": true,
+      "declared_engineering_field_gate": true,
+      "declared_engineering_max_rel": 0.0029226733203694248
+    },
+    "pure_III": {
+      "q_exact_formula_rel": 0.0,
+      "Cq_exact_vs_saved_g_rel": 0.0,
+      "analytic_saved_u_moment_vs_saved_g_rel": 0.0,
+      "Cq_vs_analytic_moment_rel": 9.948255902407539e-17,
+      "g_norm_m": 5.0311147711703285e-06,
+      "g_nonzero": true,
+      "f_rebuild_rel": 0.0,
+      "traction_rebuild_rel": 0.0,
+      "KKT": {
+        "backward_rel": 1.2048246609931148e-17,
+        "saved_rhs_rel": 0.0,
+        "saved_gauge_rhs_rel": 0.0,
+        "restored_q_rel": 0.0,
+        "restored_lambda_rel": 0.0,
+        "saved_KKT_matrix_rel": 0.0,
+        "saved_Cbar_rel": 0.0,
+        "saved_Chat_rel": 0.0,
+        "saved_row_scale_rel": 0.0
+      },
+      "KKT_saved_algebra_gate": true,
+      "physical_weak_rel": 8.034880280425711e-18,
+      "physical_gauge_rel": 2.4107159471532513e-17,
+      "U_J": 1.300064449505589e-06,
+      "q_dot_f_J": 2.6000758820033346e-06,
+      "g_dot_lambda_J": -5.301700784375686e-11,
+      "energy_identity_defect_J": -2.9529055398435974e-22,
+      "energy_identity_rel": 1.1356765970204706e-16,
+      "engineering_field_rel_L2": {
+        "volume": {
+          "displacement_rel_L2": 0.0009108335927376622,
+          "strain_tensor_rel_L2": 0.0029229845915201957,
+          "stress_tensor_rel_L2": 0.0030996769046777325
+        },
+        "boundary": {
+          "displacement_rel_L2": 0.0012601961136766817,
+          "strain_tensor_rel_L2": 0.004822595215130306,
+          "stress_tensor_rel_L2": 0.005127969581480618
+        },
+        "offgrid": {
+          "displacement_rel_L2": 0.0008450473849282836,
+          "strain_tensor_rel_L2": 0.001630108839502947,
+          "stress_tensor_rel_L2": 0.0016578980380207138
+        }
+      },
+      "field_reconstruction_checks": {
+        "volume": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            8.365073033913248e-17,
+            1.0223991772271191e-16,
+            1.0940350742539455e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "boundary": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            1.5103605580366226e-16,
+            2.0580505862033687e-16,
+            2.434754293469561e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "offgrid": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            1.508314437914485e-16,
+            2.417624922256971e-16,
+            2.5865892948451967e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "exact_representation_gate": true,
+      "saved_solution_field_reconstruction_gate": true,
+      "declared_engineering_field_gate": true,
+      "declared_engineering_max_rel": 0.0030996769046777325
+    },
+    "mixed_70_40_100": {
+      "q_exact_formula_rel": 0.0,
+      "Cq_exact_vs_saved_g_rel": 0.0,
+      "analytic_saved_u_moment_vs_saved_g_rel": 0.0,
+      "Cq_vs_analytic_moment_rel": 4.071024127535233e-16,
+      "g_norm_m": 6.095138963137541e-06,
+      "g_nonzero": true,
+      "f_rebuild_rel": 0.0,
+      "traction_rebuild_rel": 0.0,
+      "KKT": {
+        "backward_rel": 9.03618495744836e-18,
+        "saved_rhs_rel": 0.0,
+        "saved_gauge_rhs_rel": 0.0,
+        "restored_q_rel": 0.0,
+        "restored_lambda_rel": 0.0,
+        "saved_KKT_matrix_rel": 0.0,
+        "saved_Cbar_rel": 0.0,
+        "saved_Chat_rel": 0.0,
+        "saved_row_scale_rel": 0.0
+      },
+      "KKT_saved_algebra_gate": true,
+      "physical_weak_rel": 1.2052320420638566e-17,
+      "physical_gauge_rel": 3.071802306860307e-17,
+      "U_J": 1.6786947522595463e-06,
+      "q_dot_f_J": 3.357336487511249e-06,
+      "g_dot_lambda_J": -5.30170078438622e-11,
+      "energy_identity_defect_J": -4.0063329746269493e-22,
+      "energy_identity_rel": 1.1932881094774287e-16,
+      "engineering_field_rel_L2": {
+        "volume": {
+          "displacement_rel_L2": 0.0008460390226097197,
+          "strain_tensor_rel_L2": 0.0031605065085614065,
+          "stress_tensor_rel_L2": 0.0031497071104265736
+        },
+        "boundary": {
+          "displacement_rel_L2": 0.0011503511561488991,
+          "strain_tensor_rel_L2": 0.005002095258528821,
+          "stress_tensor_rel_L2": 0.004961503474629632
+        },
+        "offgrid": {
+          "displacement_rel_L2": 0.0007994848695729478,
+          "strain_tensor_rel_L2": 0.00171610218968149,
+          "stress_tensor_rel_L2": 0.0018729442657932972
+        }
+      },
+      "field_reconstruction_checks": {
+        "volume": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            1.8132097133669762e-16,
+            1.6398195257294892e-16,
+            3.3601790774597967e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "boundary": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.0177327529223752e-16,
+            2.574263705927618e-16,
+            4.3711776183069353e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "offgrid": {
+          "q_exact_reconstruction_rel_u_strain_stress": [
+            2.0094070318775683e-16,
+            2.8555340504801624e-16,
+            4.50136486773798e-16
+          ],
+          "q_solution_vs_saved_rel_u_strain_stress": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "exact_representation_gate": true,
+      "saved_solution_field_reconstruction_gate": true,
+      "declared_engineering_field_gate": true,
+      "declared_engineering_max_rel": 0.0031605065085614065
+    }
+  },
+  "checks_scope": "Saved arrays only: independent raw K/f/C/g, physical moments, scaled 99x99 KKT residual/restoration, reconstructed fields; no provider, MLS, quadrature regeneration, author import, or solve.",
+  "elapsed_seconds": 0.18799999984912574
+}
