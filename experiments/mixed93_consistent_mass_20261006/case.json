@@ -1,0 +1,107 @@
+{
+  "schema": "pgfrag.mixed93_consistent_mass_case.v1",
+  "case_id": "mixed93_consistent_mass_20261006",
+  "status": "SOURCE_ONLY_ROOT_PINS_BOUND_AWAITING_GO",
+  "execution": {
+    "authorized": true,
+    "authorized_by": "ROOT",
+    "authorized_utc": "2026-10-06T14:19:06Z"
+  },
+  "classification": "TOY_CONSISTENT_MASS_DIAGNOSTIC_NOT_MATERIAL_CALIBRATED",
+  "purpose": "Build the raw consistent full-vector mass matrix from frozen mixed93 cached scalar basis values and volume weights.",
+  "inputs": {
+    "result_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "result_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "arrays_path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+    "arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41"
+  },
+  "independent_recovery_contract": {
+    "json_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "json_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "expected_schema": "mixed93_saved_independent_audit.v1",
+    "expected_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+    "expected_saved_cache_state": "RECOVERED_CACHE_FROM_FAILED_SERIALIZATION_DIAGNOSTIC_ONLY",
+    "expected_physical_fracture_status": "UNKNOWN_NOT_ASSESSED",
+    "expected_dof_count": 93,
+    "expected_kkt_order": 99,
+    "expected_source_count": 27,
+    "expected_global_branch_count": 4,
+    "expected_producer_return_code": 1,
+    "expected_result_json_present": false,
+    "expected_failed_arrays_bytes": 1569232,
+    "producer_failure_text_terms": ["metrics", "JSON", "NPZ", "save"],
+    "field_paths": {
+      "schema": "schema",
+      "status": "status",
+      "saved_cache_state": "saved_cache_state",
+      "physical_fracture_status": "physical_fracture_status",
+      "failed_arrays_path": "input_paths.failed_arrays_npz",
+      "failed_arrays_sha256_pre": "pins_pre.failed_arrays",
+      "failed_arrays_sha256_post": "pins_post.failed_arrays",
+      "failed_arrays_bytes": "input_bytes.failed_arrays_npz",
+      "dof_count": "dof_count",
+      "kkt_order": "kkt_order",
+      "source_count": "source_count",
+      "global_branch_count": "global_branch_count",
+      "producer_return_code": "producer_run.return_code",
+      "producer_result_json_present": "producer_run.result_json_present",
+      "producer_result_json_path": "producer_run.result_json_path",
+      "producer_failure_details": "all string values in producer_run"
+    }
+  },
+  "arrays_contract": {
+    "semantic_ids_key": "semantic_ids",
+    "source_ids_key": "source_ids",
+    "source_ids_shape": [27],
+    "volume_basis_values_key": "volume_basis_values",
+    "volume_basis_values_shape": [512, 31],
+    "volume_weights_key": "volume_weights_m3",
+    "volume_weights_shape": [512],
+    "volume_xyz_key": "volume_xyz_m",
+    "volume_xyz_shape": [512, 3],
+    "source_positions_key": "source_positions_xyz_m",
+    "source_positions_shape": [27, 3],
+    "rigid_modes_key": "rigid_coefficient_modes",
+    "rigid_modes_shape": [6, 93],
+    "array_loading": "saved arrays only; allow_pickle=false; no MLS/provider/field evaluation"
+  },
+  "geometry": {
+    "shape": "centered straight-front circular cylinder",
+    "frame": "identity xyz",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "axis_unit_xyz": [0.0, 0.0, 1.0],
+    "center_xyz_m": [0.0, 0.0, 0.0],
+    "source_count": 27
+  },
+  "semantic_layout": {
+    "dof_count": 93,
+    "scalar_basis_count": 31,
+    "source_base": "81 source-major frozen IDs; each source ux,uy,uz; SOURCE_BASE; basis_index 0",
+    "global_front": "12 branch-major frozen IDs; branches 1..4; each branch ux,uy,uz; GLOBAL_FRONT; owner global",
+    "scalar_column_map": "sorted frozen source order maps to columns 0..26; global branches 1..4 map to columns 27..30"
+  },
+  "mass": {
+    "formula": "raw M_ij = rho * integral H_i(x) H_j(x) dV",
+    "density_kg_m3": 1.0,
+    "density_status": "NOT_MATERIAL_CALIBRATED",
+    "units": "kg",
+    "component_coupling": "three independent 31x31 equal component blocks; cross-component entries exactly zero",
+    "quadrature_chunk_rows_max": 256,
+    "weight_safety_cap_m3": 0.0001,
+    "total_volume_safety_cap_m3": 0.001,
+    "density_safety_cap_kg_m3": 10000000.0,
+    "mutations_prohibited": ["row-sum lumping", "symmetrization", "ridge", "pseudoinverse", "mode truncation"]
+  },
+  "future_audit": {
+    "scaled_mass_spectrum": "require 93 positive, 0 zero, 0 significant negative eigenvalues; any failure blocks without tuning",
+    "rigid_mode_order": ["translation_x", "translation_y", "translation_z", "rotation_x", "rotation_y", "rotation_z"],
+    "rigid_mode_convention": "unit translational velocity fields (m/s) and unit angular velocity fields (rad/s); rotational coefficient modes carry length, and do not calibrate material density",
+    "rigid_pointwise_tolerance": 1e-10,
+    "rigid_pointwise_error_normalization": "translation velocity errors are dimensionless; Rx/Ry errors divide by sqrt(R^2+(L/2)^2), Rz errors divide by R",
+    "rigid_kinetic_forms": "compare saved-coefficient raw-M projection to direct volume quadrature of the physical rigid fields, and compare direct quadrature to centered-cylinder analytics",
+    "analytic_centered_inertia_kg_m2": ["rho*V*(R^2/4+L^2/12)", "rho*V*(R^2/4+L^2/12)", "rho*V*R^2/2"],
+    "solver_or_frequency_analysis": "out of scope"
+  },
+  "planned_output_dir": "pgfrag/tmp/review_20261006/mixed93_consistent_mass_20261006/run01"
+}

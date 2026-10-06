@@ -1,0 +1,40 @@
+{
+  "schema": "mixed93_saved_visual_execution.v1",
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_saved_visual\\render_saved_stress.py",
+    "--render"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "timeout_seconds": 15,
+  "timed_out": false,
+  "timeout_detail": null,
+  "actual_process_return_code": 0,
+  "elapsed_seconds": 0.7029999999795109,
+  "pre": {
+    "source_sha256": "3c1069b9a41a16a029803ac9130dcbfde54cad604fc3f89391099c258752e882",
+    "pins_sha256": "3356e2ada89de1cbb02527c9658c6873fa93a7d2b6b278e5bafbfaf011ee2cf0",
+    "output_preexisted": false
+  },
+  "post": {
+    "source_sha256": "3c1069b9a41a16a029803ac9130dcbfde54cad604fc3f89391099c258752e882",
+    "pins_sha256": "3356e2ada89de1cbb02527c9658c6873fa93a7d2b6b278e5bafbfaf011ee2cf0",
+    "png_exists": true,
+    "png_sha256": "49a631ac7cc2e7ad126f3ecf85033d5c85608d97712f7978b99b703db605d702",
+    "png_bytes": 174497
+  },
+  "stdout": {
+    "path": "stdout.bin",
+    "bytes": 1099,
+    "sha256": "41f6819f879756dfdf69dd72b0dd4c30b1b53b9e35ea219ad906e30e028e77af"
+  },
+  "stderr": {
+    "path": "stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "png_cap_bytes": 2097152,
+  "png_cap_passed": true,
+  "status": "COMPLETED"
+}

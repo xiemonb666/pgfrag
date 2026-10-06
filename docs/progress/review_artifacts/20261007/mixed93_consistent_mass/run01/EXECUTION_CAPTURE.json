@@ -1,0 +1,350 @@
+{
+  "classification": "TOY_DIAGNOSTIC_NOT_MATERIAL_CALIBRATED; original producer failure retained",
+  "execution": {
+    "checker_elapsed_seconds": 0.062440799782052636,
+    "command": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe -B mass_replay_audit.py",
+    "outer_wall_seconds": 0.1680995,
+    "return_code": 0,
+    "root_authorization": {
+      "authorized": true,
+      "authorized_by": "ROOT",
+      "authorized_utc": "2026-10-06T14:19:06Z"
+    },
+    "started_utc": "2026-10-06T14:21:03Z",
+    "stderr_path": "evidence/preauthorization/mass_audit.stderr.log",
+    "stdout_path": "evidence/preauthorization/mass_audit.stdout.log"
+  },
+  "input_source_pre_post_sha256": {
+    "case_post_at_audit": "56fcda7bc5bc39ea8d269e08d37dbce581cd4b5c318befc49f79a3415060d158",
+    "case_pre_at_audit": "56fcda7bc5bc39ea8d269e08d37dbce581cd4b5c318befc49f79a3415060d158",
+    "case_pre_authorization_snapshot": "5e985c3bd324cfd10e015b066996ecd448ff7a0abb369b634a54f3087e9ff244",
+    "inputs_post": {
+      "failed_arrays_npz": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+      "independent_recovery_json": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+    },
+    "inputs_pre": {
+      "failed_arrays_npz": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+      "independent_recovery_json": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+    },
+    "producer_result_sibling_absent_pre_and_post": true,
+    "source_freeze_live_pre_and_post": "ae49a0f81e5eeeceb9f2b013b06194eeebd1ce9b419dc9662fc3788b9b3a18b4",
+    "source_freeze_pre_authorization_snapshot": "ae49a0f81e5eeeceb9f2b013b06194eeebd1ce9b419dc9662fc3788b9b3a18b4",
+    "sources_post": {
+      "mass_core": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+      "recovery_gate": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e",
+      "saved_audit": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb"
+    },
+    "sources_pre": {
+      "mass_core": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+      "recovery_gate": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e",
+      "saved_audit": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb"
+    }
+  },
+  "mass_audit_gate_status": "PASS",
+  "matrix": {
+    "component_block_difference_kg": 0.0,
+    "cross_component_max_abs_kg": 0.0,
+    "density_kg_m3": 1.0,
+    "density_status": "NOT_MATERIAL_CALIBRATED",
+    "raw_binary": "mass_raw_le_f64.bin; row-major little-endian float64",
+    "raw_binary_bytes": 69192,
+    "relative_raw_asymmetry": 4.423982465162535e-17,
+    "scaled_spectrum": {
+      "cholesky_succeeded": true,
+      "maximum": 7.929741903836353,
+      "minimum": 7.800321617541476e-05,
+      "positive": 93,
+      "significant_negative": 0,
+      "tolerance": 1.0480022141575502e-11,
+      "zero": 0
+    },
+    "shape": [
+      93,
+      93
+    ],
+    "trace_kg": 1.148178970334846e-05,
+    "units": "kg",
+    "volume_m3": 3.1415926535897916e-06
+  },
+  "outputs_bytes_excluding_this_capture": 167852,
+  "outputs_excluding_this_capture": [
+    {
+      "bytes": 5549,
+      "path": "evidence/preauthorization/case_pre_authorization.json",
+      "sha256": "5e985c3bd324cfd10e015b066996ecd448ff7a0abb369b634a54f3087e9ff244"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/preauthorization/mass_audit.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/preauthorization/mass_audit.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 369,
+      "path": "evidence/preauthorization/outer_execution_observation.json",
+      "sha256": "a2fe8a0ef14f2010d7ae663d8155eb4c01f0a2f58d079d27e9c14ae54415e256"
+    },
+    {
+      "bytes": 1593,
+      "path": "evidence/preauthorization/preauthorization_pins.json",
+      "sha256": "a9aa8e1038011b827f98c94b59530ed7911050f848d49d65fe41bf05c8f27903"
+    },
+    {
+      "bytes": 3469,
+      "path": "evidence/preauthorization/source_freeze_pre_authorization.json",
+      "sha256": "ae49a0f81e5eeeceb9f2b013b06194eeebd1ce9b419dc9662fc3788b9b3a18b4"
+    },
+    {
+      "bytes": 496,
+      "path": "evidence/preauthorization/wrong_target_invocation.json",
+      "sha256": "700c3267b713315f12d8bd58160cc800bfbaee18de0960fe6750438e4a7ef883"
+    },
+    {
+      "bytes": 274,
+      "path": "evidence/preauthorization/wrong_target_invocation.stderr.log",
+      "sha256": "3f211b15c26ab8b1320a2b681dc736a35b81fdfc271f405f1044a6005c8dce3d"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/preauthorization/wrong_target_invocation.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 369,
+      "path": "evidence/preauthorization/wrong_target_mislabeled_observation.json",
+      "sha256": "146cc60aff573b541c170013659cf6bb0f492e94c60b3e4c92fc99034c701538"
+    },
+    {
+      "bytes": 78588,
+      "path": "mass_raw_kg.csv",
+      "sha256": "b6a2b2f781d290e356d6a8b15c743cf5d0b4b121e9fa759d6424d1af8d85a126"
+    },
+    {
+      "bytes": 69192,
+      "path": "mass_raw_le_f64.bin",
+      "sha256": "3d1aa1b03dc25aeb1d56e6c7cdbd97eb9f63ae29b8f0da104042c1119b41bcf1"
+    },
+    {
+      "bytes": 7953,
+      "path": "result.json",
+      "sha256": "48535218766ed986b5f26c19da7bbb35bd2583840028a674bfa791e632f14bbe"
+    }
+  ],
+  "preauthorization_snapshots": [
+    "evidence/preauthorization/case_pre_authorization.json",
+    "evidence/preauthorization/source_freeze_pre_authorization.json",
+    "evidence/preauthorization/preauthorization_pins.json"
+  ],
+  "prior_wrapper_error_preserved": {
+    "command": "third_party/vesselforge-runtime/venv/Scripts/python.exe -B case.json",
+    "interpretation": "Wrapper mistake: JSON case was passed as Python source; mass_replay_audit.py did not run.",
+    "raw_logs": [
+      "evidence/preauthorization/wrong_target_invocation.stdout.log",
+      "evidence/preauthorization/wrong_target_invocation.stderr.log"
+    ],
+    "return_code": 1,
+    "superseded_mislabeled_observation_note": "wrong_target_mislabeled_observation.json is retained verbatim as an earlier incorrect wrapper label; the corrected invocation record is wrong_target_invocation.json.",
+    "wall_seconds": 0.0746307
+  },
+  "producer_failure_retained": {
+    "independent_recovery_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+    "physical_fracture_status": "UNKNOWN_NOT_ASSESSED",
+    "producer_elapsed_seconds": 0.6208375999704003,
+    "producer_failure_details": "c:\\users\\xiemo\\desktop\\shardforge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json metrics json serialization failed after npz save; result json absent",
+    "producer_result_json_present": false,
+    "producer_return_code": 1
+  },
+  "rigid_audit": {
+    "errors": {
+      "analytic_inertia": 1.7279047185434503e-15,
+      "coefficient_projection": 6.740474025860935e-16,
+      "coefficient_source_reconstruction_max_abs": 6.424901762877063e-20,
+      "direct_quadrature": 1.6456235414699529e-16,
+      "volume": 5.392379220688742e-16
+    },
+    "kinetic_block_units": {
+      "rotation_rotation": "kg m\u00b2",
+      "translation_rotation": "kg m",
+      "translation_translation": "kg"
+    },
+    "kinetic_centered_cylinder_analytic": [
+      [
+        3.1415926535897933e-06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.1415926535897933e-06,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.1415926535897933e-06,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0471975511965979e-10,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0471975511965979e-10,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.5707963267948967e-10
+      ]
+    ],
+    "kinetic_direct_quadrature": [
+      [
+        3.1415926535897904e-06,
+        0.0,
+        0.0,
+        0.0,
+        -1.0420537013607478e-25,
+        1.937442383222805e-26
+      ],
+      [
+        0.0,
+        3.1415926535897904e-06,
+        0.0,
+        1.0420537013607478e-25,
+        0.0,
+        -2.0081748074285418e-23
+      ],
+      [
+        0.0,
+        0.0,
+        3.1415926535897904e-06,
+        -1.937442383222805e-26,
+        2.0081748074285418e-23,
+        0.0
+      ],
+      [
+        0.0,
+        1.0420537013607478e-25,
+        -1.937442383222805e-26,
+        1.0471975511965961e-10,
+        -1.117224257019258e-27,
+        -9.908092969575908e-28
+      ],
+      [
+        -1.0420537013607478e-25,
+        0.0,
+        2.0081748074285418e-23,
+        -1.887251108128118e-27,
+        1.0471975511965981e-10,
+        1.2942249226282225e-28
+      ],
+      [
+        1.937442383222805e-26,
+        -2.0081748074285418e-23,
+        0.0,
+        -4.417621069237666e-28,
+        -3.3679430272279573e-28,
+        1.5707963267948964e-10
+      ]
+    ],
+    "kinetic_raw_M": [
+      [
+        3.141592653589792e-06,
+        0.0,
+        0.0,
+        0.0,
+        8.271806125530277e-25,
+        -7.237830359838992e-25
+      ],
+      [
+        0.0,
+        3.141592653589792e-06,
+        0.0,
+        -8.271806125530277e-25,
+        0.0,
+        -1.943874439499615e-23
+      ],
+      [
+        0.0,
+        0.0,
+        3.141592653589792e-06,
+        6.203854594147708e-25,
+        1.954214197156528e-23,
+        0.0
+      ],
+      [
+        0.0,
+        2.0679515313825692e-25,
+        8.271806125530277e-25,
+        1.0471975511965966e-10,
+        4.0389678347315804e-27,
+        2.0194839173657902e-28
+      ],
+      [
+        -2.0679515313825692e-25,
+        0.0,
+        1.954214197156528e-23,
+        6.462348535570529e-27,
+        1.0471975511965979e-10,
+        -4.0389678347315804e-28
+      ],
+      [
+        -8.271806125530277e-25,
+        -1.954214197156528e-23,
+        0.0,
+        -1.6155871338926322e-27,
+        -1.6155871338926322e-27,
+        1.5707963267948957e-10
+      ]
+    ],
+    "mode_scales": {
+      "rotation_scales_m": [
+        0.011180339887498949,
+        0.011180339887498949,
+        0.01
+      ],
+      "translation_dimensionless": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "pointwise_gate": 1e-10,
+    "pointwise_normalized_error_by_mode": [
+      8.881784197001252e-16,
+      8.881784197001252e-16,
+      8.881784197001252e-16,
+      3.1031676915590914e-16,
+      5.430543460228409e-16,
+      6.071532165918825e-16
+    ],
+    "pointwise_normalized_error_max": 8.881784197001252e-16
+  },
+  "schema": "pgfrag.mixed93_mass_run_capture.v1",
+  "self_reference": "This file deliberately excludes its own hash; report its SHA-256 and byte length alongside the final response.",
+  "status": "MASS_DIAGNOSTIC_GATES_PASSED_PRODUCER_FAILURE_RETAINED"
+}

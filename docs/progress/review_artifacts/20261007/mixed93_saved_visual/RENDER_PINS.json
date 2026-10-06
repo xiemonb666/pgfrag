@@ -1,0 +1,50 @@
+{
+  "schema": "mixed93_saved_visual_pins.v1",
+  "status": "SOURCE_PREPARED_AUDIT_BOUND_RENDER_NOT_AUTHORIZED",
+  "execution_authorized": true,
+  "source_sha256": "3c1069b9a41a16a029803ac9130dcbfde54cad604fc3f89391099c258752e882",
+  "producer_run": {
+    "return_code": 1,
+    "result_json_exists": false,
+    "classification": "FAILED_PRODUCER_OUTPUT_JSON_SERIALIZATION"
+  },
+  "input_npz": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+    "sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "bytes": 1569232
+  },
+  "independent_audit": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "bytes": 17303,
+    "schema": "mixed93_saved_independent_audit.v1",
+    "accepted_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED"
+  },
+  "figure": {
+    "cases": [
+      "pure_I",
+      "pure_II",
+      "pure_III",
+      "mixed_70_40_100"
+    ],
+    "common_offgrid_rows": 128,
+    "exact_stress_key_suffix": "offgrid_exact_stress",
+    "solution_stress_key_suffix": "offgrid_solution_stress_Pa",
+    "voigt_order": [
+      "sxx",
+      "syy",
+      "szz",
+      "sxy",
+      "syz",
+      "sxz"
+    ],
+    "tensor_frobenius_shear_weight": 2,
+    "metric": "full stress tensor relative L2",
+    "panels": "one 2x2 scatter figure with identity line per case",
+    "interpolation": false,
+    "output_count_max": 1,
+    "output_bytes_max": 2097152
+  },
+  "authorized_by": "ROOT",
+  "authorized_utc": "2026-10-06 14:19:29 UTC"
+}
