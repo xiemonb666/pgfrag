@@ -1,0 +1,91 @@
+{
+  "schema": "full3d_consistent_mass_replay_case.v1",
+  "case_id": "modeiii_pu_full3d_consistent_mass_replay_20261006",
+  "status": "SOURCE_ONLY_WAITING_FOR_ROOT_AUTHORIZATION",
+  "classification": "NOT_MATERIAL_CALIBRATED",
+  "purpose": "cached-array consistent full-vector mass-matrix diagnostic for the fixed 3-D enriched operator replay",
+  "input": {
+    "operator_case_id": "modeiii_pu_full3d_elastic_operator_20261006",
+    "path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "schema": "static_solve_replay.v1",
+    "source_pins_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "maximum_bytes": 8388608
+  },
+  "physical_model": {
+    "density_kg_per_m3": 1.0,
+    "density_role": "fixed toy diagnostic only; not calibrated material data",
+    "coordinates": "m",
+    "volume_weights": "m^3",
+    "basis_values": "dimensionless",
+    "mass_matrix": "kg",
+    "formula": "M[(i,a),(j,b)] = rho * sum_q N_i(x_q) * N_j(x_q) * w_q * delta_ab"
+  },
+  "dofs": {
+    "source_count": 27,
+    "source_ids": "node-000 through node-026 in source-major order",
+    "scalar_basis_rows": 54,
+    "scalar_basis_row_order": "source-major, BASE then FRONT_F1_UNSHIFTED",
+    "semantic_dofs": 162,
+    "components": ["ux", "uy", "uz"],
+    "basis_kinds": ["base", "front_f1_unshifted"],
+    "component_basis_mapping": "use registry.ordered_keys and basis_row_ids; never infer slots from array position alone"
+  },
+  "quadrature": {
+    "volume_point_count": 256,
+    "all_replay_point_count": 384,
+    "volume_region_slice_half_open": [0, 256],
+    "volume_weights_must_be_finite_and_positive": true,
+    "analytic_domain": "cylinder x^2+y^2<=R^2, -L/2<=z<=L/2",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "volume_m3": "integrate only saved volume_weights_m3; do not regenerate quadrature"
+  },
+  "checks": {
+    "symmetry_relative_tolerance": 1e-12,
+    "component_block_relative_tolerance": 1e-12,
+    "scaled_spectrum_zero_tolerance_relative": 1e-12,
+    "expected_mass_zero_modes": 0,
+    "expected_mass_positive_modes": 162,
+    "scale_spectrum_by": "rho * sum(saved volume_weights_m3), in kg",
+    "rigid_reconstruction_scaled_abs_tolerance": 1e-8,
+    "rigid_kinetic_form_relative_tolerance": 1e-8,
+    "translation_mass_relative_tolerance": 1e-10,
+    "rotation_inertia_relative_tolerance": 1e-10,
+    "fixed_cylinder_volume_relative_tolerance": 1e-12,
+    "source_centroid_tolerance_m": 1e-12,
+    "negative_or_near_zero_eigenvalue_action": "BLOCK; do not tune basis, quadrature, density, or matrix",
+    "matrix_repair_allowed": false,
+    "row_sum_lumping_allowed": false,
+    "ridge_or_pseudoinverse_allowed": false,
+    "rigid_translation_reference": "rho * independently summed volume weights",
+    "rigid_rotation_reference": "independent volume-quadrature integral of rigid velocity fields about the saved source centroid",
+    "analytic_solid_cylinder_inertia_comparison": true,
+    "all_six_rigid_mode_kinetic_forms": true,
+    "future_cholesky_check": "attempt NumPy Cholesky on the positively scaled raw matrix only after the unmodified spectrum gate passes"
+  },
+  "execution": {
+    "authorized": true,
+    "subprocess_attempts": 1,
+    "maximum_wall_seconds": 10,
+    "maximum_result_json_bytes": 8388608,
+    "maximum_numeric_array_bytes": 8388608,
+    "no_network": true,
+    "no_solver": true,
+    "no_cad": true,
+    "no_mls_or_provider_calls": true,
+    "no_operator_reassembly": true,
+    "no_field_reference_imports": true,
+    "outputs": [
+      "pgfrag/tmp/review_20261006/full3d_consistent_mass_replay_20261006/run01/mass_result.json",
+      "pgfrag/tmp/review_20261006/full3d_consistent_mass_replay_20261006/run01/mass_matrix.csv"
+    ],
+    "overwrite_existing_outputs": false
+  },
+  "limitations": [
+    "rho=1 kg/m^3 is a toy scale for checking coefficient and quadrature consistency; it is not a material calibration",
+    "the replay arrays are consumed as saved; this reader performs no MLS evaluation, assembly, or field reconstruction by an external provider",
+    "a stable mass matrix does not establish stiffness stability, fracture validity, or material qualification",
+    "negative or near-zero mass eigenvalues fail the diagnostic without regularization or basis changes"
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schema": "full3d_static_solve_bridge_run_record.v1",
+  "case_id": "modeiii_pu_full3d_static_solve_bridge_20261006",
+  "status": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+  "run_invoked": true,
+  "execution": {
+    "saved_result_readback": true,
+    "provider_invoked": false,
+    "operator_assembled": false,
+    "spectrum_computed": true,
+    "direct_solver_called": true,
+    "cad_invoked": false,
+    "tests_run": false,
+    "git_invoked": false,
+    "input_loaded": true,
+    "numpy_imported": true
+  },
+  "saved_result_contract_readback": {
+    "method": "stdlib read-only full wire-schema/status/unit/shape/semantic audit of the pinned JSON before run02; numerical processing only occurred in the separately recorded run02 child",
+    "byte_count": 4661989,
+    "schema": "modeiii_pu_full3d_operator_diagnostic.v1",
+    "replay_schema": "static_solve_replay.v1",
+    "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "assembly_status": "OK",
+    "mechanical_eligibility": "DIAGNOSTIC_PASS_UNQUALIFIED",
+    "provider_and_field_statuses": "all 384 rows OK; batches 256 and 128",
+    "spectrum_gate": "6 rigid, 156 positive, 0 significant negative"
+  },
+  "source_freeze": {
+    "status": "RUN02_PINS_MATCHED_PRE_AND_POST",
+    "bridge_source_sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5",
+    "bridge_case_sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728",
+    "saved_input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "interpreter_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+    "upstream_source_pin_manifest": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "upstream_source_pin_manifest_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "operator_entrypoint_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a"
+  },
+  "saved_result": {
+    "path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "bytes": 4661989
+  },
+  "result_artifacts": [
+    {
+      "path": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run02/static_solve_bridge_result.json",
+      "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+      "bytes": 129942
+    }
+  ],
+  "single_attempt_budget": {
+    "unique_locations_total": 384,
+    "provider_queries_in_run02": 0,
+    "additional_locations": 0,
+    "kkt_solve_attempts_authorized": 1,
+    "kkt_solve_attempts_used": 1,
+    "kkt_solve_attempts_remaining": 0,
+    "bridge_process_attempts_used": 2,
+    "run01_blocked_before_spectrum_or_solve": true,
+    "wall_seconds_max": 60,
+    "outer_wall_seconds": 0.7541543,
+    "child_wall_seconds": 0.547,
+    "explicit_numeric_array_bytes_max": 8388608,
+    "explicit_numeric_array_bytes_estimated": 2327640,
+    "result_bytes_max": 8388608,
+    "result_bytes": 129942
+  },
+  "run_artifacts": {
+    "directory": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run02",
+    "outer_execution_receipt": {
+      "path": "outer_execution_receipt.json",
+      "sha256": "e9589175cbe76739c75d04e56a774aff032a85b80a52300640c2ffc0afde1296"
+    },
+    "inner_child_receipt": {
+      "path": "run_receipt.json",
+      "sha256": "1786bc8cf81e5a2c5fb87b2af83979a0b736c42f207d350e300d19c7e5aa356f"
+    },
+    "primary_result": {
+      "path": "static_solve_bridge_result.json",
+      "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+      "bytes": 129942
+    },
+    "outer_stdout": {
+      "path": "outer_stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "outer_stderr": {
+      "path": "outer_stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "child_stdout": {
+      "path": "child_stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "child_stderr": {
+      "path": "child_stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "run01_failure": {
+    "stage": "pre-solve saved semantic registry validation",
+    "reason": "saved semantic registry dimensions or uniqueness are invalid",
+    "child_return_code": 2,
+    "child_elapsed_seconds": 0.21800000010989606,
+    "outer_return_code": 2,
+    "outer_elapsed_seconds": 0.3871725,
+    "primary_result_path": null,
+    "stage_result_path": null,
+    "source_case_input_interpreter_pins_unchanged": true,
+    "note": "No K spectrum analysis, KKT solve, provider query, or operator assembly occurred. The bridge reads basis_row_ids from replay.registry, while the pinned producer stores it at replay.basis_row_ids."
+  },
+  "run01_artifacts": {
+    "directory": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run01",
+    "outer_execution_receipt": {
+      "path": "outer_execution_receipt.json",
+      "sha256": "b48282c2325c6982f7e04b0523bed3a96b1f3f5cef16d8e0556af8db6b98bcfa"
+    },
+    "inner_child_receipt": {
+      "path": "run_receipt.json",
+      "sha256": "c0aa65d49dfa59f3f99a32d2ad3fda781d3639a882785136ea23ee6d5f8a17e1"
+    },
+    "stdout": {
+      "path": "outer_stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "outer_stderr.bin",
+      "bytes": 167,
+      "sha256": "5ffc5c6c505ec8a989eee357354513e797cd9bccf73662056fe42fb7e8edd20d"
+    },
+    "child_stdout": {
+      "path": "child_stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "child_stderr": {
+      "path": "child_stderr.bin",
+      "bytes": 178,
+      "sha256": "5e50d26f6582c306f41cddd02ce91a579ffc29d7272062f16c8254af85e089bd"
+    }
+  },
+  "run01_source_freeze": {
+    "status": "PINS_UNCHANGED_ACROSS_BLOCKED_ATTEMPT",
+    "bridge_source_sha256": "cb9e802bfbb25d0a5ae9dbbaf67952dfd71fb64757f35e2765da79f838c5be5f",
+    "bridge_case_sha256": "59e853f28f8ed194c21982f08183306a492ba8b594f91c3f54fdde05443e825e",
+    "upstream_source_pin_manifest": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "upstream_source_pin_manifest_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "operator_entrypoint_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a"
+  },
+  "run02_numeric_summary": {
+    "status": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "method": "single direct np.linalg.solve on 168x168 scaled KKT; raw K/C/f/g retained",
+    "near_zero_modes": 6,
+    "positive_modes": 156,
+    "significant_negative_modes": 0,
+    "strict_negative_roundoff_modes": 4,
+    "g_target_m": [
+      0.0,
+      0.0,
+      4.9617799651254685E-22,
+      5.031213792347516E-06,
+      -3.6158720393626896E-23,
+      0.0
+    ],
+    "lagrange_multipliers_N": [
+      -7.137658377483461E-17,
+      -7.08527154020181E-17,
+      1.5523423310444715E-16,
+      8.419692388747909E-16,
+      -4.838325803462077E-16,
+      -7.473355265604698E-17
+    ],
+    "weak_residual_norm_N": 1.7026616129226604E-16,
+    "weak_residual_relative": 8.93145062547184E-16,
+    "gauge_residual_norm_m": 5.345518284631652E-21,
+    "gauge_residual_relative": 1.0624709076688799E-15,
+    "saddle_backward_residual_relative": 1.72032856734902E-15,
+    "strain_energy_U_J": 1.3133527026982052E-06,
+    "external_work_W_J": 2.626705405396418E-06,
+    "g_dot_lambda_J": 4.236127247359188E-21,
+    "energy_identity_defect_2U_minus_W_plus_g_dot_lambda_J": -3.387169277929515E-21,
+    "rigid_work_N_or_Nm": [
+      1.0408340855860843E-17,
+      -1.214306433183765E-17,
+      1.214306433183765E-17,
+      2.6495190590114515E-18,
+      6.393308007845436E-20,
+      -7.970524382971776E-20
+    ],
+    "total_boundary_force_N": [
+      -1.734723475976807E-18,
+      -5.1580918355997873E-17,
+      4.119968255444917E-18
+    ],
+    "total_boundary_moment_origin_Nm": [
+      2.1984740145985365E-18,
+      -2.710505431213761E-20,
+      2.5622746654442585E-19
+    ],
+    "max_relative_volume_displacement_error": 0.018976245928555274,
+    "max_relative_volume_strain_error": 0.0531212575616636,
+    "offgrid_queries_added": 0,
+    "operator_assembled": false,
+    "provider_invoked": false,
+    "pseudoinverse_or_ridge_used": false,
+    "load_projection_or_equilibrium_repair_used": false,
+    "eigenvalue_truncation_used": false,
+    "rigid_mode_order": [
+      "tx",
+      "ty",
+      "tz",
+      "rx",
+      "ry",
+      "rz"
+    ],
+    "total_boundary_moment_rigid_center_Nm": [
+      2.1984740145985365E-18,
+      -2.710505431213761E-20,
+      2.5622746654442585E-19
+    ],
+    "boundary_wrench_by_region": {
+      "side": {
+        "force_N": [
+          0.0,
+          0.0,
+          4.119968255444917E-18
+        ],
+        "moment_about_origin_Nm": [
+          0.0010638460810704867,
+          -2.795208725939191E-20,
+          0.0
+        ]
+      },
+      "top": {
+        "force_N": [
+          1.734723475976807E-18,
+          0.10638460810704842,
+          0.0
+        ],
+        "moment_about_origin_Nm": [
+          -0.0005319230405352422,
+          0.0,
+          0.0006383076486422904
+        ]
+      },
+      "bottom": {
+        "force_N": [
+          -1.734723475976807E-18,
+          -0.10638460810704842,
+          0.0
+        ],
+        "moment_about_origin_Nm": [
+          -0.0005319230405352422,
+          0.0,
+          -0.0006383076486422904
+        ]
+      }
+    }
+  }
+}

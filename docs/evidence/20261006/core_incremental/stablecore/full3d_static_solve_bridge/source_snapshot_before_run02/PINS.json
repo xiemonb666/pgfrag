@@ -1,0 +1,10 @@
+{
+  "schema": "full3d_static_solve_bridge_pre_run02_snapshot.v1",
+  "source_sha256": "cb9e802bfbb25d0a5ae9dbbaf67952dfd71fb64757f35e2765da79f838c5be5f",
+  "case_sha256": "59e853f28f8ed194c21982f08183306a492ba8b594f91c3f54fdde05443e825e",
+  "run01_source_sha256": "cb9e802bfbb25d0a5ae9dbbaf67952dfd71fb64757f35e2765da79f838c5be5f",
+  "run01_case_sha256": "59e853f28f8ed194c21982f08183306a492ba8b594f91c3f54fdde05443e825e",
+  "run01_input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+  "run01_outer_receipt_sha256": "b48282c2325c6982f7e04b0523bed3a96b1f3f5cef16d8e0556af8db6b98bcfa",
+  "run01_child_receipt_sha256": "c0aa65d49dfa59f3f99a32d2ad3fda781d3639a882785136ea23ee6d5f8a17e1"
+}
