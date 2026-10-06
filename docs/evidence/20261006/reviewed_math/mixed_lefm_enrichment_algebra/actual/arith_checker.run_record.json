@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETED",
+  "requested_alias": "VFpython",
+  "actual_argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "arith_checker.py"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed_lefm_enrichment_algebra_20261006",
+  "started_utc": "2026-10-06T08:25:39.7461907+00:00",
+  "elapsed_seconds": 0.107323,
+  "timeout_seconds": 10,
+  "timed_out": false,
+  "return_code": 0,
+  "stdout_file": "arith_checker.stdout.txt",
+  "stderr_file": "arith_checker.stderr.txt",
+  "stdout_bytes_utf8": 397,
+  "stderr_bytes_utf8": 0,
+  "output_limit_bytes": 8388608,
+  "pre_run_sha256": {
+    "pgfrag/experiments/mixed_lefm_enrichment_algebra_20261006/mixed_enrichment_algebra.py": "466D0C01445F497E46A49314A03E89E92C62A204A9665CF01C3D2005F2DC99E3",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/arith_checker.py": "9C84E09CCC4CCE9C999410AE61F50D7FB0DEEDC3EB697CB4CD5CF0FBB182DE0D",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/FUTURE_TINY_VALIDATION_BUDGET.json": "FDA966CE27C94159EA0DBC5277D0E83F9DD4A362745CF99687B9D5680B31073D",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/SOURCE_PINS.json": "E33846F88869A42E0F1E0675F982DE5D14A85C3E82162EA76A178709168B2DCF"
+  },
+  "post_run_sha256": {
+    "pgfrag/experiments/mixed_lefm_enrichment_algebra_20261006/mixed_enrichment_algebra.py": "466D0C01445F497E46A49314A03E89E92C62A204A9665CF01C3D2005F2DC99E3",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/arith_checker.py": "9C84E09CCC4CCE9C999410AE61F50D7FB0DEEDC3EB697CB4CD5CF0FBB182DE0D",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/FUTURE_TINY_VALIDATION_BUDGET.json": "FDA966CE27C94159EA0DBC5277D0E83F9DD4A362745CF99687B9D5680B31073D",
+    "pgfrag/tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/SOURCE_PINS.json": "E33846F88869A42E0F1E0675F982DE5D14A85C3E82162EA76A178709168B2DCF"
+  },
+  "pre_post_pins_match": true
+}

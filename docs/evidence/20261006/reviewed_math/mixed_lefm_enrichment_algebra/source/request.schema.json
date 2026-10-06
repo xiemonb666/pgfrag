@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shardforge.local/pgfrag/mixed-lefm-enrichment-algebra/request.schema.json",
+  "title": "Mixed LEFM enriched-shape row request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_ids",
+    "base_values",
+    "base_gradients_world_per_m",
+    "axes_world_from_local",
+    "reference_length_m"
+  ],
+  "oneOf": [
+    {
+      "required": ["point_world_m", "tip_world_m"],
+      "not": { "required": ["local_point_from_tip_m"] }
+    },
+    {
+      "required": ["local_point_from_tip_m"],
+      "not": { "anyOf": [{ "required": ["point_world_m"] }, { "required": ["tip_world_m"] }] }
+    }
+  ],
+  "properties": {
+    "point_world_m": { "$ref": "#/$defs/vector3_m" },
+    "local_point_from_tip_m": {
+      "$ref": "#/$defs/vector3_m",
+      "description": "Exact local crack-frame query relative to the tip; use this to preserve y=0 for explicit branch-face traces in a rotated frame."
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 27,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" },
+      "description": "Stable IDs aligned row-wise with the base arrays; output rows are sorted by ID."
+    },
+    "base_values": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 27,
+      "items": { "type": "number" },
+      "description": "Dimensionless base shape N_i, one per source_id."
+    },
+    "base_gradients_world_per_m": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 27,
+      "items": { "$ref": "#/$defs/vector3_per_m" },
+      "description": "World-frame analytic gradient of N_i, one per source_id."
+    },
+    "tip_world_m": { "$ref": "#/$defs/vector3_m" },
+    "axes_world_from_local": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/vector3_dimensionless" },
+      "description": "3x3 row-major Q; columns are local crack axes expressed in world xyz. Must be proper orthonormal with determinant +1."
+    },
+    "reference_length_m": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "minimum": 1e-9,
+      "maximum": 1000,
+      "description": "R in F=sqrt(r/R) h(theta)."
+    },
+    "branch_trace": {
+      "enum": ["upper", "lower"],
+      "description": "Required only when the local point is exactly x<0,y=0; selects theta=+pi or -pi."
+    }
+  },
+  "$defs": {
+    "vector3_m": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "vector3_per_m": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "vector3_dimensionless": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": { "type": "number" }
+    }
+  },
+  "$comment": "Supply either point_world_m plus tip_world_m or local_point_from_tip_m, never both. base_values and base_gradients_world_per_m must each have exactly len(source_ids) rows. Frame orthonormality, proper orientation, finite values, exact-cut trace requirements, and front singularity are checked by the implementation."
+}

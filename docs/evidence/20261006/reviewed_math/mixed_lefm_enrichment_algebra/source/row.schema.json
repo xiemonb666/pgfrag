@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shardforge.local/pgfrag/mixed-lefm-enrichment-algebra/row.schema.json",
+  "title": "Mixed LEFM enriched-shape row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "source_ids", "coefficient_ids", "contributions", "branch_values", "branch_gradients_world_per_m", "theta_rad", "diagnostic"],
+  "properties": {
+    "status": { "enum": ["OK", "UNKNOWN_FRONT", "UNKNOWN_BRANCH_FACE"] },
+    "source_ids": { "type": "array", "minItems": 1, "maxItems": 27, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "coefficient_ids": { "type": "array", "maxItems": 405, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "contributions": { "type": "array", "maxItems": 405, "items": { "$ref": "#/$defs/contribution" } },
+    "branch_values": { "oneOf": [{ "$ref": "#/$defs/branches" }, { "type": "null" }] },
+    "branch_gradients_world_per_m": { "oneOf": [{ "$ref": "#/$defs/branch_gradients" }, { "type": "null" }] },
+    "theta_rad": { "type": ["number", "null"] },
+    "diagnostic": { "type": ["string", "null"] }
+  },
+  "$defs": {
+    "vector3": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } },
+    "bcolumn6": { "type": "array", "minItems": 6, "maxItems": 6, "items": { "type": "number" } },
+    "branches": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "number" } },
+    "branch_gradients": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/vector3" } },
+    "contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_id", "source_id", "component", "basis_kind", "basis_index", "shape_value", "shape_gradient_world_per_m", "B_column_per_m"],
+      "properties": {
+        "semantic_id": { "type": "string", "minLength": 1 },
+        "source_id": { "type": "string", "minLength": 1 },
+        "component": { "enum": ["ux", "uy", "uz"] },
+        "basis_kind": { "enum": ["base", "front_branch"] },
+        "basis_index": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "shape_value": { "type": "number" },
+        "shape_gradient_world_per_m": { "$ref": "#/$defs/vector3" },
+        "B_column_per_m": { "$ref": "#/$defs/bcolumn6" }
+      },
+      "allOf": [
+        { "if": { "properties": { "basis_kind": { "const": "base" } } }, "then": { "properties": { "basis_index": { "const": 0 } } } },
+        { "if": { "properties": { "basis_kind": { "const": "front_branch" } } }, "then": { "properties": { "basis_index": { "minimum": 1 } } } }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "OK" } } },
+      "then": {
+        "properties": {
+          "contributions": { "minItems": 15 },
+          "branch_values": { "$ref": "#/$defs/branches" },
+          "branch_gradients_world_per_m": { "$ref": "#/$defs/branch_gradients" },
+          "theta_rad": { "type": "number" },
+          "diagnostic": { "type": "null" }
+        }
+      },
+      "else": {
+        "properties": {
+          "coefficient_ids": { "maxItems": 0 },
+          "contributions": { "maxItems": 0 },
+          "branch_values": { "type": "null" },
+          "branch_gradients_world_per_m": { "type": "null" },
+          "theta_rad": { "type": "null" },
+          "diagnostic": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ],
+  "$comment": "OK rows contain exactly 15 * len(source_ids) contributions and matching IDs. Contributions are ordered source-ID, base/branch index, then ux/uy/uz."
+}

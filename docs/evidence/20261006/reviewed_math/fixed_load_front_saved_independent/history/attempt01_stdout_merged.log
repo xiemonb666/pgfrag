@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261006\fixed_load_front_saved_independent\audit_fixed_load_front_saved_arrays.py", line 217, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261006\fixed_load_front_saved_independent\audit_fixed_load_front_saved_arrays.py", line 69, in main
+    young, nu = float(mat["young_modulus_Pa"]), float(mat["poisson_ratio"]); mu, lame = float(mat["mu_Pa"]), float(mat["lambda_Pa"])
+                                                                                        ^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'E/(2*(1+nu))'
