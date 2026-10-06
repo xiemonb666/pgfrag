@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "kind": "toy mathematical checks only; not vessel/physical validation",
+  "assembly_calls": 17,
+  "scalar_updates_in_assembly": 11,
+  "scalar_traction_calls": 11,
+  "direct_scalar_history_preparation_calls": 1,
+  "main_qp_count": 1,
+  "oversize_rejection_qps": 17,
+  "oversize_rejection_nodes": 13,
+  "fd_branches": {
+    "elastic": {
+      "max_abs_error_n_per_m": 2.3282470703125,
+      "reference_max_abs_n_per_m": 1000000000000.0,
+      "predeclared_limit_n_per_m": 20000050.0
+    },
+    "soft": {
+      "max_abs_error_n_per_m": 0.0001220703125,
+      "reference_max_abs_n_per_m": 999999999999.9999,
+      "predeclared_limit_n_per_m": 20000050.0
+    },
+    "unload": {
+      "max_abs_error_n_per_m": 0.77606201171875,
+      "reference_max_abs_n_per_m": 333333333333.33325,
+      "predeclared_limit_n_per_m": 6666716.666666666
+    }
+  },
+  "baseline": {
+    "elastic": {
+      "opening_m": 4.000000000000001e-06,
+      "traction_pa": 4000000.0000000005,
+      "k_alg_pa_per_m": 1000000000000.0,
+      "stored_energy_j": 16.000000000000004,
+      "dissipated_energy_j": 0.0,
+      "external_work_j": 16.000000000000004
+    },
+    "soft": {
+      "opening_m": 1.5000000000000002e-05,
+      "traction_pa": 4999999.999999999,
+      "k_alg_pa_per_m": -999999999999.9999,
+      "stored_energy_j": 75.0,
+      "dissipated_energy_j": 100.00000000000003,
+      "external_work_j": 175.00000000000003
+    },
+    "unload": {
+      "opening_m": 7e-06,
+      "traction_pa": 2333333.3333333326,
+      "k_alg_pa_per_m": 333333333333.33325,
+      "stored_energy_j": 16.33333333333333,
+      "dissipated_energy_j": 100.00000000000003,
+      "external_work_j": 116.33333333333336
+    }
+  },
+  "soft_action_reaction_max_residual_n": 0.0,
+  "soft_paired_torque_max_residual_nm": 0.0,
+  "fully_broken": {
+    "opening_m": 2.2000000000000003e-05,
+    "stored_energy_j": 0.0,
+    "dissipated_energy_j": 200.0,
+    "external_work_j": 200.00000000000003,
+    "expected_gc_energy_j": 200.0,
+    "energy_ledger_abs_residual_j": 2.842170943040401e-14,
+    "action_reaction_max_residual_n": 0.0,
+    "torque_max_residual_nm": 0.0
+  },
+  "fd_step_m": 1e-10,
+  "fd_atol_n_per_m": 50.0,
+  "fd_rtol": 2e-05,
+  "force_abs_tol_n": 1e-12,
+  "force_rel_tol": 1e-10,
+  "moment_abs_tol_nm": 1e-12,
+  "moment_rel_tol": 1e-10,
+  "energy_atol_j": 1e-10,
+  "energy_rtol": 1e-12,
+  "budget_s": 10.0,
+  "elapsed_s": 0.00434689992107451
+}

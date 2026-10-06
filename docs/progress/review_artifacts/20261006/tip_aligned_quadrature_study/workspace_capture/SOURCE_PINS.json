@@ -1,0 +1,31 @@
+{
+  "schema": "tip_aligned_quadrature_study_source_pins.v1",
+  "status": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+  "execution_authorized": false,
+  "study_sources": {
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/tip_aligned_quadrature_study.py": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/study_case.json": "b67108d15a26f702673e151e1fab4d47fd203b34eb22711baabe1fcce37015e5",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/README.md": "65e40ecfc7372ada5f81aaad0cb2de179ba6cfe8e72a15955c33fc5b35d18208"
+  },
+  "immutable_inputs": {
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+    "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "source_check": {
+    "command": "python.exe -B pgfrag/experiments/tip_aligned_quadrature_study_20261006/tip_aligned_quadrature_study.py --source-check",
+    "result": "SOURCE_CHECK_OK_NO_NUMERICAL_IMPORTS",
+    "requested_rows_max": 4992,
+    "raw_batch_upper_bound": 20,
+    "cached_row_basis_contract": "AST_VERIFIED",
+    "mechanical_spectrum_contract": "AST_VERIFIED",
+    "numerical_execution": "NOT_RUN"
+  },
+  "review_note_sha256": "266c127cd2934aedf7b531569da37c65382c249a3bfdf064620a61bcb5df34d1"
+}

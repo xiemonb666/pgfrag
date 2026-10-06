@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "render_executed_once": true,
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_interface_assembly_20261006\\render_numeric_diagnostics.py",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\cohesive_interface_assembly_20261006\\focused_run01\\numeric_result.json",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\cohesive_interface_assembly_20261006\\focused_run01\\render_only\\toy_numeric_diagnostic.png"
+  ],
+  "timeout_seconds": 20.0,
+  "real_return_code": 0,
+  "timed_out": false,
+  "elapsed_seconds": 1.0011603001039475,
+  "stdout_bytes": 152,
+  "stderr_bytes": 0,
+  "combined_raw_output_under_2_mib": true,
+  "raw_stdout_file": "raw.stdout.bin",
+  "raw_stderr_file": "raw.stderr.bin",
+  "png_file": "toy_numeric_diagnostic.png",
+  "png_bytes": 108968,
+  "png_sha256": "72e60e1bd9a748d9be2276a40a78cf96d5424080e4562d07b3febd54244eb30d",
+  "png_under_2_mib": true,
+  "pins_before": {
+    "assembly": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "checker": "5dc47e90f7bde645854cd8333c177e52f5d0fbab118477f4990eb215b1b5e577",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "render_script": "e34428618dacb0b1e675ef5d1e0955de77b67a210c3aaa9cb1c0cfcf12315d35",
+    "numeric_result": "6ee6cee7fef6f9534050a4ad3bb6cd6a3e4def54927895c52f6286b3ee16009b"
+  },
+  "pins_after": {
+    "assembly": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "checker": "5dc47e90f7bde645854cd8333c177e52f5d0fbab118477f4990eb215b1b5e577",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "render_script": "e34428618dacb0b1e675ef5d1e0955de77b67a210c3aaa9cb1c0cfcf12315d35",
+    "numeric_result": "6ee6cee7fef6f9534050a4ad3bb6cd6a3e4def54927895c52f6286b3ee16009b"
+  },
+  "pins_unchanged": true
+}

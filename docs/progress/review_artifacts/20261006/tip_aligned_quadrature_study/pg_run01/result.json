@@ -1,0 +1,2902 @@
+{
+  "schema": "tip_aligned_full3d_quadrature_study_result.v1",
+  "case_id": "tip_aligned_full3d_quadrature_study_20261006",
+  "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+  "classification": "SYNTHETIC_MODE_III_ENGINEERING_BENCHMARK_NOT_CERAMIC_MATERIAL",
+  "assembly_status": "OK",
+  "mechanical_eligibility": "SPECTRUM_GATE_PASSED",
+  "solve_allowed": true,
+  "study_case_sha256": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d",
+  "source_sha256": {
+    "driver": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "full3d_cracked_elastic_operator.py": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+    "mls_full3d_enriched_provider.py": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+    "fixed_case.json": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+    "prior_result.json": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "registry": {
+    "source_ids": [
+      "node-000",
+      "node-001",
+      "node-002",
+      "node-003",
+      "node-004",
+      "node-005",
+      "node-006",
+      "node-007",
+      "node-008",
+      "node-009",
+      "node-010",
+      "node-011",
+      "node-012",
+      "node-013",
+      "node-014",
+      "node-015",
+      "node-016",
+      "node-017",
+      "node-018",
+      "node-019",
+      "node-020",
+      "node-021",
+      "node-022",
+      "node-023",
+      "node-024",
+      "node-025",
+      "node-026"
+    ],
+    "ordered_canonical_ids": [
+      "[\"node-000\",\"ux\",\"base\",0]",
+      "[\"node-000\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-000\",\"uy\",\"base\",0]",
+      "[\"node-000\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-000\",\"uz\",\"base\",0]",
+      "[\"node-000\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-001\",\"ux\",\"base\",0]",
+      "[\"node-001\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-001\",\"uy\",\"base\",0]",
+      "[\"node-001\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-001\",\"uz\",\"base\",0]",
+      "[\"node-001\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-002\",\"ux\",\"base\",0]",
+      "[\"node-002\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-002\",\"uy\",\"base\",0]",
+      "[\"node-002\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-002\",\"uz\",\"base\",0]",
+      "[\"node-002\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-003\",\"ux\",\"base\",0]",
+      "[\"node-003\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-003\",\"uy\",\"base\",0]",
+      "[\"node-003\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-003\",\"uz\",\"base\",0]",
+      "[\"node-003\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-004\",\"ux\",\"base\",0]",
+      "[\"node-004\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-004\",\"uy\",\"base\",0]",
+      "[\"node-004\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-004\",\"uz\",\"base\",0]",
+      "[\"node-004\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-005\",\"ux\",\"base\",0]",
+      "[\"node-005\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-005\",\"uy\",\"base\",0]",
+      "[\"node-005\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-005\",\"uz\",\"base\",0]",
+      "[\"node-005\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-006\",\"ux\",\"base\",0]",
+      "[\"node-006\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-006\",\"uy\",\"base\",0]",
+      "[\"node-006\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-006\",\"uz\",\"base\",0]",
+      "[\"node-006\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-007\",\"ux\",\"base\",0]",
+      "[\"node-007\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-007\",\"uy\",\"base\",0]",
+      "[\"node-007\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-007\",\"uz\",\"base\",0]",
+      "[\"node-007\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-008\",\"ux\",\"base\",0]",
+      "[\"node-008\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-008\",\"uy\",\"base\",0]",
+      "[\"node-008\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-008\",\"uz\",\"base\",0]",
+      "[\"node-008\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-009\",\"ux\",\"base\",0]",
+      "[\"node-009\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-009\",\"uy\",\"base\",0]",
+      "[\"node-009\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-009\",\"uz\",\"base\",0]",
+      "[\"node-009\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-010\",\"ux\",\"base\",0]",
+      "[\"node-010\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-010\",\"uy\",\"base\",0]",
+      "[\"node-010\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-010\",\"uz\",\"base\",0]",
+      "[\"node-010\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-011\",\"ux\",\"base\",0]",
+      "[\"node-011\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-011\",\"uy\",\"base\",0]",
+      "[\"node-011\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-011\",\"uz\",\"base\",0]",
+      "[\"node-011\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-012\",\"ux\",\"base\",0]",
+      "[\"node-012\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-012\",\"uy\",\"base\",0]",
+      "[\"node-012\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-012\",\"uz\",\"base\",0]",
+      "[\"node-012\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-013\",\"ux\",\"base\",0]",
+      "[\"node-013\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-013\",\"uy\",\"base\",0]",
+      "[\"node-013\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-013\",\"uz\",\"base\",0]",
+      "[\"node-013\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-014\",\"ux\",\"base\",0]",
+      "[\"node-014\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-014\",\"uy\",\"base\",0]",
+      "[\"node-014\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-014\",\"uz\",\"base\",0]",
+      "[\"node-014\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-015\",\"ux\",\"base\",0]",
+      "[\"node-015\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-015\",\"uy\",\"base\",0]",
+      "[\"node-015\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-015\",\"uz\",\"base\",0]",
+      "[\"node-015\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-016\",\"ux\",\"base\",0]",
+      "[\"node-016\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-016\",\"uy\",\"base\",0]",
+      "[\"node-016\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-016\",\"uz\",\"base\",0]",
+      "[\"node-016\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-017\",\"ux\",\"base\",0]",
+      "[\"node-017\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-017\",\"uy\",\"base\",0]",
+      "[\"node-017\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-017\",\"uz\",\"base\",0]",
+      "[\"node-017\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-018\",\"ux\",\"base\",0]",
+      "[\"node-018\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-018\",\"uy\",\"base\",0]",
+      "[\"node-018\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-018\",\"uz\",\"base\",0]",
+      "[\"node-018\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-019\",\"ux\",\"base\",0]",
+      "[\"node-019\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-019\",\"uy\",\"base\",0]",
+      "[\"node-019\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-019\",\"uz\",\"base\",0]",
+      "[\"node-019\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-020\",\"ux\",\"base\",0]",
+      "[\"node-020\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-020\",\"uy\",\"base\",0]",
+      "[\"node-020\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-020\",\"uz\",\"base\",0]",
+      "[\"node-020\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-021\",\"ux\",\"base\",0]",
+      "[\"node-021\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-021\",\"uy\",\"base\",0]",
+      "[\"node-021\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-021\",\"uz\",\"base\",0]",
+      "[\"node-021\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-022\",\"ux\",\"base\",0]",
+      "[\"node-022\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-022\",\"uy\",\"base\",0]",
+      "[\"node-022\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-022\",\"uz\",\"base\",0]",
+      "[\"node-022\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-023\",\"ux\",\"base\",0]",
+      "[\"node-023\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-023\",\"uy\",\"base\",0]",
+      "[\"node-023\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-023\",\"uz\",\"base\",0]",
+      "[\"node-023\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-024\",\"ux\",\"base\",0]",
+      "[\"node-024\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-024\",\"uy\",\"base\",0]",
+      "[\"node-024\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-024\",\"uz\",\"base\",0]",
+      "[\"node-024\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-025\",\"ux\",\"base\",0]",
+      "[\"node-025\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-025\",\"uy\",\"base\",0]",
+      "[\"node-025\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-025\",\"uz\",\"base\",0]",
+      "[\"node-025\",\"uz\",\"front_f1_unshifted\",1]",
+      "[\"node-026\",\"ux\",\"base\",0]",
+      "[\"node-026\",\"ux\",\"front_f1_unshifted\",1]",
+      "[\"node-026\",\"uy\",\"base\",0]",
+      "[\"node-026\",\"uy\",\"front_f1_unshifted\",1]",
+      "[\"node-026\",\"uz\",\"base\",0]",
+      "[\"node-026\",\"uz\",\"front_f1_unshifted\",1]"
+    ],
+    "ordered_keys": [
+      [
+        "node-000",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-000",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-000",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-000",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-000",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-000",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-001",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-001",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-001",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-001",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-001",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-001",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-002",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-002",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-002",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-002",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-002",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-002",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-003",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-003",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-003",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-003",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-003",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-003",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-004",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-004",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-004",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-004",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-004",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-004",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-005",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-005",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-005",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-005",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-005",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-005",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-006",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-006",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-006",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-006",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-006",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-006",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-007",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-007",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-007",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-007",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-007",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-007",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-008",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-008",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-008",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-008",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-008",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-008",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-009",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-009",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-009",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-009",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-009",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-009",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-010",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-010",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-010",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-010",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-010",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-010",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-011",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-011",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-011",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-011",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-011",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-011",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-012",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-012",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-012",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-012",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-012",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-012",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-013",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-013",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-013",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-013",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-013",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-013",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-014",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-014",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-014",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-014",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-014",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-014",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-015",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-015",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-015",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-015",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-015",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-015",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-016",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-016",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-016",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-016",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-016",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-016",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-017",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-017",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-017",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-017",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-017",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-017",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-018",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-018",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-018",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-018",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-018",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-018",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-019",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-019",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-019",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-019",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-019",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-019",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-020",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-020",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-020",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-020",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-020",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-020",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-021",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-021",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-021",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-021",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-021",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-021",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-022",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-022",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-022",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-022",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-022",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-022",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-023",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-023",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-023",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-023",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-023",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-023",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-024",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-024",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-024",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-024",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-024",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-024",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-025",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-025",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-025",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-025",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-025",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-025",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-026",
+        "ux",
+        "base",
+        0
+      ],
+      [
+        "node-026",
+        "ux",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-026",
+        "uy",
+        "base",
+        0
+      ],
+      [
+        "node-026",
+        "uy",
+        "front_f1_unshifted",
+        1
+      ],
+      [
+        "node-026",
+        "uz",
+        "base",
+        0
+      ],
+      [
+        "node-026",
+        "uz",
+        "front_f1_unshifted",
+        1
+      ]
+    ],
+    "basis_row_ids": [
+      [
+        "node-000",
+        "base"
+      ],
+      [
+        "node-000",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-001",
+        "base"
+      ],
+      [
+        "node-001",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-002",
+        "base"
+      ],
+      [
+        "node-002",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-003",
+        "base"
+      ],
+      [
+        "node-003",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-004",
+        "base"
+      ],
+      [
+        "node-004",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-005",
+        "base"
+      ],
+      [
+        "node-005",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-006",
+        "base"
+      ],
+      [
+        "node-006",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-007",
+        "base"
+      ],
+      [
+        "node-007",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-008",
+        "base"
+      ],
+      [
+        "node-008",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-009",
+        "base"
+      ],
+      [
+        "node-009",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-010",
+        "base"
+      ],
+      [
+        "node-010",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-011",
+        "base"
+      ],
+      [
+        "node-011",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-012",
+        "base"
+      ],
+      [
+        "node-012",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-013",
+        "base"
+      ],
+      [
+        "node-013",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-014",
+        "base"
+      ],
+      [
+        "node-014",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-015",
+        "base"
+      ],
+      [
+        "node-015",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-016",
+        "base"
+      ],
+      [
+        "node-016",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-017",
+        "base"
+      ],
+      [
+        "node-017",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-018",
+        "base"
+      ],
+      [
+        "node-018",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-019",
+        "base"
+      ],
+      [
+        "node-019",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-020",
+        "base"
+      ],
+      [
+        "node-020",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-021",
+        "base"
+      ],
+      [
+        "node-021",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-022",
+        "base"
+      ],
+      [
+        "node-022",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-023",
+        "base"
+      ],
+      [
+        "node-023",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-024",
+        "base"
+      ],
+      [
+        "node-024",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-025",
+        "base"
+      ],
+      [
+        "node-025",
+        "front_f1_unshifted"
+      ],
+      [
+        "node-026",
+        "base"
+      ],
+      [
+        "node-026",
+        "front_f1_unshifted"
+      ]
+    ],
+    "component_order": [
+      "ux",
+      "uy",
+      "uz"
+    ],
+    "basis_order": [
+      "base",
+      "front_f1_unshifted"
+    ]
+  },
+  "region_slices": {
+    "semantics": "half-open row slices local to each named side/cap cloud",
+    "side": [
+      0,
+      256
+    ],
+    "cap8_bottom": [
+      0,
+      128
+    ],
+    "cap8_top": [
+      128,
+      256
+    ],
+    "cap16_bottom": [
+      0,
+      256
+    ],
+    "cap16_top": [
+      256,
+      512
+    ]
+  },
+  "query_budget": {
+    "raw_requested_rows": 4992,
+    "unique_xyz_rows": 4224,
+    "exact_duplicate_rows_elided_before_provider": 768,
+    "provider_max_batch_rows": 256,
+    "provider_batches": [
+      {
+        "start": 0,
+        "stop": 256,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 256,
+        "stop": 512,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 512,
+        "stop": 768,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 768,
+        "stop": 1024,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 1024,
+        "stop": 1280,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 1280,
+        "stop": 1536,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 1536,
+        "stop": 1792,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 1792,
+        "stop": 2048,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 2048,
+        "stop": 2304,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 2304,
+        "stop": 2560,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 2560,
+        "stop": 2816,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 2816,
+        "stop": 3072,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 3072,
+        "stop": 3328,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 3328,
+        "stop": 3584,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 3584,
+        "stop": 3840,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 3840,
+        "stop": 4096,
+        "count": 256,
+        "mls_status": "OK",
+        "field_status": "OK"
+      },
+      {
+        "start": 4096,
+        "stop": 4224,
+        "count": 128,
+        "mls_status": "OK",
+        "field_status": "OK"
+      }
+    ],
+    "provider_batch_count": 17,
+    "side_max_inward_roundoff_correction_m": 5.204170427930421e-18,
+    "raw_group_row_counts": {
+      "a0.volume32": 512,
+      "a0.volume64": 1024,
+      "a0.cap8": 256,
+      "a0.cap16": 512,
+      "a0.0005.volume32": 512,
+      "a0.0005.volume64": 1024,
+      "a0.0005.cap8": 256,
+      "a0.0005.cap16": 512,
+      "side": 256,
+      "offgrid": 128
+    }
+  },
+  "provider_reference_status": {
+    "mls_status_counts": {
+      "OK": 4224
+    },
+    "old_tip_reference_status_counts": {
+      "OK": 4224
+    },
+    "mls_condition_number_min": 6.686204652051596,
+    "mls_condition_number_max": 12.62321641082875,
+    "mls_support_count_min": 27,
+    "mls_support_count_max": 27
+  },
+  "analytic_gauge_rx_m": 5.031114771170333e-06,
+  "units": {
+    "coordinates": "m",
+    "volume_weights": "m^3",
+    "area_weights": "m^2",
+    "shape_values": "dimensionless",
+    "basis_gradients": "1/m",
+    "displacement": "m",
+    "displacement_gradient": "m/m (dimensionless)",
+    "stress_and_traction": "Pa",
+    "stiffness": "N/m",
+    "boundary_load": "N",
+    "rigid_mode_vector_columns": {
+      "translations": "unit displacement coefficient per unit translation",
+      "rotations": "m displacement coefficient per radian"
+    }
+  },
+  "cases": {
+    "a0_theta32": {
+      "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+      "a_m": 0.0,
+      "volume_theta_order": 32,
+      "volume_rows": 512,
+      "volume_measure_m3": 3.1415926535897916e-06,
+      "volume_centroid_xyz_m": [
+        -6.392218943897352e-18,
+        -6.167070644913035e-21,
+        -3.316959950775376e-20
+      ],
+      "assembly_chunks": [
+        {
+          "start": 0,
+          "stop": 256,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 256,
+          "stop": 512,
+          "count": 256,
+          "status": "OK"
+        }
+      ],
+      "assembly_raw_K_symmetry_relative": 9.429631122032653e-17,
+      "spectrum": {
+        "zero_tolerance": 4.163916312269756e-11,
+        "zero_tolerance_formula": "64*eps_float64*DOF_COUNT*spectral_scale",
+        "near_zero_count": 6,
+        "positive_count": 156,
+        "significant_negative_count": 0,
+        "strict_negative_count": 3,
+        "rigid_scaled_residual_tolerance": 4.604316927725449e-12,
+        "rigid_residual_tolerance_formula": "128*eps_float64*DOF_COUNT",
+        "scaled_asymmetry_relative": 1.3156875978305742e-16,
+        "scaled_asymmetry_relative_tolerance": 1e-12
+      },
+      "six_rigid_scaled_residuals": [
+        9.541607331556901e-17,
+        9.114617045600095e-17,
+        5.890516866938961e-17,
+        6.624578425678554e-17,
+        6.838538895804943e-17,
+        9.783118342820042e-17
+      ],
+      "eigenvalue_min_scaled": -6.112429790074794e-16,
+      "eigenvalue_max_scaled": 18.087009984895836,
+      "gauge_target_m": [
+        0.0,
+        0.0,
+        0.0,
+        5.031114771170333e-06,
+        0.0,
+        0.0
+      ],
+      "gauge_constraint_singular_values": [
+        1.0000000000000007,
+        1.0000000000000004,
+        1.0,
+        0.4999999999999997,
+        0.3333333333333334,
+        0.3333333333333332
+      ],
+      "solve": {
+        "weak_equilibrium_residual_relative": 4.1149157729029594e-16,
+        "gauge_residual_relative": 3.992917843816383e-16,
+        "saddle_backward_residual_relative": 7.908283134795582e-16,
+        "strain_energy_J": 1.3002326582160296e-06,
+        "external_work_J": 2.6004122994242165e-06,
+        "gauge_multiplier_work_J": -5.30170078434808e-11,
+        "potential_U_minus_W_J": -1.300179641208187e-06,
+        "energy_identity_defect_J": -8.662648964961582e-22,
+        "energy_identity_relative": 3.3311918871685155e-16,
+        "reconstructed_strain_energy_J": 1.3002326582160302e-06,
+        "KTT_energy_relative_defect": 4.885854131001041e-16
+      },
+      "six_rigid_virtual_work_N_or_Nm": [
+        0.0,
+        1.5612511283791264e-17,
+        1.9081958235744878e-17,
+        -3.512608388327892e-08,
+        -2.7453475466043048e-21,
+        4.605727504335824e-20
+      ],
+      "boundary_wrench": {
+        "side": {
+          "force_N": [
+            0.0,
+            0.0,
+            5.766600304907277e-18
+          ],
+          "moment_about_origin_Nm": [
+            0.001063846081070489,
+            2.064642808932357e-20,
+            0.0
+          ]
+        },
+        "top_coarse": {
+          "force_N": [
+            7.15573433840433e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            0.000638313982321531
+          ]
+        },
+        "bottom_coarse": {
+          "force_N": [
+            -7.15573433840433e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            -0.000638313982321531
+          ]
+        },
+        "top_fine": {
+          "force_N": [
+            -4.553649124439119e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            0.0006383139823215314
+          ]
+        },
+        "bottom_fine": {
+          "force_N": [
+            4.553649124439119e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            -0.0006383139823215314
+          ]
+        },
+        "caps_coarse": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0010638812071543718,
+            4.404571325722362e-20,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                -7.15573433840433e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                -0.000638313982321531
+              ]
+            },
+            "top": {
+              "force_N": [
+                7.15573433840433e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                0.000638313982321531
+              ]
+            }
+          }
+        },
+        "caps_fine": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.001063881207154372,
+            -1.0842021724855044e-19,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                4.553649124439119e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                -0.0006383139823215314
+              ]
+            },
+            "top": {
+              "force_N": [
+                -4.553649124439119e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                0.0006383139823215314
+              ]
+            }
+          }
+        },
+        "total_fine_force_N": [
+          0.0,
+          0.0,
+          5.766600304907277e-18
+        ],
+        "total_fine_moment_about_origin_Nm": [
+          -3.5126083882926554e-08,
+          -8.777378915922687e-20,
+          0.0
+        ],
+        "analytic_full_traction_reference": {
+          "side_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "side_moment_about_origin_Nm": [
+            0.0010638460810704871,
+            0.0,
+            0.0
+          ],
+          "top_force_N": [
+            0.0,
+            0.10638460810704871,
+            0.0
+          ],
+          "top_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            0.0006383076486422923
+          ],
+          "bottom_force_N": [
+            0.0,
+            -0.10638460810704871,
+            0.0
+          ],
+          "bottom_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            -0.0006383076486422923
+          ],
+          "total_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_moment_about_origin_Nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "cap_force_delta_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cap_moment_delta_Nm": [
+          -2.168404344971009e-19,
+          -1.5246593050577406e-19,
+          0.0
+        ]
+      },
+      "cap_generalized_load_delta_norm_N": 2.8733867601414597e-06,
+      "cap_generalized_load_delta_relative": 4.2446738923174045e-05,
+      "cap_external_work_coarse_J": 1.1750739650906614e-10,
+      "cap_external_work_fine_J": 1.2172579188104492e-10,
+      "exact_old_field_energy_quadrature_J": 1.2999999999999992e-06,
+      "manufactured_coefficients_energy_J": 1.2999999999999992e-06,
+      "old_tip_weighted_relative_errors": {
+        "displacement": 0.001991102112080435,
+        "displacement_gradient": 0.012177568147836867,
+        "full_stress": 0.013451713915171706
+      },
+      "solved_stress_diagnostics": {
+        "normal_to_mode_III_shear_L2_ratio": 0.013037793542705102,
+        "max_abs_sigma_yy_Pa": 28.130856531688565,
+        "exact_new_tip_error_claimed": false
+      },
+      "offgrid_old_tip_weighted_relative_errors": {
+        "displacement": 0.0017677971693791572,
+        "displacement_gradient": 0.0043170351970702805,
+        "full_stress": 0.0051265254543458256
+      }
+    },
+    "a0_theta64": {
+      "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+      "a_m": 0.0,
+      "volume_theta_order": 64,
+      "volume_rows": 1024,
+      "volume_measure_m3": 3.141592653589792e-06,
+      "volume_centroid_xyz_m": [
+        8.31412725025941e-18,
+        -2.665887035776629e-19,
+        5.463984415036955e-21
+      ],
+      "assembly_chunks": [
+        {
+          "start": 0,
+          "stop": 256,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 256,
+          "stop": 512,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 512,
+          "stop": 768,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 768,
+          "stop": 1024,
+          "count": 256,
+          "status": "OK"
+        }
+      ],
+      "assembly_raw_K_symmetry_relative": 9.65106083869549e-17,
+      "spectrum": {
+        "zero_tolerance": 4.163916639400447e-11,
+        "zero_tolerance_formula": "64*eps_float64*DOF_COUNT*spectral_scale",
+        "near_zero_count": 6,
+        "positive_count": 156,
+        "significant_negative_count": 0,
+        "strict_negative_count": 3,
+        "rigid_scaled_residual_tolerance": 4.604316927725449e-12,
+        "rigid_residual_tolerance_formula": "128*eps_float64*DOF_COUNT",
+        "scaled_asymmetry_relative": 1.2949251838418274e-16,
+        "scaled_asymmetry_relative_tolerance": 1e-12
+      },
+      "six_rigid_scaled_residuals": [
+        8.851621451288252e-17,
+        7.09012286295568e-17,
+        6.493141825176333e-17,
+        6.425928496936954e-17,
+        6.127053887434974e-17,
+        7.278068639743555e-17
+      ],
+      "eigenvalue_min_scaled": -6.997860906750246e-16,
+      "eigenvalue_max_scaled": 18.087011405869656,
+      "gauge_target_m": [
+        0.0,
+        0.0,
+        0.0,
+        5.031114771170333e-06,
+        0.0,
+        0.0
+      ],
+      "gauge_constraint_singular_values": [
+        1.0,
+        1.0,
+        0.9999999999999996,
+        0.5,
+        0.3333333333333339,
+        0.3333333333333329
+      ],
+      "solve": {
+        "weak_equilibrium_residual_relative": 5.158851317008803e-16,
+        "gauge_residual_relative": 4.0372867715612986e-16,
+        "saddle_backward_residual_relative": 8.314742607635556e-16,
+        "strain_energy_J": 1.3002331077791051e-06,
+        "external_work_J": 2.6004131985503668e-06,
+        "gauge_multiplier_work_J": -5.3017007842880416e-11,
+        "potential_U_minus_W_J": -1.3001800907712617e-06,
+        "energy_identity_defect_J": 5.811525414553221e-22,
+        "energy_identity_relative": 2.234801352074375e-16,
+        "reconstructed_strain_energy_J": 1.3002331077791062e-06,
+        "KTT_energy_relative_defect": 8.143087402814788e-16
+      },
+      "six_rigid_virtual_work_N_or_Nm": [
+        0.0,
+        1.5612511283791264e-17,
+        1.9081958235744878e-17,
+        -3.512608388327892e-08,
+        -2.7453475466043048e-21,
+        4.605727504335824e-20
+      ],
+      "boundary_wrench": {
+        "side": {
+          "force_N": [
+            0.0,
+            0.0,
+            5.766600304907277e-18
+          ],
+          "moment_about_origin_Nm": [
+            0.001063846081070489,
+            2.064642808932357e-20,
+            0.0
+          ]
+        },
+        "top_coarse": {
+          "force_N": [
+            7.15573433840433e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            0.000638313982321531
+          ]
+        },
+        "bottom_coarse": {
+          "force_N": [
+            -7.15573433840433e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            -0.000638313982321531
+          ]
+        },
+        "top_fine": {
+          "force_N": [
+            -4.553649124439119e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            0.0006383139823215314
+          ]
+        },
+        "bottom_fine": {
+          "force_N": [
+            4.553649124439119e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            -0.0006383139823215314
+          ]
+        },
+        "caps_coarse": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0010638812071543718,
+            4.404571325722362e-20,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                -7.15573433840433e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                -0.000638313982321531
+              ]
+            },
+            "top": {
+              "force_N": [
+                7.15573433840433e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                0.000638313982321531
+              ]
+            }
+          }
+        },
+        "caps_fine": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.001063881207154372,
+            -1.0842021724855044e-19,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                4.553649124439119e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                -0.0006383139823215314
+              ]
+            },
+            "top": {
+              "force_N": [
+                -4.553649124439119e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                0.0006383139823215314
+              ]
+            }
+          }
+        },
+        "total_fine_force_N": [
+          0.0,
+          0.0,
+          5.766600304907277e-18
+        ],
+        "total_fine_moment_about_origin_Nm": [
+          -3.5126083882926554e-08,
+          -8.777378915922687e-20,
+          0.0
+        ],
+        "analytic_full_traction_reference": {
+          "side_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "side_moment_about_origin_Nm": [
+            0.0010638460810704871,
+            0.0,
+            0.0
+          ],
+          "top_force_N": [
+            0.0,
+            0.10638460810704871,
+            0.0
+          ],
+          "top_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            0.0006383076486422923
+          ],
+          "bottom_force_N": [
+            0.0,
+            -0.10638460810704871,
+            0.0
+          ],
+          "bottom_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            -0.0006383076486422923
+          ],
+          "total_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_moment_about_origin_Nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "cap_force_delta_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cap_moment_delta_Nm": [
+          -2.168404344971009e-19,
+          -1.5246593050577406e-19,
+          0.0
+        ]
+      },
+      "cap_generalized_load_delta_norm_N": 2.8733867601414597e-06,
+      "cap_generalized_load_delta_relative": 4.2446738923174045e-05,
+      "cap_external_work_coarse_J": 1.2164242414653816e-10,
+      "cap_external_work_fine_J": 1.2578712057045377e-10,
+      "exact_old_field_energy_quadrature_J": 1.2999999999999994e-06,
+      "manufactured_coefficients_energy_J": 1.2999999999999994e-06,
+      "old_tip_weighted_relative_errors": {
+        "displacement": 0.0019931348339218185,
+        "displacement_gradient": 0.01218817017139111,
+        "full_stress": 0.013465830746173598
+      },
+      "solved_stress_diagnostics": {
+        "normal_to_mode_III_shear_L2_ratio": 0.013049702337954942,
+        "max_abs_sigma_yy_Pa": 28.12628837227428,
+        "exact_new_tip_error_claimed": false
+      },
+      "offgrid_old_tip_weighted_relative_errors": {
+        "displacement": 0.001770327126486407,
+        "displacement_gradient": 0.004320667993311203,
+        "full_stress": 0.005127914649499229
+      }
+    },
+    "a0.0005_theta32": {
+      "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+      "a_m": 0.0005,
+      "volume_theta_order": 32,
+      "volume_rows": 512,
+      "volume_measure_m3": 3.141592653589792e-06,
+      "volume_centroid_xyz_m": [
+        -7.267484965016683e-18,
+        -1.0189527406924064e-19,
+        -6.711058505057155e-20
+      ],
+      "assembly_chunks": [
+        {
+          "start": 0,
+          "stop": 256,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 256,
+          "stop": 512,
+          "count": 256,
+          "status": "OK"
+        }
+      ],
+      "assembly_raw_K_symmetry_relative": 9.633900858158523e-17,
+      "spectrum": {
+        "zero_tolerance": 4.166934279525931e-11,
+        "zero_tolerance_formula": "64*eps_float64*DOF_COUNT*spectral_scale",
+        "near_zero_count": 6,
+        "positive_count": 156,
+        "significant_negative_count": 0,
+        "strict_negative_count": 3,
+        "rigid_scaled_residual_tolerance": 4.604316927725449e-12,
+        "rigid_residual_tolerance_formula": "128*eps_float64*DOF_COUNT",
+        "scaled_asymmetry_relative": 1.3538321446256938e-16,
+        "scaled_asymmetry_relative_tolerance": 1e-12
+      },
+      "six_rigid_scaled_residuals": [
+        1.184259619542536e-16,
+        8.691129360649891e-17,
+        7.415515722685074e-17,
+        7.249976975235386e-17,
+        6.971122144844085e-17,
+        8.76404629892144e-17
+      ],
+      "eigenvalue_min_scaled": -5.689315342196378e-16,
+      "eigenvalue_max_scaled": 18.10011927908018,
+      "gauge_target_m": [
+        0.0,
+        0.0,
+        0.0,
+        5.031114771170333e-06,
+        0.0,
+        0.0
+      ],
+      "gauge_constraint_singular_values": [
+        1.0,
+        1.0,
+        0.9999999999999997,
+        0.49999999999999967,
+        0.3333333333333333,
+        0.333333333333333
+      ],
+      "solve": {
+        "weak_equilibrium_residual_relative": 5.280645532238277e-16,
+        "gauge_residual_relative": 4.41483411140812e-16,
+        "saddle_backward_residual_relative": 9.025807039284222e-16,
+        "strain_energy_J": 1.3708160645832583e-06,
+        "external_work_J": 2.7415791121586723e-06,
+        "gauge_multiplier_work_J": -5.301700784346876e-11,
+        "potential_U_minus_W_J": -1.370763047575414e-06,
+        "energy_identity_defect_J": 8.398403533342103e-22,
+        "energy_identity_relative": 3.063286078389846e-16,
+        "reconstructed_strain_energy_J": 1.3708160645832558e-06,
+        "KTT_energy_relative_defect": 1.85371247639662e-15
+      },
+      "six_rigid_virtual_work_N_or_Nm": [
+        0.0,
+        1.5612511283791264e-17,
+        1.9081958235744878e-17,
+        -3.512608388327892e-08,
+        -2.7453475466043048e-21,
+        4.605727504335824e-20
+      ],
+      "boundary_wrench": {
+        "side": {
+          "force_N": [
+            0.0,
+            0.0,
+            5.766600304907277e-18
+          ],
+          "moment_about_origin_Nm": [
+            0.001063846081070489,
+            2.064642808932357e-20,
+            0.0
+          ]
+        },
+        "top_coarse": {
+          "force_N": [
+            7.15573433840433e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            0.000638313982321531
+          ]
+        },
+        "bottom_coarse": {
+          "force_N": [
+            -7.15573433840433e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            -0.000638313982321531
+          ]
+        },
+        "top_fine": {
+          "force_N": [
+            -4.553649124439119e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            0.0006383139823215314
+          ]
+        },
+        "bottom_fine": {
+          "force_N": [
+            4.553649124439119e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            -0.0006383139823215314
+          ]
+        },
+        "caps_coarse": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0010638812071543718,
+            4.404571325722362e-20,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                -7.15573433840433e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                -0.000638313982321531
+              ]
+            },
+            "top": {
+              "force_N": [
+                7.15573433840433e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                0.000638313982321531
+              ]
+            }
+          }
+        },
+        "caps_fine": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.001063881207154372,
+            -1.0842021724855044e-19,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                4.553649124439119e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                -0.0006383139823215314
+              ]
+            },
+            "top": {
+              "force_N": [
+                -4.553649124439119e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                0.0006383139823215314
+              ]
+            }
+          }
+        },
+        "total_fine_force_N": [
+          0.0,
+          0.0,
+          5.766600304907277e-18
+        ],
+        "total_fine_moment_about_origin_Nm": [
+          -3.5126083882926554e-08,
+          -8.777378915922687e-20,
+          0.0
+        ],
+        "analytic_full_traction_reference": {
+          "side_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "side_moment_about_origin_Nm": [
+            0.0010638460810704871,
+            0.0,
+            0.0
+          ],
+          "top_force_N": [
+            0.0,
+            0.10638460810704871,
+            0.0
+          ],
+          "top_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            0.0006383076486422923
+          ],
+          "bottom_force_N": [
+            0.0,
+            -0.10638460810704871,
+            0.0
+          ],
+          "bottom_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            -0.0006383076486422923
+          ],
+          "total_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_moment_about_origin_Nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "cap_force_delta_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cap_moment_delta_Nm": [
+          -2.168404344971009e-19,
+          -1.5246593050577406e-19,
+          0.0
+        ]
+      },
+      "cap_generalized_load_delta_norm_N": 2.9005840107552625e-06,
+      "cap_generalized_load_delta_relative": 4.232638461468388e-05,
+      "cap_external_work_coarse_J": 3.784197834162467e-08,
+      "cap_external_work_fine_J": 3.783442568121023e-08,
+      "exact_old_field_energy_quadrature_J": 1.2891740379885305e-06,
+      "manufactured_coefficients_energy_J": null,
+      "solved_stress_diagnostics": {
+        "normal_to_mode_III_shear_L2_ratio": 0.03849708510515158,
+        "max_abs_sigma_yy_Pa": 302.4264642195346,
+        "exact_new_tip_error_claimed": false
+      }
+    },
+    "a0.0005_theta64": {
+      "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+      "a_m": 0.0005,
+      "volume_theta_order": 64,
+      "volume_rows": 1024,
+      "volume_measure_m3": 3.141592653589792e-06,
+      "volume_centroid_xyz_m": [
+        1.1634429873853395e-17,
+        6.211113975170272e-20,
+        -7.392449502697058e-21
+      ],
+      "assembly_chunks": [
+        {
+          "start": 0,
+          "stop": 256,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 256,
+          "stop": 512,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 512,
+          "stop": 768,
+          "count": 256,
+          "status": "OK"
+        },
+        {
+          "start": 768,
+          "stop": 1024,
+          "count": 256,
+          "status": "OK"
+        }
+      ],
+      "assembly_raw_K_symmetry_relative": 9.1290701691405e-17,
+      "spectrum": {
+        "zero_tolerance": 4.16693773194693e-11,
+        "zero_tolerance_formula": "64*eps_float64*DOF_COUNT*spectral_scale",
+        "near_zero_count": 6,
+        "positive_count": 156,
+        "significant_negative_count": 0,
+        "strict_negative_count": 4,
+        "rigid_scaled_residual_tolerance": 4.604316927725449e-12,
+        "rigid_residual_tolerance_formula": "128*eps_float64*DOF_COUNT",
+        "scaled_asymmetry_relative": 1.2774632592541924e-16,
+        "scaled_asymmetry_relative_tolerance": 1e-12
+      },
+      "six_rigid_scaled_residuals": [
+        8.425754497430194e-17,
+        7.39952349802959e-17,
+        5.294837329797215e-17,
+        5.535277241045908e-17,
+        6.197086785744609e-17,
+        7.377025950361963e-17
+      ],
+      "eigenvalue_min_scaled": -9.89812005605473e-16,
+      "eigenvalue_max_scaled": 18.100134275532653,
+      "gauge_target_m": [
+        0.0,
+        0.0,
+        0.0,
+        5.031114771170333e-06,
+        0.0,
+        0.0
+      ],
+      "gauge_constraint_singular_values": [
+        0.9999999999999997,
+        0.9999999999999994,
+        0.9999999999999991,
+        0.5000000000000001,
+        0.3333333333333338,
+        0.3333333333333332
+      ],
+      "solve": {
+        "weak_equilibrium_residual_relative": 4.616292775267294e-16,
+        "gauge_residual_relative": 4.711482375905326e-16,
+        "saddle_backward_residual_relative": 8.782334060332287e-16,
+        "strain_energy_J": 1.370817260397779e-06,
+        "external_work_J": 2.741581503787713e-06,
+        "gauge_multiplier_work_J": -5.3017007843356187e-11,
+        "potential_U_minus_W_J": -1.3707642433899342e-06,
+        "energy_identity_defect_J": 1.3759309384509991e-21,
+        "energy_identity_relative": 5.018651931956767e-16,
+        "reconstructed_strain_energy_J": 1.3708172603977781e-06,
+        "KTT_energy_relative_defect": 6.179036197782564e-16
+      },
+      "six_rigid_virtual_work_N_or_Nm": [
+        0.0,
+        1.5612511283791264e-17,
+        1.9081958235744878e-17,
+        -3.512608388327892e-08,
+        -2.7453475466043048e-21,
+        4.605727504335824e-20
+      ],
+      "boundary_wrench": {
+        "side": {
+          "force_N": [
+            0.0,
+            0.0,
+            5.766600304907277e-18
+          ],
+          "moment_about_origin_Nm": [
+            0.001063846081070489,
+            2.064642808932357e-20,
+            0.0
+          ]
+        },
+        "top_coarse": {
+          "force_N": [
+            7.15573433840433e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            0.000638313982321531
+          ]
+        },
+        "bottom_coarse": {
+          "force_N": [
+            -7.15573433840433e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0005319406035771859,
+            2.202285662861181e-20,
+            -0.000638313982321531
+          ]
+        },
+        "top_fine": {
+          "force_N": [
+            -4.553649124439119e-18,
+            0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            0.0006383139823215314
+          ]
+        },
+        "bottom_fine": {
+          "force_N": [
+            4.553649124439119e-18,
+            -0.1063881207154372,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.000531940603577186,
+            -5.421010862427522e-20,
+            -0.0006383139823215314
+          ]
+        },
+        "caps_coarse": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.0010638812071543718,
+            4.404571325722362e-20,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                -7.15573433840433e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                -0.000638313982321531
+              ]
+            },
+            "top": {
+              "force_N": [
+                7.15573433840433e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.0005319406035771859,
+                2.202285662861181e-20,
+                0.000638313982321531
+              ]
+            }
+          }
+        },
+        "caps_fine": {
+          "force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "moment_about_origin_Nm": [
+            -0.001063881207154372,
+            -1.0842021724855044e-19,
+            0.0
+          ],
+          "by_cap": {
+            "bottom": {
+              "force_N": [
+                4.553649124439119e-18,
+                -0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                -0.0006383139823215314
+              ]
+            },
+            "top": {
+              "force_N": [
+                -4.553649124439119e-18,
+                0.1063881207154372,
+                0.0
+              ],
+              "moment_about_origin_Nm": [
+                -0.000531940603577186,
+                -5.421010862427522e-20,
+                0.0006383139823215314
+              ]
+            }
+          }
+        },
+        "total_fine_force_N": [
+          0.0,
+          0.0,
+          5.766600304907277e-18
+        ],
+        "total_fine_moment_about_origin_Nm": [
+          -3.5126083882926554e-08,
+          -8.777378915922687e-20,
+          0.0
+        ],
+        "analytic_full_traction_reference": {
+          "side_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "side_moment_about_origin_Nm": [
+            0.0010638460810704871,
+            0.0,
+            0.0
+          ],
+          "top_force_N": [
+            0.0,
+            0.10638460810704871,
+            0.0
+          ],
+          "top_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            0.0006383076486422923
+          ],
+          "bottom_force_N": [
+            0.0,
+            -0.10638460810704871,
+            0.0
+          ],
+          "bottom_moment_about_origin_Nm": [
+            -0.0005319230405352436,
+            0.0,
+            -0.0006383076486422923
+          ],
+          "total_force_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "total_moment_about_origin_Nm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "cap_force_delta_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "cap_moment_delta_Nm": [
+          -2.168404344971009e-19,
+          -1.5246593050577406e-19,
+          0.0
+        ]
+      },
+      "cap_generalized_load_delta_norm_N": 2.9005840107552625e-06,
+      "cap_generalized_load_delta_relative": 4.232638461468388e-05,
+      "cap_external_work_coarse_J": 3.7849685300995335e-08,
+      "cap_external_work_fine_J": 3.7842094259674956e-08,
+      "exact_old_field_energy_quadrature_J": 1.2891740379885298e-06,
+      "manufactured_coefficients_energy_J": null,
+      "solved_stress_diagnostics": {
+        "normal_to_mode_III_shear_L2_ratio": 0.0385287324075269,
+        "max_abs_sigma_yy_Pa": 302.3537850513629,
+        "exact_new_tip_error_claimed": false
+      }
+    }
+  },
+  "cross_case_finite_delta_a_energy": {
+    "exact_old_tip_local_asymptotic_G_J_per_m2": 0.013,
+    "prior_finite_offset_G_context_J_per_m2": 0.005466,
+    "finite_delta_a_is_not_percent_compared_to_local_G": true,
+    "theta32": {
+      "G_delta_a_J_per_m2": 0.014116681273445411,
+      "Pi_a0_J": -1.300179641208187e-06,
+      "Pi_a0.5mm_J": -1.370763047575414e-06,
+      "fixed_physical_offgrid_solution_change_a0_to_a0.5mm": {
+        "displacement_relative_to_a0": 0.1854183608015574,
+        "gradient_relative_to_a0": 0.6743161694043619,
+        "stress_relative_to_a0": 0.65258304438006
+      }
+    },
+    "theta64": {
+      "G_delta_a_J_per_m2": 0.014116830523734511,
+      "Pi_a0_J": -1.3001800907712617e-06,
+      "Pi_a0.5mm_J": -1.3707642433899342e-06,
+      "fixed_physical_offgrid_solution_change_a0_to_a0.5mm": {
+        "displacement_relative_to_a0": 0.1854166539846362,
+        "gradient_relative_to_a0": 0.6743157237581907,
+        "stress_relative_to_a0": 0.6525822077007222
+      }
+    },
+    "theta32_to_theta64_at_fixed_a_and_fine_boundary": {
+      "a0": {
+        "raw_K_relative_change": 3.5693846840035038e-06,
+        "fine_boundary_load_relative_change": 0.0,
+        "Pi_theta64_minus_theta32_J": -4.4956307472136586e-13,
+        "offgrid_displacement_relative_change": 1.1452941560211183e-05
+      },
+      "a0.0005": {
+        "raw_K_relative_change": 2.4056423486110498e-06,
+        "fine_boundary_load_relative_change": 0.0,
+        "Pi_theta64_minus_theta32_J": -1.1958145202166598e-12,
+        "offgrid_displacement_relative_change": 8.20534157257928e-06
+      }
+    }
+  },
+  "array_budget_bytes": {
+    "persisted_numeric_and_index_arrays": 19953968,
+    "conservative_transient_assembly_and_solve_workspace_allowance": 8388608,
+    "conservative_peak_estimate": 28342576
+  },
+  "limitations": [
+    "At a=0.5 mm the candidate crack surface extends from x<0 to x<a. The old-tip manufactured field is exact only at a=0; the shifted case is a manual fixed-load candidate reanalysis with unknown true solution, not a committed crack state, autonomous growth result, or material qualification.",
+    "The shared cap map splits the old-tip radial coordinate at c=0.5 mm, matching the shifted trial-tip radius while keeping identical physical cap points for both a values. Inner and outer maps focus radial points around both the old traction singularity and the shifted basis singularity; finite GL4 radial and GL8/GL16 angular rules still provide no certified error bound.",
+    "Two volume theta rules provide a controlled integration comparison, not a proof of convergence.",
+    "Linear small-strain elasticity is a near-tip LEFM idealization; no finite-strain or material-core model is included.",
+    "E, nu, KIII, and all reported energies are synthetic benchmark quantities, not ceramic material calibration."
+  ],
+  "elapsed_seconds": 2.952999999979511,
+  "arrays_npz": {
+    "path": "arrays.npz",
+    "sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "bytes": 12356515
+  }
+}

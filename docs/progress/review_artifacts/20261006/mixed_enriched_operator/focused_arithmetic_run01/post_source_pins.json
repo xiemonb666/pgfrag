@@ -1,0 +1,20 @@
+{
+  "actual_sha256": {
+    "checker": "c136d55f4c0030fab27515047f3442911182c42edb40040fddc362846bec6caf",
+    "future_check_budget": "ffdf7f05f34c47b1f85b363fd8dcf0b97bcd633aae519ad2f3876579d8c415b2",
+    "helper_input": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "readme": "bb0d912b0e90f12cd04da196c6d1fe10f8e9d2c623f921ca0d1db642ded5e040",
+    "source_review": "fd7e43921f9c3df751a7b44e8078d06bc5507480d35c100611856efd56422bae"
+  },
+  "declared_match": true,
+  "declared_sha256": {
+    "checker": "c136d55f4c0030fab27515047f3442911182c42edb40040fddc362846bec6caf",
+    "future_check_budget": "ffdf7f05f34c47b1f85b363fd8dcf0b97bcd633aae519ad2f3876579d8c415b2",
+    "helper_input": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3",
+    "operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "readme": "bb0d912b0e90f12cd04da196c6d1fe10f8e9d2c623f921ca0d1db642ded5e040",
+    "source_review": "fd7e43921f9c3df751a7b44e8078d06bc5507480d35c100611856efd56422bae"
+  },
+  "pin_manifest_sha256": "dc01a20fa6f2d21bb0b60b69d4f2c760e2d3db7052eabaad09901dd812d1eeb1"
+}

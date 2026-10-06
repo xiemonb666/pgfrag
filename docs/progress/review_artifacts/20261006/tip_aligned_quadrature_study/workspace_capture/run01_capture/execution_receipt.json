@@ -1,0 +1,84 @@
+{
+  "schema": "tip_aligned_study_single_attempt_capture.v1",
+  "authorization": {
+    "authorized_at_utc": "2026-10-06T08:49:55Z",
+    "case_status_at_run": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+    "status_meaning": "source-stage status retained as history; root execution authorization is separately true",
+    "pre_authorization_case_snapshot": "tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\case_pre_authorization.json",
+    "pre_authorization_case_sha256": "b67108d15a26f702673e151e1fab4d47fd203b34eb22711baabe1fcce37015e5",
+    "pre_authorization_pins_snapshot": "tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\SOURCE_PINS_pre_authorization.json",
+    "pre_authorization_pins_sha256": "658b86e0686b79ffc8150b1fe216bf7e7db97449ef9bc03adbf882c39025d443",
+    "case_sha256_at_process_start": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d",
+    "case_sha256_after_process": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d"
+  },
+  "process": {
+    "command": [
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\tip_aligned_quadrature_study_20261006\\tip_aligned_quadrature_study.py",
+      "--execute",
+      "--output-dir",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01"
+    ],
+    "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+    "timeout_seconds": 60,
+    "timed_out": false,
+    "returncode": 0,
+    "launch_error": null,
+    "elapsed_seconds": 3.530999999959022,
+    "stdout_path": "tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01_capture\\stdout.bin",
+    "stdout_sha256": "7ef61aaef8584f2c5a971af289425be4f31e881c4e96399efe737725bf612f94",
+    "stdout_bytes": 348,
+    "stderr_path": "tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01_capture\\stderr.bin",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0
+  },
+  "source_sha256_before_process": {
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/tip_aligned_quadrature_study.py": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/study_case.json": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/README.md": "65e40ecfc7372ada5f81aaad0cb2de179ba6cfe8e72a15955c33fc5b35d18208"
+  },
+  "source_sha256_after_process": {
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/tip_aligned_quadrature_study.py": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/study_case.json": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d",
+    "pgfrag/experiments/tip_aligned_quadrature_study_20261006/README.md": "65e40ecfc7372ada5f81aaad0cb2de179ba6cfe8e72a15955c33fc5b35d18208"
+  },
+  "immutable_input_sha256_before_process": {
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+    "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "immutable_input_sha256_after_process": {
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+    "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+    "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "source_pin_manifest_sha256_before_process": "658b86e0686b79ffc8150b1fe216bf7e7db97449ef9bc03adbf882c39025d443",
+  "source_pin_manifest_sha256_after_process": "658b86e0686b79ffc8150b1fe216bf7e7db97449ef9bc03adbf882c39025d443",
+  "output_path": "pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01",
+  "output_artifacts": [
+    {
+      "path": "pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01\\arrays.npz",
+      "sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+      "bytes": 12356515
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261006\\tip_aligned_quadrature_study_20261006\\run01\\result.json",
+      "sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+      "bytes": 71752
+    }
+  ],
+  "output_bytes": 12428267
+}

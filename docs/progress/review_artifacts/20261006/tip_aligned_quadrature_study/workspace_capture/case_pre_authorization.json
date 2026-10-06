@@ -1,0 +1,206 @@
+{
+  "schema": "tip_aligned_full3d_quadrature_study_case.v1",
+  "case_id": "tip_aligned_full3d_quadrature_study_20261006",
+  "status": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+  "execution_authorization": {
+    "authorized": false,
+    "requires_explicit_root_authorization": true,
+    "authorized_at_utc": null
+  },
+  "classification": "SYNTHETIC_MODE_III_ENGINEERING_BENCHMARK_NOT_CERAMIC_MATERIAL",
+  "purpose": "Test singularity-aligned volume integration and enrichment-front offset on the frozen 162-DOF full 3-D operator; this is not a physical crack-growth or material-qualification study.",
+  "immutable_upstream": {
+    "operator_result": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "operator_result_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "operator_and_provider_sources": [
+      "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py",
+      "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py"
+    ],
+    "mutation_policy": "Read-only reference only; the frozen operator case, provider, result, replay, source pins, and prior receipts are never edited or reused as cached query values."
+  },
+  "geometry_and_physics": {
+    "physical_domain": "x^2+y^2 <= R^2, -L/2 <= z <= L/2; cylinder remains centered at the old origin",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "old_tip_xyz_m": [0.0, 0.0, 0.0],
+    "trial_enrichment_tip_offsets_x_m": [0.0, 0.0005],
+    "offset_interpretation": "a changes the center and branch of the trial FRONT_F1 basis and defines a manually specified candidate crack-front offset. The old-tip analytic field, KIII, exterior traction function, physical cylinder, and source grid stay fixed as fixed-load reanalysis data. a=0.5 mm is not a manufactured exact solution at the candidate shifted front; no crack state is committed, propagated autonomously, or qualified against a material model.",
+    "crack_and_branch_warning": "The candidate branch/crack surface extends along y=0 for x<a, including a=0.5 mm. The old-tip manufactured field is an exact comparison only at a=0; for a>0 the true solution is unknown. The prescribed old-tip exterior traction remains a legitimate fixed-load reanalysis input. No bulk quadrature rows are placed on the zero-measure crack surface, and no shifted exact-field error is reported.",
+    "sources": {
+      "source_count": 27,
+      "grid_shape": [3, 3, 3],
+      "axis_coordinates_m": [-0.005, 0.0, 0.005],
+      "support_radius_m": 0.025,
+      "front_shift_does_not_move_sources": true
+    },
+    "material_benchmark": {
+      "young_modulus_Pa": 1000000.0,
+      "poisson_ratio": 0.3,
+      "K_III_Pa_sqrt_m": 100.0,
+      "amplitude": "A=(KIII/mu)*sqrt(2/pi)",
+      "mu_Pa": "E/(2*(1+nu))",
+      "lambda_Pa": "E*nu/((1+nu)*(1-2*nu))",
+      "exact_field": "u=(0,0,A*sqrt(r_old)*sin(theta_old/2))",
+      "exact_stress": "sigma_xz=sigma_zx=mu*duz/dx; sigma_yz=sigma_zy=mu*duz/dy; all other components zero",
+      "boundary_traction": "The same old-tip exact full stress dotted with each physical exterior normal in every case; KIII is not altered or fitted to a quadrature rule.",
+      "analytic_old_tip_G_J_per_m2": "KIII^2/(2*mu)=0.013",
+      "prior_finite_offset_G_context_J_per_m2": 0.005466,
+      "G_comparison_limit": "The exact 0.013 is an old-tip local/asymptotic reference. The finite-delta-a energy difference below is a different quantity; do not use percent error to 0.013 as its pass criterion."
+    }
+  },
+  "operator_and_dofs": {
+    "basis": "continuous 3-D linear MLS with BASE and global normalized F1; only F1's analytic center is shifted by a",
+    "component_order": ["UX", "UY", "UZ"],
+    "basis_order": ["BASE", "FRONT_F1_UNSHIFTED"],
+    "source_count": 27,
+    "scalar_basis_rows": 54,
+    "semantic_vector_dofs": 162,
+    "operator": "K=sum_q B(q)^T D B(q) w_q, engineering strain [exx,eyy,ezz,gammaxy,gammayz,gammaxz], full isotropic lambda-mu D",
+    "assembly_plan": "Use the frozen full3d assembler unchanged on sequential volume chunks of at most 256 rows; sum the returned raw 162x162 K chunks in deterministic order.",
+    "rigid_modes": "The same six BASE-only translations and rotations; every FRONT_F1 coefficient is zero. No ridge, pseudoinverse, projection, or eigenvalue truncation."
+  },
+  "cases": [
+    {"a_m": 0.0, "volume_theta_order": 32},
+    {"a_m": 0.0, "volume_theta_order": 64},
+    {"a_m": 0.0005, "volume_theta_order": 32},
+    {"a_m": 0.0005, "volume_theta_order": 64}
+  ],
+  "volume_rule": {
+    "radial_coordinate": "rho=rho_max(theta,a)*s^2, s in (0,1)",
+    "tip_center": "(a,0)",
+    "rho_max_m": "-a*cos(theta)+sqrt(R^2-a^2*sin(theta)^2)",
+    "jacobian": "dV=2*rho_max^2*s^3*ds*dtheta*dz",
+    "radial_legendre_order_in_s": 4,
+    "theta_interval_rad": [-3.141592653589793, 3.141592653589793],
+    "theta_legendre_orders": [32, 64],
+    "z_legendre_order": 4,
+    "z_interval_m": [-0.005, 0.005],
+    "volume_points_per_case": {"theta32": 512, "theta64": 1024},
+    "volume_rows_all_four_cases": 3072,
+    "branch_and_front_rule": "Open Gauss nodes only; no epsilon nudges, branch-face points, or singular-tip points. This is still finite quadrature over the full domain, not a radial hole."
+  },
+  "boundary_rules": {
+    "side": {
+      "theta_legendre_order_fixed_for_all_cases": 64,
+      "z_legendre_order": 4,
+      "point_count": 256,
+      "reason": "Keep the discretized exterior side load fixed while the volume theta rule changes. Side query coordinates are newly evaluated once in this study and the raw MLS/reference rows are then specialized for each a."
+    },
+    "end_caps": {
+      "traction_field": "Old-tip exact full stress times top/bottom normal; top t=(mu*duz/dx,mu*duz/dy,0), bottom t=(-mu*duz/dx,-mu*duz/dy,0).",
+      "fixed_radial_split_m": 0.0005,
+      "fixed_split_applies_to_both_trial_tips": true,
+      "polar_center": "old physical tip (0,0); one shared cap point cloud for both trial enrichment offsets",
+      "inner_radial_map": "0 <= r_old <= c: r=c*sin(pi*s/2)^2; dr/ds=(pi*c/2)*sin(pi*s)",
+      "outer_radial_map": "c <= r_old <= R: r=c+(R-c)*s^2; dr/ds=2*(R-c)*s",
+      "area_jacobian": "dA=r*(dr/ds)*ds*dtheta on each radial segment",
+      "radial_segments": ["inner [0,c]", "outer [c,R]"],
+      "theta_subdomains": ["(-pi,0)", "(0,pi)"],
+      "radial_legendre_order_in_s": 4,
+      "theta_legendre_orders_per_semicircle": [8, 16],
+      "points_per_cap_by_theta_order": {"8_per_semicircle": 128, "16_per_semicircle": 256},
+      "points_both_caps_by_theta_order": {"8_per_semicircle": 256, "16_per_semicircle": 512},
+      "a_values_and_both_rules_raw_rows": 1536,
+      "unique_cap_rows_before_global_dedup": 768,
+      "load_policy": "The physical cap points, normals, area weights, and old-tip traction are identical for both trial offsets. For each a, save coarse and fine cap generalized loads/wrenches/work; use fine-16-per-semicircle cap load in every solve. Side rule is the same across volume theta orders. Report coarse-to-fine load change; do not alter KIII or force-fit g."
+    },
+    "analytic_full_traction_wrench": {
+      "scale": "Q=mu*A*R^(3/2)",
+      "side_force_N": [0, 0, 0],
+      "side_moment_about_origin_Nm": ["(4/3)*Q*L", 0, 0],
+      "top_force_N": [0, "(4/3)*Q", 0],
+      "top_moment_about_origin_Nm": ["-(2/3)*Q*L", 0, "(4/5)*Q*R"],
+      "bottom_force_N": [0, "-(4/3)*Q", 0],
+      "bottom_moment_about_origin_Nm": ["-(2/3)*Q*L", 0, "-(4/5)*Q*R"],
+      "total_force_N": [0, 0, 0],
+      "total_moment_about_origin_Nm": [0, 0, 0]
+    }
+  },
+  "fixed_physical_gauge": {
+    "mode_order": ["tx", "ty", "tz", "rx", "ry", "rz"],
+    "definition": "Six volume moments using translations and omega cross (x-volume_centroid)/R; compute C from each case's own volume rows and weights.",
+    "target_formula": "g=[0,0,0,A*sqrt(R)*16/(21*pi),0,0] m for every one of the four cases",
+    "g_rx_exact_m": 0.000005031114771170333,
+    "old_theta16_saved_g_rx_m": 0.000005031213792347516,
+    "old_saved_g_relative_difference": 0.000019681756765,
+    "interpretation": "The new target is the closed-form physical moment, fixed across all cases; it differs slightly from the old finite-theta saved target. This changes the numerical gauge reference by a known small amount, not the physical traction or KIII."
+  },
+  "offgrid_rule": {
+    "count": 128,
+    "construction": "r_old/R in [0.03,0.18,0.57,0.89] x theta in [+/-pi/8,+/-3pi/8,+/-5pi/8,+/-7pi/8] x z/L in [-3/8,-1/8,1/8,3/8]",
+    "shared_across_all_four_cases": true,
+    "purpose": "Independent displacement, gradient, stress, and spurious-normal-stress comparison; not reused from the prior 384-location result.",
+    "shifted_case_policy": "At a=0 compare to old-tip exact field. At a=0.5 mm report solved-field change relative to the a=0 solution on these same physical locations; do not report a shifted exact-field error."
+  },
+  "query_budget": {
+    "requested_rows": {
+      "four_volume_clouds": 3072,
+      "fixed_side_boundary": 256,
+      "cap_coarse_and_fine_for_both_a_raw_rows": 1536,
+      "shared_offgrid": 128,
+      "total_maximum_rows": 4992
+    },
+    "physical_xyz_uniqueness": "Generate all declared points, then exact-deduplicate global xyz before the first MLS/reference call. Record requested rows and measured unique xyz count separately. Do not claim the cross-a volume intersection count before point generation; never call prior saved arrays a cache for these points.",
+    "provider_max_batch_rows": 256,
+    "maximum_provider_batches_before_global_exact_dedup": 20,
+    "maximum_unique_provider_batches_after_global_exact_dedup": 20,
+    "batch_trace_required": true,
+    "volume_assembler_chunk_rows": 256,
+    "extra_queries_or_adaptive_tuning": false
+  },
+  "requested_diagnostics": {
+    "per_case": [
+      "six/156 full-K spectrum, rigid-mode null residuals, and KTT consistency",
+      "exact coefficient field energy and solved U=0.5*d^T*K*d",
+      "external W=d^T*f and constrained energy identity 2U-W=-g^T*lambda",
+      "weighted relative displacement/gradient/stress error versus old-tip exact field only for a=0",
+      "volume-weighted spurious normal/shear stress ratio and max absolute sigma_yy; shifted a case is labeled as a numerical change, not exact error",
+      "same-physical-point 128-row offgrid field/stress deltas",
+      "side/top/bottom/total force, moment, rigid virtual work, and cap traction/work for both cap theta rules",
+      "coarse-to-fine cap generalized-load and wrench change"
+    ],
+    "cross_case": [
+      "within each volume theta order, delta-a finite potential difference G=-[Pi(a=0.5mm)-Pi(a=0)]/(L*0.5mm), Pi=U-W",
+      "theta32-to-theta64 changes at fixed a and fixed fine boundary load",
+      "exact old-tip local G=0.013 J/m^2 is listed as an asymptotic reference only; the finite delta-a G is not required to converge to it"
+    ],
+    "deferred": "No J contour samples or J-integral implementation in this first study; revisit G contours only after volume field precision is acceptable."
+  },
+  "budgets": {
+    "maximum_wall_seconds_one_future_local_attempt": 60,
+    "maximum_explicit_numeric_array_bytes": 33554432,
+    "maximum_combined_npz_and_json_output_bytes": 20971520,
+    "planned_peak_explicit_array_bytes_conservative": 25165824,
+    "planned_persisted_npz_array_bytes_conservative": 16777216,
+    "json_contains_bulk_arrays": false,
+    "four_cases_solved_sequentially": true,
+    "runtime_must_measure_actual_bytes_and_wall_time": true,
+    "retry_or_tuning": false
+  },
+  "numerical_trust_gates": {
+    "weak_equilibrium_residual_relative_max": 1e-9,
+    "gauge_residual_relative_max": 1e-9,
+    "saddle_backward_residual_relative_max": 1e-9,
+    "energy_identity_relative_max": 1e-9,
+    "ktt_energy_relative_defect_max": 1e-9,
+    "interpretation": "fixed-front algebraic consistency gates, not physical accuracy or fracture acceptance criteria"
+  },
+  "mechanical_spectrum_gates": {
+    "dof_count": 162,
+    "zero_negative_eigenvalue_eps_factor": 64,
+    "rigid_mode_relative_residual_eps_factor": 128,
+    "scaled_asymmetry_relative_max": 1e-12,
+    "scaled_asymmetry_relative_formula": "||Kscaled-Kscaled^T||_F/max(||Kscaled||_F,tiny)",
+    "zero_negative_eigenvalue_threshold_formula": "64*eps_float64*DOF_COUNT*spectral_scale",
+    "rigid_mode_relative_residual_threshold_formula": "128*eps_float64*DOF_COUNT",
+    "mls_condition_number_policy": "record and enforce only through the provider's own qualification; never relax mechanical tolerances",
+    "interpretation": "engineering numerical gates only; the scaled eigenspectrum check is not a strict eigenvalue proof"
+  },
+  "limitations": [
+    "At a=0.5 mm the candidate crack surface extends from x<0 to x<a. The old-tip manufactured field is exact only at a=0; the shifted case is a manual fixed-load candidate reanalysis with unknown true solution, not a committed crack state, autonomous growth result, or material qualification.",
+    "The shared cap map splits the old-tip radial coordinate at c=0.5 mm, matching the shifted trial-tip radius while keeping identical physical cap points for both a values. Inner and outer maps focus radial points around both the old traction singularity and the shifted basis singularity; finite GL4 radial and GL8/GL16 angular rules still provide no certified error bound.",
+    "Two volume theta rules provide a controlled integration comparison, not a proof of convergence.",
+    "Linear small-strain elasticity is a near-tip LEFM idealization; no finite-strain or material-core model is included.",
+    "E, nu, KIII, and all reported energies are synthetic benchmark quantities, not ceramic material calibration."
+  ]
+}

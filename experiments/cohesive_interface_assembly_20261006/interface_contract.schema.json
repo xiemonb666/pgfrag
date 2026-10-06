@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scalar Mode-I cohesive interface assembly contract",
+  "type": "object",
+  "required": ["units", "point_fields", "history", "result_fields", "caps", "limits"],
+  "properties": {
+    "units": {
+      "type": "object",
+      "required": ["nodal_positions", "trial_displacement", "normal", "area_weight", "traction", "internal_force", "tangent", "integrated_energy", "force_balance_abs_tolerance", "force_balance_rel_tolerance"],
+      "properties": {
+        "nodal_positions": {"const": "m"},
+        "trial_displacement": {"const": "m"},
+        "normal": {"const": "unitless; norm=1"},
+        "area_weight": {"const": "m^2; one physical face side once"},
+        "traction": {"const": "Pa"},
+        "internal_force": {"const": "N"},
+        "tangent": {"const": "N/m"},
+        "integrated_energy": {"const": "J"},
+        "force_balance_abs_tolerance": {"const": "1e-12 N"},
+        "force_balance_rel_tolerance": {"const": "1e-10 dimensionless"}
+      }
+    },
+    "point_fields": {
+      "type": "object",
+      "required": ["interface_id", "quadrature_id", "positive_face_operator", "negative_face_operator", "jump_operator", "normal", "positive_face_point_m", "negative_face_point_m", "one_side_area_weight_m2"],
+      "properties": {
+        "jump_operator": {"const": "J = H_positive - H_negative; shape 3 x ndof"},
+        "opening": {"const": "delta_n = normal . J . trial_displacement_m"}
+      }
+    },
+    "history": {
+      "type": "object",
+      "required": ["key", "source", "trial_policy"],
+      "properties": {
+        "key": {"const": "(interface_id, quadrature_id)"},
+        "source": {"const": "existing immutable BilinearCohesiveMaterial/CohesiveState scalar law"},
+        "trial_policy": {"const": "each trial starts from the same caller-owned committed state; no trial commit"}
+      }
+    },
+    "result_fields": {
+      "type": "object",
+      "required": ["internal_force_n", "tangent_n_per_m", "stored_energy_j", "dissipated_energy_j", "external_work_j", "tangent_status", "spd_guarantee"],
+      "properties": {
+        "internal_force_n": {"const": "sum(w J^T n t)"},
+        "tangent_n_per_m": {"const": "sum(w (J^T n) k_alg (n^T J))"},
+        "spd_guarantee": {"const": "none; softening may be indefinite"}
+      }
+    },
+    "caps": {
+      "type": "object",
+      "required": ["max_nodes", "max_dof", "max_quadrature_points", "coupling_scope"],
+      "properties": {
+        "max_nodes": {"const": 12},
+        "max_dof": {"const": 36},
+        "max_quadrature_points": {"const": 16},
+        "coupling_scope": {"const": "nodal primitive; not 162-enriched-DOF coupling"}
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["compression", "tangential_slip", "mixed_mode", "solver", "front_coupling"],
+      "properties": {
+        "compression": {"const": "UNKNOWN / rejected"},
+        "tangential_slip": {"const": "UNKNOWN / rejected"},
+        "mixed_mode": {"const": "UNKNOWN / rejected"},
+        "solver": {"const": "not included"},
+        "front_coupling": {"const": "not included"}
+      }
+    }
+  }
+}
