@@ -1,0 +1,37 @@
+{
+  "schema": "local_front_operator_external_run_receipt.v1",
+  "case_id": "local_front_scalar_antiplane_poisson_operator_20261006",
+  "status": "PROCESS_NONZERO",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\local_front_operator_20261006\\operator_diagnostic.py",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\local_front_scalar_operator.json"
+  ],
+  "python_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+  "started_at_utc": "2026-10-05T22:33:33.5892142+00:00",
+  "elapsed_seconds": 0.7647843,
+  "external_timeout_seconds": 60,
+  "external_timed_out": false,
+  "process_id": 155420,
+  "actual_process_exit_code": 125,
+  "supervisor_return_code": 125,
+  "stdout": "{\"case_id\": \"local_front_scalar_antiplane_poisson_operator_20261006\", \"status\": \"UNKNOWN_NO_PRIMARY_RESULT\", \"primary_output\": null, \"unknown_receipt\": \"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261006\\\\local_front_operator_20261006\\\\runs\\\\run01\\\\local_front_scalar_operator.unknown_receipt.json\", \"parent_elapsed_seconds\": 0.6089999999385327, \"parent_return_code\": 125, \"timed_out\": false}\r\n",
+  "stderr": "",
+  "primary_output_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\local_front_scalar_operator.json",
+  "primary_output_exists": false,
+  "unknown_receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\local_front_scalar_operator.unknown_receipt.json",
+  "unknown_receipt_exists": true,
+  "staging_files": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\.local_front_scalar_operator.json.149216.worker.json",
+      "bytes": 494763,
+      "sha256": "ebdea44857ab2b1a358fc679d0b1e4996943905a5996ba83f8f8f1ba68340762"
+    }
+  ],
+  "no_retry": true,
+  "solver_invoked": false,
+  "load_applied": false,
+  "finished_at_utc": "2026-10-05T22:33:34.4103673+00:00"
+}

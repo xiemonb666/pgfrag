@@ -1,0 +1,142 @@
+{
+  "case_id": "local_front_scalar_antiplane_poisson_operator_20261006",
+  "status": "SOURCE_ONLY_AWAITING_ROOT_REVIEW",
+  "classification": "LOCAL_FRONT_SCALAR_ANTIPLANE_POISSON_BRIDGE_DIAGNOSTIC",
+  "scope": "assemble one bounded 140-DOF scalar operator from the pinned local-front MLS provider; no solver, boundary load, or crack-face load",
+  "units": {
+    "coordinates": "m",
+    "shape_values": "dimensionless",
+    "shape_gradients": "1/m",
+    "coefficient_dofs": "m",
+    "young_modulus": "Pa",
+    "shear_modulus": "Pa",
+    "volume_weights": "m^3",
+    "stiffness": "N/m",
+    "volume_mean_row": "dimensionless",
+    "integrated_mean_row": "m^3",
+    "quadratic_energy": "J"
+  },
+  "geometry": {
+    "domain_box_m": [[-0.01, 0.01], [-0.01, 0.01], [-0.008, 0.008]],
+    "crack_surface": "y=0, -0.01<=x<0, -0.008<=z<=0.008",
+    "front_segment": "x=0, y=0, -0.008<=z<=0.008",
+    "volume_integration_domain": "full box; the finite crack surface has zero volume measure and is split as a branch interface",
+    "crack_plane_queries": "none; all Gauss samples lie strictly inside a signed-y half-box",
+    "front_queries": "none; x and y Gauss samples lie strictly inside signed half-intervals"
+  },
+  "provider": {
+    "module": "pgfrag/experiments/local_front_provider_20261006/local_front_provider.py",
+    "provider_class": "LocalFrontProvider",
+    "input_loader": "load_pinned_inputs",
+    "evaluation_protocol": "sample_at(query_index) in frozen quadrature order; each OK sample must carry registry.canonical_ids in exactly the same order as its contributions",
+    "visibility_mask": false,
+    "trace_side_for_volume_queries": null,
+    "provider_is_read_only": true
+  },
+  "source_roles_and_dofs": {
+    "source_count": 100,
+    "geometric_role_counts": {"FRONT": 30, "HEAVISIDE_ELIGIBLE": 10, "BASE": 60},
+    "semantic_basis_counts": {"BASE": 100, "FRONT_F1_SHIFTED": 30, "HEAVISIDE": 10},
+    "total_scalar_dof_count": 140,
+    "role_assignment_source": "pinned local-front role manifest",
+    "basis_formulas": {
+      "BASE": "phi_i",
+      "HEAVISIDE": "phi_i * (H(x)-H(x_i))",
+      "FRONT_F1_SHIFTED": "phi_i * (Fbar(x)-Fbar(x_i)), Fbar=F1/sqrt(R0)"
+    },
+    "semantic_order": "the frozen DofRegistry canonical order, sorted by source ID, field component, basis kind, and basis index; every K, row, and probe vector uses this order",
+    "modeiii_analytic_coefficients_used_as_global_exact_solution": false
+  },
+  "material_and_scalar_model": {
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "shear_modulus_formula": "mu=E/(2*(1+nu))",
+    "operator_class": "scalar antiplane Poisson energy",
+    "bilinear_form": "K_ab = integral_Omega mu * grad(N_a) dot grad(N_b) dV",
+    "gradient_components": ["dUz/dx", "dUz/dy", "dUz/dz"],
+    "z_gradient_coefficient": "mu, as required by this scalar Poisson bridge",
+    "full_3d_elasticity_claim": false,
+    "full_3d_difference": "the scalar mu coefficient on dUz/dz is not the full 3-D isotropic epsilon_zz coefficient lambda+2*mu"
+  },
+  "quadrature": {
+    "rule": "four signed xy quadrants, each tensor-product GL4 x GL4 x GL4",
+    "x_intervals_m": [[-0.01, 0.0], [0.0, 0.01]],
+    "y_intervals_m": [[-0.01, 0.0], [0.0, 0.01]],
+    "z_interval_m": [-0.008, 0.008],
+    "quadrant_order": ["x_negative_y_negative", "x_negative_y_positive", "x_positive_y_negative", "x_positive_y_positive"],
+    "points_per_axis_per_quadrant": [4, 4, 4],
+    "points_per_quadrant": 64,
+    "total_volume_points": 256,
+    "gauss_legendre_order_4_nodes": [-0.8611363115940526, -0.3399810435848563, 0.3399810435848563, 0.8611363115940526],
+    "gauss_legendre_order_4_weights": [0.3478548451374538, 0.6521451548625461, 0.6521451548625461, 0.3478548451374538],
+    "expected_full_box_volume_m3": 0.0000064,
+    "expected_volume_weight_sum_m3": 0.0000064,
+    "all_mapped_gauss_weights_positive": true,
+    "jacobian": "1 for Cartesian box integration",
+    "endpoint_or_front_epsilon": "none",
+    "crack_plane_split": "y=0 separates positive and negative sides; interior Gauss nodes do not sample the interface",
+    "front_split": "x=0 also separates the xy quadrants; no point is shifted or clipped",
+    "integration_accuracy_boundary": "GL4 is exact for one-dimensional polynomials through degree 7, but MLS/enrichment products and front gradients are not polynomial; this single split rule has no convergence or singular-integration qualification",
+    "front_core_handling": "no radial hole or cutoff; positive quadrature points may be inside the 1 mm front core while remaining off the exact front"
+  },
+  "support_coverage": {
+    "source_lattice_axes_m": {
+      "x": [-0.008, -0.004, 0.0, 0.004, 0.008],
+      "y": [-0.008, -0.004, 0.004, 0.008],
+      "z": [-0.008, -0.004, 0.0, 0.004, 0.008]
+    },
+    "fixed_mls_support_radius_m": 0.007,
+    "analytical_max_nearest_source_axis_offsets_m": [0.002, 0.004, 0.002],
+    "analytical_max_nearest_source_distance_m": 0.004898979485566356,
+    "analytical_min_geometric_support_coverage_margin_m": 0.002101020514433644,
+    "claim": "the complete box is geometrically within h of at least one source",
+    "actual_support_cardinality": "not assumed from the geometric coverage bound; record the real per-query MLS support counts",
+    "polynomial_rank_conditioning_and_mls_status": "unknown until a separately authorized diagnostic run"
+  },
+  "diagnostic_probes": {
+    "constant_translation": {
+      "field": "Uz=1 m",
+      "coefficient_rule": "BASE coefficients=1 m; all HEAVISIDE and FRONT_F1_SHIFTED coefficients=0 m",
+      "expected_null_mode_count": 1,
+      "interpretation": "one scalar antiplane constant translation only; not six vector rigid modes"
+    },
+    "affine_base_patch": {
+      "field": "Uz=x",
+      "coefficient_rule": "BASE coefficient at source i equals x_i in m; all enriched coefficients=0 m",
+      "expected_gradient": [1.0, 0.0, 0.0],
+      "independent_exact_scalar_energy_J": "0.5*mu*expected_full_box_volume_m3",
+      "purpose": "linear MLS BASE-space patch and fixed-volume integration diagnostic",
+      "acceptance_gate": false
+    },
+    "volume_mean": {
+      "integral_row": "m_i=sum_q N_i(x_q)*w_q",
+      "normalized_mean_row": "mean_i=m_i/expected_full_box_volume_m3",
+      "field_mean": "mean_i*d_i",
+      "semantic_order": "same canonical 140-entry DofRegistry order as K"
+    }
+  },
+  "diagnostic_budget": {
+    "maximum_sources": 125,
+    "maximum_scalar_dofs": 375,
+    "maximum_volume_queries": 256,
+    "maximum_estimated_explicit_numeric_array_bytes": 8388608,
+    "wall_timeout_seconds": 60,
+    "assemble_one_scalar_operator": true,
+    "return_full_stiffness_matrix": true,
+    "report_full_symmetric_part_spectrum": true,
+    "report_negative_and_extra_near_zero_modes": true,
+    "run_solver": false,
+    "apply_load": false,
+    "load_crack_face": false,
+    "regularize_or_truncate": false,
+    "mechanics_or_fracture_qualification": false
+  },
+  "limitations": [
+    "this is a scalar antiplane Poisson bridge, not full 3-D isotropic elasticity",
+    "the original Mode III analytic coefficient pattern is not exact over this local finite-PU space and is not used as a global exact field",
+    "the BASE affine patch is a bounded diagnostic and does not qualify local-front enrichment or convergence",
+    "the fixed GL4 split rule is a single diagnostic rule and does not establish integration convergence near the front",
+    "geometric support coverage does not prove MLS polynomial rank or conditioning",
+    "no displacement constraints, reactions, traction, solver, crack growth, or SIF calculation"
+  ]
+}

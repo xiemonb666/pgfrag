@@ -1,0 +1,82 @@
+{
+  "schema": "modeiii_solved_field_j_coupling_execution_addendum.v1",
+  "case_id": "modeiii_solved_field_j_readback_coupling_20261006_v1",
+  "classification": "EXECUTION_EVIDENCE_ONLY_NO_PROMOTION",
+  "parent_result": {
+    "path": "pgfrag/tmp/review_20261006/solved_field_j_coupling_20261006/runs/run01/solved_field_j_coupling.json",
+    "status": "UNKNOWN_WORKER_RESULT_CONTRACT",
+    "bytes": 387,
+    "sha256": "6f3854d603f1c861dd86eceb44efe3374f84263a4053b9d0ed07d07f11926873"
+  },
+  "run_receipt": {
+    "path": "pgfrag/tmp/review_20261006/solved_field_j_coupling_20261006/runs/run01/run_receipt.json",
+    "sha256": "6a7eef3761ccc07a941dcb49805cf20c127825230f738560a32d5b2669f60b6b",
+    "worker_return_code": 0,
+    "worker_wall_seconds": 0.23400000017136335,
+    "outer_wall_seconds": 0.42199999978765845,
+    "outer_timeout_seconds": 60.0,
+    "outer_command_reported_exit_code": 1,
+    "failure_status": "UNKNOWN_WORKER_RESULT_CONTRACT",
+    "failure_reason": "semantic_coefficient_binding_missing; staging output retained for review"
+  },
+  "worker_stage": {
+    "path": "pgfrag/tmp/review_20261006/solved_field_j_coupling_20261006/runs/run01/.solved_field_j_coupling.json.34676.worker.json",
+    "status": "READBACK_COMPLETE_UNQUALIFIED",
+    "bytes": 649133,
+    "sha256": "1377e428a12f53bbc9dc9537c4dbf5d0c3f67a937bcdeceee6ddc6c98dfdfac9",
+    "preserved": true,
+    "result_json_cap_bytes": 8388608,
+    "provider_batch_count": 1,
+    "sampled_batch_query_count": 248,
+    "contract_evaluation_count": 0,
+    "contour_count": 8,
+    "solved_level_count": 2
+  },
+  "input_solution": {
+    "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json",
+    "sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+    "preserved": true,
+    "levels": [
+      {
+        "name": "volume_gl4x8x4",
+        "status": "OK",
+        "theta_order": 8,
+        "volume_point_count": 128,
+        "derived_quadrature_rule": "GL4x8x4"
+      },
+      {
+        "name": "volume_gl4x16x4",
+        "status": "OK",
+        "theta_order": 16,
+        "volume_point_count": 256,
+        "derived_quadrature_rule": "GL4x16x4"
+      }
+    ]
+  },
+  "metadata_rejection": {
+    "worker_mapper_read_field": "volume_level.quadrature_rule",
+    "worker_mapper_value": null,
+    "actual_frozen_source_fields": ["theta_order", "volume_point_count"],
+    "validator_rejection_trigger": "quadrature_rule must be a nonempty string",
+    "reported_contract_reason": "semantic_coefficient_binding_missing",
+    "interpretation": "The reason came from a compound level-metadata check. The worker stage contains the semantic coefficient bindings; the rejection was triggered by the absent quadrature_rule metadata field."
+  },
+  "preservation": {
+    "frozen_solve_result_unchanged": true,
+    "coupling_worker_source_unchanged": true,
+    "coupling_source_freeze_unchanged": true,
+    "coupling_source_sha256": "4b2eca6bae43ca74aaee6129f58da838e35d2ab3f7e1ca22cd3fdba21d13815d",
+    "coupling_source_freeze_sha256": "d5654bf579a8e7a11bd7a08a01b6878e88e96263dc1a14896f4b2067a9f449a8",
+    "failed_parent_result_remains_unknown": true,
+    "worker_stage_and_receipt_retained": true,
+    "retry_performed": false
+  },
+  "source_only_mapping_candidate": {
+    "path": "pgfrag/tmp/review_20261006/solved_field_j_coupling_20261006/metadata_mapping_fix.py",
+    "sha256": "39157314717d988e3136cb0feccd84784bd3002dcf52aadd5486b7d3b90bb2e3",
+    "lines": 86,
+    "provider_or_j_calls": false,
+    "static_solver_calls": false,
+    "source_structure_check": "passed against the pinned 20261006 static-solve JSON; derived GL4x8x4 and GL4x16x4"
+  }
+}

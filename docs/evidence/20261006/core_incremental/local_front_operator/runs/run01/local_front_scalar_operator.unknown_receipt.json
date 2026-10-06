@@ -1,0 +1,27 @@
+{
+  "schema": "local_front_scalar_operator_unknown_receipt.v1",
+  "case_id": "local_front_scalar_antiplane_poisson_operator_20261006",
+  "status": "UNKNOWN_NO_PRIMARY_RESULT",
+  "reason": "worker result validation failed: ValueError: worker result semantic basis counts differ from the fixed 100/30/10 layout",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\local_front_operator_20261006\\operator_diagnostic.py",
+    "--_worker",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\.local_front_scalar_operator.json.149216.worker.json"
+  ],
+  "started_at_utc": "2026-10-05T22:33:33.723661+00:00",
+  "elapsed_seconds": 0.6089999999385327,
+  "wall_timeout_seconds": 60.0,
+  "timed_out": false,
+  "return_code": 125,
+  "stdout": "{\"case_id\": \"local_front_scalar_antiplane_poisson_operator_20261006\", \"status\": \"ASSEMBLED_DIAGNOSTIC_ONLY_UNQUALIFIED\", \"dimensions\": {\"source_count\": 100, \"semantic_scalar_dof_count\": 140, \"quadrature_point_count\": 256, \"K_shape\": [140, 140], \"K_units\": \"N/m\"}, \"blocked_reason\": null, \"error_type\": null, \"error\": null, \"finished_at_utc\": \"2026-10-05T22:33:34.281256+00:00\"}\n",
+  "stderr": "",
+  "staging_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\local_front_operator_20261006\\runs\\run01\\.local_front_scalar_operator.json.149216.worker.json",
+  "staging_preserved": true,
+  "staging_sha256": "ebdea44857ab2b1a358fc679d0b1e4996943905a5996ba83f8f8f1ba68340762",
+  "primary_output_created": false,
+  "no_retry": true,
+  "finished_at_utc": "2026-10-05T22:33:34.333294+00:00"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "modeiii_solved_field_j_coupling_run_receipt.v1",
+  "execution_authorized_by_cli_flag": true,
+  "actual_argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\solved_field_j_coupling_20261006\\read_solved_field_j.py",
+    "--worker-output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\.solved_field_j_coupling.json.34676.worker.json"
+  ],
+  "worker_return_code": 0,
+  "outer_wall_seconds": 0.42199999978765845,
+  "outer_timeout_seconds": 60.0,
+  "worker_timeout_seconds": 59.0,
+  "timed_out": false,
+  "result_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\solved_field_j_coupling.json",
+  "result_bytes": 387,
+  "result_sha256": "6f3854d603f1c861dd86eceb44efe3374f84263a4053b9d0ed07d07f11926873",
+  "result_status": "UNKNOWN_WORKER_RESULT_CONTRACT",
+  "stdout_log": "stdout.log",
+  "stderr_log": "stderr.log",
+  "worker_staging_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\.solved_field_j_coupling.json.34676.worker.json",
+  "worker_staging_preserved": true,
+  "worker_staging_bytes": 649133,
+  "worker_staging_sha256": "1377e428a12f53bbc9dc9537c4dbf5d0c3f67a937bcdeceee6ddc6c98dfdfac9",
+  "failure_status": "UNKNOWN_WORKER_RESULT_CONTRACT",
+  "failure_reason": "semantic_coefficient_binding_missing; staging output retained for review"
+}
