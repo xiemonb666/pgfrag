@@ -1,0 +1,20 @@
+{
+  "schema": "modeiii_pu_full3d_fixed_load_front_reanalysis_case.v1",
+  "case_id": "modeiii_pu_full3d_fixed_load_front_reanalysis_20261006",
+  "status": "AUTHORIZED_SINGLE_FIXED_LOAD_DIAGNOSTIC_ATTEMPT",
+  "classification": "SYNTHETIC_ENGINEERING_DIAGNOSTIC_ONLY_NOT_CERAMIC_NOT_AUTONOMOUS",
+  "source_pins_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+  "source_pins_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+  "operator_result": {"path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json", "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"},
+  "baseline_static_solve": {"path": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run02/static_solve_bridge_result.json", "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3", "required_values": ["gauge.g_target_m", "solve.strain_energy_J", "solve.external_work_J"], "source_operator_sha256_must_match": true},
+  "geometry": {"radius_m": 0.01, "length_m": 0.01, "z_bounds_m": [-0.005, 0.005], "source_axis_coordinates_m": [-0.005, 0.0, 0.005], "source_count": 27, "semantic_dof_count": 162, "quadrature_counts": {"volume": 256, "boundary": 128, "total": 384}},
+  "material": {"young_modulus_Pa": 1000000.0, "poisson_ratio": 0.3},
+  "front_extension_m": 0.0005,
+  "shifted_front_basis": {"base_values_and_gradients": "reuse saved 384x54 basis by the explicit (source_id,basis_kind) row map; preserve BASE rows", "front_factor": "Fbar=sqrt(r/R)*sin(theta/2), r=sqrt((x-a)^2+y^2), theta=atan2(y,x-a)", "gradient": "full product rule using saved grad(phi) and analytic grad(Fbar); no MLS reevaluation", "cut_rule": "a frozen point at the shifted tip or on the shifted negative-x branch returns UNKNOWN and blocks; no point shifting"},
+  "fixed_external_load": {"traction_source": "the exact saved operator-result boundary.traction_Pa values, unchanged", "reintegrate_on_new_basis": true, "quadrature_positions_weights_normals": "reuse all saved 384 positions, 256 volume weights, and 128 boundary normals/area weights without modification", "load_projection_or_repair": false},
+  "gauge_and_solve": {"gauge": "same six physical volume moments and volume centroid as static solve bridge", "target": "copy fixed six g_target_m values from the pinned baseline static-solve result", "solve": "one direct 168x168 diagonally scaled KKT solve after a six-zero/156-positive spectrum gate", "forbidden": ["pseudoinverse", "ridge", "coefficient pinning", "load projection", "old displacement or coefficients transplanted"]},
+  "post_solve_residual_gate": {"policy": "main-agent predeclared engineering numerical trust gate; not a material physical gate and not selected or tuned from G", "relative_tolerance": 1e-9, "metrics": {"weak_equilibrium_relative": "<=1e-9", "physical_gauge_relative": "<=1e-9", "saddle_backward_relative": "<=1e-9", "energy_identity_relative": "abs(2U-W+g.dot(lambda))/max(abs(2U),abs(W),abs(g.dot(lambda)),tiny) <=1e-9"}, "baseline_context": "pinned baseline actual solve residuals were approximately 1e-15 and satisfy this predeclared numerical threshold", "on_failure": "write result with FAILED_NUMERICAL_RESIDUAL_GATE and exit nonzero; never retune or retry"},
+  "finite_change_area": {"one_sided_crack_extension_area": "L*delta_a; use as the finite-change release denominator", "two_physical_face_area_total": "2*L*delta_a; report separately, do not use as the Gc convention denominator", "Gc_comparison": false, "growth_commit": false},
+  "budget": {"maximum_unique_query_rows": 384, "new_queries": 0, "maximum_numeric_array_bytes": 8388608, "maximum_result_bytes": 8388608, "single_attempt_external_timeout_seconds": 60, "retry": false},
+  "limits": ["no ceramic material claim", "not autonomous crack growth", "no convergence claim from the one frozen quadrature rule", "finite-change diagnostic only; no Gc pass or committed advance"]
+}
