@@ -1,0 +1,57 @@
+{
+  "schema": "mls_rotation_covariance_outer_run_receipt.v1",
+  "classification": "PROVIDER_COVARIANCE_PREREQUISITE_ONLY",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls_rotation_covariance_20261007\\test_mls_rotation_covariance.py"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "started_utc": "2026-10-06T18:54:51.0799221Z",
+  "ended_utc": "2026-10-06T18:54:51.2814583Z",
+  "full_process_wall_seconds": 0.188696,
+  "timeout_seconds": 15,
+  "timed_out": false,
+  "real_return_code": 0,
+  "pre_source_hashes": {
+    "pgfrag/experiments/mls_rotation_covariance_20261007/mls_rotation_covariance.py": "431efad4df87d127853c2d970724fc8931ec9dbb1323ac31dab7f3a2ff212e40",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/test_mls_rotation_covariance.py": "3c02f4da5096712deea95050f370d7215d8e37081a39330a4cc68624914b03f1",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/case.json": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/source_pins.json": "ee85968da09410751879a9aa679662578bbaa81f16723da89d335080508bb0a0",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+  },
+  "post_source_hashes": {
+    "pgfrag/experiments/mls_rotation_covariance_20261007/mls_rotation_covariance.py": "431efad4df87d127853c2d970724fc8931ec9dbb1323ac31dab7f3a2ff212e40",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/test_mls_rotation_covariance.py": "3c02f4da5096712deea95050f370d7215d8e37081a39330a4cc68624914b03f1",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/case.json": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae",
+    "pgfrag/experiments/mls_rotation_covariance_20261007/source_pins.json": "ee85968da09410751879a9aa679662578bbaa81f16723da89d335080508bb0a0",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+  },
+  "raw_streams": {
+    "stdout": {
+      "path": "stdout.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "stderr.raw",
+      "bytes": 108,
+      "sha256": "d0f9a479b7829427ff9a5a578e8fa0163470a5fe1e85d3f6edcbed814623cb37"
+    }
+  },
+  "result": {
+    "path": "result.json",
+    "bytes": 522583,
+    "sha256": "d83b579a9e906da1a255035708dc0acea2709e2fa391494c93b67546d26e47f3"
+  },
+  "artifact_bytes_including_receipt": "0000528256",
+  "root_go_record": {
+    "path": "ROOT_GO_RECORD.json",
+    "bytes": 2100,
+    "sha256": "782ab10ae5dc9a9b68ca2013fb7dca0416f74c6786c2552549852cbd70516065"
+  }
+}

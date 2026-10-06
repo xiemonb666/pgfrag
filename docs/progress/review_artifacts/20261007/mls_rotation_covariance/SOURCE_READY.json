@@ -1,0 +1,98 @@
+{
+  "schema": "mls_rotation_covariance_source_ready.v1",
+  "status": "SOURCE_READY_WAITING_ROOT_REVIEW",
+  "classification": "PROVIDER_COORDINATE_COVARIANCE_PREREQUISITE_ONLY_NOT_FRACTURE_OR_MESH_BIAS_ADMISSION",
+  "scope": {
+    "source_root": "pgfrag/experiments/mls_rotation_covariance_20261007/",
+    "review_root": "pgfrag/tmp/review_20261007/mls_rotation_covariance_20261007/",
+    "old_files_modified": false,
+    "git_used": false,
+    "recursive_delegation": false
+  },
+  "numeric_execution_authorized": false,
+  "numeric_metric_or_test_calls_made": 0,
+  "source_payload": [
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/mls_rotation_covariance.py",
+      "sha256": "431efad4df87d127853c2d970724fc8931ec9dbb1323ac31dab7f3a2ff212e40",
+      "lines": 153
+    },
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/test_mls_rotation_covariance.py",
+      "sha256": "3c02f4da5096712deea95050f370d7215d8e37081a39330a4cc68624914b03f1",
+      "lines": 58
+    },
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/case.json",
+      "sha256": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae"
+    },
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/source_pins.json",
+      "sha256": "ee85968da09410751879a9aa679662578bbaa81f16723da89d335080508bb0a0"
+    },
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/README.md",
+      "sha256": "bc4b94102d9d4eee2fb29b255968e6ed4eea07dce7e3e81f5c44e79d1fbc973d"
+    }
+  ],
+  "pinned_inputs": [
+    {
+      "path": "pgfrag/experiments/mls_rotation_covariance_20261007/case.json",
+      "sha256": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae"
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+    }
+  ],
+  "fixture_contract": {
+    "source_count": 27,
+    "query_count_per_provider_call": 16,
+    "provider_calls": 4,
+    "total_query_cap": 64,
+    "source_of_coordinates": "frozen mixed93_actual_cohesive_bridge case; explicit 27-site product grid, accepted cache binding, and 4-by-4 interface Gauss points",
+    "rank_relative_tolerance": 1e-12,
+    "max_condition_number": 1000000000000.0,
+    "support_count_each_query": 27,
+    "covariance_tolerance": 1e-10,
+    "negative_control_min_weight_delta": 1e-8
+  },
+  "transforms": {
+    "rotation_definition": "Rz(0.37) @ Rx(-0.23), proper and not an axis permutation",
+    "rotation_matrix": [
+      [0.9323273456060345, -0.35209279401963595, -0.08244019065147945],
+      [0.361615431964962, 0.9077758055611578, 0.21254967937539945],
+      [0.0, -0.2279775235351884, 0.9736663950053749]
+    ],
+    "translation_m": [0.003, -0.007, 0.004],
+    "rigid_contract": "transform source/query coordinates and reference_origin together; retain scalar reference_scale and support_radius in metres",
+    "uniform_unit_factor_m_to_mm": 1000.0,
+    "unit_contract": "multiply coordinates, reference_origin, reference_scale, and support_radius by 1000; convert returned gradients per mm to per m by multiplying by 1000; no material fields are changed",
+    "negative_anisotropic_scale": [[1.35, 0.0, 0.0], [0.0, 0.7, 0.0], [0.0, 0.0, 1.0]]
+  },
+  "static_checks": {
+    "python_ast_parse": "passed for new source/test and read-only provider/bridge sources",
+    "json_parse": "passed for new case/pins and frozen bridge case",
+    "external_hash_pins": "3 verified: actual bridge case, MLS3DConfig/kernel module, actual shape-functions module",
+    "actual_shape_provider_calls_in_future_evaluate": 4,
+    "future_unittest_groups": 5,
+    "line_budgets": "source 153/220; test/check driver 58/120"
+  },
+  "unresolved_until_go": [
+    "No numerical run has verified covariance residuals or the anisotropic negative-control delta.",
+    "The 1e-8 negative-control detection threshold must be confirmed by the authorized focused run without loosening it after a failure."
+  ],
+  "limits": [
+    "This is a coordinate-covariance prerequisite for the supplied source/query coordinates and the pinned MLS provider only.",
+    "It does not measure tetrahedral discretization bias, solve a fracture problem, or establish that real crack/mesh direction bias is resolved.",
+    "Any future passing record remains GIVEN_SOURCE_GRID_AND_INTERFACE_QUADRATURE_ONLY_NOT_ADMITTED."
+  ]
+}

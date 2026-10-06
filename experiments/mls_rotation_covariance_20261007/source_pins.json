@@ -1,0 +1,21 @@
+{
+  "schema": "mls_rotation_covariance_source_pins.v1",
+  "cohort_case": {
+    "path": "pgfrag/experiments/mls_rotation_covariance_20261007/case.json",
+    "sha256": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae"
+  },
+  "files": [
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "mls_rotation_covariance_case.v1",
+  "case_id": "mls_rotation_covariance_20261007",
+  "classification": "PROVIDER_COORDINATE_COVARIANCE_PREREQUISITE_ONLY_NOT_FRACTURE_OR_MESH_BIAS_ADMISSION",
+  "fixture_source": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+  "fixture_source_case_id": "mixed93_actual_cohesive_bridge_20261006",
+  "source_coordinates_field": "source_binding.source_positions_xyz_m",
+  "source_count": 27,
+  "source_order": "frozen canonical product-grid order; the bridge case binds the accepted cached 93 source array",
+  "query_coordinates": "recreate the existing 16 tensor Gauss-Legendre interface points from geometry and interface_quadrature fields; no new geometry or surface claim",
+  "query_count_per_call": 16,
+  "provider_api": "mls3d_shape.shape_functions_3d",
+  "provider_config_source": "fixture_source.mls",
+  "frozen_thresholds": {
+    "max_condition_number": 1000000000000.0,
+    "rank_relative_tolerance": 1e-12,
+    "switch_tolerance": 1e-10,
+    "duplicate_tolerance": 1e-12,
+    "expected_support_count": 27,
+    "covariance_tolerance": 1e-10
+  },
+  "provider_calls": ["identity_m", "rigid_rotation_translation_m", "uniformly_scaled_mm", "bad_anisotropic_negative_m"],
+  "maximum_new_provider_queries": 64,
+  "rotation_contract": "X'=R X+t and origin'=R origin+t; R is proper, oblique, and not an axis permutation; scalar reference_scale and support_radius remain unchanged in metres",
+  "transforms": {
+    "rotation_definition": "Rz(angle_z) @ Rx(angle_x)",
+    "angle_z_rad": 0.37,
+    "angle_x_rad": -0.23,
+    "translation_m": [0.003, -0.007, 0.004],
+    "uniform_unit_factor": 1000.0,
+    "bad_anisotropic_diagonal_scale": [1.35, 0.7, 1.0]
+  },
+  "unit_contract": "mm run multiplies every coordinate, reference_origin, reference_scale, and support_radius by 1000; weights are compared directly and gradients are converted to per metre by multiplying the per-mm result by 1000; no material parameter is changed",
+  "negative_control": "apply a nonuniform diagonal stretch to source and query offsets about reference_origin while intentionally retaining scalar reference_scale/support_radius; actual shape weights must detect the changed geometry",
+  "receipt_path": "pgfrag/tmp/review_20261007/mls_rotation_covariance_20261007/focused_run01/result.json",
+  "numeric_execution_authorized": false
+}

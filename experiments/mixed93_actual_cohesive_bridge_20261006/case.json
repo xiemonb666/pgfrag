@@ -1,0 +1,578 @@
+{
+  "schema": "mixed93_actual_cohesive_bridge.v1",
+  "case_id": "mixed93_actual_cohesive_bridge_20261006",
+  "status": "SOURCE_READY_EXECUTION_DISABLED",
+  "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+  "execution_authorization": {
+    "authorized": false,
+    "authorized_by": null,
+    "authorized_utc": null,
+    "reason": "SOURCE_READY only; root review required before any numerical path is added or invoked"
+  },
+  "geometry": {
+    "shape": "straight-front finite crack sheet extruded through centered cylinder",
+    "frame": "global xyz; front is z axis through origin",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "z_bounds_m": [
+      -0.005,
+      0.005
+    ],
+    "crack_surface": "y=0, x in [-R,0], z in [-L/2,L/2]",
+    "upper_face": "theta=+pi, y -> 0+",
+    "lower_face": "theta=-pi, y -> 0-",
+    "unit_normal_from_lower_to_upper": [
+      0,
+      1,
+      0
+    ]
+  },
+  "source_binding": {
+    "source_count": 27,
+    "axis_coordinates_m": [
+      -0.005,
+      0,
+      0.005
+    ],
+    "flattening_order": "itertools.product(x_axis,y_axis,z_axis), z fastest; IDs node-000 through node-026",
+    "source_ids": [
+      "node-000",
+      "node-001",
+      "node-002",
+      "node-003",
+      "node-004",
+      "node-005",
+      "node-006",
+      "node-007",
+      "node-008",
+      "node-009",
+      "node-010",
+      "node-011",
+      "node-012",
+      "node-013",
+      "node-014",
+      "node-015",
+      "node-016",
+      "node-017",
+      "node-018",
+      "node-019",
+      "node-020",
+      "node-021",
+      "node-022",
+      "node-023",
+      "node-024",
+      "node-025",
+      "node-026"
+    ],
+    "accepted_cache_identity_gate": "Before any numerical provider call, future loader must compare the cached source_ids and source_positions_xyz_m arrays exactly to these explicit ordered values; SOURCE_READY only binds the accepted array SHA/audit metadata without opening the NPZ.",
+    "source_positions_xyz_m": [
+      [
+        -0.005,
+        -0.005,
+        -0.005
+      ],
+      [
+        -0.005,
+        -0.005,
+        0
+      ],
+      [
+        -0.005,
+        -0.005,
+        0.005
+      ],
+      [
+        -0.005,
+        0,
+        -0.005
+      ],
+      [
+        -0.005,
+        0,
+        0
+      ],
+      [
+        -0.005,
+        0,
+        0.005
+      ],
+      [
+        -0.005,
+        0.005,
+        -0.005
+      ],
+      [
+        -0.005,
+        0.005,
+        0
+      ],
+      [
+        -0.005,
+        0.005,
+        0.005
+      ],
+      [
+        0,
+        -0.005,
+        -0.005
+      ],
+      [
+        0,
+        -0.005,
+        0
+      ],
+      [
+        0,
+        -0.005,
+        0.005
+      ],
+      [
+        0,
+        0,
+        -0.005
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0.005
+      ],
+      [
+        0,
+        0.005,
+        -0.005
+      ],
+      [
+        0,
+        0.005,
+        0
+      ],
+      [
+        0,
+        0.005,
+        0.005
+      ],
+      [
+        0.005,
+        -0.005,
+        -0.005
+      ],
+      [
+        0.005,
+        -0.005,
+        0
+      ],
+      [
+        0.005,
+        -0.005,
+        0.005
+      ],
+      [
+        0.005,
+        0,
+        -0.005
+      ],
+      [
+        0.005,
+        0,
+        0
+      ],
+      [
+        0.005,
+        0,
+        0.005
+      ],
+      [
+        0.005,
+        0.005,
+        -0.005
+      ],
+      [
+        0.005,
+        0.005,
+        0
+      ],
+      [
+        0.005,
+        0.005,
+        0.005
+      ]
+    ],
+    "match_required": "exactly equal to 27 coordinates in accepted cached 93 result and product grid in frozen full3d fixed_case.json"
+  },
+  "registry": {
+    "dof_count": 93,
+    "base_dof_count": 81,
+    "global_front_dof_count": 12,
+    "operator_layout": "MIXED93_BASE81_GLOBAL12",
+    "trace_family": "GLOBALFRONT",
+    "trace_family_semantics": "Enrichment-family label only; 93 registry intentionally contains SOURCE_BASE plus GLOBAL_FRONT. Preserve exact semantic tokens and order.",
+    "components": [
+      "ux",
+      "uy",
+      "uz"
+    ],
+    "base_order": "source IDs sorted; each source ux,uy,uz as [SOURCE_BASE,source_id,component,0]",
+    "global_order": "branch-major F1..F4; each branch ux,uy,uz as [GLOBAL_FRONT,global,component,branch_index]",
+    "branch_order": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "semantic_coefficient_ids_in_order": [
+      "[\"SOURCE_BASE\",\"node-000\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-000\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-000\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-001\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-001\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-001\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-002\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-002\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-002\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-003\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-003\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-003\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-004\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-004\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-004\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-005\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-005\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-005\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-006\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-006\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-006\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-007\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-007\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-007\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-008\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-008\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-008\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-009\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-009\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-009\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-010\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-010\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-010\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-011\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-011\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-011\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-012\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-012\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-012\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-013\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-013\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-013\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-014\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-014\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-014\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-015\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-015\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-015\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-016\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-016\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-016\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-017\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-017\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-017\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-018\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-018\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-018\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-019\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-019\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-019\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-020\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-020\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-020\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-021\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-021\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-021\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-022\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-022\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-022\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-023\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-023\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-023\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-024\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-024\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-024\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-025\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-025\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-025\",\"uz\",0]",
+      "[\"SOURCE_BASE\",\"node-026\",\"ux\",0]",
+      "[\"SOURCE_BASE\",\"node-026\",\"uy\",0]",
+      "[\"SOURCE_BASE\",\"node-026\",\"uz\",0]",
+      "[\"GLOBAL_FRONT\",\"global\",\"ux\",1]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uy\",1]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uz\",1]",
+      "[\"GLOBAL_FRONT\",\"global\",\"ux\",2]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uy\",2]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uz\",2]",
+      "[\"GLOBAL_FRONT\",\"global\",\"ux\",3]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uy\",3]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uz\",3]",
+      "[\"GLOBAL_FRONT\",\"global\",\"ux\",4]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uy\",4]",
+      "[\"GLOBAL_FRONT\",\"global\",\"uz\",4]"
+    ],
+    "semantic_id_wire_format": "compact JSON arrays [scope,owner,component,basis_index]",
+    "q_units": "m"
+  },
+  "mls": {
+    "api": "mls3d_shape.shape_functions_3d",
+    "source_modules": [
+      "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py"
+    ],
+    "basis": "linear 3D MLS",
+    "weight": "Wendland C2",
+    "reference_origin_m": [
+      0,
+      0,
+      0
+    ],
+    "reference_scale_m": 0.01,
+    "support_radius_m": 0.025,
+    "max_condition_number": 1000000000000,
+    "rank_relative_tolerance": 1e-12,
+    "switch_tolerance": 1e-10,
+    "duplicate_tolerance": 1e-12,
+    "visibility_mask": null,
+    "mask_locally_constant": null,
+    "base_row_only": true,
+    "expected_support_count_each_query": 27,
+    "new_unique_queries": 16,
+    "max_queries_per_batch": 256,
+    "query_contract": "Run continuous 27-source MLS directly for 16 common physical points. Use its BASE shape values for both face operators; do not adapt the existing 162-DOF FRONT_F1 provider as the 93 registry.",
+    "per_query_gates": [
+      "status exactly MLSStatus.OK; any UNKNOWN/non-finite value fails closed",
+      "condition_number <= frozen max_condition_number; no threshold relaxation",
+      "partition of unity and linear first moment reproduce the physical query",
+      "sum gradients is zero and source-coordinate gradient moment is identity",
+      "record support count and condition number; require all 27 sites in support"
+    ],
+    "affine_reproduction_tolerance": "1e-10 in normalized coordinates, separate value and derivative identities"
+  },
+  "interface_quadrature": {
+    "interface_id": "finite_sheet_mode_i_20261006",
+    "rule": "tensor Gauss-Legendre order 4 in x times order 4 in z",
+    "gl4_nodes": [
+      -0.8611363115940526,
+      -0.3399810435848563,
+      0.3399810435848563,
+      0.8611363115940526
+    ],
+    "gl4_weights": [
+      0.3478548451374538,
+      0.6521451548625461,
+      0.6521451548625461,
+      0.3478548451374538
+    ],
+    "x_map": "x_i=(R/2)*(xi_i-1)",
+    "z_map": "z_j=(L/2)*zeta_j",
+    "point_map": "(x_i,0,z_j)",
+    "one_side_area_weight": "A_ij=(R*L/4)*w_i*w_j",
+    "one_side_total_area_m2": 0.0001,
+    "point_count": 16,
+    "area_counted_once": true,
+    "branch_face_points_use_exact_y_zero": true,
+    "front_excluded_by_open_gauss_nodes": true
+  },
+  "branch_trace_contract": {
+    "module": "pgfrag/experiments/mixed_lefm_benchmark_20261006/mixed_lefm_field.py",
+    "function": "branch_functions_local",
+    "reference_length_m": 0.01,
+    "explicit_branch_trace_required": true,
+    "trace_upper": "branch_trace=''upper'', theta=+pi",
+    "trace_lower": "branch_trace=''lower'', theta=-pi",
+    "branch_values_on_sheet": {
+      "F1_upper": "sqrt(-x/R)",
+      "F1_lower": "-sqrt(-x/R)",
+      "F2": 0,
+      "F3": 0,
+      "F4": 0
+    },
+    "H_shape": [
+      3,
+      93
+    ],
+    "jump_contract": "One MLS BASE row at identical xyz for H+ and H-. H+ and H- differ only in the 12 GLOBAL_FRONT entries for F1 vector components. J=H+-H- has the three F1 diagonal entries 2*sqrt(-x/R).",
+    "normal_projection_contract": "J^T*n has only zero-based coefficient index 82 (F1,uy), value 2*sqrt(-x/R)."
+  },
+  "load_and_cache_binding": {
+    "cached_study_id": "mixed93_cached_lefm_solve_20261006",
+    "cached_source_case_path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+    "cached_source_case_sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "upstream_result_path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+    "upstream_result_sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "upstream_fixed_case_path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json",
+    "upstream_fixed_case_sha256": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+    "producer_frozen_driver_sha256": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "failed_serialization_arrays_path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+    "accepted_arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "independent_audit_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "independent_audit_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "recovery_receipt_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/run_receipt.json",
+    "recovery_receipt_sha256": "ea61fbb508a2f5ef052cc31e996f575b9bf5897ec6ca459bbb29ea2656ede703",
+    "audit_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+    "actual_array_keys": {
+      "q_solution": "pure_I_q_solution",
+      "q_exact": "pure_I_q_exact",
+      "K": "K_N_per_m",
+      "external_force": "pure_I_boundary_force_N",
+      "physical_constraint_matrix": "physical_volume_moment_matrix",
+      "physical_gauge_target": "pure_I_physical_gauge_target_m",
+      "rigid_vectors": "rigid_coefficient_modes"
+    },
+    "recovery_rule": "Read actual pure_I q_solution and retain pure_I q_exact separately as diagnostic only. Future numerical path must verify accepted arrays SHA before opening NPZ; SOURCE_READY check does not open/hash/read NPZ.",
+    "bridge_load_case": {
+      "K_I_Pa_sqrt_m": 1,
+      "K_II_Pa_sqrt_m": 0,
+      "K_III_Pa_sqrt_m": 0
+    },
+    "linear_scale_from_cached_KI100": 0.01,
+    "scaled_quantities": [
+      "q_solution",
+      "external_force_N",
+      "physical_gauge_target_m",
+      "physical_lambda"
+    ],
+    "unchanged_quantities": [
+      "K_N_per_m",
+      "physical_constraint_matrix"
+    ],
+    "scaled_solution_preflight": "Verify physical weak residual, six physical gauge equations and 99-order KKT backward error after scaling before using q0."
+  },
+  "cohesive_law": {
+    "module": "pgfrag/experiments/cohesive_scalar_law_20261006/cohesive_scalar_law.py",
+    "trial_primitive": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+    "pinned_derivative_module": "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+    "family_tag": "GLOBALFRONT",
+    "operator_layout": "MIXED93_BASE81_GLOBAL12",
+    "coefficient_ids_must_match_case_order_exactly": true,
+    "material": {
+      "k0_pa_per_m": 100000000,
+      "tpeak_pa": 1000,
+      "gc_j_per_m2": 0.01,
+      "delta0_m": 0.00001,
+      "deltaf_m": 0.00002
+    },
+    "material_classification": "toy elastic-scale bridge only; not a real material or ceramic calibration",
+    "initial_history": "virgin immutable CohesiveState for each of 16 unique QP IDs",
+    "physical_trial_gate": "Every baseline and coupled-final QP has 0<opening<delta0, no damage, kappa<delta0, zero tangential jump within existing primitive tolerance; compression/shear/mixed slip is UNKNOWN and aborts without projection.",
+    "primitive_call_budget": {
+      "assemble_enriched_trial_max": 3,
+      "calls": [
+        {
+          "name": "baseline",
+          "trial": "scaled cached q0",
+          "history": "virgin",
+          "purpose": "verify actual opening, normal-only mode, baseline traction and elastic tangent"
+        },
+        {
+          "name": "zero_tangent_control",
+          "trial": "scaled cached q0",
+          "history": "synthetic fully-damaged committed states with kappa=deltaf",
+          "purpose": "verify zero traction/zero algorithmic tangent; diagnostic only, state discarded, excluded from physics and solve"
+        },
+        {
+          "name": "coupled_final",
+          "trial": "q_c from the one coupled KKT solve",
+          "history": "virgin",
+          "purpose": "independently verify final elastic force, tangent, opening and energy ledger"
+        }
+      ],
+      "qps_per_call": 16,
+      "commit_trial_state": false
+    }
+  },
+  "rigid_modes": {
+    "order": [
+      "Tx",
+      "Ty",
+      "Tz",
+      "Rx",
+      "Ry",
+      "Rz"
+    ],
+    "vectors_from": "pinned mixed enriched operator rigid_body_mode_coefficients, exact semantic ID match required",
+    "geometric_center_xyz_m": [
+      0,
+      0,
+      0
+    ],
+    "coefficient_construction": "Translations are BASE nodal unit displacements; rotations are omega cross (X_source-center) in metres for unit radians; all GLOBAL_FRONT coefficients zero.",
+    "point_displacement": "translation unit vector or omega cross (x_q-center)",
+    "gates": [
+      "each H+ and H- reproduces expected rigid point displacement at every QP",
+      "J*q_rigid is zero for all six modes at every QP",
+      "actual cached rigid vectors and rebuilt vectors have exact 93 semantic order and rank six"
+    ]
+  },
+  "interface_mechanics": {
+    "exact_KG_formula": "KG[82,82]=integral_Gamma 4*(-x/R)*K0 dA = 2*K0*R*L",
+    "expected_KG_f1_uy_n_per_m": 20000,
+    "only_nonzero_entry": "zero-based [82,82]",
+    "expected_rank": 1,
+    "analytic_matrix_relative_error_max": 1e-12,
+    "internal_force_sign": "f_Gamma = dU_Gamma/dq = +sum(A*J^T*n*t); add +KG to bulk K on left",
+    "physical_face_traction_sign": "upper actual face traction is -t*n and lower is +t*n for positive opening",
+    "primitive_positive_face_force_semantics": "+A*t*n is an internal-potential bookkeeping share, not physical applied force on upper face",
+    "required_sign_identity": "q dot f_Gamma = sum(A*opening*traction) = 2*U_Gamma > 0 on virgin elastic opening",
+    "action_reaction_only_is_insufficient": true
+  },
+  "coupled_problem": {
+    "equation": "(K_raw+KG)q_c + C_phys^T lambda = f_ext_scaled",
+    "kkt_order": 99,
+    "solve_count": 1,
+    "use_original_raw_K": true,
+    "allowed_matrix_changes": "add only analytic and primitive-verified positive elastic KG",
+    "forbidden": [
+      "symmetrize K",
+      "ridge",
+      "pseudoinverse",
+      "coefficient pinning",
+      "load projection",
+      "discard tangential jump"
+    ],
+    "baseline_comparison": "q0 is scaled actual recovered q_solution; require q_c-q0 and KG*q_c exceed the fixed norm-scaled roundoff floors",
+    "mechanical_change_roundoff_floors": {
+      "q_change_m": "128*float64_eps*norm2(q0_m)",
+      "cohesive_internal_force_n": "128*float64_eps*norm2(f_ext_scaled_N)"
+    }
+  },
+  "acceptance_gates": {
+    "mls": "16/16 OK, support count 27, unchanged condition limit and affine reproduction",
+    "exact_trace": "16 common points, F1 +/- pi limits exact; BASE identical; only F1 branch jumps",
+    "rigid": "six actual rigid coefficient vectors reproduced on both traces and annihilated by J",
+    "qp_mode": "all baseline and coupled-final openings positive and below delta0, tangential jump zero by existing tolerance",
+    "stiffness": "KG only [82,82]=20000 N/m to 1e-12 relative; full K and K+KG each 6 zero/87 positive and no negatives under unchanged 64*eps*93*max(abs(eigs)) threshold",
+    "equilibrium": "physical weak residual, six gauge equations and KKT backward error <=1e-9",
+    "energy": "2*(Ubulk+UGamma)-q_c.dot(f_ext_scaled)+g_scaled.dot(lambda)=0 within 1e-9 relative scale; Ubulk=0.5*q_c^T K q_c; UGamma=0.5*q_c^T KG q_c and matches primitive stored energy; virgin elastic dissipated energy=0",
+    "mechanical_change": "KG nonzero; actual cohesive force and q_c-q0 nonzero beyond predeclared numerical floor",
+    "primitive": "baseline and final generalized force/tangent equal KG*q and KG; zero-tangent synthetic control returns zero force/tangent and is discarded"
+  },
+  "execution_budget": {
+    "attempts": 1,
+    "new_unique_mls_queries": 16,
+    "quadrature_points": 16,
+    "max_provider_batch_rows": 256,
+    "coupled_kkt_solves": 1,
+    "primitive_assembly_calls_max": 3,
+    "wall_timeout_seconds": 60,
+    "explicit_memory_estimate_limit_bytes": 67108864,
+    "combined_output_limit_bytes": 12582912,
+    "sweep": false,
+    "execution_authorization": false
+  },
+  "nonclaims": [
+    "no real material or ceramic calibration",
+    "no physical crack extension or autonomous front update",
+    "no process-zone resolution or mixed-mode fracture qualification",
+    "a finite cohesive tangent and changed equilibrium do not establish crack growth"
+  ]
+}
