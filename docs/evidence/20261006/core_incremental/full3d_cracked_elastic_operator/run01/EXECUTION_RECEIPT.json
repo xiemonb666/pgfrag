@@ -1,0 +1,206 @@
+{
+  "schema": "full3d_cracked_elastic_operator_execution_receipt.v1",
+  "authorization": {
+    "authorized_by": "main agent",
+    "scope": "single 384-location, two-batch full 3D operator diagnostic only",
+    "source_pins_authorized_field_left_unchanged": false,
+    "source_pin_file_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7"
+  },
+  "invocation": {
+    "interpreter": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "interpreter_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+    "argv": [
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\full3d_cracked_elastic_operator_20261006\\full3d_operator_diagnostic.py",
+      "--output",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261006\\full3d_cracked_elastic_operator_20261006\\run01\\result.json"
+    ],
+    "process_exit_code": 0,
+    "elapsed_seconds": 0.773,
+    "stdout": "{\"status\": \"OK_DIAGNOSTIC_ONLY_UNQUALIFIED\", \"primary_path\": \"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\tmp\\\\review_20261006\\\\full3d_cracked_elastic_operator_20261006\\\\run01\\\\result.json\"}\r\n",
+    "stderr": "",
+    "worker_stage": null
+  },
+  "post_run_source_pins": [
+    {
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_operator_diagnostic.py",
+      "expected_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a",
+      "actual_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+      "expected_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "actual_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "expected_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "actual_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "actual_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "actual_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "actual_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py",
+      "expected_sha256": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+      "actual_sha256": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py",
+      "expected_sha256": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+      "actual_sha256": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+      "matched": true
+    },
+    {
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json",
+      "expected_sha256": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+      "actual_sha256": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6",
+      "matched": true
+    }
+  ],
+  "saved_result": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261006\\full3d_cracked_elastic_operator_20261006\\run01\\result.json",
+    "bytes": 4661989,
+    "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "assembly_status": "OK",
+    "mechanical_eligibility": "DIAGNOSTIC_PASS_UNQUALIFIED",
+    "solve_allowed": false,
+    "replay_schema": "static_solve_replay.v1",
+    "replay_compact_utf8_bytes": 2373734,
+    "operator_shape": [
+      162,
+      162
+    ],
+    "boundary_load_dof_count": 162,
+    "source_count": 27,
+    "canonical_dof_count": 162,
+    "basis_row_count": 54,
+    "query_count": 384,
+    "region_slices_half_open": {
+      "volume": [
+        0,
+        256
+      ],
+      "lateral_side": [
+        256,
+        320
+      ],
+      "top_cap": [
+        320,
+        352
+      ],
+      "bottom_cap": [
+        352,
+        384
+      ]
+    }
+  },
+  "spectrum": {
+    "count": 162,
+    "near_zero": 6,
+    "positive": 156,
+    "significant_negative": 0,
+    "strict_negative_roundoff": 3,
+    "minimum_eigenvalue": -1.0758143129166994E-12,
+    "zero_tolerance": 3.6296534126375012E-09,
+    "gate_passed": true,
+    "pseudoinverse_or_ridge_used": false
+  },
+  "rigid_virtual_work": {
+    "mode_order": [
+      "tx",
+      "ty",
+      "tz",
+      "rx",
+      "ry",
+      "rz"
+    ],
+    "r_transpose_f": [
+      1.0408340855860843E-17,
+      -1.214306433183765E-17,
+      1.214306433183765E-17,
+      2.6495190590114515E-18,
+      6.393308007845436E-20,
+      -7.970524382971776E-20
+    ],
+    "integrated_force_N": [
+      -1.734723475976807E-18,
+      -5.1580918355997873E-17,
+      4.119968255444917E-18
+    ],
+    "integrated_moment_about_global_origin_Nm": [
+      2.1984740145985365E-18,
+      -2.710505431213761E-20,
+      2.5622746654442585E-19
+    ],
+    "rigid_work_minus_integrated_wrench": [
+      1.214306433183765E-17,
+      3.9437854024160224E-17,
+      8.023096076392733E-18,
+      4.510450444129149E-19,
+      9.103813439059197E-20,
+      -3.359327103741436E-19
+    ],
+    "all_six_checked": true
+  },
+  "cap_boundary_load": {
+    "in_plane_tractions_included": true,
+    "top_max_abs_traction_xyz_Pa": [
+      5734.637003391126,
+      5508.937578171466,
+      0.0
+    ],
+    "bottom_max_abs_traction_xyz_Pa": [
+      5734.637003391126,
+      5508.937578171466,
+      0.0
+    ],
+    "top_resultant_N": [
+      1.734723475976807E-18,
+      0.10638460810704842,
+      0.0
+    ],
+    "bottom_resultant_N": [
+      -1.734723475976807E-18,
+      -0.10638460810704842,
+      0.0
+    ],
+    "exact_boundary_work_J": 2.599999999999999E-06,
+    "manufactured_coefficient_work_J": 2.6E-06,
+    "traction_work_identity_abs_error_J": 8.470329472543003E-22,
+    "applied_to_solver": false
+  },
+  "energy_J": {
+    "analytic_exact": 1.3E-06,
+    "fixed_volume_quadrature": 1.2999999999999998E-06,
+    "coefficient_quadratic": 1.2999999999999998E-06,
+    "convergence_claim": false,
+    "ceramic_material_data": false
+  },
+  "limitations": [
+    "Manufactured field and energy are benchmark-only, not ceramic material data.",
+    "The crack-front field is singular; small-strain behavior arbitrarily near the tip is a limitation.",
+    "One fixed finite quadrature rule is not convergence evidence.",
+    "No static solve or CAD run was performed."
+  ]
+}

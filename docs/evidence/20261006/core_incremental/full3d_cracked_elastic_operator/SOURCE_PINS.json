@@ -1,0 +1,70 @@
+{
+  "schema": "full3d_cracked_elastic_operator_source_pins.v1",
+  "case_id": "modeiii_pu_full3d_elastic_operator_20261006",
+  "status": "SOURCE_READY_FOR_MAIN_AGENT_REVIEW",
+  "entrypoint": {
+    "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_operator_diagnostic.py",
+    "sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a"
+  },
+  "dependencies": [
+    {
+      "name": "enriched_dof_contract.py",
+      "path": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+      "sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8"
+    },
+    {
+      "name": "field_reference.py",
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7"
+    },
+    {
+      "name": "mls3d_shape.py",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "name": "mls3d_mls.py",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "name": "efgm_elastic_operator.py",
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"
+    },
+    {
+      "name": "full3d_cracked_elastic_operator.py",
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_cracked_elastic_operator.py",
+      "sha256": "f8853c24e6d3fceabe5835c90ca24cb47cdc186f718e6b705b0c92310f285022"
+    },
+    {
+      "name": "mls_full3d_enriched_provider.py",
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/mls_full3d_enriched_provider.py",
+      "sha256": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce"
+    },
+    {
+      "name": "fixed_case.json",
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json",
+      "sha256": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6"
+    }
+  ],
+  "source_checks": {
+    "fixed_case_json_and_wire_schema_fixture_passed": true,
+    "full_rc0_promotion_gate_fixture_passed": true,
+    "python_ast_parse_passed": true,
+    "provider_or_operator_executed": false,
+    "solver_executed": false,
+    "cad_executed": false,
+    "git_executed": false
+  },
+  "prepared_run": {
+    "result_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "authorized": false,
+    "result_sha256": null,
+    "parent_wall_timeout_seconds": 60,
+    "maximum_explicit_numeric_array_bytes": 8388608,
+    "maximum_result_json_bytes": 8388608,
+    "predeclared_queries": 384,
+    "provider_batches": [256, 128]
+  }
+}

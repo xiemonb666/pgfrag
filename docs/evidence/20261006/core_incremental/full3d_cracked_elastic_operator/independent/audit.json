@@ -1,0 +1,131 @@
+{
+  "schema": "full3d_saved_array_independent_audit.v1",
+  "status": "PASS_SAVED_ARRAY_ALGEBRA_ONLY",
+  "input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+  "source_entrypoint_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a",
+  "source_pin_manifest_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+  "independent_method": "NumPy reconstruction from saved JSON arrays; no provider/assembler/reference/solver imports",
+  "dimensions": {
+    "source_count": 27,
+    "scalar_basis_rows": 54,
+    "semantic_dofs": 162,
+    "volume_points": 256,
+    "boundary_points": 128
+  },
+  "array_finiteness": true,
+  "positive_volume_and_area_weights": true,
+  "semantic_basis_counts": {
+    "base": 27,
+    "front_f1_unshifted": 27
+  },
+  "K_relative_frobenius_delta": 0.0,
+  "f_relative_l2_delta": 2.848262984876409e-16,
+  "K_relative_asymmetry": 9.275548638916145e-17,
+  "eigenvalue_relative_l2_delta": 0.0,
+  "eigenvalue_min_N_per_m": -1.0758143129166994e-12,
+  "eigenvalue_max_N_per_m": 20242.94912324559,
+  "recomputed_spectrum_counts": {
+    "near_zero": 6,
+    "positive": 156,
+    "significant_negative": 0
+  },
+  "zero_tolerance_N_per_m": 3.6296534126375012e-09,
+  "rigid_vector_relative_delta": 0.0,
+  "rigid_residuals_recomputed": [
+    4.51522737284443e-17,
+    4.173386336913488e-17,
+    3.220390816846468e-17,
+    3.5407489145253125e-17,
+    2.8556509824711084e-17,
+    4.4247813928086105e-17
+  ],
+  "preset_manufactured_coefficient_quadratic_energy_J": 1.2999999999999998e-06,
+  "saved_preset_coefficient_quadratic_energy_J": 1.2999999999999998e-06,
+  "preset_energy_relative_delta": 0.0,
+  "coefficient_interpretation": "prescribed manufactured coefficients; not a solution obtained from K u=f",
+  "recomputed_rigid_virtual_work": [
+    1.6479873021779667e-17,
+    6.938893903907228e-18,
+    -6.938893903907228e-18,
+    2.7376104855258987e-18,
+    -4.638449097194573e-20,
+    1.6099191066950715e-21
+  ],
+  "rigid_work_saved_relative_delta": 5.594857379680492e-17,
+  "rigid_work_vs_integrated_wrench_relative_delta": 1.5637345600210648e-16,
+  "regional_and_total_wrenches": {
+    "side": {
+      "force_N": [
+        0.0,
+        0.0,
+        4.119968255444917e-18
+      ],
+      "moment_Nm": [
+        0.0010638460810704867,
+        -2.795208725939191e-20,
+        0.0
+      ],
+      "saved_scaled_delta": 0.0
+    },
+    "top": {
+      "force_N": [
+        1.734723475976807e-18,
+        0.10638460810704842,
+        0.0
+      ],
+      "moment_Nm": [
+        -0.0005319230405352422,
+        0.0,
+        0.0006383076486422904
+      ],
+      "saved_scaled_delta": 0.0
+    },
+    "bottom": {
+      "force_N": [
+        -1.734723475976807e-18,
+        -0.10638460810704842,
+        0.0
+      ],
+      "moment_Nm": [
+        -0.0005319230405352422,
+        0.0,
+        -0.0006383076486422904
+      ],
+      "saved_scaled_delta": 0.0
+    },
+    "total": {
+      "force_N": [
+        -1.734723475976807e-18,
+        -5.1580918355997873e-17,
+        4.119968255444917e-18
+      ],
+      "moment_Nm": [
+        2.1984740145985365e-18,
+        -2.710505431213761e-20,
+        2.5622746654442585e-19
+      ],
+      "saved_scaled_delta": 0.0
+    }
+  },
+  "net_force_N": [
+    -1.734723475976807e-18,
+    -5.1580918355997873e-17,
+    4.119968255444917e-18
+  ],
+  "net_moment_about_global_origin_Nm": [
+    2.1984740145985365e-18,
+    -2.710505431213761e-20,
+    2.5622746654442585e-19
+  ],
+  "checks": {
+    "K_reassembly_rel_le_5e-11": true,
+    "f_reassembly_rel_le_5e-11": true,
+    "eigenvalues_rel_le_5e-11": true,
+    "rigid_vectors_match_le_5e-11": true,
+    "six_rigid_residuals_le_1e-10": true,
+    "preset_energy_rel_le_5e-11": true,
+    "rigid_work_and_wrenches_match_le_5e-11": true,
+    "spectrum_counts_6_156_0": true
+  },
+  "execution_scope": "cached arrays only; no provider, original assembler, solver, field reference, CAD, or Git"
+}
