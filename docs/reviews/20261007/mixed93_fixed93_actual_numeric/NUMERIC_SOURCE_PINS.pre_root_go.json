@@ -1,0 +1,151 @@
+{
+  "schema": "mixed93_actual_cohesive_bridge_numeric_source_pins.v1",
+  "status": "SOURCE_READY_EXECUTION_DISABLED",
+  "execution_authorized": false,
+  "root_go": {
+    "authorized": false,
+    "token": null,
+    "authorized_by": null,
+    "authorized_utc": null
+  },
+  "frozen_contract": {
+    "static_checker_sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412",
+    "case_sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+    "original_source_pins_sha256": "9cb1fee478dadc080d22a872f29af80e91de8549902334be79fa518cac4554f3",
+    "original_source_pins_execution_authorized": false,
+    "case_execution_authorized": false
+  },
+  "accepted_cache_binding": {
+    "arrays_path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+    "arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "npz_content_opened_by_source_ready": false,
+    "audit_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "audit_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "receipt_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/run_receipt.json",
+    "receipt_sha256": "ea61fbb508a2f5ef052cc31e996f575b9bf5897ec6ca459bbb29ea2656ede703",
+    "producer_frozen_driver_sha256": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+    "actual_array_keys": {
+      "source_positions": "source_positions_xyz_m",
+      "source_ids": "source_ids",
+      "semantic_ids": "semantic_ids",
+      "rigid_vectors": "rigid_coefficient_modes",
+      "K": "K_N_per_m",
+      "physical_constraint_matrix": "physical_volume_moment_matrix",
+      "q_solution": "pure_I_q_solution",
+      "q_exact": "pure_I_q_exact",
+      "external_force": "pure_I_boundary_force_N",
+      "physical_gauge_target": "pure_I_physical_gauge_target_m",
+      "physical_lambda": "pure_I_lambda_physical"
+    }
+  },
+  "references": {
+    "static_checker": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/mixed93_actual_cohesive_bridge.py",
+      "sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412"
+    },
+    "case": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+    },
+    "readme": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/README.md",
+      "sha256": "1b0bd94ec16390f5e60688c31560f910ba0fc6cea948fa25fd309b839be73877"
+    },
+    "numeric_worker": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "numeric_supervisor": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge_once.py",
+      "sha256": "99341a82fa1cbe4192fcac3bf76030e7d094c254606414753c80de6e31a3fba9"
+    },
+    "static_source_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/SOURCE_PINS.json",
+      "sha256": "9cb1fee478dadc080d22a872f29af80e91de8549902334be79fa518cac4554f3"
+    },
+    "mls3d_mls": {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    "mls3d_shape": {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    "mixed_lefm_field": {
+      "path": "pgfrag/experiments/mixed_lefm_benchmark_20261006/mixed_lefm_field.py",
+      "sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd"
+    },
+    "mixed_enriched_operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "trace_primitive": {
+      "path": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    },
+    "cohesive_scalar_law": {
+      "path": "pgfrag/experiments/cohesive_scalar_law_20261006/cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "cohesive_derivative": {
+      "path": "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "cached_producer": {
+      "path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/mixed93_cached_lefm_solve.py",
+      "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c"
+    },
+    "cached_case": {
+      "path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+      "sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c"
+    },
+    "cached_source_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/SOURCE_PINS.json",
+      "sha256": "68436ab01c0333be427ad20f7e9862e88521dda465d35f9405f5a8ec1b8d6cce"
+    },
+    "upstream_result": {
+      "path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+      "sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b"
+    },
+    "upstream_fixed_case": {
+      "path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/fixed_case.json",
+      "sha256": "475e63bb059a8464de20f8f530ecf90d3fa3a94163f04342b8fa75b6ab230ed6"
+    },
+    "recovery_audit": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+      "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+    },
+    "recovery_receipt": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/run_receipt.json",
+      "sha256": "ea61fbb508a2f5ef052cc31e996f575b9bf5897ec6ca459bbb29ea2656ede703"
+    }
+  },
+  "numeric_contract": {
+    "operator_layout": "MIXED93_BASE81_GLOBAL12",
+    "trace_family": "GLOBALFRONT",
+    "new_continuous_base_mls_queries": 16,
+    "finite_interface_quadrature_points": 16,
+    "primitive_assembly_calls_max": 3,
+    "coupled_kkt_order": 99,
+    "coupled_kkt_solves": 1,
+    "linear_scale_from_cached_KI100": 0.01,
+    "KG_only_nonzero_zero_based_index": [
+      82,
+      82
+    ],
+    "KG_expected_n_per_m": 20000,
+    "wall_timeout_seconds": 60,
+    "explicit_memory_estimate_limit_bytes": 67108864,
+    "combined_output_limit_bytes": 12582912,
+    "include_result_raw_logs_lock_and_receipt_in_output_limit": true,
+    "retry_count": 0,
+    "numeric_execution_requires_explicit_root_go": true
+  },
+  "source_ready_contract": {
+    "permitted": "AST/metadata/source hashes and raw-byte NPZ SHA-256 only",
+    "numpy_imported": false,
+    "npz_opened_or_parsed": false,
+    "provider_called": false,
+    "solver_called": false
+  }
+}

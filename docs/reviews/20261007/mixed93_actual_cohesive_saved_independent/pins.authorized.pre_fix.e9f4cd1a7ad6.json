@@ -1,0 +1,29 @@
+{
+  "author_numeric_source_pins": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/NUMERIC_SOURCE_PINS.json",
+    "producer_root_go_token": "ROOT_20261007_MIXED93_ONE_ELASTIC_BRIDGE",
+    "snapshot_sha256_at_review": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140",
+    "was_root_authorized_for_producer_run": true
+  },
+  "case_sha256": "9ea0e6ffb241f10f3e9f38ef545e26f5a2a4427ae20771e258832b6a86d336b7",
+  "execution_authorized": true,
+  "receipt": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/receipt.json",
+    "sha256": "eccd3510fa0c1281484b7ea97a57e226551e5c7d400dbd5da60b6d9772aa6474"
+  },
+  "result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+  },
+  "root_go": {
+    "authorized": true,
+    "authorized_by": "root",
+    "authorized_utc": "2026-10-06T19:25:51Z",
+    "token": "ROOT_20261007_MIXED93_SAVED_INDEPENDENT_ONCE"
+  },
+  "saved_check_sha256": "1b6a201d28bcd33b1d1bce14c594ead8ae3cafb39233a4e1a0ba4e323d6385f7",
+  "schema": "mixed93_actual_cohesive_saved_independent_pins.v1",
+  "scope": "one saved-result audit after independent root GO; no solver, eigensolve, provider, author module import, rerun, or material qualification",
+  "source_check_sha256": "a8e38b4fe408a9472838181e6b4300a9bbc4e27c0dd1aea7f89ba9aa94bc43d4",
+  "status": "SOURCE_READY_EXECUTION_DISABLED"
+}

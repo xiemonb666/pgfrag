@@ -1,0 +1,58 @@
+{
+  "schema": "mixed93_actual_cohesive_saved_visual_source_freeze.v1",
+  "status": "SOURCE_READY_ACTUAL_RESULT_PENDING",
+  "owner_directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual",
+  "non_self_referential": true,
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "exists": false,
+    "sha256": null
+  },
+  "producer_worker_source": {
+    "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+    "sha256_expected": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+    "sha256_actual": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+  },
+  "source_lines": {
+    "render_saved_bridge.py": 160,
+    "run_saved_bridge_visual.py": 130
+  },
+  "sha256": {
+    "README.md": "fd6534461fa9f2aaf4df27b961e812480792d89a3a991718bae054f5e7706552",
+    "SOURCE_PINS.json": "03ca1114a2dea5845c9852b3421cc94e50f4860bef400145cfcb042cb73719f6",
+    "case.json": "df8960fc5b023076cad23c1ae358fe27ad65e8751a2d99f93b29eb9db923bdb4",
+    "render_saved_bridge.py": "a3e700fa3767b8c2ea74a527d2625851d941c4ac1f9a0453a01efae0e9b0bebb",
+    "run_saved_bridge_visual.py": "2a5910d50742a91b1de6fbceffc834d743b01b6dbd51cab956e433cbcdb8db5d"
+  },
+  "display_adjustment": {
+    "opening_scale": "shared 0..1.1*maximum actual saved baseline/coupled opening in metres",
+    "traction_line": "virgin t=K0*delta only from zero to observed maximum; numeric delta0 and actual-points-below-delta0/virgin-only note; no softening",
+    "layout": "constrained GridSpec; dedicated colorbar column and legend/header/footer axes; no subplots_adjust",
+    "sign_panel": "saved internal +t*n bookkeeping share and physical upper -t*n/lower +t*n retained"
+  },
+  "source_snapshot_pre_display_adjustment": {
+    "directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/source_snapshot_pre_display_adjustment",
+    "sha256": {
+      "README.md": "f54ffe64223d25fd4a669c0d961587c3cd82880c81aad58fa838976920dd8f27",
+      "SOURCE_PINS.json": "d1dedf708610ec1e58ddfd81fa133d0c42dad1b43bc250bda2f3e92cb300cf95",
+      "SOURCE_FREEZE.json": "bb1e3f4bb9d28a170f98714c4d127ddd5dda05a0df5e692b37780d2dac7fcdea",
+      "case.json": "d4080c664ae2c77d5159e32b8596e810c66cd33efde540571d40e37d2116e653",
+      "render_saved_bridge.py": "7b2d76077cccae089217d7ece8410507131a57b5bc1e3ff73a26bcb32d44692e"
+    }
+  },
+  "source_only_check": {
+    "command": "VesselForge python.exe -B run_saved_bridge_visual.py",
+    "exit_code": 0,
+    "response_status": "SOURCE_READY_ACTUAL_RESULT_PENDING",
+    "matplotlib_imported": false,
+    "numerical_or_provider_modules_imported": false,
+    "actual_result_opened": false,
+    "rendered": false
+  },
+  "authorization": {
+    "case_execution_authorized": false,
+    "pins_execution_authorized": false,
+    "root_go_authorized": false,
+    "result_sha256": null
+  }
+}
