@@ -1,0 +1,29 @@
+{
+  "schema": "pgfrag.bond_events.freeze.v1",
+  "created_utc": "2026-10-04T08:26:33Z",
+  "test_argv": "& \"C:\\Users\\xiemo\\.local\\bin\\uv.exe\" run --no-project --no-progress --with pytest --python \"C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" python -m pytest -q tests/test_bond_events.py",
+  "test_exit_code": 0,
+  "test_output": "pytest_run.txt",
+  "frozen_files": [
+    {
+      "path": "bond_events.py.frozen",
+      "bytes": 29839,
+      "sha256": "b783bc47eb54ced777706b9a2aaba118400ffedbebebcae5c9666bb95211cd9b"
+    },
+    {
+      "path": "test_bond_events.py.frozen",
+      "bytes": 11760,
+      "sha256": "43b709faf10592a0ec760f2b3350c9367da9ac24236b07759691c28162ac4b8a"
+    },
+    {
+      "path": "native_shaped_fixture.json.frozen",
+      "bytes": 2201,
+      "sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+    },
+    {
+      "path": "pytest_run.txt",
+      "bytes": 507,
+      "sha256": "d3f3a3c255a919d3df48210f0c374484487190b6cbf261f0298f1648cf9e25da"
+    }
+  ]
+}

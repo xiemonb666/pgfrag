@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checks": [
+    "positive_gap_is_force_free_and_has_zero_potential",
+    "penetration_force_and_energy_match_linear_penalty",
+    "rigid_rotation_covariance_of_gap_force_and_energy",
+    "invalid_normals_rejected",
+    "invalid_si_scalar_and_nonfinite_inputs_rejected"
+  ],
+  "note": "Only the listed focused API checks and one bounded toy run were executed.",
+  "post_run_source_note": "After this single run, review found the rotation check rotated about the plane normal. The source was strengthened to rotate the normal itself, but that source adjustment was not re-executed to preserve the one-run limit. All trajectory and numerical values here are from the recorded run."
+}

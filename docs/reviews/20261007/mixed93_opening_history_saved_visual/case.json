@@ -1,0 +1,94 @@
+{
+  "schema": "mixed93_opening_history_saved_visual_case.v1",
+  "case_id": "mixed93_opening_history_saved_visual_20261007",
+  "status": "ROOT_GO_AUTHORIZED_ONCE",
+  "status_history": [
+    {
+      "status": "SOURCE_READY_RESULT_PENDING",
+      "note": "Pre-GO snapshot preserved with result SHA pending; ROOT later supplied and authorized this exact saved result."
+    }
+  ],
+  "classification": "FIXED_FACE_TOY_OPENING_HISTORY_DIAGNOSTIC",
+  "claims": ["FIXED_FACE", "TOY", "NOT_A_FRACTURE_OR_FRAGMENTATION_MODEL", "NO_GROWTH", "NO_MATERIAL_QUALIFICATION"],
+  "execution_authorization": {
+    "authorized": true,
+    "authorized_by": "ROOT",
+    "authorized_utc": "2026-10-07T02:30:27Z"
+  },
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+    "sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "expected_schema": "mixed93_opening_control_result.v1",
+    "expected_status": "DIAGNOSTIC_ONLY",
+    "expected_classification": "FIXED_FACE_GLOBAL_MODE_I_OPENING_CONTROL_TOY_HISTORY_DIAGNOSTIC_ONLY"
+  },
+  "producer_sources": {
+    "driver": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "case": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "result_source_hashes": {
+      "saved_elastic_result": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+      "original_elastic_numeric_pins": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140",
+      "elastic_worker": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+      "trace_primitive": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+      "cohesive_scalar_law": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+      "cohesive_derivative": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+      "mixed_enriched_operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+      "case": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+      "driver": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    }
+  },
+  "trajectory_contract": {
+    "step_count": 12,
+    "step_indexing": "zero-based saved step_index, 0 through 11",
+    "expected_Q_fraction_Qstar": [0, 0.05, 0.15, 0.30, 0.12, 0.30, 0.50, 0.75, 1.10, 0.65, 0, 1.10],
+    "partial_damage_step_indices": [3],
+    "full_damage_step_indices_to_annotate": [8, 10, 11]
+  },
+  "point_selection": {
+    "source": "trajectory[0].points[*].analytic_alpha and point_id",
+    "policy": "select real rows with minimum alpha, upper-median rank, and maximum alpha; ties sort by point_id[1]",
+    "selected_count": 3
+  },
+  "geometry": {
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "expected_interface_qps": 16,
+    "map_step_index": 3,
+    "map_color_range": [0, 1],
+    "map_axes": "saved point_xyz_m x/z only, equal physical aspect"
+  },
+  "saved_result_fields": {
+    "trajectory": "trajectory",
+    "step_Q": "trajectory[*].Q_m",
+    "cohesive_control_force": "trajectory[*].cohesive_generalized_internal_force_N[82]",
+    "total_positive_opening_control": "trajectory[*].control_applied_force_positive_opening_N",
+    "cohesive_stored_energy": "trajectory[*].cohesive_stored_energy_j",
+    "cohesive_dissipated_energy": "trajectory[*].cohesive_dissipated_energy_j",
+    "independent_law_work_increment": "trajectory[*].cohesive_work_increment_independent_law_j",
+    "point_opening_traction_damage": "trajectory[*].points[*].opening_m/traction_pa/state.damage",
+    "point_position": "trajectory[*].points[*].point_xyz_m"
+  },
+  "plot_contract": {
+    "panel_a": "three actual min/upper-median/max-alpha QPs, all 12 saved traction-opening states; path order connected and step index encoded by shared discrete color scale",
+    "panel_b": "aggregate cohesive gamma[82] internal-force component plotted separately from total positive-opening control force, both against saved Q_m",
+    "panel_c": "cohesive-only stored energy, dissipated energy, and cumulative independent law path work; convert J to microjoules; cumulative law work is the sum of saved cohesive_work_increment_independent_law_j and excludes bulk work",
+    "panel_d": "16 saved x/z points colored by saved damage at zero-based step 3 using fixed [0,1] range and equal aspect; annotate full damage at steps 8, 10, and 11",
+    "header": ["FIXED_FACE", "TOY", "NOT_A_FRACTURE_OR_FRAGMENTATION_MODEL", "NO_GROWTH", "NO_MATERIAL_QUALIFICATION"],
+    "data_boundary": "saved JSON values only; do not create geometry, queries, law response, solver output, rough fragments, or new provider/primitive calls"
+  },
+  "limits": {
+    "max_wall_seconds": 15,
+    "max_combined_output_bytes": 2097152,
+    "attempts": 1,
+    "new_mls_queries": 0,
+    "provider_calls": 0,
+    "solver_calls": 0,
+    "planned_output_dir": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/run01"
+  }
+}

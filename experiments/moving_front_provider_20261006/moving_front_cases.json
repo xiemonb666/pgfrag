@@ -1,0 +1,92 @@
+{
+  "schema": "moving-front-provider-case-pair.v1",
+  "status": "SOURCE_ONLY_CASE_INPUTS_NOT_SOLVED",
+  "units": "m",
+  "fixed_rest_domain_m": {
+    "domain_box": [[-0.01, 0.01], [-0.01, 0.01], [-0.008, 0.008]],
+    "crack_x_min_m": -0.01,
+    "crack_y_m": 0.0,
+    "crack_z_bounds_m": [-0.008, 0.008],
+    "front_z_bounds_m": [-0.008, 0.008],
+    "support_radius_h_m": 0.007,
+    "front_reference_radius_R0_m": 0.01,
+    "topology_tolerance_m": 1e-12
+  },
+  "material_rest_source_binding": {
+    "source_case_path": "pgfrag/experiments/local_front_support_contract_20261006/fixed_case.json",
+    "source_case_sha256": "0bdbb20032e105851d2909ff54850ebc54d3f2041c25ab5e42e9102244d90ca5",
+    "coordinate_records_path": "pgfrag/experiments/local_front_support_contract_20261006/role_manifest.json",
+    "coordinate_manifest_file_sha256": "e5e318f80b5dfedbc8ba122f82df3cca1585e604272399d21bc35907d1d28f01",
+    "coordinate_records_sha256": "a8687a23353b6465aa0cc3fcda49a57c240297c38c141a017a167f3c526b23bb",
+    "source_count": 100,
+    "allowed_manifest_fields": ["source_id", "lattice_index", "position_m"],
+    "forbidden_stale_fields": ["geometric_role", "basis_role", "basis_roles", "certificate"],
+    "policy": "Use the pinned manifest only to bind fixed material source IDs and positions. Reclassify all 100 sources independently for each current front; never reuse its old roles or certificates.",
+    "all_source_y_must_remain_nonzero": true
+  },
+  "dependency_pins": {
+    "safe_v2_classifier_path": "pgfrag/experiments/local_front_support_safe_v2_20261006/support_topology.py",
+    "safe_v2_classifier_sha256": "919cb60a6d65ae6b55a0bd12b569ec6627066b2a72dfcca52145209336588664",
+    "registry_contract_path": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+    "registry_contract_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "mls_core_path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+    "mls_core_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "mls_shape_path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+    "mls_shape_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "manufactured_material_case_path": "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json",
+    "manufactured_material_case_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9"
+  },
+  "material_reference": {
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "K_III_Pa_sqrt_m": 100.0,
+    "exact_test_field": "u_z=A*sqrt(r)*sin(theta/2), A=(K_III/mu)*sqrt(2/pi), mu=E/(2*(1+nu))",
+    "scope": "Analytic manufactured comparison centered on each case's current front; it is not a response to the original fixed loading and is not a transferred mechanical solution."
+  },
+  "moving_front_cases": [
+    {
+      "case_id": "moving_front_baseline_x00000_20261006",
+      "front_x_m": 0.0,
+      "finite_crack": {
+        "x_interval_m": [-0.01, 0.0],
+        "x_front_is_excluded_from_Gamma": true,
+        "y_m": 0.0,
+        "z_interval_m": [-0.008, 0.008]
+      },
+      "front_segment": {"x_m": 0.0, "y_m": 0.0, "z_interval_m": [-0.008, 0.008]},
+      "roles_and_registry": "Reclassify all fixed rest sources with safe-v2 at this exact front, then create a fresh BASE/H/FRONT_F1_SHIFTED registry. No role counts or coefficients are inherited from the old provider."
+    },
+    {
+      "case_id": "moving_front_shifted_x00050_20261006",
+      "front_x_m": 0.0005,
+      "finite_crack": {
+        "x_interval_m": [-0.01, 0.0005],
+        "x_front_is_excluded_from_Gamma": true,
+        "y_m": 0.0,
+        "z_interval_m": [-0.008, 0.008]
+      },
+      "front_segment": {"x_m": 0.0005, "y_m": 0.0, "z_interval_m": [-0.008, 0.008]},
+      "roles_and_registry": "Reclassify all fixed rest sources with safe-v2 at this exact front, then create a fresh BASE/H/FRONT_F1_SHIFTED registry. No role counts or coefficients are inherited from the old provider."
+    }
+  ],
+  "provenance_contract": {
+    "surface_geometry_hash_payload": ["domain_box_m", "finite_Gamma_x_min_front_y_z_bounds_m", "finite_front_segment_x_y_z_bounds_m"],
+    "basis_generation_hash_payload": ["surface_geometry_sha256", "source_ID_position_role_basis_role_records", "current_front_shifted_Fbar_source_values", "canonical_DOF_IDs", "h_m", "R0_m", "safe_classifier_sha256"],
+    "samples_must_embed": ["case_id", "front_x_m", "surface_geometry_sha256", "basis_generation_sha256", "source_coordinate_manifest_sha256", "safe_classifier_sha256"],
+    "cross_front_hashes_must_differ": true,
+    "stale_coefficient_policy": "A coefficient bundle tagged for another surface/basis generation must be rejected. No coefficient remap/projection is implemented; a mechanical reprojection or re-solve is required before interpreting shifted-front coefficients as a solution."
+  },
+  "future_diagnostic_budget": {
+    "cases": 2,
+    "provider_queries_per_case": 25,
+    "provider_queries_total": 50,
+    "source_support_reclassifications_total": 200,
+    "synthetic_front_tangency_controls_total": 4,
+    "maximum_combined_check_records": 254,
+    "maximum_queries_per_provider_batch": 256,
+    "maximum_wall_seconds": 30,
+    "maximum_sources": 125,
+    "maximum_scalar_dofs": 375,
+    "diagnostic_only": true
+  }
+}

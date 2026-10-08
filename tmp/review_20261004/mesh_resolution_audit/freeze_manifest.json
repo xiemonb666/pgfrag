@@ -1,0 +1,19 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.freeze.v1",
+  "freeze_stage": "source_test_hand_constructed_fixture_before_execution",
+  "files": [
+    {
+      "path": "pgfrag/src/pgfrag/mesh_resolution_audit.py",
+      "sha256": "77ac2fd59a9898e8a6344ecf4f9b6cbd5aa4445e5a2e713248b7e85d8783f394"
+    },
+    {
+      "path": "pgfrag/tests/test_mesh_resolution_audit.py",
+      "sha256": "9280f54d8ab45606ad84840c7d894afca07005732b3174fef1a16ac0395b3deb"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/fixture_cases.json",
+      "sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b"
+    }
+  ],
+  "scope_note": "Hashes bind the exact module, one pytest file, and synthetic JSON fixture before CLI/pytest execution."
+}

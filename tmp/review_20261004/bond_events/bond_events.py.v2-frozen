@@ -1,0 +1,790 @@
+"""Strict event and intact horizon-bond graph export from native PD state.
+
+This module consumes samples of the solver's directed native ``bond_active``
+field. It does not infer events from an endpoint-only bond list and does not
+interpret graph components as rigid fragments or geometric crack surfaces.
+All lengths, point volumes, density, masses, and times use SI units.
+"""
+
+from __future__ import annotations
+
+from collections.abc import Iterable, Mapping, Sequence
+from dataclasses import dataclass
+import math
+from numbers import Real
+import re
+from typing import Any
+
+
+class BondEventValidationError(ValueError):
+    """Raised when the native point, bond, or frame records are inconsistent."""
+
+
+MAX_TIMESTAMP_RELATIVE_UNCERTAINTY = 1e-6
+
+
+@dataclass(frozen=True, slots=True)
+class DirectedBondRecord:
+    """One directed native bond state and the field location that supplied it."""
+
+    source_point_id: int
+    target_point_id: int
+    active: bool
+    native_field: str
+
+
+@dataclass(frozen=True, slots=True)
+class NativeBondFrame:
+    """A complete directed-bond sample at a solver step and its native time."""
+
+    step: int
+    time_s: float | None
+    directed_bonds: Sequence[DirectedBondRecord]
+    # Native interval dt ending at this frame; step 0 has no preceding interval.
+    step_dt_s: float | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class NativeStateProvenance:
+    """Caller-supplied origin references; these are recorded, not authenticated."""
+
+    native_source: str
+    native_interface: str
+    frame_archive_sha256: str
+    native_source_sha256: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class BondPair:
+    point_i_global: int
+    point_j_global: int
+
+
+@dataclass(frozen=True, slots=True)
+class DirectedFieldRef:
+    source_point_id: int
+    target_point_id: int
+    native_field: str
+
+
+@dataclass(frozen=True, slots=True)
+class InitialStateBrokenBond:
+    pair: BondPair
+    native_fields: tuple[DirectedFieldRef, DirectedFieldRef]
+
+
+@dataclass(frozen=True, slots=True)
+class BondBreakEvent:
+    event_id: str
+    pair: BondPair
+    step: int
+    time_s: float
+    previous_step: int
+    previous_time_s: float
+    previously_active_native_fields: tuple[DirectedFieldRef, DirectedFieldRef]
+    broken_native_fields: tuple[DirectedFieldRef, DirectedFieldRef]
+
+
+@dataclass(frozen=True, slots=True)
+class HorizonGraphComponent:
+    component_id: int
+    point_ids: tuple[int, ...]
+    mass_kg: float
+    semantic_type: str = "intact_horizon_bond_graph_component_only"
+
+
+@dataclass(frozen=True, slots=True)
+class FrameComponents:
+    step: int
+    time_s: float | None
+    step_dt_s: float | None
+    components: tuple[HorizonGraphComponent, ...]
+    native_directed_bonds: tuple[DirectedBondRecord, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class BondEventExport:
+    timeline_status: str
+    timeline_unknown_reasons: tuple[str, ...]
+    expected_final_step: int | None
+    expected_dt_s: float | None
+    time_step_consistency: str
+    provenance: NativeStateProvenance
+    initial_state_broken_bonds: tuple[InitialStateBrokenBond, ...]
+    break_events: tuple[BondBreakEvent, ...]
+    frame_components: tuple[FrameComponents, ...]
+
+    def to_dict(self) -> dict[str, Any]:
+        """Return a JSON-compatible representation with explicit scope limits."""
+
+        def pair_dict(pair: BondPair) -> dict[str, int]:
+            return {
+                "point_i_global": pair.point_i_global,
+                "point_j_global": pair.point_j_global,
+            }
+
+        def refs_dict(refs: tuple[DirectedFieldRef, DirectedFieldRef]) -> list[dict[str, Any]]:
+            return [
+                {
+                    "source_point_id": ref.source_point_id,
+                    "target_point_id": ref.target_point_id,
+                    "native_field": ref.native_field,
+                }
+                for ref in refs
+            ]
+
+        return {
+            "schema": "pgfrag.bond_events.v2",
+            "timeline_status": self.timeline_status,
+            "timeline_unknown_reasons": list(self.timeline_unknown_reasons),
+            "expected_final_step": self.expected_final_step,
+            "break_events_status": (
+                "COMPLETE_OBSERVED_HISTORY" if self.timeline_status == "KNOWN" else "UNKNOWN_NO_INFERENCE"
+            ),
+            "event_semantics": "first true-to-false transition in caller-supplied directed native-state history",
+            "time_step_consistency": self.time_step_consistency,
+            "timestamp_rounding_relative_error_limit": MAX_TIMESTAMP_RELATIVE_UNCERTAINTY,
+            "timestamp_rounding_limit_scope": "numerical time validation tolerance; not physical calibration",
+            "native_state_provenance": {
+                "qualification": "SUPPLIED_NATIVE_STATE_CALLER_PROVIDED_UNVERIFIED",
+                "native_source": self.provenance.native_source,
+                "native_interface": self.provenance.native_interface,
+                "native_source_sha256": self.provenance.native_source_sha256,
+                "frame_archive_sha256": self.provenance.frame_archive_sha256,
+                "native_field_strings_are_lineage_labels_not_authenticity_proofs": True,
+            },
+            "time_step": {
+                "expected_constant_dt_s": self.expected_dt_s,
+                "method": self.time_step_consistency,
+            },
+            "units": {
+                "rest_position": "m",
+                "point_volume": "m^3",
+                "density": "kg/m^3",
+                "point_and_component_mass": "kg",
+                "time": "s",
+            },
+            "initial_state_broken_bonds": [
+                {"pair": pair_dict(item.pair), "native_fields": refs_dict(item.native_fields)}
+                for item in self.initial_state_broken_bonds
+            ],
+            "break_events": [
+                {
+                    "event_id": event.event_id,
+                    "transition": "true_to_false",
+                    "pair": pair_dict(event.pair),
+                    "step": event.step,
+                    "time_s": event.time_s,
+                    "previous_step": event.previous_step,
+                    "previous_time_s": event.previous_time_s,
+                    "previously_active_native_fields": refs_dict(event.previously_active_native_fields),
+                    "broken_native_fields": refs_dict(event.broken_native_fields),
+                }
+                for event in self.break_events
+            ],
+            "frame_components": [
+                {
+                    "step": frame.step,
+                    "time_s": frame.time_s,
+                    "step_dt_s": frame.step_dt_s,
+                    "components": [
+                        {
+                            "component_id": component.component_id,
+                            "point_ids": list(component.point_ids),
+                            "mass_kg": component.mass_kg,
+                            "semantic_type": component.semantic_type,
+                        }
+                        for component in frame.components
+                    ],
+                    "native_directed_bond_states": [
+                        {
+                            "source_point_id": record.source_point_id,
+                            "target_point_id": record.target_point_id,
+                            "active": record.active,
+                            "native_field": record.native_field,
+                        }
+                        for record in frame.native_directed_bonds
+                    ],
+                }
+                for frame in self.frame_components
+            ],
+            "interpretation": {
+                "components": (
+                    "Connected components of the intact native horizon-bond graph, including isolated points; "
+                    "these are not verified rigid fragments."
+                ),
+                "verified_rigid_fragments": "UNKNOWN_NOT_DERIVED",
+                "positive_area_crack_surface": "UNKNOWN_NOT_DERIVED",
+                "historical_surface_lineage": "UNKNOWN_NOT_DERIVED",
+                "R2": "UNKNOWN_NOT_DERIVED",
+            },
+        }
+
+
+def export_native_bond_events(
+    *,
+    point_ids: Sequence[int],
+    rest_positions_m: Mapping[int, Sequence[Real]],
+    point_volumes_m3: Mapping[int, Real],
+    density_kg_m3: Real,
+    initial_bonds: Iterable[tuple[int, int]],
+    frames: Sequence[NativeBondFrame],
+    expected_final_step: int | None,
+    expected_dt_s: Real | None,
+    provenance: NativeStateProvenance,
+) -> BondEventExport:
+    """Validate native directed bond frames and export first break transitions.
+
+    An event is qualified only as a first true-to-false transition observed in
+    the caller-supplied directed native-state history. An explicit step-0 state,
+    every solver step through ``expected_final_step``, finite native time, and
+    constant-dt consistency or native per-interval dt evidence are required. A
+    single endpoint frame or incomplete timing evidence produce UNKNOWN
+    chronology and no break events. In either case, any supplied complete frame
+    still produces its intact horizon-bond graph components, raw directed-state
+    lineage, and SI masses. A continuous prefix shorter than the expected run
+    is retained as UNKNOWN and cannot emit events.
+    """
+
+    ids = _validate_point_ids(point_ids)
+    point_set = set(ids)
+    positions = _validate_positions(rest_positions_m, point_set)
+    volumes = _validate_volumes(point_volumes_m3, point_set)
+    rho = _finite_real(density_kg_m3, "density_kg_m3")
+    if rho <= 0.0:
+        raise BondEventValidationError("density_kg_m3 must be positive")
+    point_masses: dict[int, float] = {}
+    for point_id in ids:
+        mass = rho * volumes[point_id]
+        if not math.isfinite(mass) or mass <= 0.0:
+            raise BondEventValidationError(f"point mass is not positive finite for point {point_id}")
+        point_masses[point_id] = mass
+
+    canonical_bonds = _validate_initial_bonds(initial_bonds, point_set)
+    expected = _validate_expected_step(expected_final_step)
+    constant_dt = _validate_expected_dt(expected_dt_s)
+    provenance = _validate_provenance(provenance)
+    frame_list = _validate_frames(frames, point_set, canonical_bonds, expected)
+
+    all_times_present = all(frame.time_s is not None for frame in frame_list)
+    enough_frames = len(frame_list) >= 2
+    covers_expected_steps = (
+        expected is not None
+        and enough_frames
+        and frame_list[0].step == 0
+        and frame_list[-1].step == expected
+    )
+    dt_consistency = _validate_time_step_consistency(frame_list, constant_dt)
+    chronology_known = (
+        enough_frames
+        and covers_expected_steps
+        and all_times_present
+        and dt_consistency != "UNKNOWN"
+        and dt_consistency != "UNKNOWN_TIME_RESOLUTION"
+    )
+
+    unknown_reasons: list[str] = []
+    if not enough_frames:
+        unknown_reasons.append("only_one_or_zero_native_frame; endpoint chronology is unavailable")
+    if expected is None:
+        unknown_reasons.append("expected_final_step_unavailable; complete timeline cannot be established")
+    elif enough_frames and not covers_expected_steps:
+        unknown_reasons.append("continuous_frame_prefix_does_not_reach_expected_final_step")
+    if enough_frames and not all_times_present:
+        unknown_reasons.append("one_or_more_native_frame_times_unavailable")
+    if enough_frames and dt_consistency == "UNKNOWN":
+        unknown_reasons.append("time_step_consistency_unavailable; supply constant dt or native per-interval dt")
+    if enough_frames and dt_consistency == "UNKNOWN_TIME_RESOLUTION":
+        unknown_reasons.append("timestamp_rounding_uncertainty_exceeds_relative_interval_limit")
+
+    frame_states = [
+        _validate_directed_records(frame, canonical_bonds, frame_index=index)
+        for index, frame in enumerate(frame_list)
+    ]
+    _validate_no_healing(frame_list, frame_states, canonical_bonds)
+
+    initial_broken: list[InitialStateBrokenBond] = []
+    if frame_list and frame_list[0].step == 0:
+        for edge in canonical_bonds:
+            if not frame_states[0][edge]["active"]:
+                initial_broken.append(
+                    InitialStateBrokenBond(
+                        pair=_bond_pair(edge),
+                        native_fields=_field_refs(edge, frame_states[0][edge]),
+                    )
+                )
+
+    events: list[BondBreakEvent] = []
+    if chronology_known:
+        for frame_index in range(1, len(frame_list)):
+            prior_frame = frame_list[frame_index - 1]
+            frame = frame_list[frame_index]
+            for edge in canonical_bonds:
+                prior = frame_states[frame_index - 1][edge]
+                current = frame_states[frame_index][edge]
+                if prior["active"] and not current["active"]:
+                    pair = _bond_pair(edge)
+                    events.append(
+                        BondBreakEvent(
+                            event_id=f"bond-break:step-{frame.step}:{edge[0]}-{edge[1]}",
+                            pair=pair,
+                            step=frame.step,
+                            time_s=_require_time(frame),
+                            previous_step=prior_frame.step,
+                            previous_time_s=_require_time(prior_frame),
+                            previously_active_native_fields=_field_refs(edge, prior),
+                            broken_native_fields=_field_refs(edge, current),
+                        )
+                    )
+
+    component_frames = tuple(
+        FrameComponents(
+            step=frame.step,
+            time_s=frame.time_s,
+            step_dt_s=frame.step_dt_s,
+            components=_components_for_frame(ids, point_masses, canonical_bonds, states),
+            native_directed_bonds=tuple(frame.directed_bonds),
+        )
+        for frame, states in zip(frame_list, frame_states, strict=True)
+    )
+
+    return BondEventExport(
+        timeline_status=(
+            "KNOWN"
+            if chronology_known
+            else "UNKNOWN_TIME_RESOLUTION"
+            if dt_consistency == "UNKNOWN_TIME_RESOLUTION"
+            else "UNKNOWN"
+        ),
+        timeline_unknown_reasons=tuple(unknown_reasons),
+        expected_final_step=expected,
+        expected_dt_s=constant_dt,
+        time_step_consistency=dt_consistency,
+        provenance=provenance,
+        initial_state_broken_bonds=tuple(initial_broken),
+        break_events=tuple(events),
+        frame_components=component_frames,
+    )
+
+
+def _validate_point_ids(point_ids: Sequence[int]) -> tuple[int, ...]:
+    if not isinstance(point_ids, Sequence) or isinstance(point_ids, (str, bytes)):
+        raise BondEventValidationError("point_ids must be a non-empty ordered sequence of stable integer IDs")
+    ids = tuple(point_ids)
+    if not ids:
+        raise BondEventValidationError("point_ids must contain at least one material point")
+    if any(not _is_point_id(point_id) for point_id in ids):
+        raise BondEventValidationError("point IDs must be positive integers (booleans are not IDs)")
+    if len(set(ids)) != len(ids):
+        raise BondEventValidationError("point_ids contain duplicates")
+    return tuple(sorted(ids))
+
+
+def _is_point_id(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value > 0
+
+
+def _validate_positions(
+    values: Mapping[int, Sequence[Real]], point_set: set[int]
+) -> dict[int, tuple[float, float, float]]:
+    mapping = _validate_exact_mapping(values, point_set, "rest_positions_m")
+    result: dict[int, tuple[float, float, float]] = {}
+    for point_id, position in mapping.items():
+        if not isinstance(position, Sequence) or isinstance(position, (str, bytes)) or len(position) != 3:
+            raise BondEventValidationError(f"rest position for point {point_id} must contain exactly three coordinates")
+        result[point_id] = tuple(
+            _finite_real(value, f"rest_positions_m[{point_id}]") for value in position
+        )  # type: ignore[assignment]
+    return result
+
+
+def _validate_volumes(values: Mapping[int, Real], point_set: set[int]) -> dict[int, float]:
+    mapping = _validate_exact_mapping(values, point_set, "point_volumes_m3")
+    result = {point_id: _finite_real(value, f"point_volumes_m3[{point_id}]") for point_id, value in mapping.items()}
+    if any(volume <= 0.0 for volume in result.values()):
+        raise BondEventValidationError("all point volumes must be positive")
+    return result
+
+
+def _validate_exact_mapping(values: Mapping[int, Any], point_set: set[int], name: str) -> Mapping[int, Any]:
+    if not isinstance(values, Mapping):
+        raise BondEventValidationError(f"{name} must be a mapping keyed by stable point ID")
+    keys = set(values)
+    if any(not _is_point_id(key) for key in keys):
+        raise BondEventValidationError(f"{name} contains an invalid point ID key")
+    if keys != point_set:
+        missing = sorted(point_set - keys)
+        extra = sorted(keys - point_set)
+        raise BondEventValidationError(f"{name} IDs mismatch point_ids (missing={missing}, extra={extra})")
+    return values
+
+
+def _finite_real(value: Real, name: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, Real):
+        raise BondEventValidationError(f"{name} must be a finite real number")
+    result = float(value)
+    if not math.isfinite(result):
+        raise BondEventValidationError(f"{name} must be finite")
+    return result
+
+
+def _validate_initial_bonds(
+    initial_bonds: Iterable[tuple[int, int]], point_set: set[int]
+) -> tuple[tuple[int, int], ...]:
+    if isinstance(initial_bonds, (str, bytes)):
+        raise BondEventValidationError("initial_bonds must be an iterable of endpoint pairs")
+    seen: set[tuple[int, int]] = set()
+    try:
+        iterator = iter(initial_bonds)
+    except TypeError as exc:
+        raise BondEventValidationError("initial_bonds must be an iterable of endpoint pairs") from exc
+    for index, raw_pair in enumerate(iterator):
+        if not isinstance(raw_pair, Sequence) or isinstance(raw_pair, (str, bytes)) or len(raw_pair) != 2:
+            raise BondEventValidationError(f"initial_bonds[{index}] must contain exactly two point IDs")
+        first, second = raw_pair
+        if not _is_point_id(first) or not _is_point_id(second):
+            raise BondEventValidationError(f"initial_bonds[{index}] contains an invalid point ID")
+        if first == second:
+            raise BondEventValidationError(f"self-bond is not permitted at point {first}")
+        if first not in point_set or second not in point_set:
+            raise BondEventValidationError(f"initial_bonds[{index}] references an unknown point ID")
+        edge = (min(first, second), max(first, second))
+        if edge in seen:
+            raise BondEventValidationError(f"duplicate canonical initial bond {edge}")
+        seen.add(edge)
+    return tuple(sorted(seen))
+
+
+def _validate_expected_step(value: int | None) -> int | None:
+    if value is None:
+        return None
+    if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+        raise BondEventValidationError("expected_final_step must be a non-negative integer or None")
+    return value
+
+
+def _validate_expected_dt(value: Real | None) -> float | None:
+    if value is None:
+        return None
+    dt = _finite_real(value, "expected_dt_s")
+    if dt <= 0.0:
+        raise BondEventValidationError("expected_dt_s must be positive")
+    return dt
+
+
+def _validate_provenance(value: NativeStateProvenance) -> NativeStateProvenance:
+    if not isinstance(value, NativeStateProvenance):
+        raise BondEventValidationError("provenance must be NativeStateProvenance")
+    for field_name in ("native_source", "native_interface"):
+        field_value = getattr(value, field_name)
+        if not isinstance(field_value, str) or not field_value.strip():
+            raise BondEventValidationError(f"provenance.{field_name} must be a non-empty string")
+    _validate_sha256(value.frame_archive_sha256, "provenance.frame_archive_sha256", required=True)
+    _validate_sha256(value.native_source_sha256, "provenance.native_source_sha256", required=False)
+    return value
+
+
+def _validate_sha256(value: str | None, name: str, *, required: bool) -> None:
+    if value is None and not required:
+        return
+    if not isinstance(value, str) or re.fullmatch(r"[0-9a-fA-F]{64}", value) is None:
+        requirement = "a 64-character SHA-256 hex digest" if required else "None or a 64-character SHA-256 hex digest"
+        raise BondEventValidationError(f"{name} must be {requirement}")
+
+
+def _validate_frames(
+    frames: Sequence[NativeBondFrame],
+    point_set: set[int],
+    canonical_bonds: tuple[tuple[int, int], ...],
+    expected_final_step: int | None,
+) -> tuple[NativeBondFrame, ...]:
+    if not isinstance(frames, Sequence) or isinstance(frames, (str, bytes)):
+        raise BondEventValidationError("frames must be an ordered sequence")
+    frame_list = tuple(frames)
+    for index, frame in enumerate(frame_list):
+        if not isinstance(frame, NativeBondFrame):
+            raise BondEventValidationError(f"frames[{index}] is not a NativeBondFrame")
+        if not isinstance(frame.step, int) or isinstance(frame.step, bool) or frame.step < 0:
+            raise BondEventValidationError(f"frames[{index}].step must be a non-negative integer")
+        if frame.time_s is not None:
+            timestamp = _finite_real(frame.time_s, f"frames[{index}].time_s")
+            if timestamp < 0.0:
+                raise BondEventValidationError(f"frames[{index}].time_s must be non-negative")
+        if frame.step_dt_s is not None:
+            interval_dt = _finite_real(frame.step_dt_s, f"frames[{index}].step_dt_s")
+            if interval_dt <= 0.0:
+                raise BondEventValidationError(f"frames[{index}].step_dt_s must be positive")
+            if frame.step == 0:
+                raise BondEventValidationError("step 0 has no previous frame; step_dt_s must be None there")
+    steps = [frame.step for frame in frame_list]
+    if any(current <= prior for prior, current in zip(steps, steps[1:])):
+        raise BondEventValidationError("frame steps must be strictly increasing; duplicates or reversed frames found")
+    if len(frame_list) >= 2:
+        if steps[0] != 0:
+            raise BondEventValidationError("missing initial frame: a multi-frame timeline must start at step 0")
+        expected_steps = list(range(len(steps)))
+        if steps != expected_steps:
+            raise BondEventValidationError(f"missing native solver frame(s): expected steps {expected_steps}, got {steps}")
+        if expected_final_step is not None:
+            if steps[-1] > expected_final_step:
+                raise BondEventValidationError("native frame step exceeds expected_final_step")
+    elif len(frame_list) == 1 and expected_final_step is not None and steps[0] > expected_final_step:
+        raise BondEventValidationError("native frame step exceeds expected_final_step")
+
+    known_times: list[float] = []
+    for frame in frame_list:
+        if frame.time_s is not None:
+            known_times.append(float(frame.time_s))
+    if any(current <= prior for prior, current in zip(known_times, known_times[1:])):
+        raise BondEventValidationError("native frame times must be strictly increasing when supplied")
+    return frame_list
+
+
+def _validate_time_step_consistency(
+    frames: tuple[NativeBondFrame, ...], expected_dt_s: float | None
+) -> str:
+    """Validate clock resolution and interval timing, or report an unknown mode.
+
+    Timestamp uncertainty is bounded by half an ULP for each recorded time,
+    plus half an ULP for the computed difference. If that bound exceeds the
+    declared interval by more than the recorded numerical limit, the timeline
+    cannot be qualified even when its timestamps are strictly increasing.
+    """
+
+    if len(frames) < 2 or any(frame.time_s is None for frame in frames):
+        return "UNKNOWN"
+    if expected_dt_s is not None:
+        for previous, frame in zip(frames[:-1], frames[1:], strict=True):
+            assert previous.time_s is not None and frame.time_s is not None
+            actual_interval = float(frame.time_s) - float(previous.time_s)
+            if frame.step_dt_s is not None:
+                supplied_dt = float(frame.step_dt_s)
+                dt_rounding_bound = math.fsum((0.5 * math.ulp(supplied_dt), 0.5 * math.ulp(expected_dt_s)))
+                if abs(supplied_dt - expected_dt_s) > dt_rounding_bound:
+                    raise BondEventValidationError(
+                        f"native step_dt_s at step {frame.step} disagrees with expected_dt_s"
+                    )
+            if _interval_has_insufficient_resolution(previous.time_s, frame.time_s, actual_interval, expected_dt_s):
+                return "UNKNOWN_TIME_RESOLUTION"
+            interval_tolerance = _interval_rounding_bound(previous.time_s, frame.time_s, actual_interval)
+            interval_tolerance = min(
+                interval_tolerance,
+                MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * expected_dt_s,
+            )
+            if abs(actual_interval - expected_dt_s) > interval_tolerance:
+                raise BondEventValidationError(
+                    f"native time difference into step {frame.step} disagrees with expected_dt_s"
+                )
+
+        origin_time = float(frames[0].time_s)
+        for frame in frames[1:]:
+            expected_elapsed = frame.step * expected_dt_s
+            if not math.isfinite(expected_elapsed):
+                raise BondEventValidationError(f"expected cumulative time overflow at step {frame.step}")
+            actual_elapsed = float(frame.time_s) - origin_time
+            cumulative_bound = _cumulative_rounding_bound(
+                origin_time,
+                float(frame.time_s),
+                actual_elapsed,
+                expected_elapsed,
+            )
+            if _cumulative_relative_uncertainty(
+                origin_time, float(frame.time_s), actual_elapsed, expected_elapsed
+            ) > MAX_TIMESTAMP_RELATIVE_UNCERTAINTY:
+                return "UNKNOWN_TIME_RESOLUTION"
+            cumulative_tolerance = min(
+                cumulative_bound,
+                MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * expected_elapsed,
+            )
+            if abs(actual_elapsed - expected_elapsed) > cumulative_tolerance:
+                raise BondEventValidationError(
+                    f"cumulative native time at step {frame.step} disagrees with expected_dt_s"
+                )
+        return "CONSTANT_DT_VALIDATED"
+
+    if any(frame.step_dt_s is None for frame in frames[1:]):
+        return "UNKNOWN"
+    for previous, frame in zip(frames[:-1], frames[1:], strict=True):
+        assert previous.time_s is not None and frame.time_s is not None and frame.step_dt_s is not None
+        elapsed = float(frame.time_s) - float(previous.time_s)
+        interval_dt = float(frame.step_dt_s)
+        if _interval_has_insufficient_resolution(previous.time_s, frame.time_s, elapsed, interval_dt):
+            return "UNKNOWN_TIME_RESOLUTION"
+        interval_tolerance = min(
+            _interval_rounding_bound(previous.time_s, frame.time_s, elapsed),
+            MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * interval_dt,
+        )
+        if abs(elapsed - interval_dt) > interval_tolerance:
+            raise BondEventValidationError(
+                f"time difference into step {frame.step} disagrees with supplied native step_dt_s"
+            )
+    return "VARIABLE_DT_INTERVALS_VALIDATED"
+
+
+def _interval_rounding_bound(previous_time: Real, current_time: Real, measured_interval: float) -> float:
+    return math.fsum(
+        (
+            0.5 * math.ulp(float(previous_time)),
+            0.5 * math.ulp(float(current_time)),
+            0.5 * math.ulp(measured_interval),
+        )
+    )
+
+
+def _cumulative_rounding_bound(
+    origin_time: float, current_time: float, measured_elapsed: float, expected_elapsed: float
+) -> float:
+    return math.fsum(
+        (
+            0.5 * math.ulp(origin_time),
+            0.5 * math.ulp(current_time),
+            0.5 * math.ulp(measured_elapsed),
+            0.5 * math.ulp(expected_elapsed),
+        )
+    )
+
+
+def _interval_relative_uncertainty(
+    previous_time: Real, current_time: Real, measured_interval: float, declared_interval: float
+) -> float:
+    return math.fsum(
+        0.5 * (math.ulp(float(value)) / declared_interval)
+        for value in (previous_time, current_time, measured_interval)
+    )
+
+
+def _cumulative_relative_uncertainty(
+    origin_time: float, current_time: float, measured_elapsed: float, expected_elapsed: float
+) -> float:
+    return math.fsum(
+        0.5 * (math.ulp(value) / expected_elapsed)
+        for value in (origin_time, current_time, measured_elapsed, expected_elapsed)
+    )
+
+
+def _interval_has_insufficient_resolution(
+    previous_time: Real, current_time: Real, measured_interval: float, declared_interval: float
+) -> bool:
+    relative_uncertainty = _interval_relative_uncertainty(
+        previous_time, current_time, measured_interval, declared_interval
+    )
+    return relative_uncertainty > MAX_TIMESTAMP_RELATIVE_UNCERTAINTY
+
+
+def _validate_directed_records(
+    frame: NativeBondFrame,
+    canonical_bonds: tuple[tuple[int, int], ...],
+    *,
+    frame_index: int,
+) -> dict[tuple[int, int], dict[str, Any]]:
+    if not isinstance(frame.directed_bonds, Sequence) or isinstance(frame.directed_bonds, (str, bytes)):
+        raise BondEventValidationError(f"frames[{frame_index}].directed_bonds must be an ordered record sequence")
+    expected_edges = set(canonical_bonds)
+    directed: dict[tuple[int, int], tuple[bool, str]] = {}
+    for record_index, record in enumerate(frame.directed_bonds):
+        if not isinstance(record, DirectedBondRecord):
+            raise BondEventValidationError(
+                f"frames[{frame_index}].directed_bonds[{record_index}] is not a DirectedBondRecord"
+            )
+        source = record.source_point_id
+        target = record.target_point_id
+        if not _is_point_id(source) or not _is_point_id(target):
+            raise BondEventValidationError(f"frames[{frame_index}] contains an invalid directed point ID")
+        if source == target:
+            raise BondEventValidationError(f"self-bond found in frame {frame.step} at point {source}")
+        edge = (min(source, target), max(source, target))
+        if edge not in expected_edges:
+            raise BondEventValidationError(
+                f"frame {frame.step} contains directed state for non-initial horizon bond {edge}"
+            )
+        direction = (source, target)
+        if direction in directed:
+            raise BondEventValidationError(f"duplicate directed bond state {direction} in frame {frame.step}")
+        if not isinstance(record.active, bool):
+            raise BondEventValidationError(f"active state for directed bond {direction} must be bool")
+        if not isinstance(record.native_field, str) or not record.native_field.strip():
+            raise BondEventValidationError(f"native_field for directed bond {direction} must be a non-empty string")
+        directed[direction] = (record.active, record.native_field)
+
+    states: dict[tuple[int, int], dict[str, Any]] = {}
+    for edge in canonical_bonds:
+        first_to_second = directed.get(edge)
+        second_to_first = directed.get((edge[1], edge[0]))
+        if first_to_second is None or second_to_first is None:
+            missing = edge if first_to_second is None else (edge[1], edge[0])
+            raise BondEventValidationError(f"frame {frame.step} is missing directed native bond state {missing}")
+        if first_to_second[0] != second_to_first[0]:
+            raise BondEventValidationError(f"reciprocal native bond states disagree for {edge} at step {frame.step}")
+        states[edge] = {
+            "active": first_to_second[0],
+            "forward_field": first_to_second[1],
+            "reverse_field": second_to_first[1],
+        }
+    return states
+
+
+def _validate_no_healing(
+    frames: tuple[NativeBondFrame, ...],
+    frame_states: list[dict[tuple[int, int], dict[str, Any]]],
+    canonical_bonds: tuple[tuple[int, int], ...],
+) -> None:
+    for frame_index in range(1, len(frames)):
+        for edge in canonical_bonds:
+            previous = frame_states[frame_index - 1][edge]["active"]
+            current = frame_states[frame_index][edge]["active"]
+            if not previous and current:
+                raise BondEventValidationError(
+                    f"illegal native bond healing for {edge} between steps "
+                    f"{frames[frame_index - 1].step} and {frames[frame_index].step}"
+                )
+
+
+def _field_refs(edge: tuple[int, int], state: dict[str, Any]) -> tuple[DirectedFieldRef, DirectedFieldRef]:
+    return (
+        DirectedFieldRef(edge[0], edge[1], state["forward_field"]),
+        DirectedFieldRef(edge[1], edge[0], state["reverse_field"]),
+    )
+
+
+def _bond_pair(edge: tuple[int, int]) -> BondPair:
+    return BondPair(edge[0], edge[1])
+
+
+def _require_time(frame: NativeBondFrame) -> float:
+    if frame.time_s is None:
+        raise BondEventValidationError("internal error: an event frame has no supplied native time")
+    return float(frame.time_s)
+
+
+def _components_for_frame(
+    point_ids: tuple[int, ...],
+    point_masses: dict[int, float],
+    canonical_bonds: tuple[tuple[int, int], ...],
+    states: dict[tuple[int, int], dict[str, Any]],
+) -> tuple[HorizonGraphComponent, ...]:
+    adjacency = {point_id: set() for point_id in point_ids}
+    for first, second in canonical_bonds:
+        if states[(first, second)]["active"]:
+            adjacency[first].add(second)
+            adjacency[second].add(first)
+
+    unvisited = set(point_ids)
+    components: list[HorizonGraphComponent] = []
+    while unvisited:
+        seed = min(unvisited)
+        stack = [seed]
+        unvisited.remove(seed)
+        members: list[int] = []
+        while stack:
+            current = stack.pop()
+            members.append(current)
+            for neighbor in sorted(adjacency[current], reverse=True):
+                if neighbor in unvisited:
+                    unvisited.remove(neighbor)
+                    stack.append(neighbor)
+        sorted_members = tuple(sorted(members))
+        mass = math.fsum(point_masses[point_id] for point_id in sorted_members)
+        if not math.isfinite(mass) or mass <= 0.0:
+            raise BondEventValidationError(f"component mass is not positive finite for component {seed}")
+        components.append(HorizonGraphComponent(seed, sorted_members, mass))
+    return tuple(sorted(components, key=lambda component: component.component_id))

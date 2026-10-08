@@ -1,0 +1,641 @@
+--- v1_freeze/bias_protocol.py
++++ pgfrag/src/pgfrag/bias_protocol.py
+@@ -293,6 +293,8 @@
+ 
+         horizon = None
+         process_zone_status = "NOT_APPLICABLE"
++        process_zone_signature = None
++        process_zone_partial = False
+         if kind == "pd_point_cloud":
+             if disc.get("horizon_m") is None:
+                 _add_unknown(
+@@ -326,6 +328,10 @@
+                 )
+             elif process_zone.get("status") == "UNKNOWN":
+                 process_zone_status = "UNKNOWN"
++                process_zone_partial = any(
++                    process_zone.get(key) is not None
++                    for key in ("length_m", "definition_sha256", "source_sha256")
++                )
+                 _add_unknown(
+                     unknowns,
+                     f"{prefix}.discretization.process_zone",
+@@ -360,6 +366,13 @@
+                 )
+                 if definition_ok and source_ok:
+                     process_zone_status = "DECLARED_KNOWN_UNVERIFIED"
++                    process_zone_signature = {
++                        "length_m": float(process_zone["length_m"]),
++                        "definition_sha256": process_zone["definition_sha256"].lower(),
++                        "source_sha256": process_zone["source_sha256"].lower(),
++                    }
++                else:
++                    process_zone_partial = True
+ 
+         signatures = _signature_record(disc, str(run_id), errors, unknowns)
+         lineage = disc.get("construction_lineage")
+@@ -437,6 +450,8 @@
+                 "spacing_m": spacing_value,
+                 "horizon_m": horizon,
+                 "process_zone_status": process_zone_status,
++                "process_zone_signature": process_zone_signature,
++                "process_zone_partial": process_zone_partial,
+                 "dt_s": dt,
+                 "end_time_s": end_time,
+                 "lineage_kind": lineage_kind,
+@@ -513,7 +528,13 @@
+ def _physical_signature(physical_case: Any) -> tuple[Any, ...] | None:
+     if not isinstance(physical_case, Mapping):
+         return None
+-    signature = tuple(_at_path(physical_case, path) for path in _PHYSICAL_FIELDS)
++    signature_values = []
++    for path in _PHYSICAL_FIELDS:
++        value = _at_path(physical_case, path)
++        if path[-1].endswith("_sha256") and _is_sha256(value):
++            value = value.lower()
++        signature_values.append(value)
++    signature = tuple(signature_values)
+     if any(value is None for value in signature):
+         return None
+     return signature
+@@ -529,6 +550,94 @@
+ 
+ def _same_float(left: Any, right: Any) -> bool:
+     return isinstance(left, (int, float)) and isinstance(right, (int, float)) and float(left) == float(right)
++
++
++def _pd_scale_comparison(left: Mapping[str, Any], right: Mapping[str, Any]) -> dict[str, str]:
++    """Compare horizon and process-zone inputs independently for a planned contrast."""
++    if left.get("kind") != "pd_point_cloud" or right.get("kind") != "pd_point_cloud":
++        return {"status": "MATCH", "horizon_status": "NOT_APPLICABLE", "process_zone_status": "NOT_APPLICABLE"}
++
++    left_horizon = left.get("horizon_m")
++    right_horizon = right.get("horizon_m")
++    if left_horizon is None or right_horizon is None:
++        return {
++            "status": "UNKNOWN_NOT_READY",
++            "horizon_status": "UNKNOWN",
++            "process_zone_status": "NOT_EVALUATED",
++        }
++    if not _same_float(left_horizon, right_horizon):
++        return {
++            "status": "CONFOUNDED_NOT_COMPARABLE",
++            "horizon_status": "DIFFERENT",
++            "process_zone_status": "NOT_EVALUATED",
++        }
++
++    left_pz_status = left.get("process_zone_status")
++    right_pz_status = right.get("process_zone_status")
++    left_pz = left.get("process_zone_signature")
++    right_pz = right.get("process_zone_signature")
++    if (
++        left_pz_status == "UNKNOWN"
++        and right_pz_status == "UNKNOWN"
++        and not left.get("process_zone_partial", False)
++        and not right.get("process_zone_partial", False)
++    ):
++        return {
++            "status": "MATCH_WITH_UNKNOWN_PROCESS_ZONE",
++            "horizon_status": "MATCH",
++            "process_zone_status": "UNKNOWN_BOTH",
++        }
++    if left_pz_status != "DECLARED_KNOWN_UNVERIFIED" or right_pz_status != "DECLARED_KNOWN_UNVERIFIED":
++        return {
++            "status": "UNKNOWN_NOT_READY",
++            "horizon_status": "MATCH",
++            "process_zone_status": "UNKNOWN_ASYMMETRIC",
++        }
++    if left_pz != right_pz:
++        return {
++            "status": "CONFOUNDED_NOT_COMPARABLE",
++            "horizon_status": "MATCH",
++            "process_zone_status": "DIFFERENT",
++        }
++    return {
++        "status": "MATCH",
++        "horizon_status": "MATCH",
++        "process_zone_status": "MATCH_DECLARED_UNVERIFIED",
++    }
++
++
++def _actual_end_time_comparison(
++    left: Mapping[str, Any], right: Mapping[str, Any]
++) -> dict[str, str]:
++    left_results = left.get("raw", {}).get("results", {})
++    right_results = right.get("raw", {}).get("results", {})
++    left_actual = left_results.get("actual_run", {}) if isinstance(left_results, Mapping) else {}
++    right_actual = right_results.get("actual_run", {}) if isinstance(right_results, Mapping) else {}
++    left_actual = left_actual if isinstance(left_actual, Mapping) else {}
++    right_actual = right_actual if isinstance(right_actual, Mapping) else {}
++    left_status = left_actual.get("status")
++    right_status = right_actual.get("status")
++    if left_status in (None, "NOT_RUN") and right_status in (None, "NOT_RUN"):
++        return {"status": "MATCH_PLANNED_NOT_RUN", "actual_end_time_status": "NOT_RUN"}
++    if left_status != "COMPLETED" or right_status != "COMPLETED":
++        return {"status": "UNKNOWN_NOT_READY", "actual_end_time_status": "INCOMPLETE_RUN_PAIR"}
++    left_end = left_actual.get("actual_end_time_s")
++    right_end = right_actual.get("actual_end_time_s")
++    if not _positive_number(left_end) or not _positive_number(right_end):
++        return {"status": "UNKNOWN_NOT_READY", "actual_end_time_status": "MISSING_OR_INVALID"}
++    if float(left_end) != float(right_end):
++        return {"status": "CONFOUNDED_NOT_COMPARABLE", "actual_end_time_status": "DIFFERENT"}
++    return {"status": "MATCH_ACTUAL", "actual_end_time_status": "MATCH"}
++
++
++def _contrast_summary(states: list[str]) -> str:
++    if "READY" in states:
++        return "READY"
++    if "CONFOUNDED_NOT_COMPARABLE" in states:
++        return "CONFOUNDED_NOT_COMPARABLE"
++    if "UNKNOWN_NOT_READY" in states:
++        return "UNKNOWN_NOT_READY"
++    return "NOT_READY"
+ 
+ 
+ def _lineage_points_to(left: Mapping[str, Any], right: Mapping[str, Any]) -> bool:
+@@ -761,7 +870,8 @@
+         for i in range(len(flattened))
+         for j in range(i + 1, len(flattened))
+     ]
+-    direction_design = "NOT_READY"
++    contrast_audits: list[dict[str, Any]] = []
++    direction_states: list[str] = []
+     direction_pair: dict[str, Any] | None = None
+     for i, left in enumerate(flattened):
+         for right in flattened[i + 1 :]:
+@@ -771,26 +881,49 @@
+                 or left.get("generator_sha256") != right.get("generator_sha256")
+                 or not _same_float(left.get("spacing_m"), right.get("spacing_m"))
+                 or not _same_float(left.get("dt_s"), right.get("dt_s"))
++                or not _same_float(left.get("end_time_s"), right.get("end_time_s"))
+                 or not _nonempty(left.get("direction"))
+                 or not _nonempty(right.get("direction"))
+                 or left.get("direction") == right.get("direction")
+             ):
+                 continue
+-            pair_ok, reason = _is_generation_pair(left, right)
+-            if pair_ok:
+-                direction_design = "READY"
++            scale = _pd_scale_comparison(left, right)
++            pair_state = scale["status"]
++            reason = pair_state
++            if pair_state in {"MATCH", "MATCH_WITH_UNKNOWN_PROCESS_ZONE"}:
++                pair_ok, reason = _is_generation_pair(left, right)
++                if pair_ok:
++                    pair_state = "READY"
++                elif reason == "UNKNOWN_SIGNATURE_RELATION" or reason == "GENERATOR_MISMATCH_OR_UNKNOWN":
++                    pair_state = "UNKNOWN_NOT_READY"
++                elif reason in {
++                    "DUPLICATE_DISCRETIZATION",
++                    "SAME_SOURCE_RIGID_ROTATION",
++                    "SAME_ROTATION_INVARIANT_SIGNATURE",
++                    "SAME_GENERATION_SEED",
++                }:
++                    pair_state = "NOT_READY"
++                else:
++                    pair_state = "UNKNOWN_NOT_READY"
++            direction_states.append(pair_state)
++            contrast_audits.append(
++                {
++                    "contrast": "independent_generated_direction_seed",
++                    "run_ids": [left.get("run_id"), right.get("run_id")],
++                    **scale,
++                    "status": pair_state,
++                    "construction_reason": reason,
++                }
++            )
++            if pair_state == "READY" and direction_pair is None:
+                 direction_pair = {
+                     "run_ids": [left.get("run_id"), right.get("run_id")],
+                     "status": "UNVERIFIED_INDEPENDENT_CANDIDATE",
+-                    "reason": "different declared generation seeds and directions; signatures were not recomputed",
++                    "reason": "fixed spacing, dt, end time, PD horizon/process-zone comparison; distinct declared seeds/directions; signatures were not recomputed",
+                 }
+-                break
+-            if reason not in {"SAME_GENERATION_SEED", "UNKNOWN_SIGNATURE_RELATION"}:
+-                direction_design = "UNKNOWN" if direction_design != "READY" else direction_design
+-        if direction_design == "READY":
+-            break
+-
+-    spatial_design = "NOT_READY"
++    direction_design = _contrast_summary(direction_states)
++
++    spatial_states: list[str] = []
+     spatial_pair: dict[str, Any] | None = None
+     for i, left in enumerate(flattened):
+         for right in flattened[i + 1 :]:
+@@ -800,31 +933,50 @@
+                 or left.get("generator_id") != right.get("generator_id")
+                 or left.get("generator_sha256") is None
+                 or left.get("generator_sha256") != right.get("generator_sha256")
++                or not _nonempty(left.get("direction"))
+                 or left.get("direction") != right.get("direction")
+                 or _same_float(left.get("spacing_m"), right.get("spacing_m"))
+                 or not _same_float(left.get("dt_s"), right.get("dt_s"))
++                or not _same_float(left.get("end_time_s"), right.get("end_time_s"))
+             ):
+                 continue
++            scale = _pd_scale_comparison(left, right)
+             relation = _pair_audit(left, right)["relationship"]
+-            if relation == "DIFFERENT_DECLARED_DISCRETIZATION_SIGNATURES":
+-                spatial_design = "READY"
++            pair_state = scale["status"]
++            if pair_state in {"MATCH", "MATCH_WITH_UNKNOWN_PROCESS_ZONE"}:
++                if relation == "DIFFERENT_DECLARED_DISCRETIZATION_SIGNATURES":
++                    pair_state = "READY"
++                elif relation == "UNKNOWN":
++                    pair_state = "UNKNOWN_NOT_READY"
++                else:
++                    pair_state = "NOT_READY"
++            spatial_states.append(pair_state)
++            contrast_audits.append(
++                {
++                    "contrast": "spatial_resolution",
++                    "run_ids": [left.get("run_id"), right.get("run_id")],
++                    **scale,
++                    "status": pair_state,
++                    "discretization_relationship": relation,
++                }
++            )
++            if pair_state == "READY" and spatial_pair is None:
+                 spatial_pair = {
+                     "run_ids": [left.get("run_id"), right.get("run_id")],
+                     "spacing_m": [left.get("spacing_m"), right.get("spacing_m")],
+                     "signature_status": "UNVERIFIED",
+                 }
+-                break
+-            if relation == "UNKNOWN":
+-                spatial_design = "UNKNOWN"
+-        if spatial_design == "READY":
+-            break
+-
+-    dt_design = "NOT_READY"
++    spatial_design = _contrast_summary(spatial_states)
++
++    dt_states: list[str] = []
+     dt_pair: dict[str, Any] | None = None
+     for i, left in enumerate(flattened):
+         for right in flattened[i + 1 :]:
+             if (
+-                left.get("artifact_sha256") is None
++                left.get("kind") != right.get("kind")
++                or left.get("generator_id") != right.get("generator_id")
++                or left.get("generator_sha256") != right.get("generator_sha256")
++                or left.get("artifact_sha256") is None
+                 or left.get("artifact_sha256") != right.get("artifact_sha256")
+                 or not _same_float(left.get("spacing_m"), right.get("spacing_m"))
+                 or not _same_float(left.get("end_time_s"), right.get("end_time_s"))
+@@ -833,23 +985,32 @@
+                 or _same_float(left.get("dt_s"), right.get("dt_s"))
+             ):
+                 continue
+-            left_disc = left.get("raw", {}).get("discretization", {})
+-            right_disc = right.get("raw", {}).get("discretization", {})
+-            if not isinstance(left_disc, Mapping) or not isinstance(right_disc, Mapping):
+-                continue
+-            if left_disc.get("horizon_m") != right_disc.get("horizon_m"):
+-                continue
+-            if left_disc.get("process_zone") != right_disc.get("process_zone"):
+-                continue
+-            dt_design = "READY"
+-            dt_pair = {
+-                "run_ids": [left.get("run_id"), right.get("run_id")],
+-                "dt_s": [left.get("dt_s"), right.get("dt_s")],
+-                "same_discretization_sha256": left.get("artifact_sha256"),
+-            }
+-            break
+-        if dt_design == "READY":
+-            break
++            scale = _pd_scale_comparison(left, right)
++            actual_end = _actual_end_time_comparison(left, right)
++            pair_state = scale["status"]
++            if pair_state in {"MATCH", "MATCH_WITH_UNKNOWN_PROCESS_ZONE"}:
++                pair_state = actual_end["status"] if actual_end["status"] not in {
++                    "MATCH_PLANNED_NOT_RUN",
++                    "MATCH_ACTUAL",
++                } else "READY"
++            dt_states.append(pair_state)
++            contrast_audits.append(
++                {
++                    "contrast": "time_step",
++                    "run_ids": [left.get("run_id"), right.get("run_id")],
++                    **scale,
++                    **actual_end,
++                    "status": pair_state,
++                }
++            )
++            if pair_state == "READY" and dt_pair is None:
++                dt_pair = {
++                    "run_ids": [left.get("run_id"), right.get("run_id")],
++                    "dt_s": [left.get("dt_s"), right.get("dt_s")],
++                    "same_discretization_sha256": left.get("artifact_sha256"),
++                    "actual_end_time_status": actual_end["actual_end_time_status"],
++                }
++    dt_design = _contrast_summary(dt_states)
+ 
+     design_checks = {
+         "independent_generated_direction_seed": {
+@@ -862,9 +1023,6 @@
+     }
+     required_design_ready = all(
+         design_checks[key]["status"] == "READY" for key in design_checks
+-    )
+-    has_unknown_design = any(
+-        design_checks[key]["status"] == "UNKNOWN" for key in design_checks
+     )
+     if physical_status == "MISMATCH":
+         status = "NOT_COMPARABLE"
+@@ -888,8 +1046,6 @@
+             if any_run_evidence
+             else "READY_NOT_RUN"
+         )
+-    elif has_unknown_design or unknowns:
+-        status = "NOT_READY"
+     else:
+         status = "NOT_READY"
+ 
+@@ -906,6 +1062,7 @@
+         "status": status,
+         "physical_case_comparability": physical_status,
+         "design_checks": design_checks,
++        "contrast_audits": contrast_audits,
+         "independent_discretization_evidence_status": "UNVERIFIED",
+         "peridynamic_resolution_qualification": pd_resolution_status,
+         "pair_audits": pair_audits,
+--- v1_freeze/test_bias_protocol.py
++++ pgfrag/tests/test_bias_protocol.py
+@@ -8,6 +8,24 @@
+ 
+ def digest(label: str) -> str:
+     return hashlib.sha256(label.encode("utf-8")).hexdigest()
++
++
++def uppercase_hashes(value):
++    if isinstance(value, dict):
++        for key, child in list(value.items()):
++            if (
++                isinstance(child, str)
++                and len(child) == 64
++                and all(char in "0123456789abcdefABCDEF" for char in child)
++                and (key == "sha256" or key.endswith("_sha256"))
++            ):
++                value[key] = child.upper()
++            else:
++                uppercase_hashes(child)
++    elif isinstance(value, list):
++        for child in value:
++            uppercase_hashes(child)
++    return value
+ 
+ 
+ PHYSICAL_OBJECT = digest("physical-object-v1")
+@@ -35,7 +53,8 @@
+             "generator_sha256": digest("generator-source-v1"),
+             "generation_seed": seed,
+             "spacing": {"symbol": "dx", "value_m": dx_m},
+-            # Omitted horizon/process-zone values intentionally remain UNKNOWN.
++            "horizon_m": 2.0e-3,
++            # The process-zone input is intentionally absent in the unknown-zone control.
+             **({"process_zone": process_zone} if process_zone is not None else {}),
+             "signatures": {
+                 "artifact_sha256": artifact_sha,
+@@ -153,6 +172,34 @@
+     assert report["design_checks"]["independent_generated_direction_seed"]["status"] != "READY"
+ 
+ 
++def test_sha_comparisons_ignore_hex_case_without_mutating_input() -> None:
++    original = make_manifest()
++    mixed_case = uppercase_hashes(copy.deepcopy(original))
++    original_snapshot = copy.deepcopy(original)
++
++    across_studies = comparison_readiness([original, mixed_case])
++    same_artifact_pair = copy.deepcopy(original["runs"][0])
++    same_artifact_pair["run_id"] = "same-artifact-uppercase-hash"
++    same_artifact_pair["direction"] = "alternate-label"
++    same_artifact_pair["discretization"]["generation_seed"] = 9001
++    same_artifact_pair["discretization"]["signatures"]["artifact_sha256"] = (
++        same_artifact_pair["discretization"]["signatures"]["artifact_sha256"].upper()
++    )
++    same_artifact_pair["discretization"]["signatures"]["rotation_invariant_discretization"][
++        "source_artifact_sha256"
++    ] = same_artifact_pair["discretization"]["signatures"]["artifact_sha256"]
++    pair_manifest = copy.deepcopy(original)
++    pair_manifest["runs"] = [copy.deepcopy(original["runs"][0]), same_artifact_pair]
++    within_study = comparison_readiness(pair_manifest)
++
++    assert across_studies["physical_case_comparability"] == "MATCH"
++    assert any(
++        item["relationship"] == "DUPLICATE_DISCRETIZATION"
++        for item in within_study["pair_audits"]
++    )
++    assert original == original_snapshot
++
++
+ def test_missing_rest_coordinate_field_hash_leaves_physical_comparison_unknown() -> None:
+     manifest = make_manifest()
+     del manifest["physical_case"]["material"]["rest_coordinate_field_sha256"]
+@@ -217,13 +264,14 @@
+     run["results"] = {
+         "actual_run": {
+             "status": "COMPLETED",
+-            "receipt_sha256": receipt_sha,
+-            "outputs": [{"path": "physics/result.vtu", "sha256": output_sha}],
++            "receipt_sha256": receipt_sha.upper(),
++            "actual_end_time_s": 1.0e-4,
++            "outputs": [{"path": "physics/result.vtu", "sha256": output_sha.upper()}],
+         },
+         "qualified_surface": {
+             "status": "QUALIFIED",
+-            "sha256": surface_sha,
+-            "qualification_report_sha256": digest("surface-qualification-report"),
++            "sha256": surface_sha.upper(),
++            "qualification_report_sha256": digest("surface-qualification-report").upper(),
+             "source_run_receipt_sha256": receipt_sha,
+         },
+         "metrics": {
+@@ -238,6 +286,12 @@
+             }
+         },
+     }
++    half_dt = next(item for item in manifest["runs"] if item["run_id"] == "coarse-x-half-dt")
++    half_dt["results"]["actual_run"] = {
++        "status": "COMPLETED",
++        "receipt_sha256": digest("half-dt-receipt"),
++        "actual_end_time_s": 1.0e-4,
++    }
+     evidenced_report = comparison_readiness(manifest)
+     evidenced = evidenced_report["metric_evidence"]["coarse-x"]["energy"]
+     assert evidenced_report["status"] == "RUN_EVIDENCE_PRESENT_ANALYSIS_PENDING"
+@@ -259,9 +313,107 @@
+     assert report["design_checks"]["time_step"]["status"] == "READY"
+     assert report["independent_discretization_evidence_status"] == "UNVERIFIED"
+     assert report["peridynamic_resolution_qualification"] == "UNKNOWN"
++    unknown_zone_pairs = [
++        item for item in report["contrast_audits"]
++        if item["contrast"] == "independent_generated_direction_seed"
++    ]
++    assert unknown_zone_pairs
++    assert all(item["status"] == "READY" for item in unknown_zone_pairs)
++    assert all(item["process_zone_status"] == "UNKNOWN_BOTH" for item in unknown_zone_pairs)
+     assert report["claims"]["mesh_or_point_cloud_independence"] == "NOT_ESTABLISHED"
+     assert all(
+         metric["status"] == "NOT_RUN"
+         for run_metrics in report["metric_evidence"].values()
+         for metric in run_metrics.values()
+     )
++
++
++def test_horizon_change_makes_direction_contrast_confounded() -> None:
++    manifest = make_manifest()
++    coarse_y = next(item for item in manifest["runs"] if item["run_id"] == "coarse-y")
++    coarse_y["discretization"]["horizon_m"] = 2.5e-3
++
++    report = comparison_readiness(manifest)
++    direction = report["design_checks"]["independent_generated_direction_seed"]
++    conflicting = [
++        item for item in report["contrast_audits"]
++        if item["contrast"] == "independent_generated_direction_seed"
++        and set(item["run_ids"]) == {"coarse-x", "coarse-y"}
++    ]
++
++    assert direction["status"] == "CONFOUNDED_NOT_COMPARABLE"
++    assert conflicting[0]["horizon_status"] == "DIFFERENT"
++    assert conflicting[0]["status"] == "CONFOUNDED_NOT_COMPARABLE"
++    assert report["peridynamic_resolution_qualification"] == "UNKNOWN"
++
++
++def test_missing_horizon_makes_pd_contrast_unknown_not_ready() -> None:
++    manifest = make_manifest()
++    for run in manifest["runs"]:
++        run["discretization"].pop("horizon_m")
++
++    report = comparison_readiness(manifest)
++    direction = report["design_checks"]["independent_generated_direction_seed"]
++    spatial = report["design_checks"]["spatial_resolution"]
++    dt = report["design_checks"]["time_step"]
++
++    assert direction["status"] == "UNKNOWN_NOT_READY"
++    assert spatial["status"] == "UNKNOWN_NOT_READY"
++    assert dt["status"] == "UNKNOWN_NOT_READY"
++    assert report["peridynamic_resolution_qualification"] == "UNKNOWN"
++
++
++def test_process_zone_definition_or_source_change_makes_direction_contrast_confounded() -> None:
++    manifest = make_manifest()
++    coarse_x = next(item for item in manifest["runs"] if item["run_id"] == "coarse-x")
++    coarse_y = next(item for item in manifest["runs"] if item["run_id"] == "coarse-y")
++    coarse_x["discretization"]["process_zone"] = {
++        "status": "KNOWN",
++        "length_m": 4.0e-4,
++        "definition_sha256": digest("process-zone-definition-a"),
++        "source_sha256": digest("process-zone-source"),
++    }
++    coarse_y["discretization"]["process_zone"] = {
++        "status": "KNOWN",
++        "length_m": 4.0e-4,
++        "definition_sha256": digest("process-zone-definition-b"),
++        "source_sha256": digest("process-zone-source"),
++    }
++
++    report = comparison_readiness(manifest)
++    conflicting = [
++        item for item in report["contrast_audits"]
++        if item["contrast"] == "independent_generated_direction_seed"
++        and set(item["run_ids"]) == {"coarse-x", "coarse-y"}
++    ]
++
++    assert conflicting[0]["process_zone_status"] == "DIFFERENT"
++    assert conflicting[0]["status"] == "CONFOUNDED_NOT_COMPARABLE"
++    assert report["design_checks"]["independent_generated_direction_seed"]["status"] == (
++        "CONFOUNDED_NOT_COMPARABLE"
++    )
++
++
++def test_dt_refinement_requires_matching_actual_end_time() -> None:
++    manifest = make_manifest()
++    coarse_x = next(item for item in manifest["runs"] if item["run_id"] == "coarse-x")
++    half_dt = next(item for item in manifest["runs"] if item["run_id"] == "coarse-x-half-dt")
++    coarse_x["results"]["actual_run"] = {
++        "status": "COMPLETED",
++        "actual_end_time_s": 1.0e-4,
++    }
++    half_dt["results"]["actual_run"] = {
++        "status": "COMPLETED",
++        "actual_end_time_s": 0.9e-4,
++    }
++
++    report = comparison_readiness(manifest)
++    conflicting = [
++        item for item in report["contrast_audits"]
++        if item["contrast"] == "time_step"
++        and set(item["run_ids"]) == {"coarse-x", "coarse-x-half-dt"}
++    ]
++
++    assert conflicting[0]["actual_end_time_status"] == "DIFFERENT"
++    assert conflicting[0]["status"] == "CONFOUNDED_NOT_COMPARABLE"
++    assert report["design_checks"]["time_step"]["status"] == "CONFOUNDED_NOT_COMPARABLE"
+--- v1_freeze/protocol.md
++++ pgfrag/tmp/review_20261004/bias_protocol/protocol.md
+@@ -3,6 +3,9 @@
+ This review module defines pgfrag.bias-study.v1. It checks a pre-registered
+ comparison design and the provenance attached to reported metrics. It does not
+ generate a mesh or point cloud and does not invoke a solver.
++
++All valid SHA-256 inputs are compared as lowercase hexadecimal values. The
++manifest itself is not modified; reports normalize comparison keys separately.
+ 
+ ## Manifest contract
+ 
+@@ -18,7 +21,10 @@
+ 
+ Every run declares its direction, discretization kind, generator and source
+ hash, generation seed, explicit spacing (h for tetrahedral meshes or dx for
+-PD points), solver dt_s and end_time_s, and construction lineage.
++PD points), solver dt_s and end_time_s, and construction lineage. For PD
++contrasts, an explicit, valid horizon_m must be present and equal across the
++pair. A missing horizon makes that contrast UNKNOWN_NOT_READY; a changed
++horizon makes it CONFOUNDED_NOT_COMPARABLE.
+ Discretization signatures include an exact artifact SHA-256. A
+ rotation_invariant_discretization declaration also carries its digest,
+ algorithm, source artifact digest, and calculation-evidence digest. The
+@@ -35,12 +41,15 @@
+ lineage only make an UNVERIFIED_INDEPENDENT_CANDIDATE; they do not prove
+ independent construction.
+ 
+-PD point runs carry explicit dx. A native horizon_m and process-zone
+-length, definition hash, and source hash are recorded independently. If any
+-are absent, the study can still have a structurally complete pre-registered
+-design, while peridynamic_resolution_qualification stays UNKNOWN. The
+-checker never infers an exact wall-layer count from thickness, t, or a
+-maximum mesh edge.
++PD point runs carry explicit dx. A native horizon_m and process-zone length,
++definition hash, and source hash are separate fields. If both runs omit the
++process-zone length, they may still form a diagnostic design contrast, while
++peridynamic_resolution_qualification stays UNKNOWN. If one side is known and
++the other is unknown, the contrast is UNKNOWN_NOT_READY. Two known
++process-zones must match in length, definition hash, and source hash; any
++difference makes the contrast CONFOUNDED_NOT_COMPARABLE. The checker never
++substitutes horizon for process-zone length or infers an exact wall-layer
++count from thickness, t, or a maximum mesh edge.
+ 
+ ## Readiness rules
+ 
+@@ -49,8 +58,16 @@
+ required contrasts, and no run evidence is recorded:
+ 
+ 1. distinct generated seeds and directions at matching spacing and dt;
+-2. at least two explicit spacings with matching direction and dt; and
+-3. at least two dt values on the same exact discretization and end time.
++   direction comparisons also hold end_time_s fixed;
++2. at least two explicit spacings with matching direction, dt, and end_time_s;
++   and
++3. at least two dt values on the same exact discretization, explicit horizon,
++   process-zone identity, and planned end_time_s.
++
++When completed dt runs are present, their actual_end_time_s values must also
++match. A changed actual endpoint makes the dt contrast
++CONFOUNDED_NOT_COMPARABLE; missing or incomplete endpoint evidence makes it
++UNKNOWN_NOT_READY.
+ 
+ A shared rigid rotation cannot meet the independent seed/direction criterion.
+ These checks establish planned contrasts only. They do not claim that

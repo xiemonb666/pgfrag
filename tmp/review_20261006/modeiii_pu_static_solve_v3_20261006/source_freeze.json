@@ -1,0 +1,117 @@
+{
+  "schema": "modeiii_pu_scalar_static_solve_source_freeze.v3",
+  "status": "SOURCE_FREEZE_READY_AWAITING_ROOT_REVIEW",
+  "case_id": "modeiii_pu_uz_static_traction_solve_20261006_v3",
+  "result_schema": "modeiii_pu_antiplane_static_solve_result.v3",
+  "source_only": true,
+  "tests_run": false,
+  "solver_run": false,
+  "numerical_assembly_run": false,
+  "owned_sources": {
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve.py": "7A8AC7076A788A29D7F1BCAE34BCEDE80B1481030910C37DA1AF673A2A370A9F",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve_case.json": "13CA46E05B520624D903BE5D71C55E58B4D23DB621423B47DA4B2A0C174A38A9",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/README.md": "F257CE8E173F1867BADF358A4DCD696734B3E674BFA7868B6A981A0A7E923AE4",
+    "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/SOURCE_REVIEW.md": "5E2BFF119031201056092FD565521D80CEF22FDA0495D4C7E77F85CA8A68340C"
+  },
+  "read_only_dependencies": {
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "DCE0A1F3009246A52198BC0ED833ED67998144549A653E7BCE9BCC17BABD71B9",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py": "6025642FDD119A95C76D693D3EDBC4785D982731560E556CE7B13BAD109C6034",
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "E3DDB3B067465BB5B269576A1B8A5100E2BB92C9C924BC09C949702C19EFA9D8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D"
+  },
+  "preserved_snapshots": {
+    "v1": {
+      "solver_path": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py",
+      "solver_sha256": "D9294D9A90D20505D6ECD01354A2D9E0897F56B5FF0BB98AAD01A4FD31513787",
+      "case_path": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve_case.json",
+      "case_sha256": "93C51463D717ADAA8E78BC163FB8915AAF26164F411C2B46A20D80492BDA42D4",
+      "freeze_path": "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_20261005/source_freeze.json",
+      "freeze_sha256": "24D1D07EC2D61036E77686B8CBECFB72260F30FDC31658385E09CCB4847445DA",
+      "mutated": false
+    },
+    "v2": {
+      "solver_path": "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py",
+      "solver_sha256": "5369C9FF661959C93721FF2A4986CBEFFEB9419B78D9DCA0A018E64B31FECD2E",
+      "case_path": "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve_case.json",
+      "case_sha256": "D4246341D4E5C3C8CB38FF6CAF681010393CB73BD589981EEB07CF6A55FBE3B1",
+      "freeze_path": "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_v2_20261005/source_freeze.json",
+      "freeze_sha256": "D8DE9597D82E5DB9A983F6BE83F5C8407EC9CD56E9A8148EA22CAF86D642B990",
+      "mutated": false
+    }
+  },
+  "fixed_case_invariants": {
+    "reference_scale_m": 0.01,
+    "support_radius_m": 0.025,
+    "source_count": 27,
+    "scalar_coefficients": 54,
+    "lagrange_system_dimension": 55,
+    "expected_physical_null_modes_before_mean_constraint": 1,
+    "volume_levels": [
+      {
+        "points": 128,
+        "rule": "GL4 radial x GL8 theta x GL4 z"
+      },
+      {
+        "points": 256,
+        "rule": "GL4 radial x GL16 theta x GL4 z"
+      }
+    ],
+    "only_refined_dimension": "theta angular quadrature",
+    "side_load_points": 64,
+    "endcap_audit_points_each": 32,
+    "offgrid_points": 256,
+    "maximum_sources": 125,
+    "maximum_registered_dofs": 375,
+    "maximum_query_points_per_batch": 256,
+    "maximum_explicit_numeric_array_bytes": 33554432,
+    "maximum_result_json_bytes": 4194304,
+    "parent_wall_timeout_seconds": 30
+  },
+  "staging_promotion_contract": {
+    "required_worker_exit_code": 0,
+    "required_json": "strict UTF-8 JSON, no NaN/Infinity, at most 4 MiB",
+    "required_schema": "modeiii_pu_antiplane_static_solve_result.v3",
+    "required_case_id": "modeiii_pu_uz_static_traction_solve_20261006_v3",
+    "required_status": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "required_evidence": [
+      "54 ordered canonical IDs, 54 finite applied-load entries",
+      "two finite 54x54 stiffness matrices and 54-entry mean rows",
+      "two finite 54-entry solution vectors",
+      "256 finite off-grid coordinates, analytic fields, and both solved fields",
+      "current solver hash and frozen dependency hashes"
+    ],
+    "failure_receipts": [
+      "UNKNOWN_WALL_TIMEOUT",
+      "UNKNOWN_WORKER_NONZERO_EXIT",
+      "UNKNOWN_WORKER_DID_NOT_WRITE_JSON",
+      "UNKNOWN_WORKER_INVALID_JSON",
+      "UNKNOWN_WORKER_RESULT_CONTRACT",
+      "UNKNOWN_WORKER_PROMOTION_FAILED"
+    ],
+    "failure_preserves_staging": true,
+    "numerical_thresholds_changed": false
+  },
+  "replayable_evidence": {
+    "each_volume_level": [
+      "raw 54x54 stiffness matrix in N/m",
+      "54-entry normalized physical mean row, dimensionless"
+    ],
+    "once_per_result": [
+      "54-entry applied force vector in N",
+      "ordered canonical coefficient IDs"
+    ],
+    "offgrid": [
+      "256 coordinates in m",
+      "exact uz in m",
+      "exact grad(uz) dimensionless",
+      "solved uz and grad(uz) per level"
+    ],
+    "finite_policy": "unchanged from v2; nonfinite evidence is never converted to JSON null",
+    "result_size_policy": "unchanged; oversize output becomes UNKNOWN_RESULT_JSON_BUDGET at 4 MiB"
+  },
+  "execution_authorization": "Do not launch; await root review and explicit authorization for a single diagnostic run.",
+  "review_notes": "V3 is a bounded parent-side staging integrity patch only. Numerical source and case behavior are inherited from v2; no result is qualified by this change."
+}

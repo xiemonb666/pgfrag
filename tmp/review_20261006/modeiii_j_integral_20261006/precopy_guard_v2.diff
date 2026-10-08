@@ -1,0 +1,74 @@
+--- j_integral_v1_legacy.py
++++ j_integral_precopy_guard_v2.py
+@@ -64,9 +64,51 @@
+     )
+ 
+ 
+-def _numeric_array(name: str, value: object, shape_tail: tuple[int, ...]) -> np.ndarray | None:
++def _preflight_row_shape(name: str, value: object, shape_tail: tuple[int, ...]) -> int:
++    """Check sample count and trailing row shape without materializing an array."""
+     if value is None:
+         raise ValueError(f"missing_{name}")
++    if isinstance(value, np.ndarray):
++        shape = tuple(value.shape)
++    elif hasattr(value, "shape"):
++        try:
++            shape = tuple(value.shape)  # type: ignore[attr-defined]
++        except (TypeError, ValueError) as exc:
++            raise ValueError(f"invalid_{name}_shape") from exc
++    elif hasattr(value, "__len__") and hasattr(value, "__getitem__"):
++        row_count = len(value)  # type: ignore[arg-type]
++        if not 1 <= row_count <= MAX_SAMPLES:
++            raise ValueError("sample_count_out_of_range")
++        for row_index in range(row_count):
++            row = value[row_index]  # type: ignore[index]
++            if shape_tail:
++                if isinstance(row, np.ndarray):
++                    row_shape = tuple(row.shape)
++                elif isinstance(row, (list, tuple)):
++                    if any(isinstance(item, (list, tuple, np.ndarray)) for item in row):
++                        row_shape = ()
++                    else:
++                        row_shape = (len(row),)
++                else:
++                    row_shape = ()
++                if row_shape != shape_tail:
++                    raise ValueError(f"invalid_{name}_shape")
++            elif isinstance(row, (list, tuple)) or (isinstance(row, np.ndarray) and row.ndim != 0):
++                raise ValueError(f"invalid_{name}_shape")
++        shape = (row_count, *shape_tail)
++    else:
++        raise ValueError(f"invalid_{name}_type")
++
++    if len(shape) != 1 + len(shape_tail) or tuple(shape[1:]) != shape_tail:
++        raise ValueError(f"invalid_{name}_shape")
++    row_count = int(shape[0])
++    if not 1 <= row_count <= MAX_SAMPLES:
++        raise ValueError("sample_count_out_of_range")
++    return row_count
++
++
++def _numeric_array(name: str, value: object, shape_tail: tuple[int, ...]) -> np.ndarray | None:
++    _preflight_row_shape(name, value, shape_tail)
+     try:
+         array = np.asarray(value)
+     except (TypeError, ValueError, OverflowError) as exc:
+@@ -126,6 +168,18 @@
+         return _unknown("invalid_one_sided_crack_face", one_sided_crack_face=one_sided_crack_face)
+ 
+     try:
++        # Check all four shapes/budgets before np.asarray or astype(copy=True)
++        # can materialize any caller-provided sequence.
++        preflight_counts = {}
++        for name, value, tail in (
++            ("contour_coordinates", contour_coordinates_m, (3,)),
++            ("normals", normals, (3,)),
++            ("weights", weights_m, ()),
++            ("grad_u_z", grad_u_z_m_per_m, (3,)),
++        ):
++            preflight_counts[name] = _preflight_row_shape(name, value, tail)
++        if len(set(preflight_counts.values())) != 1:
++            return _unknown("sample_count_mismatch", sample_counts=preflight_counts)
+         xyz = _numeric_array("contour_coordinates", contour_coordinates_m, (3,))
+         normal = _numeric_array("normals", normals, (3,))
+         weight = _numeric_array("weights", weights_m, ())

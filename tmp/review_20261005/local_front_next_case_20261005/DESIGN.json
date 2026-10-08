@@ -1,0 +1,117 @@
+{
+  "case_id": "modeiii_local_front_pu_next_case_20261006",
+  "status": "SOURCE_ONLY_PROPOSED_NOT_COUPLED",
+  "recommendation": "Alternative A: topology-selected shifted PU with exact front-core inclusion and explicit collar convergence gate; preserve global all-site F1 only as a separate control",
+  "basis_contract": {
+    "mls": "linear 3D Wendland C2, continuous, no visibility mask",
+    "all_sources_have_base": true,
+    "front_kind": "FRONT_F1_SHIFTED",
+    "heaviside_kind": "HEAVISIDE",
+    "maximum_enrichments_per_source": 1,
+    "f1": "Fbar=sqrt(r/R0)*sin(theta/2), theta in (-pi,pi), cut only on actual Gamma",
+    "heaviside": "sign(y) with explicit plus/minus traces and eligible support confined behind x=0",
+    "provider_at_front_r_zero": "UNKNOWN"
+  },
+  "geometry": {
+    "s_m": 0.004,
+    "domain_box_m": [[-0.01, 0.01], [-0.01, 0.01], [-0.008, 0.008]],
+    "crack_surface": "y=0, x<0, z in [-0.008,0.008]",
+    "front": "x=y=0, z in [-0.008,0.008]",
+    "reference_scale_R0_m": 0.01,
+    "support_radius_h_m": 0.007,
+    "source_axes": {
+      "x_m": [-0.008, -0.004, 0.0, 0.004, 0.008],
+      "y_m": [-0.008, -0.004, 0.004, 0.008],
+      "z_m": [-0.008, -0.004, 0.0, 0.004, 0.008]
+    },
+    "source_count": 100,
+    "front_support_count": 30,
+    "heaviside_support_count": 10,
+    "base_only_source_count": 60,
+    "total_scalar_dofs": 140,
+    "front_core_radius_m": 0.001,
+    "cut_support_coverage_bound_m": 0.004899
+  },
+  "topology_rules": {
+    "support": "S_i=Omega intersect closed_ball(X_i,h)",
+    "front_set": "S_i intersects finite F",
+    "heaviside_set": "Omega_i minus actual Gamma has exactly two nonempty components on opposite y sides; all y=0 points in S_i lie on Gamma; dist(S_i,F)>0; source is off Gamma",
+    "ambiguous_or_tangent": "UNKNOWN and block",
+    "visibility_source_deletion": false,
+    "front_clearance_minimum_heaviside_m": 0.001944272
+  },
+  "basis": {
+    "base": "phi_i",
+    "front_shifted": "phi_i*(Fbar-Fbar(X_i))",
+    "heaviside_shifted": "phi_i*(H-H(X_i))",
+    "front_and_heaviside_sets_disjoint": true,
+    "coefficient_units": "m"
+  },
+  "material_and_reference": {
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "K_III_Pa_sqrt_m": 100.0,
+    "mu": "E/(2*(1+nu))",
+    "exact_field": "u_z=(KIII/mu)*sqrt(2/pi)*sqrt(r)*sin(theta/2); u_x=u_y=0",
+    "outer_boundary": "analytic Mode III traction; scalar z traction is zero on end caps",
+    "crack_faces": "traction-free scalar Mode III traces"
+  },
+  "local_exact_inclusion": {
+    "region": "dist(q,F)<0.001 m",
+    "coefficient_choice": "front coefficient c=A*sqrt(R0); BASE coefficient c*Fbar(X_i) for every front support source; zero for other BASE sources",
+    "identity": "sum_T phi_i*c*Fbar(X_i) + sum_T phi_i*c*(Fbar-Fbar(X_i)) = c*Fbar because every active source in the core is in T and sum_T phi_i=1",
+    "global_exact_modeiii_reproduction_guaranteed": false
+  },
+  "quadrature_and_memory": {
+    "max_queries_per_batch": 256,
+    "stream_batches": true,
+    "initial_front_core_batch": {
+      "rule": "polar GL4(r) x GL8(theta in open (-pi,pi)) x GL4(z)",
+      "query_count": 128,
+      "jacobian": "r",
+      "samples_at_front_or_branch_cut": false
+    },
+    "dense_dof_matrix_shape": [140, 140],
+    "estimated_dense_stiffness_bytes": 156800,
+    "gradient_block_bytes_at_256_queries": 860160,
+    "front_query_at_r_zero": false,
+    "offset_epsilon": false,
+    "refinement_required": ["quadrature", "source/support", "front-core", "blending-collar"]
+  },
+  "alternatives": [
+    {
+      "id": "A",
+      "name": "topology-selected shifted PU",
+      "recommended": true,
+      "risk": "F1-to-H blending error and enriched-column near-dependence outside the exact front core",
+      "gate": "separate core/collar/far-crack/x-positive errors and require quadrature-then-source/support convergence without regularization"
+    },
+    {
+      "id": "B",
+      "name": "ramp-corrected normalized front PU",
+      "recommended": false,
+      "risk": "window/normalization derivatives may create large gradients, geometry-dependent conditioning, and a difficult front-to-H handoff",
+      "gate": "validate partition and derivative sums, side traces, taper stability, and augmented rank; separate formulation review required"
+    }
+  ],
+  "acceptance": [
+    "topology manifest certifies 30 front supports and 10 fully split, front-excluding shifted-H supports",
+    "all physical crack-face points have at least one active F1 or H support",
+    "continuous MLS partition and gradient-sum identities hold on OK rows",
+    "exact shifted-F1 field identity passes throughout the 0.001 m front core",
+    "F1/H traces jump only on actual Gamma and H cannot jump at x>=0",
+    "u_z plus/minus traces equal +/-A*sqrt(-x) and crack-face scalar traction is zero",
+    "collar and exterior errors converge under independent quadrature then source/support refinement",
+    "no additional unreported null modes, rank truncation, ridge, or pseudoinverse",
+    "all provider/assembly batches contain at most 256 queries"
+  ],
+  "not_claimed": ["full 3D equilibrium", "curved front", "penny crack", "propagation", "R2", "material calibration", "solver qualification"],
+  "inputs": [
+    "pgfrag/tmp/review_20261005/astra_front_shadow_decision_20261005/DECISION.md",
+    "pgfrag/tmp/review_20261005/enriched_dof_contract_20261005/CONTRACT.md",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/README.md",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py"
+  ],
+  "executed": false
+}

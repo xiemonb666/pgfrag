@@ -1,0 +1,10 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.bounded_review_runner.v1",
+  "status": "COMPLETED",
+  "runtime_budget_seconds": 110,
+  "elapsed_ms": 6147,
+  "adapter_exit_code": 0,
+  "expected_summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\bounded_runner_stdout.txt",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\bounded_runner_stderr.txt"
+}

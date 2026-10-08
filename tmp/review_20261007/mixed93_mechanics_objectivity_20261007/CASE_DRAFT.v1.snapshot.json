@@ -1,0 +1,20 @@
+{
+  "schema": "mixed93_mechanics_objectivity_case_draft.v1",
+  "case_id": "mixed93_mechanics_objectivity_20261007",
+  "classification": "DESIGN_ONLY_COORDINATE_COVARIANCE_NOT_ACTUAL_KROTATE_OR_FRACTURE_QUALIFICATION",
+  "mechanics_fixture": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+  "provider_fixture": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+  "geometry_m": {"cylinder_radius": 0.01, "length": 0.01, "source_count": 27},
+  "basis": {"scalar_functions": 31, "vector_dofs": 93, "order": "27 BASE then four GLOBAL_FRONT; node-major xyz triplets"},
+  "material": {"young_modulus_Pa": 1000000.0, "poisson_ratio": 0.3, "model": "small-strain isotropic"},
+  "load": {"case": "pure_I", "K_Pa_sqrt_m": [100.0, 0.0, 0.0], "rule": "preserve local crack-frame load; rotate world traction/stress tensors with Q"},
+  "provider": {"api": "mls3d_shape.shape_functions_3d", "source_sites": 27, "reference_scale_m": 0.01, "support_radius_m": 0.025, "queries_per_state": 1280},
+  "state_counts": {"volume_points": 512, "boundary_traction_points": 768, "provider_chunks_per_state": [256, 256, 256, 256, 256], "states": 2, "total_provider_queries": 2560, "raw_K_C_f_assemblies": 2, "KKT_solves_99x99": 2},
+  "rigid_transform": {"definition": "x_prime = Q x + t; Q=Rz(0.37 rad) Rx(-0.23 rad)", "translation_m": [0.003, -0.007, 0.004], "scalars_unchanged": ["E", "nu", "R", "L", "reference_scale", "support_radius", "local_KI", "local_KII", "local_KIII"], "vector_coefficient_map": "A=I_31 kron Q", "gauge_map": "B=diag(Q,Q); Cprime=B C A^T; gprime=B g"},
+  "units": {"K": "N/m", "C": "dimensionless", "q_g": "m", "f_lambda": "N", "strain": "dimensionless", "stress": "Pa", "energy": "J"},
+  "tolerances": {"provider_weights": 1e-10, "provider_gradient_scale_times_error": 1e-10, "raw_K_relative_asymmetry": 1e-12, "K_C_relative_Frobenius": 1e-9, "f_relative_L2": 1e-9, "q_and_weighted_fields_relative": 1e-8, "gauge_KKT_energy_relative": 1e-9, "force_moment_wrench_relative": 1e-9},
+  "resource_caps": {"external_seconds": 30, "combined_output_bytes": 8388608, "explicit_working_bytes": 67108864},
+  "point_cloud_precursor": {"source_cloud_only_rotations_deg_about_z": [0, 37, -23], "physical_state_fixed": true, "provider_queries": 3840, "assemblies": 3, "solves": 3, "classification": "MLS_SOURCE_CLOUD_SENSITIVITY_ONLY_NOT_TETRA_OR_CRACK_GROWTH"},
+  "minimum_tetra_bias_design": {"one_step_runs": 4, "runs": ["independent_refined_reference", "orientation_0deg", "orientation_plus37deg", "orientation_minus23deg"], "solver_queries": "unknown until actual tetra/fracture solver API exists", "front_metric": "continuous_polyline symmetric Hausdorff bounds in metres; max 32 vertices/curve, 128 total samples", "metric_atol_m": "min(1e-9, 0.01*h_min)", "predeclared_curve_tolerance_m": "0.1*h_min", "direction_record": "signed tip advance components and angle in fixed crack frame", "unknown_policy": "straddling bounds or sample cap remains UNKNOWN"},
+  "execution": {"authorized": false, "provider_calls": 0, "field_evaluations": 0, "assemblies": 0, "solves": 0, "npz_payload_opened": false}
+}

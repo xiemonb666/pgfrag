@@ -1,0 +1,357 @@
+{
+  "audit_argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py"
+  ],
+  "audit_command_line": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe -B C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py",
+  "audit_output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005",
+  "elapsed_seconds": 1.4283255999907851,
+  "finished_utc": "2026-10-05T10:54:44.494280+00:00",
+  "launcher_argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\run_readonly_audit_once.py"
+  ],
+  "launcher_sha256": "0a4e88c3d486e37c0e3d303bae68f11ca2acc4bf8be9f2c684923b1e6393c460",
+  "outputs": {
+    "PILOT_ACTUAL_AUDIT.json": {
+      "bytes": 12165,
+      "exists": true,
+      "sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f"
+    },
+    "PILOT_CELL_AUDIT.csv": {
+      "bytes": 35386,
+      "exists": true,
+      "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+    },
+    "PILOT_CELL_VOLUME_MASS_DELTA.png": {
+      "bytes": 295712,
+      "exists": true,
+      "sha256": "e706fe0669f052bd15bd3e18ecdf6b67cd0814d099ec960d31d8a8fb1b7b05dc"
+    },
+    "PILOT_POINT_AUDIT.csv": {
+      "bytes": 26152,
+      "exists": true,
+      "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+    },
+    "PILOT_XY_CELL_MAP.png": {
+      "bytes": 163235,
+      "exists": true,
+      "sha256": "01fb2247903d6279e0a7036143b4ecd7631ca7a7f2b5ecaf99cfd3531a1a5e34"
+    }
+  },
+  "preflight_errors": [],
+  "producer_or_cad_or_solver_invoked_by_launcher": false,
+  "return_code": 0,
+  "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "schema": "pgfrag.forge_volume_ingress_readonly_audit_execution_receipt.v1",
+  "source_and_input_hashes_post": {
+    "adapter": {
+      "bytes": 40378,
+      "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+    },
+    "analytic_source": {
+      "bytes": 9631,
+      "sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d"
+    },
+    "freeze": {
+      "bytes": 3481,
+      "sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50"
+    },
+    "launcher": {
+      "bytes": 14913,
+      "sha256": "0a4e88c3d486e37c0e3d303bae68f11ca2acc4bf8be9f2c684923b1e6393c460"
+    },
+    "method_review": {
+      "bytes": 3432,
+      "sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4"
+    },
+    "preserved_preflight_artifacts": {
+      "canonicalization_receipt": {
+        "bytes": 1212,
+        "sha256": "13cee0096e73234c87cb0af9886647ba4ac0fec4b1cce001bd3074febc28b29f"
+      },
+      "case_receipt": {
+        "bytes": 6840,
+        "sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b"
+      },
+      "failed_audit_receipt": {
+        "bytes": 7492,
+        "sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d"
+      },
+      "failed_audit_stderr": {
+        "bytes": 132,
+        "sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5"
+      },
+      "failed_audit_stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "failed_receipt": {
+        "bytes": 6297,
+        "sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2"
+      },
+      "freeze_validation_rev2": {
+        "bytes": 10045,
+        "sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4"
+      },
+      "freeze_validation_rev3": {
+        "bytes": 12937,
+        "sha256": "62756fa1a6d6f373ec4ffea8e56dfb4b2ef39a046900f4016b46d1dbb656a1b8"
+      },
+      "freeze_validation_rev4": {
+        "bytes": 13357,
+        "sha256": "e6f2be2c80dcbeeffd09fd3b7df520ea643b77a8dc4bcbc8089a882dd4acea59"
+      },
+      "freeze_validation_rev5": {
+        "bytes": 17294,
+        "sha256": "ecab086b5b1b58f28f94eecfc22651a97686afc8b6e0ce5c16747e7f7ab701ad"
+      },
+      "malformed_freeze": {
+        "bytes": 3480,
+        "sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12"
+      },
+      "old_adapter": {
+        "bytes": 38101,
+        "sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5"
+      },
+      "precanonical_freeze": {
+        "bytes": 3481,
+        "sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b"
+      },
+      "preplotcompat_freeze": {
+        "bytes": 3481,
+        "sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60"
+      },
+      "preretry_adapter": {
+        "bytes": 40378,
+        "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+      },
+      "previous_partial_cell_csv": {
+        "bytes": 35386,
+        "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+      },
+      "previous_partial_point_csv": {
+        "bytes": 26152,
+        "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+      },
+      "previous_renderretry_receipt": {
+        "bytes": 10267,
+        "sha256": "589f4a7d0b35d434cae5ef3b43244b60aabd1b1f1d174f9ed29a9cca01a3202c"
+      },
+      "previous_renderretry_stderr": {
+        "bytes": 130,
+        "sha256": "94c436a6fed7957daaf7d640b22556a3f52f1b2f7db16bf153c8518aad943ae3"
+      },
+      "previous_renderretry_stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "renderfix_freeze_receipt": {
+        "bytes": 2187,
+        "sha256": "e4d2957d27584c7f41f6d66653ad0552f68918bc6aaf3b0059a2eee2205f64f6"
+      }
+    },
+    "prior_freeze": {
+      "bytes": 2913,
+      "sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e"
+    },
+    "stage_files": {
+      "cell_in_progress.json": {
+        "bytes": 2372,
+        "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+      },
+      "cell_ledger.json": {
+        "bytes": 118930,
+        "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+      },
+      "cell_ledger.partial.json": {
+        "bytes": 119097,
+        "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+      },
+      "material_points.json": {
+        "bytes": 77304,
+        "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+      },
+      "parent_execution_receipt.json": {
+        "bytes": 2151,
+        "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+      },
+      "request.json": {
+        "bytes": 1032,
+        "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+      },
+      "worker_failure.json": {
+        "bytes": 4302,
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    },
+    "summary": {
+      "bytes": 9870,
+      "sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+    }
+  },
+  "source_and_input_hashes_pre": {
+    "adapter": {
+      "bytes": 40378,
+      "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+    },
+    "analytic_source": {
+      "bytes": 9631,
+      "sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d"
+    },
+    "freeze": {
+      "bytes": 3481,
+      "sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50"
+    },
+    "launcher": {
+      "bytes": 14913,
+      "sha256": "0a4e88c3d486e37c0e3d303bae68f11ca2acc4bf8be9f2c684923b1e6393c460"
+    },
+    "method_review": {
+      "bytes": 3432,
+      "sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4"
+    },
+    "preserved_preflight_artifacts": {
+      "canonicalization_receipt": {
+        "bytes": 1212,
+        "sha256": "13cee0096e73234c87cb0af9886647ba4ac0fec4b1cce001bd3074febc28b29f"
+      },
+      "case_receipt": {
+        "bytes": 6840,
+        "sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b"
+      },
+      "failed_audit_receipt": {
+        "bytes": 7492,
+        "sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d"
+      },
+      "failed_audit_stderr": {
+        "bytes": 132,
+        "sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5"
+      },
+      "failed_audit_stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "failed_receipt": {
+        "bytes": 6297,
+        "sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2"
+      },
+      "freeze_validation_rev2": {
+        "bytes": 10045,
+        "sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4"
+      },
+      "freeze_validation_rev3": {
+        "bytes": 12937,
+        "sha256": "62756fa1a6d6f373ec4ffea8e56dfb4b2ef39a046900f4016b46d1dbb656a1b8"
+      },
+      "freeze_validation_rev4": {
+        "bytes": 13357,
+        "sha256": "e6f2be2c80dcbeeffd09fd3b7df520ea643b77a8dc4bcbc8089a882dd4acea59"
+      },
+      "freeze_validation_rev5": {
+        "bytes": 17294,
+        "sha256": "ecab086b5b1b58f28f94eecfc22651a97686afc8b6e0ce5c16747e7f7ab701ad"
+      },
+      "malformed_freeze": {
+        "bytes": 3480,
+        "sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12"
+      },
+      "old_adapter": {
+        "bytes": 38101,
+        "sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5"
+      },
+      "precanonical_freeze": {
+        "bytes": 3481,
+        "sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b"
+      },
+      "preplotcompat_freeze": {
+        "bytes": 3481,
+        "sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60"
+      },
+      "preretry_adapter": {
+        "bytes": 40378,
+        "sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32"
+      },
+      "previous_partial_cell_csv": {
+        "bytes": 35386,
+        "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+      },
+      "previous_partial_point_csv": {
+        "bytes": 26152,
+        "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+      },
+      "previous_renderretry_receipt": {
+        "bytes": 10267,
+        "sha256": "589f4a7d0b35d434cae5ef3b43244b60aabd1b1f1d174f9ed29a9cca01a3202c"
+      },
+      "previous_renderretry_stderr": {
+        "bytes": 130,
+        "sha256": "94c436a6fed7957daaf7d640b22556a3f52f1b2f7db16bf153c8518aad943ae3"
+      },
+      "previous_renderretry_stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "renderfix_freeze_receipt": {
+        "bytes": 2187,
+        "sha256": "e4d2957d27584c7f41f6d66653ad0552f68918bc6aaf3b0059a2eee2205f64f6"
+      }
+    },
+    "prior_freeze": {
+      "bytes": 2913,
+      "sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e"
+    },
+    "stage_files": {
+      "cell_in_progress.json": {
+        "bytes": 2372,
+        "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+      },
+      "cell_ledger.json": {
+        "bytes": 118930,
+        "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+      },
+      "cell_ledger.partial.json": {
+        "bytes": 119097,
+        "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+      },
+      "material_points.json": {
+        "bytes": 77304,
+        "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+      },
+      "parent_execution_receipt.json": {
+        "bytes": 2151,
+        "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+      },
+      "request.json": {
+        "bytes": 1032,
+        "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+      },
+      "worker_failure.json": {
+        "bytes": 4302,
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    },
+    "summary": {
+      "bytes": 9870,
+      "sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+    }
+  },
+  "source_and_inputs_unchanged": true,
+  "started_utc": "2026-10-05T10:54:43.065633+00:00",
+  "status": "COMPLETED",
+  "stderr_file": {
+    "bytes": 262,
+    "path": "READONLY_AUDIT_STDERR_renderreport_retry.txt",
+    "sha256": "b1d1d5fd9c7ae1f4009cb9a272c7eca1491d1f710c90bfbdbf3162f4b2b51fed"
+  },
+  "stdout_file": {
+    "bytes": 434,
+    "path": "READONLY_AUDIT_STDOUT_renderreport_retry.txt",
+    "sha256": "583d11472b00e07c8b91aa76770a9c6083148719e1cf835d6290371a180912e9"
+  },
+  "timed_out": false,
+  "timeout_seconds": 55.0,
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge"
+}

@@ -1,0 +1,26 @@
+--- v2/launch_zero_load_probe.ps1
++++ v3/launch_zero_load_probe.ps1
+@@ -33,7 +33,11 @@
+     if ($null -eq $Candidate) { return $null }
+     try {
+         $Candidate.Refresh()
+-        if ($Candidate.HasExited) { return [int]$Candidate.ExitCode }
++        if ($Candidate.HasExited) {
++            $RawExitCode = $Candidate.ExitCode
++            if ($null -eq $RawExitCode) { return $null }
++            return [int]$RawExitCode
++        }
+     } catch { }
+     return $null
+ }
+--- v2/manifest.json
++++ v3/manifest.json
+@@ -201,7 +201,7 @@
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+       "role": "frozen_zero_load_launcher",
+-      "sha256": "102b65f7085dd60d267f61de31765d61465d063c01fca4d98f736d85685e0df4"
++      "sha256": "eba9c6d94b100ca2144b4f213402d450b450b10dbcec2db7f9805b81dee8b13e"
+     },
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/common_case.toml",

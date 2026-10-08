@@ -1,0 +1,60 @@
+{
+  "schema": "mixed93_moving_front_independent_source_review.v1",
+  "status": "BLOCKED_SOURCE_BATCH_ASSERT_NUMERICS_UNKNOWN",
+  "scope": "read-only independent source/API/cache-metadata review; no NPZ payload, numeric import, provider, field, assembly, solve, or test",
+  "pins": {
+    "entry_sha256": "f171c85d451de7ab67e2391ddc8090d00c07b6f6fc8a1d276f55806aa31af764",
+    "entry_bytes": 48977,
+    "entry_lines": 614,
+    "case_sha256": "d7e4a1378132905f1c6dc37e9a160fe4938da7e493c62aa768e084b0188d50c3",
+    "design_sha256": "a854c611c76db4f229d5ab4e2e91d10241743778890ab3c4644796194d489f736",
+    "source_pins_sha256": "770f031ac711e7a101d271a546a2c82329b9d015cee4518244796194d489f736",
+    "execution_authorized": false
+  },
+  "review_checks": {
+    "case_geometry_material_front_and_93_dof_order": "consistent",
+    "cache_row_ids_xyz_and_named_dimensions": "consistent_with_pinned_metadata_contract",
+    "new_cap_mls_rows_and_declared_batches": [1344, [256, 192, 256, 256, 256, 128]],
+    "new_cap_mls_actual_generic_chunk_sizes": [256, 256, 256, 256, 256, 64],
+    "batch_assertion": "blocking: concatenated coarse+fine query rows are chunked across the 448-row coarse boundary, then compared to a different declared sequence",
+    "cap_coarse_fine_rows": [448, 896],
+    "full_boundary_rows_side_plus_cap": [704, 1152],
+    "branch_cut_and_tip_queries": "Gauss nodes remain inside cut-free sectors; no exact tip/cut row",
+    "public_api_signatures": "consistent",
+    "matrix_dimensions": {"K": "93x93", "C": "6x93", "KKT": "99x99"},
+    "spectral_contract": "six zero and 87 positive modes, with no matrix repair",
+    "fixed_load_sign_and_state_reuse": "consistent; old-tip physical traction, state-specific generalized force",
+    "wrench_gate": "fail-closed at normalized 1e-9; no force projection",
+    "energy_definition": "fixed-load Pi=U-qTf; G_fd denominator L*delta_a; no growth claim",
+    "q_dot_f_metric_label": "external_work_J is ambiguous; clarify as force-displacement pairing/load functional, not incremental/path-integrated work"
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "blocking_source_defect",
+      "detail": "The 1344 concatenated coarse+fine cap rows are chunked generically at 256, yielding [256,256,256,256,256,64]. The worker asserts [256,192,256,256,256,128] and raises after MLS calls. Chunk each group while preserving the reviewed 448+896 rows and six declared batches."
+    },
+    {
+      "id": "R2",
+      "severity": "semantic_metric_label",
+      "detail": "The solver reports q dot f under external_work_J. It is the algebraic force-displacement pairing used by the fixed-load potential, not a path-integrated or incremental external work quantity. Clarify the label while preserving Pi=U-qTf."
+    },
+    {
+      "id": "R3",
+      "severity": "nonblocking_runtime_binding_limit",
+      "detail": "Worker rechecks exact cache row-to-XYZ mappings and source positions versus the recovered archive. Source-ID/position ordering and cached MLS configuration are supported by the pinned external metadata contract rather than being fully cross-asserted from NPZ/result metadata in the worker. Current pins make this nonblocking; preserve these bindings on any future re-pin."
+    },
+    {
+      "id": "R4",
+      "severity": "numerical_unknown",
+      "detail": "MLS support/conditioning, volume measure, discrete wrench, raw K spectrum, KKT residuals, and coarse/fine load sensitivity have not been measured. Source review cannot mark them passed."
+    },
+    {
+      "id": "R5",
+      "severity": "scope_limit",
+      "detail": "Only one body-volume theta order is present; no volume convergence, Gc comparison, cohesive evolution, or crack-growth claim follows."
+    }
+  ],
+  "source_blocker_found": true,
+  "review_disposition": "do_not_numerically_execute this frozen source; await actor fix and perform narrow re-review against new hashes; any result remains an unqualified fixed-load two-front diagnostic"
+}

@@ -1,0 +1,197 @@
+{
+  "schema": "pgfrag.cavity_bond_safety_design.v1",
+  "review_date": "2026-10-04",
+  "decision": "BLOCK_WHOLE_VESSEL_PD_UNTIL_STATIC_BOND_VISIBILITY_AND_MECHANICS_GATES_PASS",
+  "scope": {
+    "mode": "READ_ONLY_SOURCE_REVIEW",
+    "allowed_outputs": [
+      "pgfrag/tmp/review_20261004/cavity_bond_safety/design.md",
+      "pgfrag/tmp/review_20261004/cavity_bond_safety/design.json"
+    ],
+    "code_or_git_modified": false,
+    "julia_solver_cad_or_tests_run": false,
+    "active_solid_zero_load_experiment": "CONTINUE_UNMODIFIED"
+  },
+  "pinned_native_api": {
+    "peridynamics_version": "0.5.4+pgfrag.1",
+    "manifest_path": "vendor/Peridynamics.jl",
+    "candidate_bond_rule": "Euclidean reference-coordinate distance <= per-point horizon delta",
+    "geometry_visibility_or_segment_in_material_api": "NOT_FOUND_IN_PINNED_IMPLEMENTATION",
+    "existing_filter": "point-set precrack cross-set pair filtering only",
+    "body_geometry_state": "Body retains point positions, point volumes, material/point sets and parameters; no source CAD, solid occupancy, or tet adjacency field",
+    "source_pin": {
+      "manifest_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+      "peridynamics_project_sha256": "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986",
+      "pointneighbors_version": "0.6.7",
+      "pointneighbors_tree_sha1": "e1273088c75fe6f79e34dfdd6cb67a1cd565619b"
+    }
+  },
+  "precrack_semantics": {
+    "update_dmg_false": "Set-cross bonds are filtered during native system construction and removed from system.n_neighbors; this is the closest precedent for topological no-bond semantics.",
+    "update_dmg_true_default": "Set-cross bonds remain in the graph and are made inactive during initialization, producing initial material damage.",
+    "limitation": "Neither mode performs pairwise segment visibility; set cross-products cannot encode arbitrary geometry-screened pairs."
+  },
+  "volume_and_fragment_interfaces": {
+    "native_abaqus_input": "read_inp supports Tet4/Hex8 and converts each element to a point center and element volume; element connectivity is not returned to Body.",
+    "current_pgfrag_fixture": "uniform_box point/volume generator.",
+    "current_forge_asset": "surface vertices/faces with fields; surface-to-volume discretization and void-topology checks are unsupported, and solver is not launched.",
+    "occ_clipped_cell_experiment": "Produces static CAD-clipped point/volume candidates; explicitly not solver input or a bond graph.",
+    "current_fragment_meaning": "Endpoint connected components of the intact native horizon-bond graph; not verified rigid fragments. R2 and crack-surface lineage are not derived."
+  },
+  "recommended_policy": {
+    "classifier_states": ["IN_MATERIAL", "OUT_OR_VOID", "UNKNOWN"],
+    "acceptance": "Create a native bond only for IN_MATERIAL. OUT_OR_VOID and UNKNOWN are excluded from the mechanics graph; keep UNKNOWN reason/count auditable.",
+    "segment_rule": "Both endpoints must be unambiguously inside the same material body/component and every open interval between all source-boundary hits must classify inside that material.",
+    "reference_state": "Classify once in undeformed reference coordinates and keep the mask static.",
+    "numeric_rule": "Grazing, near-coplanar, unresolved thin intervals, topology defects, float32/source-tolerance uncertainty, or ambiguous all-hit ordering => UNKNOWN; never force an uncertain bond active.",
+    "asset_admission_gate": "Do not silently equate UNKNOWN with OUT_OR_VOID. Aggregate UNKNOWN pairs, affected points, local horizon-family support, connectivity, and critical thin-wall regions. If a predeclared bound is exceeded or geometry precision/support is insufficient in a critical region, classify the whole asset UNKNOWN/NOT_ADMITTED and do not launch a physical solve.",
+    "integration_point": "Filter canonical candidate pairs in the native bond-construction stage before final neighbor counts, bond IDs, correction, kernels, and storage are built. Preserve reciprocal directed state symmetry.",
+    "topology_ledger": "Persist geometry-excluded candidate pairs and reasons separately from constitutive bond state and dynamic break events. Geometry exclusions are no-bonds, not step-zero damage, fracture events, broken_bonds, or R2 events."
+  },
+  "implementation_routes": [
+    {
+      "id": "A_SOURCE_BREP_ALL_HITS_OCCUPANCY",
+      "recommended": true,
+      "method": "Intersect each candidate segment with every boundary of the authoritative closed source solid, sort all parameter hits, and classify each resulting open interval with the solid classifier.",
+      "tradeoffs": [
+        "Directly handles inner cavities and multiple exits/re-entries.",
+        "Requires authoritative, closed, classifiable source geometry and robust hit grouping.",
+        "Current surface-only asset needs a validated volume/occupancy contract first."
+      ]
+    },
+    {
+      "id": "B_TET_VOLUME_TRAVERSAL",
+      "recommended": false,
+      "method": "Traverse original Tet4 cells intersecting the segment; require same-material tetra interiors to cover all of [0,1], with conservative handling at shared faces/edges.",
+      "tradeoffs": [
+        "Fits volume-mesh input and provides explicit occupied cells.",
+        "Must run before read_inp discards element connectivity or preserve the mesh adjacency.",
+        "Depends on tetra quality and the volume mesh boundary approximation."
+      ]
+    },
+    {
+      "id": "C_CONSERVATIVE_SDF_OR_VOXEL_SUPERCOVER",
+      "recommended": false,
+      "method": "Cover the full segment with traversed cells and use an error-bounded signed-distance/Lipschitz occupancy bound; boundary/uncertain cells return UNKNOWN.",
+      "tradeoffs": [
+        "Efficient for repeated candidate queries.",
+        "Memory and resolution cost can be high.",
+        "Simple point sampling can miss thinner material/void crossings and is insufficient."
+      ]
+    }
+  ],
+  "osb_mechanics": {
+    "weighted_volume": "calc_weighted_volume multiplies each term by bond_active.",
+    "dilatation": "calc_dilatation multiplies its sum by bond_active and uses the weighted volume from the same eligible family.",
+    "damage_denominator": "damage = 1 - n_active_bonds / system.n_neighbors.",
+    "failure_if_activity_flag_only": "Marking geometric exclusions inactive while leaving system.n_neighbors unchanged reports fictitious initial damage. bond_active is a constitutive break state, not a static topology flag.",
+    "correction_and_rebuild": "Energy surface correction uses the bond graph during initialization. Build final admissible neighbors/counts before correction, kernel, and storage initialization; endpoint/late deletion cannot undo already-computed mechanics."
+  },
+  "calibration_boundary": {
+    "visibility_rule": "An explicit material-interaction-domain model choice beyond the pinned native Euclidean horizon search.",
+    "must_remain_distinct": [
+      "physical horizon delta",
+      "point spacing h and thin-wall spatial resolution",
+      "fracture/process-zone calibration and material parameters"
+    ],
+    "required_comparisons": "Use the same declared visibility rule and calibrated physical inputs across controls; assess spatial refinement and thin-wall response separately.",
+    "prohibited_substitute": "Do not reduce delta or coarsen point spacing to hide cross-void candidates; no universal wall-thickness/delta ratio is asserted by this review.",
+    "unresolved_source_geometry": "UNKNOWN or reject the geometry input; never convert unresolved thin-wall or float32 ambiguity into an active bond."
+  },
+  "minimum_control_design": [
+    {
+      "id": "SOLID_COUPON_NEGATIVE_CONTROL",
+      "expected": "Existing 125-point solid zero-load coupon keeps exactly its original candidate bond set; zero geometry exclusions and no mask-induced damage/events/R2 changes."
+    },
+    {
+      "id": "HOLLOW_THIN_WALL_POSITIVE_CONTROL",
+      "expected": "Endpoints on opposite inner-wall sides are both IN and within delta while their segment passes through cavity: classify AIR_PATH/no-bond. Keep known valid within-wall and wall-thickness material paths. Boundary-uncertain pairs classify UNKNOWN; if they affect critical wall support or exceed a predeclared bound, the asset remains UNKNOWN/NOT_ADMITTED."
+    },
+    {
+      "id": "HANDLE_AIR_GAP_POSITIVE_CONTROL",
+      "expected": "Both endpoints inside nearby handle/body solids and within delta while the path exits through air: no-bond. A known fused-material attachment path stays eligible; independent bodies use contact semantics."
+    }
+  ],
+  "acceptance_gates": [
+    "Pair mask is canonical and reciprocal.",
+    "Per-point system.n_neighbors equals final admissible graph degree before storage initialization.",
+    "OSB weighted volume and dilatation use the same final graph; energy surface correction is initialized from it.",
+    "Geometry exclusions are absent from dynamic broken-bond/event/damage/R2 outputs and present in a separate topology ledger.",
+    "UNKNOWN pairs are separately aggregated; critical or excessive uncertainty blocks asset admission rather than being silently labeled air.",
+    "Solid coupon graph is unchanged; hollow shell and handle-gap false bridges are excluded; valid in-material paths remain.",
+    "No Julia, solver, CAD, or tests were run during this review."
+  ],
+  "source_evidence": [
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+      "lines": "417-421,434-438",
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/Peridynamics.jl",
+      "lines": "27-31",
+      "sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "lines": "55-164,228-245,288-367",
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "lines": "2-27,59-124,201-207",
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/predefined_cracks.jl",
+      "lines": "12-22,31-60,63-111",
+      "sha256": "6b2d67e1af7934016e2f40d0f695f42c3cee899229a3a65d422ec31a9341d9d2"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "lines": "137-235",
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system_corrections.jl",
+      "lines": "43-73,77-100,140-179",
+      "sha256": "63c3a3c458f84dcaa0ad3345c141f67fad2ae42f165b1df3c32ecc6e9c508186"
+    },
+    {
+      "path": "third_party/pgfrag-runtime/depot/packages/PointNeighbors/STFG7/src/neighborhood_search.jl",
+      "lines": "398-417",
+      "manifest_tree_sha1": "e1273088c75fe6f79e34dfdd6cb67a1cd565619b",
+      "sha256": "040525485b7b4d4eceaf57f7e55f8e14c67ced570668989843c3baa4616b813f"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/AbaqusMeshConverter/AbaqusMeshConverter.jl",
+      "lines": "7-90",
+      "sha256": "b3d09a00fba94ea3a66e132b2bc61573cafea3fcbdf8d35d35dde1e674c836b1"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/run_fixture.jl",
+      "lines": "64-70,126-143,185-203",
+      "sha256": "2468586567a2a777de155febd8b1ad9829016f682ede7b69c5f2f7a5c9952534"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/assets.py",
+      "lines": "145-180,230-232",
+      "sha256": "9e56b9f1f2ef289b061cf9a1f4241d473990f895d330e40cfc7b100caeaad889"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/backend.py",
+      "lines": "40-74,122-134,461-487,563-567",
+      "sha256": "8b3577201e0e8e94e747b3c5c3529c2d117d8ceccb729f0d2d2510dd3fd834dc"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/bond_events.py",
+      "lines": "211-220",
+      "sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db"
+    },
+    {
+      "path": "pgfrag/experiments/cad_clipped_cells_spike.py",
+      "lines": "2-5,850-955,899-918",
+      "sha256": "e9bd8ef98824efcdd7bf47589196d439a969603ab7da8e46b59d47d648084914"
+    }
+  ]
+}

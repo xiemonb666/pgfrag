@@ -1,0 +1,66 @@
+{
+  "schema": "mixed93_opening_control_schema_api_addendum.v1",
+  "verdict": "SCHEMA_API_SOURCE_READY_AFTER_LOOKUP_FIX",
+  "corrects_prior_review_omission": true,
+  "prior_review_files_overwritten": false,
+  "driver_path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+  "driver_sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+  "driver_line_count": 468,
+  "case_sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+  "pins_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/SOURCE_PINS.json",
+  "pins_sha256": "7530ea7445194117c2dec3d988691b74424bf2841de6cd8f1b69e6ab1c8a6980",
+  "lookup_fix": {
+    "current_path": "case.loading.trajectory_fraction_Qstar",
+    "matches_case": true,
+    "prior_review_missed_root_level_mismatch": true,
+    "other_unmatched_case_paths": []
+  },
+  "case_access_paths_verified": [
+    "saved_result.path",
+    "saved_result.sha256",
+    "control.semantic_id",
+    "cohesive_law.*",
+    "geometry.normal_lower_to_upper",
+    "geometry.radius_m",
+    "geometry.length_m",
+    "loading.trajectory_fraction_Qstar",
+    "classification",
+    "output_path"
+  ],
+  "api_identity": {
+    "trace_material": "trace._DERIVATIVE.BilinearCohesiveMaterial",
+    "scalar_module": "trace._DERIVATIVE._SCALAR",
+    "initial_state_material_class_identity": "same pinned scalar-law class",
+    "enriched_face_point_constructor_order_matches": true,
+    "rigid_trace_candidate_order_matches": true,
+    "assemble_enriched_trial_signature_matches": true,
+    "consumed_result_and_state_fields_match_pinned_api": true
+  },
+  "indices": {
+    "control_index_zero_based": 82,
+    "trajectory_count": 12,
+    "partial_damage_indices_zero_based": [3, 5],
+    "full_damage_indices_zero_based": [8, 11],
+    "single_primitive_call_per_path_level": true
+  },
+  "pins_verified": [
+    "saved_elastic_result",
+    "original_elastic_numeric_pins",
+    "elastic_worker",
+    "trace_primitive",
+    "cohesive_scalar_law",
+    "cohesive_derivative",
+    "mixed_enriched_operator",
+    "case",
+    "driver"
+  ],
+  "execution_authorized": false,
+  "source_only": true,
+  "numeric_imported": false,
+  "npz_opened": false,
+  "provider_calls": 0,
+  "primitive_calls": 0,
+  "solver_or_test_run": false,
+  "remaining_blockers": [],
+  "operational_watchdog_requirement_inherited": true
+}

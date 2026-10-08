@@ -1,0 +1,70 @@
+{
+  "artifact": "native_point_history portable test fixture relocation",
+  "status": "NOT_TESTED_PENDING_ROOT_REVIEW",
+  "created_utc": "2026-10-04T13:51:02.759Z",
+  "fixture_origin": "Hand-authored parser test data only; not native solver output and not physical validation.",
+  "fixture_count": 6,
+  "note_on_seventh_reader_fingerprint": "The reader also fingerprints experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl as observer_schema_source; it remains the repository source file and is not one of the six hand-authored fixture data files.",
+  "new_fixture_root_from_pgfrag": "tests/fixtures/native_point_history",
+  "fixtures": [
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/input/points.csv",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/input/points.csv",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/input/points.csv",
+      "bytes": 63,
+      "sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3",
+      "matches_original_and_v2_freeze": true
+    },
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/input/metadata.toml",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/input/metadata.toml",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/input/metadata.toml",
+      "bytes": 853,
+      "sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36",
+      "matches_original_and_v2_freeze": true
+    },
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/summary.toml",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/snapshot/summary.toml",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/snapshot/summary.toml",
+      "bytes": 618,
+      "sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a",
+      "matches_original_and_v2_freeze": true
+    },
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/point_state_history.csv",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/snapshot/point_state_history.csv",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/snapshot/point_state_history.csv",
+      "bytes": 736,
+      "sha256": "bf5da4c95244bc99a9afd206746baa699562bf123092ec03f6a21ad18c1d00f9",
+      "matches_original_and_v2_freeze": true
+    },
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/directed_bond_state_history.csv",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/snapshot/directed_bond_state_history.csv",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/snapshot/directed_bond_state_history.csv",
+      "bytes": 344,
+      "sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0",
+      "matches_original_and_v2_freeze": true
+    },
+    {
+      "relative_path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/canonical_bond_state_history.csv",
+      "original_hand_authored_path": "tmp/review_20261004/native_point_history/fixture/snapshot/canonical_bond_state_history.csv",
+      "portability_freeze_copy": "tmp/review_20261004/native_point_history/portability_freeze/fixtures/snapshot/canonical_bond_state_history.csv",
+      "bytes": 112,
+      "sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e",
+      "matches_original_and_v2_freeze": true
+    }
+  ],
+  "test": {
+    "path_from_pgfrag": "tests/test_native_point_history.py",
+    "bytes": 10669,
+    "sha256": "fbfcfe162e1ce6420e773523790884b29e39532789a18e8afd4b309af83db785",
+    "frozen_copy": "tmp/review_20261004/native_point_history/portability_freeze/test_native_point_history.py.frozen",
+    "baseline_path": "tmp/review_20261004/native_point_history/v2_frozen/test_native_point_history.py.frozen",
+    "baseline_sha256": "93c6cda63959e53bc65781c861942d9b3d8df962b285475d68a92de483a872f0",
+    "diff_path": "tmp/review_20261004/native_point_history/portability_freeze/portable_test.diff",
+    "diff_bytes": 558,
+    "diff_sha256": "f978262663ec50d657f0cc17d4e99dda8af6765d92618944a07496ad15295126"
+  }
+}

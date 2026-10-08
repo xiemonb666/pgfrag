@@ -1,0 +1,57 @@
+{
+  "case_id": "mixed93_consistent_mass_20261006",
+  "execution_authorized": false,
+  "input_binding": {
+    "arrays_bytes_expected": 1569232,
+    "arrays_path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+    "arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "note": "Pins supplied and accepted by root; this source-only phase did not open either input payload.",
+    "producer_result_json_present_expected": false,
+    "producer_return_code_expected": 1,
+    "result_path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+    "result_path_role": "independent recovery JSON alias; producer sibling result.json remains recorded absent by the independent report",
+    "result_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+  },
+  "line_counts": {
+    "mass_replay_audit.py": 171,
+    "mixed93_consistent_mass.py": 130,
+    "recovery_metadata_gate.py": 113
+  },
+  "mathematical_contract": {
+    "component_layout": "three equal 31x31 component blocks; exact zero cross-component entries",
+    "density_kg_m3": 1.0,
+    "density_status": "NOT_MATERIAL_CALIBRATED",
+    "matrix": "raw M = rho * integral H^T H dV, 93x93 kg",
+    "matrix_repairs": "none: no lumping, symmetrization, ridge, pseudoinverse, or mode truncation",
+    "overall_diagnostic_status_preserves_producer_rc1": true,
+    "rigid_pointwise_gate": "all six fitted velocity fields checked against physical fields at 1e-10 normalized error"
+  },
+  "non_self_referential": true,
+  "schema": "pgfrag.mixed93_consistent_mass_source_freeze.v2",
+  "sha256": {
+    "pgfrag/experiments/mixed93_consistent_mass_20261006/README.md": "c7be101b6e9c5b0c06c9c7b4ea7304b99a0f38b9f1ce832fa3c05013dc23119a",
+    "pgfrag/experiments/mixed93_consistent_mass_20261006/case.json": "5e985c3bd324cfd10e015b066996ecd448ff7a0abb369b634a54f3087e9ff244",
+    "pgfrag/experiments/mixed93_consistent_mass_20261006/mass_replay_audit.py": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb",
+    "pgfrag/experiments/mixed93_consistent_mass_20261006/mixed93_consistent_mass.py": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+    "pgfrag/experiments/mixed93_consistent_mass_20261006/recovery_metadata_gate.py": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e",
+    "pgfrag/tmp/review_20261006/mixed93_consistent_mass_20261006/SOURCE_DIFF.md": "28c9eb263ebdbad06f2e6524e8f887be436f9aeefad10bcbff0f10b95e856765"
+  },
+  "source_delta": [
+    "Added pre-NumPy independent-recovery metadata contract gate and case result alias semantics.",
+    "Added normalized pointwise rigid velocity-field errors to the aggregate mass diagnostic gate.",
+    "Bound fixed case to root-supplied recovery JSON and failed NPZ hashes; execution remains false."
+  ],
+  "source_only_checks": {
+    "case_json_parse": "passed",
+    "consistent_mass_assembled": false,
+    "execution_authorized": false,
+    "fixed_input_alias_and_sha_contract": "passed statically against root-supplied pins",
+    "module_top_level_numpy_import": false,
+    "npz_payload_read": false,
+    "planned_run01_exists": false,
+    "python_ast_parse": "passed for core, saved-only audit, and recovery metadata gate",
+    "recovery_json_payload_read": false,
+    "solver_or_pytest_run": false
+  },
+  "status": "SOURCE_READY_AWAITING_ROOT_REVIEW_AND_GO"
+}

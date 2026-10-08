@@ -1,0 +1,79 @@
+--- j_integral_precopy_guard_v2.py
++++ j_integral_precopy_guard_v3.py
+@@ -1,8 +1,10 @@
+ """External-field Mode III J-integral diagnostic for a straight z-front.
+ 
+-This module consumes already sampled contour data.  It does not solve an
+-elasticity problem, reconstruct a displacement field, or infer a stress
+-intensity factor.  See README.md for the input contract and derivation.
++This module consumes already sampled contour data.  It accepts only exact
++numpy.ndarray objects and built-in list/tuple sequences; arbitrary array-like
++objects and generators are intentionally outside this diagnostic contract.
++It does not solve an elasticity problem, reconstruct a displacement field,
++or infer a stress intensity factor.  See README.md for the input contract.
+ """
+ 
+ from __future__ import annotations
+@@ -65,35 +67,35 @@
+ 
+ 
+ def _preflight_row_shape(name: str, value: object, shape_tail: tuple[int, ...]) -> int:
+-    """Check sample count and trailing row shape without materializing an array."""
++    """Check supported containers and row shape before any array conversion."""
+     if value is None:
+         raise ValueError(f"missing_{name}")
+-    if isinstance(value, np.ndarray):
++    if type(value) is np.ndarray:
+         shape = tuple(value.shape)
+-    elif hasattr(value, "shape"):
+-        try:
+-            shape = tuple(value.shape)  # type: ignore[attr-defined]
+-        except (TypeError, ValueError) as exc:
+-            raise ValueError(f"invalid_{name}_shape") from exc
+-    elif hasattr(value, "__len__") and hasattr(value, "__getitem__"):
++    elif type(value) in (list, tuple):
+         row_count = len(value)  # type: ignore[arg-type]
+         if not 1 <= row_count <= MAX_SAMPLES:
+             raise ValueError("sample_count_out_of_range")
+         for row_index in range(row_count):
+             row = value[row_index]  # type: ignore[index]
+             if shape_tail:
+-                if isinstance(row, np.ndarray):
++                if type(row) is np.ndarray:
+                     row_shape = tuple(row.shape)
+-                elif isinstance(row, (list, tuple)):
+-                    if any(isinstance(item, (list, tuple, np.ndarray)) for item in row):
++                elif type(row) in (list, tuple):
++                    row_length = len(row)
++                    if row_length != shape_tail[0]:
++                        raise ValueError(f"invalid_{name}_shape")
++                    # The trailing width is three in this contract.  Inspect
++                    # only those bounded entries after checking the row length.
++                    if any(type(item) in (list, tuple, np.ndarray) for item in row):
+                         row_shape = ()
+                     else:
+-                        row_shape = (len(row),)
++                        row_shape = (row_length,)
+                 else:
+                     row_shape = ()
+                 if row_shape != shape_tail:
+                     raise ValueError(f"invalid_{name}_shape")
+-            elif isinstance(row, (list, tuple)) or (isinstance(row, np.ndarray) and row.ndim != 0):
++            elif type(row) in (list, tuple) or type(row) is np.ndarray:
+                 raise ValueError(f"invalid_{name}_shape")
+         shape = (row_count, *shape_tail)
+     else:
+@@ -143,8 +145,11 @@
+ ) -> JIntegralResult:
+     """Integrate J = ∮[W n_x - t_z u_z,x] ds from external field samples.
+ 
+-    Arrays are query-major and ordered along the contour, with shapes coordinates=(n,3), normals=(n,3),
+-    weights=(n,), and grad_u_z=(n,3).  Coordinates lie in one x-y plane
++    Inputs must be exact numpy.ndarray objects or built-in list/tuple
++    sequences, query-major and ordered along the contour, with shapes
++    coordinates=(n,3), normals=(n,3), weights=(n,), and grad_u_z=(n,3).
++    Arbitrary array-like objects, subclasses, and generators return UNKNOWN.
++    Coordinates lie in one x-y plane
+     perpendicular to the straight z-axis front.  Normals are outward unit
+     normals; positive weights are physical ds values in meters.  A point on
+     the exact branch face x<0,y=0 is accepted only when the caller labels the

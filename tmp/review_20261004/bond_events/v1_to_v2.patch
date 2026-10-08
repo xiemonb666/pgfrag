@@ -1,0 +1,369 @@
+--- v1/bond_events.py
++++ v2/bond_events.py
+@@ -18,6 +18,9 @@
+ 
+ class BondEventValidationError(ValueError):
+     """Raised when the native point, bond, or frame records are inconsistent."""
++
++
++MAX_TIMESTAMP_RELATIVE_UNCERTAINTY = 1e-6
+ 
+ 
+ @dataclass(frozen=True, slots=True)
+@@ -94,7 +97,9 @@
+ class FrameComponents:
+     step: int
+     time_s: float | None
++    step_dt_s: float | None
+     components: tuple[HorizonGraphComponent, ...]
++    native_directed_bonds: tuple[DirectedBondRecord, ...]
+ 
+ 
+ @dataclass(frozen=True, slots=True)
+@@ -129,7 +134,7 @@
+             ]
+ 
+         return {
+-            "schema": "pgfrag.bond_events.v1",
++            "schema": "pgfrag.bond_events.v2",
+             "timeline_status": self.timeline_status,
+             "timeline_unknown_reasons": list(self.timeline_unknown_reasons),
+             "expected_final_step": self.expected_final_step,
+@@ -138,6 +143,8 @@
+             ),
+             "event_semantics": "first true-to-false transition in caller-supplied directed native-state history",
+             "time_step_consistency": self.time_step_consistency,
++            "timestamp_rounding_relative_error_limit": MAX_TIMESTAMP_RELATIVE_UNCERTAINTY,
++            "timestamp_rounding_limit_scope": "numerical time validation tolerance; not physical calibration",
+             "native_state_provenance": {
+                 "qualification": "SUPPLIED_NATIVE_STATE_CALLER_PROVIDED_UNVERIFIED",
+                 "native_source": self.provenance.native_source,
+@@ -179,6 +186,7 @@
+                 {
+                     "step": frame.step,
+                     "time_s": frame.time_s,
++                    "step_dt_s": frame.step_dt_s,
+                     "components": [
+                         {
+                             "component_id": component.component_id,
+@@ -187,6 +195,15 @@
+                             "semantic_type": component.semantic_type,
+                         }
+                         for component in frame.components
++                    ],
++                    "native_directed_bond_states": [
++                        {
++                            "source_point_id": record.source_point_id,
++                            "target_point_id": record.target_point_id,
++                            "active": record.active,
++                            "native_field": record.native_field,
++                        }
++                        for record in frame.native_directed_bonds
+                     ],
+                 }
+                 for frame in self.frame_components
+@@ -224,7 +241,9 @@
+     constant-dt consistency or native per-interval dt evidence are required. A
+     single endpoint frame or incomplete timing evidence produce UNKNOWN
+     chronology and no break events. In either case, any supplied complete frame
+-    still produces its intact horizon-bond graph components and SI masses.
++    still produces its intact horizon-bond graph components, raw directed-state
++    lineage, and SI masses. A continuous prefix shorter than the expected run
++    is retained as UNKNOWN and cannot emit events.
+     """
+ 
+     ids = _validate_point_ids(point_ids)
+@@ -261,6 +280,7 @@
+         and covers_expected_steps
+         and all_times_present
+         and dt_consistency != "UNKNOWN"
++        and dt_consistency != "UNKNOWN_TIME_RESOLUTION"
+     )
+ 
+     unknown_reasons: list[str] = []
+@@ -269,11 +289,13 @@
+     if expected is None:
+         unknown_reasons.append("expected_final_step_unavailable; complete timeline cannot be established")
+     elif enough_frames and not covers_expected_steps:
+-        unknown_reasons.append("frames_do_not_cover_step_zero_through_expected_final_step")
++        unknown_reasons.append("continuous_frame_prefix_does_not_reach_expected_final_step")
+     if enough_frames and not all_times_present:
+         unknown_reasons.append("one_or_more_native_frame_times_unavailable")
+     if enough_frames and dt_consistency == "UNKNOWN":
+         unknown_reasons.append("time_step_consistency_unavailable; supply constant dt or native per-interval dt")
++    if enough_frames and dt_consistency == "UNKNOWN_TIME_RESOLUTION":
++        unknown_reasons.append("timestamp_rounding_uncertainty_exceeds_relative_interval_limit")
+ 
+     frame_states = [
+         _validate_directed_records(frame, canonical_bonds, frame_index=index)
+@@ -319,13 +341,21 @@
+         FrameComponents(
+             step=frame.step,
+             time_s=frame.time_s,
++            step_dt_s=frame.step_dt_s,
+             components=_components_for_frame(ids, point_masses, canonical_bonds, states),
++            native_directed_bonds=tuple(frame.directed_bonds),
+         )
+         for frame, states in zip(frame_list, frame_states, strict=True)
+     )
+ 
+     return BondEventExport(
+-        timeline_status="KNOWN" if chronology_known else "UNKNOWN",
++        timeline_status=(
++            "KNOWN"
++            if chronology_known
++            else "UNKNOWN_TIME_RESOLUTION"
++            if dt_consistency == "UNKNOWN_TIME_RESOLUTION"
++            else "UNKNOWN"
++        ),
+         timeline_unknown_reasons=tuple(unknown_reasons),
+         expected_final_step=expected,
+         expected_dt_s=constant_dt,
+@@ -496,10 +526,6 @@
+         if steps != expected_steps:
+             raise BondEventValidationError(f"missing native solver frame(s): expected steps {expected_steps}, got {steps}")
+         if expected_final_step is not None:
+-            if steps[-1] < expected_final_step:
+-                raise BondEventValidationError(
+-                    f"missing native solver frame(s) through expected final step {expected_final_step}"
+-                )
+             if steps[-1] > expected_final_step:
+                 raise BondEventValidationError("native frame step exceeds expected_final_step")
+     elif len(frame_list) == 1 and expected_final_step is not None and steps[0] > expected_final_step:
+@@ -517,26 +543,62 @@
+ def _validate_time_step_consistency(
+     frames: tuple[NativeBondFrame, ...], expected_dt_s: float | None
+ ) -> str:
+-    """Return a validated dt mode, or UNKNOWN if the supplied evidence is absent."""
++    """Validate clock resolution and interval timing, or report an unknown mode.
++
++    Timestamp uncertainty is bounded by half an ULP for each recorded time,
++    plus half an ULP for the computed difference. If that bound exceeds the
++    declared interval by more than the recorded numerical limit, the timeline
++    cannot be qualified even when its timestamps are strictly increasing.
++    """
+ 
+     if len(frames) < 2 or any(frame.time_s is None for frame in frames):
+         return "UNKNOWN"
+     if expected_dt_s is not None:
++        for previous, frame in zip(frames[:-1], frames[1:], strict=True):
++            assert previous.time_s is not None and frame.time_s is not None
++            actual_interval = float(frame.time_s) - float(previous.time_s)
++            if frame.step_dt_s is not None:
++                supplied_dt = float(frame.step_dt_s)
++                dt_rounding_bound = math.fsum((0.5 * math.ulp(supplied_dt), 0.5 * math.ulp(expected_dt_s)))
++                if abs(supplied_dt - expected_dt_s) > dt_rounding_bound:
++                    raise BondEventValidationError(
++                        f"native step_dt_s at step {frame.step} disagrees with expected_dt_s"
++                    )
++            if _interval_has_insufficient_resolution(previous.time_s, frame.time_s, actual_interval, expected_dt_s):
++                return "UNKNOWN_TIME_RESOLUTION"
++            interval_tolerance = _interval_rounding_bound(previous.time_s, frame.time_s, actual_interval)
++            interval_tolerance = min(
++                interval_tolerance,
++                MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * expected_dt_s,
++            )
++            if abs(actual_interval - expected_dt_s) > interval_tolerance:
++                raise BondEventValidationError(
++                    f"native time difference into step {frame.step} disagrees with expected_dt_s"
++                )
++
+         origin_time = float(frames[0].time_s)
+-        for frame in frames:
+-            expected_time = origin_time + frame.step * expected_dt_s
+-            if not math.isfinite(expected_time):
+-                raise BondEventValidationError(f"expected time overflow at step {frame.step}")
+-            actual_time = float(frame.time_s)
+-            if not _times_close(actual_time, expected_time, expected_dt_s):
++        for frame in frames[1:]:
++            expected_elapsed = frame.step * expected_dt_s
++            if not math.isfinite(expected_elapsed):
++                raise BondEventValidationError(f"expected cumulative time overflow at step {frame.step}")
++            actual_elapsed = float(frame.time_s) - origin_time
++            cumulative_bound = _cumulative_rounding_bound(
++                origin_time,
++                float(frame.time_s),
++                actual_elapsed,
++                expected_elapsed,
++            )
++            if _cumulative_relative_uncertainty(
++                origin_time, float(frame.time_s), actual_elapsed, expected_elapsed
++            ) > MAX_TIMESTAMP_RELATIVE_UNCERTAINTY:
++                return "UNKNOWN_TIME_RESOLUTION"
++            cumulative_tolerance = min(
++                cumulative_bound,
++                MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * expected_elapsed,
++            )
++            if abs(actual_elapsed - expected_elapsed) > cumulative_tolerance:
+                 raise BondEventValidationError(
+-                    f"native time at step {frame.step} disagrees with expected_dt_s"
+-                )
+-            if frame.step > 0 and frame.step_dt_s is not None and not _times_close(
+-                float(frame.step_dt_s), expected_dt_s, expected_dt_s
+-            ):
+-                raise BondEventValidationError(
+-                    f"native step_dt_s at step {frame.step} disagrees with expected_dt_s"
++                    f"cumulative native time at step {frame.step} disagrees with expected_dt_s"
+                 )
+         return "CONSTANT_DT_VALIDATED"
+ 
+@@ -545,17 +607,68 @@
+     for previous, frame in zip(frames[:-1], frames[1:], strict=True):
+         assert previous.time_s is not None and frame.time_s is not None and frame.step_dt_s is not None
+         elapsed = float(frame.time_s) - float(previous.time_s)
+-        if not _times_close(elapsed, float(frame.step_dt_s), float(frame.step_dt_s)):
++        interval_dt = float(frame.step_dt_s)
++        if _interval_has_insufficient_resolution(previous.time_s, frame.time_s, elapsed, interval_dt):
++            return "UNKNOWN_TIME_RESOLUTION"
++        interval_tolerance = min(
++            _interval_rounding_bound(previous.time_s, frame.time_s, elapsed),
++            MAX_TIMESTAMP_RELATIVE_UNCERTAINTY * interval_dt,
++        )
++        if abs(elapsed - interval_dt) > interval_tolerance:
+             raise BondEventValidationError(
+                 f"time difference into step {frame.step} disagrees with supplied native step_dt_s"
+             )
+     return "VARIABLE_DT_INTERVALS_VALIDATED"
+ 
+ 
+-def _times_close(actual: float, expected: float, scale: float) -> bool:
+-    magnitude = max(abs(actual), abs(expected), abs(scale), 1e-300)
+-    tolerance = max(1e-10 * abs(scale), 32.0 * math.ulp(magnitude))
+-    return abs(actual - expected) <= tolerance
++def _interval_rounding_bound(previous_time: Real, current_time: Real, measured_interval: float) -> float:
++    return math.fsum(
++        (
++            0.5 * math.ulp(float(previous_time)),
++            0.5 * math.ulp(float(current_time)),
++            0.5 * math.ulp(measured_interval),
++        )
++    )
++
++
++def _cumulative_rounding_bound(
++    origin_time: float, current_time: float, measured_elapsed: float, expected_elapsed: float
++) -> float:
++    return math.fsum(
++        (
++            0.5 * math.ulp(origin_time),
++            0.5 * math.ulp(current_time),
++            0.5 * math.ulp(measured_elapsed),
++            0.5 * math.ulp(expected_elapsed),
++        )
++    )
++
++
++def _interval_relative_uncertainty(
++    previous_time: Real, current_time: Real, measured_interval: float, declared_interval: float
++) -> float:
++    return math.fsum(
++        0.5 * (math.ulp(float(value)) / declared_interval)
++        for value in (previous_time, current_time, measured_interval)
++    )
++
++
++def _cumulative_relative_uncertainty(
++    origin_time: float, current_time: float, measured_elapsed: float, expected_elapsed: float
++) -> float:
++    return math.fsum(
++        0.5 * (math.ulp(value) / expected_elapsed)
++        for value in (origin_time, current_time, measured_elapsed, expected_elapsed)
++    )
++
++
++def _interval_has_insufficient_resolution(
++    previous_time: Real, current_time: Real, measured_interval: float, declared_interval: float
++) -> bool:
++    relative_uncertainty = _interval_relative_uncertainty(
++        previous_time, current_time, measured_interval, declared_interval
++    )
++    return relative_uncertainty > MAX_TIMESTAMP_RELATIVE_UNCERTAINTY
+ 
+ 
+ def _validate_directed_records(
+--- v1/test_bond_events.py
++++ v2/test_bond_events.py
+@@ -177,6 +177,83 @@
+         self.assertEqual(result.time_step_consistency, "VARIABLE_DT_INTERVALS_VALIDATED")
+         self.assertEqual((result.break_events[0].step, result.break_events[0].time_s), (2, 10e-6))
+ 
++    def test_large_origin_unresolvable_clock_is_unknown_for_constant_and_variable_dt(self) -> None:
++        raw = _raw_fixture()
++        times = (1.0, 1.0000000000000002, 1.0000000000000004)
++        for constant_mode in (True, False):
++            frames = tuple(
++                replace(
++                    frame,
++                    time_s=timestamp,
++                    step_dt_s=None if index == 0 or constant_mode else 1e-16,
++                )
++                for index, (frame, timestamp) in enumerate(zip(_frames(raw), times, strict=True))
++            )
++            result = _export(
++                raw,
++                frames=frames,
++                expected_dt_s=1e-16 if constant_mode else None,
++            )
++            self.assertEqual(result.timeline_status, "UNKNOWN_TIME_RESOLUTION")
++            self.assertEqual(result.break_events, ())
++            self.assertIn(
++                "timestamp_rounding_uncertainty_exceeds_relative_interval_limit",
++                result.timeline_unknown_reasons,
++            )
++            self.assertEqual(result.to_dict()["timestamp_rounding_relative_error_limit"], 1e-6)
++
++    def test_small_dt_at_zero_and_resolvable_dt_at_large_origin_are_known(self) -> None:
++        raw = _raw_fixture()
++        base_frames = _frames(raw)
++        small_at_zero = tuple(
++            replace(frame, time_s=timestamp)
++            for frame, timestamp in zip(base_frames, (0.0, 1e-16, 2e-16), strict=True)
++        )
++        small_result = _export(raw, frames=small_at_zero, expected_dt_s=1e-16)
++        self.assertEqual(small_result.timeline_status, "KNOWN")
++        self.assertEqual((small_result.break_events[0].step, small_result.break_events[0].time_s), (2, 2e-16))
++
++        resolvable_at_large_origin = tuple(
++            replace(frame, time_s=timestamp)
++            for frame, timestamp in zip(base_frames, (1.0, 1.000000001, 1.000000002), strict=True)
++        )
++        large_result = _export(raw, frames=resolvable_at_large_origin, expected_dt_s=1e-9)
++        self.assertEqual(large_result.timeline_status, "KNOWN")
++        self.assertEqual(large_result.time_step_consistency, "CONSTANT_DT_VALIDATED")
++
++    def test_constant_dt_checks_cumulative_time_drift(self) -> None:
++        raw = _raw_fixture()
++        initial_records = _frames(raw)[0].directed_bonds
++        times = [1.0]
++        for _ in range(4):
++            times.append(times[-1] + 1e-9)
++        frames = tuple(
++            NativeBondFrame(step, timestamp, initial_records)
++            for step, timestamp in enumerate(times)
++        )
++        with self.assertRaisesRegex(BondEventValidationError, "cumulative native time"):
++            _export(raw, frames=frames, expected_final_step=4, expected_dt_s=1e-9)
++
++    def test_continuous_prefix_is_unknown_but_preserves_components_mass_and_raw_lineage(self) -> None:
++        raw = _raw_fixture()
++        result = _export(raw, expected_final_step=3)
++        self.assertEqual(result.timeline_status, "UNKNOWN")
++        self.assertEqual(result.break_events, ())
++        self.assertIn("continuous_frame_prefix_does_not_reach_expected_final_step", result.timeline_unknown_reasons)
++        self.assertEqual(len(result.frame_components), 3)
++        self.assertEqual([len(frame.native_directed_bonds) for frame in result.frame_components], [4, 4, 4])
++        final_frame = result.frame_components[-1]
++        self.assertEqual(final_frame.step, 2)
++        self.assertEqual(len(final_frame.components), 3)
++        self.assertAlmostEqual(sum(component.mass_kg for component in final_frame.components), 8e-6)
++        self.assertEqual(len(final_frame.native_directed_bonds), 4)
++        self.assertEqual(final_frame.native_directed_bonds[2].native_field, "storage.bond_active[3]")
++        encoded = result.to_dict()
++        self.assertEqual(encoded["break_events_status"], "UNKNOWN_NO_INFERENCE")
++        self.assertEqual(len(encoded["frame_components"][-1]["native_directed_bond_states"]), 4)
++        self.assertEqual(encoded["frame_components"][-1]["native_directed_bond_states"][2]["active"], False)
++        self.assertNotIn("no_fracture", encoded)
++
+     def test_reciprocal_mismatch_is_rejected(self) -> None:
+         raw = _raw_fixture()
+         frames = list(_frames(raw))

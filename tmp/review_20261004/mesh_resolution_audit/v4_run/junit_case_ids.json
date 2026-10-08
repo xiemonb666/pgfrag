@@ -1,0 +1,74 @@
+{
+  "junit_path": "junit.xml",
+  "testcase_count": 11,
+  "distinct_case_id_count": 11,
+  "case_ids_unique": true,
+  "testcases": [
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_regular_tetrahedron_reports_si_volume_edges_and_heights",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_regular_tetrahedron_reports_si_volume_edges_and_heights",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_sliver_is_separately_reported_as_near_degenerate",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_sliver_is_separately_reported_as_near_degenerate",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_negative_orientation_and_zero_volume_are_distinct",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_negative_orientation_and_zero_volume_are_distinct",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_caller_declared_nearwall_candidate_screen_and_normal_resolution",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_caller_declared_nearwall_candidate_screen_and_normal_resolution",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_tiny_regular_tetrahedron_keeps_scale_and_marks_volume_underflow_unknown",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_tiny_regular_tetrahedron_keeps_scale_and_marks_volume_underflow_unknown",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_extreme_delta_to_h_and_h_to_delta_range_failures_are_reported",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_extreme_delta_to_h_and_h_to_delta_range_failures_are_reported",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_overflow_has_one_terminal_status_count_per_cell",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_overflow_has_one_terminal_status_count_per_cell",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_nonfinite_scale_ratios_are_unknown_and_keep_cell_indices",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_nonfinite_scale_ratios_are_unknown_and_keep_cell_indices",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_absent_normal_mapping_stays_unknown_without_edge_fallback",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_absent_normal_mapping_stays_unknown_without_edge_fallback",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_missing_process_zone_stays_unknown_and_does_not_reuse_pd_horizon",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_missing_process_zone_stays_unknown_and_does_not_reuse_pd_horizon",
+      "result": "PASSED"
+    },
+    {
+      "case_id": "tests.test_mesh_resolution_audit::test_invalid_indices_and_nonfinite_coordinates_are_separate_and_json_safe",
+      "classname": "tests.test_mesh_resolution_audit",
+      "name": "test_invalid_indices_and_nonfinite_coordinates_are_separate_and_json_safe",
+      "result": "PASSED"
+    }
+  ]
+}

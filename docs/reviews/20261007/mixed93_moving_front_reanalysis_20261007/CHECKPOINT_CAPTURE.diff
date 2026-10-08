@@ -1,0 +1,386 @@
+--- pre_checkpoint_snapshot/mixed93_moving_front_reanalysis.py
++++ current/mixed93_moving_front_reanalysis.py
+@@ -49,6 +49,11 @@
+ def _finite(np, name, value) -> None:
+     if not bool(np.isfinite(value).all()):
+         raise StudyError(f'non-finite {name}')
++
++def _record_checkpoint(checkpoint, phase, metrics=None, arrays=None):
++    checkpoint['phase'] = phase; checkpoint['completed_phases'].append(phase)
++    if metrics: checkpoint['metrics'].update(metrics)
++    if arrays: checkpoint['arrays'].update(arrays)
+ 
+ def _pin_inputs(case: dict) -> dict[str, Path]:
+     """Validate the current false/authorized case and every immutable input."""
+@@ -113,6 +118,8 @@
+         raise StudyError('saved-side traction cross-check differs from the source gate')
+     if case.get('provider', {}).get('expected_support_count') != 27:
+         raise StudyError('new-cap MLS must retain all 27 frozen sources')
++    if case.get('explicit_array_estimate', {}).get('checkpoint_arrays_counted_at_runtime') is not True:
++        raise StudyError('runtime memory estimate must include checkpoint replay arrays')
+     quad = case['quadrature']; caps = quad['end_caps']
+     gates = case['predeclared_gates']
+     expected = {'scaled_raw_asymmetry_max': ASYMMETRY_TOL, 'spectrum_zero_negative_tolerance': '64*eps*93*max(abs(eigenvalues))', 'spectrum_zero_eigenvalues': 6, 'spectrum_positive_eigenvalues': 87, 'rigid_null_relative_max': RIGID_RELATIVE_TOL, 'rigid_virtual_work_and_wrench_relative_max': WRENCH_TOL, 'side_traction_scaled_crosscheck_relative_max': SIDE_CROSSCHECK_TOL, 'weak_gauge_saddle_energy_relative_max': KKT_TOL, 'provider_new_rows_max': NEW_CAP_ROWS, 'provider_batch_max': MAX_BATCH, 'working_array_ceiling_bytes': MEMORY_ESTIMATE_LIMIT_BYTES, 'combined_output_max_bytes': OUTPUT_LIMIT_BYTES, 'single_external_timeout_seconds': 64}
+@@ -174,7 +181,7 @@
+         raise StudyError('cap points/weights leave the physical disk')
+     return (xyz, normals, weights, np.asarray(region, dtype=np.int64))
+ 
+-def _query_cap_mls(np, mls, source_xyz, queries, coarse_rows, config):
++def _query_cap_mls(np, mls, source_xyz, queries, coarse_rows, config, checkpoint):
+     values, gradients, statuses, supports, conditions, batches = ([], [], [], [], [], [])
+     if not 0 < coarse_rows < len(queries):
+         raise StudyError('coarse/fine cap MLS split is missing or outside the query table')
+@@ -182,9 +189,12 @@
+         for start in range(group_start, group_stop, MAX_BATCH):
+             stop = min(start + MAX_BATCH, group_stop); batch = np.ascontiguousarray(queries[start:stop])
+             result = mls.shape_functions_3d(source_xyz, batch, config); batches.append(stop - start)
+-            if any((getattr(status, 'value', status) != 'OK' for status in result.statuses)):
+-                bad = [(i + start, getattr(status, 'value', status)) for i, status in enumerate(result.statuses) if getattr(status, 'value', status) != 'OK']
+-                raise StudyError(f'cap MLS query blocked: {bad[:4]}')
++            batch_status = [getattr(status, 'value', status) for status in result.statuses]; idx = len(checkpoint['provider_batches'])
++            checkpoint['provider_batches'].append({'start': start, 'stop': stop, 'requested': len(batch), 'returned_statuses': len(batch_status)}); checkpoint['provider_rows_returned'] += len(batch_status); checkpoint['provider_statuses'].extend(batch_status)
++            capture = {f'cap_batch_{idx}_xyz_m': batch.copy()}
++            for key in ('weights', 'gradients', 'support_counts', 'condition_numbers'): capture[f'cap_batch_{idx}_{key}'] = np.asarray(getattr(result, key))
++            _record_checkpoint(checkpoint, f'cap_provider_batch_{idx}_returned', {'provider_rows_returned': checkpoint['provider_rows_returned']}, capture)
++            if any(status != 'OK' for status in batch_status): raise StudyError(f'cap MLS query blocked: batch={idx}, statuses={batch_status[:4]}')
+             values.append(np.asarray(result.weights, dtype=np.float64)); gradients.append(np.asarray(result.gradients, dtype=np.float64))
+             supports.append(np.asarray(result.support_counts, dtype=np.int64))
+             conditions.append(np.asarray(result.condition_numbers, dtype=np.float64))
+@@ -348,7 +358,7 @@
+     arrays = {'Cbar_scaled': cbar, 'gauge_row_scale': d, 'Chat_scaled': chat, 'saddle_scaled': saddle, 'rhs_scaled': rhs, 'solution_scaled': solution, 'lambda_scaled': lhat}
+     return (q, lam, metrics, arrays)
+ 
+-def _run(case: dict, paths: dict[str, Path]):
++def _run(case: dict, paths: dict[str, Path], checkpoint):
+     import numpy as np; semantic = _module('moving_front_semantic_operator', ROOT / SOURCE_PATHS['semantic_operator'])
+     elastic = _module('moving_front_elastic_operator', ROOT / SOURCE_PATHS['elastic_operator'])
+     _module('mls3d_mls', ROOT / SOURCE_PATHS['mls_kernel']); mls = _module('mls3d_shape', ROOT / SOURCE_PATHS['mls_shape'])
+@@ -362,12 +372,14 @@
+     semantic_ids = semantic.semantic_coefficient_ids(source_ids, semantic.GLOBAL_FRONT_LAYOUT)
+     if len(semantic_ids) != DOF:
+         raise StudyError('public semantic registry is not 93 DOFs')
++    _record_checkpoint(checkpoint, 'semantic_registry_loaded', arrays={'source_ids': np.asarray(source_ids), 'semantic_ids': np.asarray(semantic_ids), 'constitutive_matrix_Pa': np.asarray(semantic.isotropic_constitutive_matrix_pa(case['material']['E_Pa'], case['material']['nu']), dtype=np.float64)})
+     geometry, material0 = (case['geometry'], case['material']); radius, length = (float(geometry['radius_m']), float(geometry['length_m']))
+     material = {**material0, 'R_m': radius, 'L_m': length}; source_sha = {}
+     for key, path in paths.items():
+         source_sha[key] = _sha(path)
+     with np.load(paths['tip_cache_arrays'], allow_pickle=False) as cache, np.load(paths['failed_arrays'], allow_pickle=False) as failed:
+         source_xyz = np.asarray(cache['source_positions_xyz_m'], dtype=np.float64)
++        checkpoint['arrays']['source_positions_xyz_m'] = source_xyz
+         unique_xyz = np.asarray(cache['unique_query_positions_xyz_m'], dtype=np.float64)
+         base_values_all = np.asarray(cache['base_mls_values'], dtype=np.float64)
+         base_gradients_all = np.asarray(cache['base_mls_gradients_per_m'], dtype=np.float64)
+@@ -400,9 +412,10 @@
+             raise StudyError('new cap query count differs from the reviewed six-batch budget')
+         if len(np.unique(cap_xyz, axis=0)) != NEW_CAP_ROWS:
+             raise StudyError('cap query positions are not unique across coarse/fine rules')
++        _record_checkpoint(checkpoint, 'cap_rules_built', arrays={'cap_coarse_xyz_m': caps['coarse']['xyz'], 'cap_coarse_normals': caps['coarse']['normals'], 'cap_coarse_area_weights_m2': caps['coarse']['weights'], 'cap_fine_xyz_m': caps['fine']['xyz'], 'cap_fine_normals': caps['fine']['normals'], 'cap_fine_area_weights_m2': caps['fine']['weights']})
+         provider_cfg = case['provider']
+         config = mls.MLS3DConfig(reference_origin=tuple(provider_cfg['reference_origin_m']), reference_scale=float(provider_cfg['reference_scale_m']), support_radius=float(provider_cfg['support_radius_m']), max_condition_number=float(provider_cfg['max_condition_number']), rank_relative_tolerance=float(provider_cfg['rank_relative_tolerance']), switch_tolerance=float(provider_cfg['switch_tolerance']), duplicate_tolerance=float(provider_cfg['duplicate_tolerance']))
+-        cap_base_values, cap_base_gradients, cap_status, cap_supports, cap_conditions, query_batches = _query_cap_mls(np, mls, source_xyz, cap_xyz, coarse_count, config)
++        cap_base_values, cap_base_gradients, cap_status, cap_supports, cap_conditions, query_batches = _query_cap_mls(np, mls, source_xyz, cap_xyz, coarse_count, config, checkpoint)
+         if query_batches != [256, 192, 256, 256, 256, 128]:
+             raise StudyError(f'actual cap query batch order differs from declaration: {query_batches}')
+         split = {'coarse': slice(0, coarse_count), 'fine': slice(coarse_count, NEW_CAP_ROWS)}
+@@ -419,11 +432,14 @@
+         side_saved = saved_traction_100[:256] * float(case['frozen_load']['scale'])
+         side_analytic, _ = _analytic_traction(np, field, side_xyz, side_normals, material)
+         side_check = float(np.linalg.norm(side_saved - side_analytic) / max(float(np.linalg.norm(side_analytic)), np.finfo(float).tiny))
++        _record_checkpoint(checkpoint, 'side_traction_checked', {'side_scaled_relative_error': side_check}, {'side_xyz_m': side_xyz, 'side_normals': side_normals, 'side_weights_m2': side_weights, 'side_saved_traction_KI1_Pa': side_saved, 'side_analytic_traction_KI1_Pa': side_analytic})
+         if side_check > float(case['frozen_load']['saved_side_traction_scaled_relative_check_max']):
+             raise StudyError(f'scaled saved side traction disagrees with the old-tip KI=1 field: {side_check:.6g}')
+         cap_tractions = {}
+         for label, group in caps.items():
+             cap_tractions[label], _ = _analytic_traction(np, field, group['xyz'], group['normals'], material)
++            _record_checkpoint(checkpoint, f'{label}_cap_traction_evaluated', arrays={f'{label}_cap_traction_Pa': cap_tractions[label]})
++        _record_checkpoint(checkpoint, 'cap_tractions_evaluated')
+         states = []
+         for state_name, front in (('old_front', 0.0), ('candidate_front', split_a)):
+             volume_key = 'old_volume' if front == 0.0 else 'new_volume'; vol_xyz, vol_ids, vol_weights, _ = clouds[volume_key]
+@@ -434,10 +450,13 @@
+             cphys, volume_measure = _physical_moment_matrix(np, vol_values, vol_xyz, vol_weights, radius)
+             if abs(volume_measure - math.pi * radius * radius * length) > 1e-10 * math.pi * radius * radius * length:
+                 raise StudyError(f'{state_name} front-aligned volume rule misses cylinder measure')
++            _record_checkpoint(checkpoint, f'{state_name}_volume_and_gauge_built', {'volume_measure_m3': volume_measure}, {f'{state_name}_volume_xyz_m': vol_xyz, f'{state_name}_volume_weights_m3': vol_weights, f'{state_name}_volume_values': vol_values, f'{state_name}_volume_gradients_per_m': vol_gradients, f'{state_name}_C_physical': cphys})
+             kraw, kbatches = _assemble_k(np, elastic, source_xyz, front, vol_xyz, vol_weights, vol_values, vol_gradients, elastic.IsotropicMaterial(material['E_Pa'], material['nu']))
++            _record_checkpoint(checkpoint, f'{state_name}_raw_K_assembled', {'K_assembly_batches': kbatches}, {f'{state_name}_K_raw_N_per_m': kraw})
+             kscaled, scale_vector, eigenvalues, spectrum = _spectrum_gate(np, kraw)
+             rigid, rigid_ids = _mode_matrices(np, semantic, source_ids, source_xyz, semantic_ids, radius)
+             coupling, coupling_singular, null_residuals, coupling_rank, rigid_ok = _rigid_spectrum_checks(np, kscaled, scale_vector, rigid, cphys)
++            _record_checkpoint(checkpoint, f'{state_name}_spectrum_and_rigid_checks_complete', {f'{state_name}_spectrum': spectrum, f'{state_name}_rigid_null_relative_residuals': null_residuals, f'{state_name}_physical_gauge_rigid_rank': coupling_rank, f'{state_name}_mechanical_gate_passed': bool(spectrum['passed'] and rigid_ok)}, {f'{state_name}_K_scaled_raw': kscaled, f'{state_name}_eigenvalues_scaled': eigenvalues, f'{state_name}_rigid_mode_coefficients': rigid, f'{state_name}_rigid_gauge_coupling': coupling})
+             states.append({'name': state_name, 'front_x_m': front, 'xyz': vol_xyz, 'weights': vol_weights, 'values': vol_values, 'gradients': vol_gradients, 'C': cphys, 'volume_m3': volume_measure, 'K': kraw, 'Kscaled': kscaled, 'scale': scale_vector, 'eigenvalues': eigenvalues, 'spectrum': spectrum, 'rigid': rigid, 'rigid_ids': rigid_ids, 'coupling': coupling, 'coupling_singular': coupling_singular, 'null_residuals': null_residuals, 'coupling_rank': coupling_rank, 'mechanical_gate': bool(spectrum['passed'] and rigid_ok), 'K_batches': kbatches, 'side_values': side_values, 'side_gradients': side_gradients, 'cap_basis': cap_basis})
+         if not all((state['mechanical_gate'] for state in states)):
+             raise StudyError('one or both raw scaled spectrum/rigid gates failed; no KKT solve attempted')
+@@ -461,7 +480,9 @@
+         boundary_groups = {}
+         for label, cap in caps.items():
+             boundary_groups[label] = {'xyz': np.concatenate((side_xyz, cap['xyz'])), 'normals': np.concatenate((side_normals, cap['normals'])), 'weights': np.concatenate((side_weights, cap['weights'])), 'traction': np.concatenate((side_saved, cap_tractions[label])), 'side_rows': len(side_xyz)}
++            group = boundary_groups[label]; checkpoint['arrays'].update({f'{label}_boundary_xyz_m': group['xyz'], f'{label}_boundary_normals': group['normals'], f'{label}_boundary_area_weights_m2': group['weights'], f'{label}_boundary_traction_Pa': group['traction']})
+         wrench_metrics = {label: _wrench(np, g['xyz'], g['normals'], g['weights'], g['traction'], rigid, None, radius) for label, g in boundary_groups.items()}
++        _record_checkpoint(checkpoint, 'fixed_load_wrench_evaluated', {'fixed_physical_load_wrench': wrench_metrics})
+         if not wrench_metrics['fine']['passed']:
+             raise StudyError(f"fine fixed-load rigid wrench/virtual-work gate failed: {wrench_metrics['fine']}")
+         arrays = {
+@@ -529,6 +550,8 @@
+                 gradients = np.concatenate((state['side_gradients'], cap_gradients))
+                 force, force_batches = _assemble_force(np, group['xyz'], group['weights'], group['traction'], values)
+                 label_wrench = _wrench(np, group['xyz'], group['normals'], group['weights'], group['traction'], state['rigid'], force, radius)
++                checkpoint['arrays'][f'{name}_{label}_boundary_load_N'] = force; checkpoint['metrics'].setdefault('generalized_load_batches', {})[f'{name}_{label}'] = force_batches
++                checkpoint['metrics'].setdefault('generalized_load_wrench', {})[f'{name}_{label}'] = label_wrench
+                 state_metrics['loads'][label] = {'generalized_load_N': force.tolist(), 'force_assembly_batches': force_batches, 'rigid_wrench_virtual_work': label_wrench}
+                 arrays.update({f'{name}_side_values': state['side_values'],
+                     f'{name}_side_gradients_per_m': state['side_gradients'],
+@@ -542,6 +565,7 @@
+                     if not state['mechanical_gate'] or not solve_metrics['passed']:
+                         raise StudyError(f'{name} solve gate blocked: {solve_metrics}')
+                     state_metrics['solve'] = {**solve_metrics, 'q_solution': q.tolist(), 'lagrange_multipliers_physical': lam.tolist(), 'constraint_target_m': [0.0] * 6}
++                    _record_checkpoint(checkpoint, f'{name}_fine_solve_complete', {'solve_gates': {name: solve_metrics}}, {f'{name}_q_solution': q, f'{name}_lambda_physical': lam})
+                     for key, value in solve_arrays.items():
+                         arrays[f'{name}_{key}'] = value
+                     arrays[f'{name}_q_solution'] = q; arrays[f'{name}_lambda_physical'] = lam
+@@ -558,8 +582,10 @@
+         metrics['energy_release'].update({'Pi_old_J': old_pi, 'Pi_candidate_J': new_pi, 'G_fd_J_per_m2': -(new_pi - old_pi) / (length * delta_a), 'one_sided_projected_area_m2': length * delta_a, 'two_face_area_m2': 2.0 * length * delta_a, 'path_and_quadrature_sensitivity': 'UNKNOWN'})
+         metrics['status'] = 'OK_FIXED_LOAD_REANALYSIS_DIAGNOSTIC_UNQUALIFIED'; metrics['assembly_status'] = 'OK'
+         metrics['mechanical_eligibility'] = 'TWO_STATE_SPECTRUM_WRENCH_GAUGE_AND_SOLVE_GATES_PASSED'; metrics['solve_allowed'] = True
+-        estimated = sum((np.asarray(value).nbytes for value in arrays.values())) + 2 * MAX_BATCH * 6 * DOF * 8
++        checkpoint_bytes = sum((np.asarray(value).nbytes for value in checkpoint['arrays'].values()))
++        estimated = sum((np.asarray(value).nbytes for value in arrays.values())) + checkpoint_bytes + 2 * MAX_BATCH * 6 * DOF * 8
+         metrics['explicit_array_memory_estimate_bytes'] = int(estimated); metrics['explicit_array_memory_estimate_is_rss'] = False
++        metrics['failure_checkpoint_array_bytes_counted'] = int(checkpoint_bytes)
+         if estimated > MEMORY_ESTIMATE_LIMIT_BYTES:
+             raise StudyError(f'explicit working array estimate exceeds {MEMORY_ESTIMATE_LIMIT_BYTES} bytes')
+         return (metrics, arrays, 0)
+@@ -593,6 +619,20 @@
+     total = array_path.stat().st_size + output.stat().st_size
+     if total > OUTPUT_LIMIT_BYTES:
+         raise StudyError(f'combined output exceeds {OUTPUT_LIMIT_BYTES} bytes')
++
++def _write_failure(output: Path, error: Exception, checkpoint: dict) -> Path:
++    import numpy as np
++    output.parent.mkdir(parents=True, exist_ok=False); array_path = output.with_name('failure_arrays.npz')
++    np.savez_compressed(array_path, **checkpoint['arrays'])
++    failure_path = output.with_name('failure.json')
++    document = {'schema': 'mixed93_moving_front_failure_checkpoint.v1', 'status': 'FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT', 'primary_result_written': False, 'actual_return_code': 2, 'error_type': type(error).__name__, 'error': str(error), 'last_completed_phase': checkpoint['phase'], 'completed_phases': checkpoint['completed_phases'], 'provider_batches': checkpoint['provider_batches'], 'provider_rows_returned': checkpoint['provider_rows_returned'], 'provider_statuses': checkpoint['provider_statuses'], 'checkpoint_arrays_uncompressed_bytes': sum((np.asarray(value).nbytes for value in checkpoint['arrays'].values())), 'input_sha256': checkpoint['input_sha256'], 'metrics': checkpoint['metrics'], 'replay_arrays_npz': {'path': array_path.name, 'sha256': _sha(array_path), 'bytes': array_path.stat().st_size}}
++    def json_default(value):
++        if isinstance(value, np.generic): return value.item()
++        raise TypeError(f'unsupported JSON value: {type(value).__name__}')
++    failure_path.write_text(json.dumps(document, indent=2, sort_keys=True, allow_nan=False, default=json_default) + '\n', encoding='utf-8')
++    if array_path.stat().st_size + failure_path.stat().st_size > OUTPUT_LIMIT_BYTES:
++        raise StudyError(f'failure checkpoint exceeds {OUTPUT_LIMIT_BYTES} bytes')
++    return failure_path
+ 
+ def main(argv=None) -> int:
+     parser = argparse.ArgumentParser()
+@@ -611,7 +651,12 @@
+     paths = _pin_inputs(case)
+     if case['execution_authorization'].get('authorized') is not True:
+         raise StudyError('case has no explicit numerical authorization')
+-    metrics, arrays, code = _run(case, paths); _write_result(output, metrics, arrays, code)
++    checkpoint = {'phase': 'execution_authorized_inputs_pinned', 'completed_phases': ['execution_authorized_inputs_pinned'], 'provider_batches': [], 'provider_rows_returned': 0, 'provider_statuses': [], 'metrics': {}, 'arrays': {}, 'input_sha256': {'entry': _sha(Path(__file__).resolve()), 'case': _sha(CASE_PATH), 'source_pins': _sha(PINS_PATH)}}
++    try:
++        metrics, arrays, code = _run(case, paths, checkpoint)
++    except Exception as exc:
++        failure_path = _write_failure(output, exc, checkpoint); print(json.dumps({'status': 'FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT', 'failure': str(failure_path), 'return_code': 2}), file=sys.stderr); return 2
++    checkpoint['arrays'].clear(); _write_result(output, metrics, arrays, code)
+     print(json.dumps({'status': metrics['status'], 'result': str(output), 'return_code': code}, sort_keys=True)); return code
+ if __name__ == '__main__':
+     raise SystemExit(main())
+--- pre_checkpoint_snapshot/case.json
++++ current/case.json
+@@ -265,6 +265,7 @@
+     "new_cap_mls_values_gradients_bytes": 2322432,
+     "one_256x6x93_B_block_bytes": 1142784,
+     "working_array_ceiling_bytes": 67108864,
++    "checkpoint_arrays_counted_at_runtime": true,
+     "rss_claimed": false
+   },
+   "predeclared_gates": {
+@@ -344,6 +345,26 @@
+       "new-cap provider support counts and condition numbers"
+     ],
+     "combined_output_limit_bytes": 12582912,
++    "failure_checkpoint": {
++      "status": "FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT",
++      "files": [
++        "failure.json",
++        "failure_arrays.npz"
++      ],
++      "contains_only_completed_phase_diagnostics": true,
++      "does_not_write_primary_result": true,
++      "combined_output_limit_bytes": 12582912
++    },
+     "no_offgrid_queries": true
++  },
++  "capture_contract": {
++    "script": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/capture_once.py",
++    "exact_child_invocations": 1,
++    "max_child_seconds": 60,
++    "max_capture_seconds": 64,
++    "max_total_output_bytes": 12582912,
++    "pre_post_all_input_hashes_must_match": true,
++    "raw_stdout_stderr": true,
++    "automatic_retry": false
+   }
+ }
+--- /dev/null
++++ new/capture_once.py
+@@ -0,0 +1,159 @@
++"""One-shot standard-library capture for a separately authorized worker run."""
++import hashlib
++import json
++import subprocess
++import sys
++import time
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[4]
++REVIEW = Path(__file__).resolve().parent
++EXPERIMENT = ROOT / 'pgfrag/experiments/mixed93_moving_front_reanalysis_20261007'
++ENTRY = EXPERIMENT / 'mixed93_moving_front_reanalysis.py'
++CASE = EXPERIMENT / 'case.json'
++PINS = REVIEW / 'SOURCE_PINS.json'
++RUN = REVIEW / 'run01'
++CAPTURE = REVIEW / 'capture_once01'
++LOCK = REVIEW / 'run01.capture.lock'
++PYTHON = ROOT / 'third_party/vesselforge-runtime/venv/Scripts/python.exe'
++MAX_CHILD_SECONDS = 60
++MAX_CAPTURE_SECONDS = 64
++MAX_TOTAL_BYTES = 12 * 1024 * 1024
++
++
++def _record(path):
++    digest = hashlib.sha256()
++    with path.open('rb') as stream:
++        for block in iter(lambda: stream.read(1024 * 1024), b''):
++            digest.update(block)
++    return {'sha256': digest.hexdigest(), 'bytes': path.stat().st_size}
++
++
++def _input_paths(case, pins):
++    paths = {str(ENTRY.relative_to(ROOT)): ENTRY, str(CASE.relative_to(ROOT)): CASE,
++        str(PINS.relative_to(ROOT)): PINS, str(Path(__file__).resolve().relative_to(ROOT)): Path(__file__).resolve()}
++    for item in pins['references'].values():
++        paths[item['path']] = ROOT / item['path']
++    for item in pins.get('artifacts', {}).values():
++        paths[item['path']] = ROOT / item['path']
++    for item in case['dependency_pins'].values():
++        paths[item['path']] = ROOT / item['path']
++    return paths
++
++
++def _snapshot(paths):
++    return {name: _record(path) for name, path in sorted(paths.items())}
++
++
++def _verified_inputs():
++    case = json.loads(CASE.read_text(encoding='utf-8'))
++    pins = json.loads(PINS.read_text(encoding='utf-8'))
++    contract = case['capture_contract']
++    if contract != {'script': str(Path(__file__).resolve().relative_to(ROOT)).replace('\\', '/'), 'exact_child_invocations': 1, 'max_child_seconds': MAX_CHILD_SECONDS, 'max_capture_seconds': MAX_CAPTURE_SECONDS, 'max_total_output_bytes': MAX_TOTAL_BYTES, 'pre_post_all_input_hashes_must_match': True, 'raw_stdout_stderr': True, 'automatic_retry': False}:
++        raise RuntimeError('capture script settings differ from the reviewed case contract')
++    paths = _input_paths(case, pins)
++    if case['execution_authorization']['authorized'] is not True or pins['execution_authorized'] is not True:
++        raise RuntimeError('capture blocked: exact case and source pins are not authorized')
++    if case.get('source_entry') != pins.get('entry_path') or pins.get('entry_path') != ENTRY.relative_to(ROOT).as_posix():
++        raise RuntimeError('capture blocked: entry path differs between case and pins')
++    if _record(ENTRY)['sha256'] != pins['entry_sha256'] or _record(CASE)['sha256'] != pins['current_case_sha256']:
++        raise RuntimeError('capture blocked: current entry/case does not match source pins')
++    capture_pin = pins['artifacts']['capture_wrapper']
++    if capture_pin['path'] != str(Path(__file__).resolve().relative_to(ROOT)).replace('\\', '/') or _record(Path(__file__).resolve())['sha256'] != capture_pin['sha256']:
++        raise RuntimeError('capture blocked: wrapper differs from its artifact pin')
++    for key, item in pins['references'].items():
++        if _record(ROOT / item['path'])['sha256'] != item['sha256']:
++            raise RuntimeError(f'capture blocked: pinned reference changed: {key}')
++    for key, item in pins.get('artifacts', {}).items():
++        if _record(ROOT / item['path'])['sha256'] != item['sha256']:
++            raise RuntimeError(f'capture blocked: pinned artifact changed: {key}')
++    for key, item in case['dependency_pins'].items():
++        if _record(ROOT / item['path'])['sha256'] != item['sha256']:
++            raise RuntimeError(f'capture blocked: case dependency changed: {key}')
++    return (case, pins, paths)
++
++
++def _tree_records(path):
++    if not path.exists():
++        return {}
++    return {p.relative_to(path).as_posix(): _record(p) for p in sorted(path.rglob('*')) if p.is_file()}
++
++
++def _write_receipt(receipt, receipt_path, index_path, started):
++    total_bytes = 0
++    for _ in range(6):
++        receipt['combined_output_bytes_including_receipt_index'] = total_bytes
++        receipt['capture_elapsed_seconds_after_posthash_tally'] = time.monotonic() - started
++        receipt_path.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8')
++        index_path.write_text(json.dumps({'receipt_path': receipt_path.name, **_record(receipt_path)}, indent=2, sort_keys=True) + '\n', encoding='utf-8')
++        actual = sum(p.stat().st_size for folder in (RUN, CAPTURE) if folder.exists() for p in folder.rglob('*') if p.is_file())
++        if actual == total_bytes:
++            return (actual, time.monotonic() - started)
++        total_bytes = actual
++    raise RuntimeError('capture receipt/index byte tally did not stabilize')
++
++
++def main():
++    started = time.monotonic()
++    if LOCK.exists() or RUN.exists() or CAPTURE.exists():
++        raise RuntimeError('capture blocked: lock or exclusive output already exists')
++    LOCK.mkdir()
++    try:
++        case, pins, paths = _verified_inputs()
++        before = _snapshot(paths)
++        child_timeout = min(MAX_CHILD_SECONDS, MAX_CAPTURE_SECONDS - (time.monotonic() - started) - 4.0)
++        if child_timeout <= 0.0:
++            raise RuntimeError('capture preflight exhausted the reserved four-second receipt budget')
++        command = [str(PYTHON), '-B', str(ENTRY), '--execute', '--output', str(RUN / 'result.json')]
++        timed_out = False; child_return_code = None
++        try:
++            child = subprocess.run(command, cwd=ROOT, capture_output=True, timeout=child_timeout, check=False)
++            child_return_code = child.returncode; stdout = child.stdout; stderr = child.stderr
++        except subprocess.TimeoutExpired as exc:
++            timed_out = True; stdout = exc.stdout or b''; stderr = exc.stderr or b''
++        after = _snapshot(paths)
++        inputs_stable = before == after
++        CAPTURE.mkdir()
++        stdout_path = CAPTURE / 'stdout.bin'; stdout_path.write_bytes(stdout)
++        stderr_path = CAPTURE / 'stderr.bin'; stderr_path.write_bytes(stderr)
++        run_files = _tree_records(RUN)
++        receipt_path = CAPTURE / 'capture_receipt.json'
++        status = 'CAPTURED_EXACTLY_ONCE' if inputs_stable and not timed_out and child_return_code == 0 else 'CAPTURE_NEEDS_REVIEW'
++        receipt = {'schema': 'mixed93_moving_front_capture.v1', 'status': status,
++            'case_id': case['case_id'], 'child_invocations': 1, 'command': command,
++            'actual_child_return_code': child_return_code, 'child_timed_out': timed_out, 'child_timeout_seconds': child_timeout,
++            'whole_capture_timeout_seconds': MAX_CAPTURE_SECONDS,
++            'inputs_stable_pre_post': inputs_stable, 'inputs_pre': before, 'inputs_post': after,
++            'run01_files': run_files, 'stdout': {'path': stdout_path.name, **_record(stdout_path)},
++            'stderr': {'path': stderr_path.name, **_record(stderr_path)},
++            'capture_source': {'path': Path(__file__).name, **_record(Path(__file__).resolve())},
++            'primary_result_present': (RUN / 'result.json').is_file(), 'automatic_retry': False,
++            'combined_output_limit_bytes': MAX_TOTAL_BYTES,
++            'combined_output_bytes_including_receipt_index': 0, 'capture_elapsed_seconds_after_posthash_tally': 0.0}
++        index_path = CAPTURE / 'receipt_index.json'
++        total_bytes, elapsed = _write_receipt(receipt, receipt_path, index_path, started)
++        return_code = child_return_code if child_return_code is not None else 124
++        if child_return_code == 0 and not inputs_stable: return_code = 3
++        if total_bytes > MAX_TOTAL_BYTES:
++            receipt['status'] = 'CAPTURE_OUTPUT_LIMIT_EXCEEDED'
++            return_code = 3
++        if elapsed > MAX_CAPTURE_SECONDS:
++            receipt['status'] = 'CAPTURE_TIME_LIMIT_EXCEEDED'
++            return_code = 124
++        receipt['wrapper_return_code'] = return_code
++        if receipt['status'] != 'CAPTURED_EXACTLY_ONCE' or return_code != 0:
++            total_bytes, elapsed = _write_receipt(receipt, receipt_path, index_path, started)
++        if elapsed > MAX_CAPTURE_SECONDS and return_code != 124:
++            receipt['status'] = 'CAPTURE_TIME_LIMIT_EXCEEDED'; return_code = 124; receipt['wrapper_return_code'] = return_code
++            _write_receipt(receipt, receipt_path, index_path, started)
++        return return_code
++    finally:
++        LOCK.rmdir()
++
++
++if __name__ == '__main__':
++    try:
++        raise SystemExit(main())
++    except Exception as exc:
++        print(f'capture failed before/around the single child run: {type(exc).__name__}: {exc}', file=sys.stderr)
++        raise SystemExit(2)

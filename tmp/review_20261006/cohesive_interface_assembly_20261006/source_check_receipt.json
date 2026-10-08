@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "check_kind": "stdlib AST and JSON-schema structure only",
+  "assembler_executed": false,
+  "numeric_checker_executed": false,
+  "source_lines": 299,
+  "source_line_limit": 300,
+  "checker_lines": 104,
+  "checker_line_limit": 150,
+  "numeric_checker_lines": 180,
+  "numeric_checker_line_limit": 185,
+  "source_sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+  "numeric_source_sha256": "5dc47e90f7bde645854cd8333c177e52f5d0fbab118477f4990eb215b1b5e577",
+  "scalar_source_sha256": "78433638608AD4216979607412FE0D4966F1423706C47F734F50DD2A8121FA17",
+  "scalar_source_pin": "78433638608AD4216979607412FE0D4966F1423706C47F734F50DD2A8121FA17",
+  "numeric_assembly_source_pin": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+  "schema_sections": [
+    "caps",
+    "history",
+    "limits",
+    "point_fields",
+    "result_fields",
+    "units"
+  ],
+  "checks": [
+    "AST parse only",
+    "stdlib-only imports",
+    "frozen interface dataclasses",
+    "trial uses existing scalar law",
+    "no commit API",
+    "unit/area/J schema fields",
+    "caps and Newton-force tolerance",
+    "reviewed assembly and scalar source pins",
+    "numerical checker source present but not run"
+  ]
+}

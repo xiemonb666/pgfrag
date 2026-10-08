@@ -1,0 +1,35 @@
+{
+  "freeze_id": "modeiii_field_reference_source_20261005_v1",
+  "case_id": "straight_front_mode_iii_cylinder_20261005",
+  "classification": "ENGINEERING_MANUFACTURED_SOLUTION",
+  "review_state": "SOURCE_ONLY_ROOT_REVIEW_REQUIRED",
+  "query_limit": 256,
+  "output_limit_bytes": 2097152,
+  "validation": {
+    "python_ast_parse": "PASS",
+    "focused_tests": "NOT_RUN_PENDING_ROOT_REVIEW",
+    "solver_or_numerical_run": "NOT_RUN"
+  },
+  "files": [
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "sha256": "D71BD6980CE5EBFF2C43239C66B6E5E86D4B8B818104AADC9D6400431F7F4FF5"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/test_field_reference.py",
+      "sha256": "E42C2B9CA9BE66F3E3CB8A2C8448F0E1C17B805230CB9645DD64D2A9A52E0B7A"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/fixed_case.json",
+      "sha256": "38C57C6E91FCD9E4C5201E5A4652A8CE476ED565A6F362E58B8EAB047FDACF1F"
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/METHOD.md",
+      "sha256": "6B28D27957B309BFE2E15A53C42C33E5571E2BDFA19ED4D14FE00A18A7341BEA"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_field_reference_20261005/SOURCE_REVIEW.md",
+      "sha256": "9F8A3DBE854D154E9CCAF387FFD8958D2861CC93F00B6897331BCC5F6D5A21B0"
+    }
+  ]
+}

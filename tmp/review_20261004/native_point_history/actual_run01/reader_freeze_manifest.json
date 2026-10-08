@@ -1,0 +1,19 @@
+{
+  "schema": "pgfrag.native_point_history.actual_run01_reader_freeze.v1",
+  "status": "FROZEN_BEFORE_SINGLE_READ_ONLY_INVOCATION",
+  "reader_script": {
+    "path": "read_run01.py",
+    "bytes": 3643,
+    "sha256": "0223d3c16c37d08938b97715ff5e61cc88b5d281d43e5c77a8819dd53fdfa272"
+  },
+  "frozen_script": {
+    "path": "read_run01.py.frozen",
+    "bytes": 3643,
+    "sha256": "0223d3c16c37d08938b97715ff5e61cc88b5d281d43e5c77a8819dd53fdfa272"
+  },
+  "snapshot_reference": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01",
+  "input_points_reference": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.points.csv",
+  "input_metadata_reference": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.metadata.toml",
+  "observed_runner_source_reference": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\run_pd_point_event_probe.jl",
+  "no_solver_or_detector": true
+}

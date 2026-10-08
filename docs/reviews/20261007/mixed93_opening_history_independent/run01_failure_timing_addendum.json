@@ -1,0 +1,49 @@
+{
+  "schema": "mixed93_opening_history_run01_failure_timing_addendum.v1",
+  "classification": "NOT_ACCEPTED_DIAGNOSTIC_ATTEMPT_NO_PASS",
+  "scope": "Record the one completed ROOT_GO capture exactly; no retry or source repair is represented as a run01 result.",
+  "outer_tool": {
+    "tool": "functions.exec -> exec_command",
+    "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+    "command": "& 'C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe' -B 'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\capture_once.py' --execute --root-go ROOT_20261007_MIXED93_OPENING_INDEPENDENT_RUN01 --result 'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\result.json' --receipt 'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\receipt.json'",
+    "wall_time_seconds": 0.3742824,
+    "exit_code": 1,
+    "stdout_exact": "{\"status\": \"NOT_ACCEPTED\", \"actual_returncode\": 1, \"timed_out\": false, \"output\": \"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261007\\\\mixed93_opening_history_independent\\\\run01\\\\result.json\", \"receipt\": \"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261007\\\\mixed93_opening_history_independent\\\\run01\\\\capture_receipt.json\", \"bytes\": 17178}\r\n",
+    "stderr_exact": ""
+  },
+  "child_capture": {
+    "receipt_path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/run01/capture_receipt.json",
+    "receipt_sha256": "22aef0373d3653a7e4b10b13d57dc02b3653c044a8038a3fcfdac62c327f2ef0",
+    "receipt_status": "NOT_ACCEPTED",
+    "actual_returncode": 1,
+    "timed_out": false,
+    "child_elapsed_seconds": 0.1410000000614673,
+    "pre_post_hashes_match": true,
+    "combined_bytes_including_receipt": 17178,
+    "output_limit_bytes": 131072,
+    "combined_file_limit_pass": true,
+    "result": {
+      "bytes": 0,
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "run01_files": {
+    "capture_receipt.json": {
+      "bytes": 16891,
+      "sha256": "22aef0373d3653a7e4b10b13d57dc02b3653c044a8038a3fcfdac62c327f2ef0"
+    },
+    "stderr.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.bin": {
+      "bytes": 287,
+      "sha256": "8312d73648d2fb398f4e3da432490451127876ac138dddad5d308a43b56345bf"
+    }
+  },
+  "child_stdout_raw": "{\"schema\": \"mixed93_opening_history_independent_result.v1\", \"status\": \"NOT_ACCEPTED\", \"classification\": \"DIAGNOSTIC_ONLY\", \"failure\": {\"gate\": \"audit\", \"type\": \"KeyError\", \"detail\": \"'analytic_alpha'\"}, \"limitations\": [\"failed saved JSON audit\", \"no material or growth qualification\"]}\r\n",
+  "child_stderr_raw": "",
+  "independent_result_created": false,
+  "retry_count": 0
+}

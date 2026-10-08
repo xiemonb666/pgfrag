@@ -1,0 +1,14 @@
+{
+  "status": "SOURCE_ONLY_NOT_EXECUTED",
+  "source": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+  "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+  "test_source": "pgfrag/experiments/efgm_elastic_operator_20261005/test_efgm_elastic_operator.py",
+  "test_sha256": "18d231f2e7286be4f214d3cee1383105283763bb44b0c48d3107c5e62b5f53d9",
+  "max_dof": 375,
+  "max_quadrature_points": 256,
+  "fixture_nodes": 27,
+  "fixture_quadrature_points": 64,
+  "source_test_count": 11,
+  "solver_or_benchmark_run": false,
+  "tests_run": false
+}

@@ -1,0 +1,155 @@
+# REVIEW-ONLY PATCH DRAFT — NOT APPLIED; NOT YET GIT-APPLY-READY.
+# Target: a new, versioned Peridynamics.jl fork derived from 0.5.4+pgfrag.1.
+# Scope: one body, one chunk, uniform horizon, OSB only. Keep this patch outside vendor trees.
+# Python continues to emit the strict JSON audit contract. A future pinned bridge step
+# compiles its typed projection to this stdlib-TOML transport; the TOML carries the actual
+# JSON byte SHA, and the immutable policy/receipt records actual JSON and TOML byte SHAs.
+# Helper bodies below are design pseudocode; do not apply this file as-is.
+
+diff --git a/Project.toml b/Project.toml
+--- a/Project.toml
++++ b/Project.toml
+@@
+ [deps]
++SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
++TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+diff --git a/src/Peridynamics.jl b/src/Peridynamics.jl
+--- a/src/Peridynamics.jl
++++ b/src/Peridynamics.jl
+@@
+-import LibGit2, Dates
++import LibGit2, Dates, SHA, TOML
+@@
+ export Body, point_set!, point_sets, no_failure!, material!, velocity_bc!, velocity_ic!,
+        forcedensity_bc!, displacement_bc!, precrack!, MultibodySetup, contact!, uniform_box,
+        uniform_sphere, uniform_cylinder, round_sphere, round_cylinder, rotate!, trunc_pyramid,
+        n_points
++export InitialBondPolicy
+@@
+ include("discretization/predefined_cracks.jl")
+ include("discretization/point_sets.jl")
++include("discretization/initial_bond_policy.jl")
+ include("discretization/body.jl")
+
+diff --git a/src/discretization/initial_bond_policy.jl b/src/discretization/initial_bond_policy.jl
+new file mode 100644
+--- /dev/null
++++ b/src/discretization/initial_bond_policy.jl
+@@
++"""
++Immutable, explicit initial material-domain input for bond graph construction.
++Only immutable strings/digests are stored. Parsed TOML tables are local validation
++values and are never stored or mutated on the policy or a global.
++"""
++struct InitialBondPolicy
++    native_toml::String
++    audit_json_sha256::String
++    native_toml_sha256::String
++end
++
++function InitialBondPolicy(audit_json_path::AbstractString, native_toml_path::AbstractString)
++    audit_bytes = read_contract_bounded_stable(audit_json_path)
++    transport_bytes = read_contract_bounded_stable(native_toml_path)
++    transport = TOML.parse(String(transport_bytes)) # duplicate/invalid TOML is rejected
++    validate_toml_value_tree(transport)            # reject NaN/Inf and unsupported values
++    validate_typed_transport(transport)
++    audit_sha = bytes2hex(SHA.sha256(audit_bytes))
++    require(transport["audit"]["json_sha256"] == audit_sha,
++            "native TOML is not bound to these actual audit JSON bytes")
++    validate_actual_input_file_pins(transport)
++    return InitialBondPolicy(String(transport_bytes), audit_sha,
++                             bytes2hex(SHA.sha256(transport_bytes)))
++end
++
++function initial_policy_contract(policy::InitialBondPolicy)
++    # One local parse per graph build. Do not mutate the returned Dict/Vector tree.
++    return TOML.parse(policy.native_toml)
++end
++
++initial_bond_policy(::AbstractBody) = nothing
++
++function validate_initial_policy_scope(body, pd, chunk_id, contract)
++    # Fail closed unless exactly one body/chunk, chunk_id == 1, every body point is
++    # local in contract order, material is OSB, and all points share the pinned horizon.
++    # Verify actual point CSV SHA, ordered external IDs/coordinates, mm -> m conversion,
++    # and explicit reference-to-native frame transform against body.position. Rehash
++    # actual CAD, classifier result/source, point CSV and interval-sidecar file bytes.
++    # Require positive included degree at every point and an empty UNKNOWN set before
++    # constructing the graph. Reject the whole asset on any discrepancy.
++    error("implement fail-closed source/body/scope checks before enabling this fork")
++end
++
++function filter_initial_policy_candidates!(bonds, n_neighbors, loc_points, body, contract)
++    # Called after the solver's Euclidean search and before physical filter_bonds!.
++    # Map native row indices to contract external IDs with native_index, compare the
++    # complete raw canonical pair set and exactly two directed records per pair, then
++    # keep IN_MATERIAL only and recount each directed n_neighbors row. Reject a mismatch,
++    # UNKNOWN, empty mask, or any zero-degree point. Count OUT_OR_VOID separately as a
++    # geometric exclusion; never encode it in bond_active, damage, precrack, or events.
++    error("implement native candidate readback and pre-graph filtering before enabling")
++end
+
+diff --git a/src/discretization/body.jl b/src/discretization/body.jl
+--- a/src/discretization/body.jl
++++ b/src/discretization/body.jl
+@@
+     posdep_single_dim_ics::Vector{PosDepSingleDimIC}
+     point_sets_precracks::Vector{PointSetsPreCrack}
++    initial_bond_policy::Union{Nothing,InitialBondPolicy}
+
+-    function Body(mat::M, position::AbstractMatrix, volume::AbstractVector) where {M}
++    function Body(mat::M, position::AbstractMatrix, volume::AbstractVector;
++                  initial_bond_policy::Union{Nothing,InitialBondPolicy}=nothing) where {M}
+@@
+         new{M,P}(name, mat, n_points, position, volume, fail_permit, point_sets,
+                  point_params, params_map, single_dim_bcs, posdep_single_dim_bcs,
+                  pos_single_dim_bcs, data_bcs, single_dim_ics, posdep_single_dim_ics,
+-                 point_sets_precracks)
++                 point_sets_precracks, initial_bond_policy)
+     end
+ end
++
++initial_bond_policy(body::Body) = getfield(body, :initial_bond_policy)
+
+diff --git a/src/discretization/bond_system.jl b/src/discretization/bond_system.jl
+--- a/src/discretization/bond_system.jl
++++ b/src/discretization/bond_system.jl
+@@
+ function get_bond_data(body::AbstractBody, pd::PointDecomposition, chunk_id)
+     loc_points = pd.decomp[chunk_id]
++    policy = initial_bond_policy(body)
++    contract = policy === nothing ? nothing : initial_policy_contract(policy)
++    if contract !== nothing
++        validate_initial_policy_scope(body, pd, chunk_id, contract)
++    end
+-    bonds, n_neighbors = find_bonds(body, loc_points)
++    bonds, n_neighbors = find_bonds(body, loc_points; initial_contract=contract)
+     halo_points = find_halo_points(bonds, loc_points)
+@@
+-function find_bonds(body::AbstractBody, loc_points::AbstractVector{Int})
++function find_bonds(body::AbstractBody, loc_points::AbstractVector{Int}; initial_contract=nothing)
+@@
+     for (li, i) in enumerate(loc_points)
+         n_neighbors[li] = find_bonds!(bonds, nhs, body.position, body.fail_permit,
+                                       get_point_param(body, :δ, i), i)
+     end
++    if initial_contract !== nothing
++        # Apply the geometric mask to the full raw directed search result. This exact
++        # seam precedes physical precracks, bond IDs, halo/localizer, kernels/correction.
++        filter_initial_policy_candidates!(bonds, n_neighbors, loc_points, body, initial_contract)
++    end
+     filter_bonds!(bonds, n_neighbors, loc_points, body)
+     return bonds, n_neighbors
+ end
+
+# Required resulting construction order:
+#   verify actual JSON/TOML/file pins + body IDs/positions/frame + one-body/one-chunk/OSB
+#   -> native search and exact raw candidate-set / reciprocal-direction comparison
+#   -> remove OUT_OR_VOID and recount directed n_neighbors
+#   -> apply ordinary physical precracks, if separately requested
+#   -> build bond_ids, halo/localizer, kernels and correction storage
+#   -> initialize OSB weighted volume/dilatation and EnergySurfaceCorrection
+#
+# Do not edit system.bond_active after BodyChunk initialization. That leaves n_neighbors,
+# bond_ids, halo/localization, correction and OSB data stale and treats geometry as fracture.

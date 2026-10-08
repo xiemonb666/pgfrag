@@ -1,0 +1,24 @@
+{
+  "schema": "mixed93_mechanics_objectivity_source_pins.v1",
+  "classification": "STATIC_SOURCE_AND_PRIOR_EVIDENCE_HASHES_ONLY_NO_NUMERIC_RUN",
+  "pins": [
+    {"path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json", "sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c"},
+    {"path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/mixed93_cached_lefm_solve.py", "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c"},
+    {"path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json", "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"},
+    {"path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/mixed93_actual_cohesive_bridge.py", "sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412"},
+    {"path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_provider.py", "sha256": "40bb5c0812944ab24924cfc33825d66bf84f624aacce1d54cff0c84accc94d5a"},
+    {"path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_cases.json", "sha256": "2766245b25bf93eefcf6836befe81536917888936b4543666c86ebe9d6b72100"},
+    {"path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_check_spec.json", "sha256": "221042d97e584e62a032735129ed1505154ed7d783d54b98b0da448aa71e763f"},
+    {"path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py", "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"},
+    {"path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py", "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"},
+    {"path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py", "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"},
+    {"path": "pgfrag/experiments/mls_rotation_covariance_20261007/mls_rotation_covariance.py", "sha256": "431efad4df87d127853c2d970724fc8931ec9dbb1323ac31dab7f3a2ff212e40"},
+    {"path": "pgfrag/experiments/mls_rotation_covariance_20261007/test_mls_rotation_covariance.py", "sha256": "3c02f4da5096712deea95050f370d7215d8e37081a39330a4cc68624914b03f1"},
+    {"path": "pgfrag/experiments/mls_rotation_covariance_20261007/case.json", "sha256": "0ef1a0c1e8626c3bfe2d62be10ae02663eb4b78462584e1c04906572da8638ae"},
+    {"path": "pgfrag/tmp/review_20261007/mls_rotation_covariance_20261007/focused_run01/ROOT_GO_RECORD.json", "sha256": "782ab10ae5dc9a9b68ca2013fb7dca0416f74c6786c2552549852cbd70516065"},
+    {"path": "pgfrag/tmp/review_20261007/mls_rotation_covariance_20261007/focused_run01/result.json", "sha256": "d83b579a9e906da1a255035708dc0acea2709e2fa391494c93b67546d26e47f3"},
+    {"path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/continuous_polyline_bias_bounds.py", "sha256": "f1120332240df70e58fab20ba9fefcdac00751bcc8783f02a865cd9e45704375"},
+    {"path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/convex_segment_upper.py", "sha256": "326f4b2f22468e0913974e8572ee0d489a47baf2b375ab18bb66780a29954ec2"}
+  ],
+  "excluded": ["NPZ payloads were not opened or hashed", "no provider/query/field/assembly/solver/test/renderer was run"]
+}

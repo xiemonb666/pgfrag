@@ -1,0 +1,124 @@
+{
+  "schema": "cracked_mls_coupling_pilot_design.v1",
+  "date": "2026-10-05",
+  "status": "DESIGN_ONLY_NOT_RUN",
+  "decision_owner": "root",
+  "primary_objective": "Test whether one explicit finite facet changes the same frozen MLS/EFGM stiffness through finite-surface visibility and split displacement DOFs, subject to a front-shadow continuity gate.",
+  "scope": {
+    "writes": [
+      "pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/COUPLING_PILOT_DESIGN.md",
+      "pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/COUPLING_PILOT_DESIGN.json"
+    ],
+    "source_changed": false,
+    "solver_or_test_run": false,
+    "growth_or_fragmentation": false,
+    "calibration_or_GT_claim": false
+  },
+  "source_sha256": [
+    {
+      "path": "pgfrag/experiments/explicit_crack_formulation_20261005/FORMULATION_CONTRACT.md",
+      "sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb"
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "path": "pgfrag/experiments/explicit_visibility_20261005/visibility3d.py",
+      "sha256": "9d5097ca33ce899cf788ad43ef0740a34296216a8fd7aa490868c27ffe1ebb03"
+    },
+    {
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/astra_crack_surface_architecture/DECISION.md",
+      "sha256": "284c444662960b2f15d8ae99d61aed2b25091048ff3c104dce72d2139f6d3b47"
+    }
+  ],
+  "candidate_A": {
+    "decision": "PRIMARY_FIXED_LAYOUT_FALSIFICATION_CASE",
+    "domain": [[-1, 1], [-1, 1], [-1, 1]],
+    "material": {"young_modulus": 1.0, "poisson_ratio": 0.3, "dimensionless": true},
+    "visibility_coordinate_convention": "1 reference-coordinate unit = 1 m, solely to honor VisibilityConfig absolute-tolerance units; not a physical specimen size",
+    "nodes": {"rule": "cartesian_product([-1,0,1], repeat=3)", "count": 27, "base_dofs": 81},
+    "quadrature": {"rule": "existing 64-point fixture, unchanged", "count": 64, "weight_each": 0.125, "points_on_facet_or_front": false},
+    "mls_config": "exactly the frozen config from the separately prepared uncracked certificate; no radius/tolerance retuning",
+    "facet": {
+      "kind": "finite_triangle",
+      "vertices": [[0, -0.75, -0.5], [0, 0.75, -0.5], [0, 0, 0.75]],
+      "normal": [1, 0, 0],
+      "front": "the three triangle edges; fully internal to the cube",
+      "strictly_interior_lattice_particle_to_split": [[0, 0, 0]],
+      "visibility_only_copy_offset": "0.01 * frozen support radius along +/- normal; MLS coordinates unchanged",
+      "conditional_total_dofs": 84
+    },
+    "assembly": "K_Gamma = sum_q B_Gamma(q)^T D B_Gamma(q) w_q, with actual per-query finite visibility masks and one active coefficient ID per geometric source position",
+    "allow_partial_K": false
+  },
+  "candidate_B": {
+    "decision": "ROOT_APPROVAL_ONLY_IF_A_IS_SUPPORT_LIMITED",
+    "layout": "regular 5x5x5 coordinates [-1,-0.5,0,0.5,1]^3 on the same domain",
+    "facet": {
+      "kind": "finite_triangle",
+      "vertices": [[0, -0.9, -0.6], [0, 0.9, -0.6], [0, 0, 0.9]],
+      "normal": [1, 0, 0]
+    },
+    "strictly_interior_facet_sites": 7,
+    "conditional_sites_after_split": 132,
+    "conditional_dofs_after_split": 396,
+    "matching_two_gauss_per_cell_quadrature_points": 512,
+    "current_operator_caps": {"max_dofs": 375, "max_quadrature_points": 256},
+    "status": "different discretization; current operator caps block it; do not run or lower quadrature silently"
+  },
+  "front_shadow_probe": {
+    "purpose": "Falsify continuity of sharp-visibility MLS outside the physical facet before interpreting any K delta as traction-free crack coupling.",
+    "front_edge": [[0, -0.75, -0.5], [0, 0.75, -0.5]],
+    "edge_midpoint_p": [0, 0, -0.5],
+    "ordinary_source_s": [1, 0, 0],
+    "query_limit_q0": [-0.0625, 0, -0.53125],
+    "shadow_plane": "z=(x-1)/2",
+    "path_direction": [-0.5, 0, 1],
+    "q0_outside_physical_facet": true,
+    "distance_q0_to_front_midpoint": "sqrt(5)/32",
+    "source_distance_at_q0": "sqrt(1445)/32",
+    "active_only_if_frozen_support_radius_exceeds_source_distance": true,
+    "one_sided_read": "evaluate fixed-mask MLS limits at q0 with M_minus and M_plus; do not treat the exact grazing row as ordinary OK",
+    "jump_measure": "J_Phi = norm2(Phi_plus - Phi_minus) in canonical coefficient-ID order",
+    "nonzero_jump_outcome": "BLOCKED_NONPHYSICAL_SHADOW_JUMP",
+    "unknown_or_inactive_outcome": "UNKNOWN_SHADOW_CONTINUITY",
+    "pass_scope": "passes only this falsification path; does not prove global continuity across every shadow sheet"
+  },
+  "mechanical_coupling_gates": [
+    "all visibility and MLS rows are OK; UNKNOWN is never zero-filled",
+    "hidden/out-of-support values and gradients are exactly zero",
+    "linear affine reproduction holds independently on each stable side support",
+    "split coefficient traces yield a nonzero jump on the physical facet interior",
+    "no cut-side quadrature B row contains both IDs of a split pair",
+    "front-shadow one-sided traces agree outside the physical facet",
+    "relative opening/sliding has finite positive energy through the ligament",
+    "finite facet K has the same six physical rigid modes as baseline and no unexplained extra near-null modes",
+    "K is finite and symmetric; report per-quadrature contributions and P^T K_Gamma P - K0"
+  ],
+  "critical_principle_risks": [
+    "pointwise local mask constancy certifies only the derivative conditional on that mask; it does not imply global H1 continuity",
+    "Boolean source visibility creates shadow sheets from finite front edges; MLS shape values may jump on them outside the intended crack",
+    "for an active source strictly inside support, a Boolean mask switch removes its positive Wendland C2 moment-matrix contribution; row continuity is not guaranteed and a nonzero jump is expected generically",
+    "the volume-only Galerkin operator has no term or constraint on a shadow sheet and cannot account for a nonzero trace jump there",
+    "finite-front rows where both coincident crack copies remain visible lack an existing unique source-to-DOF mapping; MLS duplicate-source protection returns UNKNOWN",
+    "the reviewed sources do not establish support/diffraction correction, enrichment, or visibility-ramp prerequisites for eliminating or treating shadow sheets",
+    "K symmetry, hidden-weight zero, local support rank, and six rigid modes do not establish traction-free correctness"
+  ],
+  "unknowns": [
+    "whether the chosen finite-facet source mask produces zero one-sided shape-row jump on the specified shadow path",
+    "whether either side's support has rank four and acceptable conditioning for the frozen support radius",
+    "how to map coincident split copies at finite-front queries when both are visible",
+    "whether a mathematically valid continuous visibility ramp/partition or explicit shadow-interface treatment is required",
+    "any loaded solution, crack-face traction residual, SIF, growth rule/parameter, process-zone law, material calibration, contact, dynamics, model R2, or physical fracture validation"
+  ],
+  "claim_ceiling": "At most a bounded discrete operator-coupling primitive after all continuity/rank/front gates pass; not calibrated mechanics, fracture physics, crack growth, vessel fragmentation, measured truth, or model GT."
+}

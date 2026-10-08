@@ -1,0 +1,20 @@
+{
+  "schema": "sha256-source-pin-v1",
+  "sources": [
+    {
+      "module": "visibility3d",
+      "path": "pgfrag/experiments/explicit_visibility_20261005/visibility3d.py",
+      "sha256": "9D5097CA33CE899CF788AD43EF0740A34296216A8FD7AA490868C27FFE1EBB03"
+    },
+    {
+      "module": "mls3d_mls",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63"
+    },
+    {
+      "module": "mls3d_shape",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5"
+    }
+  ]
+}

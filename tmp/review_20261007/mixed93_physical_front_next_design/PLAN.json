@@ -1,0 +1,122 @@
+{
+  "schema": "pgfrag.mixed93_physical_front_next_design.v2",
+  "status": "SOURCE_ONLY_PREPARATION",
+  "root_architecture_decision": {
+    "stage1": "93-DOF toy Mode-I pure LEFM finite front perturbation diagnostic under frozen old-tip traction",
+    "stage1_old_tip_x_m": 0.0,
+    "stage1_candidate_tip_x_m": 0.0005,
+    "stage1_direction": "+x",
+    "stage1_gauge_target": "g=0 for both independently re-equilibrated geometries",
+    "stage1_crack_faces": "traction-free; no CZM assembly, no material Gc, no commit",
+    "stage2": "future real damage growth uses cohesive-history dissipation; do not add Gc*delta_area for the same damage"
+  },
+  "preserved_predecision_snapshots": [
+    "pgfrag/tmp/review_20261007/mixed93_physical_front_next_design/DESIGN.pre_root_decision_20261007.md",
+    "pgfrag/tmp/review_20261007/mixed93_physical_front_next_design/PLAN.pre_root_decision_20261007.json"
+  ],
+  "frozen_source_identity": {
+    "mixed93_cache_case": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+    "mixed93_cache_case_sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "fcc4_actual_case": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+    "fcc4_case_sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+    "accepted_arrays_sha256_metadata_only": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "arrays_opened": false,
+    "full3d_162_modeiii_384_row_contract_reused": false
+  },
+  "frozen_physical_boundary": {
+    "load_case": "pure_I",
+    "source_traction_array": "pure_I_boundary_traction_Pa from the accepted mixed93 cache, generated at the old tip with KI=100 Pa*sqrt(m)",
+    "scale": 0.01,
+    "resulting_reference_KI_Pa_sqrt_m": 1.0,
+    "classification": "synthetic old-tip benchmark traction; not a calibrated artifact load",
+    "geometry": {
+      "domain_radius_m": 0.01,
+      "length_m": 0.01,
+      "z_bounds_m": [-0.005, 0.005],
+      "crack_plane": "y=0",
+      "old_front": "x=0, parallel to z"
+    },
+    "boundary_row_order": ["side", "cap_bottom", "cap_top"],
+    "boundary_region_slices_half_open": {
+      "side": [0, 256],
+      "cap_bottom": [256, 512],
+      "cap_top": [512, 768]
+    },
+    "row_counts": {
+      "side": 256,
+      "cap_bottom": 256,
+      "cap_top": 256,
+      "boundary_total": 768
+    },
+    "frozen_per_row_fields": [
+      "positions_xyz_m",
+      "unit_normals",
+      "area_weights_m2",
+      "old_tip_traction_Pa_scaled_0.01"
+    ],
+    "policy": [
+      "same physical xyz/normals/area weights/traction samples for old and candidate",
+      "reintegrate basis-dependent generalized f separately in each geometry",
+      "do not compare f_old and f_candidate as if they were the same coefficient vector",
+      "do not recalculate traction from the candidate solution or retune KI",
+      "do not project, repair, or drop vector traction components"
+    ]
+  },
+  "quadrature_and_requery_budget": {
+    "volume": {
+      "count": 512,
+      "rule": "GL4 radial parameter x GL32 theta x GL4 z, from frozen a0/theta32 cloud",
+      "region": "full cylinder volume, not a radial hole"
+    },
+    "mechanical_boundary": {
+      "count": 768,
+      "breakdown": "256 side + 512 caps",
+      "source": "same frozen pure_I old-tip boundary cloud"
+    },
+    "offgrid_diagnostic_only": 128,
+    "raw_selected_rows_in_frozen_case": 1408,
+    "additional_provider_queries": 0,
+    "zero_query_precondition": "all cache, source, MLS configuration, row IDs, xyz, weights, normals, and source hashes exactly match",
+    "candidate_rule": "same physical integration xyz/weights as parent; recompute shifted branch values/gradients analytically on all rows",
+    "provider_batch_limit_if_cache_invalid": 256,
+    "cache_mismatch_policy": "block; any new query/requadrature requires a separately reviewed budget"
+  },
+  "basis_and_solve_contract": {
+    "source_count": 27,
+    "source_grid_axes_m": [-0.005, 0.0, 0.005],
+    "semantic_dofs": 93,
+    "layout": "81 BASE + 12 GLOBAL_FRONT (four branch functions x three components)",
+    "candidate_basis": "same base MLS support rows; shift front origin to x=0.0005m and rebuild all GLOBAL_FRONT branch values/gradients",
+    "assemblies": "one bulk K and one basis-dependent external f per geometry",
+    "kkt_solves": 2,
+    "kkt_order_each": 99,
+    "cohesive_assembly_calls": 0,
+    "gauge": {
+      "target": [0, 0, 0, 0, 0, 0],
+      "functional": "same physical volume-average translations and rotations about same center/scale in each geometry",
+      "coefficient_matrix": "re-express/reassemble in each geometry's basis; do not reuse manufactured nonzero-g cache"
+    }
+  },
+  "diagnostic_only_energy": {
+    "per_state": [
+      "U=0.5*q^T*K*q",
+      "W=f_basis^T*q and verify as boundary integral of displacement against frozen physical traction",
+      "Pi=U-W"
+    ],
+    "reported_difference": "delta_Pi and optionally -delta_Pi/(L*delta_a) labelled finite-potential diagnostic only",
+    "one_sided_new_area_m2_at_step": 5e-6,
+    "fracture_threshold": "none",
+    "Gc_delta_area_term": "not used",
+    "commit": false
+  },
+  "future_damage_growth": {
+    "energy_dissipation": "cohesive-history delta_Dcoh",
+    "Gc_usage": "cohesive law calibration/parameter only",
+    "double_count_policy": "do not add Griffith Gc*delta_area for the same cohesive fracture dissipation"
+  },
+  "verification_this_task": {
+    "performed": ["source/README/case/review JSON/Markdown read-only inspection", "preserved old design and plan snapshots"],
+    "not_performed": ["solver", "provider", "NPZ", "test", "Git"],
+    "numerical_receipt": "none; source-only preparation"
+  }
+}

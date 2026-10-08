@@ -1,0 +1,9 @@
+# Mode III scalar traction solve, output-evidence v2
+
+This is a distinct source snapshot of the source-only scalar UZ traction solve. Version 1 remains unchanged at `pgfrag/experiments/modeiii_pu_static_solve_20261005/`. The v2 case preserves its 27-source fixture, 54 scalar coefficients, normalized physical-mean gauge, direct scaled 55×55 Lagrange solve, fixed 128/256 volume rules, side/cap rules, 256 off-grid set, thresholds, and 30-second/32 MiB bounds.
+
+The output adds replayable evidence: each level's raw 54×54 stiffness matrix and physical mean row; the 54-entry applied load vector once; ordered canonical coefficient IDs; and off-grid coordinates, exact UZ/gradient and solved UZ/gradient for both levels. The matrix axes, coefficient vectors, mean row, and load vector use the published canonical ID order. Coordinates and UZ are in meters. `grad(u_z)` is dimensionless strain-like; provider basis gradients are in 1/m. The existing gradient-error label is corrected in v2 to dimensionless.
+
+The fixed comparison changes angular order only, GL8 to GL16 theta; radial and axial orders remain GL4. This measures one angular sensitivity and does not establish convergence. The interpretation remains an unqualified manufactured antiplane diagnostic, not full 3-D equilibrium, finite crack-end accuracy, local enrichment convergence, SIF, fracture, or propagation.
+
+The explicit numeric-array estimate includes the bounded saved evidence arrays. Results are limited to 4 MiB. Before a solved result can be serialized, retained matrices, gauge/load vectors, off-grid fields, and computed energy/work/residual values must be finite. Serialization fails closed to an UNKNOWN receipt instead of replacing nonfinite numbers with JSON `null`. The v2 worker is still source-only and must remain unlaunched until root review and authorization.

@@ -1,0 +1,21 @@
+{
+  "schema": "fixed_load_front_saved_independent_pre_run_pins.v1",
+  "scope": "read-only cached-array audit; no producer, provider, assembler, solver, tests, CAD, or Git",
+  "inputs": {
+    "fixed_result": {"path": "pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json", "sha256": "a60e51c85c26510c358ee57cafa4bfdda6ed89ea463d99bcc86551f64220732c", "bytes": 539566},
+    "baseline_bridge_result": {"path": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run02/static_solve_bridge_result.json", "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3", "bytes": 129942},
+    "upstream_operator_result": {"path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json", "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2", "bytes": 4661989}
+  },
+  "review_time_source_observations": {
+    "fixed_load_front_reanalysis.py": "9707fa3c47403e0dada8081e3fba9273249e9a05fc2055b0e3a20a69b62c952c",
+    "fixed_load_front_reanalysis_case.json": "8f919a55127b6f310e6f262b4a550f8daa9cd214496d824c3e1848ed0b1b46df",
+    "README.md": "8a6c21e5c49eeb67499d04d1871187692899bc2bde79ae805e7e16801cf704a1",
+    "static_solve_bridge.py pre-run snapshot": "cb9e802bfbb25d0a5ae9dbbaf67952dfd71fb64757f35e2765da79f838c5be5f",
+    "operator_SOURCE_PINS.json": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7"
+  },
+  "independent_review_code": {
+    "audit_fixed_load_front_saved_arrays.py": {"sha256": "d1a9f187742abf4801a0fd6247a85bab86675474c00aced37404b8ac9fa627ff", "lines": 217},
+    "render_energy_spectrum.py": "807a5aaab8c8584efaea2c8d1e188a217b462552a57be2d905695fd645e5790e"
+  },
+  "author_run_note": "The experiment README reports the fixed attempt as process rc 0 and 0.551 seconds. The run01 folder contains the result JSON; no raw wrapper stdout/stderr or wrapper receipt was present in the inspected file listing. This is an author report, not an independent process capture."
+}

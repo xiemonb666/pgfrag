@@ -1,0 +1,96 @@
+{
+  "schema": "mixed93_opening_control_case.v1",
+  "case_id": "mixed93_opening_control_20261007",
+  "status": "SOURCE_READY_EXECUTION_DISABLED",
+  "classification": "FIXED_FACE_GLOBAL_MODE_I_OPENING_CONTROL_TOY_HISTORY_DIAGNOSTIC_ONLY",
+  "execution_authorization": {
+    "authorized": false,
+    "authorized_by": null,
+    "authorized_utc": null,
+    "reason": "Source freeze only; numerical execution requires a separate exact root-go token in SOURCE_PINS.json."
+  },
+  "saved_result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "role": "previously accepted fixed 93-DOF elastic cohesive bridge; JSON-only input for this diagnostic"
+  },
+  "operator": {
+    "layout": "MIXED93_BASE81_GLOBAL12",
+    "trace_family": "GLOBALFRONT",
+    "coefficient_count": 93,
+    "physical_gauge_count": 6,
+    "rigid_mode_order": ["Tx", "Ty", "Tz", "Rx", "Ry", "Rz"]
+  },
+  "geometry": {
+    "shape": "straight finite crack sheet through centered cylinder",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "surface": "y=0; x in [-R,0]; z in [-L/2,L/2]",
+    "normal_lower_to_upper": [0, 1, 0],
+    "one_sided_quadrature_points": 16
+  },
+  "control": {
+    "index_zero_based": 82,
+    "semantic_id": "[\"GLOBAL_FRONT\",\"global\",\"uy\",1]",
+    "prescribed_equation": "e82 dot q = Q",
+    "opening_factor_from_saved_trace": "alpha_i = 2*sqrt(-x_i/R)",
+    "Qstar_definition": "deltaf / min_i(alpha_i)"
+  },
+  "loading": {
+    "physical_body_force_N": "all zero",
+    "physical_boundary_force_N": "all zero",
+    "physical_gauge_target_m": [0, 0, 0, 0, 0, 0],
+    "trajectory_fraction_Qstar": [0, 0.05, 0.15, 0.30, 0.12, 0.30, 0.50, 0.75, 1.10, 0.65, 0, 1.10],
+    "sequence_meaning": "ramp to full damage; partial-damage unload/reload; full-damage unload to zero and reload",
+    "compression": "not entered; negative opening is a hard failure"
+  },
+  "cohesive_law": {
+    "law": "bilinear scalar Mode-I opening only",
+    "k0_pa_per_m": 100000000,
+    "tpeak_pa": 1000,
+    "gc_j_per_m2": 0.01,
+    "delta0_m": 0.00001,
+    "deltaf_m": 0.00002,
+    "damage_rule": "irreversible maximum opening; no healing",
+    "unloading_rule": "fixed committed damage secant stiffness",
+    "unsupported": ["compression", "tangential slip", "mixed mode"]
+  },
+  "equilibrium_and_energy": {
+    "bulk_unit_control_system": "one 100x100 KKT solve from saved K_raw and C_phys; no body or boundary load; C_phys*q=0 and e82 dot q=1",
+    "scaled_kkt": "symmetric diagonal equilibration and normalized physical-gauge rows; recover physical q and lambda",
+    "physical_control_force_sign": "positive opening resistance = (K*q + C_phys.T*lambda_phys + f_gamma)[82]",
+    "noncontrol_force_rule": "all entries except index 82 must be numerical zero within the frozen force tolerance",
+    "bulk_work": "exact 0.5*k_bulk*(Q_new^2-Q_old^2)",
+    "cohesive_work": "independent exact piecewise-linear law path integral, checked against area-weighted primitive cumulative-work differences",
+    "global_balance": "control work increment equals change in bulk stored + cohesive stored + cohesive dissipated energy",
+    "corner_at_zero": "record the pinned primitive status and reasons; do not project or use its tangent in a solve"
+  },
+  "tolerances": {
+    "analytic_normal_row_absolute": 1e-14,
+    "trace_absolute": 1e-12,
+    "trace_relative": 1e-10,
+    "unit_control_noncontrol_force_absolute_n_per_m": 1e-12,
+    "control_force_absolute_n": 1e-12,
+    "control_force_relative": 1e-10,
+    "scaled_kkt_backward_error": 1e-9,
+    "physical_gauge_residual_inf_m": 1e-9,
+    "energy_relative_error": 2e-10
+  },
+  "limits": {
+    "wall_seconds": 20,
+    "combined_result_output_bytes": 8388608,
+    "new_mls_queries": 0,
+    "provider_calls": 0,
+    "npz_opened": false,
+    "bulk_unit_control_kkt_solves": 1,
+    "primitive_assemblies": 12,
+    "retries": 0
+  },
+  "output_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+  "scope_exclusions": [
+    "no autonomous crack growth or front advance",
+    "no real material qualification",
+    "no roughness or multibody claim",
+    "not a fracture package"
+  ]
+}

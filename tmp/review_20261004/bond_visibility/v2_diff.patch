@@ -1,0 +1,771 @@
+--- v1/pgfrag/src/pgfrag/bond_visibility.py
++++ v2/pgfrag/src/pgfrag/bond_visibility.py
+@@ -68,6 +68,56 @@
+         return math.isfinite(float(value))
+     except (OverflowError, ValueError):
+         return False
++
++
++def _safe_midpoint(low: float, high: float) -> float | None:
++    """Return a finite midpoint without summing two large coordinates first."""
++    if not math.isfinite(low) or not math.isfinite(high):
++        return None
++    # All segment parameters are non-negative, but the half-sum is also stable
++    # for mixed-sign synthetic controls and avoids ``low + high`` overflow.
++    result = low * 0.5 + high * 0.5
++    return result if math.isfinite(result) else None
++
++
++def _interpolate_segment_point(
++    start_mm: Sequence[float], end_mm: Sequence[float], fraction: float
++) -> list[float] | None:
++    """Interpolate in a bounded convex form so finite endpoints stay finite."""
++    if not math.isfinite(fraction):
++        return None
++    complement = 1.0 - fraction
++    point: list[float] = []
++    for start, end in zip(start_mm, end_mm):
++        try:
++            value = math.fsum((float(start) * complement, float(end) * fraction))
++        except (OverflowError, ValueError):
++            return None
++        if not math.isfinite(value):
++            return None
++        point.append(value)
++    return point
++
++
++def _combined_uncertainty_band(
++    source_accuracy_mm: Any, distance_tolerance_mm: Any
++) -> tuple[float | None, str | None]:
++    if not _finite_real(source_accuracy_mm) or float(source_accuracy_mm) < 0.0:
++        return None, "SOURCE_PRECISION_UNKNOWN"
++    if not _finite_real(distance_tolerance_mm) or float(distance_tolerance_mm) <= 0.0:
++        return None, "DISTANCE_TOLERANCE_UNKNOWN"
++    try:
++        band = float(source_accuracy_mm) + float(distance_tolerance_mm)
++    except (OverflowError, ValueError):
++        return None, "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND"
++    if not math.isfinite(band):
++        return None, "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND"
++    # The classifier's thin-layer criterion and its serialized threshold both
++    # represent the full two-sided uncertainty width. Keep that quantity
++    # finite before passing any derived accuracy tolerance to OCC.
++    if not math.isfinite(band * 2.0):
++        return None, "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND"
++    return band, None
+ 
+ 
+ def _xyz_mm(value: Any, *, label: str) -> tuple[float, float, float]:
+@@ -376,6 +426,7 @@
+ def _collect_raw_hits(
+     source: CanonicalStepSource,
+     start_mm: Sequence[float],
++    end_mm: Sequence[float],
+     unit_direction: Sequence[float],
+     length_mm: float,
+     distance_tolerance_mm: float,
+@@ -411,10 +462,10 @@
+                     (index for index, face in enumerate(faces) if hit_face.IsSame(face)),
+                     None,
+                 )
+-                point = [
+-                    float(start_mm[axis]) + parameter_mm * float(unit_direction[axis])
+-                    for axis in range(3)
+-                ]
++                fraction = parameter_mm / length_mm if length_mm > 0.0 else math.nan
++                point = _interpolate_segment_point(start_mm, end_mm, fraction)
++                if point is None:
++                    failures.append("NUMERIC_RANGE_OVERFLOW_HIT_POINT")
+                 hits.append(
+                     {
+                         "solid_index": solid_index,
+@@ -423,7 +474,8 @@
+                         "face_index_zero_based": local_face_index,
+                         "parameter_mm_from_canonical_pair_start": parameter_mm,
+                         "point_mm": point,
+-                        "point_m": [value * _MM_TO_M for value in point],
++                        "point_m": [value * _MM_TO_M for value in point] if point is not None else None,
++                        "point_status": "FINITE" if point is not None else "UNKNOWN_NUMERIC_RANGE",
+                         "face_identity_status": "MAPPED" if local_face_index is not None else "UNKNOWN",
+                         "cluster_index": None,
+                     }
+@@ -447,41 +499,69 @@
+     hits: list[dict[str, Any]], distance_tolerance_mm: float
+ ) -> tuple[list[dict[str, Any]], list[str]]:
+     groups: list[list[dict[str, Any]]] = []
++    reasons: list[str] = []
+     for hit in hits:
+         parameter = float(hit["parameter_mm_from_canonical_pair_start"])
++        if not math.isfinite(parameter):
++            reasons.append("NONFINITE_HIT_PARAMETER")
++            continue
+         if not groups:
+             groups.append([hit])
+             continue
+         previous = float(groups[-1][-1]["parameter_mm_from_canonical_pair_start"])
+-        if parameter - previous <= distance_tolerance_mm:
++        gap = parameter - previous
++        if not math.isfinite(gap):
++            reasons.append("NUMERIC_RANGE_OVERFLOW_HIT_GAP")
++            groups.append([hit])
++        elif gap <= distance_tolerance_mm:
+             groups[-1].append(hit)
+         else:
+             groups.append([hit])
+ 
+     events: list[dict[str, Any]] = []
+-    reasons: list[str] = []
+     for cluster_index, group in enumerate(groups):
+         parameters = [float(hit["parameter_mm_from_canonical_pair_start"]) for hit in group]
+         low = min(parameters)
+         high = max(parameters)
++        span = high - low
++        if not math.isfinite(span):
++            span_value = None
++            reasons.append("NUMERIC_RANGE_OVERFLOW_HIT_SPAN")
++        else:
++            span_value = span
+         exact_parameters = {value for value in parameters}
++        distinct_parameter_count = len(exact_parameters)
+         solid_faces = {
+             (hit["solid_index"], hit["face_index_zero_based"])
+             for hit in group
+         }
+-        if high - low > 0.0 and high - low <= distance_tolerance_mm:
++        if distinct_parameter_count > 1:
+             reasons.append("UNRESOLVED_NEARBY_BOUNDARY_HITS")
+         if len(solid_faces) > 1:
+             reasons.append("AMBIGUOUS_COLOCATED_BOUNDARY_HITS")
+         for hit in group:
+             hit["cluster_index"] = cluster_index
++        representative = _safe_midpoint(low, high)
++        if representative is None:
++            reasons.append("NUMERIC_RANGE_OVERFLOW_HIT_MIDPOINT")
+         events.append(
+             {
+                 "cluster_index": cluster_index,
+-                "parameter_mm": math.fsum(parameters) / len(parameters),
+-                "parameter_span_mm": high - low,
++                # This representative only places diagnostic cuts. Any event
++                # containing distinct parameters is unresolved and cannot lead
++                # to IN_MATERIAL, regardless of this midpoint.
++                "parameter_mm": representative,
++                "parameter_span_mm": span_value,
+                 "raw_hit_count": len(group),
+-                "distinct_parameter_count": len(exact_parameters),
++                "distinct_parameter_count": distinct_parameter_count,
++                "unresolved": distinct_parameter_count > 1 or len(solid_faces) > 1 or representative is None,
++                "resolution_status": (
++                    "UNRESOLVED_DISTINCT_PARAMETERS" if distinct_parameter_count > 1
++                    else "UNRESOLVED_FACE_IDENTITY" if len(solid_faces) > 1
++                    else "NUMERIC_RANGE_UNKNOWN" if representative is None
++                    else "EXACT_PARAMETER_CLUSTER"
++                ),
++                "diagnostic_cut_only": distinct_parameter_count > 1 or representative is None,
+                 "solid_face_refs": [
+                     {"solid_index": solid_index, "face_index_zero_based": face_index}
+                     for solid_index, face_index in sorted(
+@@ -527,8 +607,10 @@
+     source: CanonicalStepSource,
+     point_mm: Sequence[float],
+     declared_domain_id: str | None,
+-    tolerance_mm: float,
++    tolerance_mm: float | None,
+ ) -> dict[str, Any]:
++    if tolerance_mm is None or not math.isfinite(tolerance_mm):
++        return {"state": "UNKNOWN", "reason": "NUMERIC_RANGE_OR_SOURCE_PRECISION_UNKNOWN", "solid_states": []}
+     states = [
+         {
+             "solid_index": solid.solid_index,
+@@ -560,16 +642,19 @@
+ def _pair_intervals(
+     source: CanonicalStepSource,
+     start_mm: Sequence[float],
+-    unit_direction: Sequence[float],
++    end_mm: Sequence[float],
+     length_mm: float,
+     events: Sequence[Mapping[str, Any]],
+     uncertainty_band_mm: float | None,
++    uncertainty_band_reason: str | None,
++    diagnostic_only: bool,
+ ) -> tuple[list[dict[str, Any]], list[str]]:
+     cuts = [0.0]
+     cuts.extend(
+         float(event["parameter_mm"])
+         for event in events
+-        if 0.0 < float(event["parameter_mm"]) < length_mm
++        if _finite_real(event.get("parameter_mm"))
++        and 0.0 < float(event["parameter_mm"]) < length_mm
+     )
+     cuts.append(float(length_mm))
+     cuts.sort()
+@@ -577,18 +662,27 @@
+     reasons: list[str] = []
+     for start_t, end_t in zip(cuts, cuts[1:]):
+         width = end_t - start_t
++        if not math.isfinite(width):
++            reasons.append("NUMERIC_RANGE_OVERFLOW_INTERVAL_WIDTH")
++            continue
+         if width <= 0.0:
+             reasons.append("ZERO_WIDTH_INTERVAL_FROM_INTERSECTIONS")
+             continue
+-        midpoint_t = (start_t + end_t) * 0.5
+-        midpoint = [
+-            float(start_mm[axis]) + midpoint_t * float(unit_direction[axis])
+-            for axis in range(3)
+-        ]
+-        if uncertainty_band_mm is None:
++        midpoint_t = _safe_midpoint(start_t, end_t)
++        if midpoint_t is None:
++            reasons.append("NUMERIC_RANGE_OVERFLOW_INTERVAL_MIDPOINT")
++            midpoint = None
++        else:
++            midpoint = _segment_interval_point(start_mm, end_mm, midpoint_t, length_mm)
++            if midpoint is None:
++                reasons.append("NUMERIC_RANGE_OVERFLOW_INTERVAL_POINT")
++        if midpoint is None:
+             occupancy, domain_id, solid_states = "UNKNOWN", None, []
+-            reason = "SOURCE_PRECISION_UNKNOWN"
+-        elif width <= 2.0 * uncertainty_band_mm:
++            reason = "NUMERIC_RANGE_OVERFLOW_INTERVAL_POINT"
++        elif uncertainty_band_mm is None:
++            occupancy, domain_id, solid_states = "UNKNOWN", None, []
++            reason = uncertainty_band_reason or "SOURCE_PRECISION_UNKNOWN"
++        elif width * 0.5 <= uncertainty_band_mm:
+             # Keep the exact interval and its diagnostic classifier states, but
+             # do not trust a layer at or below the combined source/error band.
+             _, domain_id, solid_states = _interval_occupancy(
+@@ -616,14 +710,22 @@
+                 "length_m": width * _MM_TO_M,
+                 "midpoint_t_mm": midpoint_t,
+                 "midpoint_mm": midpoint,
+-                "midpoint_m": [value * _MM_TO_M for value in midpoint],
++                "midpoint_m": [value * _MM_TO_M for value in midpoint] if midpoint is not None else None,
+                 "occupancy": occupancy,
+                 "material_domain_id": domain_id,
+                 "reason": reason,
++                "diagnostic_only": diagnostic_only,
+                 "solid_classifier_states": solid_states,
+             }
+         )
+     return intervals, sorted(set(reasons))
++
++
++def _segment_interval_point(
++    start_mm: Sequence[float], end_mm: Sequence[float], parameter_mm: float, length_mm: float
++) -> list[float] | None:
++    fraction = parameter_mm / length_mm if length_mm > 0.0 else math.nan
++    return _interpolate_segment_point(start_mm, end_mm, fraction)
+ 
+ 
+ def classify_candidate_pairs(
+@@ -687,11 +789,8 @@
+         canonical_pairs.add((min(point_i, point_j), max(point_i, point_j)))
+         directed_input_count += 1
+ 
+-    accuracy_known = _finite_real(source.source_accuracy_mm) and float(source.source_accuracy_mm) >= 0.0
+-    uncertainty_band_mm = (
+-        float(source.source_accuracy_mm) + float(distance_tolerance_mm)
+-        if accuracy_known
+-        else None
++    uncertainty_band_mm, uncertainty_band_reason = _combined_uncertainty_band(
++        source.source_accuracy_mm, distance_tolerance_mm
+     )
+     pair_records: list[dict[str, Any]] = []
+     for point_i, point_j in sorted(canonical_pairs):
+@@ -699,35 +798,83 @@
+         start_mm = xyz_by_id[point_i]
+         end_mm = xyz_by_id[point_j]
+         vector = tuple(end_mm[axis] - start_mm[axis] for axis in range(3))
+-        length_mm = math.sqrt(math.fsum(component * component for component in vector))
+         pair_reasons: list[str] = list(source.unknown_reasons)
+-        if not math.isfinite(length_mm) or length_mm <= 0.0:
++        if uncertainty_band_reason is not None:
++            pair_reasons.append(uncertainty_band_reason)
++        if not all(math.isfinite(component) for component in vector):
+             pair_records.append(
+-                _empty_pair_record(point_i, point_j, start_mm, end_mm, "UNKNOWN", "ZERO_LENGTH_SEGMENT", length_mm)
++                _empty_pair_record(
++                    point_i, point_j, start_mm, end_mm, "UNKNOWN",
++                    "NUMERIC_RANGE_OVERFLOW_SEGMENT_VECTOR", None,
++                    pair_reasons + ["NUMERIC_RANGE_OVERFLOW_SEGMENT_VECTOR"],
++                )
++            )
++            continue
++        try:
++            length_mm = math.hypot(*vector)
++        except (OverflowError, ValueError):
++            length_mm = math.inf
++        if all(component == 0.0 for component in vector):
++            pair_records.append(
++                _empty_pair_record(
++                    point_i, point_j, start_mm, end_mm, "UNKNOWN", "ZERO_LENGTH_SEGMENT", 0.0,
++                    pair_reasons + ["ZERO_LENGTH_SEGMENT"],
++                )
++            )
++            continue
++        if not math.isfinite(length_mm):
++            pair_records.append(
++                _empty_pair_record(
++                    point_i, point_j, start_mm, end_mm, "UNKNOWN",
++                    "NUMERIC_RANGE_OVERFLOW_SEGMENT_LENGTH", None,
++                    pair_reasons + ["NUMERIC_RANGE_OVERFLOW_SEGMENT_LENGTH"],
++                )
++            )
++            continue
++        if length_mm == 0.0:
++            pair_records.append(
++                _empty_pair_record(
++                    point_i, point_j, start_mm, end_mm, "UNKNOWN",
++                    "NUMERIC_RANGE_UNDERFLOW_SEGMENT_LENGTH", None,
++                    pair_reasons + ["NUMERIC_RANGE_UNDERFLOW_SEGMENT_LENGTH"],
++                )
+             )
+             continue
+         unit_direction = tuple(component / length_mm for component in vector)
++        if not all(math.isfinite(component) for component in unit_direction):
++            pair_records.append(
++                _empty_pair_record(
++                    point_i, point_j, start_mm, end_mm, "UNKNOWN",
++                    "NUMERIC_RANGE_INVALID_UNIT_DIRECTION", None,
++                    pair_reasons + ["NUMERIC_RANGE_INVALID_UNIT_DIRECTION"],
++                )
++            )
++            continue
+         raw_hits, hit_failures = _collect_raw_hits(
+-            source, start_mm, unit_direction, length_mm, float(distance_tolerance_mm)
++            source, start_mm, end_mm, unit_direction, length_mm, float(distance_tolerance_mm)
+         )
+         hit_events, hit_reasons = _cluster_hits(raw_hits, float(distance_tolerance_mm))
+         pair_reasons.extend(hit_failures)
+         pair_reasons.extend(hit_reasons)
+         pair_domains_differ = domains[row_i] != domains[row_j]
+-        endpoint_i = _endpoint_result(source, start_mm, domains[row_i], uncertainty_band_mm or 0.0)
+-        endpoint_j = _endpoint_result(source, end_mm, domains[row_j], uncertainty_band_mm or 0.0)
++        endpoint_i = _endpoint_result(source, start_mm, domains[row_i], uncertainty_band_mm)
++        endpoint_j = _endpoint_result(source, end_mm, domains[row_j], uncertainty_band_mm)
+         intervals, interval_reasons = _pair_intervals(
+             source,
+             start_mm,
+-            unit_direction,
++            end_mm,
+             length_mm,
+             hit_events,
+             uncertainty_band_mm,
++            uncertainty_band_reason,
++            diagnostic_only=bool(hit_reasons),
+         )
+         pair_reasons.extend(interval_reasons)
+ 
+         tangent_events: list[int] = []
+         for event in hit_events:
++            if not _finite_real(event.get("parameter_mm")):
++                continue
+             event_t = float(event["parameter_mm"])
+             before = next(
+                 (item for item in intervals if math.isclose(float(item["t_end_mm"]), event_t, rel_tol=0.0, abs_tol=float(distance_tolerance_mm))),
+@@ -753,12 +900,18 @@
+             state, primary_reason = "UNKNOWN", "SOURCE_NOT_CLASSIFIABLE"
+         elif hit_failures:
+             state, primary_reason = "UNKNOWN", "INTERSECTION_RESULT_INCOMPLETE"
++        elif uncertainty_band_reason == "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND":
++            state, primary_reason = "UNKNOWN", uncertainty_band_reason
+         elif any(item["state"] == "UNKNOWN" for item in (endpoint_i, endpoint_j)):
+             state, primary_reason = "UNKNOWN", "ENDPOINT_CLASSIFICATION_UNKNOWN"
+         elif hit_reasons:
+             state, primary_reason = "UNKNOWN", hit_reasons[0]
+         elif tangent_events:
+             state, primary_reason = "UNKNOWN", "TANGENT_OR_NON_CROSSING_HIT"
++        elif any(reason.startswith("NUMERIC_RANGE") for reason in interval_reasons):
++            state, primary_reason = "UNKNOWN", next(
++                reason for reason in interval_reasons if reason.startswith("NUMERIC_RANGE")
++            )
+         elif any(item["occupancy"] == "UNKNOWN" for item in intervals):
+             state, primary_reason = "UNKNOWN", "OPEN_INTERVAL_OCCUPANCY_UNKNOWN"
+         elif pair_domains_differ:
+@@ -771,6 +924,10 @@
+             state, primary_reason = "OUT_OR_VOID", "DISCONNECTED_MATERIAL_DOMAIN"
+         else:
+             state, primary_reason = "IN_MATERIAL", "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN"
++
++        diagnostic_intervals_only = state == "UNKNOWN" or bool(hit_failures or hit_reasons)
++        for interval in intervals:
++            interval["diagnostic_only"] = diagnostic_intervals_only
+ 
+         directions = [
+             {"source_point_id": point_i, "target_point_id": point_j, "state": state},
+@@ -803,6 +960,7 @@
+                 "raw_hits": raw_hits,
+                 "hit_events": hit_events,
+                 "open_intervals": intervals,
++                "diagnostic_intervals_only": diagnostic_intervals_only,
+                 "tangent_or_non_crossing_event_clusters": tangent_events,
+                 "admissible_static_candidate": state == "IN_MATERIAL",
+             }
+@@ -811,6 +969,16 @@
+     counts = {state: 0 for state in ("IN_MATERIAL", "OUT_OR_VOID", "UNKNOWN")}
+     for record in pair_records:
+         counts[record["classification"]] += 1
++    safe_accuracy = (
++        float(source.source_accuracy_mm)
++        if _finite_real(source.source_accuracy_mm) and float(source.source_accuracy_mm) >= 0.0
++        else None
++    )
++    thin_interval_threshold = None
++    if uncertainty_band_mm is not None:
++        doubled_band = uncertainty_band_mm * 2.0
++        if math.isfinite(doubled_band):
++            thin_interval_threshold = doubled_band
+     return {
+         "schema": BOND_VISIBILITY_SCHEMA,
+         "status": "STATIC_CLASSIFICATION_COMPLETE",
+@@ -834,7 +1002,7 @@
+             "source_length_unit": source.source_length_unit,
+             "si_conversion": {"m_per_mm": _MM_TO_M, "volume_m3_per_mm3": 1.0e-9},
+             "frame": source.frame,
+-            "source_accuracy_mm": source.source_accuracy_mm,
++            "source_accuracy_mm": safe_accuracy,
+             "source_accuracy_basis": source.source_accuracy_basis,
+             "backend_versions": dict(source.backend_versions),
+             "solid_count": len(source.solids),
+@@ -842,11 +1010,11 @@
+         },
+         "tolerances": {
+             "distance_tolerance_mm": float(distance_tolerance_mm),
+-            "source_accuracy_mm": source.source_accuracy_mm,
++            "source_accuracy_mm": safe_accuracy,
+             "combined_occupancy_uncertainty_band_mm": uncertainty_band_mm,
+-            "thin_open_interval_unknown_at_or_below_mm": (
+-                2.0 * uncertainty_band_mm if uncertainty_band_mm is not None else None
+-            ),
++            "thin_open_interval_unknown_at_or_below_mm": thin_interval_threshold,
++            "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
++            "numeric_range_status": uncertainty_band_reason or "FINITE",
+             "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred",
+         },
+         "reference_coordinates": {
+@@ -880,7 +1048,8 @@
+     end_mm: Sequence[float],
+     state: str,
+     reason: str,
+-    length_mm: float,
++    length_mm: float | None,
++    reason_codes: Sequence[str] | None = None,
+ ) -> dict[str, Any]:
+     directions = [
+         {"source_point_id": point_i, "target_point_id": point_j, "state": state},
+@@ -890,17 +1059,30 @@
+         "pair": [point_i, point_j],
+         "classification": state,
+         "reason": reason,
+-        "reason_codes": [reason],
++        "reason_codes": sorted(set([reason, *(reason_codes or [])])),
+         "reciprocal": {"directed_records": directions, "same_classification": True},
+         "endpoints": [
+-            {"point_id": point_i, "position_mm": list(start_mm)},
+-            {"point_id": point_j, "position_mm": list(end_mm)},
++            {
++                "point_id": point_i,
++                "position_mm": list(start_mm),
++                "position_m": [value * _MM_TO_M for value in start_mm],
++            },
++            {
++                "point_id": point_j,
++                "position_mm": list(end_mm),
++                "position_m": [value * _MM_TO_M for value in end_mm],
++            },
+         ],
+         "segment_length_mm": length_mm,
+-        "segment_length_m": length_mm * _MM_TO_M if math.isfinite(length_mm) else None,
++        "segment_length_m": (
++            length_mm * _MM_TO_M
++            if length_mm is not None and math.isfinite(length_mm)
++            else None
++        ),
+         "raw_hits": [],
+         "hit_events": [],
+         "open_intervals": [],
++        "diagnostic_intervals_only": True,
+         "tangent_or_non_crossing_event_clusters": [],
+         "admissible_static_candidate": False,
+     }
+
+--- v1/pgfrag/tests/test_bond_visibility.py
++++ v2/pgfrag/tests/test_bond_visibility.py
+@@ -8,9 +8,12 @@
+ from __future__ import annotations
+ 
+ import hashlib
++import json
++import math
+ from pathlib import Path
+ import tempfile
+ import unittest
++from unittest.mock import patch
+ 
+ 
+ try:
+@@ -19,6 +22,11 @@
+     cq = None
+ 
+ from pgfrag.bond_visibility import (
++    CanonicalStepSource,
++    MaterialSolid,
++    _cluster_hits,
++    _combined_uncertainty_band,
++    _safe_midpoint,
+     _source_from_shape,
+     classify_candidate_pairs,
+     load_canonical_step,
+@@ -239,5 +247,195 @@
+                 )
+ 
+ 
++class BondVisibilityPureMathRegressionTests(unittest.TestCase):
++    @staticmethod
++    def _hit(parameter_mm):
++        return {
++            "solid_index": 0,
++            "material_domain_id": "solid-0",
++            "raw_hit_index": 1,
++            "face_index_zero_based": 4,
++            "parameter_mm_from_canonical_pair_start": float(parameter_mm),
++            "point_mm": None,
++            "point_m": None,
++            "point_status": "SYNTHETIC_MATH_CONTROL",
++            "face_identity_status": "MAPPED",
++            "cluster_index": None,
++        }
++
++    def test_single_link_chain_with_span_above_tolerance_is_unresolved(self) -> None:
++        tolerance = 1.0
++        hits = [self._hit(value) for value in (0.0, 0.75 * tolerance, 1.5 * tolerance)]
++        events, reasons = _cluster_hits(hits, tolerance)
++        self.assertEqual(len(events), 1)
++        self.assertEqual(events[0]["distinct_parameter_count"], 3)
++        self.assertEqual(events[0]["parameter_span_mm"], 1.5 * tolerance)
++        self.assertTrue(events[0]["unresolved"])
++        self.assertTrue(events[0]["diagnostic_cut_only"])
++        self.assertIn("UNRESOLVED_NEARBY_BOUNDARY_HITS", reasons)
++        self.assertEqual(
++            [hit["parameter_mm_from_canonical_pair_start"] for hit in hits],
++            [0.0, 0.75 * tolerance, 1.5 * tolerance],
++        )
++        json.dumps({"hits": hits, "events": events, "reasons": reasons}, allow_nan=False)
++
++    def test_near_distinct_hits_retain_short_void_as_unresolved(self) -> None:
++        tolerance = 1.0
++        cavity_width = 0.25 * tolerance
++        hits = [self._hit(10.0), self._hit(10.0 + cavity_width)]
++        events, reasons = _cluster_hits(hits, tolerance)
++        self.assertEqual(len(events), 1)
++        self.assertEqual(events[0]["raw_hit_count"], 2)
++        self.assertEqual(events[0]["distinct_parameter_count"], 2)
++        self.assertEqual(events[0]["parameter_span_mm"], cavity_width)
++        self.assertEqual(events[0]["resolution_status"], "UNRESOLVED_DISTINCT_PARAMETERS")
++        self.assertIn("UNRESOLVED_NEARBY_BOUNDARY_HITS", reasons)
++        self.assertEqual(len(hits), 2)
++        json.dumps({"hits": hits, "events": events, "reasons": reasons}, allow_nan=False)
++
++    def test_unresolved_chain_forces_unknown_even_when_diagnostic_intervals_are_inside(self) -> None:
++        source = CanonicalStepSource(
++            source_path=None,
++            source_origin="IN_MEMORY_TEST_FIXTURE",
++            source_geometry_sha256=None,
++            expected_sha256=None,
++            source_length_unit="mm",
++            frame=FRAME,
++            source_accuracy_mm=0.01,
++            source_accuracy_basis="pure math state-control fixture",
++            shape=object(),
++            solids=(MaterialSolid(0, "solid-0", object(), (object(),)),),
++            status="READY",
++            unknown_reasons=(),
++            backend_versions={"ocp": "not-called"},
++        )
++        for parameters in ((10.0, 10.75, 11.5), (10.0, 10.25)):
++            with self.subTest(parameters=parameters):
++                synthetic_hits = [self._hit(value) for value in parameters]
++                with patch(
++                    "pgfrag.bond_visibility._collect_raw_hits",
++                    return_value=(synthetic_hits, []),
++                ), patch(
++                    "pgfrag.bond_visibility._point_classifier_state",
++                    return_value="IN",
++                ):
++                    result = classify_candidate_pairs(
++                        source,
++                        reference_point_ids=[10, 20],
++                        reference_positions_mm=[(0.0, 0.0, 0.0), (20.0, 0.0, 0.0)],
++                        point_material_domain_ids=["solid-0", "solid-0"],
++                        candidate_pairs=[(10, 20)],
++                        reference_frame=FRAME,
++                        distance_tolerance_mm=1.0,
++                    )
++                pair = result["pairs"][0]
++                self.assertTrue(all(row["occupancy"] == "IN_MATERIAL" for row in pair["open_intervals"]))
++                self.assertEqual(pair["classification"], "UNKNOWN")
++                self.assertFalse(pair["admissible_static_candidate"])
++                self.assertTrue(pair["diagnostic_intervals_only"])
++                self.assertTrue(all(row["diagnostic_only"] for row in pair["open_intervals"]))
++                self.assertEqual(len(pair["raw_hits"]), len(parameters))
++                self.assertEqual(pair["reason"], "UNRESOLVED_NEARBY_BOUNDARY_HITS")
++                json.dumps(result, allow_nan=False)
++
++    def test_numeric_range_failures_are_unknown_and_json_finite(self) -> None:
++        band, reason = _combined_uncertainty_band(1.0e308, 1.0e308)
++        self.assertIsNone(band)
++        self.assertEqual(reason, "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND")
++        doubled_band, doubled_reason = _combined_uncertainty_band(1.0e308, 1.0)
++        self.assertIsNone(doubled_band)
++        self.assertEqual(doubled_reason, "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND")
++
++        source = CanonicalStepSource(
++            source_path=None,
++            source_origin="IN_MEMORY_TEST_FIXTURE",
++            source_geometry_sha256=None,
++            expected_sha256=None,
++            source_length_unit="mm",
++            frame=FRAME,
++            source_accuracy_mm=0.01,
++            source_accuracy_basis="pure math numeric-range control",
++            shape=None,
++            solids=(),
++            status="UNKNOWN",
++            unknown_reasons=("SOURCE_NOT_AVAILABLE",),
++            backend_versions={},
++        )
++        result = classify_candidate_pairs(
++            source,
++            reference_point_ids=[1, 2],
++            reference_positions_mm=[(-1.7e308, 0.0, 0.0), (1.7e308, 0.0, 0.0)],
++            point_material_domain_ids=[None, None],
++            candidate_pairs=[(1, 2)],
++            reference_frame=FRAME,
++            distance_tolerance_mm=1.0e-4,
++        )
++        pair = result["pairs"][0]
++        self.assertEqual(pair["classification"], "UNKNOWN")
++        self.assertEqual(pair["reason"], "NUMERIC_RANGE_OVERFLOW_SEGMENT_VECTOR")
++        self.assertIsNone(pair["segment_length_mm"])
++        self.assertEqual(pair["endpoints"][0]["position_mm"][0], -1.7e308)
++        self.assertEqual(pair["endpoints"][1]["position_mm"][0], 1.7e308)
++        encoded = json.dumps(result, allow_nan=False)
++        self.assertNotIn("Infinity", encoded)
++        self.assertNotIn("NaN", encoded)
++
++        self.assertTrue(math.isfinite(_safe_midpoint(1.6e308, 1.7e308)))
++        large_hits = [self._hit(1.6e308), self._hit(1.7e308)]
++        large_events, large_reasons = _cluster_hits(large_hits, 1.1e307)
++        self.assertEqual(len(large_events), 1)
++        self.assertTrue(large_events[0]["unresolved"])
++        self.assertAlmostEqual(large_events[0]["parameter_mm"] / 1.0e308, 1.65)
++        self.assertEqual(large_reasons, ["UNRESOLVED_NEARBY_BOUNDARY_HITS"])
++        json.dumps({"hits": large_hits, "events": large_events}, allow_nan=False)
++
++    def test_overflowing_uncertainty_band_keeps_raw_hits_without_classifier_calls(self) -> None:
++        source = CanonicalStepSource(
++            source_path=None,
++            source_origin="IN_MEMORY_TEST_FIXTURE",
++            source_geometry_sha256=None,
++            expected_sha256=None,
++            source_length_unit="mm",
++            frame=FRAME,
++            source_accuracy_mm=1.0e308,
++            source_accuracy_basis="pure math numeric-range control",
++            shape=object(),
++            solids=(MaterialSolid(0, "solid-0", object(), (object(),)),),
++            status="READY",
++            unknown_reasons=(),
++            backend_versions={"ocp": "not-called"},
++        )
++        raw_hit = self._hit(1.0)
++        with patch(
++            "pgfrag.bond_visibility._collect_raw_hits",
++            return_value=([raw_hit], []),
++        ), patch(
++            "pgfrag.bond_visibility._point_classifier_state",
++            return_value="IN",
++        ) as classify_point:
++            result = classify_candidate_pairs(
++                source,
++                reference_point_ids=[1, 2],
++                reference_positions_mm=[(0.0, 0.0, 0.0), (2.0, 0.0, 0.0)],
++                point_material_domain_ids=["solid-0", "solid-0"],
++                candidate_pairs=[(1, 2)],
++                reference_frame=FRAME,
++                distance_tolerance_mm=1.0e308,
++            )
++        classify_point.assert_not_called()
++        pair = result["pairs"][0]
++        self.assertEqual(pair["classification"], "UNKNOWN")
++        self.assertEqual(pair["reason"], "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND")
++        self.assertEqual(len(pair["raw_hits"]), 1)
++        self.assertTrue(pair["diagnostic_intervals_only"])
++        self.assertTrue(all(interval["diagnostic_only"] for interval in pair["open_intervals"]))
++        self.assertIsNone(result["tolerances"]["combined_occupancy_uncertainty_band_mm"])
++        self.assertEqual(
++            result["tolerances"]["numeric_range_status"],
++            "NUMERIC_RANGE_OVERFLOW_UNCERTAINTY_BAND",
++        )
++        json.dumps(result, allow_nan=False)
++
++
+ if __name__ == "__main__":
+     unittest.main()
+
+--- v1/bond_visibility/design_and_freeze.md
++++ v2/bond_visibility/design_and_freeze.md
+@@ -1,18 +1,20 @@
+ # PG-Frag static bond visibility classifier: source and fixture review
+ 
+-**Review state: implementation drafted; execution frozen pending root review.** This work adds an isolated static classifier and its tests. It does not call the native solver or change an existing module. No pytest, CAD construction, STEP export, Julia, solver, or Git command was run for this review package.
++**Review state: v2 source/test draft; execution frozen pending root review.** This work adds an isolated static classifier and its tests. It does not call the native solver or change an existing module. The v1 source, tests, and review files were archived byte-for-byte before v2 edits. No pytest, CAD construction, STEP export, Julia, solver, or Git command has been run for v2.
+ 
+ ## Source basis
+ 
+-- `../cavity_bond_safety/design.md` SHA-256: `6035dfa7c3fdeade43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b`.
++- `../cavity_bond_safety/design.md` SHA-256 (recomputed from the current read-only file): `6035fa7c3fdead24a43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b`.
+ - `vesselforge/src/vesselforge/wall_reference.py` SHA-256: `a4f06671fc138fcf6912d9d075841fa958185b44a1d9c7e93b0b62e2fe29e8c8` (read-only; no changes).
+ - The frozen design selects canonical STEP/B-rep all-hit intersections plus exact open-interval solid occupancy before any native `BondSystem` initialization. It requires reciprocal undirected decisions, explicit source hashes/units/frame/tolerance, and separate static topology records for OUT/VOID and UNKNOWN.
+ - `wall_reference.py` binds its stations to a canonical STEP hash, requires declared mm coordinates and `right_handed_z_up`, checks the source semantics SHA, and explicitly leaves mesh binding and physics unassessed. This classifier follows the same source-hash/unit/frame discipline and makes the mm-to-metre conversion explicit; it does not import or mutate that frozen module.
+ 
+ ## Added files and behavior
+ 
+-- `pgfrag/src/pgfrag/bond_visibility.py` defines `load_canonical_step`, `classify_candidate_pairs`, source records, and the static ledger. STEP bytes are hashed before import; mismatches raise. CadQuery is asked to normalize imported STEP geometry to mm. The source must attest mm, a frame, and a source accuracy basis. One closed solid may use its own domain ID; multiple solids require unique explicit domain IDs. Open, invalid, nonmanifold, mixed leaf, or precision-unknown sources remain UNKNOWN.
++- `pgfrag/src/pgfrag/bond_visibility.py` defines `load_canonical_step`, `classify_candidate_pairs`, source records, and the static ledger. STEP bytes are hashed before import; mismatches raise. CadQuery is asked to normalize imported STEP geometry to mm. The source must attest mm, a frame, and a source accuracy basis. One closed solid may use its own domain ID; multiple solids require an explicit non-empty material-domain ID for each solid. Open, invalid, nonmanifold, mixed leaf, or precision-unknown sources remain UNKNOWN.
+ - Candidate pairs are canonicalized by global point IDs. For every pair, the classifier preserves all OCC line/face hits, their face/solid references and parameters, clusters potential ambiguities without discarding raw rows, and classifies the open interval between every distinct event. Any void interval gives OUT_OR_VOID/AIR_PATH. Tangency, ON, ambiguous hits, overlap, unresolved faces, or intervals no wider than twice the combined uncertainty band give UNKNOWN.
++- V2 closes a fail-open path in single-link hit clustering: any cluster with more than one distinct hit parameter is unresolved, regardless of its total span or face identity. Its full finite span, raw hit rows, and reason remain in the ledger; the representative midpoint is diagnostic-only and can never make a pair eligible. Exact-parameter duplicates remain subject to face-identity ambiguity checks.
++- V2 maps arithmetic outside the finite representable range to explicit UNKNOWN reasons. Segment vectors are checked before `math.hypot`; exact coincident endpoints alone are `ZERO_LENGTH_SEGMENT`. The combined accuracy band and its doubled interval threshold must both be finite. Interval/hit midpoints and coordinates use bounded arithmetic, while finite raw endpoint and hit parameters are retained. Tests serialize these negative controls with JSON `allow_nan=False`.
+ - Pair records include both directed orientations with the same decision. The initial topology ledger counts IN_MATERIAL, OUT_OR_VOID, and UNKNOWN separately and states that no native graph, neighbor count, physics, or whole-asset qualification was produced. Only IN_MATERIAL is marked as a static eligible candidate.
+ - `pgfrag/tests/test_bond_visibility.py` contains unrun in-memory fixture tests and a hash-mismatch check that rejects before attempting STEP import. The fixtures are code only; they have not been constructed or exported.
+ 
+@@ -28,11 +30,25 @@
+ | Thin-material control | 0.01 mm slab with a declared accuracy band larger than the slab | `UNKNOWN`, retaining the short interval and its reason |
+ | Source qualification controls | Non-solid wire; otherwise valid solid with missing source accuracy | `UNKNOWN`; no whole-asset physics status other than `NOT_ASSESSED` |
+ | Hash control | Temporary non-STEP bytes with a deliberately wrong expected SHA | Reject on actual byte hash before CadQuery/STEP parsing |
++| Pure-math cluster chain | Same-face parameters `[0, 0.75 tol, 1.5 tol]` | Keep all three raw hits; unresolved diagnostic cluster; UNKNOWN, never eligible |
++| Near-distinct short-cavity control | Same-face parameters `10` and `10 + 0.25 tol` | Preserve the sub-tolerance span and raw hits; force UNKNOWN even if mocked diagnostic interval midpoints classify IN |
++| Numeric-range controls | Opposite extreme finite endpoints; overflowing accuracy+tolerance or doubled band; large finite hit parameters | Structured UNKNOWN; no fake zero length, no nonfinite JSON, finite raw values retained |
+ 
+ The candidate coordinates are fixed undeformed reference coordinates. The fixture dimensions do not select or tune `δ`, point spacing, process-zone length, or any material parameter.
+ 
+ ## Freeze boundary and next allowed work
+ 
+-Before root review, the only permitted work is source/test/design text review and edits within the three owned paths: `bond_visibility.py`, `test_bond_visibility.py`, and `pgfrag/tmp/review_20261004/bond_visibility/`. The next execution checkpoint should authorize at most one minimal CAD/pytest pass against the hollow-shell and solid-coupon controls. Do not export a STEP fixture; construct the small analytic shapes in memory in that later test pass. Expand to the handle/tangent/thin controls only after reviewing the first results.
++Before root review, the only permitted work is source/test/design text review and edits within the three owned paths: `bond_visibility.py`, `test_bond_visibility.py`, and `pgfrag/tmp/review_20261004/bond_visibility/`. Do not run the check below until root explicitly reviews and authorizes it. The proposed next checkpoint is one bounded pytest invocation covering the pure-math class plus only the hollow-shell all-hits/air-path and solid-coupon controls. From PowerShell, with the repository root as the working directory:
++
++```powershell
++$env:PYTHONPATH = "pgfrag/src"
++& "third_party/vesselforge-runtime/venv/Scripts/python.exe" -m pytest `
++  pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests `
++  pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void `
++  pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits `
++  pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material
++```
++
++This command is a proposed plan only; no test was run. It uses in-memory analytic shapes and exports no STEP fixture. Expand to the handle/tangent/thin controls only after reviewing those results.
+ 
+ If the later CAD pass finds an API or topology issue, preserve the fixture reports and stop before native integration. No post hoc geometry-mask result may be described as a fracture event, damage, fragment, R2, energy, or physical PASS. `δ`, `dx`, process-zone length, and constitutive parameters remain independent inputs.
+

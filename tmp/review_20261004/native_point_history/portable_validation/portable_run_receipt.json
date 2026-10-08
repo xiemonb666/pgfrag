@@ -1,0 +1,75 @@
+{
+  "artifact": "native/bond/energy portable validation",
+  "status": "PASS_41_DISTINCT_CASES",
+  "argv_path": "argv.json",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_native_point_history.py",
+    "tests/test_bond_events.py",
+    "tests/test_energy_ledger.py",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\portable_41cases.xml"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout",
+  "pythonpath": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout\\src",
+  "test_files": [
+    "tests/test_native_point_history.py",
+    "tests/test_bond_events.py",
+    "tests/test_energy_ledger.py"
+  ],
+  "expected_distinct_cases": {
+    "native_point_history": 8,
+    "bond_events": 19,
+    "energy_ledger": 14,
+    "total": 41
+  },
+  "observed": {
+    "pytest_passed_distinct_cases": 41,
+    "pytest_passed_subtests": 13,
+    "junit_suite_declared_tests_including_subtests": 54,
+    "junit_testcase_elements": 41,
+    "junit_unique_ids": 41,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "by_target_file": {
+      "native_point_history": 8,
+      "bond_events": 19,
+      "energy_ledger": 14,
+      "unknown": 0
+    }
+  },
+  "junit_count_note": "Pytest stdout reports distinct collected items separately from unittest subtests. The JUnit suite tests attribute includes subtests; testcase elements/unique IDs identify the 41 requested original cases.",
+  "exit_code": 0,
+  "signal": null,
+  "spawn_error": null,
+  "stdout": {
+    "path": "stdout.txt",
+    "bytes": 108,
+    "sha256": "f887e8f70b6205cbb8f3a06486bad2f32226bf87bda51165c4e8cd3d701b4187"
+  },
+  "stderr": {
+    "path": "stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "junit": {
+    "path": "portable_41cases.xml",
+    "bytes": 9814,
+    "sha256": "faa29d18a673e5118859b7f6694d9919e16b612062727fdea7e259df810dae76"
+  },
+  "source_test_fixture_observer_hashes": {
+    "before_path": "hashes_before.json",
+    "after_path": "hashes_after.json",
+    "all_unchanged": true
+  },
+  "clean_checkout": {
+    "inventory_before_copy": "preflight_and_copy_manifest.json",
+    "inventory_after": "clean_tree_inventory_after.json",
+    "no_old_tmp_tree": true
+  },
+  "original_native_archive_reread": false,
+  "solver_or_julia_executed": false
+}

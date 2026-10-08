@@ -1,0 +1,24 @@
+{
+  "schema": "pgfrag.pd.loaded_diagnostic.launch_receipt.v1",
+  "run_id": "loaded_elastic_a8_run01",
+  "status": "COMPLETED",
+  "wrapper_exit_code": 0,
+  "child_exit_code": 0,
+  "child_exit_observed": true,
+  "timed_out": false,
+  "wait_completed": true,
+  "launch_error": null,
+  "timeout_seconds": 120,
+  "julia_threads": 1,
+  "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+  "started_utc": "2026-10-04T14:48:48.6850289Z",
+  "finished_utc": "2026-10-04T14:48:57.1990774Z",
+  "argv": [
+    "--project=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia --startup-file=no --history-file=no C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\run_pd_point_event_probe.jl C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\loaded_elastic_a8_run01 C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.points.csv C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.metadata.toml C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\common_loaded_case.toml C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\case_a_loaded_elastic.toml"
+  ],
+  "snapshot_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\loaded_elastic_a8_run01",
+  "stdout_log": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\receipts\\loaded_elastic_a8_run01.stdout.log",
+  "stderr_log": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\receipts\\loaded_elastic_a8_run01.stderr.log",
+  "native_energy_ledger": "UNKNOWN_NOT_A_GATE",
+  "physical_qualification": "NONE_UNVALIDATED_PROTOTYPE"
+}

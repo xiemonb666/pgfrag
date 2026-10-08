@@ -1,0 +1,13 @@
+# Mixed LEFM enrichment algebra
+
+`mixed_enrichment_algebra.py` is a source-only helper for one full-vector shape row. It combines caller-supplied base MLS values and world gradients with four normalized straight-crack branch functions. It does not create MLS shapes, decide support visibility, assemble stiffness, solve, or drive fracture.
+
+For local `r > 0` and explicit `theta` at a crack-face trace, the branch family is `F_a = sqrt(r/R) h_a(theta)`, where `h = [sin(theta/2), cos(theta/2), sin(theta/2) sin(theta), cos(theta/2) sin(theta)]`. It computes analytic local gradients by polar chain rule and rotates the scalar gradients with `Q`. For each source `i`, the output uses `phi_i,a = N_i F_a` and the full product rule `grad(phi_i,a) = F_a grad(N_i) + N_i grad(F_a)`. The basis values are dimensionless and every gradient is in `1/m`.
+
+Each source therefore contributes `1 base + 4 branches` scalar bases, each with `ux`, `uy`, and `uz`: **15 semantic DOFs per source**. A 27-source row contains **405 DOFs**. IDs encode `[source_id, component, basis_kind, basis_index]`; rows sort by source ID, then base/branch index, then component. Source IDs are caller identities, never invented from dense column numbers.
+
+Each contribution includes its full engineering-strain B column in order `[eps_xx, eps_yy, eps_zz, gamma_xy, gamma_yz, gamma_xz]`. This matches the existing 3-D operator's B layout. The helper deliberately keeps 405 coefficients visible; the current operator's 375-DOF cap would need separate review before any integration.
+
+At `r = 0`, the row is `UNKNOWN_FRONT` with no partial values. An exact local crack-face point `x < 0, y = 0` without an explicit `upper` or `lower` trace is `UNKNOWN_BRANCH_FACE`; no tolerance, signed-zero choice, or point shift is used. In addition to world point plus tip coordinates, the API accepts `local_point_from_tip_m` so callers can preserve exact local `y = 0` in rotated frames; outputs still use world gradients. The request schema describes both input routes and the row schema describes output identities and B columns. The [source review](../../tmp/review_20261006/mixed_lefm_enrichment_algebra_20261006/SOURCE_REVIEW.md) records the algebraic invariants and a future tiny validation budget.
+
+The branch functions follow Moës, Dolbow, and Belytschko (1999), Eq. (16), journal pp. 135–136: [publisher DOI](https://doi.org/10.1002/%28SICI%291097-0207%2819990910%2946%3A1%3C131%3A%3AAID-NME726%3E3.0.CO%3B2-J) and [author-uploaded paper](https://www.researchgate.net/publication/51992357_A_Finite_Element_Method_for_Crack_Growth_without_Remeshing). The `sqrt(r/R)` normalization only divides each original function and its gradient by `sqrt(R)`.

@@ -1,0 +1,1 @@
+{"cross_gap_candidate_pairs":[[102,114],[103,107],[104,108],[109,113]],"forced_zero_degree_pair_ids":null,"label":"GEOMETRY_FILTER_FIXTURE_ONLY","meaning":"explicit point-set gap metadata; not CAD ray-hit evidence","void_x_interval_mm":[1.0,2.5]}

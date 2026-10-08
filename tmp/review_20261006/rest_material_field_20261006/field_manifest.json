@@ -1,0 +1,253 @@
+{
+  "coordinate_system": {
+    "binding": "material_rest_coordinates",
+    "coordinate_units": "m",
+    "dimension": 3,
+    "frame_id": "material-rest-cartesian-xyz"
+  },
+  "field_contract": {
+    "continuous": true,
+    "heterogeneity_range": [
+      -0.3,
+      0.3
+    ],
+    "mesh_index_randomness": false,
+    "normalized_range": [
+      -1.0,
+      1.0
+    ],
+    "point_randomness": false,
+    "positive_parameter_map": "p(x) = p0 * (1 + h(x)); caller-supplied p0 must be positive",
+    "positive_parameter_ratio_bounds": [
+      0.7,
+      1.3
+    ]
+  },
+  "field_id_sha256": "f361ff3f2b87c81731ed486fbf130ad2a16bd71546e9ea784e68c9c28ad7b23b",
+  "field_kind": "seeded_finite_random_fourier_mode_scalar",
+  "lineage": {
+    "calibration_status": "UNCALIBRATED",
+    "generator": "finite random Fourier modes with fixed seed",
+    "material_measurement_source": null,
+    "relicweave_lineage_compatibility": "metadata-only: source_kind, status, and artifact hash slot are exposed; no RelicWeave material record or calibration is claimed",
+    "source_kind": "synthetic_seeded_field",
+    "upstream_artifact_sha256": null
+  },
+  "parameters": {
+    "amplitude_max_relative_deviation": 0.3,
+    "correlation_length_m": 0.012,
+    "correlation_length_units": "m",
+    "material_units": {
+      "heterogeneity": "dimensionless",
+      "positive_parameter_ratio": "dimensionless"
+    },
+    "mode_count": 24,
+    "seed": 20261006
+  },
+  "random_modes": [
+    {
+      "phase_rad": 4.401933664154036,
+      "wavevector_rad_per_m": [
+        -63.68668491127546,
+        -146.90064232862366,
+        89.15452233075196
+      ]
+    },
+    {
+      "phase_rad": 4.33484826907888,
+      "wavevector_rad_per_m": [
+        74.60879591218549,
+        -109.01508333131491,
+        127.01795377967315
+      ]
+    },
+    {
+      "phase_rad": 5.27002954958312,
+      "wavevector_rad_per_m": [
+        177.14670658142913,
+        42.74753578045911,
+        19.3910787638616
+      ]
+    },
+    {
+      "phase_rad": 5.043477092510795,
+      "wavevector_rad_per_m": [
+        52.03850249109622,
+        -50.17143363850995,
+        168.4017307176967
+      ]
+    },
+    {
+      "phase_rad": 0.22221734010803657,
+      "wavevector_rad_per_m": [
+        -42.5808546351538,
+        -152.02258228446615,
+        93.06087629975059
+      ]
+    },
+    {
+      "phase_rad": 4.266563084849189,
+      "wavevector_rad_per_m": [
+        168.94823831839537,
+        47.18361688596972,
+        -53.05205434517666
+      ]
+    },
+    {
+      "phase_rad": 5.4006227681222505,
+      "wavevector_rad_per_m": [
+        83.06020351124934,
+        143.02515645952295,
+        78.92482889416796
+      ]
+    },
+    {
+      "phase_rad": 2.3965690982397874,
+      "wavevector_rad_per_m": [
+        -75.22667158192593,
+        116.59633537764495,
+        119.71033314958095
+      ]
+    },
+    {
+      "phase_rad": 3.9202897321537935,
+      "wavevector_rad_per_m": [
+        177.06845825137069,
+        -29.437153387432097,
+        36.93963313978981
+      ]
+    },
+    {
+      "phase_rad": 0.6024197103396919,
+      "wavevector_rad_per_m": [
+        121.85533218659751,
+        -70.65098567893324,
+        -117.23496766692097
+      ]
+    },
+    {
+      "phase_rad": 0.37003396334385935,
+      "wavevector_rad_per_m": [
+        -33.889909986831405,
+        179.31504307475646,
+        -16.790197490129852
+      ]
+    },
+    {
+      "phase_rad": 0.7063258147404076,
+      "wavevector_rad_per_m": [
+        105.78391155373278,
+        -73.60755487336053,
+        130.29203093640118
+      ]
+    },
+    {
+      "phase_rad": 3.7277341129032715,
+      "wavevector_rad_per_m": [
+        88.26675256588831,
+        -46.297153812075926,
+        -153.78515969997915
+      ]
+    },
+    {
+      "phase_rad": 5.436927408047223,
+      "wavevector_rad_per_m": [
+        -2.9028509298176264,
+        -139.85335114610683,
+        118.39313761049607
+      ]
+    },
+    {
+      "phase_rad": 4.835623517467853,
+      "wavevector_rad_per_m": [
+        171.0869032030691,
+        -62.24151949553471,
+        -20.966311236016033
+      ]
+    },
+    {
+      "phase_rad": 2.342977023363965,
+      "wavevector_rad_per_m": [
+        66.44456132259525,
+        -170.18762107981172,
+        14.339292361102084
+      ]
+    },
+    {
+      "phase_rad": 4.358956863374334,
+      "wavevector_rad_per_m": [
+        146.61145196685024,
+        79.082900385469,
+        -76.3891250268572
+      ]
+    },
+    {
+      "phase_rad": 1.825437583063823,
+      "wavevector_rad_per_m": [
+        33.140179298173315,
+        10.962848284668247,
+        -179.9051580059536
+      ]
+    },
+    {
+      "phase_rad": 0.9774648575620934,
+      "wavevector_rad_per_m": [
+        112.01155003765146,
+        -124.06889387273519,
+        -75.13084343286415
+      ]
+    },
+    {
+      "phase_rad": 3.023574043426326,
+      "wavevector_rad_per_m": [
+        74.48696427311934,
+        -58.48841867543972,
+        -156.89205983030618
+      ]
+    },
+    {
+      "phase_rad": 5.3899963192026235,
+      "wavevector_rad_per_m": [
+        45.3739176604585,
+        -79.1647008793492,
+        -158.92916388882173
+      ]
+    },
+    {
+      "phase_rad": 2.7790545951914547,
+      "wavevector_rad_per_m": [
+        -182.19841915795894,
+        19.453051564472542,
+        -3.104230137335863
+      ]
+    },
+    {
+      "phase_rad": 4.498733216126995,
+      "wavevector_rad_per_m": [
+        -82.42451601650271,
+        -116.63463133619182,
+        -114.83415579038656
+      ]
+    },
+    {
+      "phase_rad": 3.0958708162588233,
+      "wavevector_rad_per_m": [
+        46.95782324960542,
+        177.02931905919846,
+        -6.316995541409965
+      ]
+    }
+  ],
+  "schema": "pgfrag.rest_material_field.manifest.v1",
+  "spectrum_and_correlation": {
+    "configured_ensemble_e_fold_length_m": 0.012,
+    "correlation_length_definition": "first positive radius where the isotropic ensemble covariance equals exp(-1)",
+    "dimension": 3,
+    "ensemble_covariance": "C(r) = sin(k*r)/(k*r), for independent uniform phases and isotropic directions",
+    "finite_realization_caveat": "The seeded finite set of directions has discrete spectral lines and an anisotropic, oscillatory empirical correlation; correlation_length_m is the target isotropic ensemble e-fold length, not a fitted or guaranteed local realization statistic.",
+    "shell_root_q": 2.199123071161498,
+    "spectrum": "equal-amplitude isotropic random directions on one wave-number shell",
+    "wave_number_magnitude_rad_per_m": 183.26025593012486
+  },
+  "status": "UNCALIBRATED"
+}

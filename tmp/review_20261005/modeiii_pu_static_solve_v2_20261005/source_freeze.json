@@ -1,0 +1,70 @@
+{
+  "schema": "modeiii_pu_scalar_static_solve_source_freeze.v2",
+  "status": "SOURCE_FREEZE_READY_AWAITING_ROOT_REVIEW",
+  "case_id": "modeiii_pu_uz_static_traction_solve_20261005_v2",
+  "result_schema": "modeiii_pu_antiplane_static_solve_result.v2",
+  "source_only": true,
+  "tests_run": false,
+  "solver_run": false,
+  "numerical_assembly_run": false,
+  "owned_sources": {
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py": "5369C9FF661959C93721FF2A4986CBEFFEB9419B78D9DCA0A018E64B31FECD2E",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve_case.json": "D4246341D4E5C3C8CB38FF6CAF681010393CB73BD589981EEB07CF6A55FBE3B1",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/README.md": "F5259971482E6DDA3BAE3E48EE076CBC4846F1F5CF2F4D8D6DC810C727B6C149",
+    "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_v2_20261005/SOURCE_REVIEW.md": "F7A186A7B80076ECA9418B1E8133F4EAA1CCA8D5DCF177E7B9D47B7327FDBCC7"
+  },
+  "read_only_dependencies": {
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "DCE0A1F3009246A52198BC0ED833ED67998144549A653E7BCE9BCC17BABD71B9",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py": "6025642FDD119A95C76D693D3EDBC4785D982731560E556CE7B13BAD109C6034",
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "E3DDB3B067465BB5B269576A1B8A5100E2BB92C9C924BC09C949702C19EFA9D8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D"
+  },
+  "preserved_v1_snapshot": {
+    "solver_path": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py",
+    "solver_sha256": "D9294D9A90D20505D6ECD01354A2D9E0897F56B5FF0BB98AAD01A4FD31513787",
+    "case_path": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve_case.json",
+    "case_sha256": "93C51463D717ADAA8E78BC163FB8915AAF26164F411C2B46A20D80492BDA42D4",
+    "review_freeze_path": "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_20261005/source_freeze.json",
+    "review_freeze_sha256": "24D1D07EC2D61036E77686B8CBECFB72260F30FDC31658385E09CCB4847445DA",
+    "mutated": false
+  },
+  "fixed_case_invariants": {
+    "source_count": 27,
+    "scalar_coefficients": 54,
+    "lagrange_system_dimension": 55,
+    "expected_physical_null_modes_before_mean_constraint": 1,
+    "volume_levels": [
+      {"points": 128, "rule": "GL4 radial x GL8 theta x GL4 z"},
+      {"points": 256, "rule": "GL4 radial x GL16 theta x GL4 z"}
+    ],
+    "only_refined_dimension": "theta angular quadrature",
+    "side_load_points": 64,
+    "endcap_audit_points_each": 32,
+    "offgrid_points": 256,
+    "maximum_sources": 125,
+    "maximum_registered_dofs": 375,
+    "maximum_query_points_per_batch": 256,
+    "maximum_explicit_numeric_array_bytes": 33554432,
+    "maximum_result_json_bytes": 4194304,
+    "parent_wall_timeout_seconds": 30
+  },
+  "replayable_evidence": {
+    "each_volume_level": ["raw 54x54 stiffness matrix in N/m", "54-entry normalized physical mean row, dimensionless"],
+    "once_per_result": ["54-entry applied force vector in N", "ordered canonical coefficient IDs"],
+    "offgrid": ["256 coordinates in m", "exact uz in m", "exact grad(uz) dimensionless", "solved uz and grad(uz) for each level with the same units"],
+    "matrix_and_vector_order": "all matrix axes and coefficient vectors follow ordered canonical coefficient IDs",
+    "finite_policy": "nonfinite retained evidence, energy, work, or residual becomes UNKNOWN; nonfinite values are never converted to JSON null",
+    "extra_numeric_array_estimate_bytes": 78672,
+    "result_size_policy": "oversize output is replaced by UNKNOWN_RESULT_JSON_BUDGET, capped at 4 MiB"
+  },
+  "execution_authorization": "Do not launch; wait for root to complete detailed source review and explicitly authorize any solve.",
+  "context_only": {
+    "preceding_operator_primary_diagnostic_path": "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/runs/run01/operator_diagnostic.json",
+    "preceding_operator_primary_diagnostic_sha256_parent_reported": "8A62D61384156921FECC585B2336F161DD572988EADAE8BED46AFADF105C22C2",
+    "used_as_solver_input": false
+  },
+  "review_notes": "See SOURCE_REVIEW.md for the output-only v2 delta, corrected dimensionless gradient units, explicit finite serialization behavior, and unqualified mechanics scope. V1 source and review artifacts are preserved unchanged."
+}

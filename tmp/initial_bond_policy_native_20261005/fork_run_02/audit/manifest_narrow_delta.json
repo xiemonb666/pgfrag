@@ -1,0 +1,18 @@
+{
+  "status": "SCRATCH_MANIFEST_NARROW_ENV_BINDING",
+  "utc": "2026-10-05T10:34:52.928Z",
+  "original_manifest_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+  "scratch_manifest_sha256": "917f36054a28bb9c45dd398f0703350a95e0552ac83c94fd5be59eeb69d32d41",
+  "changed_field": "deps.Peridynamics[1].deps",
+  "before": "deps = [\"AbaqusReader\", \"Dates\", \"IterativeSolvers\", \"LibGit2\", \"LinearAlgebra\", \"LinearMaps\", \"MPI\", \"PointNeighbors\", \"PrecompileTools\", \"Printf\", \"ProgressMeter\", \"StaticArrays\", \"ThreadPinning\", \"TimerOutputs\"]",
+  "after": "deps = [\"AbaqusReader\", \"Dates\", \"IterativeSolvers\", \"LibGit2\", \"LinearAlgebra\", \"LinearMaps\", \"MPI\", \"PointNeighbors\", \"PrecompileTools\", \"Printf\", \"ProgressMeter\", \"SHA\", \"StaticArrays\", \"TOML\", \"ThreadPinning\", \"TimerOutputs\"]",
+  "changed_line_number": 418,
+  "raw_changed_line_count": 1,
+  "added_stdlibs": [
+    "SHA",
+    "TOML"
+  ],
+  "sorting": "ASCII ascending dependency names",
+  "other_bytes_unchanged": true,
+  "pkg_commands": "none"
+}

@@ -1,0 +1,1 @@
+PASS: C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_check_result.run02.json

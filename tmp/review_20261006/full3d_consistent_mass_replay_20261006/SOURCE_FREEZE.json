@@ -1,0 +1,73 @@
+{
+  "schema": "full3d_consistent_mass_replay_source_freeze.v1",
+  "case_id": "modeiii_pu_full3d_consistent_mass_replay_20261006",
+  "status": "SOURCE_READY_FOR_MAIN_AGENT_REVIEW",
+  "execution_authorized": false,
+  "source": {
+    "entrypoint": {
+      "path": "pgfrag/experiments/full3d_consistent_mass_replay_20261006/full3d_consistent_mass_replay.py",
+      "sha256": "d97833c56099059b36ae91332a8bab7188c3be6b64ca433c108845701aaf657e",
+      "bytes": 20402,
+      "lines": 312
+    },
+    "fixed_case": {
+      "path": "pgfrag/experiments/full3d_consistent_mass_replay_20261006/fixed_case.json",
+      "sha256": "63d79cf73ec364086970cf4a08d69dac54da2a016d0ef46071243b718e2c355c",
+      "bytes": 4388
+    },
+    "readme": {
+      "path": "pgfrag/experiments/full3d_consistent_mass_replay_20261006/README.md",
+      "sha256": "3eaa28a6358e6c568210415879639830f7dba31efb2a1982b2154ab2c4cff489",
+      "bytes": 2771
+    }
+  },
+  "operator_input": {
+    "path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "bytes": 4661989,
+    "schema": "static_solve_replay.v1",
+    "result_status": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "stiffness_spectrum_gate": {"near_zero": 6, "positive": 156, "negative": 0},
+    "cached_shapes": {
+      "semantic_dofs": 162,
+      "registry_keys": 162,
+      "scalar_basis_rows": 54,
+      "query_points": 384,
+      "volume_weights": 256,
+      "rigid_modes": [162, 6]
+    },
+    "source_pins_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "source_pins_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "result_source_hashes_match_pins": true,
+    "current_pinned_source_files_match": true
+  },
+  "source_checks": {
+    "python_ast_parse_passed": true,
+    "fixed_case_json_parse_passed": true,
+    "operator_result_json_and_cached_shape_readback_passed": true,
+    "provider_or_mls_called": false,
+    "numpy_or_other_numerical_module_imported": false,
+    "mass_matrix_calculated": false,
+    "solver_called": false,
+    "cad_called": false,
+    "pytest_called": false
+  },
+  "architecture": {
+    "mass_formula": "M[(i,a),(j,b)] = rho * sum_q N_i(x_q) * N_j(x_q) * w_q * delta_ab",
+    "density_kg_per_m3": 1.0,
+    "density_classification": "NOT_MATERIAL_CALIBRATED",
+    "matrix_unit": "kg",
+    "registry_mapping": "explicit registry.ordered_keys to basis_row_ids mapping",
+    "lumping_or_ridge_or_pseudoinverse": false,
+    "rigid_inertia_source": "independent physical rigid-velocity integration over saved volume points and weights",
+    "output_scope": "pgfrag/tmp/review_20261006/full3d_consistent_mass_replay_20261006/"
+  },
+  "prepared_output_paths": [
+    "pgfrag/tmp/review_20261006/full3d_consistent_mass_replay_20261006/run01/mass_result.json",
+    "pgfrag/tmp/review_20261006/full3d_consistent_mass_replay_20261006/run01/mass_matrix.csv"
+  ],
+  "limitations": [
+    "the mass replay remains source-only until explicit root authorization",
+    "source readiness does not qualify fracture physics or calibrate density"
+  ]
+}

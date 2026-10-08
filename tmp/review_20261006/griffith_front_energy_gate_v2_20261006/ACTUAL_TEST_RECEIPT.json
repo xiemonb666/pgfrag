@@ -1,0 +1,30 @@
+{
+  "diagram_sha256": "00293a98c7a6f03a1eedd2ffb04a75d43d0901d877137e0ed666ebe5bda3ef30",
+  "elapsed_seconds": 0.020956600084900856,
+  "error_count": 0,
+  "execution": "targeted Python unittest fixtures",
+  "external_commit_test_uses_synthetic_hashes": true,
+  "external_test_metadata": "caller_provenance marks test_only; this is API-branch coverage, not solver evidence",
+  "failure_count": 0,
+  "fixture_state_count": 9,
+  "fixture_states_sha256": "0884d424a404adc918555dff95afc3f2b1b9ee773f728d53f62d6bad54aeeb08",
+  "limit_fixture_states": 64,
+  "limit_seconds": 10.0,
+  "native_runtime_invoked": false,
+  "physical_validation_claim": false,
+  "production_writes": false,
+  "python": "3.12.14",
+  "read_only_dependency_sha256": {
+    "explicit_surface_state.py": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0",
+    "griffith_front_step.py": "3576a2aa6a68771578ed93e70d618f893b3465db476006f98e811ab12b44fba2"
+  },
+  "schema_version": "pgfrag.griffith-front-energy-gate-v2.actual-test-receipt.v1",
+  "solver_invoked": false,
+  "source_sha256": {
+    "griffith_front_energy_gate_v2.py": "442426684ffa776ea24a877ce30e368a8795608aefc82883a91701281fb144b3",
+    "run_fixture.py": "5bb595cf7cc35f113dcda5483ea7299d4e407b7278fb2ed3644a8a552ea130fc",
+    "test_griffith_front_energy_gate_v2.py": "3bcf3282d518e284a1b5b92e3283dbdbcd2d9d559d8ce97d6bfc45ee95e78309"
+  },
+  "test_count": 11,
+  "test_output": "test_balanced_fixture_energy_commits_fixture_only (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_balanced_fixture_energy_commits_fixture_only) ... ok\ntest_dynamic_and_mixed_cohesive_modes_are_unknown (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_dynamic_and_mixed_cohesive_modes_are_unknown) ... ok\ntest_external_reanalysis_api_is_available_but_fake_receipt_stays_experimental (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_external_reanalysis_api_is_available_but_fake_receipt_stays_experimental) ... ok\ntest_large_negative_residual_rejects (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_large_negative_residual_rejects) ... ok\ntest_large_positive_residual_rejects_and_retains_old_surface (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_large_positive_residual_rejects_and_retains_old_surface) ... ok\ntest_missing_tolerance_is_needs_recompute (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_missing_tolerance_is_needs_recompute) ... ok\ntest_negative_tolerances_and_nonpositive_reference_reject (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_negative_tolerances_and_nonpositive_reference_reject) ... ok\ntest_parent_binding_mismatch_rejects (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_parent_binding_mismatch_rejects) ... ok\ntest_total_potential_input_is_not_bridged (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_total_potential_input_is_not_bridged) ... ok\ntest_units_cannot_be_replaced_by_review_like_metadata (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_units_cannot_be_replaced_by_review_like_metadata) ... ok\ntest_zero_tolerances_are_valid_when_residual_is_exactly_zero (test_griffith_front_energy_gate_v2.GriffithFrontEnergyGateV2Tests.test_zero_tolerances_are_valid_when_residual_is_exactly_zero) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.021s\n\nOK\n"
+}

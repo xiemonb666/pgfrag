@@ -1,0 +1,157 @@
+{
+  "schema": "moving-front-saved-query-visualization-receipt.v1",
+  "status": "PASS_RENDER_ONLY_SAVED_DATA",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\moving_front_provider_20261006\\saved_visual\\render_saved_query_audit.py"
+  ],
+  "actual_process_return_code": 0,
+  "external_timed_out": false,
+  "elapsed_seconds": 1.085344,
+  "script_line_count": 83,
+  "post_input_hashes": [
+    {
+      "name": "run02_result",
+      "path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_check_result.run02.json",
+      "sha256": "b36b9460aba55db26619d966a7515e82c655cf1ca5cf4aaa039f643188ccd56c",
+      "matches_run02_provenance": true
+    },
+    {
+      "name": "moving_front_cases",
+      "path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_cases.json",
+      "sha256": "2766245b25bf93eefcf6836befe81536917888936b4543666c86ebe9d6b72100",
+      "matches_run02_provenance": true
+    },
+    {
+      "name": "moving_front_provider",
+      "path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_provider.py",
+      "sha256": "40bb5c0812944ab24924cfc33825d66bf84f624aacce1d54cff0c84accc94d5a",
+      "matches_run02_provenance": true
+    },
+    {
+      "name": "moving_front_driver",
+      "path": "pgfrag/experiments/moving_front_provider_20261006/moving_front_check_driver.py",
+      "sha256": "18a2fd462d227327fd61d10a94908cee2536126d272ce12d78c3154fa60d76d2",
+      "matches_run02_provenance": true
+    },
+    {
+      "name": "render_script",
+      "path": "pgfrag/tmp/review_20261006/moving_front_provider_20261006/saved_visual/render_saved_query_audit.py",
+      "sha256": "40e20a36ba3687bd62a1381c18f11e5919b2a80fc034c19243c4864b47b7c4a0",
+      "matches_run02_provenance": true
+    }
+  ],
+  "all_run02_inputs_unchanged": true,
+  "figure": {
+    "path": "saved_query_audit_xy.png",
+    "bytes": 131694,
+    "sha256": "b2dd2a3f7fc7a1680cb7fd96c9c1c371173d6f88bf743f7122e1f82afeb00c1c",
+    "panels": 2,
+    "equal_aspect_xy": true,
+    "query_scope": "actual saved query_audit rows with point_m.z exactly 0",
+    "front_rows": [
+      {
+        "front_x_m": 0.0,
+        "query_rows_total": 25,
+        "z0_rows_plotted": 22,
+        "non_z0_rows_omitted": 3,
+        "ok_rows": 17,
+        "unknown_rows": 5,
+        "colocated_multi_trace_groups": [
+          {
+            "xy_m": [
+              -0.004,
+              0.0
+            ],
+            "labels": [
+              "trace--0.004-plus",
+              "trace--0.004-minus"
+            ],
+            "trace_sides": [
+              "PLUS",
+              "MINUS"
+            ]
+          },
+          {
+            "xy_m": [
+              -0.008,
+              0.0
+            ],
+            "labels": [
+              "trace--0.008-plus",
+              "trace--0.008-minus"
+            ],
+            "trace_sides": [
+              "PLUS",
+              "MINUS"
+            ]
+          }
+        ],
+        "measured_core_radius_m": 0.001,
+        "probe_radii_m": [
+          0.00025,
+          0.0005
+        ]
+      },
+      {
+        "front_x_m": 0.0005,
+        "query_rows_total": 25,
+        "z0_rows_plotted": 22,
+        "non_z0_rows_omitted": 3,
+        "ok_rows": 17,
+        "unknown_rows": 5,
+        "colocated_multi_trace_groups": [
+          {
+            "xy_m": [
+              -0.0075,
+              0.0
+            ],
+            "labels": [
+              "trace--0.008-plus",
+              "trace--0.008-minus"
+            ],
+            "trace_sides": [
+              "PLUS",
+              "MINUS"
+            ]
+          },
+          {
+            "xy_m": [
+              -0.0035,
+              0.0
+            ],
+            "labels": [
+              "trace--0.004-plus",
+              "trace--0.004-minus"
+            ],
+            "trace_sides": [
+              "PLUS",
+              "MINUS"
+            ]
+          }
+        ],
+        "measured_core_radius_m": 0.0010156097709406982,
+        "probe_radii_m": [
+          0.00025,
+          0.0005
+        ]
+      }
+    ],
+    "field_values_or_interpolated_strain_plotted": false,
+    "case_crack_front_used": "moving_front_cases.json finite_crack/front_segment projections",
+    "core_radii_used": "saved state measured_core_radius_m and core_probe_radii_m"
+  },
+  "stdout": {
+    "path": "render.stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "content": ""
+  },
+  "stderr": {
+    "path": "render.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "content": ""
+  }
+}

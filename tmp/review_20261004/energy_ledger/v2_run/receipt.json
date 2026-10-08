@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "argv_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\argv.json",
+  "junit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\junit.xml",
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\stdout.txt",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\stderr.txt",
+  "exit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\exit.json",
+  "distinct_tests": 14,
+  "junit_counts": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "exit_code": 0,
+  "pre_and_post_hashes_match": true,
+  "raw_stdout": "..............                                                           [100%]\n- generated xml file: C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\junit.xml -\n14 passed in 0.11s\n",
+  "raw_stderr": ""
+}

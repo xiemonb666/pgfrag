@@ -1,0 +1,26 @@
+--- v3/test_mesh_resolution_audit.py
++++ v4/test_mesh_resolution_audit.py
+@@ -148,7 +148,8 @@
+     assert geometry["cell_status_counts"]["UNKNOWN_NUMERIC_RANGE/OVERFLOW"] == 1
+     assert sum(geometry["cell_status_counts"].values()) == 1
+     assert geometry["unknown_numeric_range_count"] == 1
+-    assert geometry["unknown_numeric_range_cell_indices"] == [0]
++    assert report["input_integrity"]["unknown_numeric_range_cell_indices"] == [0]
++    assert geometry["signed_volume_m3"]["unknown_numeric_range_cell_indices"] == [0]
+ 
+ 
+ def test_nonfinite_scale_ratios_are_unknown_and_keep_cell_indices():
+
+--- v3/scope_and_limits.md
++++ v4/scope_and_limits.md
+@@ -20,6 +20,7 @@
+ - `fixture_cases.json` is hand-constructed geometry and declared synthetic scales; it is not a physical specimen measurement.
+ - `v1_snapshot/` preserves the exact first-version module, tests, and successful 7-pass stdout/exit/receipt. `freeze_manifest.json` also preserves the original pre-execution source/test/fixture hashes.
+ - V2 adds regression cases for unique terminal status counts, small and large volume range failures, unverified caller declarations, non-finite scale ratios, and the surface/volume scale distinction. Its one authorized run is preserved in `v2_run/` with full stdout, stderr, exit code, argv, JUnit, distinct case IDs, and before/after hash checks; it completed 10 passing cases and 1 failing case. The failing overflow fixture used a regular-tetra edge of `1e103 m`, whose volume is about `1.1785e308 m³` and remains below float64 maximum, so the module's `OK` result was correct. `v2_snapshot/` retains the exact v2 source, tests, diff, and freeze inputs.
+-- V3 changes only that test fixture: it uses `1e104 m` and independently asserts the analytic `log(V)` exceeds `log(float64_max)` before expecting overflow. V3 diff and source/test hashes are frozen in `v3.diff` and `v3_freeze_manifest.json`; V3 has not been tested.
++- V3 changed the overflow fixture to `1e104 m` and independently asserted the analytic `log(V)` exceeds `log(float64_max)`. Its authorized run is preserved in `v3_run/` with full argv, stdout, stderr, exit code, JUnit, distinct case IDs, and before/after hashes; it completed 10 passing cases and 1 failing case. The independent overflow assertion and module overflow status/count assertions passed, then the test raised `KeyError` because it requested `unknown_numeric_range_cell_indices` at the `tetra_geometry` top level. The IDs are provided under `input_integrity` and `tetra_geometry.signed_volume_m3`. `v3_snapshot/` retains the exact v3 source and test bytes.
++- V4 changes only the test's two cell-index assertions to check those documented report paths. It leaves the per-cell overflow status and unique count assertions intact, and does not change the module. The v4 diff and freeze manifest are in `v4.diff` and `v4_freeze_manifest.json`; v4 has not yet been tested.
+ 
+-The preserved v1 tests establish only the original implementation's narrow fixture result. The V2 run is a failed regression-test run with the cause documented above; the corrected V3 tests await review and any further test authorization. Neither result qualifies any production mesh, actual wall source, solver run, crack direction, independent-layout result, material parameter, physical sample, or RelicWeave training label.
++The preserved v1 tests establish only the original implementation's narrow fixture result. V2 and V3 each contain one failed regression assertion, documented above; the corrected V4 test awaits its one authorized run. None of these results qualifies any production mesh, actual wall source, solver run, crack direction, independent-layout result, material parameter, physical sample, or RelicWeave training label.
+

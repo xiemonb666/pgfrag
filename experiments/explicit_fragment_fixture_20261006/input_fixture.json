@@ -1,0 +1,154 @@
+{
+  "schema_version": "pgfrag.explicit-fragment-fixture-input.v1",
+  "qualification": "FIXTURE_GEOMETRY_ONLY",
+  "fixture_note": "One declared planar cut through a small closed box. Its two output pieces are a geometry mechanism fixture only.",
+  "original_body": {
+    "body_id": "fixture_box_01",
+    "density_kg_m3": 2400,
+    "vertices_m": [
+      [
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        1
+      ]
+    ],
+    "faces": [
+      {
+        "id": "original:z_min",
+        "vertices": [
+          0,
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "id": "original:z_max",
+        "vertices": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "original:y_min",
+        "vertices": [
+          0,
+          1,
+          5,
+          4
+        ]
+      },
+      {
+        "id": "original:y_max",
+        "vertices": [
+          3,
+          7,
+          6,
+          2
+        ]
+      },
+      {
+        "id": "original:x_min",
+        "vertices": [
+          0,
+          4,
+          7,
+          3
+        ]
+      },
+      {
+        "id": "original:x_max",
+        "vertices": [
+          1,
+          2,
+          6,
+          5
+        ]
+      }
+    ]
+  },
+  "cut_surface": {
+    "surface_id": "explicit_cut_surface_01",
+    "geometry_kind": "explicit_planar_triangle_patch",
+    "plane": {
+      "normal": [
+        0.9185141640913215,
+        0.33985024071378894,
+        0.20207311610009074
+      ],
+      "offset_m": 0.10103655805004537
+    },
+    "vertices_m": [
+      [
+        0.7,
+        -1,
+        -1
+      ],
+      [
+        -0.039999999999999925,
+        1,
+        -1
+      ],
+      [
+        -0.48,
+        1,
+        1
+      ],
+      [
+        0.2599999999999998,
+        -1,
+        1
+      ]
+    ],
+    "triangles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "orientation": "input triangles point along plane normal; negative-side output keeps winding"
+  }
+}

@@ -1,0 +1,3286 @@
+{
+  "legacy_delta_potential_bridge": "NOT_BRIDGED",
+  "meaning": "state-machine tests only; external-receipt branch uses synthetic test hashes",
+  "provenance": "EXPLICIT_FIXTURE_NOT_SOLVER",
+  "schema_version": "pgfrag.griffith-front-energy-gate-v2.fixture-states.v1",
+  "state_count": 9,
+  "states": [
+    {
+      "active_surface_still_parent": true,
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "candidate_geometry_only": true,
+      "last_controller_status": "PROPOSED_WAITING_REANALYSIS",
+      "last_energy_gate_status": null,
+      "name": "proposed_geometry_waiting_for_energy_gate",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "PROPOSED_WAITING_REANALYSIS",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+      "last_controller_status": "COMMITTED_FIXTURE_ONLY",
+      "last_energy_gate_status": "COMMITTED_FIXTURE_ONLY",
+      "name": "balanced_fixture_committed_fixture_only",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": null,
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "COMMITTED_FIXTURE_ONLY",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            },
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 2,
+                  "triangle_count": 4
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  },
+                  {
+                    "creation_step": 1,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": "fixture-root-patch",
+                    "patch_id": "patch:05b50e7f73491399eb80d249",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.001,
+                    "reference_vertices_m": [
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.01,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.01,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "63b414aa0fa8dd5978b63777e15670545e67021843779a084d1c9dc85ff8a2da",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2"
+              ],
+              "version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+              "version_status": "COMMITTED_FIXTURE_ONLY"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:42f191af66cb30b2e915f572",
+              "evidence_hashes": [
+                "f093bd60821b1e3ae414e09cc2a0b77f3dcf7489d4ba839ada12b759a39ddaf9",
+                "63b414aa0fa8dd5978b63777e15670545e67021843779a084d1c9dc85ff8a2da",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "explicit_numeric_energy_gate_passed; no_physical_validation_claim",
+              "sequence": 1,
+              "status": "COMMITTED_FIXTURE_ONLY"
+            }
+          ],
+          "pending_candidate_id": null,
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 0.0,
+            "allowed_abs_residual_J": 0.0,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": -0.01,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:613312a3aed2fefa081ec0be",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "f093bd60821b1e3ae414e09cc2a0b77f3dcf7489d4ba839ada12b759a39ddaf9",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "explicit_numeric_energy_gate_passed; no_physical_validation_claim",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": 0.0,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": 0.0,
+            "sequence": 0,
+            "status": "COMMITTED_FIXTURE_ONLY",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+      "caller_provenance_test_only": true,
+      "last_controller_status": "COMMITTED_EXPERIMENTAL_REANALYSIS",
+      "last_energy_gate_status": "COMMITTED_EXPERIMENTAL_REANALYSIS",
+      "name": "external_api_branch_synthetic_test_only",
+      "not_solver_output": true,
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": null,
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": "EXTERNAL_RECEIPT",
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "COMMITTED_EXPERIMENTAL_REANALYSIS",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            },
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 2,
+                  "triangle_count": 4
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  },
+                  {
+                    "creation_step": 1,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": "fixture-root-patch",
+                    "patch_id": "patch:05b50e7f73491399eb80d249",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1e-06
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.001,
+                    "reference_vertices_m": [
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.01,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.01,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "63b414aa0fa8dd5978b63777e15670545e67021843779a084d1c9dc85ff8a2da",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2"
+              ],
+              "version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+              "version_status": "COMMITTED_EXPERIMENTAL_REANALYSIS"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version-v2:2d9d5b46af4620f001275aa3",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:c30e600eae85faf8b9886ab6",
+              "evidence_hashes": [
+                "537fc412d30652680c2c7eedf96bf011639d58b9c393829cfb54043bcee74ef5",
+                "63b414aa0fa8dd5978b63777e15670545e67021843779a084d1c9dc85ff8a2da",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "explicit_numeric_energy_gate_passed; no_physical_validation_claim",
+              "sequence": 1,
+              "status": "COMMITTED_EXPERIMENTAL_REANALYSIS"
+            }
+          ],
+          "pending_candidate_id": null,
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 0.0,
+            "allowed_abs_residual_J": 0.0,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "test_only",
+                "synthetic hashes; no solver invoked"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": -0.01,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:64bd808e5f9c9d4dd32b8d7d",
+            "evidence_origin": "EXTERNAL_RECEIPT",
+            "evidence_sha256": "537fc412d30652680c2c7eedf96bf011639d58b9c393829cfb54043bcee74ef5",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "explicit_numeric_energy_gate_passed; no_physical_validation_claim",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": 0.0,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": 0.0,
+            "sequence": 0,
+            "status": "COMMITTED_EXPERIMENTAL_REANALYSIS",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "NEEDS_RECOMPUTE",
+      "last_energy_gate_status": "NEEDS_RECOMPUTE",
+      "name": "large_positive_residual_rejected",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "NEEDS_RECOMPUTE",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:4ec10a5f7f14cb0ec6b26cbe",
+              "evidence_hashes": [
+                "50ffc4d8eef5a2a24978a8cd7d951671804ab789a2c8ac59ff46229b64815d83",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "quasistatic_energy_residual_exceeds_explicit_tolerance",
+              "sequence": 1,
+              "status": "NEEDS_RECOMPUTE"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 1e-06,
+            "allowed_abs_residual_J": 1e-06,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": -1000000.0,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:94d49f3e4948cbc9548b1d75",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "50ffc4d8eef5a2a24978a8cd7d951671804ab789a2c8ac59ff46229b64815d83",
+            "external_work_increment_J": 1000000.0,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "quasistatic_energy_residual_exceeds_explicit_tolerance",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": 0.0,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": 999999.99,
+            "sequence": 0,
+            "status": "NEEDS_RECOMPUTE",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "NEEDS_RECOMPUTE",
+      "last_energy_gate_status": "NEEDS_RECOMPUTE",
+      "name": "large_negative_residual_rejected",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "NEEDS_RECOMPUTE",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:98858fc6900d4628147ba454",
+              "evidence_hashes": [
+                "c4ffd7a5f87dbfe42b857d4efef9a300cbfc5cc813de6cdceb9d0a0376518938",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "quasistatic_energy_residual_exceeds_explicit_tolerance",
+              "sequence": 1,
+              "status": "NEEDS_RECOMPUTE"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 1e-06,
+            "allowed_abs_residual_J": 1e-06,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 1000000.0,
+            "derived_delta_total_potential_J": 999999.99,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:fa959cc78fdc21ffddc1b0e2",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "c4ffd7a5f87dbfe42b857d4efef9a300cbfc5cc813de6cdceb9d0a0376518938",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "quasistatic_energy_residual_exceeds_explicit_tolerance",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": 0.0,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": -1000000.0,
+            "sequence": 0,
+            "status": "NEEDS_RECOMPUTE",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "NEEDS_RECOMPUTE",
+      "last_energy_gate_status": "NEEDS_RECOMPUTE",
+      "name": "missing_tolerance_rejected",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "NEEDS_RECOMPUTE",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:ebc810e9235e1f4a6fba19c3",
+              "evidence_hashes": [
+                "0edd546bbcfbb8b541096d08cbebcddff3583fedb219208f18627fc932be4935",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "missing_or_nonfinite_numeric_tolerance_parameters",
+              "sequence": 1,
+              "status": "NEEDS_RECOMPUTE"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": null,
+            "allowed_abs_residual_J": null,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": null,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:be52a8d61332b060381a0485",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "0edd546bbcfbb8b541096d08cbebcddff3583fedb219208f18627fc932be4935",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "missing_or_nonfinite_numeric_tolerance_parameters",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": null,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": null,
+            "sequence": 0,
+            "status": "NEEDS_RECOMPUTE",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "NEEDS_RECOMPUTE",
+      "last_energy_gate_status": "NEEDS_RECOMPUTE",
+      "name": "legacy_total_potential_not_bridged",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "NEEDS_RECOMPUTE",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:de45250a5300f6bc30ca18b2",
+              "evidence_hashes": [
+                "cc7f1981ae88f0139eef9b8ddad87b2d4018b6f726889323391eb7b361f3b0a5",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "total_potential_change_is_not_stored_elastic_energy_and_legacy_field_is_not_bridged",
+              "sequence": 1,
+              "status": "NEEDS_RECOMPUTE"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 0.0,
+            "allowed_abs_residual_J": null,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": null,
+            "derived_delta_total_potential_J": null,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:ca39083de8b716f770522522",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "cc7f1981ae88f0139eef9b8ddad87b2d4018b6f726889323391eb7b361f3b0a5",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "total_potential_change_is_not_stored_elastic_energy_and_legacy_field_is_not_bridged",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": null,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": null,
+            "sequence": 0,
+            "status": "NEEDS_RECOMPUTE",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "UNKNOWN",
+      "last_energy_gate_status": "UNKNOWN",
+      "name": "dynamic_mode_unknown",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "PROPOSED_WAITING_REANALYSIS",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:c79f87d9901f7c77d00ee6f8",
+              "evidence_hashes": [
+                "43c4e3b9cdb35bfceef4854430bbae92c5211f95f41d94b8e44febadf49cae10",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "dynamic_or_mixed_dissipative_physics_mode_unsupported",
+              "sequence": 1,
+              "status": "UNKNOWN"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 0.0,
+            "allowed_abs_residual_J": null,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": null,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:2bdde6b64376149455b4734f",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "43c4e3b9cdb35bfceef4854430bbae92c5211f95f41d94b8e44febadf49cae10",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "DYNAMIC",
+            "reason": "dynamic_or_mixed_dissipative_physics_mode_unsupported",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": null,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": null,
+            "sequence": 0,
+            "status": "UNKNOWN",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    },
+    {
+      "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+      "last_controller_status": "NEEDS_RECOMPUTE",
+      "last_energy_gate_status": "NEEDS_RECOMPUTE",
+      "name": "wrong_parent_binding_rejected",
+      "origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+      "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+      "snapshot": {
+        "controller": {
+          "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+          "candidates": [
+            {
+              "G_J_per_m2": 15.0,
+              "Gc_J_per_m2": 10.0,
+              "candidate_geometry_sha256": "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "commit_semantics": "state activation after bound receipts; no physical qualification or energy-balance pass",
+              "domain_bounds": {
+                "x_max_m": 0.1,
+                "x_min_m": -0.2,
+                "y_max_m": 0.01,
+                "y_min_m": -0.01,
+                "z_max_m": 0.1,
+                "z_min_m": -0.1
+              },
+              "driving_evidence_sha256": "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+              "energy_ledger_J": {},
+              "evidence_origin": null,
+              "frame": {
+                "direction": "+x",
+                "front_x_m": 0.0,
+                "front_y_m": 0.0,
+                "z_max_m": 0.05,
+                "z_min_m": -0.05
+              },
+              "parent_state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "parent_version_id": "surface-version:991bef60950d113c8a81182b",
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "requested_advance_m": 0.01,
+              "status": "NEEDS_RECOMPUTE",
+              "step_cap_m": 0.02,
+              "strip": {
+                "creation_step": 1,
+                "geometry_sha256": "132ddac4c36fbb3c293176eb658576ffbb7434b686580471658664a252aab7c2",
+                "parent_patch_id": "fixture-root-patch",
+                "patch_id": "patch:05b50e7f73491399eb80d249",
+                "reference_area_m2": 0.001,
+                "reference_vertices_m": [
+                  [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    0.05
+                  ],
+                  [
+                    0.01,
+                    0.0,
+                    -0.05
+                  ]
+                ],
+                "surface_id": "fixture-surface",
+                "triangles": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    2,
+                    3
+                  ]
+                ]
+              }
+            }
+          ],
+          "committed_versions": [
+            {
+              "explicit_surface_state": {
+                "counts": {
+                  "historical_proxy_relation_count": 0,
+                  "mechanically_active_count": 0,
+                  "patch_count": 1,
+                  "triangle_count": 2
+                },
+                "current_visibility": [],
+                "historical_proxy_relations": [],
+                "mechanically_active": false,
+                "mechanics_qualification": "NOT_COUPLED",
+                "namespace": "fixture_proxy.explicit_surface_state.v1",
+                "patch_assignments": [],
+                "patches": [
+                  {
+                    "creation_step": 0,
+                    "front_status": "SUPPORTED_SINGLE_ORIENTED_BOUNDARY_LOOP_TOPOLOGY",
+                    "geometry_sha256": "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a",
+                    "negative_side": {
+                      "body_id": "fixture-body-minus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": -1
+                    },
+                    "oriented_front_edges": [
+                      [
+                        0,
+                        1
+                      ],
+                      [
+                        1,
+                        2
+                      ],
+                      [
+                        2,
+                        3
+                      ],
+                      [
+                        3,
+                        0
+                      ]
+                    ],
+                    "parent_patch_id": null,
+                    "patch_id": "fixture-root-patch",
+                    "positive_side": {
+                      "body_id": "fixture-body-plus",
+                      "displacement_m": [
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0
+                        ]
+                      ],
+                      "fragment_id": null,
+                      "side_sign": 1
+                    },
+                    "reference_area_m2": 0.010000000000000002,
+                    "reference_vertices_m": [
+                      [
+                        -0.1,
+                        0.0,
+                        -0.05
+                      ],
+                      [
+                        -0.1,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        0.05
+                      ],
+                      [
+                        0.0,
+                        0.0,
+                        -0.05
+                      ]
+                    ],
+                    "surface_id": "fixture-surface",
+                    "triangles": [
+                      [
+                        0,
+                        1,
+                        2
+                      ],
+                      [
+                        0,
+                        2,
+                        3
+                      ]
+                    ]
+                  }
+                ],
+                "production_promotion": "BLOCKED_NOT_COUPLED",
+                "proxy_relation_namespace": "fixture_proxy_relation.explicit_surface_state.v1",
+                "schema_version": "pgfrag.explicit-crack-surface-state.v1",
+                "surface_intersection_status": "UNKNOWN_NOT_EVALUATED"
+              },
+              "mechanically_active": false,
+              "mechanics_qualification": "NOT_COUPLED",
+              "parent_version_id": null,
+              "qualification": "EXPERIMENTAL_UNCALIBRATED",
+              "state_sha256": "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+              "surface_geometry_sha256": [
+                "e74d12359b8dc9262db3652bb8b7b64137cc71a548a2b761cf4dde6b1054ca6a"
+              ],
+              "version_id": "surface-version:991bef60950d113c8a81182b",
+              "version_status": "COMMITTED"
+            }
+          ],
+          "controller_claim": "EXPERIMENTAL_STATE_MACHINE_ONLY",
+          "event_ledger": [
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:758450163b910160e4762bf8",
+              "evidence_hashes": [
+                "818ffd95325c7ca416cfed0d390f1d807b5dfa8fee501b5089983e48e41ea877",
+                "db8904a95566ed30bd012002aedf1b5842a3d40a201c82e13fc8bca7144761bb",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "PROPOSE",
+              "reason": "G_greater_than_Gc_candidate_only",
+              "sequence": 0,
+              "status": "PROPOSED_WAITING_REANALYSIS"
+            },
+            {
+              "active_surface_version_id": "surface-version:991bef60950d113c8a81182b",
+              "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+              "event_id": "front-event:548863527176054dac8edf6e",
+              "evidence_hashes": [
+                "306ed45910a3a81f87a73e664a7bc4fbf40dcdf1096bf8b8530db06ff4d3505b",
+                "df931c42cc8db413c07052a4c3ac6bb0e7cf855d59a5c5bf89ffe5ed689e49c5"
+              ],
+              "kind": "CONFIRM_QUASISTATIC_ENERGY_GATE",
+              "reason": "parent_surface_hash_binding_mismatch",
+              "sequence": 1,
+              "status": "NEEDS_RECOMPUTE"
+            }
+          ],
+          "pending_candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+          "qualification": "EXPERIMENTAL_UNCALIBRATED",
+          "schema_version": "pgfrag.griffith-front-step.experimental.v1"
+        },
+        "energy_gate_claim": "QUASISTATIC_TOLERANCE_CHECK_ONLY_NOT_PHYSICAL_VALIDATION",
+        "energy_gate_ledger": [
+          {
+            "Gc_delta_area_J": 0.01,
+            "abs_tol_J": 0.0,
+            "allowed_abs_residual_J": null,
+            "area_increment_m2": 0.001,
+            "area_unit": "m^2",
+            "caller_provenance_metadata_only": [
+              [
+                "fixture",
+                "explicit-only"
+              ],
+              [
+                "solver_invoked",
+                "false"
+              ]
+            ],
+            "candidate_id": "front-candidate:c8a2dc3429fc786a3fa65070",
+            "delta_stored_elastic_energy_J": 0.0,
+            "derived_delta_total_potential_J": null,
+            "energy_terms_semantics": "DELTA_STORED_ELASTIC_PLUS_EXTERNAL_WORK_SEPARATE",
+            "energy_unit": "J",
+            "event_id": "qs-energy-event:ade1b177730e8428c103ff2d",
+            "evidence_origin": "EXPLICIT_FIXTURE_NOT_SOLVER",
+            "evidence_sha256": "306ed45910a3a81f87a73e664a7bc4fbf40dcdf1096bf8b8530db06ff4d3505b",
+            "external_work_increment_J": 0.01,
+            "physics_mode": "QUASISTATIC_ELASTIC_NO_INERTIA_NO_OTHER_DISSIPATION",
+            "reason": "parent_surface_hash_binding_mismatch",
+            "reference_energy_J": 1.0,
+            "relative_tol": 0.0,
+            "relative_tolerance_contribution_J": null,
+            "residual_W_minus_delta_stored_minus_Gc_delta_area_J": null,
+            "sequence": 0,
+            "status": "NEEDS_RECOMPUTE",
+            "tolerance_basis": "explicit unit-test tolerance fixture; not a validated numerical tolerance",
+            "tolerance_basis_sha256": "40cc648800e51c7eafa2c424d64e310fe73fb8530b46334b9ad91bbcfc0c4a94"
+          }
+        ],
+        "legacy_delta_potential_bridge": "NOT_BRIDGED",
+        "schema_version": "pgfrag.griffith-front-energy-gate.v2.experimental.v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+--- a/tmp/review_20261004/native_point_history/v2_frozen/test_native_point_history.py.frozen
++++ b/tests/test_native_point_history.py
+@@ -9,13 +9,7 @@
+ from pgfrag.native_point_history import NATIVE_ORIGIN_STATUS, read_native_point_history
+ 
+ 
+-FIXTURE_ROOT = (
+-    Path(__file__).resolve().parents[1]
+-    / "tmp"
+-    / "review_20261004"
+-    / "native_point_history"
+-    / "fixture"
+-)
++FIXTURE_ROOT = Path(__file__).resolve().parent / "fixtures" / "native_point_history"
+ 
+ 
+ def _read(snapshot: Path | None = None, fixture_root: Path = FIXTURE_ROOT):

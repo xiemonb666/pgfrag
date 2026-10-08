@@ -1,0 +1,8 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.execution_receipt.v1",
+  "execution": "python -m pgfrag.mesh_resolution_audit",
+  "exit_code": 0,
+  "report_sha256": "afba1870a4ba3436f925686a30b8dca216f54105421048e1efd4186c980e03cc",
+  "stdout_sha256": "8b98a28360c62a3c6b49242c4bc6fc1c34e7487fc18e67c2cc983dfb4d724b2e",
+  "freeze_manifest_sha256": "15bb0127e552bf5760c1a4e7f7b595931d1f85352e72e358aef232890dc373f6"
+}

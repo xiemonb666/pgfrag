@@ -1,0 +1,309 @@
+{
+  "actual_returncode": 1,
+  "checker_run": true,
+  "child_arguments_token_redacted": true,
+  "child_deadline_seconds": 10.0,
+  "child_elapsed_seconds": 0.1410000000614673,
+  "child_root_go_token_sha256": "1acd9ce6b7809ce8f9d2c48722b0e540ce74a4bbefdb2275f3610fe877a007d3",
+  "child_started": true,
+  "combined_bytes_including_receipt": 17178,
+  "combined_file_limit_pass": true,
+  "file_tally_bytes": {
+    "capture_receipt.json": 16891,
+    "stderr.bin": 0,
+    "stdout.bin": 287
+  },
+  "output_limit_bytes": 131072,
+  "pre_post_hashes_match": true,
+  "result": {
+    "bytes": 0,
+    "exists": false,
+    "sha256": null
+  },
+  "retry_count": 0,
+  "schema": "mixed93_opening_history_independent_capture.v1",
+  "source_hashes_post": {
+    "elastic_input": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\numeric_runs\\run01\\result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "opening_receipt": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\receipt.json",
+      "sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925"
+    },
+    "opening_result": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\result.json",
+      "sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb"
+    },
+    "own:SOURCE_PINS": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\SOURCE_PINS.json",
+      "sha256": "90958ac5d831341e9cd8c7a58c9a54caea23aee25c236942d9483403f0c064d8"
+    },
+    "own:capture_wrapper": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\capture_once.py",
+      "sha256": "9a6082d3075f1c4116ba660e4b046bfb91246b035acd83c8360e1d1b9cab3515"
+    },
+    "own:case": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\case.json",
+      "sha256": "dc3e30c4c098a7cb74c1ac4b4a4ff1d1be20f2cdd41ea5d8dc5ab74899445d72"
+    },
+    "own:checker": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\check_saved_opening_history.py",
+      "sha256": "25ca8e8c77708e5a6c6a09b91cadfa76f893ab90f72fd935ee6a1bf7368ca468"
+    },
+    "own:design": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\DESIGN.md",
+      "sha256": "35dedff14d652d0634ea43b32595dac2bb044446f25b3c47ed1a7e486a21c33c"
+    },
+    "own:readme": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\README.md",
+      "sha256": "0056774a2b63818c6cefb2dde1c4eb0171896c5e97d47774c9cc99a158fb223c"
+    },
+    "producer:capture_case_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_CASE.json",
+      "sha256": "433b574c9f08624ef07b6c04ddb57f9fbfbe87f2856bc026ecab3dc3262992b2"
+    },
+    "producer:capture_wrapper_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_once.py",
+      "sha256": "e2b2fbf5a9a2351b6616fdac7a87c634b9e5158cae02ae27e1da819740fe8aa8"
+    },
+    "producer:case_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "producer:driver_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "producer:source_pins_disabled_snapshot_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\SOURCE_PINS_DISABLED.snapshot.json",
+      "sha256": "f9f2cb9a5c505c49795957ede4e21465ce293e41ebcbc20c0faeb06b49d0459c"
+    },
+    "producer_support_files:final_disabled_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\SOURCE_PINS_DISABLED_FINAL.snapshot.json",
+      "sha256": "7530ea7445194117c2dec3d988691b74424bf2841de6cd8f1b69e6ab1c8a6980"
+    },
+    "producer_support_files:pre_fix_driver_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run_mixed93_opening_control.pre_case_path_fix_20261007.py",
+      "sha256": "300bfb3094b11cfb86706485b160b7d42e6f0edf83238b9a9469a6b35273ffad"
+    },
+    "producer_support_files:pre_vf_capture_case_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_CASE.pre_vf_runtime_20261007.json",
+      "sha256": "c892c2f0af19473c365007fb46c594dc3df655943e23da3f42b6c8429fb4aa56"
+    },
+    "producer_support_files:pre_vf_capture_driver_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_once.pre_vf_runtime_20261007.py",
+      "sha256": "d9f2922c66b9f02534ec90b3ba19d881e2d4efb48b183ee5836ad5da0b07a2d4"
+    },
+    "source_pins:cohesive_derivative": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_interface_assembly_20261006\\cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "source_pins:cohesive_scalar_law": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_scalar_law_20261006\\cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "source_pins:elastic_worker": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_actual_cohesive_bridge_20261006\\run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "source_pins:mixed_enriched_operator": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed_enriched_operator_20261006\\mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "source_pins:original_elastic_numeric_pins": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\NUMERIC_SOURCE_PINS.json",
+      "sha256": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140"
+    },
+    "source_pins:producer_case": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "source_pins:producer_driver": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "source_pins:saved_elastic_result": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\numeric_runs\\run01\\result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "source_pins:trace_primitive": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_cohesive_trace_20261006\\enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    }
+  },
+  "source_hashes_pre": {
+    "elastic_input": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\numeric_runs\\run01\\result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "opening_receipt": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\receipt.json",
+      "sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925"
+    },
+    "opening_result": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run01\\result.json",
+      "sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb"
+    },
+    "own:SOURCE_PINS": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\SOURCE_PINS.json",
+      "sha256": "90958ac5d831341e9cd8c7a58c9a54caea23aee25c236942d9483403f0c064d8"
+    },
+    "own:capture_wrapper": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\capture_once.py",
+      "sha256": "9a6082d3075f1c4116ba660e4b046bfb91246b035acd83c8360e1d1b9cab3515"
+    },
+    "own:case": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\case.json",
+      "sha256": "dc3e30c4c098a7cb74c1ac4b4a4ff1d1be20f2cdd41ea5d8dc5ab74899445d72"
+    },
+    "own:checker": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\check_saved_opening_history.py",
+      "sha256": "25ca8e8c77708e5a6c6a09b91cadfa76f893ab90f72fd935ee6a1bf7368ca468"
+    },
+    "own:design": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\DESIGN.md",
+      "sha256": "35dedff14d652d0634ea43b32595dac2bb044446f25b3c47ed1a7e486a21c33c"
+    },
+    "own:readme": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_history_independent\\README.md",
+      "sha256": "0056774a2b63818c6cefb2dde1c4eb0171896c5e97d47774c9cc99a158fb223c"
+    },
+    "producer:capture_case_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_CASE.json",
+      "sha256": "433b574c9f08624ef07b6c04ddb57f9fbfbe87f2856bc026ecab3dc3262992b2"
+    },
+    "producer:capture_wrapper_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_once.py",
+      "sha256": "e2b2fbf5a9a2351b6616fdac7a87c634b9e5158cae02ae27e1da819740fe8aa8"
+    },
+    "producer:case_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "producer:driver_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "producer:source_pins_disabled_snapshot_path": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\SOURCE_PINS_DISABLED.snapshot.json",
+      "sha256": "f9f2cb9a5c505c49795957ede4e21465ce293e41ebcbc20c0faeb06b49d0459c"
+    },
+    "producer_support_files:final_disabled_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\SOURCE_PINS_DISABLED_FINAL.snapshot.json",
+      "sha256": "7530ea7445194117c2dec3d988691b74424bf2841de6cd8f1b69e6ab1c8a6980"
+    },
+    "producer_support_files:pre_fix_driver_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\run_mixed93_opening_control.pre_case_path_fix_20261007.py",
+      "sha256": "300bfb3094b11cfb86706485b160b7d42e6f0edf83238b9a9469a6b35273ffad"
+    },
+    "producer_support_files:pre_vf_capture_case_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_CASE.pre_vf_runtime_20261007.json",
+      "sha256": "c892c2f0af19473c365007fb46c594dc3df655943e23da3f42b6c8429fb4aa56"
+    },
+    "producer_support_files:pre_vf_capture_driver_snapshot": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_once.pre_vf_runtime_20261007.py",
+      "sha256": "d9f2922c66b9f02534ec90b3ba19d881e2d4efb48b183ee5836ad5da0b07a2d4"
+    },
+    "source_pins:cohesive_derivative": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_interface_assembly_20261006\\cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "source_pins:cohesive_scalar_law": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_scalar_law_20261006\\cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "source_pins:elastic_worker": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_actual_cohesive_bridge_20261006\\run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "source_pins:mixed_enriched_operator": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed_enriched_operator_20261006\\mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "source_pins:original_elastic_numeric_pins": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\NUMERIC_SOURCE_PINS.json",
+      "sha256": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140"
+    },
+    "source_pins:producer_case": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "source_pins:producer_driver": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mixed93_opening_control_20261007\\run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "source_pins:saved_elastic_result": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\numeric_runs\\run01\\result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "source_pins:trace_primitive": {
+      "exists": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_cohesive_trace_20261006\\enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    }
+  },
+  "status": "NOT_ACCEPTED",
+  "stderr": {
+    "bytes": 0,
+    "file": "stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 287,
+    "file": "stdout.bin",
+    "sha256": "8312d73648d2fb398f4e3da432490451127876ac138dddad5d308a43b56345bf"
+  },
+  "timed_out": false
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "mixed93_mechanics_objectivity_case.v2",
+  "case_id": "mixed93_mechanics_objectivity_20261007",
+  "classification": "SOURCE_ADAPTER_READY_ROOTFULLREAD_REQUIRED_NOT_NUMERICALLY_RUN",
+  "numeric_execution_authorized": false,
+  "execution_authorization": {"authorized": false, "authorized_by": null, "root_go_token": null},
+  "frozen_inputs": {
+    "mechanics_case": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+    "cached_result": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+    "cached_result_sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "cached_arrays": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz",
+    "cached_arrays_sha256_from_frozen_case": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "input_shapes": {"source_positions_xyz_m": [27, 3], "volume_xyz_m": [512, 3], "volume_weights_m3": [512], "boundary_xyz_m": [768, 3], "boundary_weights_m2": [768], "boundary_normals": [768, 3]}
+  },
+  "geometry": {
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "body_axis_world": [0.0, 0.0, 1.0],
+    "front_direction_world": [0.0, 0.0, 1.0],
+    "crack_plane_normal_world": [0.0, 1.0, 0.0],
+    "front_tip_world_m": [0.0, 0.0, 0.0]
+  },
+  "material": {"young_modulus_Pa": 1000000.0, "poisson_ratio": 0.3, "model": "small-strain isotropic"},
+  "load": {"case": "pure_I", "K_Pa_sqrt_m": [100.0, 0.0, 0.0], "rule": "same local crack-frame loading in both states"},
+  "gauge": {"center_xyz_m": [0.0, 0.0, 0.0], "target_each_state_m": [0, 0, 0, 0, 0, 0], "rows": "mean displacement and normalized mean (x-c) cross displacement"},
+  "mls": {
+    "api": "mls3d_shape.shape_functions_3d",
+    "reference_origin_m": [0.0, 0.0, 0.0],
+    "reference_scale_m": 0.01,
+    "support_radius_m": 0.025,
+    "max_condition_number": 1000000000000.0,
+    "rank_relative_tolerance": 1e-12,
+    "switch_tolerance": 1e-10,
+    "duplicate_tolerance": 1e-12,
+    "expected_support_each_query": 27,
+    "transform_rule": "origin'=Q origin+t; scalar scales unchanged; gradients remain world-frame"
+  },
+  "basis": {"scalar_functions": 31, "vector_dofs": 93, "order": "27 BASE then four GLOBAL_FRONT, semantic node-major xyz triplets"},
+  "baseline_crack_frame": {
+    "origin_world_m": [0.0, 0.0, 0.0],
+    "tip_world_m": [0.0, 0.0, 0.0],
+    "axes_world_from_local": [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+  },
+  "rigid_transform": {
+    "definition": "x'=Qx+t; Q=Rz(0.37 rad) Rx(-0.23 rad)",
+    "angle_z_rad": 0.37,
+    "angle_x_rad": -0.23,
+    "translation_m": [0.003, -0.007, 0.004],
+    "frame_rule": "H'=QH; origin'=Qorigin+t; tip'=Qtip+t",
+    "coefficient_rule": "A=I_31 kron Q; q'=Aq",
+    "gauge_rule": "B=diag(Q,Q); C'=B C A^T; g'=B g; lambda'=B lambda"
+  },
+  "units": {"K": "N/m", "C": "dimensionless", "q_g": "m", "f_lambda": "N", "strain": "dimensionless", "stress": "Pa", "energy": "J", "volume_weight": "m^3", "surface_weight": "m^2"},
+  "work": {
+    "states": 2,
+    "provider_queries_per_state": 1280,
+    "provider_queries_total": 2560,
+    "provider_chunks_each_state": [256, 256, 256, 256, 256],
+    "analytic_boundary_field_evaluations": 1536,
+    "fresh_raw_K_C_f_assemblies": 2,
+    "fresh_spectrum_checks": 2,
+    "independent_KKT_solves_99x99": 2,
+    "volume_field_reconstruction": "512 queried volume rows/state, no extra MLS calls"
+  },
+  "tolerances": {
+    "provider_weights": 1e-10,
+    "provider_gradient_scale": 1e-10,
+    "K_C_relative": 1e-9,
+    "f_relative_L2": 1e-9,
+    "q_relative_L2": 1e-8,
+    "lambda_scaled_by_force": 1e-8,
+    "volume_fields_relative": 1e-8,
+    "wrench_scaled": 1e-9,
+    "gauge_residual": 1e-9,
+    "raw_K_relative_asymmetry": 1e-12,
+    "energy_invariance": 1e-9,
+    "energy_identity": 1e-9,
+    "spectrum": {"zero_modes": 6, "positive_modes": 87, "significant_negative_modes": 0, "tolerance": "64*eps*93*max(abs(eigenvalues))"}
+  },
+  "wrench": {
+    "centered_moment": "F'=QF and M_c'=Q M_c for c'=Qc+t",
+    "world_origin_moment": "M_0'=Q M_0+t cross F'",
+    "force_scale_N": "integral |traction| dA",
+    "moment_scale_Nm": "R times integral |traction| dA"
+  },
+  "resource_caps_provisional": {"external_wall_seconds": 30, "result_bytes": 8388608, "explicit_dense_array_bytes": 67108864},
+  "excluded_studies": ["relative source-cloud orientation", "quadrature orientation/rule sensitivity", "tetrahedral mesh/crack-front direction bias", "material or crack-growth qualification"],
+  "failure_policy": "Unknown support, trace ambiguity, nonfinite input, spectrum failure, cap, or bad conditioning blocks. No ridge, projection, pseudoinverse, eigen repair, or spectrum reuse."
+}

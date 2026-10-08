@@ -1,0 +1,24 @@
+{
+  "schema": "pgfrag.explicit-surface-state-freeze.v1",
+  "date": "2026-10-05",
+  "tests": "NOT_RUN",
+  "solver": "NOT_RUN",
+  "files": [
+    {
+      "path": "experiments/explicit_surface_state_20261005/explicit_surface_state.py",
+      "sha256": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0"
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/test_explicit_surface_state.py",
+      "sha256": "6eb0f109502f32066d710a071eb33afdf64262c1e9a582df254fda0849afdd19"
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/state.schema.json",
+      "sha256": "a8a4c0881cc90b959271321e837ab37ea4341036a3060ad09adf3411910ff9ea"
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/README.md",
+      "sha256": "ad4041e9addaac9a19e4fce3b00cf51329be286397934fb6ef990a67c847cf5b"
+    }
+  ]
+}

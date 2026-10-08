@@ -1,0 +1,104 @@
+{
+  "schema": "pgfrag.mixed93_fixed_load_front_source_contract.v1",
+  "contract_id": "mixed93_old_tip_pureI_fixed_traction_zero_g.v1",
+  "owner": "source-only preparation; numeric implementation and receipts owned by full3d operator agent",
+  "root_decision": {
+    "stage": "fixed-load finite-front perturbation diagnostic",
+    "geometry_pair": {"old_front_x_m": 0.0, "candidate_front_x_m": 0.0005, "direction": "+x"},
+    "gauge_target_both_states": [0, 0, 0, 0, 0, 0],
+    "C_functional": "same six physical volume-average translation/rotation moments about a fixed center and scale",
+    "crack_faces": "traction-free",
+    "Gc": "not provided or compared",
+    "cohesive_assembly": 0,
+    "commit": false,
+    "future_growth": "cohesive-history dissipation delta_Dcoh; no additional Gc*delta_area"
+  },
+  "identity": {
+    "mixed93_case": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+    "mixed93_case_sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+    "fcc4_case": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+    "fcc4_case_sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+    "accepted_arrays_sha256_metadata": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "npz_read": false
+  },
+  "geometry": {
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "z_bounds_m": [-0.005, 0.005],
+    "crack_plane": "y=0",
+    "front_line": "parallel to z",
+    "source_axes_xyz_m": [-0.005, 0, 0.005],
+    "source_count": 27,
+    "semantic_dof_count": 93,
+    "basis_layout": "81 BASE + 12 GLOBAL_FRONT"
+  },
+  "basis_and_solve": {
+    "layout": "93 semantic DOFs: 81 BASE + 12 GLOBAL_FRONT (F1..F4 x ux,uy,uz)",
+    "candidate_front_origin_xyz_m": [0.0005, 0, 0],
+    "basis_update": "preserve same BASE source/MLS rows; analytically rebuild all shifted GLOBAL_FRONT values and gradients",
+    "baseline_solution": "fresh equilibrium solve with g=0; cached manufactured nonzero-g q_solution is not a baseline",
+    "gauge_functional": "Cq=V^-1 integral [ux,uy,uz,((x-center) cross u)/R] dV; center=(0,0,0), R=0.01m; mode order tx,ty,tz,rx,ry,rz",
+    "gauge_target_each_state": [0, 0, 0, 0, 0, 0],
+    "rebuild_C": "represent the same physical volume-moment functional in each geometry basis",
+    "kkt_order_each": 99,
+    "state_count": 2
+  },
+  "frozen_load": {
+    "load_case": "pure_I",
+    "traction_array": "pure_I_boundary_traction_Pa",
+    "source_tip": "x=0 old-tip manufactured field",
+    "source_KI_Pa_sqrt_m": 100,
+    "scale_exactly_once": 0.01,
+    "applied_reference_KI_Pa_sqrt_m": 1,
+    "classification": "synthetic benchmark traction; not calibrated",
+    "boundary_order": ["side", "cap_bottom", "cap_top"],
+    "slices_half_open": {"side": [0, 256], "cap_bottom": [256, 512], "cap_top": [512, 768]},
+    "counts": {"side": 256, "cap_bottom": 256, "cap_top": 256, "boundary_total": 768},
+    "same_in_both_geometries": ["positions_xyz_m", "unit_normals", "area_weights_m2", "scaled traction vector in Pa"],
+    "basis_load_rule": "reintegrate f(a)_j=sum_q area_weight_q * N_j(a,x_q) dot traction_q; f_old and f_candidate may differ",
+    "forbidden": ["reuse coefficient f unchanged", "retune KI", "recompute traction from shifted solution", "project/repair/drop vector components"]
+  },
+  "quadrature": {
+    "volume_rows": 512,
+    "volume_rule": "512 rows; GL4 s x GL32 theta x GL4 z; at a=0 r=R*s^2 and dV=2*R^2*s^3 ds dtheta dz; full cylinder, open nodes",
+    "side_rule": "256 rows; GL64 theta x GL4 z; n=(cos(theta),sin(theta),0); dA=R dtheta dz",
+    "cap_rule": "512 rows total; per cap GL4 on inner/outer radial segments split at c=0.5mm and GL16 on each theta semicircle; inner r=c*sin(pi*s/2)^2, outer r=c+(R-c)*s^2, dA=r*(dr/ds)ds dtheta",
+    "cap_normals": {"bottom": [0,0,-1], "top": [0,0,1]},
+    "boundary_row_order": ["side", "cap_bottom", "cap_top"],
+    "boundary_rows": 768,
+    "offgrid_rows_diagnostic_only": 128,
+    "raw_selected_row_uses": 1408,
+    "integrated_rows": 1280,
+    "same_xyz_and_weights_for_old_and_candidate": true
+  },
+  "query_budget": {
+    "additional_provider_queries": 0,
+    "zero_query_requires": ["matching cache digest", "matching 27 ordered sources", "matching MLS configuration", "exact row IDs and coordinates", "matching volume/boundary weights and normals"],
+    "candidate_operation": "reuse exact BASE MLS values/gradients; analytically recompute shifted GLOBAL_FRONT branch values/gradients on all assembly rows",
+    "on_mismatch": "BLOCK; no silent query or adaptivity",
+    "batch_limit_if_future_scope_changes": 256
+  },
+  "mechanical_budget": {
+    "old_state_bulk_assemblies": 1,
+    "candidate_state_bulk_assemblies": 1,
+    "kkt_solves": 2,
+    "kkt_order_each": 99,
+    "reintegrate_external_f_once_per_basis": true,
+    "retries": 0
+  },
+  "outputs": {
+    "per_state_energy": ["U=0.5*q^T*K*q J", "W=f^T*q J plus independent frozen-boundary integral", "Pi=U-W J"],
+    "finite_difference": "delta_Pi and optional -delta_Pi/(L*delta_a), diagnostic only",
+    "growth_status": "not evaluated",
+    "surface_state_commit": false
+  },
+  "later_damage_growth": {
+    "ledger_dissipation": "cohesive-history delta_Dcoh",
+    "Gc_delta_area": "not added for the same cohesive damage"
+  },
+  "not_claimed": ["real material", "J/Gc pass", "quadrature convergence", "autonomous growth", "branching", "fragment count"]
+}
+
+
+
+

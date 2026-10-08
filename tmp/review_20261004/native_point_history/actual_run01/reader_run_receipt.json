@@ -1,0 +1,128 @@
+{
+  "schema": "pgfrag.native_point_history.actual_run01_invocation.v1",
+  "executable": "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "environment": {
+    "PYTHONPATH": "src"
+  },
+  "stdout_file": "reader_stdout.txt",
+  "stderr_file": "reader_stderr.txt",
+  "report_file": "adapter_report.json",
+  "mapping_file": "bond_events_input_mapping.json",
+  "exit_code": 0,
+  "reader_script_sha256_before": "0223d3c16c37d08938b97715ff5e61cc88b5d281d43e5c77a8819dd53fdfa272",
+  "reader_script_sha256_after": "0223d3c16c37d08938b97715ff5e61cc88b5d281d43e5c77a8819dd53fdfa272",
+  "input_sha_before": [
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/summary.toml",
+      "bytes": 1732,
+      "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/point_state_history.csv",
+      "bytes": 49725,
+      "sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/directed_bond_state_history.csv",
+      "bytes": 709252,
+      "sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/canonical_bond_state_history.csv",
+      "bytes": 286024,
+      "sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "bytes": 4923,
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "bytes": 1587,
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "bytes": 23957,
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    }
+  ],
+  "input_sha_after": [
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/summary.toml",
+      "bytes": 1732,
+      "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/point_state_history.csv",
+      "bytes": 49725,
+      "sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/directed_bond_state_history.csv",
+      "bytes": 709252,
+      "sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845"
+    },
+    {
+      "path": "tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/canonical_bond_state_history.csv",
+      "bytes": 286024,
+      "sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "bytes": 4923,
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "bytes": 1587,
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "bytes": 23957,
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    }
+  ],
+  "inputs_unchanged": true,
+  "argv": [
+    "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\actual_run01\\read_run01.py"
+  ],
+  "result_summary": {
+    "status": "READY_STRUCTURAL_ONLY",
+    "native_origin_status": "CALLER_SUPPLIED_ARCHIVE_NOT_AUTHENTICATED",
+    "point_count": 125,
+    "validated_frame_count": 2,
+    "expected_final_step": 1,
+    "initial_canonical_bond_count": 3062,
+    "physical_fragment_status": "UNKNOWN_NOT_DERIVED",
+    "fracture_surface_status": "UNKNOWN_NOT_DERIVED",
+    "energy_status": "UNKNOWN_NOT_DERIVED",
+    "R2_status": "UNKNOWN_NOT_DERIVED"
+  },
+  "outputs": [
+    {
+      "path": "adapter_report.json",
+      "bytes": 145403,
+      "sha256": "47d9bb1aba85f13e6d09dc24ba37a8398213b84594bc0f9be071111e7b3c8fc7"
+    },
+    {
+      "path": "bond_events_input_mapping.json",
+      "bytes": 2638941,
+      "sha256": "b34ab8794207d09db2f8dfd8cb9e07853ce77181c195e8d6f2e2aa78a2b6b124"
+    },
+    {
+      "path": "reader_stdout.txt",
+      "bytes": 583,
+      "sha256": "248ee9452a7f24b498a7030860f4677fe2bf04a3e223413f451180bb96c70e5b"
+    },
+    {
+      "path": "reader_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

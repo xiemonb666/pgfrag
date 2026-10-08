@@ -1,0 +1,43 @@
+{
+  "schema": "pgfrag.bond_events.pytest_receipt.v2",
+  "argv": "& \"C:\\Users\\xiemo\\.local\\bin\\uv.exe\" run --no-project --no-progress --with pytest --python \"C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" python -m pytest -q tests/test_bond_events.py --junitxml \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\bond_events\\v2_pytest_junit.xml\"",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "pythonpath": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src",
+  "exit_code": 0,
+  "result": "PASS",
+  "adapter_integration_status": "NOT_CONNECTED_TO_PGFRAG_RUNNER; module remains standalone",
+  "native_state_provenance": "SUPPLIED_NATIVE_STATE_CALLER_PROVIDED_UNVERIFIED",
+  "artifacts": [
+    {
+      "path": "v2_pytest_argv.txt",
+      "bytes": 336,
+      "sha256": "9e0de996d93776c33d4a5a289985ec851ea48a0618c2708c9eb3b1108049185a"
+    },
+    {
+      "path": "v2_pytest_stdout.txt",
+      "bytes": 101,
+      "sha256": "b88b69092c878a260d0a624793773ab4a11b90f4b9873e8a443b6043c414dd39"
+    },
+    {
+      "path": "v2_pytest_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "v2_pytest_exit_code.txt",
+      "bytes": 3,
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "v2_pytest_junit.xml",
+      "bytes": 3033,
+      "sha256": "1ccc3bb73609c7666c76b2549d8067563521058e50027efe6a25d2842dc022c6"
+    }
+  ],
+  "prepost_hashes": "v2_pytest_prepost_hashes.json",
+  "v1_test_receipt_sha256": "d3f3a3c255a919d3df48210f0c374484487190b6cbf261f0298f1648cf9e25da",
+  "v1_test_exit_code": 0,
+  "reviewed_source_hash": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+  "reviewed_test_hash": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e",
+  "reviewed_raw_fixture_hash": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+}

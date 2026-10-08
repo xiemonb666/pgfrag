@@ -1,0 +1,71 @@
+{
+  "schema": "pgfrag.free_evolution_coupon_dt_half.source_review_audit.v1",
+  "baseline_case_id": "analytic_osb_reversible_coupon_h0600_delta1800",
+  "companion_case_id": "analytic_osb_reversible_coupon_h0600_delta1800_dt_half_20261005",
+  "case_changes": [
+    {
+      "field": "case_id",
+      "baseline": "analytic_osb_reversible_coupon_h0600_delta1800",
+      "companion": "analytic_osb_reversible_coupon_h0600_delta1800_dt_half_20261005"
+    },
+    {
+      "field": "purpose",
+      "baseline": "Short reversible native engineering diagnostic; source is frozen but solver has not been run.",
+      "companion": "Single-variable dt/2 companion to the completed h0600/delta1800 baseline; only the requested native-bound fraction changes, and this case remains source-only pending review."
+    },
+    {
+      "field": "solver.dt_fraction_of_native_raw_bound",
+      "baseline": 0.25,
+      "companion": 0.10951366490292391
+    }
+  ],
+  "unchanged_case_field_count": "all other fields equal under recursive TOML parse",
+  "shared_external_pin_count": 78,
+  "shared_external_pins_exactly_equal": true,
+  "pin_count": 82,
+  "unique_pin_count": 82,
+  "pin_errors": [],
+  "driver_byte_identical": true,
+  "launcher_byte_identical": true,
+  "baseline_driver_sha256": "bea71ad8c9c224180bfd544913646b281cf35e0c6644971ba3746d1e2af488af",
+  "companion_driver_sha256": "bea71ad8c9c224180bfd544913646b281cf35e0c6644971ba3746d1e2af488af",
+  "baseline_launcher_sha256": "08e3c7dad0116a32d99ce0641533f69fa965cadb5ad128da6e8dce07cdd96152",
+  "companion_launcher_sha256": "08e3c7dad0116a32d99ce0641533f69fa965cadb5ad128da6e8dce07cdd96152",
+  "requested_fraction": 0.10951366490292391,
+  "baseline_raw_bound_used_for_request_s": 3.4242302121147243e-07,
+  "requested_dt_s": 3.75e-08,
+  "baseline_dt_s": 7.5e-08,
+  "strict_half_relation": true,
+  "expected_phase_cap_s": 7.5e-08,
+  "expected_dt_if_native_raw_bound_matches_baseline_s": 3.75e-08,
+  "expected_steps_if_bound_matches_baseline": 96,
+  "expected_states_if_bound_matches_baseline": 97,
+  "expected_binary_bytes_if_bound_matches_baseline": 73332000,
+  "max_points": 5000,
+  "max_steps": 192,
+  "max_output_bytes": 199229440,
+  "run_attempt_absent": true,
+  "source_freeze_sha256": "684439db34e2375d5996eed0dd1d518a413565cbaf92cd96a42f4d3799c70aef",
+  "files": {
+    "fixed_case.toml": {
+      "bytes": 1681,
+      "sha256": "7baee8e2efeca485927f8f265409ca35656731e39fba75cd7d95a6a2a47c2323"
+    },
+    "run_free_evolution_coupon.jl": {
+      "bytes": 51382,
+      "sha256": "bea71ad8c9c224180bfd544913646b281cf35e0c6644971ba3746d1e2af488af"
+    },
+    "run_once.ps1": {
+      "bytes": 15249,
+      "sha256": "08e3c7dad0116a32d99ce0641533f69fa965cadb5ad128da6e8dce07cdd96152"
+    },
+    "SOURCE_REVIEW.md": {
+      "bytes": 5138,
+      "sha256": "941fee5ca341a0e360af78030594ff7508987a255af1ce4da7ccec84cc6fa6e0"
+    },
+    "source_freeze.toml": {
+      "bytes": 20559,
+      "sha256": "684439db34e2375d5996eed0dd1d518a413565cbaf92cd96a42f4d3799c70aef"
+    }
+  }
+}

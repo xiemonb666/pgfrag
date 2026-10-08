@@ -1,0 +1,144 @@
+{
+  "schema": "mixed93_actual_cohesive_bridge_source_review.v1",
+  "decision": "SOURCE_READY_METADATA_ONLY",
+  "actual_numerical_bridge_implemented_or_verified": false,
+  "scope": {
+    "numeric_modules_imported": false,
+    "npz_opened": false,
+    "npz_hashed": false,
+    "provider_called": false,
+    "primitive_assembled": false,
+    "solver_called": false,
+    "tests_run": false,
+    "existing_json_metadata_read": true
+  },
+  "reviewed_files": {
+    "driver": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/mixed93_actual_cohesive_bridge.py",
+      "physical_lines": 308,
+      "sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412"
+    },
+    "case": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "physical_lines": 578,
+      "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"
+    },
+    "readme": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/README.md",
+      "physical_lines": 19,
+      "sha256": "1b0bd94ec16390f5e60688c31560f910ba0fc6cea948fa25fd309b839be73877"
+    },
+    "source_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/SOURCE_PINS.json",
+      "physical_lines": 83,
+      "sha256": "9cb1fee478dadc080d22a872f29af80e91de8549902334be79fa518cac4554f3"
+    },
+    "producer_source": {
+      "path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/mixed93_cached_lefm_solve.py",
+      "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c",
+      "sha256_matches_source_pins": true
+    },
+    "producer_case": {
+      "path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+      "sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c",
+      "sha256_matches_source_pins": true
+    },
+    "existing_saved_audit": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+      "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+      "sha256_matches_source_pins": true,
+      "npz_opened": false
+    }
+  },
+  "dependency_source_pins_match": true,
+  "dependency_python_sources": [
+    {
+      "name": "mls3d_mls",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "name": "mls3d_shape",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "name": "mixed_lefm_field",
+      "sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd"
+    },
+    {
+      "name": "mixed_enriched_operator",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    {
+      "name": "trace_primitive",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    },
+    {
+      "name": "cohesive_scalar_law",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    {
+      "name": "cohesive_derivative",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    {
+      "name": "cached_source_driver",
+      "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c"
+    }
+  ],
+  "cache_metadata_only": {
+    "declared_arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "actual_array_keys_from_case": [
+      "pure_I_q_solution",
+      "pure_I_q_exact",
+      "K_N_per_m",
+      "pure_I_boundary_force_N",
+      "physical_volume_moment_matrix",
+      "pure_I_physical_gauge_target_m",
+      "rigid_coefficient_modes"
+    ],
+    "array_contents_verified_in_this_review": false,
+    "case_declares_q_solution_separate_from_q_exact": true,
+    "producer_serialized_q_exact_source_line": 443,
+    "producer_serialized_q_solution_source_line": 458,
+    "array_file_bytes_from_existing_audit_metadata": 1569232,
+    "saved_cache_state": "RECOVERED_CACHE_FROM_FAILED_SERIALIZATION_DIAGNOSTIC_ONLY",
+    "existing_audit_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "existing_audit_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+    "existing_audit_spectrum_counts": {
+      "zero": 6,
+      "positive": 87,
+      "negative": 0
+    },
+    "existing_audit_pure_i_kkt_gate": true,
+    "existing_audit_pure_i_solution_reconstruction_gate": true,
+    "existing_audit_engineering_max_rel": 0.005431783182310989,
+    "physical_fracture_status": "UNKNOWN_NOT_ASSESSED"
+  },
+  "confirmed_case_contract": {
+    "source_count": 27,
+    "dof_count": 93,
+    "base_dofs": 81,
+    "global_front_dofs": 12,
+    "mls_queries": 16,
+    "interface_qps": 16,
+    "primitive_assembly_cap": 3,
+    "kkt_order": 99,
+    "kkt_solves": 1,
+    "expected_KG_82_82_N_per_m": 20000,
+    "actual_array_is_q_solution_not_q_exact": true,
+    "execution_authorized": false
+  },
+  "blocking_finding": {
+    "code": "NUMERICAL_BRIDGE_NOT_IMPLEMENTED_IN_REVIEWED_DRIVER",
+    "evidence": "mixed93_actual_cohesive_bridge.py:219-224 rejects --execute unconditionally; lines 287-302 emit SOURCE_READY from AST/metadata checks only",
+    "impact": "No actual MLS traces, rigid checks, cohesive assemblies, cache loading/scaling, 99-order KKT, spectrum, weak residual, energy, or force-sign acceptance is performed."
+  },
+  "producer_case_metadata": {
+    "case_status": "SOURCE_PREPARED_EXECUTION_NOT_AUTHORIZED",
+    "execution_authorized": true,
+    "authorized_by": "ROOT",
+    "authorized_utc": "2026-10-06T13:45:51Z",
+    "label_conflict": true,
+    "interpretation": "preserve as provenance clarification item"
+  }
+}

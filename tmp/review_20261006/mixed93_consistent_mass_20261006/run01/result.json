@@ -1,0 +1,250 @@
+{
+  "case_id": "mixed93_consistent_mass_20261006",
+  "component_block_difference_kg": 0.0,
+  "cross_component_max_abs_kg": 0.0,
+  "density_kg_m3": 1.0,
+  "density_status": "NOT_MATERIAL_CALIBRATED",
+  "elapsed_seconds_inside_checker": 0.062440799782052636,
+  "input_pins": {
+    "arrays_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\arrays.npz",
+    "arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "audit_source_sha256_after": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb",
+    "audit_source_sha256_before": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb",
+    "case_result_alias_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_saved_independent\\audit.json",
+    "case_result_alias_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "case_sha256_after": "56fcda7bc5bc39ea8d269e08d37dbce581cd4b5c318befc49f79a3415060d158",
+    "case_sha256_before": "56fcda7bc5bc39ea8d269e08d37dbce581cd4b5c318befc49f79a3415060d158",
+    "mass_source_sha256_after": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+    "mass_source_sha256_before": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+    "producer_result_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json",
+    "producer_result_sha256": null,
+    "recovery_gate_source_sha256_after": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e",
+    "recovery_gate_source_sha256_before": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e",
+    "recovery_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_saved_independent\\audit.json",
+    "recovery_json_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+  },
+  "mass_audit_gate_status": "PASS",
+  "matrix_shape": [
+    93,
+    93
+  ],
+  "matrix_units": "kg",
+  "producer_provenance": {
+    "case_result_alias_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_saved_independent\\audit.json",
+    "case_result_alias_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "dof_count": 93,
+    "failed_arrays_bytes": 1569232,
+    "failed_arrays_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\arrays.npz",
+    "failed_arrays_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "global_branch_count": 4,
+    "kkt_order": 99,
+    "physical_fracture_status": "UNKNOWN_NOT_ASSESSED",
+    "producer_elapsed_seconds": 0.6208375999704003,
+    "producer_failure_details": "c:\\users\\xiemo\\desktop\\shardforge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json metrics json serialization failed after npz save; result json absent",
+    "producer_result_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_cached_lefm_solve_20261006\\run01\\result.json",
+    "producer_result_json_present": false,
+    "producer_return_code": 1,
+    "recovery_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_saved_independent\\audit.json",
+    "recovery_json_sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "saved_cache_recovery_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED",
+    "saved_cache_state": "RECOVERED_CACHE_FROM_FAILED_SERIALIZATION_DIAGNOSTIC_ONLY",
+    "source_count": 27
+  },
+  "relative_raw_asymmetry": 4.423982465162535e-17,
+  "rigid_kinetic_block_units": {
+    "rotation_rotation": "kg m\u00b2",
+    "translation_rotation": "kg m",
+    "translation_translation": "kg"
+  },
+  "rigid_kinetic_centered_cylinder_analytic": [
+    [
+      3.1415926535897933e-06,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      3.1415926535897933e-06,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      3.1415926535897933e-06,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0471975511965979e-10,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0471975511965979e-10,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.5707963267948967e-10
+    ]
+  ],
+  "rigid_kinetic_direct_quadrature": [
+    [
+      3.1415926535897904e-06,
+      0.0,
+      0.0,
+      0.0,
+      -1.0420537013607478e-25,
+      1.937442383222805e-26
+    ],
+    [
+      0.0,
+      3.1415926535897904e-06,
+      0.0,
+      1.0420537013607478e-25,
+      0.0,
+      -2.0081748074285418e-23
+    ],
+    [
+      0.0,
+      0.0,
+      3.1415926535897904e-06,
+      -1.937442383222805e-26,
+      2.0081748074285418e-23,
+      0.0
+    ],
+    [
+      0.0,
+      1.0420537013607478e-25,
+      -1.937442383222805e-26,
+      1.0471975511965961e-10,
+      -1.117224257019258e-27,
+      -9.908092969575908e-28
+    ],
+    [
+      -1.0420537013607478e-25,
+      0.0,
+      2.0081748074285418e-23,
+      -1.887251108128118e-27,
+      1.0471975511965981e-10,
+      1.2942249226282225e-28
+    ],
+    [
+      1.937442383222805e-26,
+      -2.0081748074285418e-23,
+      0.0,
+      -4.417621069237666e-28,
+      -3.3679430272279573e-28,
+      1.5707963267948964e-10
+    ]
+  ],
+  "rigid_kinetic_errors": {
+    "analytic_inertia": 1.7279047185434503e-15,
+    "coefficient_projection": 6.740474025860935e-16,
+    "coefficient_source_reconstruction_max_abs": 6.424901762877063e-20,
+    "direct_quadrature": 1.6456235414699529e-16,
+    "volume": 5.392379220688742e-16
+  },
+  "rigid_kinetic_raw_M": [
+    [
+      3.141592653589792e-06,
+      0.0,
+      0.0,
+      0.0,
+      8.271806125530277e-25,
+      -7.237830359838992e-25
+    ],
+    [
+      0.0,
+      3.141592653589792e-06,
+      0.0,
+      -8.271806125530277e-25,
+      0.0,
+      -1.943874439499615e-23
+    ],
+    [
+      0.0,
+      0.0,
+      3.141592653589792e-06,
+      6.203854594147708e-25,
+      1.954214197156528e-23,
+      0.0
+    ],
+    [
+      0.0,
+      2.0679515313825692e-25,
+      8.271806125530277e-25,
+      1.0471975511965966e-10,
+      4.0389678347315804e-27,
+      2.0194839173657902e-28
+    ],
+    [
+      -2.0679515313825692e-25,
+      0.0,
+      1.954214197156528e-23,
+      6.462348535570529e-27,
+      1.0471975511965979e-10,
+      -4.0389678347315804e-28
+    ],
+    [
+      -8.271806125530277e-25,
+      -1.954214197156528e-23,
+      0.0,
+      -1.6155871338926322e-27,
+      -1.6155871338926322e-27,
+      1.5707963267948957e-10
+    ]
+  ],
+  "rigid_pointwise_error_by_mode_normalized": [
+    8.881784197001252e-16,
+    8.881784197001252e-16,
+    8.881784197001252e-16,
+    3.1031676915590914e-16,
+    5.430543460228409e-16,
+    6.071532165918825e-16
+  ],
+  "rigid_pointwise_error_max_normalized": 8.881784197001252e-16,
+  "rigid_pointwise_mode_scales": {
+    "rotation_scales_m": [
+      0.011180339887498949,
+      0.011180339887498949,
+      0.01
+    ],
+    "translation_dimensionless": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "scaled_spectrum": {
+    "cholesky_succeeded": true,
+    "maximum": 7.929741903836353,
+    "minimum": 7.800321617541476e-05,
+    "positive": 93,
+    "significant_negative": 0,
+    "tolerance": 1.0480022141575502e-11,
+    "zero": 0
+  },
+  "schema": "pgfrag.mixed93_consistent_mass_audit.v2",
+  "status": "MASS_DIAGNOSTIC_GATES_PASSED_PRODUCER_FAILURE_RETAINED",
+  "trace_kg": 1.148178970334846e-05,
+  "volume_m3": 3.1415926535897916e-06
+}

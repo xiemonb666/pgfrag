@@ -1,0 +1,262 @@
+diff --git a/tmp/review_20261005/visibility_resume/v2_snapshot/bond_visibility.py b/src/pgfrag/bond_visibility.py
+index 1861e56..a8f1bc3 100644
+--- a/tmp/review_20261005/visibility_resume/v2_snapshot/bond_visibility.py
++++ b/src/pgfrag/bond_visibility.py
+@@ -13,7 +13,7 @@ and ``UNKNOWN`` remain distinct in the returned static topology ledger.
+ from __future__ import annotations
+ 
+ from collections.abc import Iterable, Mapping, Sequence
+-from dataclasses import dataclass
++from dataclasses import dataclass, replace
+ import hashlib
+ import math
+ from numbers import Integral, Real
+@@ -70,14 +70,28 @@ def _finite_real(value: Any) -> bool:
+         return False
+ 
+ 
++def _valid_source_accuracy_basis(value: Any) -> str | None:
++    return value if isinstance(value, str) and value.strip() else None
++
++
+ def _safe_midpoint(low: float, high: float) -> float | None:
+-    """Return a finite midpoint without summing two large coordinates first."""
++    """Return a strict interior midpoint, or the point for a degenerate span."""
+     if not math.isfinite(low) or not math.isfinite(high):
+         return None
+-    # All segment parameters are non-negative, but the half-sum is also stable
+-    # for mixed-sign synthetic controls and avoids ``low + high`` overflow.
+-    result = low * 0.5 + high * 0.5
+-    return result if math.isfinite(result) else None
++    if low > high:
++        return None
++    if low == high:
++        return low
++    if low < 0.0 < high:
++        # The difference can overflow for opposite-sign extremes.
++        result = low * 0.5 + high * 0.5
++    else:
++        # Same-sign endpoints have a representable difference, even near the
++        # largest finite float; this form also preserves tiny equal parameters.
++        result = low + (high - low) * 0.5
++    if not math.isfinite(result) or not low < result < high:
++        return None
++    return result
+ 
+ 
+ def _interpolate_segment_point(
+@@ -157,6 +171,10 @@ def _unknown_source(
+     reasons: Iterable[str],
+     backend_versions: Mapping[str, str] | None = None,
+ ) -> CanonicalStepSource:
++    accuracy_basis = _valid_source_accuracy_basis(source_accuracy_basis)
++    reason_set = set(reasons)
++    if accuracy_basis is None:
++        reason_set.add("SOURCE_PRECISION_BASIS_MISSING")
+     return CanonicalStepSource(
+         source_path=source_path,
+         source_origin=source_origin,
+@@ -165,11 +183,11 @@ def _unknown_source(
+         source_length_unit=source_length_unit,
+         frame=frame,
+         source_accuracy_mm=source_accuracy_mm,
+-        source_accuracy_basis=source_accuracy_basis,
++        source_accuracy_basis=accuracy_basis,
+         shape=shape,
+         solids=solids,
+         status="UNKNOWN",
+-        unknown_reasons=tuple(sorted(set(reasons))),
++        unknown_reasons=tuple(sorted(reason_set)),
+         backend_versions=dict(backend_versions or {}),
+     )
+ 
+@@ -257,7 +275,8 @@ def _source_from_shape(
+         accuracy = None
+     else:
+         accuracy = float(source_accuracy_mm)
+-    if not isinstance(source_accuracy_basis, str) or not source_accuracy_basis.strip():
++    accuracy_basis = _valid_source_accuracy_basis(source_accuracy_basis)
++    if accuracy_basis is None:
+         reasons.append("SOURCE_PRECISION_BASIS_MISSING")
+ 
+     try:
+@@ -299,7 +318,7 @@ def _source_from_shape(
+         source_length_unit=source_length_unit,
+         frame=frame if isinstance(frame, str) else None,
+         source_accuracy_mm=accuracy,
+-        source_accuracy_basis=source_accuracy_basis,
++        source_accuracy_basis=accuracy_basis,
+         shape=shape,
+         solids=solid_records,
+         status="READY" if not clean_reasons else "UNKNOWN",
+@@ -393,7 +412,7 @@ def load_canonical_step(
+         source_length_unit=source_length_unit,
+         frame=frame,
+         source_accuracy_mm=inspected.source_accuracy_mm,
+-        source_accuracy_basis=source_accuracy_basis,
++        source_accuracy_basis=inspected.source_accuracy_basis,
+         shape=imported_shape,
+         solids=inspected.solids,
+         status=inspected.status,
+@@ -670,15 +689,17 @@ def _pair_intervals(
+             continue
+         midpoint_t = _safe_midpoint(start_t, end_t)
+         if midpoint_t is None:
+-            reasons.append("NUMERIC_RANGE_OVERFLOW_INTERVAL_MIDPOINT")
++            midpoint_reason = "NUMERIC_RANGE_INTERVAL_MIDPOINT_UNAVAILABLE"
++            reasons.append(midpoint_reason)
+             midpoint = None
+         else:
++            midpoint_reason = None
+             midpoint = _segment_interval_point(start_mm, end_mm, midpoint_t, length_mm)
+             if midpoint is None:
+                 reasons.append("NUMERIC_RANGE_OVERFLOW_INTERVAL_POINT")
+         if midpoint is None:
+             occupancy, domain_id, solid_states = "UNKNOWN", None, []
+-            reason = "NUMERIC_RANGE_OVERFLOW_INTERVAL_POINT"
++            reason = midpoint_reason or "NUMERIC_RANGE_OVERFLOW_INTERVAL_POINT"
+         elif uncertainty_band_mm is None:
+             occupancy, domain_id, solid_states = "UNKNOWN", None, []
+             reason = uncertainty_band_reason or "SOURCE_PRECISION_UNKNOWN"
+@@ -748,6 +769,16 @@ def classify_candidate_pairs(
+     """
+     if not _finite_real(distance_tolerance_mm) or float(distance_tolerance_mm) <= 0.0:
+         raise ValueError("distance_tolerance_mm must be finite and positive")
++    accuracy_basis = _valid_source_accuracy_basis(source.source_accuracy_basis)
++    if accuracy_basis is None:
++        source = replace(
++            source,
++            source_accuracy_basis=None,
++            status="UNKNOWN",
++            unknown_reasons=tuple(
++                sorted(set(source.unknown_reasons) | {"SOURCE_PRECISION_BASIS_MISSING"})
++            ),
++        )
+     if reference_frame != source.frame:
+         raise ValueError("reference_frame must exactly match the canonical STEP frame")
+     raw_ids = list(reference_point_ids)
+diff --git a/tmp/review_20261005/visibility_resume/v2_snapshot/test_bond_visibility.py b/tests/test_bond_visibility.py
+index 7fda1d7..8c58ba2 100644
+--- a/tmp/review_20261005/visibility_resume/v2_snapshot/test_bond_visibility.py
++++ b/tests/test_bond_visibility.py
+@@ -338,6 +338,120 @@ class BondVisibilityPureMathRegressionTests(unittest.TestCase):
+                 self.assertEqual(pair["reason"], "UNRESOLVED_NEARBY_BOUNDARY_HITS")
+                 json.dumps(result, allow_nan=False)
+ 
++    def test_subnormal_hit_is_retained_and_missing_interval_midpoint_is_unknown(self) -> None:
++        smallest = math.ulp(0.0)
++        self.assertEqual(_safe_midpoint(smallest, smallest), smallest)
++        self.assertIsNone(_safe_midpoint(0.0, smallest))
++        self.assertIsNone(_safe_midpoint(smallest, math.nextafter(smallest, math.inf)))
++
++        source = CanonicalStepSource(
++            source_path=None,
++            source_origin="IN_MEMORY_TEST_FIXTURE",
++            source_geometry_sha256=None,
++            expected_sha256=None,
++            source_length_unit="mm",
++            frame=FRAME,
++            source_accuracy_mm=0.0,
++            source_accuracy_basis="pure math subnormal midpoint control",
++            shape=object(),
++            solids=(MaterialSolid(0, "solid-0", object(), (object(),)),),
++            status="READY",
++            unknown_reasons=(),
++            backend_versions={"ocp": "not-called"},
++        )
++        hit = self._hit(smallest)
++        with patch(
++            "pgfrag.bond_visibility._collect_raw_hits",
++            return_value=([hit], []),
++        ), patch(
++            "pgfrag.bond_visibility._point_classifier_state",
++            return_value="IN",
++        ):
++            result = classify_candidate_pairs(
++                source,
++                reference_point_ids=[1, 2],
++                reference_positions_mm=[(0.0, 0.0, 0.0), (1.0, 0.0, 0.0)],
++                point_material_domain_ids=["solid-0", "solid-0"],
++                candidate_pairs=[(1, 2)],
++                reference_frame=FRAME,
++                distance_tolerance_mm=1.0e-6,
++            )
++
++        pair = result["pairs"][0]
++        self.assertEqual(pair["raw_hits"][0]["parameter_mm_from_canonical_pair_start"], smallest)
++        self.assertEqual(pair["hit_events"][0]["parameter_mm"], smallest)
++        self.assertEqual(pair["classification"], "UNKNOWN")
++        self.assertEqual(pair["reason"], "NUMERIC_RANGE_INTERVAL_MIDPOINT_UNAVAILABLE")
++        self.assertFalse(pair["admissible_static_candidate"])
++        json.dumps(result, allow_nan=False)
++
++    def test_invalid_source_accuracy_basis_is_json_safe_and_fail_closed(self) -> None:
++        for invalid_basis in (float("nan"), [], {}):
++            with self.subTest(invalid_basis_type=type(invalid_basis).__name__):
++                with patch(
++                    "pgfrag.bond_visibility._occ_topology",
++                    return_value=((object(),), ()),
++                ), patch(
++                    "pgfrag.bond_visibility._solid_faces",
++                    return_value=(),
++                ):
++                    inspected = _source_from_shape(
++                        object(),
++                        source_length_unit="mm",
++                        frame=FRAME,
++                        source_accuracy_mm=0.01,
++                        source_accuracy_basis=invalid_basis,
++                    )
++                self.assertEqual(inspected.status, "UNKNOWN")
++                self.assertIsNone(inspected.source_accuracy_basis)
++                self.assertIn("SOURCE_PRECISION_BASIS_MISSING", inspected.unknown_reasons)
++                json.dumps(
++                    {"source_accuracy_basis": inspected.source_accuracy_basis},
++                    allow_nan=False,
++                )
++
++                source = CanonicalStepSource(
++                    source_path=None,
++                    source_origin="IN_MEMORY_TEST_FIXTURE",
++                    source_geometry_sha256=None,
++                    expected_sha256=None,
++                    source_length_unit="mm",
++                    frame=FRAME,
++                    source_accuracy_mm=0.01,
++                    source_accuracy_basis=invalid_basis,
++                    shape=object(),
++                    solids=(MaterialSolid(0, "solid-0", object(), (object(),)),),
++                    status="READY",
++                    unknown_reasons=(),
++                    backend_versions={"ocp": "not-called"},
++                )
++                with patch(
++                    "pgfrag.bond_visibility._collect_raw_hits",
++                    return_value=([], []),
++                ), patch(
++                    "pgfrag.bond_visibility._point_classifier_state",
++                    return_value="IN",
++                ):
++                    result = classify_candidate_pairs(
++                        source,
++                        reference_point_ids=[1, 2],
++                        reference_positions_mm=[(0.0, 0.0, 0.0), (2.0, 0.0, 0.0)],
++                        point_material_domain_ids=["solid-0", "solid-0"],
++                        candidate_pairs=[(1, 2)],
++                        reference_frame=FRAME,
++                        distance_tolerance_mm=1.0e-4,
++                    )
++                pair = result["pairs"][0]
++                self.assertEqual(result["source"]["status"], "UNKNOWN")
++                self.assertIsNone(result["source"]["source_accuracy_basis"])
++                self.assertIn(
++                    "SOURCE_PRECISION_BASIS_MISSING",
++                    result["source"]["unknown_reasons"],
++                )
++                self.assertEqual(pair["classification"], "UNKNOWN")
++                self.assertFalse(pair["admissible_static_candidate"])
++                json.dumps(result, allow_nan=False)
++
+     def test_numeric_range_failures_are_unknown_and_json_finite(self) -> None:
+         band, reason = _combined_uncertainty_band(1.0e308, 1.0e308)
+         self.assertIsNone(band)

@@ -1,0 +1,32 @@
+{
+  "artifact_kind": "headless-precompile-workload-fix candidate freeze",
+  "created_utc": "2026-10-04",
+  "execution_status": "static-only; no Julia/import/precompile/solver/test executed",
+  "baseline": {
+    "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/precompile_workload.jl",
+    "source_sha256": "c1caeee907c1e9279bc32721c4e5a11e4f20e655413acdaeb5175938acd29dcb",
+    "package_project": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/Project.toml",
+    "package_project_sha256": "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986",
+    "package_uuid": "4dc47793-80f3-4232-b30e-ca78ca9d621b",
+    "package_version": "0.5.4+pgfrag.1",
+    "resource_project": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+    "resource_project_sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+    "resource_manifest": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+    "resource_manifest_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+    "peridynamics_manifest_path": "vendor/Peridynamics.jl",
+    "run01_stderr": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.stderr.log",
+    "run01_stderr_sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee"
+  },
+  "candidate": {
+    "source": "pgfrag/experiments/headless_precompile_workload_fix_20261004/precompile_workload.jl",
+    "source_sha256": "6165f905f8d46b397e500152a11b1eb9b71902c3ef9a47df4ad40ffdd3cadcb9",
+    "package_version_marker_for_isolated_copy": "0.5.4+pgfrag.1.headlessprecompilefix.20261004",
+    "patch": "pgfrag/tmp/review_20261004/headless_precompile_workload_fix/baseline_to_candidate.patch",
+    "patch_sha256": "1521591ca92899d0ebd2009364725189907c8e6269bee3a518e5696545a9ac50",
+    "static_review": "pgfrag/tmp/review_20261004/headless_precompile_workload_fix/STATIC_REVIEW.md",
+    "static_review_sha256": "6bd47b0b9455b649eceec99375cb9bcdac61bb9d81901031c6eec7a0a322d48c",
+    "isolated_plan": "pgfrag/tmp/review_20261004/headless_precompile_workload_fix/ISOLATED_IMPORT_PLAN.md",
+    "isolated_plan_sha256": "8b879cd34d9fdced4e8312471ffc43f1f751b0c3edeef3590786340a809bcc96",
+    "runtime_validation": "not run; parent review required before any isolated import/precompile"
+  }
+}

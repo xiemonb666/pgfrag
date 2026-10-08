@@ -1,0 +1,305 @@
+{
+  "review": "pgfrag_bond_visibility_v3_resume",
+  "recorded_utc": "2026-10-04T19:04:58.862Z",
+  "source_test": {
+    "source": {
+      "path": "pgfrag/src/pgfrag/bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "pgfrag/tests/test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    },
+    "v2_baseline_source_sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+    "v2_baseline_test_sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+    "diff": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_diff.patch",
+      "sha256": "152290ba345635c0d012c1d04b04804dcfeb5c220009fb90e0618c84716a3b3b",
+      "byte_length": 11934
+    },
+    "freeze_manifest": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_freeze_manifest.json",
+      "sha256": "56293566e48baf0ef0bdcf03491031fc14da1402d8aabd440b9ac1b9ad19b8d4",
+      "byte_length": 10724
+    }
+  },
+  "algorithm": "Authenticate current canonical STEP bytes, find all OCC face hits on each finite candidate segment, retain the raw hits, cluster only as diagnostic events, classify each open interval against every material solid, and emit reciprocal records for one canonical undirected pair. Distinct parameters in one unresolved hit cluster force UNKNOWN; endpoint IN states alone never admit a segment across a void.",
+  "v2_execution_audit": {
+    "exit_code": 0,
+    "tests": "8/8 passed",
+    "run_result": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/run_result.json",
+      "sha256": "872b093eac113be2ad13d98e5185d6e56c8c7ec02537028f8b8cf47b431757ce",
+      "byte_length": 192
+    },
+    "junit": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/junit.xml",
+      "sha256": "8912a45c220a2ff12d91e1257408fd59bf19483f5450298ecb1d5b4505339581",
+      "byte_length": 1579
+    },
+    "freeze_manifest_note": "The old v2 freeze says execution_performed=false at freeze time; a later separate run receipt/JUnit proves the bounded v2 invocation completed. Both historical artifacts are preserved.",
+    "raw_hit_interval_sidecar": {
+      "status": "NOT_RECORDED",
+      "sha256": null
+    },
+    "cache_risk": "v2 disabled pytest cache and bytecode writes, but the historical receipt did not pin __pycache__ at execution time; -B does not forbid reading a pre-existing .pyc."
+  },
+  "v3_bounded_pytest": {
+    "exit_code": 0,
+    "tests": "10/10 passed",
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "retry_count": 0,
+    "runtime": {
+      "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+      "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "pytest_version": "8.4.2",
+      "cadquery_version": "2.8.0",
+      "ocp_version": "7.9.3.1",
+      "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+      "argv": [
+        "-p",
+        "no:cacheprovider",
+        "-p",
+        "capture_visibility",
+        "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\junit.xml",
+        "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests",
+        "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+        "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+        "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+      ],
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src;C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "pytest_cache_provider_disabled": true,
+        "python_dont_write_bytecode": true
+      }
+    },
+    "source_test_pins_before": {
+      "source": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+        "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+        "byte_length": 47533
+      },
+      "test": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+        "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+        "byte_length": 24244
+      }
+    },
+    "source_test_pins_after": {
+      "source": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+        "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+        "byte_length": 47533
+      },
+      "test": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+        "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+        "byte_length": 24244
+      }
+    },
+    "execution_receipt": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_run/execution_receipt.json",
+      "sha256": "72c0e7046e215fd37d8fad99642c08d92930ed6fa8677f5bdc66db331118aecb",
+      "byte_length": 4865
+    },
+    "junit": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_run/junit.xml",
+      "sha256": "b79cb57a56cf41be0edc1b5609860a310a66add901093b9ec76ad58584b7e5f1",
+      "byte_length": 1934
+    },
+    "stdout": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_run/stdout.txt",
+      "sha256": "2c5ffeebb917bf25bf275c1a271001893fb45c2f21bae5994d2452e7a9454908",
+      "byte_length": 1907
+    },
+    "stderr": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_run/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "classification_sidecar": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_run/geometry_classification_sidecar.json",
+      "sha256": "6fd986140b88c8f5f330e8c28246be044791d6e8d54cfc5b952baf34c01c4017",
+      "byte_length": 38403
+    },
+    "geometry_calls_captured": 4,
+    "geometry_observations": [
+      "Hollow shell with both endpoints inside: raw hits at 2 and 14 mm, open intervals IN_MATERIAL / OUT_OR_VOID / IN_MATERIAL, final OUT_OR_VOID/AIR_PATH.",
+      "Full hollow shell line: all four hits at 1, 5, 17, 21 mm retained and five intervals OUT / IN / OUT / IN / OUT.",
+      "Same-wall segment and solid coupon each remain IN_MATERIAL; reciprocal directions agree."
+    ],
+    "cache": {
+      "pytest_cache_provider_disabled": true,
+      "python_B_and_dont_write_bytecode": true,
+      "target_module_pyc_before": [],
+      "target_module_pyc_after": [],
+      "target_test_pyc_before": [],
+      "target_test_pyc_after": [],
+      "current_target_module_pyc": [],
+      "current_target_test_pyc": [],
+      "actual_module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py"
+    },
+    "no_step_export_import": true,
+    "no_native_solver": true
+  },
+  "canonical_step_tinyprobe": {
+    "probe_status": "EXPECTED_PAIR_CLASSIFICATIONS",
+    "exit_code": 0,
+    "retry_count": 0,
+    "load_canonical_step_call_count": 1,
+    "classify_candidate_pairs_call_count": 1,
+    "runtime": {
+      "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+      "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "cadquery_version": "2.8.0",
+      "ocp_version": "7.9.3.1",
+      "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+      "runner_argv": [
+        "C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        ".\\pgfrag\\tmp\\review_20261005\\visibility_resume\\run_vf_v4tube_step_probe.py"
+      ],
+      "python_dont_write_bytecode": true
+    },
+    "declarations": {
+      "source_length_unit": "mm",
+      "frame": "right_handed_z_up",
+      "source_accuracy_mm": 1E-07,
+      "source_accuracy_basis": "declared modeler CAD test resolution 1e-7 mm for this loader probe only; not a measured physical material accuracy",
+      "distance_tolerance_mm": 0.0001,
+      "material_domain_id": "solid-0"
+    },
+    "step_asset_pre_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+      "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "byte_length": 9412
+    },
+    "step_asset_post_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+      "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "byte_length": 9412
+    },
+    "asset_manifest_and_wall_reference_pins": {
+      "manifest": {
+        "path": "vesselforge/tmp/review_20261004/wall_mesh_binding/v4_run/cylinder_asset_run01/manifest.json",
+        "sha256": "31a6d35ff2ae28780a5c9ec8ca330398039f509ffc69c0f66522e7e0a4ac4d0f",
+        "byte_length": 5108
+      },
+      "wall_reference": {
+        "path": "vesselforge/tmp/review_20261004/wall_mesh_binding/v4_run/cylinder_asset_run01/metadata/wall_reference.json",
+        "sha256": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+        "byte_length": 4717
+      }
+    },
+    "source_test_pins_before": {
+      "source": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+        "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+        "byte_length": 47533
+      },
+      "test": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+        "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+        "byte_length": 24244
+      }
+    },
+    "source_test_pins_after": {
+      "source": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+        "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+        "byte_length": 47533
+      },
+      "test": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+        "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+        "byte_length": 24244
+      }
+    },
+    "runner": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/run_vf_v4tube_step_probe.py",
+      "sha256": "ffc1dda7ce015b9f49943865d5db137dc2d7e1a0c6495d4aa3b92a88c632c68b",
+      "byte_length": 10175
+    },
+    "receipt": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/vf_v4tube_step_probe/execution_receipt.json",
+      "sha256": "5c418feb3d7f6b63befcd5c7f3427c45a019e199767f1517dae72b6ab24eb1be",
+      "byte_length": 3839
+    },
+    "full_result_and_raw_interval_sidecar": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/vf_v4tube_step_probe/probe_result.json",
+      "sha256": "914de75bd0e642bf69fa437cde1da86947a50188d09041df3baecaa2146c34c1",
+      "byte_length": 17716
+    },
+    "pair_results": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "classification": "IN_MATERIAL",
+        "reason": "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN",
+        "endpoint_states": [
+          "IN_MATERIAL",
+          "IN_MATERIAL"
+        ],
+        "raw_hit_parameters_mm": [],
+        "raw_hit_points_mm": [],
+        "interval_occupancy": [
+          "IN_MATERIAL"
+        ],
+        "reciprocal_same_classification": true,
+        "admissible_static_candidate": true
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "classification": "OUT_OR_VOID",
+        "reason": "AIR_PATH",
+        "endpoint_states": [
+          "IN_MATERIAL",
+          "IN_MATERIAL"
+        ],
+        "raw_hit_parameters_mm": [
+          1.0,
+          17.0
+        ],
+        "raw_hit_points_mm": [
+          8.0,
+          0.0,
+          5.0,
+          -8.0,
+          0.0,
+          5.0
+        ],
+        "interval_occupancy": [
+          "IN_MATERIAL",
+          "OUT_OR_VOID",
+          "IN_MATERIAL"
+        ],
+        "reciprocal_same_classification": true,
+        "admissible_static_candidate": false
+      }
+    ],
+    "scope": {
+      "step_import_count": 1,
+      "step_export_count": 0,
+      "mesh_tessellation_count": 0,
+      "native_solver_or_graph_mutation": false,
+      "pair_count_requested": 2,
+      "retry_count": 0
+    }
+  },
+  "open_gate": "PENDING: this is pair-level static evidence only. Native graph remains disconnected; whole_asset_physics_status is NOT_ASSESSED. No asset-level UNKNOWN gate or proof of post-filter neighbor/bond/correction/kernel/storage construction is implemented.",
+  "accuracy_limit": "The STEP probe explicitly records 1e-7 mm as a caller-declared CAD test resolution, not a measured physical material accuracy."
+}

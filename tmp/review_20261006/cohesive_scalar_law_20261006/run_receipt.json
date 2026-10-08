@@ -1,0 +1,54 @@
+{
+  "artifact_kind": "scalar_mode_i_bilinear_cohesive_review_fixture",
+  "implementation": "cohesive_scalar_law.py",
+  "status": "PASS",
+  "fixture_warning": "Illustrative software fixture only; not a ceramic material calibration.",
+  "units": {
+    "opening": "m",
+    "k0": "Pa/m",
+    "tpeak": "Pa",
+    "gc_and_energy_per_area": "J/m^2"
+  },
+  "parameters": {
+    "k0_pa_per_m": 1000000000000.0,
+    "tpeak_pa": 10000000.0,
+    "gc_j_per_m2": 100.0,
+    "delta0_m": 1e-05,
+    "deltaf_m": 2e-05
+  },
+  "limits": {
+    "compression": "UNKNOWN / unsupported",
+    "mixed_mode": "UNKNOWN / unsupported",
+    "rate_dependence": "not represented",
+    "front_coupling_or_solver": "not implemented"
+  },
+  "reference_basis": [
+    {
+      "citation": "Zhang, Z. and Paulino, G.H. (2005), Cohesive zone modeling of dynamic failure in homogeneous and functionally graded materials, International Journal of Plasticity 21, 1195-1254, doi:10.1016/j.ijplas.2004.06.009.",
+      "url": "https://paulino.princeton.edu/journal_papers/2005/IJP_05_CohesiveZoneModeling.pdf",
+      "use": "Primary source for a traction-based bilinear cohesive law and use of maximum separation history for irreversibility; the present API narrows it to scalar opening-only."
+    },
+    {
+      "citation": "Alfano, M. et al. (2009), Mode I fracture of adhesive joints using tailored cohesive zone models, International Journal of Fracture 157, 193-204, doi:10.1007/s10704-009-9344-9.",
+      "url": "https://paulino.princeton.edu/journal_papers/2009/IJF_09_ModeIFracture.pdf",
+      "use": "Equations (5)-(6) state the initial linear branch, linear softening branch, and Gc = sigma_cr delta_f / 2 area relation; used as a directly inspectable formula reference.",
+      "note": "This is a peer-reviewed implementation/formulation reference, not the original first proposal."
+    },
+    {
+      "citation": "Hillerborg, A., Modeer, M. and Petersson, P.-E. (1976), Analysis of crack formation and crack growth in concrete by means of fracture mechanics and finite elements, Cement and Concrete Research 6, 773-782.",
+      "url": "https://www.codil.or.kr/filebank/original/RK/OTMCRK500148/OTMCRK500148.pdf",
+      "use": "Foundational fictitious-crack/fracture-energy concept; cited for context, not as the precise modern bilinear parameterization."
+    }
+  ],
+  "run_receipt": {
+    "sample_count": 149,
+    "sample_limit": 256,
+    "samples_bounded": true,
+    "peak_traction_pa": 9969230.76923077,
+    "final_damage": 0.9583333333333334,
+    "final_kappa_m": 1.9200000000000003e-05,
+    "final_dissipated_energy_j_per_m2": 92.0,
+    "maximum_abs_energy_ledger_error_j_per_m2": 8.526512829121202e-14,
+    "minimum_dissipation_increment_j_per_m2": 0.0
+  }
+}

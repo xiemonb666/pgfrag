@@ -1,0 +1,75 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_render_only_execution_receipt.v1",
+  "status": "COMPLETED",
+  "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\render_only_grid_colorbar_fix.py"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005",
+  "started_utc": "2026-10-05T11:32:50.7478065Z",
+  "finished_utc": "2026-10-05T11:32:51.9964623Z",
+  "elapsed_seconds": 1.2336149,
+  "timeout_seconds": 28,
+  "timed_out": false,
+  "return_code": 0,
+  "pre_hashes": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\render_only_grid_colorbar_fix.py",
+      "sha256": "2ad6930288692065d43a6dfb7b339e797e26a645b2189794330c2e71da2f893d",
+      "bytes": 10089
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_ACTUAL_AUDIT.json",
+      "sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f",
+      "bytes": 12165
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_CELL_AUDIT.csv",
+      "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5",
+      "bytes": 35386
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_POINT_AUDIT.csv",
+      "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74",
+      "bytes": 26152
+    }
+  ],
+  "post_hashes": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\render_only_grid_colorbar_fix.py",
+      "sha256": "2ad6930288692065d43a6dfb7b339e797e26a645b2189794330c2e71da2f893d",
+      "bytes": 10089
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_ACTUAL_AUDIT.json",
+      "sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f",
+      "bytes": 12165
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_CELL_AUDIT.csv",
+      "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5",
+      "bytes": 35386
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_POINT_AUDIT.csv",
+      "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74",
+      "bytes": 26152
+    }
+  ],
+  "script_and_three_inputs_unchanged": true,
+  "stdout": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_STDOUT.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\RENDER_ONLY_STDERR.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "numeric_audit_json_or_csv_modified": false,
+  "cad_producer_solver_invoked": false
+}

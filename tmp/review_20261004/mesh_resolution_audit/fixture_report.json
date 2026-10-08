@@ -1,0 +1,241 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v1",
+  "scope": "pure mathematical tetra geometry and declared scale audit; no CAD, solver, fracture, or physical validation",
+  "units": {
+    "coordinates": "m",
+    "lengths": "m",
+    "signed_tetrahedron_volume": "m^3",
+    "ratios": "dimensionless"
+  },
+  "input_integrity": {
+    "vertex_count": 12,
+    "tetrahedron_count": 4,
+    "nonfinite_vertex_count": 0,
+    "invalid_index_cell_count": 0,
+    "nonfinite_coordinate_cell_count": 0,
+    "numeric_unstable_cell_count": 0,
+    "has_invalid_indices": false,
+    "has_nonfinite_vertices": false
+  },
+  "tetra_geometry": {
+    "signed_volume_m3": {
+      "count": 4,
+      "min": -1.178511301977579e-10,
+      "p01": -1.1431559629182516e-10,
+      "p05": -1.0017346066809421e-10,
+      "median": 8.333333333333335e-24,
+      "p95": 1.001734606680967e-10,
+      "p99": 1.1431559629182565e-10,
+      "max": 1.1785113019775793e-10
+    },
+    "signed_orientation_counts": {
+      "positive": 2,
+      "negative": 1,
+      "zero": 1,
+      "unknown": 0
+    },
+    "all_signed_orientations_positive": false,
+    "negative_orientation_is_reported_separately_from_degeneracy": true,
+    "zero_volume_count": 1,
+    "near_degenerate_count": 1,
+    "numerical_degeneracy_ratio_threshold": 1e-12,
+    "pooled_tetra_edge_length_m": {
+      "count": 24,
+      "min": 0.0,
+      "p01": 0.00016263455967290594,
+      "p05": 0.0007071067811865475,
+      "median": 0.001,
+      "p95": 0.0010000000000000002,
+      "p99": 0.001318944443027283,
+      "max": 0.001414213562373095
+    },
+    "per_tetra_maximum_edge_m": {
+      "count": 4,
+      "min": 0.001,
+      "p01": 0.001,
+      "p05": 0.001,
+      "median": 0.001,
+      "p95": 0.0013520815280171307,
+      "p99": 0.001401787155501902,
+      "max": 0.001414213562373095
+    },
+    "minimum_tetra_height_m": {
+      "count": 4,
+      "min": 0.0,
+      "p01": 2.9999999999999994e-18,
+      "p05": 1.5e-17,
+      "median": 0.00040824829046391285,
+      "p95": 0.0008164965809277261,
+      "p99": 0.0008164965809277261,
+      "max": 0.0008164965809277261
+    },
+    "mesh_characteristic_h_m": {
+      "value": 0.0013520815280171307,
+      "definition": "p95 of per-tetra maximum edge length; used only as a declared geometric comparison scale",
+      "median_per_tetra_maximum_edge_m": 0.001
+    },
+    "cell_status_counts": {
+      "NEAR_DEGENERATE": 1,
+      "NEGATIVE_ORIENTATION": 1,
+      "OK": 1,
+      "ZERO_VOLUME": 1
+    },
+    "per_cell": [
+      {
+        "cell_index": 0,
+        "status": "OK",
+        "orientation": "POSITIVE",
+        "signed_volume_m3": 1.1785113019775793e-10,
+        "minimum_height_m": 0.0008164965809277261,
+        "maximum_edge_m": 0.001
+      },
+      {
+        "cell_index": 1,
+        "status": "NEAR_DEGENERATE",
+        "orientation": "POSITIVE",
+        "signed_volume_m3": 1.666666666666667e-23,
+        "minimum_height_m": 9.999999999999999e-17,
+        "maximum_edge_m": 0.001414213562373095
+      },
+      {
+        "cell_index": 2,
+        "status": "NEGATIVE_ORIENTATION",
+        "orientation": "NEGATIVE",
+        "signed_volume_m3": -1.178511301977579e-10,
+        "minimum_height_m": 0.0008164965809277257,
+        "maximum_edge_m": 0.0010000000000000002
+      },
+      {
+        "cell_index": 3,
+        "status": "ZERO_VOLUME",
+        "orientation": "ZERO",
+        "signed_volume_m3": 0.0,
+        "minimum_height_m": 0.0,
+        "maximum_edge_m": 0.001
+      }
+    ]
+  },
+  "resolution_policy": {
+    "status": "VALID_NAMED_POLICY",
+    "id": "mesh-resolution-review-fixture-v1",
+    "basis": "hand-constructed policy thresholds for exercising explicit scale comparisons only",
+    "limits_are_design_inputs_not_universal_physical_constants": true
+  },
+  "wall_resolution": {
+    "evidence_status": "SOURCE_DOCUMENTED_GLOBAL_INTERVAL",
+    "scope": "global_interval",
+    "thickness_interval_m": [
+      0.0002,
+      0.0003
+    ],
+    "definition": "synthetic source-backed outer-to-inner wall thickness interval for the audit fixture",
+    "source": "hand-constructed review fixture; not a physical specimen measurement",
+    "h_to_wall": {
+      "definition": "p95 across per-cell maximum edge lengths divided by the lower bound of the source-backed wall thickness interval",
+      "value": 6.760407640085653,
+      "policy_assessment": {
+        "status": "RESOLUTION_INSUFFICIENT",
+        "ratio": 6.760407640085653,
+        "maximum_ratio": 0.5,
+        "reason": "RATIO_EXCEEDS_EXPLICIT_POLICY_LIMIT"
+      }
+    },
+    "global_wall_status": "SOURCE_DOCUMENTED_GLOBAL_INTERVAL",
+    "local_normal_projection": {
+      "evidence_status": "SOURCE_DOCUMENTED_LOCAL_NORMAL_MAP",
+      "definition": "per-cell maximum absolute projection of the six tetra edge vectors onto the supplied unit wall normal; no maximum-edge substitute is used",
+      "normal_map_coverage_fraction_of_valid_cells": 1.0,
+      "normal_map_coverage_count": 4,
+      "projected_edge_m_quantiles": {
+        "count": 4,
+        "min": 0.001,
+        "p01": 0.001,
+        "p05": 0.001,
+        "median": 0.001,
+        "p95": 0.001,
+        "p99": 0.001,
+        "max": 0.001
+      },
+      "projected_edge_over_local_wall_quantiles": {
+        "count": 4,
+        "min": 5.0,
+        "p01": 5.0,
+        "p05": 5.0,
+        "median": 5.0,
+        "p95": 5.0,
+        "p99": 5.0,
+        "max": 5.0
+      },
+      "policy_assessment": {
+        "status": "RESOLUTION_INSUFFICIENT",
+        "ratio": 5.0,
+        "maximum_ratio": 0.5,
+        "reason": "RATIO_EXCEEDS_EXPLICIT_POLICY_LIMIT"
+      },
+      "definition_source": "synthetic local wall-normal vectors mapped by tetra cell index",
+      "mapping_source": "hand-constructed review fixture; diagnostic geometry only"
+    }
+  },
+  "process_zone_resolution": {
+    "evidence_status": "SOURCE_DOCUMENTED",
+    "length_m": 0.0008,
+    "definition": "independent synthetic process-zone length supplied for scale comparison",
+    "source": "hand-constructed review fixture; not a calibrated material length",
+    "h_to_process_zone": {
+      "definition": "p95 across per-cell maximum edge lengths divided by the separately supplied process-zone length",
+      "value": 1.6901019100214132,
+      "policy_assessment": {
+        "status": "RESOLUTION_INSUFFICIENT",
+        "ratio": 1.6901019100214132,
+        "maximum_ratio": 0.5,
+        "reason": "RATIO_EXCEEDS_EXPLICIT_POLICY_LIMIT"
+      }
+    }
+  },
+  "pd_horizon": {
+    "horizon_m": 0.0003,
+    "status": "INPUT_REPORTED",
+    "delta_over_h": 0.22188011135686414,
+    "h_over_delta": 4.506938426723769,
+    "delta_over_wall_lower_bound": 1.4999999999999998,
+    "h_over_delta_policy_assessment": {
+      "status": "RESOLUTION_INSUFFICIENT",
+      "ratio": 4.506938426723769,
+      "maximum_ratio": 0.5,
+      "reason": "RATIO_EXCEEDS_EXPLICIT_POLICY_LIMIT"
+    },
+    "independence_note": "PD horizon delta is reported only from pd_horizon_m; it is never used as a process-zone length."
+  },
+  "directional_diagnostics": {
+    "tetra_edge_direction_tensor": {
+      "status": "DIAGNOSTIC_ONLY",
+      "edge_occurrence_count": 23,
+      "unoriented_unit_edge_second_moment": [
+        [
+          0.42391304347826086,
+          -0.024651621656860058,
+          4.332283324352513e-15
+        ],
+        [
+          -0.024651621656860058,
+          0.40217391304347816,
+          4.34917802255333e-15
+        ],
+        [
+          4.332283324352513e-15,
+          4.34917802255333e-15,
+          0.17391304347826086
+        ]
+      ],
+      "eigenvalues_ascending": [
+        0.17391304347826086,
+        0.3861018766320113,
+        0.43998507988972774
+      ],
+      "eigenvalue_max_over_min": 2.5299142093659346
+    },
+    "single_mesh_crack_direction_bias_status": "UNKNOWN",
+    "independent_layout_and_native_case_status": "UNKNOWN",
+    "interpretation_limit": "A single mesh edge tensor or edge-direction distribution cannot establish unbiased crack direction. Independent layouts and native-case fracture results require separate validation."
+  }
+}

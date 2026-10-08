@@ -1,0 +1,29 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v2_run_receipt.v1",
+  "execution_count": 1,
+  "pytest_rerun": false,
+  "argv_path": "argv.json",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "stdout": {
+    "path": "stdout.txt",
+    "sha256": "761fb5009c54c7e15eeaa629258a5a8928dfca03073a01665f4e7528b657ff86",
+    "bytes": 934
+  },
+  "stderr": {
+    "path": "stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "exit_code": 1,
+  "junit": {
+    "path": "junit.xml",
+    "sha256": "df8d25ccfe9519fd4ec21c34ad340e7e228b4766786f1f9588853f8b22f77a44",
+    "bytes": 2428,
+    "testcase_count": 11,
+    "distinct_case_id_count": 11,
+    "case_ids_unique": true
+  },
+  "source_and_test_hashes_unchanged": true,
+  "all_nine_freeze_pins_match_after_run": true,
+  "result_note": "One test failed because the test fixture expected a regular tetrahedron with edge 1e103 m to overflow; its geometric volume factor makes that volume representable. No source or test edits and no rerun were performed."
+}

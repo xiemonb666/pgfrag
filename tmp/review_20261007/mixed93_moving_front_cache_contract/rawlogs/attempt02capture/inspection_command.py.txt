@@ -1,0 +1,103 @@
+import ast, hashlib, json, os, zipfile
+import numpy as np
+
+ROOT = r"C:\Users\xiemo\Desktop\ShardForge"
+TIP = os.path.join(ROOT, r"pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz")
+CACHE93 = os.path.join(ROOT, r"pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz")
+TIP_RESULT = os.path.join(ROOT, r"pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json")
+FCC4 = os.path.join(ROOT, r"pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json")
+EXPECTED = {"tip_cache": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea", "failed_93_cache": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41", "tip_result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b", "fcc4_case": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71"}
+
+def sha(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+def archive_headers(path, wanted):
+    out = {}
+    with zipfile.ZipFile(path, "r") as zf:
+        files = {n[:-4]: n for n in zf.namelist() if n.endswith(".npy")}
+        for key in wanted:
+            member = files.get(key)
+            if member is None:
+                continue
+            info = zf.getinfo(member)
+            with zf.open(member, "r") as f:
+                if f.read(6) != b"\x93NUMPY": raise ValueError("bad NPY magic: " + key)
+                major, minor = f.read(2)
+                hlen = int.from_bytes(f.read(2 if major == 1 else 4), "little")
+                header = ast.literal_eval(f.read(hlen).decode("latin1").strip())
+            out[key] = {"shape": list(header["shape"]), "dtype": header["descr"], "fortran_order": bool(header["fortran_order"]), "npz_member_uncompressed_bytes": info.file_size, "npz_member_compressed_bytes": info.compress_size}
+        return len(files), files, out
+
+def text_list(a):
+    vals = []
+    for v in np.asarray(a).reshape(-1): vals.append(v.decode("utf-8") if isinstance(v, bytes) else str(v))
+    return vals
+
+def hbytes(a): return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
+
+def cloud(prefix, z, unique):
+    xyz = np.asarray(z[prefix + "_xyz_m"]); ids = np.asarray(z[prefix + "_unique_row_ids"])
+    wkey = prefix + "_weights"; weights = np.asarray(z[wkey]) if wkey in z.files else None
+    valid = bool(ids.ndim == 1 and len(ids) == len(xyz) and ids.size > 0 and ids.min() >= 0 and ids.max() < len(unique))
+    return {"xyz_key": prefix + "_xyz_m", "row_id_key": prefix + "_unique_row_ids", "weight_key": wkey if weights is not None else None,
+      "row_count": int(len(xyz)), "xyz_shape": list(xyz.shape), "row_id_dtype": str(ids.dtype),
+      "row_id_min": int(ids.min()) if ids.size else None, "row_id_max": int(ids.max()) if ids.size else None,
+      "unique_row_id_count": int(np.unique(ids).size), "xyz_equals_unique_xyz_indexed_by_row_ids": bool(valid and np.array_equal(xyz, unique[ids])),
+      "xyz_sha256_float64_c_order": hbytes(xyz), "row_ids_sha256": hbytes(ids), "weights_shape": list(weights.shape) if weights is not None else None,
+      "weights_sha256": hbytes(weights) if weights is not None else None}
+
+paths = {"tip_cache": TIP, "failed_93_cache": CACHE93, "tip_result": TIP_RESULT, "fcc4_case": FCC4}
+hashes = {role: sha(path) for role, path in paths.items()}
+for role, actual in hashes.items():
+    if actual != EXPECTED[role]: raise ValueError("SHA mismatch for " + role + ": " + actual)
+tip_result = json.load(open(TIP_RESULT, "r", encoding="utf-8")); fcc4 = json.load(open(FCC4, "r", encoding="utf-8"))
+tip_wanted = {"source_positions_xyz_m", "unique_query_positions_xyz_m", "base_mls_values", "base_mls_gradients_per_m", "mls_support_counts", "mls_condition_numbers"}
+for p in ("cloud_a0_volume32", "cloud_a0_0005_volume32", "cloud_side", "cloud_a0_cap16", "cloud_a0_0005_cap16"):
+    tip_wanted.update({p + "_xyz_m", p + "_unique_row_ids", p + "_weights"})
+tip_member_count, tip_members, tip_headers = archive_headers(TIP, tip_wanted)
+cache_wanted = {"source_positions_xyz_m", "source_ids", "semantic_ids", "volume_xyz_m", "volume_unique_row_ids", "volume_weights_m3", "boundary_xyz_m", "boundary_unique_row_ids", "boundary_weights_m2"}
+cache_member_count, cache_members, cache_headers = archive_headers(CACHE93, cache_wanted)
+missing_tip = sorted(tip_wanted - set(tip_members)); missing_cache = sorted(cache_wanted - set(cache_members))
+if missing_tip or missing_cache: raise ValueError("missing named members tip=" + repr(missing_tip) + " cache93=" + repr(missing_cache))
+with np.load(TIP, allow_pickle=False) as t, np.load(CACHE93, allow_pickle=False) as c:
+    src_t = np.asarray(t["source_positions_xyz_m"]); src_c = np.asarray(c["source_positions_xyz_m"])
+    ids_result = list(tip_result["registry"]["source_ids"]); ids_cache = text_list(c["source_ids"])
+    unique = np.asarray(t["unique_query_positions_xyz_m"])
+    oldvol = cloud("cloud_a0_volume32", t, unique); newvol = cloud("cloud_a0_0005_volume32", t, unique)
+    side = cloud("cloud_side", t, unique); oldcap = cloud("cloud_a0_cap16", t, unique); newcap = cloud("cloud_a0_0005_cap16", t, unique)
+    old_volume_matches_93 = bool(np.array_equal(np.asarray(c["volume_xyz_m"]), np.asarray(t["cloud_a0_volume32_xyz_m"])) and np.array_equal(np.asarray(c["volume_unique_row_ids"]), np.asarray(t["cloud_a0_volume32_unique_row_ids"])) and np.array_equal(np.asarray(c["volume_weights_m3"]), np.asarray(t["cloud_a0_volume32_weights"])))
+    side_matches_93 = bool(np.array_equal(np.asarray(c["boundary_xyz_m"][:256]), np.asarray(t["cloud_side_xyz_m"])) and np.array_equal(np.asarray(c["boundary_unique_row_ids"][:256]), np.asarray(t["cloud_side_unique_row_ids"])) and np.array_equal(np.asarray(c["boundary_weights_m2"][:256]), np.asarray(t["cloud_side_weights"])))
+    support = np.asarray(t["mls_support_counts"]); cond = np.asarray(t["mls_condition_numbers"])
+    base_values_header = tip_headers["base_mls_values"]; base_grad_header = tip_headers["base_mls_gradients_per_m"]
+    out = {
+      "inspection": "read-only NPZ member/header metadata plus named source/coordinate/row-id/weight/support arrays; no producer/provider/field/operator/solver import or invocation",
+      "file_hashes": hashes,
+      "archive_member_counts": {"tip_arrays_npy_members": tip_member_count, "failed_93_arrays_npy_members": cache_member_count},
+      "tip_arrays_named_member_headers": tip_headers, "failed_93_arrays_named_member_headers": cache_headers,
+      "source_registry": {"count_from_tip_result": len(ids_result), "ids_from_tip_result_in_canonical_order": ids_result,
+        "ids_match_failed_93_npz_order": ids_cache == ids_result, "ids_from_failed_93_npz": ids_cache,
+        "tip_source_positions_shape": list(src_t.shape), "failed_93_source_positions_shape": list(src_c.shape),
+        "source_coordinates_exact_match_between_archives": bool(np.array_equal(src_t, src_c)),
+        "source_coordinates_sha256_float64_c_order": hbytes(src_t), "source_positions_xyz_m_in_registry_order": src_t.tolist(),
+        "basis_semantic_id_count_in_failed_93_npz": int(np.asarray(c["semantic_ids"]).size)},
+      "unique_query_table": {"key": "unique_query_positions_xyz_m", "shape": list(unique.shape), "units": tip_result["units"]["coordinates"],
+        "raw_base_mls_values_header": base_values_header, "raw_base_mls_gradients_per_m_header": base_grad_header,
+        "raw_base_mls_weights_are_independent_27_source_columns": bool(base_values_header["shape"] == [4224,27]),
+        "raw_base_mls_gradients_are_independent_27_by_3_source_rows": bool(base_grad_header["shape"] == [4224,27,3]),
+        "support_count_shape": list(support.shape), "support_count_min": int(support.min()), "support_count_max": int(support.max()),
+        "condition_number_shape": list(cond.shape), "condition_number_all_finite": bool(np.isfinite(cond).all()), "condition_number_min": float(cond.min()), "condition_number_max": float(cond.max())},
+      "selected_tip_study_clouds": {"a0_volume32": oldvol, "a0_0005_volume32": newvol, "side": side, "a0_cap16": oldcap, "a0_0005_cap16": newcap,
+        "cap16_coordinates_identical_between_front_offsets": bool(np.array_equal(np.asarray(t["cloud_a0_cap16_xyz_m"]), np.asarray(t["cloud_a0_0005_cap16_xyz_m"]))),
+        "cap16_row_ids_identical_between_front_offsets": bool(np.array_equal(np.asarray(t["cloud_a0_cap16_unique_row_ids"]), np.asarray(t["cloud_a0_0005_cap16_unique_row_ids"])))} ,
+      "cross_archive_selected_row_identity": {"old_a0_volume_xyz_rowids_weights_exactly_match_failed_93_npz": old_volume_matches_93,
+        "side_xyz_rowids_weights_exactly_match_failed_93_boundary_prefix_256": side_matches_93},
+      "fcc4_case_metadata": {"case_id": fcc4.get("case_id"), "classification": fcc4.get("classification"),
+        "source_count": fcc4.get("source_binding", {}).get("source_count"), "dof_count": fcc4.get("registry", {}).get("dof_count"),
+        "source_ids": fcc4.get("source_binding", {}).get("source_ids"), "bridge_load_case": fcc4.get("bridge_load_case"),
+        "linear_scale_from_cached_KI100": fcc4.get("linear_scale_from_cached_KI100"), "execution_authorized": fcc4.get("execution_authorization", {}).get("authorized")}
+    }
+print(json.dumps(out, indent=2, ensure_ascii=False, sort_keys=True))

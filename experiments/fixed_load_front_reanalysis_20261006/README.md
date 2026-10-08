@@ -1,0 +1,17 @@
+# Fixed-load finite-front reanalysis — source only
+
+This package prepares one diagnostic comparison for the frozen 3-D cylinder. It reuses all 27 rest sites and 384 saved quadrature rows, advances the analytic straight front by `delta_a = 0.0005 m`, reconstructs shifted `Fbar` from cached BASE `phi` and `grad(phi)`, reassembles the full isotropic 3-D operator, reintegrates the same saved boundary traction in the new basis, and solves once with the six physical-volume moment constraints. The six target values `g` come from the pinned baseline static-solve result.
+
+The shifted factor is `sqrt(r/R) sin(theta/2)` with `r=sqrt((x-a)^2+y^2)` and `theta=atan2(y,x-a)`. Its analytic gradient uses the complete product rule. A frozen point at the new tip or on its negative-x branch blocks as `UNKNOWN`; no point shift, MLS call, visibility mask, or new query is added. `basis_generation_hash` includes the source SHA, front offset, registry IDs, and transformed basis bytes.
+
+The loaded traction values, locations, normals, and weights are retained from the pinned operator result. The load vector is integrated again against the shifted basis. The code checks the raw six-mode spectrum, force/moment and rigid virtual work, KKT residual, gauge residual, energy, and external work. It does not modify the load or transplant old coefficients. The main agent predeclared four engineering numerical trust limits of `1e-9`: weak-equilibrium relative residual, physical-gauge relative residual, saddle backward relative residual, and `abs(2U-W+g·lambda)/max(abs(2U),abs(W),abs(g·lambda),tiny)`. These are numerical solve checks, not material or crack-growth gates, and were not selected or tuned from the future release value; the pinned baseline actual solve residuals are about `1e-15`. A failed gate is written as `FAILED_NUMERICAL_RESIDUAL_GATE` and exits nonzero; the single attempt is never retuned or retried.
+
+For full thickness `L=0.01 m`, one-sided projected area is `L*delta_a = 5e-6 m²` and both physical faces total `2*L*delta_a = 1e-5 m²`. The finite-change diagnostic divides by one-sided area. It does not compare with `Gc`, commit growth, or claim autonomous direction. The fixed rule establishes no convergence; the case is synthetic and not ceramic.
+
+The operator and baseline static-solve SHAs are frozen, and the baseline identifies the exact operator hash. The main agent authorized one fixed-path attempt. The prepared command is:
+
+```powershell
+C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe -B pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis.py --execute --output pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json
+```
+
+The authorized single attempt completed once at `pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json` (539,566 bytes; SHA-256 `a60e51c85c26510c358ee57cafa4bfdda6ed89ea463d99bcc86551f64220732c`), process exit 0 in 0.551 s. The numerical gate passed: 6 near-zero and 156 positive modes, no significant negative mode; weak, gauge, saddle, and energy-identity relative residuals were `1.03e-15`, `4.69e-16`, `1.88e-15`, and `1.38e-15`. `U=1.3406843862152805e-6 J`, `W=2.681368772430561e-6 J`, and the one-sided-area finite-change release diagnostic was `0.005466336703413529 J/m²`. `Gc` was not compared and growth was not committed. No retry, added query, adaptive step, CAD action, or test was performed.

@@ -1,0 +1,31 @@
+{
+  "return_code": 0,
+  "wall_seconds": 0.154226,
+  "audit_sha256": "ED4CF862C502B9AC4A186E34AF62B960497C0358BB63BB7679DCA7B48A2533C7",
+  "expected_source_sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+  "observed_source_sha256": "ED90063029D69649FBB8B4A0785946CFDD7E7B6A22E483513FF27F447745DACD",
+  "artifacts": [
+    {
+      "Name": "audit_points.csv",
+      "Length": 7909
+    },
+    {
+      "Name": "audit_report.json",
+      "Length": 1547
+    },
+    {
+      "Name": "audit_run.log",
+      "Length": 196
+    },
+    {
+      "Name": "mixed_displacement_quiver.png",
+      "Length": 3004
+    }
+  ],
+  "ast_precheck_status": "PASS",
+  "prepatch_audit_sha256": "D4E613D9DE863036DE1A69DE94B3A9E2C36CB916B0E7EEDA83A51B4DA3FC668F",
+  "checks": "all passed",
+  "field_evaluations": 54,
+  "audit_elapsed_seconds": 0.031999999890103936,
+  "output_artifact_bytes": 12460
+}

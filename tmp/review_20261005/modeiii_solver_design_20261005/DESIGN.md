@@ -1,0 +1,35 @@
+# Mode III antiplane static solve — design freeze
+
+**Status: source-based design only; no solver, tests, or numerical run.** This is the next mechanics layer after the frozen scalar operator case. It implements one restricted `u_z` Galerkin solve for the straight-front manufactured field. It is an engineering diagnostic, not a full 3-D cylinder solution, finite crack-end solution, material calibration, fracture result, or convergence claim.
+
+Use the accepted continuous-MLS/front-PU decision and the frozen candidate case: `R=0.01 m`, `L=0.01 m`, `z∈[-0.005,0.005] m`; `E=10^6 Pa`, `ν=0.3`, `KIII=100 Pa√m`; source grid `{-0.005,0,0.005}³ m`, 27 sources, grid spacing `0.005 m`, MLS support `h=0.025 m`. Root froze `reference_scale=R=0.01 m`, distinct from `h`; origin is zero. No Boolean visibility or source deletion is used. All 27 supports meet the front, so `T_F` contains all 27 and `J_H` is empty. That is only an algebraic bridge, not evidence of local enrichment convergence.
+
+The existing `shape_functions_3d` API returns base MLS values and analytic gradients in query/source/axis order. Its adapter and `assemble_elastic_operator` are not the solve interface: that assembler fixes `3*node_count` vector DOFs and canonical node-dense rows, while this field has 54 scalar UZ coefficients. Use a separate source-only scalar provider and assembler with a frozen registry keyed by source, UZ, and basis kind. Register 27 BASE columns `φᵢ` and 27 FRONT_F1_UNSHIFTED columns `φᵢ F̄`, where `F̄=√r sin(θ/2)/√R`. Their gradients are `∇φᵢ` and `F̄∇φᵢ+φᵢ∇F̄`. All 54 coefficients have displacement units (m); the exact coefficient vector is zero in BASE and `A√R` in each front column, where `A=(KIII/μ)√(2/π)`. The branch cut is only the physical `x<0,y=0` crack sheet. No value is requested at the front or exact branch face; no epsilon shift or clipping is allowed.
+
+For each scalar basis row `ψₐ`, use `∇ψₐ=(∂x,∂y,∂z)` and `Dred=diag(μ, μ, λ+2μ)`. Assemble `Kₐᵦ=Σq ∇ψₐᵀDred∇ψᵦ wq` and `fₐ=∫side ψₐ t_z dS`, with analytic `t_z=σxz cosθ+σyz sinθ`. The exact scalar traction on both end caps is zero; record the full tensor cap traction `(±σxz,±σyz,0)` for scope clarity, but it does no work in this UZ-only solve. The crack-face traction and body force are zero. Do not feed the six-component full-vector cap load into the scalar RHS.
+
+Remove the one physical null mode in this scalar subspace with the normalized physical mean constraint `cₐ=(1/V)∫ΩψₐdV`, `V=πR²L`, `cᵀd=0`. Solve the 55×55 Lagrange system `[[K,c],[cᵀ,0]][d,λ]=[f,0]` by a direct factorization. Do not pin an MLS/enrichment coefficient or regularize/pseudoinvert. Before solving, diagonally scale `K` as `K̂=S K S`, `S=diag(Kₐₐ^-1/2)`; scale and unit-normalize `c` consistently in the symmetric saddle system. A nonpositive diagonal, failed factorization, nonfinite result, or unexplained extra null mode blocks the solve.
+
+Use exactly two frozen volume rules at fixed geometry: GL4 radial × GL8 θ × GL4 z (128 points), then GL4 × GL16 × GL4 (256 points). Map `r∈[0,R]`, `θ∈(-π,π)`, `z∈[-L/2,L/2]` with Jacobian `r`; these rules integrate the full cylinder without a front hole. The nearest sampled radius is `0.0694318442 R`, a quadrature location rather than an excision. Keep lateral loading at GL16 θ × GL4 z (64 points) for both levels; use GL4 radial × GL8 θ on each cap (32 points each) to record full tensor tractions. The MLS query cap is 500; the analytic field reference accepts at most 256 points per call, so split its batches. Off-grid verification uses a frozen 256-point set: `r/R={0.137,0.381,0.619,0.863}`, `θₖ=-π+2π(k+0.37)/16`, `k=0…15`, and `z/L={−0.337,−0.103,0.211,0.447}`.
+
+Report the full diagonally scaled symmetric-part spectrum of `K̂`, the expected translation residual, every additional near-zero candidate, `λmax/λ₂` on the positive quotient, and the scaled saddle condition. Use the explicit binary64 roundoff reference from the prior operator diagnostic as a label only, with scalar contraction length 3 and the observed MLS condition; also publish raw eigenvalues and the threshold. The full stiffness remains singular before its one mean constraint, so never call its unconditioned condition number finite. For each quadrature level report the solved weak residual, normalized mean, net applied z-force, energy error against `KIII²RL/(2μ)`, and displacement/gradient max and RMS errors against the analytic field on the independent off-grid set. Also compute the analytic-coefficient defect `K d*−f`, scaled by `S`, where `d*` has the exact coefficients above; this exposes quadrature error independently of the linear solve. These values are diagnostics only; two levels show sensitivity, not convergence or a tuned pass threshold.
+
+The hard execution envelope is 30 seconds, 125 source sites, 375 registered DOFs, 256 volume points per assembly, and a preflight estimate below 32 MiB for explicit numeric arrays. Check limits before allocating shape, stiffness, or saddle arrays; include boundary/off-grid batches and solver work arrays in the estimate. Stop after the two rules; do not adapt or tune support, quadrature, or enrichment based on results.
+
+## Source pins
+
+SHA-256 pins identify the exact read-only inputs used here. The mode-III operator `fixed_case.json` is the source-only candidate with root's `reference_scale=0.01 m` freeze; its operator-only `run_solver=false` flag remains unchanged.
+
+| Input | SHA-256 |
+|---|---|
+| `pgfrag/tmp/review_20261005/astra_front_shadow_decision_20261005/DECISION.md` | `66b327667d0f7cf8468632a80b720d2b384409eb272446c2be34f6470cce4606` |
+| `pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/METHOD_REVISION_ModeIII.json` | `4b07f3c4d52984d6990615e0c25f19b9a39e059fb0beff5987e374a8b5f8f58e` |
+| `pgfrag/tmp/review_20261005/enriched_dof_contract_20261005/CONTRACT.md` | `3c4110dd6d2a6804c45fa1fe938592d785fd6cf3b84b83343c14492e320afab3` |
+| `pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py` | `66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5` |
+| `pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py` | `404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63` |
+| `pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py` | `41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d` |
+| `pgfrag/experiments/efgm_mls_patch_20261005/mls_elastic_adapter.py` | `c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a` |
+| `pgfrag/experiments/efgm_mls_patch_20261005/operator_diagnostic.py` | `c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c` |
+| `pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py` | `7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7` |
+| `pgfrag/experiments/modeiii_field_reference_20261005/fixed_case.json` | `38c57c6e91fcd9e4c5201e5a4652a8ce476ed565a6f362e58b8eab047fdacf1f` |
+| `pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json` | `dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9` |

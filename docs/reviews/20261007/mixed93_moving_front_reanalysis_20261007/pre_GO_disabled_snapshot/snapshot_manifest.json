@@ -1,0 +1,25 @@
+{
+  "files": {
+    "SOURCE_PINS.json": {
+      "bytes": 5133,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/SOURCE_PINS.json",
+      "sha256": "2d0c064da24b63d75e00514b0b95bb615ee4e3793135c7cbe10e8f47573af70f"
+    },
+    "capture_once.py": {
+      "bytes": 8785,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/capture_once.py",
+      "sha256": "162a409663659b0d9430edb9e002f7f857014e072cf5fcb2431b2ea0b887e324"
+    },
+    "case.json": {
+      "bytes": 16746,
+      "path": "pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/case.json",
+      "sha256": "89024e62b006224819a0331796b5c3bce55cbea4e9bd732309d2bac1069acbf4"
+    },
+    "mixed93_moving_front_reanalysis.py": {
+      "bytes": 56564,
+      "path": "pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py",
+      "sha256": "8c662a69e7b4c60b0ce70fcde2b53fd3547a23e1e00f6e19adfa2f6801b0b9c4"
+    }
+  },
+  "schema": "mixed93_moving_front_pre_GO_snapshot.v1"
+}

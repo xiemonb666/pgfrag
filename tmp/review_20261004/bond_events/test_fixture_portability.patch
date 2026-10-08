@@ -1,0 +1,13 @@
+--- a/pgfrag/tests/test_bond_events.py.v2-frozen
++++ b/pgfrag/tests/test_bond_events.py
+@@ -19,7 +19,6 @@
+ FIXTURE_PATH = (
+-    Path(__file__).resolve().parents[1]
+-    / "tmp"
+-    / "review_20261004"
+-    / "bond_events"
++    Path(__file__).resolve().parent
++    / "fixtures"
++    / "bond_events"
+     / "native_shaped_fixture.json"
+ )

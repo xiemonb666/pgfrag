@@ -1,0 +1,38 @@
+{
+  "cad_or_producer_invoked": false,
+  "exception": null,
+  "geometry_recomputed": false,
+  "inputs": {
+    "PILOT_ACTUAL_AUDIT.json": {
+      "expected_sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f",
+      "matches_expected": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_ACTUAL_AUDIT.json",
+      "sha256": "de33b3028cc1ad4b8d735b1f2fff9d7632fb15e24fd6b5fc6a6f515020ae217f"
+    },
+    "PILOT_CELL_AUDIT.csv": {
+      "expected_sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5",
+      "matches_expected": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_CELL_AUDIT.csv",
+      "sha256": "8517032040d22b1a8d22b3f331431360b14c9c630675dbd0f5a8dbe8a9a469c5"
+    },
+    "PILOT_POINT_AUDIT.csv": {
+      "expected_sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74",
+      "matches_expected": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\PILOT_POINT_AUDIT.csv",
+      "sha256": "0c76db6e93a4c1f31449aecae7cf99f8ca32a894fafdc9101b11fb87899d3d74"
+    }
+  },
+  "outputs": {
+    "PILOT_CELL_VOLUME_MASS_DELTA_render_only.png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\PILOT_CELL_VOLUME_MASS_DELTA_render_only.png",
+      "sha256": "975f157d1bd2147bed7b1d82a66df8157466d724f9f071294f531f1db76a9b11"
+    },
+    "PILOT_XY_CELL_MAP_grid_colorbar.png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\audit_retry_hashcase_plotcompat_20261005\\render_only_revised_colorbar_20261005\\PILOT_XY_CELL_MAP_grid_colorbar.png",
+      "sha256": "91c6862b876db16a84b5893096eeec9a30fe1add236d1610239f147f53c85b1a"
+    }
+  },
+  "schema": "pgfrag.forge_volume_ingress_render_only_receipt.v1",
+  "source_mode": "existing_audit_json_and_csv_only",
+  "status": "COMPLETE"
+}

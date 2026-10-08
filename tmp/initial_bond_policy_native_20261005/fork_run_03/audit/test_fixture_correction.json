@@ -1,0 +1,18 @@
+{
+  "status": "TEST_ONLY_FIXTURE_CHANGE_VERIFIED",
+  "utc": "2026-10-05T10:40:55.905Z",
+  "old_test_sha256": "34bd2ae1fd5b2e65a756c2754200af28879337e4828bea89fa3763d343cab8d5",
+  "new_test_sha256": "5c40945c0a31460fad662487fa513b3a724e2b4275912906ce5e2adb79d4ef74",
+  "pre_edit_snapshot": "audit/pre_edit_test_initial_bond_policy.jl",
+  "changed_fields": [
+    "probe_model.source",
+    "probe_model.points",
+    "probe_model.evidence"
+  ],
+  "changed_assertions": false,
+  "assertion_lines_byte_identical": true,
+  "source_pin_rows": 23,
+  "only_pin_row_changed": "tests/test_initial_bond_policy.jl",
+  "patch_sha256": "68748b1cebe261b76f4adc8d1056e7319ee8c69176700bdd34f8008830dcc557",
+  "implementation_overlay_unchanged": true
+}

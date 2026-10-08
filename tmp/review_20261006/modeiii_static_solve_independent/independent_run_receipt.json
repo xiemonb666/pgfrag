@@ -1,0 +1,271 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\audit_static_solve.py"
+  ],
+  "command": "& 'C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe' -B 'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\audit_static_solve.py'",
+  "started_utc": "2026-10-05T18:06:35.6262456Z",
+  "finished_utc": "2026-10-05T18:06:36.6244208Z",
+  "wall_seconds": 0.9909369,
+  "hard_timeout_seconds": 30,
+  "timed_out": false,
+  "exit_code": 0,
+  "stdout": "{\"exit_code\":0,\"elapsed_seconds\":0.46899999980814755,\"primary_sha256\":\"39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3\",\"levels\":[{\"name\":\"volume_gl4x8x4\",\"K_sha256\":\"bb229305198d99b7aa654736eec0aec7d4197504be3f59fbecbaf12fbb368729\",\"residual_l2_N\":6.360701476242631e-17,\"constraint_m\":1.4206223347255066e-21,\"lambda_N\":-3.031921692512259e-17,\"translation_compatibility_N\":4.246228125696024e-17,\"energy_J\":1.309651343292637e-06,\"energy_error_percent\":0.7424110225105428,\"grad_error_max_reference_scaled\":0.1285197798019161},{\"name\":\"volume_gl4x16x4\",\"K_sha256\":\"61a9d269a09bdd072c66b1156619c61e28197ad986aa7cceef9d5552226036b8\",\"residual_l2_N\":4.806927420139756e-17,\"constraint_m\":-1.3670849570957617e-21,\"lambda_N\":-2.3053300876302508e-18,\"translation_compatibility_N\":1.44483944194679e-17,\"energy_J\":1.3000232729364773e-06,\"energy_error_percent\":0.001790225882863434,\"grad_error_max_reference_scaled\":0.006302083767679093}],\"source_hashes_unchanged\":true,\"source_pins_match\":true,\"json\":\"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261006\\\\modeiii_static_solve_independent\\\\static_solve_independent_audit.json\",\"png\":\"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261006\\\\modeiii_static_solve_independent\\\\static_solve_fields_q256_zslice.png\"}\r\n",
+  "stdout_bytes": 1296,
+  "stdout_sha256_utf8": "5aa3d4f082c9f1723fb15eec55ef23bf90be7606024de8182c5be55225daf5ac",
+  "stderr": "",
+  "stderr_bytes": 0,
+  "stderr_sha256_utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "output_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\static_solve_independent_audit.json",
+  "output_json_bytes": 27749,
+  "output_json_sha256": "ecbd315830557199a96973348661ef3eef62fb9dfa91b39d096a9c0176a1565d",
+  "output_png_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\static_solve_fields_q256_zslice.png",
+  "output_png_bytes": 187266,
+  "output_png_sha256": "ceddfa12a6569025d3a5262295aee7a00843c8ad5572d541d19e14b8adb2842c",
+  "combined_process_output_bytes": 216311,
+  "within_8MiB_output_budget": true,
+  "pre_pin_checks": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+      "expected_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "current_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+      "expected_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "current_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+      "expected_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "current_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+      "expected_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "current_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+      "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "current_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+      "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "current_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\README.md",
+      "expected_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "current_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+      "expected_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "current_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve.py",
+      "expected_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "current_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+      "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "current_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\SOURCE_REVIEW.md",
+      "expected_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "current_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "matches": true
+    }
+  ],
+  "post_pin_checks": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+      "expected_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "current_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+      "expected_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "current_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+      "expected_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "current_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+      "expected_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "current_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+      "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "current_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+      "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "current_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\README.md",
+      "expected_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "current_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+      "expected_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "current_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve.py",
+      "expected_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "current_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+      "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "current_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\SOURCE_REVIEW.md",
+      "expected_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "current_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "matches": true
+    }
+  ],
+  "all_pre_pins_match": true,
+  "all_post_pins_match": true,
+  "tracked_prepost_hashes": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+      "pre_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "post_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+      "pre_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "post_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+      "pre_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "post_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+      "pre_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "post_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+      "pre_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "post_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+      "pre_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "post_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+      "pre_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "post_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\README.md",
+      "pre_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "post_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+      "pre_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "post_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve.py",
+      "pre_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "post_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\run_receipt.json",
+      "pre_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+      "post_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+      "pre_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+      "post_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\source_freeze.json",
+      "pre_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+      "post_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\SOURCE_REVIEW.md",
+      "pre_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "post_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\audit_static_solve.py",
+      "pre_sha256": "3cb9d1583725eb08e7fda4ce6a72d1ffc5d413eb4757ab2776fbfa5fedc324ed",
+      "post_sha256": "3cb9d1583725eb08e7fda4ce6a72d1ffc5d413eb4757ab2776fbfa5fedc324ed",
+      "unchanged": true
+    }
+  ],
+  "all_tracked_inputs_and_sources_unchanged": true,
+  "result_summary": {
+    "primary_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+    "input_receipt_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+    "source_freeze_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+    "source_pin_count": 11,
+    "all_source_pins_match": true,
+    "all_prepost_hashes_unchanged": true,
+    "level_names": [
+      "volume_gl4x8x4",
+      "volume_gl4x16x4"
+    ]
+  }
+}

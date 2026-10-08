@@ -1,0 +1,27 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v1_snapshot.v1",
+  "preserved_before_v2": true,
+  "files": [
+    {
+      "path": "mesh_resolution_audit.py",
+      "sha256": "77ac2fd59a9898e8a6344ecf4f9b6cbd5aa4445e5a2e713248b7e85d8783f394"
+    },
+    {
+      "path": "pytest_exit_code.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "path": "pytest_receipt.json",
+      "sha256": "9b56699e5586fd4f9a70ae9cc4a737543f278580ab63d4b13c57998ff8890cf3"
+    },
+    {
+      "path": "pytest_stdout.txt",
+      "sha256": "5fc6a184cef674ea791ce5bcd07164c4cf7e0866eff0932d82be5420a00f7dc5"
+    },
+    {
+      "path": "test_mesh_resolution_audit.py",
+      "sha256": "9280f54d8ab45606ad84840c7d894afca07005732b3174fef1a16ac0395b3deb"
+    }
+  ],
+  "pass_record_note": "pytest_stdout.txt, pytest_exit_code.txt, and pytest_receipt.json preserve the original successful 7-test v1 execution."
+}

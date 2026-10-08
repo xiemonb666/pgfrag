@@ -1,0 +1,744 @@
+--- v1/mesh_resolution_audit.py
++++ v2/mesh_resolution_audit.py
+@@ -1,14 +1,19 @@
+-"""Pure-math audit of tetrahedral mesh resolution and directional geometry.
++"""Pure-math audit of volume-tetra resolution and directional geometry.
+ 
+ Coordinates and all lengths accepted by this module are in SI metres. Signed
+ tetrahedron volumes are reported in m^3. The module does not load CAD, call a
+ solver, alter a mesh, or infer physical adequacy from geometry alone.
+ 
+ Wall thickness, local wall normals, process-zone length, and PD horizon are
+-independent evidence fields. A scale comparison is classified only when its
+-measurement has a definition and source and an explicit named design policy
+-supplies the relevant limit. A result below a policy limit means only that the
+-policy did not flag that scale ratio; it is not a universal sufficiency claim.
++independent evidence fields. Caller-provided definitions and source labels
++remain declarations; the module does not verify external source bytes. Global
++wall qualification therefore remains unknown. A candidate scale screen needs
++an explicit named design policy. A result below its limit means only that the
++policy did not flag that ratio; it is not a universal sufficiency claim.
++
++Surface tessellation tolerance, surface triangle edge length, and volume-tet
++spacing are distinct quantities. This input contains only volume tetrahedra;
++no surface tolerance or triangle statistic is inferred from it.
+ """
+ 
+ from __future__ import annotations
+@@ -53,7 +58,9 @@
+ 
+ 
+ def _stats(values: Sequence[float]) -> dict[str, Any]:
+-    clean = np.asarray([float(x) for x in values if math.isfinite(float(x))], dtype=np.float64)
++    clean = np.asarray([float(x) for x in values], dtype=np.float64)
++    if not np.isfinite(clean).all():
++        raise ValueError("_stats accepts finite values only; callers must report numeric-range failures with their cell indices")
+     if clean.size == 0:
+         return {
+             "count": 0,
+@@ -65,7 +72,8 @@
+             "p99": None,
+             "max": None,
+         }
+-    q = np.quantile(clean, _QUANTILES)
++    scale = float(np.max(np.abs(clean)))
++    q = np.zeros(len(_QUANTILES), dtype=np.float64) if scale == 0.0 else np.quantile(clean / scale, _QUANTILES) * scale
+     return {
+         "count": int(clean.size),
+         "min": float(clean.min()),
+@@ -110,14 +118,14 @@
+         return None, "UNKNOWN"
+     raw = wall.get("thickness_interval_m")
+     if not isinstance(raw, (list, tuple)) or len(raw) != 2:
+-        return None, "INCOMPLETE_EVIDENCE"
++        return None, "INCOMPLETE_CALLER_DECLARATION"
+     low = _positive_number(raw[0])
+     high = _positive_number(raw[1])
+     if low is None or high is None or low > high:
+         return None, "INVALID_INTERVAL"
+     if _text(wall.get("definition")) is None or _text(wall.get("source")) is None:
+-        return (low, high), "INCOMPLETE_EVIDENCE"
+-    return (low, high), "SOURCE_DOCUMENTED_GLOBAL_INTERVAL"
++        return (low, high), "INCOMPLETE_CALLER_DECLARATION"
++    return (low, high), "CALLER_DECLARED_GLOBAL_INTERVAL"
+ 
+ 
+ def _parse_policy(policy: Mapping[str, Any] | None) -> tuple[bool, str | None, str | None]:
+@@ -149,6 +157,70 @@
+         "maximum_ratio": limit,
+         "reason": "BELOW_POLICY_LIMIT_ONLY_NOT_A_PHYSICAL_SUFFICIENCY_CLAIM",
+     }
++
++
++def _safe_divide(numerator: float, denominator: float) -> tuple[float | None, str | None]:
++    """Divide finite values without allowing JSON inf/nan or silent zero underflow."""
++    if not math.isfinite(numerator) or not math.isfinite(denominator) or numerator < 0.0 or denominator <= 0.0:
++        return None, "INVALID_RATIO_INPUT"
++    try:
++        value = numerator / denominator
++    except (OverflowError, ZeroDivisionError):
++        return None, "OVERFLOW"
++    if not math.isfinite(value):
++        return None, "OVERFLOW"
++    if numerator > 0.0 and value == 0.0:
++        return None, "UNDERFLOW"
++    return value, None
++
++
++def _cellwise_ratios(
++    metric: str,
++    numerators_and_denominators: Sequence[tuple[int, float, float]],
++    issues: list[dict[str, Any]],
++) -> tuple[list[float], list[int]]:
++    values: list[float] = []
++    failed: list[tuple[int, str]] = []
++    for cell_index, numerator, denominator in numerators_and_denominators:
++        value, failure = _safe_divide(float(numerator), float(denominator))
++        if failure is None and value is not None:
++            values.append(value)
++        else:
++            failed.append((int(cell_index), failure or "UNKNOWN"))
++    if failed:
++        issues.append({
++            "metric": metric,
++            "count": int(len(failed)),
++            "cell_indices": [cell_index for cell_index, _ in failed],
++            "range_statuses": [status for _, status in failed],
++        })
++    return values, [cell_index for cell_index, _ in failed]
++
++
++def _scaled_signed_volume(determinant: float, scale: float) -> tuple[float | None, str]:
++    """Return signed SI volume, detecting range loss from dimensionless geometry."""
++    if determinant == 0.0:
++        return 0.0, "FINITE"
++    log_magnitude = math.log(abs(determinant)) + 3.0 * math.log(scale) - math.log(6.0)
++    if log_magnitude > math.log(float.fromhex("0x1.fffffffffffffp+1023")):
++        return None, "OVERFLOW"
++    try:
++        magnitude = math.exp(log_magnitude)
++    except OverflowError:
++        return None, "OVERFLOW"
++    if not math.isfinite(magnitude):
++        return None, "OVERFLOW"
++    if magnitude == 0.0:
++        return None, "UNDERFLOW"
++    return math.copysign(magnitude, determinant), "FINITE"
++
++
++def _signed_volume_log10_abs(determinant: float, scale: float) -> float | None:
++    """Keep volume magnitude available when SI m^3 is outside float range."""
++    if determinant == 0.0 or scale <= 0.0:
++        return None
++    log_magnitude = math.log(abs(determinant)) + 3.0 * math.log(scale) - math.log(6.0)
++    return log_magnitude / math.log(10.0)
+ 
+ 
+ def _checked_rows(values: Any, expected: int, width: int) -> tuple[list[np.ndarray | None], int, str | None]:
+@@ -192,7 +264,7 @@
+     """Audit tetra coordinates/connectivity and independently documented scales.
+ 
+     ``vertices_m`` and ``cells`` are SI coordinates and zero-based tetra
+-    connectivity. ``wall_measurement`` may describe a source-backed global
++    connectivity. ``wall_measurement`` may describe a caller-declared global
+     thickness interval or a local cell map. ``wall_normal_map`` is a local
+     cell-ordered vector map; without complete provenance it remains a numeric
+     diagnostic and cannot support a wall-resolution classification.
+@@ -223,6 +295,7 @@
+     orientation_counts: Counter[str] = Counter()
+     near_degenerate_count = 0
+     zero_volume_count = 0
++    numeric_range_issues: list[dict[str, Any]] = []
+     invalid_index_count = sum(reason == "INVALID_INDEX" for reason in index_reasons)
+ 
+     for cell_index in range(cell_count):
+@@ -288,17 +361,12 @@
+             orientation = "ZERO"
+             orientation_counts["zero"] += 1
+ 
+-        signed_volume: float | None
+-        try:
+-            magnitude = abs(determinant) * scale * scale * scale / 6.0
+-            signed_volume = math.copysign(magnitude, determinant) if math.isfinite(magnitude) else None
+-        except (OverflowError, ValueError):
+-            signed_volume = None
++        normalized_signed_volume = determinant / 6.0
++        signed_volume, volume_range_status = _scaled_signed_volume(determinant, scale)
++        signed_volume_log10_abs = _signed_volume_log10_abs(determinant, scale)
+ 
+         if signed_volume is not None:
+             signed_volumes.append(signed_volume)
+-        elif determinant != 0.0:
+-            status_counts["NUMERIC_OVERFLOW"] += 1
+ 
+         heights: list[float] = []
+         for face in _FACE_TRIPLES:
+@@ -316,13 +384,21 @@
+         if determinant == 0.0:
+             zero_volume_count += 1
+             status = "ZERO_VOLUME"
++        elif volume_range_status != "FINITE":
++            status = f"UNKNOWN_NUMERIC_RANGE/{volume_range_status}"
++            numeric_range_issues.append({
++                "cell_index": int(cell_index),
++                "status": volume_range_status,
++                "maximum_edge_scale_m": float(scale),
++                "normalized_signed_volume_over_h_cubed": float(normalized_signed_volume),
++                "signed_volume_log10_abs_m3": float(signed_volume_log10_abs) if signed_volume_log10_abs is not None else None,
++                "signed_volume_m3": None,
++            })
+         elif minimum_height / scale <= _NUMERICAL_DEGENERACY_RATIO:
+             near_degenerate_count += 1
+             status = "NEAR_DEGENERATE"
+         elif orientation == "NEGATIVE":
+             status = "NEGATIVE_ORIENTATION"
+-        elif signed_volume is None:
+-            status = "NUMERIC_OVERFLOW"
+         else:
+             status = "OK"
+         status_counts[status] += 1
+@@ -331,7 +407,12 @@
+             "status": status,
+             "orientation": orientation,
+             "signed_volume_m3": signed_volume,
++            "maximum_edge_scale_m": float(scale),
++            "normalized_signed_volume_over_h_cubed": float(normalized_signed_volume),
++            "signed_volume_log10_abs_m3": float(signed_volume_log10_abs) if signed_volume_log10_abs is not None else None,
++            "volume_computation_status": volume_range_status,
+             "minimum_height_m": float(minimum_height) if math.isfinite(minimum_height) else None,
++            "minimum_height_over_h": float(minimum_height / scale) if math.isfinite(minimum_height) else None,
+             "maximum_edge_m": max_edge,
+         }
+         per_cell.append(row)
+@@ -346,12 +427,16 @@
+ 
+     h_p95 = _stats(cell_max_edges)["p95"]
+     h_median = _stats(cell_max_edges)["median"]
++    valid_cell_lengths = [(i, float(data["max_edge"])) for i, data in enumerate(internal) if data is not None]
+     orientation_summary = {
+         "positive": int(orientation_counts["positive"]),
+         "negative": int(orientation_counts["negative"]),
+         "zero": int(orientation_counts["zero"]),
+         "unknown": int(orientation_counts["unknown"]),
+     }
++    signed_volume_stats = _stats(signed_volumes)
++    signed_volume_stats["unknown_numeric_range_count"] = int(len(numeric_range_issues))
++    signed_volume_stats["unknown_numeric_range_cell_indices"] = [int(item["cell_index"]) for item in numeric_range_issues]
+ 
+     # The unoriented second moment describes mesh edge directions only. It has
+     # no crack-path, fracture-law, or mesh-independence interpretation.
+@@ -385,8 +470,10 @@
+ 
+     policy_valid, policy_id, policy_basis = _parse_policy(resolution_policy)
+     wall_interval, wall_status = _parse_interval(wall_measurement)
+-    wall_documented = wall_status == "SOURCE_DOCUMENTED_GLOBAL_INTERVAL"
++    wall_caller_declared = wall_status == "CALLER_DECLARED_GLOBAL_INTERVAL"
++    wall_source_verification_status = "UNKNOWN_NOT_PERFORMED_BY_PURE_MATH_AUDIT"
+     valid_geometry_count = sum(data is not None for data in internal)
++    ratio_issues: list[dict[str, Any]] = []
+     local_thickness: list[float | None] = [None] * cell_count
+     local_thickness_status = "MISSING"
+     if isinstance(wall_measurement, Mapping) and wall_measurement.get("scope") == "local_map":
+@@ -398,9 +485,9 @@
+         else:
+             local_thickness = [_positive_number(item) for item in raw_thickness]
+             if _text(wall_measurement.get("definition")) is not None and _text(wall_measurement.get("source")) is not None:
+-                local_thickness_status = "SOURCE_DOCUMENTED_LOCAL_MAP"
++                local_thickness_status = "CALLER_DECLARED_LOCAL_MAP"
+             else:
+-                local_thickness_status = "INCOMPLETE_EVIDENCE"
++                local_thickness_status = "INCOMPLETE_CALLER_DECLARATION"
+ 
+     normal_rows, normal_count, normal_shape_status = _checked_rows(
+         wall_normal_map.get("normals_by_cell") if isinstance(wall_normal_map, Mapping) else None,
+@@ -421,7 +508,7 @@
+     )
+ 
+     normal_projection_by_cell: list[float | None] = [None] * cell_count
+-    normal_ratio_by_cell: list[float | None] = [None] * cell_count
++    normal_ratio_candidates: list[tuple[int, float, float]] = []
+     for cell_index in mapped_valid_cell_ids:
+         n = normal_rows[cell_index]
+         data = internal[cell_index]
+@@ -430,23 +517,27 @@
+         projection = max(projections, default=0.0)
+         if math.isfinite(projection):
+             normal_projection_by_cell[cell_index] = projection
+-        thickness = local_thickness[cell_index] if local_thickness[cell_index] is not None else (wall_interval[0] if wall_documented and wall_interval else None)
++        thickness = local_thickness[cell_index] if local_thickness[cell_index] is not None else (wall_interval[0] if wall_interval else None)
+         if thickness is not None and thickness > 0.0 and math.isfinite(projection):
+-            normal_ratio_by_cell[cell_index] = projection / thickness
++            normal_ratio_candidates.append((cell_index, projection, thickness))
+ 
+     projected_values = [x for x in normal_projection_by_cell if x is not None]
+-    normal_ratio_values = [x for x in normal_ratio_by_cell if x is not None]
++    normal_ratio_values, normal_ratio_failed_ids = _cellwise_ratios(
++        "normal_projected_edge_to_wall",
++        normal_ratio_candidates,
++        ratio_issues,
++    )
+     normal_projection_status = (
+-        "SOURCE_DOCUMENTED_LOCAL_NORMAL_MAP" if normal_evidence_complete
+-        else "INCOMPLETE_EVIDENCE" if normal_count or normal_shape_status == "INVALID_SHAPE"
++        "CALLER_DECLARED_LOCAL_NORMAL_MAP" if normal_evidence_complete
++        else "INCOMPLETE_CALLER_DECLARATION" if normal_count or normal_shape_status == "INVALID_SHAPE"
+         else "UNKNOWN"
+     )
+     normal_ratio_covered = (
+         normal_evidence_complete
+-        and len(normal_ratio_values) == valid_geometry_count
+-        and (wall_documented or local_thickness_status == "SOURCE_DOCUMENTED_LOCAL_MAP")
+-    )
+-    normal_ratio_p95 = _stats(normal_ratio_values)["p95"] if normal_ratio_covered else None
++        and len(normal_ratio_candidates) == valid_geometry_count
++        and (wall_interval is not None or local_thickness_status == "CALLER_DECLARED_LOCAL_MAP")
++    )
++    normal_ratio_p95 = _stats(normal_ratio_values)["p95"] if normal_ratio_covered and not normal_ratio_failed_ids else None
+     normal_limit = _policy_limit(resolution_policy, "max_normal_projected_edge_to_wall", policy_valid)
+     normal_assessment = _assessment(normal_ratio_p95, normal_limit, policy_valid=policy_valid)
+     if not normal_evidence_complete:
+@@ -454,95 +545,156 @@
+             "status": "UNKNOWN",
+             "ratio": normal_ratio_p95,
+             "maximum_ratio": normal_limit,
+-            "reason": "SOURCE_BACKED_COMPLETE_LOCAL_WALL_NORMAL_MAPPING_REQUIRED",
++            "reason": "COMPLETE_CALLER_DECLARED_LOCAL_WALL_NORMAL_MAPPING_REQUIRED",
+         }
+-    elif not normal_ratio_covered:
++    elif not normal_ratio_covered or normal_ratio_failed_ids:
+         normal_assessment = {
+             "status": "UNKNOWN",
+             "ratio": None,
+             "maximum_ratio": normal_limit,
+-            "reason": "SOURCE_BACKED_LOCAL_THICKNESS_OR_GLOBAL_INTERVAL_REQUIRED",
++            "reason": "LOCAL_THICKNESS_OR_GLOBAL_INTERVAL_COVERAGE_REQUIRED" if not normal_ratio_failed_ids else "NONFINITE_RATIO_NUMERIC_RANGE",
+         }
+ 
+-    h_to_wall = (float(h_p95) / wall_interval[0]) if h_p95 is not None and wall_interval is not None and wall_documented else None
++    global_wall_ratio_candidates = [
++        (cell_index, edge_length, wall_interval[0])
++        for cell_index, edge_length in valid_cell_lengths
++    ] if wall_interval is not None else []
++    global_wall_ratio_values, global_wall_ratio_failed_ids = _cellwise_ratios(
++        "h_to_wall", global_wall_ratio_candidates, ratio_issues
++    )
++    h_to_wall = (
++        _stats(global_wall_ratio_values)["p95"]
++        if wall_interval is not None
++        and len(global_wall_ratio_candidates) == valid_geometry_count
++        and not global_wall_ratio_failed_ids
++        else None
++    )
+     wall_limit = _policy_limit(resolution_policy, "max_h_to_wall", policy_valid)
+-    wall_assessment = _assessment(h_to_wall, wall_limit, policy_valid=policy_valid)
+-    if not wall_documented:
+-        wall_assessment = {"status": "UNKNOWN", "ratio": None, "maximum_ratio": wall_limit, "reason": "SOURCE_BACKED_GLOBAL_WALL_INTERVAL_REQUIRED"}
+-
+-    local_h_wall_ratios = [
+-        float(internal[i]["max_edge"]) / float(local_thickness[i])
++    wall_candidate_assessment = _assessment(h_to_wall, wall_limit, policy_valid=policy_valid)
++    wall_assessment = {
++        "status": "UNKNOWN",
++        "ratio": h_to_wall,
++        "maximum_ratio": wall_limit,
++        "reason": "ACTUAL_GLOBAL_WALL_SOURCE_VERIFICATION_NOT_PERFORMED_BY_THIS_MODULE",
++    }
++
++    local_h_wall_candidates = [
++        (i, float(internal[i]["max_edge"]), float(local_thickness[i]))
+         for i in range(cell_count)
+-        if internal[i] is not None and local_thickness[i] is not None and local_thickness_status == "SOURCE_DOCUMENTED_LOCAL_MAP"
++        if internal[i] is not None and local_thickness[i] is not None and local_thickness_status == "CALLER_DECLARED_LOCAL_MAP"
+     ]
++    local_h_wall_ratios, local_h_wall_failed_ids = _cellwise_ratios(
++        "local_cell_h_to_wall", local_h_wall_candidates, ratio_issues
++    )
+ 
+     process_length = _positive_number(process_zone.get("length_m")) if isinstance(process_zone, Mapping) else None
+-    process_documented = bool(
++    process_caller_declared = bool(
+         process_length is not None
+         and isinstance(process_zone, Mapping)
+         and _text(process_zone.get("definition")) is not None
+         and _text(process_zone.get("source")) is not None
+     )
+-    h_to_process = (float(h_p95) / process_length) if h_p95 is not None and process_length is not None and process_documented else None
++    process_ratio_candidates = [(i, length, process_length) for i, length in valid_cell_lengths] if process_length is not None else []
++    process_ratio_values, process_ratio_failed_ids = _cellwise_ratios(
++        "h_to_process_zone", process_ratio_candidates, ratio_issues
++    )
++    h_to_process = (
++        _stats(process_ratio_values)["p95"]
++        if process_length is not None
++        and len(process_ratio_candidates) == valid_geometry_count
++        and not process_ratio_failed_ids
++        else None
++    )
+     process_limit = _policy_limit(resolution_policy, "max_h_to_process_zone", policy_valid)
+     process_assessment = _assessment(h_to_process, process_limit, policy_valid=policy_valid)
+-    if not process_documented:
+-        process_assessment = {"status": "UNKNOWN", "ratio": None, "maximum_ratio": process_limit, "reason": "PROCESS_ZONE_LENGTH_DEFINITION_AND_SOURCE_REQUIRED"}
++    if not process_caller_declared:
++        process_assessment = {"status": "UNKNOWN", "ratio": h_to_process, "maximum_ratio": process_limit, "reason": "PROCESS_ZONE_LENGTH_DEFINITION_AND_SOURCE_REQUIRED"}
++    elif process_ratio_failed_ids:
++        process_assessment = {"status": "UNKNOWN", "ratio": None, "maximum_ratio": process_limit, "reason": "NONFINITE_RATIO_NUMERIC_RANGE"}
+ 
+     horizon = _positive_number(pd_horizon_m)
+-    delta_over_h = horizon / float(h_p95) if horizon is not None and h_p95 is not None and h_p95 > 0.0 else None
+-    h_over_delta = float(h_p95) / horizon if horizon is not None and h_p95 is not None and h_p95 > 0.0 else None
+-    delta_over_wall = horizon / wall_interval[0] if horizon is not None and wall_interval is not None and wall_documented else None
++    h_delta_ratio_candidates = [(i, length, horizon) for i, length in valid_cell_lengths] if horizon is not None else []
++    h_delta_ratio_values, h_delta_ratio_failed_ids = _cellwise_ratios("h_over_pd_horizon", h_delta_ratio_candidates, ratio_issues)
++    h_over_delta = (
++        _stats(h_delta_ratio_values)["p95"]
++        if horizon is not None
++        and len(h_delta_ratio_candidates) == valid_geometry_count
++        and not h_delta_ratio_failed_ids
++        else None
++    )
++    delta_over_h: float | None = None
++    delta_over_h_failure: str | None = None
++    if horizon is not None and h_p95 is not None and h_p95 > 0.0:
++        delta_over_h, delta_over_h_failure = _safe_divide(horizon, float(h_p95))
++    elif horizon is not None and h_p95 == 0.0:
++        delta_over_h_failure = "ZERO_DENOMINATOR"
++    if delta_over_h_failure is not None:
++        ratio_issues.append({"metric": "delta_over_h", "count": 1, "cell_indices": [i for i, _ in valid_cell_lengths], "range_statuses": [delta_over_h_failure], "aggregation": "scalar_h_is_p95_per_cell_maximum_edge"})
++    delta_over_wall: float | None = None
++    delta_over_wall_failure: str | None = None
++    if horizon is not None and wall_interval is not None:
++        delta_over_wall, delta_over_wall_failure = _safe_divide(horizon, wall_interval[0])
++    if delta_over_wall_failure is not None:
++        ratio_issues.append({"metric": "delta_over_wall_lower_bound", "count": 1, "cell_indices": [], "range_statuses": [delta_over_wall_failure], "aggregation": "scalar_source_declared_wall_interval"})
+     horizon_limit = _policy_limit(resolution_policy, "max_h_to_pd_horizon", policy_valid)
+     horizon_assessment = _assessment(h_over_delta, horizon_limit, policy_valid=policy_valid)
+     if horizon is None:
+         horizon_assessment = {"status": "UNKNOWN", "ratio": None, "maximum_ratio": horizon_limit, "reason": "PD_HORIZON_MISSING_OR_INVALID"}
+-
+-    if wall_interval is not None and wall_documented:
+-        wall_report: dict[str, Any] = {
+-            "evidence_status": wall_status,
+-            "scope": "global_interval",
+-            "thickness_interval_m": [float(wall_interval[0]), float(wall_interval[1])],
++    elif h_delta_ratio_failed_ids:
++        horizon_assessment = {"status": "UNKNOWN", "ratio": None, "maximum_ratio": horizon_limit, "reason": "NONFINITE_RATIO_NUMERIC_RANGE"}
++
++    wall_report: dict[str, Any] = {
++        "evidence_status": wall_status,
++        "scope": "global_interval" if isinstance(wall_measurement, Mapping) and wall_measurement.get("scope") == "global_interval" else "local_or_missing",
++        "thickness_interval_m": [float(wall_interval[0]), float(wall_interval[1])] if wall_interval is not None else None,
++        "caller_declaration": {
+             "definition": _text(wall_measurement.get("definition")) if isinstance(wall_measurement, Mapping) else None,
+             "source": _text(wall_measurement.get("source")) if isinstance(wall_measurement, Mapping) else None,
+-            "h_to_wall": {
+-                "definition": "p95 across per-cell maximum edge lengths divided by the lower bound of the source-backed wall thickness interval",
+-                "value": h_to_wall,
+-                "policy_assessment": wall_assessment,
++            "status": wall_status,
++        },
++        "actual_source_verification": {
++            "status": wall_source_verification_status,
++            "verified": False,
++            "reason": "The pure-math audit does not open or independently verify source bytes or global coverage.",
++        },
++        "global_wall_status": "UNKNOWN",
++        "global_wall_qualification_status": "UNKNOWN",
++        "h_to_wall": {
++            "definition": "p95 of per-cell maximum edge divided by the lower bound of the caller-declared global interval; candidate ratio only",
++            "value": h_to_wall,
++            "value_status": (
++                "UNKNOWN_NUMERIC_RANGE" if global_wall_ratio_failed_ids
++                else "CALLER_DECLARED_CANDIDATE" if h_to_wall is not None
++                else "UNKNOWN"
++            ),
++            "policy_assessment": wall_assessment,
++            "caller_declared_candidate_policy_screen": wall_candidate_assessment if wall_caller_declared else {
++                "status": "UNKNOWN",
++                "ratio": h_to_wall,
++                "maximum_ratio": wall_limit,
++                "reason": "COMPLETE_CALLER_DECLARATION_REQUIRED_FOR_CANDIDATE_SCREEN",
+             },
+-        }
+-    elif wall_status == "INCOMPLETE_EVIDENCE" and wall_interval is not None:
+-        wall_report = {
+-            "evidence_status": wall_status,
+-            "scope": "global_interval",
+-            "thickness_interval_m": [float(wall_interval[0]), float(wall_interval[1])],
+-            "definition": _text(wall_measurement.get("definition")) if isinstance(wall_measurement, Mapping) else None,
+-            "source": _text(wall_measurement.get("source")) if isinstance(wall_measurement, Mapping) else None,
+-            "h_to_wall": {"definition": "unavailable without complete source evidence", "value": None, "policy_assessment": wall_assessment},
+-        }
+-    else:
+-        wall_report = {
+-            "evidence_status": "UNKNOWN",
+-            "scope": "local_or_missing",
+-            "thickness_interval_m": None,
+-            "h_to_wall": {"definition": "unavailable without a source-backed global thickness interval", "value": None, "policy_assessment": wall_assessment},
+-        }
+-
+-    if local_thickness_status == "SOURCE_DOCUMENTED_LOCAL_MAP":
++            "numeric_range_failure_count": len(global_wall_ratio_failed_ids),
++            "numeric_range_failure_cell_indices": global_wall_ratio_failed_ids,
++        },
++    }
++
++    if local_thickness_status == "CALLER_DECLARED_LOCAL_MAP":
+         local_h_wall_p95 = _stats(local_h_wall_ratios)["p95"]
+         local_wall_limit = _policy_limit(resolution_policy, "max_h_to_wall", policy_valid)
+         wall_report["local_cell_h_to_wall"] = {
+-            "definition": "per-cell maximum edge divided by source-mapped local thickness; diagnostic only",
++            "definition": "per-cell maximum edge divided by caller-declared local thickness; candidate diagnostic only",
+             "coverage_count": int(len(local_h_wall_ratios)),
+             "coverage_fraction_of_valid_cells": (len(local_h_wall_ratios) / valid_geometry_count) if valid_geometry_count else 0.0,
+             "quantiles": _stats(local_h_wall_ratios),
+             "policy_assessment": _assessment(
+-                local_h_wall_p95 if len(local_h_wall_ratios) == valid_geometry_count and valid_geometry_count > 0 else None,
++                local_h_wall_p95 if len(local_h_wall_ratios) == valid_geometry_count and valid_geometry_count > 0 and not local_h_wall_failed_ids else None,
+                 local_wall_limit,
+                 policy_valid=policy_valid,
+             ),
++            "numeric_range_failure_count": len(local_h_wall_failed_ids),
++            "numeric_range_failure_cell_indices": local_h_wall_failed_ids,
+         }
+-    wall_report["global_wall_status"] = "SOURCE_DOCUMENTED_GLOBAL_INTERVAL" if wall_documented else "UNKNOWN"
+     wall_report["local_normal_projection"] = {
+         "evidence_status": normal_projection_status,
+         "definition": "per-cell maximum absolute projection of the six tetra edge vectors onto the supplied unit wall normal; no maximum-edge substitute is used",
+@@ -551,19 +703,24 @@
+         "projected_edge_m_quantiles": _stats(projected_values),
+         "projected_edge_over_local_wall_quantiles": _stats(normal_ratio_values),
+         "policy_assessment": normal_assessment,
++        "numeric_range_failure_count": len(normal_ratio_failed_ids),
++        "numeric_range_failure_cell_indices": normal_ratio_failed_ids,
+         "definition_source": _text(wall_normal_map.get("definition")) if isinstance(wall_normal_map, Mapping) else None,
+         "mapping_source": _text(wall_normal_map.get("source")) if isinstance(wall_normal_map, Mapping) else None,
+     }
+ 
+     process_report = {
+-        "evidence_status": "SOURCE_DOCUMENTED" if process_documented else "UNKNOWN",
+-        "length_m": process_length if process_documented else None,
++        "evidence_status": "CALLER_DECLARED" if process_caller_declared else "UNKNOWN",
++        "length_m": process_length if process_caller_declared else None,
+         "definition": _text(process_zone.get("definition")) if isinstance(process_zone, Mapping) else None,
+         "source": _text(process_zone.get("source")) if isinstance(process_zone, Mapping) else None,
++        "actual_source_verification_status": "UNKNOWN_NOT_PERFORMED_BY_PURE_MATH_AUDIT",
+         "h_to_process_zone": {
+-            "definition": "p95 across per-cell maximum edge lengths divided by the separately supplied process-zone length",
++            "definition": "p95 of per-cell maximum edge divided by the separately caller-declared process-zone length",
+             "value": h_to_process,
+             "policy_assessment": process_assessment,
++            "numeric_range_failure_count": len(process_ratio_failed_ids),
++            "numeric_range_failure_cell_indices": process_ratio_failed_ids,
+         },
+     }
+ 
+@@ -571,9 +728,20 @@
+         "horizon_m": horizon,
+         "status": "INPUT_REPORTED" if horizon is not None else "UNKNOWN",
+         "delta_over_h": delta_over_h,
++        "delta_over_h_status": "UNKNOWN_NUMERIC_RANGE" if delta_over_h_failure is not None else "COMPUTED" if delta_over_h is not None else "UNKNOWN",
++        "delta_over_h_numeric_range_failure_count": int(delta_over_h_failure is not None),
++        "delta_over_h_numeric_range_failure_cell_indices": [i for i, _ in valid_cell_lengths] if delta_over_h_failure is not None else [],
+         "h_over_delta": h_over_delta,
+         "delta_over_wall_lower_bound": delta_over_wall,
++        "delta_over_wall_status": (
++            "UNKNOWN_NUMERIC_RANGE" if delta_over_wall_failure is not None
++            else "CALLER_DECLARED_CANDIDATE" if delta_over_wall is not None
++            else "UNKNOWN"
++        ),
++        "delta_over_wall_numeric_range_failure_count": int(delta_over_wall_failure is not None),
+         "h_over_delta_policy_assessment": horizon_assessment,
++        "h_over_delta_numeric_range_failure_count": len(h_delta_ratio_failed_ids),
++        "h_over_delta_numeric_range_failure_cell_indices": h_delta_ratio_failed_ids,
+         "independence_note": "PD horizon delta is reported only from pd_horizon_m; it is never used as a process-zone length.",
+     }
+ 
+@@ -597,17 +765,24 @@
+             "nonfinite_vertex_count": int(np.count_nonzero(~finite_vertices)),
+             "invalid_index_cell_count": int(invalid_index_count),
+             "nonfinite_coordinate_cell_count": int(status_counts["NONFINITE_COORDINATE"]),
+-            "numeric_unstable_cell_count": int(status_counts["NUMERIC_UNSTABLE"] + status_counts["NUMERIC_OVERFLOW"]),
++            "numeric_unstable_cell_count": int(status_counts["NUMERIC_UNSTABLE"]),
++            "unknown_numeric_range_cell_count": int(len(numeric_range_issues)),
++            "unknown_numeric_range_cell_indices": [int(item["cell_index"]) for item in numeric_range_issues],
+             "has_invalid_indices": bool(invalid_index_count > 0),
+             "has_nonfinite_vertices": bool(np.any(~finite_vertices)),
+         },
+         "tetra_geometry": {
+-            "signed_volume_m3": _stats(signed_volumes),
++            "signed_volume_m3": signed_volume_stats,
+             "signed_orientation_counts": orientation_summary,
+             "all_signed_orientations_positive": all_positive,
+             "negative_orientation_is_reported_separately_from_degeneracy": True,
+             "zero_volume_count": int(zero_volume_count),
+             "near_degenerate_count": int(near_degenerate_count),
++            "unknown_numeric_range_count": int(len(numeric_range_issues)),
++            "unknown_numeric_range_issues": numeric_range_issues,
++            "all_nonzero_signed_volumes_representable": bool(
++                len(numeric_range_issues) == 0 and orientation_counts["unknown"] == 0
++            ),
+             "numerical_degeneracy_ratio_threshold": _NUMERICAL_DEGENERACY_RATIO,
+             "pooled_tetra_edge_length_m": _stats(edge_lengths_all),
+             "per_tetra_maximum_edge_m": _stats(cell_max_edges),
+@@ -620,6 +795,15 @@
+             "cell_status_counts": {key: int(value) for key, value in sorted(status_counts.items())},
+             "per_cell": per_cell,
+         },
++        "surface_vs_volume_discretization": {
++            "surface_tessellation_tolerance_m": None,
++            "surface_tessellation_tolerance_status": "NOT_PROVIDED",
++            "surface_triangle_edge_length_m": _stats([]),
++            "surface_triangle_edge_length_status": "NOT_PROVIDED",
++            "volume_tetra_spacing_m": float(h_p95) if h_p95 is not None else None,
++            "volume_tetra_spacing_definition": "p95 of per-tetra maximum edge lengths from supplied 3D tetrahedra",
++            "interpretation_limit": "A surface tessellation tolerance such as 0.5 mm, or a surface triangle edge size, is not volume-tet spacing and cannot establish volume-mesh resolution.",
++        },
+         "resolution_policy": {
+             "status": "VALID_NAMED_POLICY" if policy_valid else "UNKNOWN",
+             "id": policy_id,
+@@ -629,6 +813,7 @@
+         "wall_resolution": wall_report,
+         "process_zone_resolution": process_report,
+         "pd_horizon": pd_report,
++        "numeric_ratio_issues": ratio_issues,
+         "directional_diagnostics": {
+             "tetra_edge_direction_tensor": direction_tensor,
+             "single_mesh_crack_direction_bias_status": "UNKNOWN",
+
+--- v1/test_mesh_resolution_audit.py
++++ v2/test_mesh_resolution_audit.py
+@@ -38,6 +38,10 @@
+     assert geometry["minimum_tetra_height_m"]["median"] == pytest.approx(math.sqrt(2.0 / 3.0) * 1.0e-3)
+     assert geometry["mesh_characteristic_h_m"]["value"] == pytest.approx(1.0e-3)
+     assert geometry["all_signed_orientations_positive"] is True
++    surface_volume = report["surface_vs_volume_discretization"]
++    assert surface_volume["surface_tessellation_tolerance_status"] == "NOT_PROVIDED"
++    assert surface_volume["surface_triangle_edge_length_status"] == "NOT_PROVIDED"
++    assert surface_volume["volume_tetra_spacing_m"] == pytest.approx(1.0e-3)
+     json.dumps(report, allow_nan=False)
+ 
+ 
+@@ -63,7 +67,7 @@
+     assert geometry["all_signed_orientations_positive"] is False
+ 
+ 
+-def test_source_backed_nearwall_policy_flags_global_and_normal_resolution():
++def test_caller_declared_nearwall_candidate_screen_and_normal_resolution():
+     report = audit_tetra_mesh(
+         regular_tetra(),
+         [[0, 1, 2, 3]],
+@@ -85,10 +89,102 @@
+     )
+     wall = report["wall_resolution"]
+     assert wall["h_to_wall"]["value"] == pytest.approx(5.0)
+-    assert wall["h_to_wall"]["policy_assessment"]["status"] == "RESOLUTION_INSUFFICIENT"
++    assert wall["global_wall_status"] == "UNKNOWN"
++    assert wall["actual_source_verification"]["verified"] is False
++    assert wall["h_to_wall"]["policy_assessment"]["status"] == "UNKNOWN"
++    assert wall["h_to_wall"]["caller_declared_candidate_policy_screen"]["status"] == "RESOLUTION_INSUFFICIENT"
+     assert wall["local_normal_projection"]["projected_edge_m_quantiles"]["p95"] == pytest.approx(1.0e-3)
+     assert wall["local_normal_projection"]["policy_assessment"]["status"] == "RESOLUTION_INSUFFICIENT"
+     assert report["directional_diagnostics"]["single_mesh_crack_direction_bias_status"] == "UNKNOWN"
++
++
++def test_tiny_regular_tetrahedron_keeps_scale_and_marks_volume_underflow_unknown():
++    report = audit_tetra_mesh(regular_tetra(edge_m=1.0e-120), [[0, 1, 2, 3]])
++    geometry = report["tetra_geometry"]
++    cell = geometry["per_cell"][0]
++    assert cell["orientation"] == "POSITIVE"
++    assert cell["status"] == "UNKNOWN_NUMERIC_RANGE/UNDERFLOW"
++    assert cell["signed_volume_m3"] is None
++    assert cell["volume_computation_status"] == "UNDERFLOW"
++    assert cell["maximum_edge_scale_m"] == pytest.approx(1.0e-120)
++    assert cell["normalized_signed_volume_over_h_cubed"] > 0.0
++    assert cell["signed_volume_log10_abs_m3"] == pytest.approx(math.log10(math.sqrt(2.0) / 12.0) - 360.0)
++    issue = geometry["unknown_numeric_range_issues"][0]
++    assert issue["cell_index"] == 0
++    assert issue["status"] == "UNDERFLOW"
++    assert issue["maximum_edge_scale_m"] == pytest.approx(1.0e-120)
++    assert issue["normalized_signed_volume_over_h_cubed"] == pytest.approx(math.sqrt(2.0) / 12.0)
++    assert issue["signed_volume_log10_abs_m3"] == pytest.approx(math.log10(math.sqrt(2.0) / 12.0) - 360.0)
++    assert issue["signed_volume_m3"] is None
++    assert geometry["all_nonzero_signed_volumes_representable"] is False
++    json.dumps(report, allow_nan=False)
++
++
++def test_extreme_delta_to_h_and_h_to_delta_range_failures_are_reported():
++    report = audit_tetra_mesh(
++        regular_tetra(edge_m=1.0e-100),
++        [[0, 1, 2, 3]],
++        pd_horizon_m=1.0e308,
++    )
++    horizon = report["pd_horizon"]
++    assert horizon["h_over_delta"] is None
++    assert horizon["h_over_delta_numeric_range_failure_count"] == 1
++    assert horizon["h_over_delta_numeric_range_failure_cell_indices"] == [0]
++    assert horizon["delta_over_h"] is None
++    assert horizon["delta_over_h_status"] == "UNKNOWN_NUMERIC_RANGE"
++    assert horizon["delta_over_h_numeric_range_failure_count"] == 1
++    assert horizon["delta_over_h_numeric_range_failure_cell_indices"] == [0]
++    json.dumps(report, allow_nan=False)
++
++
++def test_overflow_has_one_terminal_status_count_per_cell():
++    report = audit_tetra_mesh(regular_tetra(edge_m=1.0e103), [[0, 1, 2, 3]])
++    geometry = report["tetra_geometry"]
++    assert geometry["per_cell"][0]["status"] == "UNKNOWN_NUMERIC_RANGE/OVERFLOW"
++    assert geometry["cell_status_counts"]["UNKNOWN_NUMERIC_RANGE/OVERFLOW"] == 1
++    assert sum(geometry["cell_status_counts"].values()) == 1
++    assert geometry["unknown_numeric_range_count"] == 1
++    assert geometry["unknown_numeric_range_cell_indices"] == [0]
++
++
++def test_nonfinite_scale_ratios_are_unknown_and_keep_cell_indices():
++    a = 1.0e308
++    vertices = [
++        [0.0, 0.0, 0.0],
++        [a, 0.0, 0.0],
++        [a / 2.0, math.sqrt(3.0) * a / 2.0, 0.0],
++        [a / 2.0, math.sqrt(3.0) * a / 6.0, math.sqrt(2.0 / 3.0) * a],
++    ]
++    report = audit_tetra_mesh(
++        vertices,
++        [[0, 1, 2, 3]],
++        wall_measurement={
++            "scope": "global_interval",
++            "thickness_interval_m": [1.0e-308, 2.0e-308],
++            "definition": "declared extreme interval for numeric-range test",
++            "source": "synthetic test input",
++        },
++        process_zone={"length_m": 1.0e-308, "definition": "test length", "source": "synthetic test input"},
++        pd_horizon_m=1.0e-308,
++        resolution_policy={"id": "numeric-range-v1", "basis": "test", "max_h_to_wall": 0.5, "max_h_to_process_zone": 0.5, "max_h_to_pd_horizon": 0.5},
++    )
++    wall = report["wall_resolution"]["h_to_wall"]
++    process = report["process_zone_resolution"]["h_to_process_zone"]
++    horizon = report["pd_horizon"]
++    assert wall["value"] is None
++    assert wall["value_status"] == "UNKNOWN_NUMERIC_RANGE"
++    assert wall["policy_assessment"]["status"] == "UNKNOWN"
++    assert wall["numeric_range_failure_count"] == 1
++    assert wall["numeric_range_failure_cell_indices"] == [0]
++    assert process["value"] is None
++    assert process["policy_assessment"]["status"] == "UNKNOWN"
++    assert process["numeric_range_failure_cell_indices"] == [0]
++    assert horizon["h_over_delta"] is None
++    assert horizon["h_over_delta_policy_assessment"]["status"] == "UNKNOWN"
++    assert horizon["h_over_delta_numeric_range_failure_cell_indices"] == [0]
++    assert horizon["delta_over_h"] is None
++    assert horizon["delta_over_h_status"] == "UNKNOWN_NUMERIC_RANGE"
++    json.dumps(report, allow_nan=False)
+ 
+ 
+ def test_absent_normal_mapping_stays_unknown_without_edge_fallback():
+@@ -104,7 +200,8 @@
+         resolution_policy=explicit_policy(max_h_to_wall=0.5, max_normal_projected_edge_to_wall=0.5),
+     )
+     normal = report["wall_resolution"]["local_normal_projection"]
+-    assert report["wall_resolution"]["h_to_wall"]["policy_assessment"]["status"] == "RESOLUTION_INSUFFICIENT"
++    assert report["wall_resolution"]["h_to_wall"]["policy_assessment"]["status"] == "UNKNOWN"
++    assert report["wall_resolution"]["h_to_wall"]["caller_declared_candidate_policy_screen"]["status"] == "RESOLUTION_INSUFFICIENT"
+     assert normal["evidence_status"] == "UNKNOWN"
+     assert normal["projected_edge_m_quantiles"]["count"] == 0
+     assert normal["policy_assessment"]["status"] == "UNKNOWN"
+

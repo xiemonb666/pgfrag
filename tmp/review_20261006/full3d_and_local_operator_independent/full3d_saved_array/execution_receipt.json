@@ -1,0 +1,28 @@
+{
+  "schema": "full3d_saved_array_execution_receipt.v1",
+  "process": "bundled Python direct invocation with -B",
+  "process_return_code": 0,
+  "elapsed_ms": 280,
+  "input_post_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+  "entrypoint_post_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a",
+  "source_pins_post_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+  "dependency_post_pin_matches": {
+    "enriched_dof_contract.py": true,
+    "field_reference.py": true,
+    "mls3d_shape.py": true,
+    "mls3d_mls.py": true,
+    "efgm_elastic_operator.py": true,
+    "full3d_cracked_elastic_operator.py": true,
+    "mls_full3d_enriched_provider.py": true,
+    "fixed_case.json": true
+  },
+  "audit_script_sha256": "a35af5770fe7cd7b8f544294586e156d8dc75b9a944d07f456a2cee2da9d61d1",
+  "audit_json_sha256": "658317052ab19a1e1b71782aec6b66469c9c320218850791bdc866fb68c6645b",
+  "spectrum_png_sha256": "3EC0D7B06695F77A7F9DA02F65115471E25770EA490B8A47390178A6264DFDFE",
+  "no_solver_provider_assembler_reference_cad_git": true,
+  "audit_initial_spectrum_png_sha256": "41f70058829d237f1ca9b83bf8a8252e43303356eca9b20fb6f240f633eea903",
+  "plot_followup_process_return_code": 0,
+  "plot_followup_elapsed_ms": 155,
+  "plot_followup_renderer_sha256": "3CC38F9658688B0A068669F426D2EDF4D41C7B7E0F1C7DD9D85E5E6CE8E68A51",
+  "plot_followup_data_source": "cached symmetric_eigenvalues only; no recomputation or source import"
+}

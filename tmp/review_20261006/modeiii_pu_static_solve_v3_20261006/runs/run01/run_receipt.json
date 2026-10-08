@@ -1,0 +1,94 @@
+{
+  "schema": "modeiii_pu_static_solve_run_receipt.v1",
+  "authorized_once": true,
+  "receipt_reconstructed_after_launcher_recording_error": true,
+  "recording_note": "The solver process completed and logs were written; the initial PowerShell receipt step then failed on an unquoted boolean token. This receipt records the already completed run; the solver was not rerun.",
+  "started_at_utc": "2026-10-06T01:46:27.367648+08:00",
+  "finished_at_utc": "2026-10-06T01:46:29.248392+08:00",
+  "solver_reported_elapsed_seconds": 1.8910000000614673,
+  "outer_command_wall_seconds_reported_by_exec_tool": 5.3,
+  "outer_timeout_seconds": 25,
+  "outer_timed_out": false,
+  "process_tree_kill_requested": false,
+  "target_process_return_code": 0,
+  "target_process_return_code_observed": false,
+  "target_process_return_code_basis": "Inferred: the exact v3 parent promotes staging only for child rc=0, and this output is the promoted SOLVED result; every failure branch writes UNKNOWN instead.",
+  "actual_argv": [
+    "C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe",
+    "-B",
+    "C:/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve.py",
+    "--output",
+    "C:/Users/xiemo/Desktop/ShardForge/pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json"
+  ],
+  "stdout_log": "stdout.log",
+  "stderr_log": "stderr.log",
+  "stdout_bytes": 0,
+  "stderr_bytes": 0,
+  "result_status": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+  "result_schema": "modeiii_pu_antiplane_static_solve_result.v3",
+  "pre_run_pins": {
+    "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py": "D9294D9A90D20505D6ECD01354A2D9E0897F56B5FF0BB98AAD01A4FD31513787",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py": "5369C9FF661959C93721FF2A4986CBEFFEB9419B78D9DCA0A018E64B31FECD2E",
+    "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_20261005/source_freeze.json": "24D1D07EC2D61036E77686B8CBECFB72260F30FDC31658385E09CCB4847445DA",
+    "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve_case.json": "93C51463D717ADAA8E78BC163FB8915AAF26164F411C2B46A20D80492BDA42D4",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve.py": "7A8AC7076A788A29D7F1BCAE34BCEDE80B1481030910C37DA1AF673A2A370A9F",
+    "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_v2_20261005/source_freeze.json": "D8DE9597D82E5DB9A983F6BE83F5C8407EC9CD56E9A8148EA22CAF86D642B990",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve_case.json": "13CA46E05B520624D903BE5D71C55E58B4D23DB621423B47DA4B2A0C174A38A9",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve_case.json": "D4246341D4E5C3C8CB38FF6CAF681010393CB73BD589981EEB07CF6A55FBE3B1",
+    "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/source_freeze.json": "1E57FE4E81FCA80789550AEC376934F3AC450B819CE7963744D30009C901C5A0"
+  },
+  "post_run_pins": {
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve.py": "7A8AC7076A788A29D7F1BCAE34BCEDE80B1481030910C37DA1AF673A2A370A9F",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve_case.json": "13CA46E05B520624D903BE5D71C55E58B4D23DB621423B47DA4B2A0C174A38A9",
+    "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/source_freeze.json": "1E57FE4E81FCA80789550AEC376934F3AC450B819CE7963744D30009C901C5A0",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py": "5369C9FF661959C93721FF2A4986CBEFFEB9419B78D9DCA0A018E64B31FECD2E",
+    "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve_case.json": "D4246341D4E5C3C8CB38FF6CAF681010393CB73BD589981EEB07CF6A55FBE3B1",
+    "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_v2_20261005/source_freeze.json": "D8DE9597D82E5DB9A983F6BE83F5C8407EC9CD56E9A8148EA22CAF86D642B990",
+    "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py": "D9294D9A90D20505D6ECD01354A2D9E0897F56B5FF0BB98AAD01A4FD31513787",
+    "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve_case.json": "93C51463D717ADAA8E78BC163FB8915AAF26164F411C2B46A20D80492BDA42D4",
+    "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_20261005/source_freeze.json": "24D1D07EC2D61036E77686B8CBECFB72260F30FDC31658385E09CCB4847445DA"
+  },
+  "pin_changes": [],
+  "artifacts_excluding_receipt": [
+    {
+      "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json",
+      "bytes": 369684,
+      "sha256": "39CB2DABE767998BAF5E84B038F39510D6EF7DB10BCD6C77298B480045CB24D3"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/stderr.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/stdout.log",
+      "bytes": 0,
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    }
+  ],
+  "artifact_bytes_excluding_receipt": null,
+  "artifact_tree_cap_bytes": 8388608,
+  "artifact_bytes_including_receipt": 376717,
+  "artifact_tree_within_cap": true,
+  "source_dependency_hashes_worker_pre_run": {
+    "static_solve_case.json": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+    "base_operator_case.json": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+    "mls_modeiii_provider.py": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+    "enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"
+  },
+  "source_dependency_hashes_post_run": {
+    "static_solve_case.json": "13CA46E05B520624D903BE5D71C55E58B4D23DB621423B47DA4B2A0C174A38A9",
+    "base_operator_case.json": "DCE0A1F3009246A52198BC0ED833ED67998144549A653E7BCE9BCC17BABD71B9",
+    "mls_modeiii_provider.py": "6025642FDD119A95C76D693D3EDBC4785D982731560E556CE7B13BAD109C6034",
+    "enriched_dof_contract.py": "E3DDB3B067465BB5B269576A1B8A5100E2BB92C9C924BC09C949702C19EFA9D8",
+    "field_reference.py": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7",
+    "mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D"
+  },
+  "dependency_pin_changes": {}
+}

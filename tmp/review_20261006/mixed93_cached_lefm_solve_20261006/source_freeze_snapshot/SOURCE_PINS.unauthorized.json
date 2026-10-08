@@ -1,0 +1,31 @@
+{
+  "schema": "mixed93_source_pins.v1",
+  "source_state": "SOURCE_PREPARED_EXECUTION_NOT_AUTHORIZED",
+  "execution_authorized": false,
+  "case_sha256_at_source_freeze": "ab57f5969a22218f4c347633ca312029ffd8ac6446200eb6c9481529e8a1c5d0",
+  "previous_revision_case_sha256": "e4eebffefbee6d3700de40c809966570c943603575afcc5d55247c46a82e6ab8",
+  "current_case_sha256": "ab57f5969a22218f4c347633ca312029ffd8ac6446200eb6c9481529e8a1c5d0",
+  "entry_sha256": "61e88d32a6d5543c891e92c8996b66f1562db6a20781db061c6f266d0dffbfa8",
+  "references": {
+    "cached_result": {
+      "path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+      "sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b"
+    },
+    "cached_arrays": {
+      "path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz",
+      "sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea"
+    },
+    "mixed_lefm_field": {
+      "path": "pgfrag/experiments/mixed_lefm_benchmark_20261006/mixed_lefm_field.py",
+      "sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd"
+    },
+    "mixed_enrichment_algebra": {
+      "path": "pgfrag/experiments/mixed_lefm_enrichment_algebra_20261006/mixed_enrichment_algebra.py",
+      "sha256": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3"
+    },
+    "global_semantic_operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v3_snapshot.v1",
+  "preserved_before_v4_test_edit": true,
+  "v3_test_result": "10 passed, 1 failed; exit code 1; raw output and JUnit remain in ../v3_run/",
+  "files": [
+    {
+      "path": "mesh_resolution_audit.py",
+      "sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "copy_matches_live_at_snapshot": true
+    },
+    {
+      "path": "test_mesh_resolution_audit.py",
+      "sha256": "cd643e72c4d448bf02597b00a8e636662429f7f55f669f081e28004f46fd4c1e",
+      "copy_matches_live_at_snapshot": true
+    },
+    {
+      "path": "scope_and_limits.md",
+      "sha256": "61858d0afee5a0172fff230399d4010af32630b385f337be0aec8f00875aa4ca",
+      "copy_matches_live_at_snapshot": true
+    },
+    {
+      "path": "v3.diff",
+      "sha256": "8fbd722c5b80ec29aacfad48b24c66895b2f77762aba2643b737ad90d87a9c64",
+      "copy_matches_live_at_snapshot": true
+    },
+    {
+      "path": "v3_freeze_manifest.json",
+      "sha256": "b09a6461938f048e4670d740ba4d1ea995e1fd03d3ba1955158a471ee2566b8f",
+      "copy_matches_live_at_snapshot": true
+    },
+    {
+      "path": "fixture_cases.json",
+      "sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "copy_matches_live_at_snapshot": true
+    }
+  ]
+}

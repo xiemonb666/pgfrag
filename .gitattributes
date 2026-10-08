@@ -21,3 +21,5 @@
 /tests/fixtures/bond_events/native_shaped_fixture.json -text
 /tests/fixtures/energy_ledger/audit_cases.json -text
 /docs/evidence/20261005/** -text
+
+/docs/backup/20261007/raw_source/** -text

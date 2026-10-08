@@ -1,0 +1,83 @@
+{
+  "schema": "modeiii_solved_field_j_coupling_source_freeze.v1",
+  "status": "SOURCE_IMPLEMENTATION_READY_AWAITING_ROOT_REVIEW",
+  "case_id": "modeiii_solved_field_j_readback_coupling_20261006_v1",
+  "source_only": true,
+  "tests_run": false,
+  "provider_run": false,
+  "J_integrator_run": false,
+  "static_solver_run": false,
+  "stiffness_reassembled": false,
+  "owned_sources": {
+    "pgfrag/experiments/solved_field_j_coupling_20261006/read_solved_field_j.py": "4B2ECA6BAE43CA74AAEE6129F58DA838E35D2AB3F7E1CA22CD3FDBA21D13815D",
+    "pgfrag/experiments/solved_field_j_coupling_20261006/README.md": "FD24A27CE44F4E38F7B8B1BAB23FE4459FC97E0778F39DC36673770464F50242",
+    "pgfrag/tmp/review_20261006/solved_field_j_coupling_20261006/SOURCE_REVIEW.md": "258913BB6A888B8D997BC62934F4BE8986A59D88BBC5BEDF6706AACA1F879AA4"
+  },
+  "read_only_dependencies": {
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve.py": "7A8AC7076A788A29D7F1BCAE34BCEDE80B1481030910C37DA1AF673A2A370A9F",
+    "pgfrag/experiments/modeiii_pu_static_solve_v3_20261006/static_solve_case.json": "13CA46E05B520624D903BE5D71C55E58B4D23DB621423B47DA4B2A0C174A38A9",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "DCE0A1F3009246A52198BC0ED833ED67998144549A653E7BCE9BCC17BABD71B9",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py": "6025642FDD119A95C76D693D3EDBC4785D982731560E556CE7B13BAD109C6034",
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "E3DDB3B067465BB5B269576A1B8A5100E2BB92C9C924BC09C949702C19EFA9D8",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7B07DFB30A64C50734DC18DE2778B7725320DE6D5A8F275C55F301C453EF18D7",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D",
+    "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_precopy_guard_v3.py": "B4D5CA3734D0E44E7B8ED4BB690257C61E72C647D499003FAAE6D8FEE6880B7B",
+    "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/source_freeze.json": "1E57FE4E81FCA80789550AEC376934F3AC450B819CE7963744D30009C901C5A0",
+    "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json": "39CB2DABE767998BAF5E84B038F39510D6EF7DB10BCD6C77298B480045CB24D3"
+  },
+  "frozen_solution": {
+    "result_path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json",
+    "result_sha256": "39CB2DABE767998BAF5E84B038F39510D6EF7DB10BCD6C77298B480045CB24D3",
+    "solver_source_sha256": "7A8AC7076A788A29D7F1BCAE34BCDE80B1481030910C37DA1AF673A2A370A9F",
+    "source_freeze_sha256": "1E57FE4E81FCA80789550AEC376934F3AC450B819CE7963744D30009C901C5A0",
+    "coefficient_levels": [
+      "volume_gl4x8x4",
+      "volume_gl4x16x4"
+    ],
+    "coefficient_binding": "stored values are keyed by canonical semantic IDs and reordered to the frozen registry before contraction"
+  },
+  "provider_budget": {
+    "midsection_contour_queries": 224,
+    "z_reflection_control_queries": 24,
+    "total_queries": 248,
+    "maximum_queries": 256,
+    "provider_batches": 1,
+    "worker_timeout_seconds": 59,
+    "hard_wall_cap_seconds": 60,
+    "maximum_result_json_bytes": 8388608
+  },
+  "contour_rule": {
+    "ellipse_semiaxes_m": [
+      {
+        "a": 0.003,
+        "b": 0.0018
+      },
+      {
+        "a": 0.006,
+        "b": 0.0036
+      }
+    ],
+    "rotations_rad": [
+      0.0,
+      0.37
+    ],
+    "quadrature_order_per_smooth_arc": [
+      12,
+      16
+    ],
+    "smooth_arc_count": 2,
+    "midsection_z_m": 0.0,
+    "branch_cut_split": "exact negative-x ellipse crossing; no shifted coordinates"
+  },
+  "interpretation": {
+    "native_grad_z_retained": true,
+    "integrator_unknown_preserved": true,
+    "analytic_value_role": "comparison_only",
+    "midsection_j_role": "diagnostic_only; cannot establish full-domain 2D behavior or physical G",
+    "path_independence_qualified": false
+  },
+  "execution_authorization": "Do not launch. Await main-agent review and explicit authorization for one bounded readback execution.",
+  "review_notes": "The adapter contracts the frozen provider batch matrices directly after one 248-row factory batch; it does not issue per-point evaluate calls. GL-order sensitivity and fixed-order size/rotation sensitivity are reported separately; no combined path-independence claim is made. Parent promotion requires child return code zero and strict complete-result validation. No provider, J integrator, or solver execution has occurred."
+}

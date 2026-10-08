@@ -1,0 +1,11 @@
+# Mixed 93-DOF moving-front reanalysis
+
+This directory contains a source-prepared two-state LEFM diagnostic for a fixed external load. It compares the existing front at `a=0` with a candidate straight front at `a=0.5 mm` in the same `R=L=10 mm` cylinder, using the same old-tip pure-Mode-I boundary traction and a fresh zero physical-moment gauge for each state.
+
+The source and case are **not numerically authorized**. `case.json` is the current case and keeps `execution_authorization.authorized` set to `false`; `CASE_DRAFT.json` is retained as an earlier draft only. No moving-front provider, stiffness assembly, or solve has been run. A later numerical run requires a separate review of the exact entry, case, and source pins. The review directory also contains a dormant, standard-library-only one-shot capture wrapper; it checks authorization and all input hashes before it can spawn a single child.
+
+The case uses 93 semantic coefficients, full three-dimensional isotropic small-strain elasticity, 512 front-aligned volume rows per state, 256 shared side rows, and a shared two-center end-cap rule with 448 coarse and 896 fine cap rows. The fine cap rule is used for the two-state solves; the coarse rule reports quadrature sensitivity. Only the 1,344 new cap locations require MLS queries, in batches no larger than 256. The driver consumes the frozen BASE MLS cache for volume and side rows and records the complete shared boundary traction for replay.
+
+See [DESIGN.md](DESIGN.md) for the cap partition, branch-cut sectors, physical moment equations, predeclared numerical gates, and explicit memory/output budgets. The result, if later authorized and completed, remains a finite-quadrature elastic reanalysis diagnostic; it does not establish crack growth, a fracture criterion, or material qualification.
+
+If a future authorized run stops with a handled exception, the driver writes `failure.json` and `failure_arrays.npz` with only completed-phase diagnostics and does not create a primary `result.json`. The capture wrapper preserves raw child logs, actual return code, elapsed time, output hashes, and pre/post input pins. Those failure and capture receipts have not been produced in this source-only stage.

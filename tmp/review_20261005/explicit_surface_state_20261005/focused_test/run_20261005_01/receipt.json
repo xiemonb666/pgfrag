@@ -1,0 +1,82 @@
+{
+  "schema": "pgfrag.explicit-surface-state-focused-test-receipt.v1",
+  "test": "experiments/explicit_surface_state_20261005/test_explicit_surface_state.py",
+  "python": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\explicit_surface_state_20261005\\focused_test\\run_20261005_01\\junit.xml",
+    "experiments/explicit_surface_state_20261005/test_explicit_surface_state.py"
+  ],
+  "started_at_utc": "2026-10-05T10:19:33.9798481Z",
+  "finished_at_utc": "2026-10-05T10:19:36.1277544Z",
+  "duration_ms": 2146,
+  "timeout_ms": 30000,
+  "timed_out": false,
+  "exit_code": 1,
+  "pre_run_source_pins": [
+    {
+      "path": "experiments/explicit_surface_state_20261005/explicit_surface_state.py",
+      "expected_sha256": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0",
+      "actual_sha256": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/test_explicit_surface_state.py",
+      "expected_sha256": "6eb0f109502f32066d710a071eb33afdf64262c1e9a582df254fda0849afdd19",
+      "actual_sha256": "6eb0f109502f32066d710a071eb33afdf64262c1e9a582df254fda0849afdd19",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/state.schema.json",
+      "expected_sha256": "a8a4c0881cc90b959271321e837ab37ea4341036a3060ad09adf3411910ff9ea",
+      "actual_sha256": "a8a4c0881cc90b959271321e837ab37ea4341036a3060ad09adf3411910ff9ea",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/README.md",
+      "expected_sha256": "ad4041e9addaac9a19e4fce3b00cf51329be286397934fb6ef990a67c847cf5b",
+      "actual_sha256": "ad4041e9addaac9a19e4fce3b00cf51329be286397934fb6ef990a67c847cf5b",
+      "match": true
+    }
+  ],
+  "post_run_source_pins": [
+    {
+      "path": "experiments/explicit_surface_state_20261005/explicit_surface_state.py",
+      "expected_sha256": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0",
+      "actual_sha256": "b4ed9bc2eff7a3c7811d6adaaea012db398afd256285d04ccdd15b3dd2a2b6e0",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/test_explicit_surface_state.py",
+      "expected_sha256": "6eb0f109502f32066d710a071eb33afdf64262c1e9a582df254fda0849afdd19",
+      "actual_sha256": "6eb0f109502f32066d710a071eb33afdf64262c1e9a582df254fda0849afdd19",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/state.schema.json",
+      "expected_sha256": "a8a4c0881cc90b959271321e837ab37ea4341036a3060ad09adf3411910ff9ea",
+      "actual_sha256": "a8a4c0881cc90b959271321e837ab37ea4341036a3060ad09adf3411910ff9ea",
+      "match": true
+    },
+    {
+      "path": "experiments/explicit_surface_state_20261005/README.md",
+      "expected_sha256": "ad4041e9addaac9a19e4fce3b00cf51329be286397934fb6ef990a67c847cf5b",
+      "actual_sha256": "ad4041e9addaac9a19e4fce3b00cf51329be286397934fb6ef990a67c847cf5b",
+      "match": true
+    }
+  ],
+  "all_source_pins_match": true,
+  "junit": {
+    "path": "junit.xml",
+    "testcases": 18,
+    "failures": 4,
+    "errors": 0,
+    "skipped": 0
+  },
+  "stdout_path": "stdout.txt",
+  "stderr_path": "stderr.txt"
+}

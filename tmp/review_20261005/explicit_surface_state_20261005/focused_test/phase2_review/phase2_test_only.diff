@@ -1,0 +1,54 @@
+diff --git a/tmp/review_20261005/explicit_surface_state_20261005/focused_test/phase1_source_snapshot/test_explicit_surface_state.py b/experiments/explicit_surface_state_20261005/test_explicit_surface_state.py
+index b13ec33..a6a2f0b 100644
+--- a/tmp/review_20261005/explicit_surface_state_20261005/focused_test/phase1_source_snapshot/test_explicit_surface_state.py
++++ b/experiments/explicit_surface_state_20261005/test_explicit_surface_state.py
+@@ -153,14 +153,23 @@ class ExplicitSurfaceStateTests(unittest.TestCase):
+             [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=np.float64
+         )
+         with self.assertRaisesRegex(surface.SurfaceStateError, "duplicate triangles"):
+-            _patch(vertices=vertices, triangles=[[0, 1, 2], [2, 1, 0]])
++            _patch(
++                vertices=vertices,
++                triangles=np.asarray([[0, 1, 2], [2, 1, 0]], dtype=np.int64),
++            )
+ 
+     def test_zero_area_and_nearly_degenerate_triangles_are_rejected(self):
+         collinear = np.asarray(
+             [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [2.0, 0.0, 0.0]], dtype=np.float64
+         )
+         with self.assertRaisesRegex(surface.SurfaceStateError, "degenerate"):
+-            _patch(vertices=collinear, triangles=[[0, 1, 2]])
++            _patch(vertices=collinear, triangles=np.asarray([[0, 1, 2]], dtype=np.int64))
++
++        nearly_collinear = np.asarray(
++            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.0, 1e-16, 0.0]], dtype=np.float64
++        )
++        with self.assertRaisesRegex(surface.SurfaceStateError, "numerically unresolved"):
++            _patch(vertices=nearly_collinear, triangles=np.asarray([[0, 1, 2]], dtype=np.int64))
+ 
+     def test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess(self):
+         vertices = np.asarray(
+@@ -174,7 +183,10 @@ class ExplicitSurfaceStateTests(unittest.TestCase):
+             dtype=np.float64,
+         )
+         with self.assertRaisesRegex(surface.SurfaceStateError, "nonmanifold edge"):
+-            _patch(vertices=vertices, triangles=[[0, 1, 2], [1, 0, 3], [0, 1, 4]])
++            _patch(
++                vertices=vertices,
++                triangles=np.asarray([[0, 1, 2], [1, 0, 3], [0, 1, 4]], dtype=np.int64),
++            )
+ 
+     def test_touching_front_cycles_remain_unknown_junction(self):
+         # Two individually valid triangles touch only at one vertex. A naive
+@@ -190,7 +202,10 @@ class ExplicitSurfaceStateTests(unittest.TestCase):
+             ],
+             dtype=np.float64,
+         )
+-        patch = _patch(vertices=vertices, triangles=[[0, 1, 2], [0, 3, 4]])
++        patch = _patch(
++            vertices=vertices,
++            triangles=np.asarray([[0, 1, 2], [0, 3, 4]], dtype=np.int64),
++        )
+         self.assertEqual(patch.front_status, "UNKNOWN_UNSUPPORTED_BRANCH_OR_INTERSECTION")
+         state = surface.ExplicitSurfaceState((patch,))
+         state = _separated(state, "root", "f-neg", "f-pos")

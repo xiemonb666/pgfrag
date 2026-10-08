@@ -1,0 +1,56 @@
+{
+  "schema": "fixed_load_front_saved_independent_execution_receipt.v1",
+  "authorized_scope": "one cached NumPy reassembly/equilibrium/energy audit plus a standard-library schema inspection and a render-only chart step",
+  "schema_inspection": {
+    "process": "bundled Python -B; standard library only; no numerical packages or producer modules",
+    "return_code": 0,
+    "elapsed_ms": 101,
+    "script_sha256": "d05e3451e3d37c22534eb5ea228466bedfe34fa7d0e68335c88c48e2a56837a1",
+    "schema_output_sha256": "f70c10a15a0baf346172bb42098b580cacf37859536d5ca781156fe0987e7bdb",
+    "result": "Confirmed mu/lambda fields are formula strings; E, nu and KIII are numeric. All indexed arrays, canonical key fields, and paths used by the audit were present with expected list/dict/scalar types."
+  },
+  "attempt01_failed_before_assembly": {
+    "return_code": 1,
+    "elapsed_ms": 190,
+    "audit_script_sha256": "d1a9f187742abf4801a0fd6247a85bab86675474c00aced37404b8ac9fa627ff",
+    "stdout_stderr_log": {"path": "attempt01_stdout_merged.log", "sha256": "c4cd96b8fac8edfdaa04c4ad35853ff265e35de7d16120d0189ab791a04ffb1"},
+    "failure_receipt": "attempt01_failure_receipt.json",
+    "reason": "Checker attempted numeric conversion of metadata strings for mu/lambda. No K assembly, eigvalsh, equilibrium, energy ledger, or solver call occurred."
+  },
+  "attempt02_cached_array_audit": {
+    "return_code": 0,
+    "elapsed_ms": 207,
+    "audit_script_sha256": "b7a1914fe3d00605203fa65468a6f67727fc0bddf7b5ef0ab6ecdebe2ea8b5890",
+    "audit_stdout_log": {"path": "attempt02_stdout.log", "sha256": "a611823d257c2d671880772b289bb912ab24012248016cefe784d46a54343d29"},
+    "status": "PASS_ALGEBRAIC_REANALYSIS_ONLY",
+    "checks_passed": 20,
+    "checks_total": 20,
+    "explicit_numpy_array_bytes_estimate": 2586054,
+    "array_cap_bytes": 8388608,
+    "source_pin_manifest": {"path": "source_pins_attempt02.json", "sha256": "5ddbf72857f77d797fb63468ff2daaead2f0544186a7a007612442d8fdcdb52a"}
+  },
+  "render_only_step": {
+    "return_code": 0,
+    "elapsed_ms": 154,
+    "renderer_sha256": "807a5aaab8c8584efaea2c8d1e188a217b462552a57be2d905695fd645e5790e",
+    "reads_audit_json_only": true,
+    "stdout_log": {"path": "render_stdout.log", "sha256": "126d0e81bbc022221d59cafae8a51bc70980dce22ad80840d937fa682cc910a8"}
+  },
+  "inputs_pre_and_post_sha256": {
+    "fixed_result": "a60e51c85c26510c358ee57cafa4bfdda6ed89ea463d99bcc86551f64220732c",
+    "baseline_bridge_result": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+    "upstream_operator_result": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "outputs": {
+    "audit_json": {"path": "audit.json", "bytes": 15742, "sha256": "6b71f396f08fc1edcfcec0d10300859dcac219f702bf6e85c21fc16f0e2edffa"},
+    "spectrum_energy_ledger_png": {"path": "spectrum_energy_ledger.png", "bytes": 22196, "sha256": "e2cfebba1ebcf4c12ca84ace50b5479e97423e110dc7eb120985d8f070d1075d"},
+    "source_pins": {"path": "source_pins_attempt02.json", "sha256": "5ddbf72857f77d797fb63468ff2daaead2f0544186a7a007612442d8fdcdb52a"}
+  },
+  "author_run_claim": {
+    "source": "fixed_load_front_reanalysis_20261006/README.md at SHA 8a6c21e5c49eeb67499d04d1871187692899bc2bde79ae805e7e16801cf704a1",
+    "reported_return_code": 0,
+    "reported_elapsed_seconds": 0.551,
+    "provenance_limit": "Run folder contained result.json but no outer wrapper stdout/stderr or receipt. The README run claim was not independently captured; the independent audit process rc/time/log are captured above."
+  },
+  "no_provider_operator_assembler_solver_reference_CAD_or_Git_called": true
+}

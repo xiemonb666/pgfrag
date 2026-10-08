@@ -1,0 +1,40 @@
+{
+  "artifact_kind": "fixture_portability_review_receipt",
+  "scope": "Only test fixture lookup path changed; bond_events.py, fixture values, frozen V2 snapshot, and prior 19-pass receipt untouched.",
+  "test_snapshot_v2_frozen": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\bond_events\\test_bond_events.py.v2-frozen",
+    "bytes": 15848,
+    "sha256": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e",
+    "expected_sha256": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e"
+  },
+  "updated_test": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_events.py",
+    "bytes": 15825,
+    "sha256": "ca2f7c1258cdd9607bc36b2745796122d8a7ff8c38dc431cb814d6d4b331f499"
+  },
+  "test_diff": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\bond_events\\test_fixture_portability.patch",
+    "bytes": 339,
+    "sha256": "81b5d18c8f28c52fe203fbb1efbf9920808ce88419eec7577b5c881f9d685979"
+  },
+  "fixture_copy": {
+    "source_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\bond_events\\native_shaped_fixture.json",
+    "source_bytes": 2201,
+    "source_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f",
+    "copy_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\fixtures\\bond_events\\native_shaped_fixture.json",
+    "copy_bytes": 2201,
+    "copy_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f",
+    "byte_for_byte_copy": true,
+    "fixture_authenticity": "SYNTHETIC_HAND_AUTHORED_NATIVE_SHAPED_CONTROL; NOT_A_PHYSICAL_NATIVE_ARCHIVE; NOT_SOLVER_OUTPUT"
+  },
+  "prior_v2_pytest_19_pass_receipt": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\bond_events\\v2_pytest_receipt.json",
+    "bytes": 2076,
+    "sha256": "88a8783379122d6798161212aaf2eb61998d698d347e021fc58ed268b2cac41b",
+    "modified_by_this_change": false
+  },
+  "test_execution": {
+    "run_in_this_portability_edit": false,
+    "note": "No test/solver executed; prior 19-pass receipt is retained unchanged."
+  }
+}

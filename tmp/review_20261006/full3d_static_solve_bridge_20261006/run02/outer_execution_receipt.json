@@ -1,0 +1,48 @@
+{
+  "schema": "full3d_static_solve_bridge_outer_execution_receipt.v1",
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\full3d_static_solve_bridge_20261006\\static_solve_bridge.py",
+    "--execute"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "interpreter_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+  "started_at_utc": "2026-10-06T03:34:05.1178915+00:00",
+  "finished_at_utc": "2026-10-06T03:34:05.8734857+00:00",
+  "elapsed_seconds": 0.7541543,
+  "actual_return_code": 0,
+  "timed_out": false,
+  "stdout": {
+    "path": "outer_stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "outer_stderr.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "pre_run_pins": {
+    "source_sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5",
+    "case_sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728",
+    "input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "interpreter_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7"
+  },
+  "post_run_pins": {
+    "source_sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5",
+    "case_sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728",
+    "input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "interpreter_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7"
+  },
+  "primary_result": {
+    "path": "static_solve_bridge_result.json",
+    "bytes": 129942,
+    "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3"
+  },
+  "child_receipt": {
+    "path": "run_receipt.json",
+    "bytes": 842,
+    "sha256": "1786bc8cf81e5a2c5fb87b2af83979a0b736c42f207d350e300d19c7e5aa356f"
+  }
+}

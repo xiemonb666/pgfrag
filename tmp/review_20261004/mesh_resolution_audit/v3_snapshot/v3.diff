@@ -1,0 +1,35 @@
+--- v2/test_mesh_resolution_audit.py
++++ v3/test_mesh_resolution_audit.py
+@@ -1,5 +1,6 @@
+ import json
+ import math
++import sys
+ 
+ import numpy as np
+ import pytest
+@@ -138,7 +139,10 @@
+ 
+ 
+ def test_overflow_has_one_terminal_status_count_per_cell():
+-    report = audit_tetra_mesh(regular_tetra(edge_m=1.0e103), [[0, 1, 2, 3]])
++    edge_m = 1.0e104
++    expected_log_volume = math.log(math.sqrt(2.0) / 12.0) + 3.0 * math.log(edge_m)
++    assert expected_log_volume > math.log(sys.float_info.max)
++    report = audit_tetra_mesh(regular_tetra(edge_m=edge_m), [[0, 1, 2, 3]])
+     geometry = report["tetra_geometry"]
+     assert geometry["per_cell"][0]["status"] == "UNKNOWN_NUMERIC_RANGE/OVERFLOW"
+     assert geometry["cell_status_counts"]["UNKNOWN_NUMERIC_RANGE/OVERFLOW"] == 1
+
+--- v2/scope_and_limits.md
++++ v3/scope_and_limits.md
+@@ -19,6 +19,7 @@
+ - Read-only context: `pgfrag/schemas/pgfrag.job.schema.json`, `pgfrag/schemas/pgfrag.result.schema.json`, `pgfrag/experiments/wall_resolution/mesh_audit.py`, and the 2026-10-04 wall-resolution study and scale-design reviews under `relicweave-synlab/tmp/review_20261004/implementation/`.
+ - `fixture_cases.json` is hand-constructed geometry and declared synthetic scales; it is not a physical specimen measurement.
+ - `v1_snapshot/` preserves the exact first-version module, tests, and successful 7-pass stdout/exit/receipt. `freeze_manifest.json` also preserves the original pre-execution source/test/fixture hashes.
+-- V2 adds regression cases for unique terminal status counts, small and large volume range failures, unverified caller declarations, non-finite scale ratios, and the surface/volume scale distinction. V2 is frozen for review but has not been tested; its hashes and unified diff are in `v2_freeze_manifest.json` and `v2.diff`.
++- V2 adds regression cases for unique terminal status counts, small and large volume range failures, unverified caller declarations, non-finite scale ratios, and the surface/volume scale distinction. Its one authorized run is preserved in `v2_run/` with full stdout, stderr, exit code, argv, JUnit, distinct case IDs, and before/after hash checks; it completed 10 passing cases and 1 failing case. The failing overflow fixture used a regular-tetra edge of `1e103 m`, whose volume is about `1.1785e308 m³` and remains below float64 maximum, so the module's `OK` result was correct. `v2_snapshot/` retains the exact v2 source, tests, diff, and freeze inputs.
++- V3 changes only that test fixture: it uses `1e104 m` and independently asserts the analytic `log(V)` exceeds `log(float64_max)` before expecting overflow. V3 diff and source/test hashes are frozen in `v3.diff` and `v3_freeze_manifest.json`; V3 has not been tested.
+ 
+-The preserved v1 tests establish only the original implementation's narrow fixture result. V2 regression tests await review and one authorized run. Neither result qualifies any production mesh, actual wall source, solver run, crack direction, independent-layout result, material parameter, physical sample, or RelicWeave training label.
++The preserved v1 tests establish only the original implementation's narrow fixture result. The V2 run is a failed regression-test run with the cause documented above; the corrected V3 tests await review and any further test authorization. Neither result qualifies any production mesh, actual wall source, solver run, crack direction, independent-layout result, material parameter, physical sample, or RelicWeave training label.
+

@@ -1,0 +1,83 @@
+{
+  "case_id": "modeiii_local_front_pu_support_roles_20261006",
+  "status": "SOURCE_ONLY_SUPPORT_TOPOLOGY_CONTRACT",
+  "units": "m",
+  "geometry": {
+    "domain_box_m": [[-0.01, 0.01], [-0.01, 0.01], [-0.008, 0.008]],
+    "crack": {
+      "x_min_m": -0.01,
+      "front_x_m": 0.0,
+      "y_plane_m": 0.0,
+      "z_bounds_m": [-0.008, 0.008],
+      "definition": "finite rectangle on y=0 from x=-0.01 m up to but excluding front x=0 m, with the stated finite z interval"
+    },
+    "front": {
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "z_bounds_m": [-0.008, 0.008],
+      "definition": "finite straight segment; distance uses clamped z projection"
+    }
+  },
+  "support": {
+    "shape": "Omega intersect closed Euclidean ball centered at the source",
+    "radius_m": 0.007,
+    "kernel_reference": "Wendland C2; this certificate only evaluates compact support topology"
+  },
+  "topology": {
+    "tolerance_m": 1e-12,
+    "classify_against": "finite crack rectangle and finite front segment only",
+    "heaviside_full_split_rule": "the complete box-clipped support-plane section y=0 must lie in finite Gamma; both y-side pieces must be nonempty; the support must have positive clearance from finite F; shifted source-side value must be defined",
+    "front_rule": "support intersects finite F with positive margin; shifted F1 source value must be single-valued",
+    "unknown_policy": "all tangencies, tolerance-band cases, partial finite-crack intersections, undefined shifted-source values, and malformed/out-of-domain records are UNKNOWN",
+    "role_priority": ["FRONT_F1_SHIFTED", "HEAVISIDE", "BASE"],
+    "visibility_mask": false,
+    "infinite_plane_shortcut": false
+  },
+  "sources": {
+    "axes_m": {
+      "x": [-0.008, -0.004, 0.0, 0.004, 0.008],
+      "y": [-0.008, -0.004, 0.004, 0.008],
+      "z": [-0.008, -0.004, 0.0, 0.004, 0.008]
+    },
+    "id_format": "lf-x{ix:02d}-y{iy:02d}-z{iz:02d}",
+    "lattice_order": ["x", "y", "z"],
+    "source_count": 100,
+    "all_source_y_nonzero": true
+  },
+  "expected_counts": {
+    "geometric_roles": {
+      "FRONT": 30,
+      "HEAVISIDE_ELIGIBLE": 10,
+      "BASE": 60
+    },
+    "basis_keys": {
+      "BASE": 100,
+      "FRONT_F1_SHIFTED": 30,
+      "HEAVISIDE": 10
+    },
+    "scalar_dofs": 140,
+    "one_enrichment_maximum_per_source": true
+  },
+  "derived_geometry_bounds": {
+    "front_support_minimum_intersection_margin_m": 0.00134314575050762,
+    "heaviside_support_minimum_front_clearance_m": 0.00194427190999916,
+    "heaviside_plane_section_minimum_front_clearance_m": 0.00225543735346197,
+    "maximum_distance_to_nearest_enriched_support_center_on_crack_m": 0.00489897948556636,
+    "minimum_crack_support_coverage_margin_m": 0.00210102051443364,
+    "front_core_radius_m": 0.001,
+    "front_core_definition": "minimum distance from finite F to a non-front source center minus h"
+  },
+  "budgets": {
+    "maximum_sources": 125,
+    "maximum_scalar_dofs": 375,
+    "maximum_queries_per_batch": 256,
+    "maximum_certificate_records": 100
+  },
+  "scope": {
+    "provider": false,
+    "operator": false,
+    "solver": false,
+    "crack_growth": false,
+    "cad": false
+  }
+}

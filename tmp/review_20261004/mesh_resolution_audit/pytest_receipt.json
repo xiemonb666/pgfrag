@@ -1,0 +1,9 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.pytest_receipt.v1",
+  "exit_code": 0,
+  "stdout_sha256": "5fc6a184cef674ea791ce5bcd07164c4cf7e0866eff0932d82be5420a00f7dc5",
+  "module_sha256_after_run": "77ac2fd59a9898e8a6344ecf4f9b6cbd5aa4445e5a2e713248b7e85d8783f394",
+  "test_sha256_after_run": "9280f54d8ab45606ad84840c7d894afca07005732b3174fef1a16ac0395b3deb",
+  "freeze_manifest_sha256": "15bb0127e552bf5760c1a4e7f7b595931d1f85352e72e358aef232890dc373f6",
+  "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe"
+}

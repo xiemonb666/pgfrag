@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="480" viewBox="0 0 1320 480">
+<rect width="1320" height="480" fill="#fbfcfe"/>
+<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#1e293b}.title{font-size:23px;font-weight:700}.head{font-size:17px;font-weight:700}.sub{font-size:13px}.id{font-size:11px;fill:#526273}.foot{font-size:13px;fill:#7c2d12}</style>
+<text x="36" y="37" class="title">Finite Mode III front: proposed geometry is not yet the active surface</text>
+<text x="36" y="61" class="sub">Each pane is a state-machine snapshot. The amber strip is proposed; it turns green only after a bound reanalysis and complete energy evidence.</text>
+<rect x="24" y="92" width="300" height="310" rx="12" fill="#ffffff" stroke="#d3dce6"/>
+<text x="40" y="122" class="head">1  COMMITTED START</text>
+<text x="40" y="143" class="sub">Initial immutable surface</text>
+<rect x="94" y="204" width="142" height="122" fill="#dceaf3" stroke="#28628a" stroke-width="3"/>
+<line x1="236" y1="191" x2="236" y2="333" stroke="#16202a" stroke-width="2"/>
+<text x="216" y="184" class="id">front</text>
+<text x="244" y="270.0" class="head">+x</text>
+<text x="40" y="367" class="id">active version: surface-version:991bef60950d1</text>
+<text x="40" y="386" class="id">active version: surface-version:991bef60950d</text>
+<rect x="348" y="92" width="300" height="310" rx="12" fill="#ffffff" stroke="#d3dce6"/>
+<text x="364" y="122" class="head">2  PROPOSED</text>
+<text x="364" y="143" class="sub">Geometry candidate only</text>
+<rect x="418" y="204" width="142" height="122" fill="#dceaf3" stroke="#28628a" stroke-width="3"/>
+<rect x="560" y="204" width="34" height="122" fill="#f6d89e" fill-opacity="0.55" stroke="#d59027" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="564" y="345" class="id">candidate strip</text>
+<line x1="560" y1="191" x2="560" y2="333" stroke="#16202a" stroke-width="2"/>
+<text x="540" y="184" class="id">front</text>
+<text x="568" y="270.0" class="head">+x</text>
+<text x="364" y="367" class="id">active stays: surface-version:991bef609</text>
+<text x="364" y="386" class="id">active version: surface-version:991bef60950d</text>
+<rect x="672" y="92" width="300" height="310" rx="12" fill="#ffffff" stroke="#d3dce6"/>
+<text x="688" y="122" class="head">3  NEEDS RECOMPUTE</text>
+<text x="688" y="143" class="sub">Missing energy evidence</text>
+<rect x="742" y="204" width="142" height="122" fill="#dceaf3" stroke="#28628a" stroke-width="3"/>
+<rect x="884" y="204" width="34" height="122" fill="#f6d89e" fill-opacity="0.55" stroke="#d59027" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="888" y="345" class="id">candidate strip</text>
+<line x1="884" y1="191" x2="884" y2="333" stroke="#16202a" stroke-width="2"/>
+<text x="864" y="184" class="id">front</text>
+<text x="892" y="270.0" class="head">+x</text>
+<text x="688" y="367" class="id">pending: front-candidate:c8a2dc3429fc</text>
+<text x="688" y="386" class="id">active version: surface-version:991bef60950d</text>
+<rect x="996" y="92" width="300" height="310" rx="12" fill="#ffffff" stroke="#d3dce6"/>
+<text x="1012" y="122" class="head">4  COMMITTED · FIXTURE</text>
+<text x="1012" y="143" class="sub">Synthetic transition exercise</text>
+<rect x="1066" y="204" width="142" height="122" fill="#dceaf3" stroke="#28628a" stroke-width="3"/>
+<rect x="1208" y="204" width="34" height="122" fill="#cfe9d8" stroke="#34885b" stroke-width="3"/>
+<text x="1209" y="345" class="id">committed fixture strip</text>
+<line x1="1208" y1="197" x2="1208" y2="333" stroke="#8492a0" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="1242" y1="191" x2="1242" y2="333" stroke="#16202a" stroke-width="2"/>
+<text x="1222" y="184" class="id">front</text>
+<text x="1250" y="270.0" class="head">+x</text>
+<text x="1012" y="367" class="id">candidate: front-candidate:c8a2dc3429f</text>
+<text x="1012" y="386" class="id">active version: surface-version:1f83469d18e2</text>
+<text x="36" y="435" class="foot">All values and the green commit path are explicit test fixtures, not a solver run or calibrated fracture result. Surface contract stays NOT_COUPLED.</text>
+</svg>

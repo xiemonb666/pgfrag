@@ -1,0 +1,175 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.freeze.v3",
+  "freeze_stage": "v3_test_fixture_diff_frozen_before_any_v3_execution",
+  "tests_executed_for_v3": false,
+  "v2_execution_count": 1,
+  "v2_test_result": "10 passed, 1 failed; exit code 1; retained in v2_run/",
+  "v2_failure_explanation": "The old regular-tetra fixture edge was 1e103 m, yielding about 1.1785e308 m^3, below float64 maximum. The module returned OK correctly; the assertion threshold was wrong.",
+  "v3_change_summary": [
+    "only the overflow test is changed: edge_m=1e104",
+    "test independently asserts log(sqrt(2)/12)+3*log(edge_m) > log(sys.float_info.max)",
+    "audit module bytes are unchanged from frozen v2"
+  ],
+  "v2_snapshot": {
+    "manifest_path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/snapshot_manifest.json",
+    "module_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+    "test_sha256": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66"
+  },
+  "v2_run_evidence": {
+    "raw_files_preserved": 12,
+    "stdout_sha256": "761fb5009c54c7e15eeaa629258a5a8928dfca03073a01665f4e7528b657ff86",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit_code": 1,
+    "junit_sha256": "df8d25ccfe9519fd4ec21c34ad340e7e228b4766786f1f9588853f8b22f77a44",
+    "distinct_case_id_count": 11,
+    "case_ids_unique": true
+  },
+  "files": [
+    {
+      "role": "v3_module",
+      "path": "pgfrag/src/pgfrag/mesh_resolution_audit.py",
+      "sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "bytes": 42919
+    },
+    {
+      "role": "v3_tests",
+      "path": "pgfrag/tests/test_mesh_resolution_audit.py",
+      "sha256": "cd643e72c4d448bf02597b00a8e636662429f7f55f669f081e28004f46fd4c1e",
+      "bytes": 12066
+    },
+    {
+      "role": "v3_scope",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/scope_and_limits.md",
+      "sha256": "61858d0afee5a0172fff230399d4010af32630b385f337be0aec8f00875aa4ca",
+      "bytes": 6022
+    },
+    {
+      "role": "v3_diff",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v3.diff",
+      "sha256": "8fbd722c5b80ec29aacfad48b24c66895b2f77762aba2643b737ad90d87a9c64",
+      "bytes": 3494
+    },
+    {
+      "role": "fixture",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/fixture_cases.json",
+      "sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "bytes": 1679
+    },
+    {
+      "role": "v2_snapshot_module",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/mesh_resolution_audit.py",
+      "sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "bytes": 42919
+    },
+    {
+      "role": "v2_snapshot_tests",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/test_mesh_resolution_audit.py",
+      "sha256": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66",
+      "bytes": 11890
+    },
+    {
+      "role": "v2_snapshot_scope",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/scope_and_limits.md",
+      "sha256": "5ea0e43c42602e2e05c42e6ece35a45c4ad615b195c02185c0dd8148f99685c1",
+      "bytes": 5331
+    },
+    {
+      "role": "v2_diff_snapshot",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/v2.diff",
+      "sha256": "35f3323db55e799be4109b5fc9379fe26e5afa5835192337931ca9398d0dca9a",
+      "bytes": 40649
+    },
+    {
+      "role": "v2_freeze_manifest_snapshot",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/v2_freeze_manifest.json",
+      "sha256": "320c54492b8cdbbfdc77693a8b13aac0460120ee815201350a6b0776ba112dc8",
+      "bytes": 3843
+    },
+    {
+      "role": "v2_fixture_snapshot",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/fixture_cases.json",
+      "sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "bytes": 1679
+    },
+    {
+      "role": "v2_snapshot_manifest",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/snapshot_manifest.json",
+      "sha256": "5ba8140f5bad01d5fba24f3dd08d3cc89976f9e7ac15dd2cbd4b5cc79362c24a",
+      "bytes": 1583
+    },
+    {
+      "role": "v2_run_argv_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/argv.json",
+      "sha256": "3ddc16385767c07649b3ebb8be3412ac5eda8544241ca60b09c7b78d2c95b7d4",
+      "bytes": 739
+    },
+    {
+      "role": "v2_run_before_hashes_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/before_hashes.json",
+      "sha256": "fa4859eab9a10ac4c6fdd71e1ca8d07d1deba7d644a568d646c9213f42c155a1",
+      "bytes": 2981
+    },
+    {
+      "role": "v2_run_execution_status_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/execution_status.json",
+      "sha256": "04df91321db2acdc2116c5f2a684c79c4a21482fdb44711fcecf4415fcb3d306",
+      "bytes": 133
+    },
+    {
+      "role": "v2_run_exit_code_txt",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/exit_code.txt",
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+      "bytes": 3
+    },
+    {
+      "role": "v2_run_junit_case_ids_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/junit_case_ids.json",
+      "sha256": "523bd7b9332a1bdf6cc6c8a7131dd98d43ba8719697ad08e50febe16a5d29ca0",
+      "bytes": 3524
+    },
+    {
+      "role": "v2_run_junit_xml",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/junit.xml",
+      "sha256": "df8d25ccfe9519fd4ec21c34ad340e7e228b4766786f1f9588853f8b22f77a44",
+      "bytes": 2428
+    },
+    {
+      "role": "v2_run_post_hashes_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/post_hashes.json",
+      "sha256": "341699fb73b2a7a3bdeaa01e76d6c5085d00a977387af8ade2c3ee3395f537ec",
+      "bytes": 3120
+    },
+    {
+      "role": "v2_run_preflight_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/preflight.json",
+      "sha256": "494b078e72d5daa77eac4e5da9ca349663c1a21606a43ab93b9f0d6112985ced",
+      "bytes": 4043
+    },
+    {
+      "role": "v2_run_prior_path_diagnostic_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/prior_path_diagnostic.json",
+      "sha256": "d36519800a0cd03bdc0a9acbe5e1a2709efb43d5d86b544f5de360d2c1dc7f65",
+      "bytes": 484
+    },
+    {
+      "role": "v2_run_run_receipt_json",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/run_receipt.json",
+      "sha256": "1db31593f552fae7022318a361406a1f7e0e52cdbd446c07ed03e342874a3ce1",
+      "bytes": 1094
+    },
+    {
+      "role": "v2_run_stderr_txt",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "role": "v2_run_stdout_txt",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/stdout.txt",
+      "sha256": "761fb5009c54c7e15eeaa629258a5a8928dfca03073a01665f4e7528b657ff86",
+      "bytes": 934
+    }
+  ],
+  "scope_note": "Only the single audit test, scope document, and review artifacts changed after v2. No solver, CAD, production mesh, or module implementation was changed.",
+  "validation_note": "No pytest or target-module execution occurred after the v3 test edit. Root review is required before any further test run."
+}

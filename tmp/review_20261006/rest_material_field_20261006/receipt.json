@@ -1,0 +1,95 @@
+{
+  "checks": {
+    "assertion_groups": 5,
+    "checks": [
+      "node_order_and_repeated_point_are_invariant",
+      "resampling_at_same_physical_point_is_invariant",
+      "rigid_frame_transform_preserves_rest_binding",
+      "zero_amplitude_and_bounded_positive_map",
+      "invalid_units_lengths_amplitude_and_coordinates_are_rejected"
+    ],
+    "invalid_query_attempts_included": true,
+    "point_evaluation_attempts": 31,
+    "status": "PASS"
+  },
+  "created_utc": "2026-10-05T17:52:03+00:00",
+  "execution": {
+    "git_commands_used": false,
+    "numpy": "2.3.5",
+    "pillow": "12.3.0",
+    "production_or_solver_paths_modified": false,
+    "python": "3.12.14",
+    "runtime_limit_seconds": 30.0,
+    "runtime_seconds": 0.278993,
+    "solver_invoked": false
+  },
+  "field_id_sha256": "f361ff3f2b87c81731ed486fbf130ad2a16bd71546e9ea784e68c9c28ad7b23b",
+  "field_status": "UNCALIBRATED",
+  "pins": [
+    {
+      "path": "field_manifest.json",
+      "sha256": "494bec1b425a3fdd87289a0b37fd8357caccbf85dd2fe0d0af553a805559479b"
+    },
+    {
+      "path": "field_samples.csv",
+      "sha256": "098f0e7eb52f87677c1ec5d6b808fd566d8617b7be09a1afd9cd0ab6d8f1ae4d"
+    },
+    {
+      "path": "field_samples.png",
+      "sha256": "3b0e79a20bde6582ef2db39ff85d483c645f39ceade611a7ddd61c773c7c4257"
+    },
+    {
+      "path": "focused_checks.json",
+      "sha256": "981b2d2cdc462f3eb73ecebad30fad925c703ec01c1321a3f736f2afdb09146b"
+    },
+    {
+      "path": "METHOD_AND_LIMITS.md",
+      "sha256": "345bc07f514f8d3a05bc6455e94b7117fc851b1f3b6fc68ad13f16fb38da2072"
+    }
+  ],
+  "query_accounting": {
+    "cumulative_attempts_including_prior_failed_run": 253,
+    "current_artifact_run_attempts": 227,
+    "focused_check_attempts_including_rejected_query": 31,
+    "limit": 256,
+    "png_render_and_hash_calls": 0,
+    "prior_failed_implementation_attempts": 26,
+    "saved_sample_points": 196
+  },
+  "sample_grid": {
+    "domain_m": [
+      [
+        -0.018,
+        0.018
+      ],
+      [
+        -0.018,
+        0.018
+      ]
+    ],
+    "plane": "z=0 m in the material rest frame",
+    "plot_display": {
+      "display_symmetric_limit": 0.08970498226630291,
+      "sample_max": 0.08474287062324136,
+      "sample_min": -0.08970498226630291
+    },
+    "sample_statistics": {
+      "maximum": 0.08474287062324136,
+      "mean": -0.0019908204053641263,
+      "minimum": -0.08970498226630291,
+      "rms_about_zero": 0.045977762065038744
+    },
+    "shape": [
+      14,
+      14
+    ]
+  },
+  "schema": "pgfrag.rest_material_field.review_receipt.v1",
+  "scope": [
+    "new isolated experiment module and focused checks only",
+    "no solver or production-material integration",
+    "no measured-material calibration or sourced nominal E/Gc/strength values",
+    "RelicWeave-compatible lineage metadata is exposed as metadata-only; no upstream material artifact is claimed"
+  ],
+  "status": "PASS"
+}

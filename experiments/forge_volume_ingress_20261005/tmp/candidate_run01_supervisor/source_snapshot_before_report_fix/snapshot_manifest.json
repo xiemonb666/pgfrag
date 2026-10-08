@@ -1,0 +1,31 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_presource_fix_snapshot.v1",
+  "status": "PRESERVED_BEFORE_NARROW_REPORT_FIX",
+  "source_freeze_sha256": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "worker_sha256_before_fix": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5",
+  "files": [
+    {
+      "path": "worker.py",
+      "sha256": "BE02C2914B3459B727B43D9969B95EFEB07B014768AC68D9AB39BBBA8DA602D5",
+      "bytes": 68430
+    },
+    {
+      "path": "CONTRACT.md",
+      "sha256": "7151DF72D082B0D1D728F86AA118C3F396A4D6A3E545FBF5DC76F37A7118C6F7",
+      "bytes": 7770
+    },
+    {
+      "path": "plan.json",
+      "sha256": "E7124CEB99489B858BB2D116FED5DD9C88960209DEE632F7D49D75E2FFEFC73A",
+      "bytes": 7616
+    },
+    {
+      "path": "source_freeze.json",
+      "sha256": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+      "bytes": 2427
+    }
+  ],
+  "failed_stage_path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/.forge_ingress_stage__2srs6ad",
+  "failed_stage_modified": false,
+  "created_utc": "2026-10-05T09:59:59.1716827Z"
+}

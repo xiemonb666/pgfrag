@@ -1,0 +1,209 @@
+{
+  "freeze": "bond_visibility_v3_source_test_review",
+  "frozen_utc": "2026-10-04T18:49:30.342Z",
+  "execution_performed_at_freeze": false,
+  "execution_note": "v3 source and tests are frozen for root review; one bounded pytest run is authorized after this freeze, with no source/test edits during the run.",
+  "v2_baseline": {
+    "source": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v2_snapshot/bond_visibility.py",
+      "sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+      "byte_length": 46437
+    },
+    "test": {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v2_snapshot/test_bond_visibility.py",
+      "sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+      "byte_length": 19003
+    },
+    "expected_source_sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+    "expected_test_sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+    "v2_freeze_manifest": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.json",
+      "sha256": "1b1cf3e7e1df4a8189266a2b4b78f61b0d0832abc332a7e715bbfff611a0e8b9",
+      "byte_length": 3416
+    },
+    "v2_freeze_at_that_time_said_execution_performed": false
+  },
+  "v3_frozen_files": [
+    {
+      "path": "pgfrag/src/pgfrag/bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    {
+      "path": "pgfrag/tests/test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/v3_diff.patch",
+      "sha256": "152290ba345635c0d012c1d04b04804dcfeb5c220009fb90e0618c84716a3b3b",
+      "byte_length": 11934
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/capture_visibility.py",
+      "sha256": "b8593a4c3a906ecafdbbb6b71db8f577668f2cc8617085b37284e32ad8156d50",
+      "byte_length": 2153
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/visibility_resume/run_v3_bounded.py",
+      "sha256": "55999044d7592debcdb6dd8976180a27fcb26b84dafb130e2b9e19e8c40a7b53",
+      "byte_length": 8013
+    }
+  ],
+  "v3_changes": [
+    "Hit-cluster singleton equality returns the exact parameter; same-sign midpoint uses low + (high - low) / 2; opposite-sign midpoint uses a half-sum; non-degenerate intervals without a strict representable midpoint return no midpoint and force UNKNOWN.",
+    "Invalid source_accuracy_basis values are normalized to JSON-safe null, add SOURCE_PRECISION_BASIS_MISSING, and force source and pair classification to UNKNOWN.",
+    "Regression controls cover the minimum positive subnormal, adjacent floats with no representable interior, and invalid basis values NaN, list, and dict under json.dumps(..., allow_nan=False)."
+  ],
+  "v3_review_suite": [
+    "Entire BondVisibilityPureMathRegressionTests class (7 cases after v3 additions).",
+    "BondVisibilityGeometryTests.test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+    "BondVisibilityGeometryTests.test_hollow_shell_preserves_all_outer_and_inner_hits",
+    "BondVisibilityGeometryTests.test_same_wall_and_solid_coupon_remain_inside_material"
+  ],
+  "v2_execution_evidence": {
+    "execution_performed": true,
+    "run_plan": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/run_plan.json",
+      "sha256": "104ef51460399278503b9c095b69a46773f2b1981ca818f9a53ff8889db4d131",
+      "byte_length": 1282
+    },
+    "run_result": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/run_result.json",
+      "sha256": "872b093eac113be2ad13d98e5185d6e56c8c7ec02537028f8b8cf47b431757ce",
+      "byte_length": 192
+    },
+    "junit": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/junit.xml",
+      "sha256": "8912a45c220a2ff12d91e1257408fd59bf19483f5450298ecb1d5b4505339581",
+      "byte_length": 1579
+    },
+    "stdout": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/stdout.txt",
+      "sha256": "01f91a4c3a612238586529e06165ddfd02eaced4392a9a21de073161cc8df58e",
+      "byte_length": 526
+    },
+    "stderr": {
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_length": 0
+    },
+    "exit_code": 0,
+    "process_id": 133740,
+    "retry_count": 0,
+    "tests": "8",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "test_cases": [
+      "tests.test_bond_visibility.BondVisibilityPureMathRegressionTests::test_near_distinct_hits_retain_short_void_as_unresolved",
+      "tests.test_bond_visibility.BondVisibilityPureMathRegressionTests::test_numeric_range_failures_are_unknown_and_json_finite",
+      "tests.test_bond_visibility.BondVisibilityPureMathRegressionTests::test_overflowing_uncertainty_band_keeps_raw_hits_without_classifier_calls",
+      "tests.test_bond_visibility.BondVisibilityPureMathRegressionTests::test_single_link_chain_with_span_above_tolerance_is_unresolved",
+      "tests.test_bond_visibility.BondVisibilityPureMathRegressionTests::test_unresolved_chain_forces_unknown_even_when_diagnostic_intervals_are_inside",
+      "tests.test_bond_visibility.BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+      "tests.test_bond_visibility.BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+      "tests.test_bond_visibility.BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+    ],
+    "test_argv": [
+      "-B",
+      "-m",
+      "pytest",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=pgfrag/tmp/review_20261004/bond_visibility/v2_run/junit.xml",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+    ],
+    "test_environment": {
+      "PYTHONPATH": "pgfrag/src",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "source_test_pins_before": [
+      {
+        "path": "pgfrag/src/pgfrag/bond_visibility.py",
+        "sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+        "byte_length": 46437
+      },
+      {
+        "path": "pgfrag/tests/test_bond_visibility.py",
+        "sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+        "byte_length": 19003
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+        "sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9",
+        "byte_length": 7746
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_diff.patch",
+        "sha256": "3fd0b7231ee6f28d906f768062c1bec271d4f7cef22ea5f33dd076a8a6512850",
+        "byte_length": 40880
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.json",
+        "sha256": "1b1cf3e7e1df4a8189266a2b4b78f61b0d0832abc332a7e715bbfff611a0e8b9",
+        "byte_length": 3416
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.sha256",
+        "sha256": "1bd1e2c7462dfcf0628c74cbac113d5d3d1c5e6eb0809ce49f7dfd8b88ed2025",
+        "byte_length": 89
+      }
+    ],
+    "source_test_pins_after": [
+      {
+        "path": "pgfrag/src/pgfrag/bond_visibility.py",
+        "sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+        "byte_length": 46437
+      },
+      {
+        "path": "pgfrag/tests/test_bond_visibility.py",
+        "sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+        "byte_length": 19003
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+        "sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9",
+        "byte_length": 7746
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_diff.patch",
+        "sha256": "3fd0b7231ee6f28d906f768062c1bec271d4f7cef22ea5f33dd076a8a6512850",
+        "byte_length": 40880
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.json",
+        "sha256": "1b1cf3e7e1df4a8189266a2b4b78f61b0d0832abc332a7e715bbfff611a0e8b9",
+        "byte_length": 3416
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.sha256",
+        "sha256": "1bd1e2c7462dfcf0628c74cbac113d5d3d1c5e6eb0809ce49f7dfd8b88ed2025",
+        "byte_length": 89
+      }
+    ],
+    "geometry_scope": "Three selected tests used in-memory analytic CadQuery boxes; the recorded argv contains no STEP export/import or native solver action.",
+    "raw_hit_interval_sidecar": {
+      "status": "NOT_RECORDED",
+      "sha256": null,
+      "note": "The historical v2 run directory contains run plan/result, stdout/stderr, pins, and JUnit only; no per-case raw_hits/open_intervals JSON result was persisted."
+    },
+    "cache_audit": {
+      "pytest_cache_provider_disabled": true,
+      "python_no_bytecode_flag": true,
+      "python_dont_write_bytecode": true,
+      "target_module_or_test_pyc_present_now": false,
+      "historical_pyc_state_was_pinned": false,
+      "residual": "The v2 invocation disabled pytest cache writes and Python bytecode writes, but -B does not prevent reading an existing timestamp-valid .pyc; the v2 receipt did not pin the target __pycache__ state at run time. No bond_visibility/test_bond_visibility pyc exists at this freeze."
+    }
+  },
+  "review_boundaries": {
+    "no_step_export_or_import_for_v3_bounded_pytest": true,
+    "no_native_solver_or_graph_mutation": true,
+    "native_asset_gate": "PENDING: classifier remains disconnected from backend/assets/native graph construction; ledger declares native graph disconnected and whole_asset_physics_status=NOT_ASSESSED. No asset-level UNKNOWN rejection or post-filter graph ordering proof exists.",
+    "source_precision": "The source accuracy basis remains caller-attested; in-memory fixtures do not attest physical material accuracy."
+  }
+}

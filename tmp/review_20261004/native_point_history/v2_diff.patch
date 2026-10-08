@@ -1,0 +1,374 @@
+--- v1_frozen/native_point_history.py.frozen
++++ working/src/pgfrag/native_point_history.py
+@@ -66,6 +66,7 @@
+     rest_position_m: tuple[float, float, float]
+     volume_m3: float
+     mass_kg: float
++    n_active_bonds: int
+     line_number: int
+ 
+ 
+@@ -232,6 +233,11 @@
+             "bond_events_mapping_available": self.bond_events_mapping is not None,
+             "interpretation": {
+                 "native_origin_authentication": "NOT_PERFORMED_CALLER_SUPPLIED_ARCHIVE",
++                "point_state_projection": (
++                    "native point CSV numeric columns are validated, while projected records retain the requested "
++                    "identity, rest geometry, volume, mass, timing, and active-bond count; complete CSV bytes are "
++                    "represented by their SHA-256 and byte count"
++                ),
+                 "physical_fragments": "UNKNOWN_NOT_DERIVED",
+                 "positive_area_crack_surface": "UNKNOWN_NOT_DERIVED",
+                 "energy": "UNKNOWN_NOT_DERIVED",
+@@ -386,7 +392,10 @@
+     density = _summary_float(summary, "rho_kg_m3", reasons, positive=True)
+     if expected_final_step is not None and expected_dt_s is not None:
+         final_time = _summary_float(summary, "time_s", reasons, positive=False)
+-        if final_time is not None and not _close(final_time, expected_final_step * expected_dt_s, expected_dt_s):
++        expected_time = _finite_product(expected_final_step, expected_dt_s)
++        if expected_time is None:
++            reasons.append("summary n_steps × accepted dt_s product is not finite")
++        elif final_time is not None and not _close(final_time, expected_time, expected_dt_s):
+             reasons.append("summary time_s disagrees with n_steps × accepted dt_s")
+     if summary and "status" in summary:
+         summary_status = str(summary["status"])
+@@ -410,6 +419,27 @@
+     if metadata and metadata.get("point_count") != len(input_points):
+         reasons.append("parsed point count disagrees with metadata point_count")
+     _check_summary_count(summary, "source_point_count", len(input_points), reasons)
++    source_volume_sum = _finite_sum((point.volume_m3 for point in input_points), "source point volume sum", reasons)
++    summary_volume_sum = _summary_float(summary, "point_volume_sum_m3", reasons, positive=True)
++    if source_volume_sum is not None and summary_volume_sum is not None and not _close(
++        source_volume_sum, summary_volume_sum, source_volume_sum
++    ):
++        reasons.append("summary point_volume_sum_m3 disagrees with the supplied point CSV")
++    if density is not None and source_volume_sum is not None:
++        point_mass_products = [_finite_product(density, point.volume_m3) for point in input_points]
++        if any(value is None or value <= 0.0 for value in point_mass_products):
++            reasons.append("density × point volume product is not positive finite for the supplied point CSV")
++        else:
++            point_mass_sum = _finite_sum(point_mass_products, "density × point-volume product sum", reasons)
++            expected_mass_sum = _finite_product(density, source_volume_sum)
++            if expected_mass_sum is None or expected_mass_sum <= 0.0:
++                reasons.append("summary density × point-volume-sum product is not positive finite")
++            else:
++                summary_mass_sum = _summary_float(summary, "point_mass_sum_kg", reasons, positive=True)
++                if point_mass_sum is not None and not _close(point_mass_sum, expected_mass_sum, expected_mass_sum):
++                    reasons.append("density × point-volume products disagree with density × source volume sum")
++                if summary_mass_sum is not None and not _close(summary_mass_sum, expected_mass_sum, expected_mass_sum):
++                    reasons.append("summary point_mass_sum_kg disagrees with density × source volume sum")
+ 
+     frames: list[RawNativeBondFrame] = []
+     previous_canonical: dict[tuple[int, int], bool] | None = None
+@@ -467,9 +497,14 @@
+                 if row.volume_m3 != source.volume_m3:
+                     bad_point = f"point frame {step} volume for point {point_id} disagrees with source CSV"
+                     break
+-                if density is not None and not _close(row.mass_kg, density * row.volume_m3, row.mass_kg):
+-                    bad_point = f"point frame {step} mass for point {point_id} disagrees with density × volume"
+-                    break
++                if density is not None:
++                    expected_mass = density * row.volume_m3
++                    if not math.isfinite(expected_mass) or expected_mass <= 0.0:
++                        bad_point = f"point frame {step} density × volume mass product is not positive finite for point {point_id}"
++                        break
++                    if not _close(row.mass_kg, expected_mass, max(abs(row.mass_kg), abs(expected_mass))):
++                        bad_point = f"point frame {step} mass for point {point_id} disagrees with density × volume"
++                        break
+             if bad_point:
+                 reasons.append(bad_point)
+                 break
+@@ -576,6 +611,13 @@
+                 )
+             if invalid_bond:
+                 break
++            active_counts = {point_id: 0 for point_id in point_set}
++            for row in directed_rows:
++                if row.active:
++                    active_counts[row.source_point_id] += 1
++            if any(row_by_id[point_id].n_active_bonds != active_counts[point_id] for point_id in point_set):
++                reasons.append(f"point frame {step} n_active_bonds disagrees with directed native active states")
++                break
+             if step == 0 and any(not active for active in canonical_state.values()):
+                 reasons.append("initial native frame contains an inactive bond")
+                 break
+@@ -606,6 +648,13 @@
+         _check_summary_count(summary, "sample_count_including_step_zero", expected_final_step + 1, reasons)
+     _check_summary_count(summary, "directed_bond_state_rows", len(raw_directed_rows), reasons)
+     _check_summary_count(summary, "canonical_bond_state_rows", len(raw_canonical_rows), reasons)
++    if frames:
++        observed_mass_sum = _finite_sum((row.mass_kg for row in frames[0].points), "step-zero point mass sum", reasons)
++        summary_mass_sum = _summary_float(summary, "point_mass_sum_kg", reasons, positive=True)
++        if observed_mass_sum is not None and summary_mass_sum is not None and not _close(
++            observed_mass_sum, summary_mass_sum, observed_mass_sum
++        ):
++            reasons.append("summary point_mass_sum_kg disagrees with the step-zero point state")
+ 
+     if not input_points:
+         rest_positions: dict[int, tuple[float, float, float]] = {}
+@@ -735,20 +784,41 @@
+     declared_count = metadata.get("point_count")
+     if isinstance(declared_count, int) and not isinstance(declared_count, bool) and declared_count != len(records):
+         errors.append("point input row count disagrees with metadata point_count")
+-    if records and isinstance(metadata.get("declared_volume_sum_m3"), (int, float)):
+-        actual_volume_sum = math.fsum(point.volume_m3 for point in records)
+-        if not _close(actual_volume_sum, float(metadata["declared_volume_sum_m3"]), actual_volume_sum):
++    if records and isinstance(metadata.get("declared_volume_sum_m3"), (int, float)) and not isinstance(
++        metadata.get("declared_volume_sum_m3"), bool
++    ):
++        actual_volume_sum = _finite_sum((point.volume_m3 for point in records), "source point volume sum", errors)
++        try:
++            declared_volume_sum = float(metadata["declared_volume_sum_m3"])
++        except (OverflowError, TypeError, ValueError):
++            declared_volume_sum = math.nan
++        if not math.isfinite(declared_volume_sum):
++            errors.append("metadata declared_volume_sum_m3 must be finite")
++        elif actual_volume_sum is not None and not _close(actual_volume_sum, declared_volume_sum, actual_volume_sum):
+             errors.append("point CSV volume sum disagrees with metadata declared_volume_sum_m3")
+     declared_com = metadata.get("declared_com_m")
+     if records and isinstance(declared_com, list) and len(declared_com) == 3:
+-        total_volume = math.fsum(point.volume_m3 for point in records)
+-        measured = tuple(
+-            math.fsum(point.rest_position_m[axis] * point.volume_m3 for point in records) / total_volume
+-            for axis in range(3)
+-        )
++        total_volume = _finite_sum((point.volume_m3 for point in records), "source point volume sum", errors)
++        if total_volume is None or total_volume <= 0.0:
++            return tuple(records), errors
++        weighted_coordinates: list[float] = []
++        for axis in range(3):
++            terms = [point.rest_position_m[axis] * point.volume_m3 for point in records]
++            if not all(math.isfinite(term) for term in terms):
++                errors.append(f"point CSV weighted coordinate product is not finite on axis {axis}")
++                return tuple(records), errors
++            weighted_sum = _finite_sum(terms, f"point CSV weighted coordinate sum on axis {axis}", errors)
++            if weighted_sum is None:
++                return tuple(records), errors
++            coordinate = weighted_sum / total_volume
++            if not math.isfinite(coordinate):
++                errors.append(f"point CSV volume-weighted coordinate is not finite on axis {axis}")
++                return tuple(records), errors
++            weighted_coordinates.append(coordinate)
++        measured = tuple(weighted_coordinates)
+         try:
+             declared = tuple(float(value) for value in declared_com)
+-        except (TypeError, ValueError):
++        except (OverflowError, TypeError, ValueError):
+             errors.append("metadata declared_com_m must contain three numeric values")
+         else:
+             if not all(math.isfinite(value) for value in declared) or any(
+@@ -797,6 +867,33 @@
+     errors: list[str] = []
+     for line, row in enumerate(table.rows, start=2):
+         try:
++            rest_position = tuple(
++                _float_field(row[key], f"point row {line} {key}") for key in ("x_ref_m", "y_ref_m", "z_ref_m")
++            )
++            current_position = tuple(
++                _float_field(row[key], f"point row {line} {key}")
++                for key in ("x_current_m", "y_current_m", "z_current_m")
++            )
++            displacement = tuple(
++                _float_field(row[key], f"point row {line} {key}") for key in ("ux_m", "uy_m", "uz_m")
++            )
++            for key in (
++                "vx_mps", "vy_mps", "vz_mps", "ax_mps2", "ay_mps2", "az_mps2",
++                "b_int_x_N_m3", "b_int_y_N_m3", "b_int_z_N_m3",
++                "b_ext_x_N_m3", "b_ext_y_N_m3", "b_ext_z_N_m3",
++            ):
++                _float_field(row[key], f"point row {line} {key}")
++            damage = _float_field(row["damage"], f"point row {line} damage")
++            if not 0.0 <= damage <= 1.0:
++                raise ValueError(f"point row {line} damage must be in [0, 1]")
++            active_bonds = _int_field(row["n_active_bonds"], f"point row {line} n_active_bonds", minimum=0)
++            for axis, (rest, current, delta) in enumerate(zip(rest_position, current_position, displacement, strict=True)):
++                expected_current = rest + delta
++                if not math.isfinite(expected_current):
++                    raise ValueError(f"point row {line} rest position plus displacement overflows on axis {axis}")
++                scale = max(abs(rest), abs(current), abs(delta), abs(expected_current), 1e-300)
++                if not _close(current, expected_current, scale):
++                    raise ValueError(f"point row {line} current position disagrees with rest position plus displacement")
+             rows.append(
+                 NativePointStateRow(
+                     step=_int_field(row["step"], f"point row {line} step", minimum=0),
+@@ -804,11 +901,10 @@
+                     accepted_dt_s=_float_field(row["dt_s"], f"point row {line} dt_s", positive=True),
+                     native_body_index=_int_field(row["native_body_index"], f"point row {line} native_body_index", minimum=1),
+                     point_id=_int_field(row["point_id"], f"point row {line} point_id", minimum=1),
+-                    rest_position_m=tuple(
+-                        _float_field(row[key], f"point row {line} {key}") for key in ("x_ref_m", "y_ref_m", "z_ref_m")
+-                    ),
++                    rest_position_m=rest_position,
+                     volume_m3=_float_field(row["volume_m3"], f"point row {line} volume_m3", positive=True),
+                     mass_kg=_float_field(row["mass_kg"], f"point row {line} mass_kg", positive=True),
++                    n_active_bonds=active_bonds,
+                     line_number=line,
+                 )
+             )
+@@ -899,7 +995,8 @@
+         return False
+     if step == 0 and first_time != 0.0:
+         return False
+-    if not _close(first_time, step * first_dt, first_dt):
++    expected_time = _finite_product(step, first_dt)
++    if expected_time is None or not _close(first_time, expected_time, first_dt):
+         return False
+     return expected_dt is None or _close(first_dt, expected_dt, expected_dt)
+ 
+@@ -914,10 +1011,17 @@
+ 
+ def _summary_float(summary: Mapping[str, Any], key: str, reasons: list[str], *, positive: bool | None = None) -> float | None:
+     value = summary.get(key)
+-    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(float(value)):
++    if isinstance(value, bool) or not isinstance(value, (int, float)):
+         reasons.append(f"summary field {key} must be finite numeric data")
+         return None
+-    result = float(value)
++    try:
++        result = float(value)
++    except (OverflowError, TypeError, ValueError):
++        reasons.append(f"summary field {key} must be finite numeric data")
++        return None
++    if not math.isfinite(result):
++        reasons.append(f"summary field {key} must be finite numeric data")
++        return None
+     if positive is True and result <= 0.0:
+         reasons.append(f"summary field {key} must be positive")
+         return None
+@@ -965,10 +1069,36 @@
+ 
+ 
+ def _close(actual: float, expected: float, scale: float) -> bool:
++    if not all(math.isfinite(value) for value in (actual, expected, scale)):
++        return False
+     magnitude = max(abs(actual), abs(expected), abs(scale), 1e-300)
+     return abs(actual - expected) <= max(1e-10 * abs(scale), 32.0 * math.ulp(magnitude))
+ 
+ 
++def _finite_sum(values: Any, label: str, errors: list[str]) -> float | None:
++    try:
++        total = math.fsum(values)
++    except OverflowError:
++        errors.append(f"{label} overflowed")
++        return None
++    if not math.isfinite(total):
++        errors.append(f"{label} is not finite")
++        return None
++    return total
++
++
++def _finite_product(left: Any, right: Any) -> float | None:
++    try:
++        left_float = float(left)
++        right_float = float(right)
++    except (OverflowError, TypeError, ValueError):
++        return None
++    if not math.isfinite(left_float) or not math.isfinite(right_float):
++        return None
++    product = left_float * right_float
++    return product if math.isfinite(product) else None
++
++
+ def _is_sha256(value: Any) -> bool:
+     return isinstance(value, str) and re.fullmatch(r"[0-9a-fA-F]{64}", value) is not None
+ 
+--- v1_frozen/test_native_point_history.py.frozen
++++ working/tests/test_native_point_history.py
+@@ -1,5 +1,6 @@
+ from __future__ import annotations
+ 
++import hashlib
+ from pathlib import Path
+ import shutil
+ import tempfile
+@@ -122,6 +123,80 @@
+         self.assertIsNone(result.bond_events_mapping)
+         self.assertEqual(result.native_origin_status, NATIVE_ORIGIN_STATUS)
+ 
++    def test_nonfinite_point_state_is_incomplete(self) -> None:
++        with tempfile.TemporaryDirectory() as temporary:
++            fixture = Path(temporary) / "fixture"
++            shutil.copytree(FIXTURE_ROOT, fixture)
++            point_file = fixture / "snapshot" / "point_state_history.csv"
++            lines = point_file.read_text(encoding="utf-8").splitlines()
++            first = lines[1].split(",")
++            first[8] = "NaN"  # x_current_m is schema numeric state.
++            lines[1] = ",".join(first)
++            point_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
++            result = _read(fixture_root=fixture)
++        self.assertEqual(result.status, "INCOMPLETE")
++        self.assertIsNone(result.bond_events_mapping)
++        self.assertTrue(any("must be finite" in reason for reason in result.reasons))
++
++    def test_point_active_count_must_match_directed_native_states(self) -> None:
++        with tempfile.TemporaryDirectory() as temporary:
++            fixture = Path(temporary) / "fixture"
++            shutil.copytree(FIXTURE_ROOT, fixture)
++            point_file = fixture / "snapshot" / "point_state_history.csv"
++            lines = point_file.read_text(encoding="utf-8").splitlines()
++            target_index = next(index for index, line in enumerate(lines) if line.startswith("1,0.25,0.25,2,22,"))
++            fields = lines[target_index].split(",")
++            fields[27] = "0"  # n_active_bonds; both directed step-one states are active.
++            lines[target_index] = ",".join(fields)
++            point_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
++            result = _read(fixture_root=fixture)
++        self.assertEqual(result.status, "INCOMPLETE")
++        self.assertIsNone(result.bond_events_mapping)
++        self.assertTrue(any("n_active_bonds disagrees" in reason for reason in result.reasons))
++
++    def test_density_volume_overflow_is_rejected_even_when_each_input_is_finite(self) -> None:
++        with tempfile.TemporaryDirectory() as temporary:
++            fixture = Path(temporary) / "fixture"
++            shutil.copytree(FIXTURE_ROOT, fixture)
++            points_path = fixture / "input" / "points.csv"
++            point_lines = points_path.read_text(encoding="utf-8").splitlines()
++            for index in range(1, len(point_lines)):
++                fields = point_lines[index].split(",")
++                fields[4] = "2"
++                point_lines[index] = ",".join(fields)
++            point_bytes = ("\n".join(point_lines) + "\n").encode("utf-8")
++            points_path.write_bytes(point_bytes)
++            digest = hashlib.sha256(point_bytes).hexdigest()
++
++            metadata_path = fixture / "input" / "metadata.toml"
++            metadata = metadata_path.read_text(encoding="utf-8")
++            metadata = metadata.replace(
++                "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3", digest
++            ).replace("declared_volume_sum_m3 = 2e-9", "declared_volume_sum_m3 = 4.0")
++            metadata_path.write_text(metadata, encoding="utf-8")
++
++            summary_path = fixture / "snapshot" / "summary.toml"
++            summary = summary_path.read_text(encoding="utf-8")
++            summary = summary.replace(
++                "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3", digest
++            ).replace("point_volume_sum_m3 = 2e-9", "point_volume_sum_m3 = 4.0")
++            summary = summary.replace("point_mass_sum_kg = 4e-6", "point_mass_sum_kg = 2.0")
++            summary = summary.replace("rho_kg_m3 = 2000.0", "rho_kg_m3 = 1e308")
++            summary_path.write_text(summary, encoding="utf-8")
++
++            point_history = fixture / "snapshot" / "point_state_history.csv"
++            state_lines = point_history.read_text(encoding="utf-8").splitlines()
++            for index in range(1, len(state_lines)):
++                fields = state_lines[index].split(",")
++                fields[28] = "2"
++                fields[29] = "1"
++                state_lines[index] = ",".join(fields)
++            point_history.write_text("\n".join(state_lines) + "\n", encoding="utf-8")
++            result = _read(fixture_root=fixture)
++        self.assertEqual(result.status, "INCOMPLETE")
++        self.assertIsNone(result.bond_events_mapping)
++        self.assertTrue(any("density × point volume product is not positive finite" in reason for reason in result.reasons))
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
+--- v1_frozen/fixture/snapshot/point_state_history.csv
++++ working/tmp/review_20261004/native_point_history/fixture/snapshot/point_state_history.csv
+@@ -3,5 +3,5 @@
+ 0,0,0.25,2,22,0.001,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1e-9,2e-6
+ 1,0.25,0.25,1,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1e-9,2e-6
+ 1,0.25,0.25,2,22,0.001,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1e-9,2e-6
+-2,0.5,0.25,1,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1e-9,2e-6
+-2,0.5,0.25,2,22,0.001,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1e-9,2e-6
++2,0.5,0.25,1,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1e-9,2e-6
++2,0.5,0.25,2,22,0.001,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1e-9,2e-6

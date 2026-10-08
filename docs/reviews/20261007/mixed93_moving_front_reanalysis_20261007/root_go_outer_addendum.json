@@ -1,0 +1,101 @@
+{
+  "authorization_token": "ROOT_20261007_MIXED93_MOVING_FRONT_RUN01",
+  "capture_receipt": {
+    "actual_child_return_code": 2,
+    "bytes": 12907,
+    "capture_elapsed_seconds_after_posthash_tally": 0.9680000001098961,
+    "child_timed_out": false,
+    "child_timeout_seconds": 59.938000000081956,
+    "combined_output_bytes_including_receipt_index": 1802359,
+    "combined_output_limit_bytes": 12582912,
+    "inputs_stable_pre_post": true,
+    "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/capture_once01/capture_receipt.json",
+    "sha256": "779b503781d711a6b06257cfbc72fd00938af34c315307bb2de948e6908240f3",
+    "status": "CAPTURE_NEEDS_REVIEW",
+    "wrapper_return_code": 2
+  },
+  "child_streams": {
+    "stderr": {
+      "bytes": 215,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/capture_once01/stderr.bin",
+      "sha256": "46a4df5356e827b25b6028a0a3a74ff3b501bf02fb92a42ddec56f99a2449f68"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/capture_once01/stdout.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "execution_command": ".\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe -B .\\pgfrag\\tmp\\review_20261007\\mixed93_moving_front_reanalysis_20261007\\capture_once.py",
+  "failure_checkpoint": {
+    "checkpoint_arrays_uncompressed_bytes": 2710044,
+    "completed_phases": [
+      "execution_authorized_inputs_pinned",
+      "semantic_registry_loaded",
+      "cap_rules_built",
+      "cap_provider_batch_0_returned",
+      "cap_provider_batch_1_returned",
+      "cap_provider_batch_2_returned",
+      "cap_provider_batch_3_returned",
+      "cap_provider_batch_4_returned",
+      "cap_provider_batch_5_returned",
+      "side_traction_checked",
+      "coarse_cap_traction_evaluated",
+      "fine_cap_traction_evaluated",
+      "cap_tractions_evaluated",
+      "old_front_volume_and_gauge_built",
+      "old_front_raw_K_assembled",
+      "old_front_spectrum_gate_complete",
+      "old_front_rigid_checks_complete",
+      "candidate_front_volume_and_gauge_built",
+      "candidate_front_raw_K_assembled",
+      "candidate_front_spectrum_gate_complete",
+      "candidate_front_rigid_checks_complete"
+    ],
+    "error": "prior producer history no longer records rc=1 and no result JSON",
+    "error_type": "StudyError",
+    "expected_driver_return_code": 2,
+    "last_completed_phase": "candidate_front_rigid_checks_complete",
+    "primary_result_written": false,
+    "provider_batch_sizes": [
+      256,
+      192,
+      256,
+      256,
+      256,
+      128
+    ],
+    "provider_rows_returned": 1344,
+    "provider_statuses": [
+      "OK"
+    ],
+    "replay_arrays_npz": {
+      "bytes": 1770008,
+      "path": "failure_arrays.npz",
+      "sha256": "8f6d3ca994d44ea5003379736ae4cd91f9c4daa98af1366c8c59c81f757c0e2f"
+    },
+    "status": "FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT"
+  },
+  "outer_tool_response": {
+    "actual_return_code": 2,
+    "chunk_id": "8aee22",
+    "original_token_count": 0,
+    "raw_output_text": "",
+    "wall_time_seconds": 1.2689625
+  },
+  "recorded_utc": "2026-10-07T04:08:53.831984+00:00",
+  "run_files": {
+    "failure.json": {
+      "bytes": 19081,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/run01/failure.json",
+      "sha256": "9da8793fda4925014154931462a111fae0f71a35fbae6db48f9d6ac3447f2935"
+    },
+    "failure_arrays.npz": {
+      "bytes": 1770008,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/run01/failure_arrays.npz",
+      "sha256": "8f6d3ca994d44ea5003379736ae4cd91f9c4daa98af1366c8c59c81f757c0e2f"
+    }
+  },
+  "schema": "mixed93_moving_front_outer_execution_addendum.v1",
+  "scope_note": "Single authorized capture attempt completed; no retry. This addendum is separate from and excluded from the capture receipt byte tally."
+}

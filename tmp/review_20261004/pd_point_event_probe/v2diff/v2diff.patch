@@ -1,0 +1,376 @@
+--- v1/run_pd_point_event_probe.jl
++++ v2/run_pd_point_event_probe.jl
+@@ -89,7 +89,8 @@
+     require(!isempty(lines) && strip(first(lines)) == expected_header,
+             "point CSV header must be $expected_header")
+     records = NamedTuple[]
+-    for (row_number, line) in enumerate(lines[2:end], 2)
++    for (offset, line) in enumerate(lines[2:end])
++        row_number = offset + 1
+         isempty(strip(line)) && continue
+         fields = split(strip(line), ',')
+         require(length(fields) == 5, "point CSV row $row_number must have 5 numeric fields")
+@@ -316,10 +317,12 @@
+     young = Float64(material_config["E_pa"])
+     nu = Float64(material_config["nu"])
+     gc = Float64(material_config["Gc_j_m2"])
+-    require(rho > 0 && young > 0 && 0 < nu < 0.5 && gc > 0,
++    require(isfinite(rho) && isfinite(young) && isfinite(nu) && isfinite(gc) &&
++            rho > 0 && young > 0 && 0 < nu < 0.5 && gc > 0,
+             "invalid OSB material values")
+     horizon_m = Float64(geometry["horizon_m"])
+-    require(horizon_m > 0, "horizon_m must be positive")
++    require(isfinite(horizon_m) && horizon_m > 0,
++            "horizon_m must be finite and positive")
+     steps = Int(case["solver"]["steps"])
+     safety = Float64(solver_config["safety_factor"])
+     require(0 < steps <= Int(limits["max_steps"]), "solver steps exceed configured limits")
+@@ -335,6 +338,9 @@
+     require(abs(load_speed) < Inf && load_speed >= 0, "load speed must be finite and non-negative")
+     if load_kind == "zero_load"
+         require(iszero(load_speed), "zero_load case must specify speed_m_s = 0")
++        for axis in 1:3
++            velocity_ic!(body, :all_points, axis, 0.0)
++        end
+     else
+         require(1 <= load_axis <= 3, "load axis must be 1, 2, or 3")
+         load_sets = input.metadata["load_sets"]
+--- v1/launch_zero_load_probe.ps1
++++ v2/launch_zero_load_probe.ps1
+@@ -21,6 +21,31 @@
+ $StdoutPath = Join-Path $ReceiptDirectory ($RunId + '.stdout.log')
+ $StderrPath = Join-Path $ReceiptDirectory ($RunId + '.stderr.log')
+ 
++function Add-LaunchExceptionText {
++    param([AllowNull()][string]$Current, [string]$Context, [System.Exception]$CaughtException)
++    $Detail = "$Context`: $($CaughtException.GetType().FullName): $($CaughtException.Message)"
++    if ([string]::IsNullOrEmpty($Current)) { return $Detail }
++    return $Current + [Environment]::NewLine + $Detail
++}
++
++function Get-ObservedProcessExitCode {
++    param([AllowNull()][System.Diagnostics.Process]$Candidate)
++    if ($null -eq $Candidate) { return $null }
++    try {
++        $Candidate.Refresh()
++        if ($Candidate.HasExited) { return [int]$Candidate.ExitCode }
++    } catch { }
++    return $null
++}
++
++function Ensure-FileExistsWithoutOverwrite {
++    param([string]$Path)
++    if (Test-Path -LiteralPath $Path) { return }
++    $Stream = [System.IO.File]::Open($Path, [System.IO.FileMode]::CreateNew,
++        [System.IO.FileAccess]::Write, [System.IO.FileShare]::Read)
++    $Stream.Dispose()
++}
++
+ foreach ($RequiredPath in @($Julia, $JuliaProject, $JuliaDepot, $Runner, $ManifestPath,
+                              $PointsCsv, $PointMetadata, $CommonCase, $Case)) {
+     if (-not (Test-Path -LiteralPath $RequiredPath)) {
+@@ -65,9 +90,6 @@
+ $PreviousThreads = $env:JULIA_NUM_THREADS
+ $PreviousDepot = $env:JULIA_DEPOT_PATH
+ $PreviousPrecompileTasks = $env:JULIA_NUM_PRECOMPILE_TASKS
+-$env:JULIA_NUM_THREADS = '1'
+-$env:JULIA_DEPOT_PATH = $JuliaDepot
+-$env:JULIA_NUM_PRECOMPILE_TASKS = '1'
+ $StartedUtc = [DateTime]::UtcNow.ToString('o')
+ $CommandArguments = @("--project=$JuliaProject", '--startup-file=no', '--history-file=no',
+                       $Runner, $SnapshotDirectory, $PointsCsv, $PointMetadata,
+@@ -77,18 +99,75 @@
+ }
+ $TimeoutSeconds = [int]$Manifest.runtime_gate.timeout_seconds
+ if ($TimeoutSeconds -lt 1) { throw 'Manifest runtime timeout must be positive' }
++$Process = $null
++$ProcessStarted = $false
++$ProcessId = $null
++$JuliaExitCode = $null
+ $TimedOut = $false
+-try {
++$WaitCompleted = $false
++$LaunchException = $null
++$OutEmptyAfter = $null
++$WrapperExitCode = 125
++try {
++    $env:JULIA_NUM_THREADS = '1'
++    $env:JULIA_DEPOT_PATH = $JuliaDepot
++    $env:JULIA_NUM_PRECOMPILE_TASKS = '1'
++    try {
+     $Process = Start-Process -FilePath $Julia -ArgumentList ($CommandArguments -join ' ') `
+         -WorkingDirectory $OutDirectory -WindowStyle Hidden -PassThru `
+         -RedirectStandardOutput $StdoutPath -RedirectStandardError $StderrPath
+-    $ExitedInTime = $Process.WaitForExit($TimeoutSeconds * 1000)
+-    if (-not $ExitedInTime) {
+-        $TimedOut = $true
+-        if (-not $Process.HasExited) { $Process.Kill() }
+-        $Process.WaitForExit()
+-    }
+-    $JuliaExitCode = [int]$Process.ExitCode
++        $ProcessStarted = $true
++        $ProcessId = [int]$Process.Id
++        try {
++            $ExitedInTime = $Process.WaitForExit($TimeoutSeconds * 1000)
++            if (-not $ExitedInTime) {
++                $TimedOut = $true
++                try {
++                    $Process.Refresh()
++                    if (-not $Process.HasExited) { $Process.Kill() }
++                } catch {
++                    $LaunchException = Add-LaunchExceptionText $LaunchException 'Timeout termination failed' $_.Exception
++                }
++                try {
++                    $WaitCompleted = [bool]$Process.WaitForExit(5000)
++                    if (-not $WaitCompleted) {
++                        $LaunchException = Add-LaunchExceptionText $LaunchException `
++                            'Timed-out child did not exit within 5 seconds after termination request' `
++                            ([System.TimeoutException]::new('Post-timeout process exit was not observed.'))
++                    }
++                } catch {
++                    $LaunchException = Add-LaunchExceptionText $LaunchException 'Post-timeout wait failed' $_.Exception
++                }
++            } else {
++                $WaitCompleted = $true
++            }
++        } catch {
++            $LaunchException = Add-LaunchExceptionText $LaunchException 'WaitForExit failed' $_.Exception
++            try {
++                $Process.Refresh()
++                if (-not $Process.HasExited) { $Process.Kill() }
++            } catch {
++                $LaunchException = Add-LaunchExceptionText $LaunchException 'Wait-error termination failed' $_.Exception
++            }
++            try {
++                $WaitCompleted = [bool]$Process.WaitForExit(5000)
++                if (-not $WaitCompleted) {
++                    $LaunchException = Add-LaunchExceptionText $LaunchException `
++                        'Child did not exit within 5 seconds after wait error' `
++                        ([System.TimeoutException]::new('Process exit was not observed after wait error.'))
++                }
++            } catch {
++                $LaunchException = Add-LaunchExceptionText $LaunchException 'Post-error wait failed' $_.Exception
++            }
++        }
++        $JuliaExitCode = Get-ObservedProcessExitCode $Process
++        if ($null -eq $JuliaExitCode -and [string]::IsNullOrEmpty($LaunchException)) {
++            $LaunchException = 'Process exit code remained UNKNOWN after refreshing the child process state.'
++        }
++    } catch {
++        $LaunchException = Add-LaunchExceptionText $LaunchException 'Process start failed' $_.Exception
++        $JuliaExitCode = Get-ObservedProcessExitCode $Process
++    }
+ } finally {
+     if ($null -eq $PreviousThreads) { Remove-Item Env:JULIA_NUM_THREADS -ErrorAction SilentlyContinue }
+     else { $env:JULIA_NUM_THREADS = $PreviousThreads }
+@@ -98,14 +177,46 @@
+     else { $env:JULIA_NUM_PRECOMPILE_TASKS = $PreviousPrecompileTasks }
+ }
+ $FinishedUtc = [DateTime]::UtcNow.ToString('o')
+-$OutEmptyAfter = @(Get-ChildItem -LiteralPath $OutDirectory -Force).Count -eq 0
++$JuliaExitCode = Get-ObservedProcessExitCode $Process
++try {
++    Ensure-FileExistsWithoutOverwrite $StdoutPath
++    Ensure-FileExistsWithoutOverwrite $StderrPath
++} catch {
++    $LaunchException = Add-LaunchExceptionText $LaunchException 'Sibling process-log creation failed' $_.Exception
++}
++try {
++    $OutEmptyAfter = @(Get-ChildItem -LiteralPath $OutDirectory -Force).Count -eq 0
++} catch {
++    $LaunchException = Add-LaunchExceptionText $LaunchException 'OUT directory verification failed' $_.Exception
++}
++if ($TimedOut) {
++    $WrapperExitCode = 124
++} elseif (-not $ProcessStarted -or -not [string]::IsNullOrEmpty($LaunchException) -or
++          $null -eq $JuliaExitCode -or $OutEmptyAfter -ne $true) {
++    $WrapperExitCode = 125
++} else {
++    $WrapperExitCode = [int]$JuliaExitCode
++}
++$Status = if ($TimedOut) { 'TIMED_OUT' }
++          elseif (-not $ProcessStarted) { 'START_FAILED' }
++          elseif (-not [string]::IsNullOrEmpty($LaunchException)) { 'LAUNCH_OR_WAIT_ERROR' }
++          elseif ($null -eq $JuliaExitCode) { 'EXIT_CODE_UNKNOWN' }
++          elseif ($OutEmptyAfter -ne $true) { 'OUT_NOT_EMPTY' }
++          elseif ($JuliaExitCode -eq 0) { 'COMPLETED' }
++          else { 'FAILED' }
+ $Receipt = [ordered]@{
+     schema = 'pgfrag.pd.point_event.launch_receipt.v1'
+     run_id = $RunId
+     case_id = 'zero_load_control'
+-    status = $(if ($TimedOut) { 'TIMED_OUT' } elseif ($JuliaExitCode -eq 0) { 'COMPLETED' } else { 'FAILED' })
++    status = $Status
+     julia_process_exit_code = $JuliaExitCode
++    process_exit_code_observed = ($null -ne $JuliaExitCode)
++    process_started = $ProcessStarted
++    process_id = $ProcessId
++    wait_completed = $WaitCompleted
++    launch_exception = $LaunchException
+     timed_out = $TimedOut
++    wrapper_exit_code = $WrapperExitCode
+     timeout_seconds = $TimeoutSeconds
+     started_utc = $StartedUtc
+     finished_utc = $FinishedUtc
+@@ -126,9 +237,13 @@
+ }
+ $ReceiptText = ($Receipt | ConvertTo-Json -Depth 8) + "`n"
+ $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+-[System.IO.File]::WriteAllText($ReceiptPath, $ReceiptText, $Utf8NoBom)
+-
+-if (-not $OutEmptyAfter) {
+-    throw "OUT gained files during launch; inspect the sibling receipt and logs: $OutDirectory"
+-}
+-exit $JuliaExitCode
++$ReceiptStream = $null
++try {
++    $ReceiptStream = [System.IO.File]::Open($ReceiptPath, [System.IO.FileMode]::CreateNew,
++        [System.IO.FileAccess]::Write, [System.IO.FileShare]::Read)
++    $ReceiptBytes = $Utf8NoBom.GetBytes($ReceiptText)
++    $ReceiptStream.Write($ReceiptBytes, 0, $ReceiptBytes.Length)
++} finally {
++    if ($null -ne $ReceiptStream) { $ReceiptStream.Dispose() }
++}
++exit $WrapperExitCode
+--- v1/freeze_manifest.ps1
++++ v2/freeze_manifest.ps1
+@@ -29,6 +29,7 @@
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl'; role = 'native_arbitrary_point_body' },
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/point_sets.jl'; role = 'native_point_identity_sets' },
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl'; role = 'native_velocity_boundary_conditions' },
++    @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl'; role = 'native_velocity_initial_conditions' },
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl'; role = 'native_bond_failure_dispatch' },
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl'; role = 'native_osb_critical_stretch_failure' },
+     @{ path = 'pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/logs.jl'; role = 'native_options_logger_access' }
+@@ -102,10 +103,12 @@
+             [ordered]@{ signature = 'solve!(dh::AbstractDataHandler, vv::VelocityVerlet, options::AbstractJobOptions)'; source = "$NativeRoot/time_solvers/velocity_verlet.jl"; sha256 = $HashByPath["$NativeRoot/time_solvers/velocity_verlet.jl"] },
+             [ordered]@{ signature = 'verlet_timestep!(dh::AbstractThreadsBodyDataHandler, options::AbstractJobOptions, Δt::Float64, Δt½::Float64, n::Int)'; source = "$NativeRoot/time_solvers/velocity_verlet.jl"; sha256 = $HashByPath["$NativeRoot/time_solvers/velocity_verlet.jl"] },
+             [ordered]@{ signature = 'Body(mat::M, position::AbstractMatrix, volume::AbstractVector)'; source = "$NativeRoot/discretization/body.jl"; sha256 = $HashByPath["$NativeRoot/discretization/body.jl"] },
++            [ordered]@{ signature = 'velocity_ic!(body::AbstractBody, point_set::Symbol, dimension::Union{Integer,Symbol}, value::Real)'; source = "$NativeRoot/physics/initial_conditions.jl"; sha256 = $HashByPath["$NativeRoot/physics/initial_conditions.jl"] },
+             [ordered]@{ signature = 'calc_failure!(storage::OSBStorage, system::BondSystem, ::OSBMaterial, ::CriticalStretch, paramsetup::AbstractParameterSetup, i)'; source = "$NativeRoot/physics/ordinary_state_based.jl"; sha256 = $HashByPath["$NativeRoot/physics/ordinary_state_based.jl"] }
+         )
+         output_fields = 'Point reference/current position, displacement, velocity, acceleration, b_int/b_ext force densities in N/m^3, damage, volume/mass; every directed bond state and canonical undirected pair state per sample; transitions are observed native state differences.'
+         logger_compatibility = 'EventProbeOptions <: AbstractJobOptions and export_allowed=false. Native init_logs/add_to_logfile short-circuit before vtk/logfile fields; experiment defines Peridynamics.log_job_options(::EventProbeOptions) because pinned source specializes that logger to JobOptions; log_data_handler/system and native timesolver messages use log_it/add_to_logfile, safe with export_allowed=false. Hook specializations still capture despite export_allowed=false.'
++        zero_load_initial_condition = 'Native velocity_ic!(body, :all_points, axis, 0.0) for axes 1:3 satisfies native pre_submission_check without constraining ongoing velocity or adding external load.'
+         hook_contract_status = 'Internal native output generics, not a documented public user callback; exact dispatch must be proven by the first separately released no-damage preflight.'
+         internal_init_or_step_override = $false
+         event_clock = 'Step 0 after native initialize!; later samples follow native verlet_timestep! at n × accepted native Δt.'
+@@ -126,7 +129,11 @@
+         script = "$Experiment/launch_zero_load_probe.ps1"
+         fixed_case = 'zero_load_control'
+         tinyload_reachable = $false
+-        records_numeric_julia_process_exit_code = $true
++        records_numeric_julia_process_exit_code_when_observed = $true
++        records_unknown_exit_code_as_json_null = $true
++        records_start_wait_exception = $true
++        preserves_child_exit_code_on_timeout = $true
++        wrapper_exit_policy = 'Actual Julia code on normal observed exit; 124 on timeout; 125 on launch/wait error, unknown child exit, or OUT violation.'
+         timeout_seconds = 120
+     }
+     runtime = [ordered]@{
+@@ -155,6 +162,7 @@
+             'positive point mass closes against rho times point volume sum',
+             'accepted native dt matches native stable bound',
+             'complete reciprocal directed bond states agree with canonical states at both samples',
++            'zero-load all-points zero-velocity initial conditions satisfy native pre-submission checks without adding velocity constraints',
+             'zero-load produces no bond-activity transition',
+             'OUT remains empty; snapshots and receipt stay in sibling directories'
+         )
+--- v1/README.md
++++ v2/README.md
+@@ -18,7 +18,9 @@
+ 
+ ## Runtime gates
+ 
+-The frozen launcher targets only `case_zero_load_control.toml`, one native step, one CPU thread, and at most 512 points. Its working directory is `pgfrag/tmp/review_20261004/pd_point_event_probe/OUT`, which must be empty. Snapshots and process receipts are written to sibling directories named `snapshots` and `receipts`. The launcher records the actual numeric Julia process exit code and refuses to overwrite any prior run directory or receipt.
++The first zero-load case adds native zero-velocity initial conditions on all three axes for `:all_points`. This satisfies the native body's pre-submission requirement for at least one initial or boundary condition; it does not impose a velocity boundary condition during integration or add an external load.
++
++The frozen launcher targets only `case_zero_load_control.toml`, one native step, one CPU thread, and at most 512 points. Its working directory is `pgfrag/tmp/review_20261004/pd_point_event_probe/OUT`, which must be empty. Snapshots and process receipts are written to sibling directories named `snapshots` and `receipts`. The launcher records the actual Julia process exit code only when observed; otherwise it records JSON `null` as unknown, plus any launch/wait exception. A timed-out child retains its observed exit code and `timed_out=true`; the wrapper returns 124 for timeout and 125 when start/wait status is unknown or errors. Existing receipts/logs are never overwritten.
+ 
+ The zero-load runtime gate is prepared but still awaits final freeze review. It must show exactly step 0 and step 1, one native chunk, complete stable point-ID mapping, positive mass closure, correct accepted native dt, complete reciprocal directed/canonical graph state at both samples, and no activity transitions. Do not launch Julia, the solver, or a preflight until the root agent explicitly releases that freeze.
+ 
+--- v1/manifest.json
++++ v2/manifest.json
+@@ -83,6 +83,11 @@
+         "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+       },
+       {
++        "signature": "velocity_ic!(body::AbstractBody, point_set::Symbol, dimension::Union{Integer,Symbol}, value::Real)",
++        "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
++        "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
++      },
++      {
+         "signature": "calc_failure!(storage::OSBStorage, system::BondSystem, ::OSBMaterial, ::CriticalStretch, paramsetup::AbstractParameterSetup, i)",
+         "source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+         "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+@@ -90,6 +95,7 @@
+     ],
+     "output_fields": "Point reference/current position, displacement, velocity, acceleration, b_int/b_ext force densities in N/m^3, damage, volume/mass; every directed bond state and canonical undirected pair state per sample; transitions are observed native state differences.",
+     "logger_compatibility": "EventProbeOptions <: AbstractJobOptions and export_allowed=false. Native init_logs/add_to_logfile short-circuit before vtk/logfile fields; experiment defines Peridynamics.log_job_options(::EventProbeOptions) because pinned source specializes that logger to JobOptions; log_data_handler/system and native timesolver messages use log_it/add_to_logfile, safe with export_allowed=false. Hook specializations still capture despite export_allowed=false.",
++    "zero_load_initial_condition": "Native velocity_ic!(body, :all_points, axis, 0.0) for axes 1:3 satisfies native pre_submission_check without constraining ongoing velocity or adding external load.",
+     "hook_contract_status": "Internal native output generics, not a documented public user callback; exact dispatch must be proven by the first separately released no-damage preflight.",
+     "internal_init_or_step_override": false,
+     "event_clock": "Step 0 after native initialize!; later samples follow native verlet_timestep! at n × accepted native Δt.",
+@@ -123,7 +129,11 @@
+     "script": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+     "fixed_case": "zero_load_control",
+     "tinyload_reachable": false,
+-    "records_numeric_julia_process_exit_code": true,
++    "records_numeric_julia_process_exit_code_when_observed": true,
++    "records_unknown_exit_code_as_json_null": true,
++    "records_start_wait_exception": true,
++    "preserves_child_exit_code_on_timeout": true,
++    "wrapper_exit_policy": "Actual Julia code on normal observed exit; 124 on timeout; 125 on launch/wait error, unknown child exit, or OUT violation.",
+     "timeout_seconds": 120
+   },
+   "runtime": {
+@@ -152,6 +162,7 @@
+       "positive point mass closes against rho times point volume sum",
+       "accepted native dt matches native stable bound",
+       "complete reciprocal directed bond states agree with canonical states at both samples",
++      "zero-load all-points zero-velocity initial conditions satisfy native pre-submission checks without adding velocity constraints",
+       "zero-load produces no bond-activity transition",
+       "OUT remains empty; snapshots and receipt stay in sibling directories"
+     ]
+@@ -170,12 +181,12 @@
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/README.md",
+       "role": "experiment_contract",
+-      "sha256": "537603588028aabdfc973cf53b1808f8b70e7e505bbd29e19a96e0088b8912cd"
++      "sha256": "2efafea5b7d6811eb5e6007d2a915d9336b32ca2ecc80b2760b78cb7627a7386"
+     },
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+       "role": "native_event_observer",
+-      "sha256": "7c8f7880b0648b31ecc530f1792966bd949660a59f37d5f6a15c987d3b7379a8"
++      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+     },
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/make_point_inputs.ps1",
+@@ -185,12 +196,12 @@
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/freeze_manifest.ps1",
+       "role": "manifest_builder",
+-      "sha256": "f2ff55287637be947ea4ef318469c030e32a426531e5ec791f1ce05cc9501d7c"
++      "sha256": "0dd9128d7ebb6db22fda0b4f9a34751bed8b26c9b92a2e53cba85e80a08b3af6"
+     },
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+       "role": "frozen_zero_load_launcher",
+-      "sha256": "202c43c4b0762ca01aa6eb4b29a670d5a2e151c0c42b56224cbac49e7044a9ff"
++      "sha256": "102b65f7085dd60d267f61de31765d61465d063c01fca4d98f736d85685e0df4"
+     },
+     {
+       "path": "pgfrag/experiments/pd_point_event_probe_20261004/common_case.toml",
+@@ -301,6 +312,11 @@
+       "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+       "role": "native_velocity_boundary_conditions",
+       "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
++    },
++    {
++      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
++      "role": "native_velocity_initial_conditions",
++      "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+     },
+     {
+       "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",

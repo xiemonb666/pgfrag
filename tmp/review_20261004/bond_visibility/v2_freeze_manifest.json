@@ -1,0 +1,61 @@
+{
+  "freeze": "bond_visibility_v2_static_review",
+  "execution_performed": false,
+  "forbidden_execution_not_performed": [
+    "pytest",
+    "CAD construction",
+    "STEP export or import",
+    "Julia",
+    "solver",
+    "Git"
+  ],
+  "v2_files": [
+    {
+      "name": "bond_visibility.py",
+      "path": "pgfrag/src/pgfrag/bond_visibility.py",
+      "sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+      "byte_length": 46437
+    },
+    {
+      "name": "test_bond_visibility.py",
+      "path": "pgfrag/tests/test_bond_visibility.py",
+      "sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+      "byte_length": 19003
+    },
+    {
+      "name": "design_and_freeze.md",
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+      "sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9",
+      "byte_length": 7746
+    },
+    {
+      "name": "v2_diff.patch",
+      "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_diff.patch",
+      "sha256": "3fd0b7231ee6f28d906f768062c1bec271d4f7cef22ea5f33dd076a8a6512850",
+      "byte_length": 40880
+    }
+  ],
+  "v1_original_archive": {
+    "manifest_path": "pgfrag/tmp/review_20261004/bond_visibility/v1_original/v1_original_manifest.json",
+    "manifest_sha256": "13483c5ee12ea9b53e4c87c998289d21107ea6214046dd6c2a1296782de5c7e6",
+    "source_sha256": "7b87ffd1bb94f4474de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86",
+    "test_sha256": "533702781d8d27295260b108e2783949cdac1691709704fa96edfed6fccfa84a",
+    "design_sha256": "f95c86eada924153ae0c0467e928d765d4d23750dc6abc5759215e5a3a3d227e"
+  },
+  "read_only_cavity_design_sha256": {
+    "path": "pgfrag/tmp/review_20261004/cavity_bond_safety/design.md",
+    "recomputed_sha256": "6035fa7c3fdead24a43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b"
+  },
+  "review_metadata_discrepancy": {
+    "independent_review_claimed_v1_design_sha256": "1e943da11387344169d66350dbdb9740db18ed6b245f8e5643c318141884fe2",
+    "archived_v1_design_sha256": "f95c86eada924153ae0c0467e928d765d4d23750dc6abc5759215e5a3a3d227e",
+    "note": "The independent review's source and test hashes match the byte-preserved v1 archive, but its claimed design hash does not match the archived design bytes. The archived bytes are retained unchanged."
+  },
+  "v2_changes": [
+    "Any hit cluster with more than one distinct parameter is unresolved independent of total span; raw hits and finite span remain recorded and the representative is diagnostic only.",
+    "Single-link chain and near-distinct short-cavity controls assert UNKNOWN and non-eligibility even when diagnostic interval midpoints are mocked IN.",
+    "Use math.hypot, finite checks, bounded midpoint/interpolation, and structured UNKNOWN numeric-range reasons; require both combined band and its doubled threshold to be finite.",
+    "Overflowing uncertainty bands avoid point-classifier calls, retain representable raw hits, and serialize with allow_nan=false."
+  ],
+  "proposed_next_check_only_after_root_review": "One bounded pytest invocation: the BondVisibilityPureMathRegressionTests class plus test_hollow_shell_endpoints_inside_but_segment_crosses_void, test_hollow_shell_preserves_all_outer_and_inner_hits, and test_same_wall_and_solid_coupon_remain_inside_material. Use the exact PowerShell command in design_and_freeze.md; no STEP export and no native integration."
+}

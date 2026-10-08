@@ -1,0 +1,72 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.freeze.v2",
+  "freeze_stage": "v2_source_test_diff_frozen_for_root_review_before_execution",
+  "tests_executed_for_v2": false,
+  "awaiting_root_review_and_single_test_authorization": true,
+  "files": [
+    {
+      "role": "module",
+      "path": "pgfrag/src/pgfrag/mesh_resolution_audit.py",
+      "sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9"
+    },
+    {
+      "role": "tests",
+      "path": "pgfrag/tests/test_mesh_resolution_audit.py",
+      "sha256": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66"
+    },
+    {
+      "role": "scope",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/scope_and_limits.md",
+      "sha256": "5ea0e43c42602e2e05c42e6ece35a45c4ad615b195c02185c0dd8148f99685c1"
+    },
+    {
+      "role": "diff",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2.diff",
+      "sha256": "35f3323db55e799be4109b5fc9379fe26e5afa5835192337931ca9398d0dca9a"
+    },
+    {
+      "role": "fixture",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/fixture_cases.json",
+      "sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b"
+    },
+    {
+      "role": "v1_snapshot_manifest",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v1_snapshot/snapshot_manifest.json",
+      "sha256": "f9b302efaaef61cd0fe81e3f5af1e5fc188dae37791dda530490cfc2b46742e2"
+    },
+    {
+      "role": "v1_pytest_stdout",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v1_snapshot/pytest_stdout.txt",
+      "sha256": "5fc6a184cef674ea791ce5bcd07164c4cf7e0866eff0932d82be5420a00f7dc5"
+    },
+    {
+      "role": "v1_pytest_exit_code",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v1_snapshot/pytest_exit_code.txt",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "role": "v1_pytest_receipt",
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v1_snapshot/pytest_receipt.json",
+      "sha256": "9b56699e5586fd4f9a70ae9cc4a737543f278580ab63d4b13c57998ff8890cf3"
+    }
+  ],
+  "v1_record": {
+    "preserved": true,
+    "status": "7 passed in 0.06s; exit code 0",
+    "snapshot_manifest_sha256": "f9b302efaaef61cd0fe81e3f5af1e5fc188dae37791dda530490cfc2b46742e2",
+    "module_sha256": "77ac2fd59a9898e8a6344ecf4f9b6cbd5aa4445e5a2e713248b7e85d8783f394",
+    "tests_sha256": "9280f54d8ab45606ad84840c7d894afca07005732b3174fef1a16ac0395b3deb",
+    "stdout_sha256": "5fc6a184cef674ea791ce5bcd07164c4cf7e0866eff0932d82be5420a00f7dc5",
+    "exit_code_sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "receipt_sha256": "9b56699e5586fd4f9a70ae9cc4a737543f278580ab63d4b13c57998ff8890cf3"
+  },
+  "change_summary": [
+    "one terminal cell status counter entry for every tetrahedron, including volume range failures",
+    "underflowed and overflowed nonzero SI volumes remain UNKNOWN with normalized scale, edge scale, and signed log10 magnitude retained",
+    "caller-supplied wall source and definition are recorded as declarations; actual global source verification and qualification remain UNKNOWN",
+    "non-finite or underflowed ratios record metric, failure count, affected cell indices, and status; unavailable ratios remain UNKNOWN and JSON-safe",
+    "surface tessellation tolerance, surface triangle edge length, and volume tetra spacing are reported as distinct fields"
+  ],
+  "scope_note": "Only the isolated pure-math audit module, its tests, and this review artifact directory were edited. No CAD producer audit, original mesh, solver, or production module was inspected or changed.",
+  "validation_note": "This freeze performs no pytest, CLI execution, solver execution, or target-module execution. Root review is requested before one test run."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "SOURCE_ONLY_HASH_SNAPSHOT",
+  "validation": "stdlib AST parse for implementation/checker/helper; JSON parse for budget and pins; source hashes verified; no checker/provider/solver/field/K execution",
+  "files": {
+    "operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "checker": {
+      "path": "pgfrag/tmp/review_20261006/mixed_enriched_operator_20261006/operator_arithmetic_check.py",
+      "sha256": "c136d55f4c0030fab27515047f3442911182c42edb40040fddc362846bec6caf"
+    },
+    "readme": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/README.md",
+      "sha256": "bb0d912b0e90f12cd04da196c6d1fe10f8e9d2c623f921ca0d1db642ded5e040"
+    },
+    "source_review": {
+      "path": "pgfrag/tmp/review_20261006/mixed_enriched_operator_20261006/SOURCE_REVIEW.md",
+      "sha256": "fd7e43921f9c3df751a7b44e8078d06bc5507480d35c100611856efd56422bae"
+    },
+    "future_check_budget": {
+      "path": "pgfrag/tmp/review_20261006/mixed_enriched_operator_20261006/FUTURE_CHECK_BUDGET.json",
+      "sha256": "ffdf7f05f34c47b1f85b363fd8dcf0b97bcd633aae519ad2f3876579d8c415b2"
+    },
+    "helper_input": {
+      "path": "pgfrag/experiments/mixed_lefm_enrichment_algebra_20261006/mixed_enrichment_algebra.py",
+      "sha256": "466d0c01445f497e46a49314a03e89e92c62a204a9665cf01c3d2005f2dc99e3"
+    }
+  }
+}

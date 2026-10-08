@@ -1,0 +1,30 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v3_run_receipt.v1",
+  "execution_count": 1,
+  "pytest_rerun": false,
+  "argv_path": "argv.json",
+  "argv_sha256": "73bef377da088f4d9a2534883c8697f4c2e9e94153d76d8c118094f3d659e094",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "stdout": {
+    "path": "stdout.txt",
+    "sha256": "c614b4fc0c7359ccda69074230be3b0f6d8ecff0b492236474ca8555c2b841c3",
+    "bytes": 1367
+  },
+  "stderr": {
+    "path": "stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "exit_code": 1,
+  "junit": {
+    "path": "junit.xml",
+    "sha256": "17030cff56c413e2afabda00248b56bb6924f04a42175f74d6dbdc2bc556f941",
+    "bytes": 2792,
+    "testcase_count": 11,
+    "distinct_case_id_count": 11,
+    "case_ids_unique": true
+  },
+  "source_and_test_hashes_unchanged": true,
+  "all_24_freeze_pins_match_after_run": true,
+  "result_note": "10 passed, 1 failed. The independent log-volume-over-float64 assertion passed; the overflow test then raised KeyError because unknown_numeric_range_cell_indices is not a top-level tetra_geometry key. No edits or rerun were performed."
+}

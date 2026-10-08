@@ -1,0 +1,58 @@
+{
+  "test_file": "pgfrag/experiments/material_visibility_native_bridge_20261005/test_bridge_contract.py",
+  "source_file": "pgfrag/experiments/material_visibility_native_bridge_20261005/bridge_contract.py",
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-rA",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\bridge_contract_tests\\bridge_contract.junit.xml",
+    "pgfrag/experiments/material_visibility_native_bridge_20261005/test_bridge_contract.py"
+  ],
+  "invocation_count": 1,
+  "started_utc": "2026-10-05T04:48:45.4689349+00:00",
+  "finished_utc": "2026-10-05T04:48:46.9754131+00:00",
+  "elapsed_seconds": 1.50525,
+  "exit_code": 0,
+  "pre_sha256": {
+    "bridge_contract_py": "67b8f3090abebb093b7a1e099059c35c2ae09890b4f6b78453dd44d8a6ad4085",
+    "test_bridge_contract_py": "cb9c9b62214c6be2f5d9368dff9498f90a16c16537e135d9dd4a7c1e9cd09d07"
+  },
+  "post_sha256": {
+    "bridge_contract_py": "67b8f3090abebb093b7a1e099059c35c2ae09890b4f6b78453dd44d8a6ad4085",
+    "test_bridge_contract_py": "cb9c9b62214c6be2f5d9368dff9498f90a16c16537e135d9dd4a7c1e9cd09d07"
+  },
+  "source_hashes_unchanged": true,
+  "junit": {
+    "sha256": "6fbd96cef6934976c1cbabd1ef95c9ab0c91ca727a5b59fcaff5f0359f54f6b3",
+    "path": "bridge_contract.junit.xml"
+  },
+  "stdout": {
+    "sha256": "45d100496b0a584fdb4cfb45115430ee9e749d4d9874b0798661db7f64257133",
+    "path": "bridge_contract.stdout.txt"
+  },
+  "stderr": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "path": "bridge_contract.stderr.txt"
+  },
+  "summary": {
+    "tests": 12,
+    "errors": 0,
+    "skipped": 0,
+    "failures": 0
+  },
+  "distinct_node_ids": [
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_empty_candidate_empty_mask_and_zero_degree_are_blocked",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_invalid_accuracy_basis_does_not_enter_contract",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_per_file_and_aggregate_budgets_reject_before_any_read",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_point_and_pair_caps_are_enforced",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_sidecar_open_interval_mismatch_is_rejected",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_sidecar_raw_hit_mismatch_is_rejected",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_sidecar_selection_and_strict_duplicate_key_checks",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_source_sha_is_computed_from_the_actual_source_file",
+    "experiments.material_visibility_native_bridge_20261005.test_bridge_contract.BridgeContractTests::test_unknown_is_retained_and_blocks_the_whole_native_asset"
+  ],
+  "distinct_node_id_count": 9
+}

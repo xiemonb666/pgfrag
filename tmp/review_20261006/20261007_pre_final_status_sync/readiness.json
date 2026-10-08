@@ -1,0 +1,976 @@
+{
+  "inventory_schema": "codex.core_readiness_inventory.v1",
+  "inventory_as_of": "2026-10-07",
+  "objective": "Support RelicWeave's observed-fragments -> ranked-candidates -> evidence -> accept/reject/recapture/STOP flow, with clean GT accessible only to offline audit.",
+  "status_legend": {
+    "KNOWN": "Direct disk evidence establishes the stated bounded claim. This does not imply production or physical qualification.",
+    "UNKNOWN": "The broader milestone is not established by the present evidence.",
+    "NOT_IMPLEMENTED": "The required target behavior has no sufficient implementation in the reviewed scope; a related sketch, partial field, or fixture may exist.",
+    "IN_PROGRESS_NOT_VALIDATED": "A substantive implementation draft exists, but it is not frozen/executed or lacks validating saved evidence; do not treat it as PASS.",
+    "ACTUAL_DIAGNOSTIC_PENDING_INDEPENDENT_ACCEPTANCE": "A bounded actual diagnostic result is saved, but independent numerical/schema and visual acceptance remains pending; this is not a physical/material/fracture qualification."
+  },
+  "context_only": {
+    "subjective_engineering_progress_supplied_by_parent": {
+      "pgfrag": "25-35%",
+      "vesselforge": "30-40%",
+      "a12": "30-40%"
+    },
+    "qualified_complete_physical_packs": 0,
+    "percent_method": "No completion percentage is computed from test counts or passed fixtures. The ranges above are subjective parent estimates, not physical readiness."
+  },
+  "inspection_boundary": [
+    "Read source, Markdown status/handoff files and bounded saved-result metadata only.",
+    "No DOCX or NPZ contents were opened. No tests, numerical runs, solver, CAD, renderer or Git mutation were performed by this inventory update. The PG cohesive result was hash-verified; summary metrics came from the parent review and its numeric arrays were not recomputed.",
+    "Only the two assigned inventory deliverables were revised. Exact prior bytes were copied and SHA-256 verified under tmp/review_20261007/core_readiness_inventory/prior_bytes_before_actual_bridge_update/."
+  ],
+  "milestones": [
+    {
+      "id": "PG-01",
+      "system": "PG-Frag",
+      "milestone": "3D elastic operator / static cracked-elastic solve",
+      "status": "KNOWN",
+      "bounded_claim": "A source-pinned manufactured 3D static solve and saved-array recovery checks exist. The b622 recovered-cache audit is a separate run whose producer failed serializing its result JSON; this does not conflict with the later actual cohesive diagnostic result recorded under PG-02. Both remain physics-unqualified.",
+      "evidence": [
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_incremental/stablecore/full3d_static_solve_bridge/run02/static_solve_bridge_result.json",
+          "claim": "Saved run02 manufactured 3D static solve; companion execution receipt and progress report record rc=0."
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+          "claim": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED; physical_fracture_status=UNKNOWN_NOT_ASSESSED; source producer rc=1 and result JSON absent.",
+          "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_incremental/stablecore/bridge_mass_independent/audit_result.json",
+          "claim": "Saved mass/operator audit is explicitly NUMERICAL_DIAGNOSTIC_ONLY_NOT_PHYSICAL_FRACTURE_OR_MATERIAL_PASS."
+        },
+        {
+          "path": "pgfrag/docs/progress/20261006_physics_core_review_addendum.md",
+          "claim": "Bounds the recovered cache to a manufactured benchmark and states no physical fracture qualification."
+        }
+      ],
+      "remaining_unknowns": [
+        "No calibrated vessel material or measured crack response.",
+        "Recovered cache consistency does not turn the failed producer into a successful solve.",
+        "Mesh/horizon/orientation convergence and a production vessel geometry are not established."
+      ],
+      "minimum_evidence_to_promote": [
+        "A source-pinned producer run with a successful, recoverable result for the prescribed solved field, not only recovered cache or manufactured q_exact coefficients.",
+        "Independent reconstruction of operator, field error, boundary work, and energy on the same saved geometry/load.",
+        "For physical readiness, sourced material calibration and a representative vessel case plus mesh/horizon/orientation sensitivity."
+      ]
+    },
+    {
+      "id": "PG-02",
+      "system": "PG-Frag",
+      "milestone": "Actual 93-DOF cohesive coupling",
+      "status": "ACTUAL_DIAGNOSTIC_PENDING_INDEPENDENT_ACCEPTANCE",
+      "bounded_claim": "A bounded actual 93-DOF cohesive fixed-face virgin toy diagnostic was saved. Result SHA-256 e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2; parent-reported summary: 16 MLS queries, 16 quadrature points, 3 assemblies, 1 KKT solve, 15 producer diagnostic gates, host return code 0 in 1.164988 seconds. Independent numerical/schema-fix acceptance and visual review remain pending. No crack growth or calibrated material response is shown. Root separately accepted the true-provider MLS rotation result (64 queries / 5 checks) as a provider prerequisite only; actual mesh bias remains UNKNOWN.",
+      "evidence": [
+        {
+          "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+          "claim": "Saved actual diagnostic result; SHA-256 e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2; host rc=0, elapsed=1.164988 s. Parent-reviewed summary reports 16 MLS queries, 16 QPs, 3 assemblies, 1 KKT solve, and 15 producer gates only.",
+          "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+        },
+        {
+          "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+          "claim": "Numerical worker source corresponding to the saved diagnostic; result is fixed-face virgin toy scope, not crack growth or material qualification."
+        },
+        {
+          "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge_once.py",
+          "claim": "One-shot outer-runner source for the saved run."
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_components/cohesive_scalar/run_receipt.json",
+          "claim": "Separate scalar-law toy evidence; not proof of physical calibration or crack advance."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Independent numeric reconstruction of query, quadrature, assembly, KKT and diagnostic gate data from the saved run; acceptance must not reuse only producer gate booleans.",
+        "Independent schema/source-fix review and the pending visual review for the actual diagnostic artifact.",
+        "Keep the accepted true-provider MLS prerequisite distinct from actual mesh-bias evidence; demonstrate matched solver sensitivity over h/horizon/orientation before any bias claim.",
+        "Add sourced material calibration and an actual crack-growth/fracture-energy case before any physical fracture qualification."
+      ]
+    },
+    {
+      "id": "PG-03",
+      "system": "PG-Frag",
+      "milestone": "Crack advance coupled to fracture energy",
+      "status": "UNKNOWN",
+      "bounded_claim": "A one-step Mode III proposal/confirm/reject state machine and quasi-static energy gate are implemented and exercised on explicit/synthetic fixtures. They do not run or independently verify an actual current solver reanalysis.",
+      "evidence": [
+        {
+          "path": "pgfrag/experiments/griffith_front_step_20261006/README.md",
+          "claim": "One finite straight Mode III proposal cycle; surfaces stay NOT_COUPLED and EXPERIMENTAL_UNCALIBRATED; fixture commit is not solver evidence."
+        },
+        {
+          "path": "pgfrag/experiments/griffith_front_energy_gate_v2_20261006/README.md",
+          "claim": "Quasi-static gate accepts an explicitly synthetic external fixture path; dynamic/mixed-cohesive modes return UNKNOWN."
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261005/free_fracture_pilot_independent_run03/audit/PILOT_REVIEW_REPORT.md",
+          "claim": "Native arithmetic audit does not establish a physical crack surface, fracture dissipation, convergence, or calibrated material response."
+        },
+        {
+          "path": "pgfrag/docs/progress/20261006_physics_core_review_addendum.md",
+          "claim": "Lists actual front/energy coupling, real crack advance, and material response among remaining UNKNOWNs."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "A current solved field and J/G assessment bound to the exact active surface, with contour and path sensitivity evidence.",
+        "A measured/calibrated Gc and solver reanalysis on the exact proposed geometry with saved elastic-energy, external-work, and Gc-times-area terms.",
+        "Independent energy and state-transition review showing that only a reviewed candidate becomes active."
+      ]
+    },
+    {
+      "id": "PG-04",
+      "system": "PG-Frag",
+      "milestone": "Dynamics plus fragment contact",
+      "status": "UNKNOWN",
+      "bounded_claim": "A toy consistent-mass matrix audit and fixed infinite-plane point-contact trajectory exist. No multi-fragment contact, self-contact, friction, or physically calibrated impact path is implemented.",
+      "evidence": [
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_incremental/stablecore/full3d_consistent_mass_replay/run01/mass_result.json",
+          "claim": "MASS_MATRIX_PASS_UNQUALIFIED; classification=NOT_MATERIAL_CALIBRATED; density is a fixed toy diagnostic and solve_allowed=false.",
+          "sha256": "326df86f867eec47141fce58a748eb68403853adce3a2d8b3b59d8f992ff15e1"
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_components/rigid_contact/REVIEW.md",
+          "claim": "Point against fixed plane only; explicitly excludes finite/multi-body fragment contact, self-contact, rotation, friction, and broad phase."
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261005/free_fracture_pilot_independent_run03/audit/PILOT_REVIEW_REPORT.md",
+          "claim": "Bond-graph components are not physical fragments; constrained-grip physical kinetic energy remains UNKNOWN."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Calibrated density, elasticity, fracture, and contact parameters with provenance.",
+        "Actual closed fragment shapes, multi-body/self-contact, rotation, and collision history tied to the crack event.",
+        "Independent momentum/energy and nonpenetration checks across time-step and geometry resolution."
+      ]
+    },
+    {
+      "id": "PG-05",
+      "system": "PG-Frag",
+      "milestone": "Material calibration",
+      "status": "NOT_IMPLEMENTED",
+      "bounded_claim": "Current PG-Frag README and saved numerical results label values UNVALIDATED_PROTOTYPE or NOT_MATERIAL_CALIBRATED; no material test dataset or calibration acceptance is present in this scope.",
+      "evidence": [
+        {
+          "path": "pgfrag/README.md",
+          "claim": "Explicitly says solver execution is not material calibration or a physical ceramic fracture pass."
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_incremental/stablecore/full3d_consistent_mass_replay/run01/mass_result.json",
+          "claim": "Density role is fixed toy diagnostic only; not calibrated material data."
+        },
+        {
+          "path": "pgfrag/docs/progress/20261006_physics_core_review_addendum.md",
+          "claim": "States real material/fracture response remains UNKNOWN."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Sourced representative specimens with measured density and elastic properties.",
+        "Independent fracture/cohesive/contact tests with fitted parameters, uncertainty, holdout validation, and strain-rate scope.",
+        "A provenance-bound material card consumed by the exact solver path used for crack and fragment qualification."
+      ]
+    },
+    {
+      "id": "PG-06",
+      "system": "PG-Frag",
+      "milestone": "Physical mesh bias plus rough fracture-surface export",
+      "status": "NOT_IMPLEMENTED",
+      "bounded_claim": "Fixture-only bias reports remain NOT_ADMITTED and bias_eliminated=false. Root separately accepted an upstream true-provider MLS rotation prerequisite with 64 queries and 5 checks; this is provider evidence only. Actual mesh-bias response remains UNKNOWN, and production still lacks solver-coupled rough fracture surfaces and dynamic fragment shapes.",
+      "evidence": [
+        {
+          "path": "pgfrag/experiments/discretization_bias_metrics_20261006/README.md",
+          "claim": "Every fixture report is FIXTURE_ONLY and NOT_ADMITTED; the component does not prove mesh bias absent."
+        },
+        {
+          "path": "pgfrag/docs/evidence/20261006/core_incremental/discretization_bias/independent_review.md",
+          "claim": "Current sample is NOT_ADMITTED and bias_eliminated=false."
+        },
+        {
+          "path": "pgfrag/experiments/explicit_fragment_fixture_20261006/README.md",
+          "claim": "Prescribed planar cut only; NOT_COUPLED; no physical event or natural fracture labels."
+        },
+        {
+          "path": "pgfrag/README.md",
+          "claim": "Production runner does not emit a geometric crack surface or dynamic fragment shapes."
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+          "claim": "Actual cohesive diagnostic uses an accepted true-provider MLS rotation prerequisite (64 queries / 5 checks) per parent review; this does not establish physical mesh-bias response."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Matched actual solver studies varying h/horizon/dt/orientation with identical geometry, load, material field, source, and sampling policy.",
+        "Independent bias metrics from continuous or declared-resolution surfaces and an explicit tolerance basis.",
+        "A source-linked rough fracture surface exported as closed fragment meshes with paired interface lineage, closure/manifold checks, and mass/volume conservation."
+      ]
+    },
+    {
+      "id": "VF-01",
+      "system": "VesselForge",
+      "milestone": "Parametric vessel family",
+      "status": "UNKNOWN",
+      "bounded_claim": "The profile catalog source defines three parameterized analytic families (bowl, beaker, jar); the native pilot contains only one default bowl and one default jar. The main README describes a separate single prototype specimen and disclaims a general historical generator. No family-domain sweep or reference-backed vessel qualification is established.",
+      "evidence": [
+        {
+          "path": "vesselforge/README.md",
+          "claim": "Describes one supported specimen and says this is not a general historical vessel generator."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/profile_catalog.py",
+          "claim": "Contains bounded typed profile-family parameters and a closed meridian outline."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/REVIEW.md",
+          "claim": "One bowl-default and one jar-default native candidate only; piecewise-linear profiles and no family-wide or historical qualification."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/semantic_base_neck_bspline_20261006/minimum_jerk_candidate/semantic_minimum_jerk_result.json",
+          "claim": "EXACT_CANDIDATE_REQUIRES_GEOMETRY_REVIEW; geometry promotion is not recorded."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Frozen supported family registry and declared parameter domain with representative boundary and interior cases.",
+        "Native solid, profile regularity/curvature, global wall, mesh, and export evidence across that domain.",
+        "Reference-backed shape and dimensional validation for each claimed historical family."
+      ]
+    },
+    {
+      "id": "VF-02",
+      "system": "VesselForge",
+      "milestone": "Native closed solid and STEP roundtrip",
+      "status": "KNOWN",
+      "bounded_claim": "Two default catalog candidates (bowl and jar) each have a saved valid native BRep and STEP roundtrip recorded as one solid with one closed shell. They are two default instances from two of three source-defined families; no beaker or non-default parameter instance is present. Representative cavity/wall probes passed only at sampled points. Global minimum wall is UNKNOWN; no mesh is present in this pilot.",
+      "evidence": [
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/pilot_manifest.json",
+          "claim": "PASS_TWO_DEFAULT_CATALOG_NATIVE_CANDIDATES."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/REVIEW.md",
+          "claim": "Records one solid/one closed shell for each default case and zero bounding-box delta after STEP roundtrip."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/native_case_receipt.json",
+          "claim": "Actual saved BRep/STEP case receipt."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/native_case_receipt.json",
+          "claim": "Actual saved BRep/STEP case receipt."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/candidate.step",
+          "claim": "Saved bowl_default STEP; 31,197 bytes; SHA-256 dcff94f7823f482c28bdc9c7e44c24a05755ebd9ebd7b05e99b663fab288ce81.",
+          "sha256": "dcff94f7823f482c28bdc9c7e44c24a05755ebd9ebd7b05e99b663fab288ce81"
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/candidate.step",
+          "claim": "Saved jar_default STEP; 35,912 bytes; SHA-256 32695256d8d832871fb38317e80b26d06906c3b13d03d58e670ca4a74dbced4d.",
+          "sha256": "32695256d8d832871fb38317e80b26d06906c3b13d03d58e670ca4a74dbced4d"
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Repeatable source-pinned builds over the claimed family parameter domain.",
+        "Independent BRep validity, closure, cavity, export/import, and geometry-preservation checks for each promoted class.",
+        "Explicit global wall-thickness proof or measured wall map before treating the STEP as solver-ready."
+      ]
+    },
+    {
+      "id": "VF-03",
+      "system": "VesselForge",
+      "milestone": "Curvature plus global wall and offset regularity",
+      "status": "UNKNOWN",
+      "bounded_claim": "The saved jar meridian normal-offset result passed its bounded local 2D check; its saved independent check was captured and the root visual review passed. It does not certify global wall thickness, the full closed strip, native BRep, or self-intersection-free revolved solid. A separate monotone normal-strip source package is ready for a root-authorized run but currently has no saved result; global wall remains UNKNOWN.",
+      "evidence": [
+        {
+          "path": "vesselforge/tmp/review_20261006/normal_offset_meridian_20261006/retry01_after_zprime_fix/normal_offset_meridian_result.json",
+          "claim": "status=INNER_MERIDIAN_LOCAL_OFFSET_CANDIDATE; scope=jar_meridian_2d_only; global_wall_status=UNKNOWN; normal_strip_global_injectivity=UNKNOWN.",
+          "sha256": "96ea35c44d40d12acc4b57a932ebb5194dbccdfd516b1fc2338ec58c51a9956a"
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/normal_offset_zprime_fixed_source_independent/REVIEW.md",
+          "claim": "Source audit records 10 jar side spans under R9 plus 12 regularity, 11 C4, and 5 feature checks as upstream premises; it explicitly leaves global wall and self-intersection UNKNOWN."
+        },
+        {
+          "path": "vesselforge/experiments/normal_offset_meridian_20261006/README.md",
+          "claim": "Explains that successful status is meridian-local and is not a whole-body thickness or physics qualification."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/normal_offset_saved_independent/once_capture_01/run_receipt.json",
+          "claim": "Saved independent-check capture receipt; status=EXECUTION_CAPTURED. Parent reports the local inner-meridian result independently accepted."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/normal_offset_saved_visual/normal_offset_local_2d_preview.png",
+          "claim": "Saved preview path; root visual review passed for the local 2D candidate only."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/source_pins.json",
+          "claim": "On-disk state=SOURCE_ONLY_READY_AWAITING_ROOT_GO; source-only handoff, no saved certification result, no global minimum-wall or native-BRep claim."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261006/normal_offset_saved_independent/once_capture_01/stdout.bin",
+          "claim": "Saved independent local-check output identity; parent/root accept the bounded local 2D check. This inventory did not read the captured stdout bytes.",
+          "sha256": "440f079df68473e5ec109e38912914e2295ebdd826b66a2e0a1d5d35a0549bd7"
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Run the pinned monotone normal-strip certificate after the root authorization/message gate and save its result plus source-pin receipt.",
+        "Independently accept any claimed 2D strip-injectivity proof on the actual saved candidate; verify closure edges and address the axis/lip/base/cap caveats in DESIGN.md.",
+        "Produce a separate complete-boundary global minimum Euclidean wall result, then validate the revolved native BRep/STEP and measured wall on a representative vessel."
+      ]
+    },
+    {
+      "id": "VF-04",
+      "system": "VesselForge",
+      "milestone": "Pattern relief geometry and realism",
+      "status": "NOT_IMPLEMENTED",
+      "bounded_claim": "The painted asset contract requires zero geometric relief. VesselForge has two illustrative painted recipe IDs and scalar ornament fields with raised/engraved effect modes, but no relief mesh/BRep path in the package contract; pattern realism and any actual geometric relief remain unvalidated.",
+      "evidence": [
+        {
+          "path": "vesselforge/README.md",
+          "claim": "Current initial geometry has no relief; painted band recipes have zero geometric relief and are not validated historical styles."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/schema.py",
+          "claim": "Painted-only prototype rejects nonzero geometry_relief_mm."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/ornament_fields.py",
+          "claim": "Field geometry claim is SCALAR_HEIGHT_FIELD_ONLY_NO_MESH_GENERATED."
+        },
+        {
+          "path": "relicweave-synlab/docs/a12/status.md",
+          "claim": "2026-10-02 snapshot says pattern realism and inheritance checks remain incomplete; use as dated A12 context only."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/appearance.py",
+          "claim": "Source defines two illustrative recipes: four_bands and three_bands; historical_style_validation is NOT_VALIDATED and recipe geometry_relief_mm is 0."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/ornament_fields.py",
+          "claim": "Defines three scalar coverage geometries and paint/raised/engraved modes; evaluation emits scalar height/color fields rather than relief mesh geometry."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Reference-backed pattern grammar and material appearance with lineage and regional semantics.",
+        "Relief converted to actual solid/mesh geometry on the same candidate, with global wall and curvature rechecks after embossing/engraving.",
+        "Blinded visual comparison against sourced physical examples and per-material degradation evidence."
+      ]
+    },
+    {
+      "id": "VF-05",
+      "system": "VesselForge",
+      "milestone": "Material appearance plus degradation",
+      "status": "UNKNOWN",
+      "bounded_claim": "VesselForge appearance fields remain illustrative and unvalidated. A12 has a separate bounded wear/rig-error subtrack; current clarification reports 155/155 execution/validity only, 9/31 axes and 36/155 levels with nonempty goal/measured pairs, all uncalibrated on one independent mother. This does not validate VesselForge materials or A12 whole-model admission.",
+      "evidence": [
+        {
+          "path": "vesselforge/README.md",
+          "claim": "Appearance fields are illustrative; painted recipes are not validated historical styles."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/appearance.py",
+          "claim": "Source for current appearance parameters."
+        },
+        {
+          "path": "docs/a12/degrade_realism.md",
+          "claim": "Declares a bounded wear/aging and capture-rig error delivery with measured-input scope and explicit candidate parameters."
+        },
+        {
+          "path": "data/a12_reports/a12_wear_ladder.json",
+          "claim": "Saved wear-ladder measurement metadata exists."
+        },
+        {
+          "path": "data/a12_reports/a12_rig_error.json",
+          "claim": "Saved capture-rig error measurement metadata exists."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Per-material sourced appearance calibration against physical color/roughness/lighting observations.",
+        "Held-out multi-vessel validation of the wear and capture-error models, with candidate versus measured parameters kept separate.",
+        "End-to-end asset and model admission/leakage review for the exact package used in ranking."
+      ]
+    },
+    {
+      "id": "VF-06",
+      "system": "VesselForge",
+      "milestone": "Annotated asset export",
+      "status": "KNOWN",
+      "bounded_claim": "forge.asset.v1 validates hashed STEP/mesh references, provenance, face semantics and optical-field arrays for a bounded intact-surface package. This is not a solver-produced fracture artifact or a fragments-to-ranked-candidates handoff.",
+      "evidence": [
+        {
+          "path": "vesselforge/README.md",
+          "claim": "Defines the intact forge.asset.v1 package and face-classification boundary."
+        },
+        {
+          "path": "vesselforge/src/vesselforge/schema.py",
+          "claim": "Validates package fields, canonical STEP identity, face-semantics lineage, and region codes."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261004/wall_mesh_binding/v4_run/cylinder_asset_run01/manifest.json",
+          "claim": "Saved bounded forge.asset.v1 manifest."
+        },
+        {
+          "path": "vesselforge/tmp/review_20261004/wall_mesh_binding/v4_run/cylinder_asset_run01/metadata/face_semantics.json",
+          "claim": "Saved canonical STEP face annotations for the bounded package."
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/fragment_geometry_export_independent/report.md",
+          "claim": "States the separate fracture-artifact envelope is not yet a consumable A12 adapter and lacks a solver-linked partition proof."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "A current source-pinned vessel package carrying verified geometry, face/region semantics, provenance, material/appearance, and integrity receipts.",
+        "For fracture export, bind actual solver-generated paired fracture surfaces to loaded closed fragment meshes and verify partition, manifold, orientation, area, volume, and mass.",
+        "Exercise the observation-only consumer through candidate ranking, evidence recording, and decision/recapture/STOP states without any inference-path GT access."
+      ]
+    }
+  ],
+  "cross_cutting_gates": [
+    {
+      "id": "RW-01",
+      "milestone": "PG/VF to RelicWeave observed-fragment ranking and evidence handoff",
+      "status": "NOT_IMPLEMENTED",
+      "evidence": [
+        {
+          "path": "pgfrag/tmp/review_20261006/fragment_geometry_export_independent/report.md",
+          "claim": "Explicitly says there is no A12 adapter exercised; observation projection does not yet link observed payloads to producer fragment IDs or candidate rows/ranks."
+        },
+        {
+          "path": "pgfrag/experiments/fracture_artifact_contract_20261006/README.md",
+          "claim": "The fracture artifact is a later A12 input contract, not integrated with production PG-Frag reader or chain dispatch."
+        },
+        {
+          "path": "relicweave-synlab/README.md",
+          "claim": "A12 repository integration is MAIN_REPO_INTEGRATION_PENDING."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "A real PG/VF package is consumed by the registered observation reader.",
+        "The system emits ranked candidates with evidence and provenance, then exercises accept/reject/recapture/STOP state transitions on a frozen roster.",
+        "Every failure/timeout remains in the denominator and maps to a documented terminal or recovery state."
+      ]
+    },
+    {
+      "id": "RW-02",
+      "milestone": "Clean GT restricted to offline audit",
+      "status": "KNOWN",
+      "evidence": [
+        {
+          "path": "pgfrag/experiments/fracture_artifact_contract_20261006/README.md",
+          "claim": "read_observation separates the observation channel from clean labels; clean GT requires purpose=offline_audit and is tagged AUDIT_ONLY."
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/fragment_geometry_export_independent/report.md",
+          "claim": "Independent readback confirms the bounded observation projection does not expose mother/event/surface lineage."
+        }
+      ],
+      "remaining_unknowns": [
+        "The contract-level split is not proof of end-to-end whole-model GT noninterference, deployment authorization, or release admission."
+      ],
+      "minimum_evidence_to_promote": [
+        "Whole pipeline data-flow and permission audit covering preprocessing, feature extraction, ranking, index construction, training, and export.",
+        "Truth-permission removal and adversarial/negative controls showing inference outputs do not change when clean GT is unavailable or permuted.",
+        "A registered release/admission record for the exact model and data package."
+      ]
+    },
+    {
+      "id": "A12-01",
+      "milestone": "A12 whole-model leakage and admission",
+      "status": "UNKNOWN",
+      "evidence": [
+        {
+          "path": "docs/a12/v144_project_core.md",
+          "claim": "The extracted V1.44 document explicitly labels itself an executable specification, not an implementation record."
+        },
+        {
+          "path": "relicweave-synlab/docs/a12/status.md",
+          "claim": "2026-10-02 base snapshot with a 2026-10-07 clarification: PILOT 10/12 still lacks train_dev_lineage and leakage_audit; degradation 155/155 is execution/validity, 9/31 axes and 36/155 levels have nonempty goal/measured pairs, all uncalibrated on one independent mother. Whole-model leakage/admission remains unestablished."
+        },
+        {
+          "path": "relicweave-synlab/README.md",
+          "claim": "Integration state is MAIN_REPO_INTEGRATION_PENDING."
+        },
+        {
+          "path": "docs/a12/degrade_realism.md",
+          "claim": "A bounded degradation subtrack is documented as measured; this does not establish whole-model admission or leakage freedom."
+        },
+        {
+          "path": "relicweave-synlab/data/a12/reports/precision_probe_07_degrade_audit.json",
+          "claim": "Execution/validity denominator: 31 axes x 5 levels; 155/155 execution PASS, not calibration or precision acceptance.",
+          "sha256": "b38d7dd1cddeff2dfcc06173de44ac83eb583cab045c05d6f47aff102a9f39fb"
+        },
+        {
+          "path": "relicweave-synlab/data/a12/reports/precision_probe_09_degrade_error.json",
+          "claim": "Paired-quantity report summarized in the 2026-10-07 status clarification: 9/31 axes and 36/155 levels have nonempty goal/measured values; all remain uncalibrated.",
+          "sha256": "d964413f473caea5bb75ec7a7ca39c140dcd8ac38892e13ebe3247a40327987e"
+        },
+        {
+          "path": "tmp/review_20261007/a12_claims_alignment/REVIEW.md",
+          "claim": "Saved clarification review identifies the status-board claim boundaries and pairing counts."
+        },
+        {
+          "path": "tmp/review_20261007/a12_claims_alignment/claims.json",
+          "claim": "Structured status alignment and counts for the 2026-10-07 clarification."
+        }
+      ],
+      "minimum_evidence_to_promote": [
+        "Run the exact frozen whole model/package with a complete lineage-split query roster, candidate pool, failure denominator, and admission profile.",
+        "Audit GT permissions and all data dependencies across the inference/training/release path, including negative controls.",
+        "Record a signed/verified release decision with all required profile gates and the exact model/data/code hashes."
+      ]
+    }
+  ],
+  "disk_artifact_checks": [
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+      "exists": true,
+      "bytes": 17303,
+      "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+      "interpretation": "Saved recovery audit; not the failed producer result and not physical fracture qualification."
+    },
+    {
+      "path": "pgfrag/docs/evidence/20261006/core_incremental/stablecore/full3d_consistent_mass_replay/run01/mass_result.json",
+      "exists": true,
+      "bytes": 506138,
+      "sha256": "326df86f867eec47141fce58a748eb68403853adce3a2d8b3b59d8f992ff15e1",
+      "interpretation": "Toy mass-matrix result; NOT_MATERIAL_CALIBRATED."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/normal_offset_meridian_20261006/retry01_after_zprime_fix/normal_offset_meridian_result.json",
+      "exists": true,
+      "bytes": 435804,
+      "sha256": "96ea35c44d40d12acc4b57a932ebb5194dbccdfd516b1fc2338ec58c51a9956a",
+      "interpretation": "Jar 2D local normal-offset candidate; global wall and normal-strip injectivity are UNKNOWN."
+    },
+    {
+      "path": "data/a12_reports/a12_wear_ladder.json",
+      "exists": true,
+      "interpretation": "A12 bounded wear measurement report metadata exists."
+    },
+    {
+      "path": "data/a12_reports/a12_rig_error.json",
+      "exists": true,
+      "interpretation": "A12 bounded rig-error measurement report metadata exists."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/pilot_manifest.json",
+      "exists": true,
+      "bytes": 77902,
+      "sha256": "d0fb3b591d3b0dcaa926585d3af534a3d294c60b2138b7cadfd6caed439a332f",
+      "interpretation": "Two default family candidates, bowl and jar; manifest says PASS_TWO_DEFAULT_CATALOG_NATIVE_CANDIDATES."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/PRE_RUN_SOURCE_PINS.json",
+      "exists": true,
+      "bytes": 993,
+      "sha256": "2a1816aa817019d4564fe4deaca94bc1715b14016831a1d0c3c6116ee92dd4a0",
+      "interpretation": "Byte-identical to POST pins; all five named current source/runtime hashes match."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/POST_RUN_SOURCE_PINS.json",
+      "exists": true,
+      "bytes": 993,
+      "sha256": "2a1816aa817019d4564fe4deaca94bc1715b14016831a1d0c3c6116ee92dd4a0",
+      "interpretation": "Byte-identical to PRE pins; no source mutation recorded during pilot."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/candidate.step",
+      "exists": true,
+      "bytes": 31197,
+      "sha256": "dcff94f7823f482c28bdc9c7e44c24a05755ebd9ebd7b05e99b663fab288ce81",
+      "interpretation": "Saved bowl STEP identity only; geometry acceptance is bounded by native receipt."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/native_case_receipt.json",
+      "exists": true,
+      "bytes": 25228,
+      "sha256": "46a7bffd576dc073b41b6034aa25c07c54b85ab06f584107312128f6fb6588bf",
+      "interpretation": "Receipt records bounded BRep/STEP/cavity evidence and global wall UNKNOWN."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/candidate.step",
+      "exists": true,
+      "bytes": 35912,
+      "sha256": "32695256d8d832871fb38317e80b26d06906c3b13d03d58e670ca4a74dbced4d",
+      "interpretation": "Saved jar STEP identity only; distinct from the smooth C4 local-offset jar meridian candidate."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/native_case_receipt.json",
+      "exists": true,
+      "bytes": 28453,
+      "sha256": "060bd4bf1038ed0131f33217073714996efb3588b628ba7b0e03341e0fe9490c",
+      "interpretation": "Receipt records bounded BRep/STEP/cavity evidence and global wall UNKNOWN."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/catalog_profile_input.json",
+      "exists": true,
+      "bytes": 3964,
+      "sha256": "75104b8770e5e02e8d963bc41a7b9bf74ce9bd29d783818613ff789f490ce314",
+      "interpretation": "Geometry-only bowl profile input with family/default parameters; no appearance, material, ornament, or mesh payload."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/catalog_profile_input.json",
+      "exists": true,
+      "bytes": 4721,
+      "sha256": "7a0cd232891ba5dc56b8434f2c96199057eb106708e0a1a0e96162e6f4b9cda0",
+      "interpretation": "Geometry-only jar profile input with family/default parameters; no appearance, material, ornament, or mesh payload."
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+      "exists": true,
+      "bytes": 1440429,
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+      "interpretation": "Actual diagnostic output identity verified by hash in 160 ms; parent-provided summary reports host rc=0/1.164988 s. It awaits independent numeric/schema and visual acceptance."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/normal_offset_saved_independent/once_capture_01/run_receipt.json",
+      "exists": true,
+      "bytes": 7207,
+      "interpretation": "Saved independent-check execution capture receipt; no raw binary stdout was opened."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/normal_offset_saved_visual/render_receipt.json",
+      "exists": true,
+      "bytes": 4014,
+      "interpretation": "Saved visual capture receipt reports rc=0, input pins unchanged, preview output exists; root reports visual pass."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/source_pins.json",
+      "exists": true,
+      "bytes": 5441,
+      "interpretation": "Source-only pins; no saved certificate result. On-disk state awaits root GO although parent reports source-ready/GO handoff."
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/status.md",
+      "exists": true,
+      "bytes": 11374,
+      "interpretation": "Current top-of-file 2026-10-07 clarification separates 155/155 execution from 9/31 axes, 36/155 paired levels, zero calibration, and one independent mother."
+    },
+    {
+      "path": "relicweave-synlab/data/a12/reports/precision_probe_07_degrade_audit.json",
+      "exists": true,
+      "interpretation": "Execution/validity audit artifact referenced by clarified status board.",
+      "bytes": 562921,
+      "sha256": "b38d7dd1cddeff2dfcc06173de44ac83eb583cab045c05d6f47aff102a9f39fb"
+    },
+    {
+      "path": "relicweave-synlab/data/a12/reports/precision_probe_09_degrade_error.json",
+      "exists": true,
+      "interpretation": "Paired-goal/measured metadata report referenced by clarified status board.",
+      "bytes": 93604,
+      "sha256": "d964413f473caea5bb75ec7a7ca39c140dcd8ac38892e13ebe3247a40327987e"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/normal_offset_saved_independent/once_capture_01/stdout.bin",
+      "exists": true,
+      "bytes": 3016,
+      "sha256": "440f079df68473e5ec109e38912914e2295ebdd826b66a2e0a1d5d35a0549bd7",
+      "interpretation": "Saved independent local-check capture; hashed as bytes only and not opened."
+    }
+  ],
+  "documentation_vs_artifact_notes": [
+    {
+      "path": "vesselforge/experiments/normal_offset_meridian_20261006/README.md",
+      "note": "This README still describes the experiment as source-only and awaiting root GO, while a separate retry01_after_zprime_fix saved result exists. The saved result is the controlling artifact for that isolated attempt and remains meridian-local; it does not establish global wall."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/global_bspline_independent/independent_saved_audit.json",
+      "note": "This is a separate global-B-spline candidate with endpoint-radius counterexamples and not promoted. Do not conflate it with the pinned semantic-base/neck jar premise used by the normal-offset retry."
+    },
+    {
+      "path": "vesselforge/README.md",
+      "note": "Main README describes one prototype specimen; profile_catalog.py defines three analytic parameter families and catalog pilot saves two default native candidates. Treat these as distinct source/experiment scopes, not a validated general historical generator."
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/patterns.md",
+      "note": "True-mother audit aggregate appears as both 13/16 and 14/16; the same report says PAT14/PAT15 were rejected for resolution budget on a coarse true mother but pass constructed-fixture examples. Do not treat these as a universal physical/style pass count."
+    },
+    {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/README.md",
+      "note": "README and earlier source review still state static-only/no-result; the actual run01 result now exists with hash e0819a79… and producer diagnostic gates. Treat the docs as stale for current run existence and keep independent acceptance pending."
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/status.md",
+      "note": "The 2026-10-07 top clarification resolves denominator ambiguity: 155/155 execution/validity; only 9/31 axes and 36/155 levels carry nonempty goal/measured pairs; all uncalibrated on one mother. Lower 10/02 snapshot rows retain historical 155/155 and 22/31 statements."
+    },
+    {
+      "path": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/source_pins.json",
+      "note": "Parent reports SOURCE_READY/GO with no result yet; on-disk pins say SOURCE_ONLY_READY_AWAITING_ROOT_GO and the README states no result is written this pass. No global-strip acceptance is claimed."
+    }
+  ],
+  "vesselforge_native_catalog_inventory": {
+    "scope": "vesselforge catalog_native_adapter_20261006/pilot_01 only; do not conflate with normal_offset_meridian_20261006/retry01_after_zprime_fix",
+    "source_profile_families": {
+      "count": 3,
+      "ids": [
+        "bowl",
+        "beaker",
+        "jar"
+      ],
+      "parameterized_families": 3,
+      "common_parameter_controls": [
+        "height_mm",
+        "max_radius_mm",
+        "mouth_diameter_mm",
+        "wall_thickness_declaration_mm",
+        "base_thickness_declaration_mm"
+      ],
+      "jar_additional_parameter_controls": [
+        "neck_height_mm",
+        "shoulder_height_mm"
+      ]
+    },
+    "pilot_types_and_instances": {
+      "family_types_present": 2,
+      "family_ids": [
+        "bowl",
+        "jar"
+      ],
+      "saved_default_instances": 2,
+      "instance_ids": [
+        "bowl_default",
+        "jar_default"
+      ],
+      "nondefault_parameter_instances": 0,
+      "beaker_native_instance_present": false,
+      "parameter_domain_sweeps": 0,
+      "parameter_domains_validated": 0
+    },
+    "candidate_statuses": {
+      "native_BRep_and_STEP_roundtrip": "KNOWN_BOUNDED",
+      "global_minimum_normal_wall": "UNKNOWN",
+      "mesh_artifact": "NOT_PRESENT_IN_PILOT",
+      "mesh_validation": "NOT_RUN",
+      "material_physical_qualification": "NOT_VALIDATED",
+      "real_vessel_style_match": "NOT_VALIDATED"
+    },
+    "candidate_receipts": [
+      {
+        "type": "bowl",
+        "instance": "bowl_default",
+        "receipt": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/native_case_receipt.json",
+        "receipt_sha256": "46a7bffd576dc073b41b6034aa25c07c54b85ab06f584107312128f6fb6588bf",
+        "step": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/candidate.step",
+        "step_bytes": 31197,
+        "step_sha256": "dcff94f7823f482c28bdc9c7e44c24a05755ebd9ebd7b05e99b663fab288ce81",
+        "roundtrip": "valid; 1 solid; 1 closed shell; bbox delta 0 mm; volume delta 8.482311386615038e-08 mm3",
+        "wall_probe": "representative sampled material point inside solid",
+        "cavity_probe": "sampled cavity point outside solid",
+        "face_count": 14,
+        "catalog_profile_input": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/catalog_profile_input.json",
+        "catalog_profile_input_bytes": 3964,
+        "catalog_profile_input_sha256": "75104b8770e5e02e8d963bc41a7b9bf74ce9bd29d783818613ff789f490ce314"
+      },
+      {
+        "type": "jar",
+        "instance": "jar_default",
+        "receipt": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/native_case_receipt.json",
+        "receipt_sha256": "060bd4bf1038ed0131f33217073714996efb3588b628ba7b0e03341e0fe9490c",
+        "step": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/candidate.step",
+        "step_bytes": 35912,
+        "step_sha256": "32695256d8d832871fb38317e80b26d06906c3b13d03d58e670ca4a74dbced4d",
+        "roundtrip": "valid; 1 solid; 1 closed shell; bbox delta 0 mm; volume delta 4.406319931149483e-08 mm3",
+        "wall_probe": "representative sampled material point inside solid",
+        "cavity_probe": "sampled cavity point outside solid",
+        "face_count": 16,
+        "catalog_profile_input": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/catalog_profile_input.json",
+        "catalog_profile_input_bytes": 4721,
+        "catalog_profile_input_sha256": "7a0cd232891ba5dc56b8434f2c96199057eb106708e0a1a0e96162e6f4b9cda0"
+      }
+    ],
+    "pilot_manifest": {
+      "path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/pilot_manifest.json",
+      "status": "PASS_TWO_DEFAULT_CATALOG_NATIVE_CANDIDATES",
+      "bytes": 77902,
+      "sha256": "d0fb3b591d3b0dcaa926585d3af534a3d294c60b2138b7cadfd6caed439a332f",
+      "declared_catalog_call": "vesselforge.profile_catalog.build_profile(family) using default parameters",
+      "all_pinned_sources_unchanged": true
+    },
+    "source_pin_files": {
+      "pre_path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/PRE_RUN_SOURCE_PINS.json",
+      "post_path": "vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/POST_RUN_SOURCE_PINS.json",
+      "pre_and_post_identical": true,
+      "each_bytes": 993,
+      "sha256": "2a1816aa817019d4564fe4deaca94bc1715b14016831a1d0c3c6116ee92dd4a0",
+      "all_5_current_source_runtime_hashes_match": true,
+      "current_pin_hash_check_ms": 30
+    },
+    "pinned_source_matches": [
+      {
+        "name": "catalog_native_adapter",
+        "path": "vesselforge/experiments/catalog_native_adapter_20261006/catalog_native_adapter.py",
+        "sha256": "ac34e4415395a42d83029dc8492eca3862ab1f16bc1edeede54c953a6ac4cf53",
+        "matches": true
+      },
+      {
+        "name": "existing_smooth_native_adapter",
+        "path": "vesselforge/experiments/smooth_surface_native_adapter_20261005/native_adapter.py",
+        "sha256": "7d745f48111d24b38a288714b580c0eefe55415b2998351bf6144fa1cf4dab76",
+        "matches": true
+      },
+      {
+        "name": "geometry",
+        "path": "vesselforge/src/vesselforge/geometry.py",
+        "sha256": "0c48940d9ef22aabb068a2e7c6e89b4249a7e724d0ade1c8933a6c951e086047",
+        "matches": true
+      },
+      {
+        "name": "profile_catalog",
+        "path": "vesselforge/src/vesselforge/profile_catalog.py",
+        "sha256": "e9d4bc1458a107208e537449d6526f1c0077d6d3afc6953a6200d86512f9c26f",
+        "matches": true
+      },
+      {
+        "name": "vesselforge_python_runtime",
+        "path": "third_party/vesselforge-runtime/venv/Scripts/python.exe",
+        "sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+        "matches": true
+      }
+    ],
+    "pilot_directory_artifact_inventory": {
+      "STEP_files": 2,
+      "mesh_files": 0,
+      "png_previews": 2,
+      "mesh_suffixes_checked": [
+        ".stl",
+        ".obj",
+        ".ply",
+        ".mesh"
+      ],
+      "pngs": [
+        {
+          "path": "C:/Users/xiemo/Desktop/ShardForge/vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/bowl_default/native_brep_section_and_3d.png",
+          "bytes": 343127
+        },
+        {
+          "path": "C:/Users/xiemo/Desktop/ShardForge/vesselforge/tmp/review_20261006/catalog_native_adapter_20261006/pilot_01/jar_default/native_brep_section_and_3d.png",
+          "bytes": 295645
+        }
+      ]
+    },
+    "sha256_boundary": {
+      "method": "Get-FileHash -Algorithm SHA256",
+      "pilot_output_hashes_are_byte_identity_only": true,
+      "pin_match_proves_geometry_or_wall": false,
+      "pre_post_equality_proves_complete_dependency_closure": false,
+      "step_hash_is_step_import": false,
+      "pngs_were_hashed_or_viewed": false,
+      "selected_pilot_hash_elapsed_ms": 168
+    }
+  },
+  "implementation_vs_validation_counts": {
+    "scope": "Source implementation counts are distinct from native saved instance counts and validation counts; A12 figures are a separate system and dated self-report.",
+    "vesselforge": {
+      "materials": {
+        "named_material_families_implemented": 0,
+        "generic_unvalidated_material_binding_schema": 1,
+        "physically_calibrated_material_families": 0,
+        "palette_roles": [
+          "base_slip",
+          "dark_paint",
+          "red_paint"
+        ],
+        "palette_role_count": 3
+      },
+      "patterns": {
+        "illustrative_recipe_ids": [
+          "four_bands",
+          "three_bands"
+        ],
+        "implemented_recipe_count": 2,
+        "historically_validated_recipe_count": 0
+      },
+      "relief": {
+        "scalar_coverage_geometry_ids": [
+          "GeometricRingBand",
+          "WavingBand",
+          "RepeatedMotif"
+        ],
+        "scalar_geometry_count": 3,
+        "effect_modes": [
+          "paint",
+          "raised",
+          "engraved"
+        ],
+        "effect_mode_count": 3,
+        "geometric_relief_mesh_or_BRep_families": 0,
+        "validated_relief_families": 0
+      }
+    },
+    "a12_separate": {
+      "source_snapshot": "relicweave-synlab/docs/a12/status.md dated 2026-10-02 with 2026-10-07 clarification; implementation details in relicweave-synlab/docs/a12/mothers_materials.md and relicweave-synlab/docs/a12/patterns.md",
+      "materials": {
+        "material_ids_count": 12,
+        "layer_combo_families": 4,
+        "module_software_QA_reported": "12 material profiles and 4 layer combinations",
+        "physically_calibrated_family_count": 0,
+        "scope_note": "module report says true-sample calibration pending and uncalibrated mechanics UNKNOWN"
+      },
+      "patterns": {
+        "pattern_families_implemented": 16,
+        "fixture_audit_pass_count_reported": 16,
+        "true_mother_audit_count_status": "CONFLICTING_13_OF_16_VS_14_OF_16",
+        "historically_validated_pattern_families": 0,
+        "scope_note": "status says style realism incomplete and A05 inheritance FAIL"
+      },
+      "relief": {
+        "whole_mother_geometric_families": [
+          "PAT14_relief",
+          "PAT15_engraving"
+        ],
+        "family_count": 2,
+        "PAT14_mask_motif_count": 4,
+        "PAT15_curve_family_count": 4,
+        "constructed_fixture_geometry_examples_reported": 2,
+        "true_mother_geometric_family_status": "UNKNOWN_NOT_QUALIFIED",
+        "scope_note": "module report shows resolution-budget rejection of both geometric families on coarse true-mother case and conflicting true-mother aggregate counts"
+      },
+      "degradation": {
+        "execution_matrix": "31 axes x 5 levels",
+        "execution_validity_passes": "155/155",
+        "axes_with_nonempty_goal_measured_pairs": "9/31",
+        "levels_with_nonempty_goal_measured_pairs": "36/155",
+        "axes_with_pair_keys": "28/31",
+        "axes_without_measured_pairs": "22/31",
+        "independent_mothers": 1,
+        "calibrated_axes": 0,
+        "scope_note": "2026-10-07 status clarification says 155/155 is execution/validity only; all paired values remain uncalibrated on one independent mother.",
+        "precision_acceptance_status": "NOT_ESTABLISHED; paired quantities are uncalibrated and cover one independent mother; known residual errors remain."
+      }
+    },
+    "complete_physical_qualified_pack_count": 0
+  },
+  "vesselforge_global_normal_strip_status": {
+    "root_reported_state": "SOURCE_READY_GO_NO_RESULT_YET",
+    "on_disk_source_pins_state": "SOURCE_ONLY_READY_AWAITING_ROOT_GO",
+    "source_pins": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/source_pins.json",
+    "plan": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/PLAN.json",
+    "design": "vesselforge/tmp/review_20261007/monotone_normal_strip_decision/DESIGN.md",
+    "source": "vesselforge/experiments/monotone_normal_strip_certificate_20261007/monotone_normal_strip_certificate.py",
+    "saved_result_present": false,
+    "scope": "conditional exact 2D meridian injectivity on the pinned actual jar meridian map only",
+    "global_minimum_wall": "UNKNOWN",
+    "native_BRep": "NOT_ESTABLISHED",
+    "qualification": "SOURCE_READY_ONLY"
+  },
+  "prior_bytes_backup_verification": {
+    "directory": "tmp/review_20261007/core_readiness_inventory/prior_bytes_before_actual_bridge_update",
+    "files": [
+      {
+        "path": "READINESS.md",
+        "sha256": "edd9715584c562729dd1560695c3064e748079a7ae4f3f0884e8dea3bbbbc02d",
+        "exact_pre_update_copy": true
+      },
+      {
+        "path": "readiness.json",
+        "sha256": "8c29ef3faf8db872e7c5ab0fcd2c5b3f903fca59808e849f398a6bf77810a3ba",
+        "exact_pre_update_copy": true
+      }
+    ]
+  }
+}

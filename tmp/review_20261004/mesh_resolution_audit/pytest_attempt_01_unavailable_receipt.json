@@ -1,0 +1,8 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.pytest_receipt.v1",
+  "exit_code": 1,
+  "stdout_sha256": "37a059af938848544f3f6b5c0853f6847fc2b415394e75199a935d1265fb2072",
+  "module_sha256_after_run": "77ac2fd59a9898e8a6344ecf4f9b6cbd5aa4445e5a2e713248b7e85d8783f394",
+  "test_sha256_after_run": "9280f54d8ab45606ad84840c7d894afca07005732b3174fef1a16ac0395b3deb",
+  "freeze_manifest_sha256": "15bb0127e552bf5760c1a4e7f7b595931d1f85352e72e358aef232890dc373f6"
+}

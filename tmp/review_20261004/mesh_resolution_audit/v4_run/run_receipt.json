@@ -1,0 +1,31 @@
+{
+  "schema": "pgfrag.mesh_resolution_audit.v4_run_receipt.v1",
+  "execution_count": 1,
+  "pytest_rerun": false,
+  "argv_path": "argv.json",
+  "argv_sha256": "e5abf3db0b03234abe05c18fe42e52ec578edb5d500f46fb1838463c8ba86792",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "stdout": {
+    "path": "stdout.txt",
+    "sha256": "ec1e194cc1797cb3d78f427fb2fe76f5c15f5c52c9d0ef7e151623bbd0d19fad",
+    "bytes": 101
+  },
+  "stderr": {
+    "path": "stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "exit_code": 0,
+  "junit": {
+    "path": "junit.xml",
+    "sha256": "919805714be66890e0aa83b1634573f29488d764fa43913371fec4eb6030a125",
+    "bytes": 1794,
+    "testcase_count": 11,
+    "distinct_case_id_count": 11,
+    "case_ids_unique": true
+  },
+  "source_and_test_hashes_unchanged": true,
+  "all_49_freeze_pins_match_after_run": true,
+  "v2_v3_raw_preserved": true,
+  "result_note": "11 passed. This remains a pure mathematical fixture test only; it does not validate actual mesh resolution or crack-direction bias."
+}

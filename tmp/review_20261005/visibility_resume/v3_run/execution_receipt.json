@@ -1,0 +1,112 @@
+{
+  "run": "bond_visibility_v3_bounded_pytest",
+  "started_utc": "2026-10-04T18:50:02.438753+00:00",
+  "finished_utc": "2026-10-04T18:50:03.054065+00:00",
+  "exit_code": 0,
+  "retry_count": 0,
+  "runtime": {
+    "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pytest_version": "8.4.2",
+    "cadquery_version": "2.8.0",
+    "ocp_version": "7.9.3.1",
+    "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+    "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+    "argv": [
+      "-p",
+      "no:cacheprovider",
+      "-p",
+      "capture_visibility",
+      "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\junit.xml",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+    ],
+    "environment": {
+      "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src;C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "pytest_cache_provider_disabled": true,
+      "python_dont_write_bytecode": true
+    }
+  },
+  "source_test_pins_before": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "source_test_pins_after": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "target_pyc_files_before": {
+    "bond_visibility": [],
+    "test_bond_visibility": []
+  },
+  "target_pyc_files_after": {
+    "bond_visibility": [],
+    "test_bond_visibility": []
+  },
+  "junit": {
+    "exists": true,
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "10",
+        "time": "0.107",
+        "timestamp": "2026-10-05T02:50:02.508165+08:00",
+        "hostname": "XieMo"
+      }
+    ]
+  },
+  "stdout": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\stdout.txt",
+    "sha256": "2c5ffeebb917bf25bf275c1a271001893fb45c2f21bae5994d2452e7a9454908",
+    "byte_length": 1907
+  },
+  "stderr": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "byte_length": 0
+  },
+  "geometry_classification_sidecar": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\geometry_classification_sidecar.json",
+    "sha256": "6fd986140b88c8f5f330e8c28246be044791d6e8d54cfc5b952baf34c01c4017",
+    "byte_length": 38403,
+    "captured_call_count": 4,
+    "pytest_exit_code": 0
+  },
+  "scope": {
+    "step_export_or_import": false,
+    "native_solver": false,
+    "test_selection": [
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+      "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+    ]
+  }
+}

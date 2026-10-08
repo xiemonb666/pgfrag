@@ -1,0 +1,57 @@
+{
+  "checked_utc": "2026-10-04T08:53:27.1072383Z",
+  "critical_hashes_match_prefreeze": true,
+  "critical_files": [
+    {
+      "path": "make_point_inputs.ps1",
+      "prefreeze_sha256": "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0",
+      "current_sha256": "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0",
+      "matches": true
+    },
+    {
+      "path": "common_case.toml",
+      "prefreeze_sha256": "ca2e4a64946d32f2ba6abdc1bd5b4d1768f5f7587812f3bcce490c0713a0f3bf",
+      "current_sha256": "ca2e4a64946d32f2ba6abdc1bd5b4d1768f5f7587812f3bcce490c0713a0f3bf",
+      "matches": true
+    },
+    {
+      "path": "case_zero_load_control.toml",
+      "prefreeze_sha256": "a2e6694d047e70ed445ee9037bbcbabbd99095dd060ebe1c78bed674199b2178",
+      "current_sha256": "a2e6694d047e70ed445ee9037bbcbabbd99095dd060ebe1c78bed674199b2178",
+      "matches": true
+    },
+    {
+      "path": "case_tinyload_event_diagnostic.toml",
+      "prefreeze_sha256": "53f7aca2d222eb714c1640a27d389aa845669b7cbf26a449f831e4eb307f4a7c",
+      "current_sha256": "53f7aca2d222eb714c1640a27d389aa845669b7cbf26a449f831e4eb307f4a7c",
+      "matches": true
+    },
+    {
+      "path": "input/coupon_uniform_voxel_5cube_125.points.csv",
+      "prefreeze_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+      "current_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+      "matches": true
+    },
+    {
+      "path": "input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "prefreeze_sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0",
+      "current_sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0",
+      "matches": true
+    },
+    {
+      "path": "input/coupon_cell_jitter_5cube_seed17.points.csv",
+      "prefreeze_sha256": "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5",
+      "current_sha256": "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5",
+      "matches": true
+    },
+    {
+      "path": "input/coupon_cell_jitter_5cube_seed17.metadata.toml",
+      "prefreeze_sha256": "47e4fe7d1d66063b2c234e48e65bae286fc4cdfda8d18b5913a3367da3a92e19",
+      "current_sha256": "47e4fe7d1d66063b2c234e48e65bae286fc4cdfda8d18b5913a3367da3a92e19",
+      "matches": true
+    }
+  ],
+  "current_manifest_sha256": "50b99e50325f8d44d2d45638ba61a1d5cba02a942d515556d87ac0d1e3fff854",
+  "matches_manifest_recheck_sha256": true,
+  "manifest_relevant_pins_match_prefreeze": true
+}

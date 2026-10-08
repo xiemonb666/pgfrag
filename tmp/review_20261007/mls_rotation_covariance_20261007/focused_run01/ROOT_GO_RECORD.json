@@ -1,0 +1,43 @@
+{
+  "actual_provider_comparisons": {
+    "bad_anisotropic_weights_max_abs": 0.08921731192908791,
+    "millimetre_gradient_normalized_max_abs": 2.6645352591003756e-16,
+    "millimetre_weights_max_abs": 1.1102230246251565e-16,
+    "rotation_gradient_normalized_max_abs": 6.394884621840901e-16,
+    "rotation_weights_max_abs": 1.6653345369377348e-16
+  },
+  "approved_command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls_rotation_covariance_20261007\\test_mls_rotation_covariance.py"
+  ],
+  "authorization": "Explicit ROOT_GO authorized one actual focused unittest run with VF Python -B, 15-second timeout, and 4 MiB total artifact cap.",
+  "authorized_by": "ROOT",
+  "condition_number_maxima_by_case": {
+    "bad_anisotropic_negative_m": 18.95848468063958,
+    "identity_m": 11.621795221423044,
+    "rigid_rotation_translation_m": 11.621795221423037,
+    "uniformly_scaled_mm": 11.62179522142304
+  },
+  "execution": {
+    "full_process_wall_seconds": 0.188696,
+    "provider_queries": 64,
+    "raw_stderr_path": "stderr.raw",
+    "raw_stdout_path": "stdout.raw",
+    "result_classification": "PROVIDER_COVARIANCE_PREREQUISITE_ONLY",
+    "return_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 15,
+    "unittest_result_path": "result.json",
+    "unittest_summary": "Ran 5 tests in 0.033s; OK"
+  },
+  "preconditions": {
+    "case_numeric_execution_authorized_field_preserved_false": true,
+    "focused_run01_was_absent_before_run": true,
+    "pre_post_source_input_hashes_match": true,
+    "reviewed_source_test_case_and_provider_hashes_matched_before_run": true
+  },
+  "schema": "mls_rotation_covariance_root_go_record.v1",
+  "scope_limit": "Mesh/crack/tetrahedral direction bias remains UNKNOWN; no physical fracture or mesh-bias claim is admitted.",
+  "status_and_support": "Each of four 16-query returns had 16 OK statuses and support count 27 for every row; finite arrays/conditions passed the tests."
+}

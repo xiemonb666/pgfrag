@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_check_driver.py", line 1014, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_check_driver.py", line 1002, in main
+    result = run_check(frozen)
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_check_driver.py", line 874, in run_check
+    bundle = mf.load_pinned_inputs()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_provider.py", line 251, in load_pinned_inputs
+    "moving_front_cases.json": _check_pin(
+                               ^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\moving_front_provider_20261006\moving_front_provider.py", line 189, in _check_pin
+    raise MovingFrontBlockedError(f"pinned source changed: {relative_path}")
+moving_front_provider.MovingFrontBlockedError: pinned source changed: pgfrag/experiments/moving_front_provider_20261006/moving_front_cases.json

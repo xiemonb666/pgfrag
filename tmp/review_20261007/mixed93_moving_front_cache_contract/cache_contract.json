@@ -1,0 +1,158 @@
+{
+  "schema": "mixed93_moving_front_cache_contract.v1",
+  "status": "CACHE_METADATA_VERIFIED_CAP_RULE_PENDING",
+  "scope": "Read-only metadata and exact row/source binding for a fixed old-tip pure-I, 93-DOF moving-front diagnostic. No provider, field, assembly, solver, query generation, or growth.",
+  "inputs": {
+    "tip_study_arrays": {
+      "path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz",
+      "sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+      "npy_members": 179
+    },
+    "tip_study_result": {
+      "path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+      "sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b"
+    },
+    "failed_93_arrays": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+      "sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+      "npy_members": 146,
+      "provenance_status": "RECOVERED_CACHE_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED"
+    },
+    "fcc4_case": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+      "case_id": "mixed93_actual_cohesive_bridge_20261006",
+      "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+      "execution_authorized": false,
+      "source_count": 27,
+      "registry_dof_count": 93,
+      "base_dof_count": 81,
+      "global_front_dof_count": 12,
+      "source_ids": [
+        "node-000", "node-001", "node-002", "node-003", "node-004", "node-005", "node-006", "node-007", "node-008",
+        "node-009", "node-010", "node-011", "node-012", "node-013", "node-014", "node-015", "node-016", "node-017",
+        "node-018", "node-019", "node-020", "node-021", "node-022", "node-023", "node-024", "node-025", "node-026"
+      ],
+      "load_and_cache_binding": {
+        "bridge_load_case": {"K_I_Pa_sqrt_m": 1, "K_II_Pa_sqrt_m": 0, "K_III_Pa_sqrt_m": 0},
+        "linear_scale_from_cached_KI100": 0.01
+      }
+    }
+  },
+  "source_binding": {
+    "source_ids_match_tip_result_failed_93_archive_and_fcc4_case": true,
+    "position_shape": [27, 3],
+    "positions_exactly_equal_between_both_npz_archives": true,
+    "positions_sha256_float64_c_order": "997d598f8672b307437f5dfeb68fa47d0d53859e873b077ab7cc90ffab93e9f3",
+    "axis_coordinates_m": [-0.005, 0.0, 0.005],
+    "order": "canonical node-000 through node-026; x/y/z product with z varying fastest",
+    "positions_xyz_m_in_source_order": [
+      [-0.005, -0.005, -0.005], [-0.005, -0.005, 0.0], [-0.005, -0.005, 0.005],
+      [-0.005, 0.0, -0.005], [-0.005, 0.0, 0.0], [-0.005, 0.0, 0.005],
+      [-0.005, 0.005, -0.005], [-0.005, 0.005, 0.0], [-0.005, 0.005, 0.005],
+      [0.0, -0.005, -0.005], [0.0, -0.005, 0.0], [0.0, -0.005, 0.005],
+      [0.0, 0.0, -0.005], [0.0, 0.0, 0.0], [0.0, 0.0, 0.005],
+      [0.0, 0.005, -0.005], [0.0, 0.005, 0.0], [0.0, 0.005, 0.005],
+      [0.005, -0.005, -0.005], [0.005, -0.005, 0.0], [0.005, -0.005, 0.005],
+      [0.005, 0.0, -0.005], [0.005, 0.0, 0.0], [0.005, 0.0, 0.005],
+      [0.005, 0.005, -0.005], [0.005, 0.005, 0.0], [0.005, 0.005, 0.005]
+    ]
+  },
+  "tip_study_unique_query_table": {
+    "key": "unique_query_positions_xyz_m",
+    "shape": [4224, 3],
+    "units": "m",
+    "base_mls_values": {"key": "base_mls_values", "shape": [4224, 27], "dtype": "<f8", "units": "dimensionless", "header_only_payload_not_loaded": true},
+    "base_mls_gradients": {"key": "base_mls_gradients_per_m", "shape": [4224, 27, 3], "dtype": "<f8", "units": "1/m", "header_only_payload_not_loaded": true},
+    "support_count": {"shape": [4224], "min": 27, "max": 27},
+    "condition_number": {"shape": [4224], "all_finite": true, "min": 6.686204652051596, "max": 12.62321641082875},
+    "provider_status": "4224 MLS rows OK; 4224 old-tip reference rows OK",
+    "provider_pins": {
+      "reference_origin_m": [0.0, 0.0, 0.0],
+      "reference_scale_m": 0.01,
+      "support_radius_m": 0.025,
+      "max_condition_number": 1000000000000.0,
+      "rank_relative_tolerance": 1e-12,
+      "switch_tolerance": 1e-10,
+      "duplicate_tolerance": 1e-12
+    }
+  },
+  "clouds": [
+    {
+      "id": "a0.volume32",
+      "xyz_key": "cloud_a0_volume32_xyz_m",
+      "row_ids_key": "cloud_a0_volume32_unique_row_ids",
+      "weights_key": "cloud_a0_volume32_weights",
+      "rows": 512,
+      "unique_row_id_range": [0, 511],
+      "weight_units": "m^3",
+      "xyz_equals_unique_xyz_indexed_by_row_ids": true,
+      "cross_archive_matches_failed_93_volume_xyz_row_ids_and_weights": true,
+      "xyz_sha256_float64_c_order": "56c6e70c5cdef83247e4e193d2c9749ca714b7a1c4c7203f67a528a27aa1e0f9",
+      "row_ids_sha256": "5738153ec97595b1c1e4dc027f7b7fb4534f19ed2ce9f9ee712e6d34a384cde7",
+      "weights_sha256": "65ccfcc9efcbf920a018227e51d114f9db24711e9d8d4faa0e45fa6eed9715f0"
+    },
+    {
+      "id": "a0.0005.volume32",
+      "xyz_key": "cloud_a0_0005_volume32_xyz_m",
+      "row_ids_key": "cloud_a0_0005_volume32_unique_row_ids",
+      "weights_key": "cloud_a0_0005_volume32_weights",
+      "rows": 512,
+      "unique_row_id_range": [2304, 2815],
+      "weight_units": "m^3",
+      "xyz_equals_unique_xyz_indexed_by_row_ids": true,
+      "basis_use": "Index raw 27-column BASE values/gradients by these IDs, then evaluate new 93-DOF Mode-I GLOBAL_FRONT branch at these physical coordinates.",
+      "xyz_sha256_float64_c_order": "0fdbbe9a513d242095ed71ba9108177b78347a2b167765146cfe0a03ea95488c",
+      "row_ids_sha256": "5c9df7bf342fc78f0146edb807cd5d44be5e741c89b63e3ab70458910e6374f4",
+      "weights_sha256": "3c763a6fc9447330e52f425af2b3d9e27ea6764aac0b8ac31c3795a415f1cb37"
+    },
+    {
+      "id": "side",
+      "xyz_key": "cloud_side_xyz_m",
+      "row_ids_key": "cloud_side_unique_row_ids",
+      "weights_key": "cloud_side_weights",
+      "rows": 256,
+      "unique_row_id_range": [3840, 4095],
+      "weight_units": "m^2",
+      "xyz_equals_unique_xyz_indexed_by_row_ids": true,
+      "cross_archive_matches_failed_93_boundary_first_256_rows_xyz_row_ids_and_weights": true,
+      "xyz_sha256_float64_c_order": "546ed7e9bed67efc280fc1d5fb101bd477b3e536b2e502ed6d76df550e945083",
+      "row_ids_sha256": "e552bf073767e34e03564dc252650d90dee4116e6789a8eb23483abdb37ec8c7",
+      "weights_sha256": "4055dc3b1a341af8bf1971e1ad9abe622d4f4c4343ab2a6ccd83ec260d4068de"
+    },
+    {
+      "id": "a0.cap16",
+      "rows": 512,
+      "unique_row_id_range": [1792, 2303],
+      "xyz_equals_unique_xyz_indexed_by_row_ids": true,
+      "candidate_cap_coordinates_and_row_ids_exactly_equal": true,
+      "construction": "old-tip-centered cap polar rule with radial split c=0.0005 m",
+      "status": "NOT_BOUND_TO_PENDING_DUAL_TIP_VORONOI_UNION_CHART"
+    }
+  ],
+  "reuse_rules": {
+    "usable": [
+      "Raw geometry-only 27-source BASE MLS values and gradients in tip-study NPZ, indexed by its exact row IDs.",
+      "The exact a=0.0005 m theta32 candidate volume coordinates and m^3 weights, pending quadrature sensitivity review.",
+      "Source positions, side coordinates, and geometric weights after the exact source/configuration binding above."
+    ],
+    "must_recompute_or_rebind": [
+      "93-DOF Mode-I GLOBAL_FRONT values and gradients for each front basis.",
+      "Generalized boundary-force vectors for old and candidate bases from the same physical pure-I old-tip traction.",
+      "Any MLS values/gradients at coordinates absent from this exact unique-query table.",
+      "Cap rule binding, physical normals, and traction values for the selected 93-DOF contract."
+    ],
+    "forbidden_reuse": [
+      "ModeIII K=100 physical traction/force or solved fields as the fcc4 pure-I KI=1 load.",
+      "Cached 162-DOF, 54-scalar-basis enriched tables as a source of the 27 BASE MLS columns.",
+      "Failed 93-DOF arrays as a successful moving-front solve or physical qualification receipt."
+    ]
+  },
+  "limitations": [
+    "Cache mapping does not solve mechanics and does not establish balance, energy release, convergence, or crack advance.",
+    "The candidate theta32 body cloud is available but its integration sensitivity is not accepted by this receipt.",
+    "Cap and side normals and traction payloads were not loaded in this inspection.",
+    "The fixed physical load requires re-integration into each geometry's basis; old/new coefficient force vectors may differ.",
+    "No Gc, growth decision, material calibration, cohesive history, or physical qualification is provided."
+  ]
+}

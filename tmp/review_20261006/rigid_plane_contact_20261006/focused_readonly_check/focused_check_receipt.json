@@ -1,0 +1,90 @@
+{
+  "schema": "rigid_plane_contact_focused_check.v1",
+  "status": "PASS",
+  "check_kind": "run_self_checks only; no simulate/main invocation",
+  "passed_check_count": 6,
+  "passed_checks": [
+    "positive_gap_is_force_free_and_has_zero_potential",
+    "penetration_force_and_energy_match_linear_penalty",
+    "rigid_rotation_covariance_of_gap_force_and_energy",
+    "plane_point_and_normal_cannot_be_unlocked",
+    "invalid_normals_rejected",
+    "invalid_si_scalar_and_nonfinite_inputs_rejected"
+  ],
+  "details": {
+    "rotation_covariance": {
+      "rotation_axis": "z",
+      "angle_rad": 0.37,
+      "original_unit_normal": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "rotated_unit_normal": [
+        -0.361615431964962,
+        0.9323273456060345,
+        0.0
+      ],
+      "original_gap_m": -0.02,
+      "rotated_gap_m": -0.02,
+      "gap_abs_error_m": 0.0,
+      "original_force_N": [
+        0.0,
+        2.0,
+        0.0
+      ],
+      "rotated_force_N": [
+        -0.723230863929924,
+        1.864654691212069,
+        0.0
+      ],
+      "rotated_expected_force_N": [
+        -0.723230863929924,
+        1.864654691212069,
+        0.0
+      ],
+      "force_covariance_error_N": 0.0,
+      "original_potential_J": 0.02,
+      "rotated_potential_J": 0.02,
+      "potential_abs_error_J": 0.0,
+      "orientation_actually_changed": true
+    },
+    "immutable_plane_arrays": [
+      {
+        "field": "plane_point_m",
+        "setflags_write_true": "rejected",
+        "exception_type": "ValueError",
+        "still_writeable": false
+      },
+      {
+        "field": "unit_normal",
+        "setflags_write_true": "rejected",
+        "exception_type": "ValueError",
+        "still_writeable": false
+      }
+    ],
+    "passed": [
+      "positive_gap_is_force_free_and_has_zero_potential",
+      "penetration_force_and_energy_match_linear_penalty",
+      "rigid_rotation_covariance_of_gap_force_and_energy",
+      "plane_point_and_normal_cannot_be_unlocked",
+      "invalid_normals_rejected",
+      "invalid_si_scalar_and_nonfinite_inputs_rejected"
+    ]
+  },
+  "historical_first_run_record": {
+    "first_toy_run_source_snapshot_saved_at_run_time": false,
+    "first_toy_run_source_sha256_captured_at_run_time": false,
+    "first_toy_run_source_sha256": null,
+    "first_toy_run_trajectory_csv_and_png_still_present": true,
+    "first_toy_run_comparison_errors_original_bytes_preserved": false,
+    "first_toy_run_comparison_errors_was_post_run_corrected": true,
+    "no_trajectory_or_energy_csv_png_was_regenerated_by_this_focused_check": true
+  },
+  "pin_file": "focused_source_and_prior_artifact_pins.json",
+  "source_sha256": {
+    "rigid_plane_contact.py": "d13309f3866bf65ee3f7aa3b52a2fe6c8eeccc4813abfa88746f7798bbed4723",
+    "run_toy_diagnostic.py": "1cf5198a39c137a1bd08bb079afd56ee5bf8d7ccdf44f5f3fd369eb359368c78",
+    "run_focused_checks.py": "c637e31a0865bd8c2c905d2b2a433bd237d452c3f5aedc169001f219cdab9b9d"
+  }
+}

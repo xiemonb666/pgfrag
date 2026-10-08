@@ -1,0 +1,78 @@
+{
+  "schema": "mixed93_opening_history_saved_visual_pins.v1",
+  "status": "SOURCE_READY_RESULT_PENDING",
+  "execution_authorized": true,
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+    "sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb"
+  },
+  "limits": {
+    "attempts": 1,
+    "max_wall_seconds": 15,
+    "max_combined_output_bytes": 2097152
+  },
+  "references": {
+    "case": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/case.json",
+      "sha256": "5c92fec7bda4ee309f3930803922fc392a907b93239a9d488f12919d6eb884d0"
+    },
+    "readme": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/README.md",
+      "sha256": "3b80564739c0e4f08d6e5d2ac8d027d8e5d50a95bbb3eaba5dc07f6bc9e7cebf"
+    },
+    "renderer": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/render_saved_opening_history.py",
+      "sha256": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1"
+    },
+    "runner": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/run_saved_opening_history_visual.py",
+      "sha256": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c"
+    },
+    "producer_driver": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "producer_case": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "saved_elastic_result": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "original_elastic_numeric_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/NUMERIC_SOURCE_PINS.json",
+      "sha256": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140"
+    },
+    "elastic_worker": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "trace_primitive": {
+      "path": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    },
+    "cohesive_scalar_law": {
+      "path": "pgfrag/experiments/cohesive_scalar_law_20261006/cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "cohesive_derivative": {
+      "path": "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "mixed_enriched_operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    }
+  },
+  "root_go": {
+    "authorized": true,
+    "token": "ROOT_20261007_MIXED93_OPENING_SAVED_VISUAL_RUN01"
+  },
+  "source_only": {
+    "opening_history_result_read": false,
+    "matplotlib_imported": false,
+    "numpy_imported": false,
+    "rendered": false
+  }
+}

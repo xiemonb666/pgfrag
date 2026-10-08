@@ -1,0 +1,33 @@
+{
+  "case_id": "straight_front_mode_iii_cylinder_20261005",
+  "classification": "ENGINEERING_MANUFACTURED_SOLUTION",
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "stress_intensity": "Pa*sqrt(m)",
+    "energy": "J"
+  },
+  "geometry": {
+    "domain": "x^2 + y^2 <= R^2, -L/2 <= z <= L/2",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "crack_surface": "x < 0, y = 0, -L/2 <= z <= L/2",
+    "front": "x = 0, y = 0, -L/2 <= z <= L/2",
+    "coordinate_frame": "global xyz; straight z-axis front"
+  },
+  "loading_and_material": {
+    "K_III_Pa_sqrt_m": 100.0,
+    "young_modulus_Pa": 1000000.0,
+    "poisson_ratio": 0.3,
+    "loading": "exact traction sigma*n on the entire cylindrical exterior, including side wall and both end caps",
+    "crack_face_traction": "zero one-sided limit"
+  },
+  "scope": {
+    "curved_front": false,
+    "plasticity": false,
+    "dynamics": false,
+    "material_calibration": false,
+    "solver_coupling": false,
+    "mode": "III"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "generated_outputs": [
+    {
+      "sha256": "d41e4ee93575078c65e2bdc22693aafe07333ab10066eac8d5648f2d5fe077ff",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_saved_independent\\audit.json",
+      "bytes": 12357
+    },
+    {
+      "sha256": "4e6e346236c372e4335c7b7d3eb948594325960093f942e26425ff2827cf33f6",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_saved_independent\\a0_offgrid_stress_scatter.png",
+      "bytes": 70727
+    },
+    {
+      "sha256": "cbb6d3bdbf021bf7e94a4b8c998a18fdc8acad10da0f04ddd462e50d7206f706",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_saved_independent\\finite_G_theta_ledger.png",
+      "bytes": 70326
+    }
+  ],
+  "input_pins_post": {
+    "result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "npz": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "driver": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "reviewer": "952bf59540a09b2dd30c99c531410179f95c0660ea8d4593de7f1815874901d5",
+    "case": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d"
+  },
+  "input_pins_pre": {
+    "result": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+    "npz": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+    "driver": "a719854abbbbb06d881fb4fe7cc80e75e878109a1db001302d96e02045358ee9",
+    "reviewer": "952bf59540a09b2dd30c99c531410179f95c0660ea8d4593de7f1815874901d5",
+    "case": "9d1b2153a1a3db36387d838f584714dae8595c722f542155e83bfe1f037e1c5d"
+  },
+  "schema": "independent_saved_tip_study_run_receipt.v1",
+  "process": {
+    "stdout": "{\"status\": \"CACHED_ARRAYS_INDEPENDENTLY_CONSISTENT_PHYSICS_UNQUALIFIED\", \"audit_json\": \"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261006\\\\tip_aligned_saved_independent\\\\audit.json\", \"elapsed_seconds\": 0.9529999999795109}\r\n",
+    "stderr": "",
+    "outer_return_code": 0,
+    "timed_out": false,
+    "elapsed_seconds": 1.166384
+  },
+  "invocation": {
+    "arguments": [
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\tip_aligned_saved_independent\\check_saved_tip_study.py"
+    ],
+    "launched": true,
+    "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+    "timeout_seconds": 10,
+    "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe"
+  }
+}

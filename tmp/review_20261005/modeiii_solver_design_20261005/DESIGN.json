@@ -1,0 +1,144 @@
+{
+  "schema": "modeiii_antiplane_static_solve_design.v1",
+  "date": "2026-10-05",
+  "status": "SOURCE_ONLY_DESIGN_NOT_RUN",
+  "claim_boundary": "ENGINEERING_MANUFACTURED_ANTIPLANE_DIAGNOSTIC_ONLY",
+  "method": {
+    "base": "continuous linear MLS with no visibility mask or source deletion",
+    "front_enrichment": "unshifted normalized F1 partition-of-unity enrichment",
+    "branch_cut": "negative-x sheet y=0 only, coincident with physical Gamma",
+    "J_H": [],
+    "T_F": "all 27 sources because every support intersects the straight z-axis front",
+    "local_enrichment_claim": false,
+    "finite_crack_scope": "crack sheet reaches cylinder side and both end caps; exact infinite-front field is restricted to the bounded cylinder, not a finite-end or full-3D solution"
+  },
+  "fixed_case": {
+    "domain": "x^2+y^2<=R^2, -L/2<=z<=L/2",
+    "R_m": 0.01,
+    "L_m": 0.01,
+    "z_bounds_m": [-0.005, 0.005],
+    "crack": "x<0, y=0, -L/2<=z<=L/2",
+    "material": {"E_Pa": 1000000.0, "nu": 0.3},
+    "KIII_Pa_sqrt_m": 100.0,
+    "grid": {"shape": [3, 3, 3], "axis_coordinates_m": [-0.005, 0.0, 0.005], "spacing_m": 0.005, "source_count": 27},
+    "mls": {
+      "reference_origin_m": [0.0, 0.0, 0.0],
+      "reference_scale_m": 0.01,
+      "support_radius_h_m": 0.025,
+      "kernel": "Wendland C2",
+      "basis": "linear 3-D",
+      "condition_cap": 1000000000000.0,
+      "rank_relative_tolerance": 1e-12,
+      "switch_tolerance": 1e-10,
+      "duplicate_tolerance": 1e-12
+    },
+    "field": {
+      "mu_Pa": "E/[2(1+nu)]",
+      "lambda_Pa": "E*nu/[(1+nu)(1-2nu)]",
+      "A_sqrt_m": "(KIII/mu)*sqrt(2/pi)",
+      "exact_uz_m": "A*sqrt(r)*sin(theta/2)",
+      "front_factor": "Fbar=sqrt(r)*sin(theta/2)/sqrt(R)",
+      "exact_energy_J": "KIII^2*R*L/(2*mu)",
+      "body_force": [0.0, 0.0, 0.0]
+    }
+  },
+  "basis_and_assembly": {
+    "registry_key": ["source_id", "field_component", "basis_kind", "basis_index"],
+    "field_component": "UZ",
+    "basis_dofs": [
+      {"kind": "BASE", "count": 27, "value": "phi_i", "units": "m coefficient"},
+      {"kind": "FRONT_F1_UNSHIFTED", "count": 27, "value": "phi_i*Fbar", "gradient": "Fbar*grad(phi_i)+phi_i*grad(Fbar)", "units": "m coefficient"}
+    ],
+    "total_unique_sources": 27,
+    "total_scalar_dofs": 54,
+    "exact_coefficient_vector": {"base": "0 m", "front": "A*sqrt(R) m for every front DOF"},
+    "existing_generic_vector_assembler_reused": false,
+    "reason": "existing assemble_elastic_operator fixes 3*node_count vector columns and node-dense IDs; the enriched scalar basis needs its own provider and assembler",
+    "reduced_constitutive_matrix_Pa": "diag(mu, mu, lambda+2mu) for gradients ordered x,y,z",
+    "stiffness": "K_ab=sum_q grad(psi_a)^T Dred grad(psi_b) wq",
+    "stiffness_units": "N/m"
+  },
+  "loads_and_constraint": {
+    "side_scalar_traction": "t_z=sigma_xz*cos(theta)+sigma_yz*sin(theta)",
+    "side_integral": "f_a=int_side psi_a*t_z dS",
+    "end_caps": {
+      "scalar_t_z": 0.0,
+      "full_tensor_traction_recorded": true,
+      "full_top_traction": "(sigma_xz,sigma_yz,0)",
+      "full_bottom_traction": "(-sigma_xz,-sigma_yz,0)",
+      "included_in_scalar_rhs": false
+    },
+    "crack_face_traction": "zero; no cohesive or contact term",
+    "physical_gauge": "c_a=(1/V)*int_Omega psi_a dV; c^T d=0, V=pi*R^2*L",
+    "gauge_removes": "the single physical z-translation in the restricted scalar subspace",
+    "solve": "[[K,c],[c^T,0]] [d,lambda] = [f,0]",
+    "solver": "direct factorization of diagonally scaled symmetric Lagrange system",
+    "forbidden": ["coefficient pin", "pseudoinverse", "ridge/penalty regularization", "null-mode truncation"]
+  },
+  "quadrature": {
+    "volume_levels": [
+      {"radial_GL": 4, "theta_GL": 8, "z_GL": 4, "point_count": 128},
+      {"radial_GL": 4, "theta_GL": 16, "z_GL": 4, "point_count": 256}
+    ],
+    "volume_map": {"r_m": [0.0, 0.01], "theta_rad": [-3.141592653589793, 3.141592653589793], "z_m": [-0.005, 0.005], "jacobian": "r"},
+    "lateral_load_rule": {"theta_GL": 16, "z_GL": 4, "point_count": 64, "fixed_between_volume_levels": true},
+    "cap_audit_rule": {"radial_GL": 4, "theta_GL": 8, "points_each": 32},
+    "minimum_sampled_radius_m": 0.000694318442029737,
+    "r_min_is_domain_excision": false,
+    "front_or_branch_query": false,
+    "radial_clipping_or_epsilon_shift": false,
+    "independent_offgrid_set": {
+      "point_count": 256,
+      "r_over_R": [0.137, 0.381, 0.619, 0.863],
+      "theta": "theta_k=-pi+2*pi*(k+0.37)/16, k=0..15",
+      "z_over_L": [-0.337, -0.103, 0.211, 0.447],
+      "front_or_branch_points": false
+    }
+  },
+  "diagnostics": {
+    "assembly_matrix": "K remains unmodified; report raw relative Frobenius asymmetry",
+    "scaled_spectrum": {
+      "scaling": "S=diag(K_aa^(-1/2)); Khat=S*K*S",
+      "spectrum_matrix": "sym(Khat) for eigvalsh reporting only",
+      "expected_nullity_before_gauge": 1,
+      "report": ["all 54 scaled eigenvalues", "translation-mode residual", "every additional near-zero candidate", "positive-quotient condition lambda_max/lambda_2", "condition_2 of scaled 55x55 saddle system"],
+      "additional_null_reference": "tau=4*gamma*max(abs(eigenvalues)); gamma=(n_ops*u)/(1-n_ops*u), u=eps_binary64/2, n_ops=2*3+n_volume+2*54; record observed maximum MLS condition and raw eigenvalues",
+      "threshold_interpretation": "roundoff diagnostic only, not a convergence or promotion gate"
+    },
+    "scaled_saddle_system": "c_hat=S*c/norm(S*c); A_hat=[[Khat,c_hat],[c_hat^T,0]], solve directly and recover physical d and multiplier; report condition_2 and backward residual",
+    "per_quadrature_level": [
+      "normalized linear weak residual ||K*d+c*lambda-f||/(||K*d||+||c*lambda||+||f||)",
+      "physical mean gauge |c^T*d|/(A*sqrt(R))",
+      "net applied z-force and normalization by integral(abs(t_z))",
+      "relative strain-energy error against KIII^2*R*L/(2*mu)",
+      "off-grid displacement and gradient max/RMS errors scaled by A*sqrt(R) and A/sqrt(R)",
+      "analytic-coefficient defect S*(K*d_star-f) with normalized 2-norm"
+    ],
+    "error_thresholds": "no arbitrary pass percentages; two fixed levels report quadrature sensitivity only"
+  },
+  "budget": {
+    "wall_seconds": 30,
+    "max_sources": 125,
+    "max_registered_dofs": 375,
+    "max_volume_points_per_assembly": 256,
+    "max_explicit_numeric_array_bytes": 33554432,
+    "preflight_before_allocation": true,
+    "adaptive_tuning_or_retry": false,
+    "stop_after_two_levels": true
+  },
+  "source_pins_sha256": {
+    "pgfrag/tmp/review_20261005/astra_front_shadow_decision_20261005/DECISION.md": "66b327667d0f7cf8468632a80b720d2b384409eb272446c2be34f6470cce4606",
+    "pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/METHOD_REVISION_ModeIII.json": "4b07f3c4d52984d6990615e0c25f19b9a39e059fb0beff5987e374a8b5f8f58e",
+    "pgfrag/tmp/review_20261005/enriched_dof_contract_20261005/CONTRACT.md": "3c4110dd6d2a6804c45fa1fe938592d785fd6cf3b84b83343c14492e320afab3",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "pgfrag/experiments/efgm_mls_patch_20261005/mls_elastic_adapter.py": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a",
+    "pgfrag/experiments/efgm_mls_patch_20261005/operator_diagnostic.py": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c",
+    "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+    "pgfrag/experiments/modeiii_field_reference_20261005/fixed_case.json": "38c57c6e91fcd9e4c5201e5a4652a8ce476ed565a6f362e58b8eab047fdacf1f",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9"
+  },
+  "not_run": ["solver", "tests", "assembly", "numerical integration", "CAD", "Git operations"],
+  "not_claimed": ["full-vector equilibrium", "finite crack-end accuracy", "local enrichment convergence", "curved front", "SIF", "propagation", "material calibration", "physical fracture", "R2", "ground truth"]
+}

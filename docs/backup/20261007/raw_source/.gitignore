@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+.venv/
+test_tmp/
+tests/_test_scratch/
+
+# Large upstream example datasets omitted from the WIP backup.
+vendor/Peridynamics.jl/docs/src/assets/fragmenting_cylinder.txt
+vendor/Peridynamics.jl/docs/src/assets/TensileTestMesh.inp

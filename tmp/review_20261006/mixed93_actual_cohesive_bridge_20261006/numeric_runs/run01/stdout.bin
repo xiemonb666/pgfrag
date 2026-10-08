@@ -1,0 +1,1 @@
+{"status": "ACCEPTED_DIAGNOSTIC_ONLY", "result": "result.json", "counts": {"new_mls_queries": 16, "mls_queries_requested": 16, "mls_query_attempts": 1, "interface_qps": 16, "primitive_assemblies": 3, "primitive_successful_returns": 3, "coupled_kkt_solves": 1, "coupled_kkt_successful_returns": 1}, "failure": null}

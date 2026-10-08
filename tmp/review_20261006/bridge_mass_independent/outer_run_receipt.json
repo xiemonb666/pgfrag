@@ -1,0 +1,84 @@
+{
+  "schema": "bridge_mass_independent_outer_receipt.v1",
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\audit_cached_arrays.py"
+  ],
+  "interpreter": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "script_sha256": "d4c107cea4963a041f58be1ba076ce28762dad883935c28f3c672d8a6c296e50",
+  "started_at_utc": "2026-10-06T03:42:05.7315034Z",
+  "finished_at_utc": "2026-10-06T03:42:07.4594547Z",
+  "elapsed_seconds": 1.7236633,
+  "actual_return_code": 0,
+  "timed_out": false,
+  "stdout": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\audit_stdout.bin",
+    "sha256": "4ffee28a43bc49af547d092768c920aaf8aa9938a0a20c3a2eaabc7642f31795",
+    "bytes": 946
+  },
+  "stderr": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\audit_stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\full3d_consistent_mass_replay_20261006\\run01\\mass_result.json",
+      "bytes": 506138,
+      "sha256": "326df86f867eec47141fce58a748eb68403853adce3a2d8b3b59d8f992ff15e1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261006\\full3d_cracked_elastic_operator_20261006\\run01\\result.json",
+      "bytes": 4661989,
+      "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\full3d_static_solve_bridge_20261006\\run02\\static_solve_bridge_result.json",
+      "bytes": 129942,
+      "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261006\\full3d_cracked_elastic_operator_20261006\\SOURCE_PINS.json",
+      "bytes": 2903,
+      "sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\full3d_consistent_mass_replay_20261006\\fixed_case.json",
+      "bytes": 4387,
+      "sha256": "a4780655f0bf78a55576bf3f63eb75aa133a065b50a104683df614d92218570a"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\full3d_static_solve_bridge_20261006\\static_solve_bridge.py",
+      "bytes": 50402,
+      "sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\full3d_static_solve_bridge_20261006\\static_solve_case.json",
+      "bytes": 6639,
+      "sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\full3d_static_solve_bridge_20261006\\run02\\outer_execution_receipt.json",
+      "bytes": 2143,
+      "sha256": "e9589175cbe76739c75d04e56a774aff032a85b80a52300640c2ffc0afde1296"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\audit_result.json",
+      "bytes": 9344,
+      "sha256": "41e35d8bb50478ba19cd91a87337ec38bed9cf32f6626808bb7912ef386c12c9"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\mass_spectrum_rigid_kinetic.png",
+      "bytes": 40193,
+      "sha256": "1317db03b8e262383a14459727492f0760d5aa7c807ecfed38117391cae02e22"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\bridge_strain_stress_scatter.png",
+      "bytes": 36269,
+      "sha256": "bb7fcda00ba3e9a755b731fecdfa44042ef8c9e71a2c9f487d8b22b8539e816a"
+    }
+  ]
+}

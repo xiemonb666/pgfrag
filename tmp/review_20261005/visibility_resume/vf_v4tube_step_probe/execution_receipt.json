@@ -1,0 +1,86 @@
+{
+  "probe": "vf_v4tube_canonical_step_two_pair_visibility",
+  "started_utc": "2026-10-04T19:01:06.159378+00:00",
+  "finished_utc": "2026-10-04T19:01:06.208925+00:00",
+  "exit_code": 0,
+  "retry_count": 0,
+  "load_canonical_step_call_count": 1,
+  "classify_candidate_pairs_call_count": 1,
+  "probe_status": "EXPECTED_PAIR_CLASSIFICATIONS",
+  "source_test_pins_before": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "source_test_pins_after": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "asset_pre_pin": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+    "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "byte_length": 9412
+  },
+  "asset_post_pin": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+    "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "byte_length": 9412
+  },
+  "result": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\vf_v4tube_step_probe\\probe_result.json",
+    "sha256": "914de75bd0e642bf69fa437cde1da86947a50188d09041df3baecaa2146c34c1",
+    "byte_length": 17716
+  },
+  "runtime": {
+    "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cadquery_version": "2.8.0",
+    "ocp_version": "7.9.3.1",
+    "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+    "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+    "runner_argv": [
+      "C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      ".\\pgfrag\\tmp\\review_20261005\\visibility_resume\\run_vf_v4tube_step_probe.py"
+    ],
+    "python_dont_write_bytecode": true
+  },
+  "runner_argv": [
+    "C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+    "-B",
+    ".\\pgfrag\\tmp\\review_20261005\\visibility_resume\\run_vf_v4tube_step_probe.py"
+  ],
+  "declarations": {
+    "source_length_unit": "mm",
+    "frame": "right_handed_z_up",
+    "source_accuracy_mm": 1e-07,
+    "source_accuracy_basis": "declared modeler CAD test resolution 1e-7 mm for this loader probe only; not a measured physical material accuracy",
+    "distance_tolerance_mm": 0.0001,
+    "material_domain_id": "solid-0"
+  },
+  "scope": {
+    "step_import_count": 1,
+    "step_export_count": 0,
+    "mesh_tessellation_count": 0,
+    "native_solver_or_graph_mutation": false,
+    "pair_count_requested": 2,
+    "retry_count": 0
+  },
+  "error": null
+}

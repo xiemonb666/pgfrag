@@ -1,0 +1,28 @@
+{
+  "schema": "mixed93_mechanics_objectivity_source_pins.v2",
+  "status": "STATIC_HASHES_ONLY_NO_NUMERIC_CAPTURE",
+  "artifacts": [
+    {"path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/mechanics_objectivity_adapter.py", "sha256": "f9b35bd271e1ac9e86bedb813435f3a0b9b045bc84f4b1e1e56c1f10244c346f"},
+    {"path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/CASE_DRAFT.json", "sha256": "a189527e639190192312dd8e9685d493f2b241aaed7680c2979e42a63390574e"},
+    {"path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/DESIGN.md", "sha256": "5934c97f85cd1f2c8cee1cdeaba2880fe0b70444a7669ecd8ce2738edab0d05c"},
+    {"path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/README.md", "sha256": "9ac174783588b491aac17f4d6834bd88b7b53b91f14549cf35d0cfa88e75aa2e"}
+  ],
+  "upstream_sources": [
+    {"path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json", "sha256": "67ff4df51a0269e88b8d107a2a95929c3990a7cd9605585a31a2df583434cc1c", "role": "frozen mechanics and cache binding"},
+    {"path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/mixed93_cached_lefm_solve.py", "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c", "role": "private centered-moment, fresh spectrum, KKT, and reconstruction helpers"},
+    {"path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json", "sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b", "role": "frozen source registry and quadrature metadata"},
+    {"path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz", "sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea", "role": "frozen query/source arrays; digest pinned, payload not parsed in adapter"},
+    {"path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py", "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f", "role": "public semantic raw K/f assembler"},
+    {"path": "pgfrag/experiments/mixed_lefm_benchmark_20261006/mixed_lefm_field.py", "sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd", "role": "CrackFrame, local branches, and world-frame analytic fields"},
+    {"path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py", "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63", "role": "pinned MLS configuration and implementation"},
+    {"path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py", "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5", "role": "actual 3-D MLS value/physical-gradient provider"}
+  ],
+  "review_and_history": [
+    {"path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_independent/REVIEW.md", "sha256": "a83f77c719d0b7612da01301977b7fed82aeb73a9c69c97d213ab8f8b9e7ccac", "role": "independent static review"},
+    {"path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_independent/review.json", "sha256": "553733b84e5235205bf983bdeb3f34d0eb05b887369c2661d3c3e2dc619371e8", "role": "review findings and verified contracts"},
+    {"path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_20261007/DESIGN.v1.snapshot.md", "sha256": "c0770113cd847d1cb473855f581fa84c619d14a3194c9efddcd58eb4dee4e901", "role": "preserved prior DESIGN bytes"},
+    {"path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_20261007/CASE_DRAFT.v1.snapshot.json", "sha256": "057788ea1729d2a635b5054ea45126fed8539aa6aa8e2fb384ce8033b0c05797", "role": "preserved prior case bytes"},
+    {"path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_20261007/source_pins.v1.snapshot.json", "sha256": "7dd1a2ce2ebc697bac98afb44eb33f7bdc281dde0911466075f8c5ee9ab85943", "role": "preserved prior pins bytes"}
+  ],
+  "execution": {"provider_calls": 0, "field_evaluations": 0, "assemblies": 0, "solves": 0, "tests_run": 0, "npz_payload_opened_by_adapter": false}
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "mixed93_cached_lefm_solve.v1",
+  "case_id": "mixed93_cached_lefm_solve_20261006",
+  "status": "SOURCE_PREPARED_EXECUTION_NOT_AUTHORIZED",
+  "execution_authorization": {
+    "authorized": false,
+    "authorized_by": null,
+    "authorized_utc": null
+  },
+  "classification": "TOY_ISOTROPIC_LEFM_MANUFACTURED_BENCHMARK_NOT_MATERIAL_OR_CRACK_GROWTH_QUALIFICATION",
+  "cached_result_path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json",
+  "cached_result_sha256": "2510eabd3e3406f243d9fe900ac5af3cfdf17071cdbe50383093de0a13adff4b",
+  "cached_arrays_path": "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/arrays.npz",
+  "cached_arrays_sha256": "a9de2e3eaf88ba0eb130fca6f160d5d327a963bb00203266b7390cadbe6693ea",
+  "geometry": {
+    "shape": "straight-front circular cylinder",
+    "frame": "identity local/world xyz",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "front_tip_xyz_m": [0.0, 0.0, 0.0],
+    "source_count": 27,
+    "source_order": "frozen registry canonical source_ids order"
+  },
+  "material": {
+    "E_Pa": 1000000.0,
+    "nu": 0.3,
+    "constitutive_model": "full 3D isotropic small-strain elasticity, lambda and mu",
+    "constitutive_voigt_order": ["exx", "eyy", "ezz", "gamma_xy", "gamma_yz", "gamma_xz"]
+  },
+  "semantic_layout": {
+    "dof_count": 93,
+    "scalar_basis_count": 31,
+    "base_columns": "sorted source_ids, each source has ux,uy,uz, SOURCE_BASE, basis_index 0",
+    "global_columns": "GLOBAL_FRONT owner global, branch-major 1..4, each branch has ux,uy,uz",
+    "semantic_id_json": "json.dumps([scope,owner,component,basis_index], separators=(',', ':'), ensure_ascii=True)",
+    "source_local_405_layout": "separate diagnostic scope; never used as this 93-DOF registry"
+  },
+  "global_branch_basis": {
+    "normalization": "sqrt(r/R)",
+    "functions": [
+      "F1=sqrt(r/R)*sin(theta/2)",
+      "F2=sqrt(r/R)*cos(theta/2)",
+      "F3=sqrt(r/R)*sin(theta/2)*sin(theta)",
+      "F4=sqrt(r/R)*cos(theta/2)*sin(theta)"
+    ],
+    "q_exact_branch_order": {
+      "F1_ux_uy_uz": ["AII*(kappa+1)", "AI*(kappa+1)", "AIII"],
+      "F2_ux_uy_uz": ["AI*(kappa-1)", "AII*(1-kappa)", "0"],
+      "F3_ux_uy_uz": ["AI", "AII", "0"],
+      "F4_ux_uy_uz": ["AII", "-AI", "0"],
+      "base_coefficients": "all zero",
+      "kappa": "3-4*nu",
+      "AI": "KI*sqrt(R)/(2*mu*sqrt(2*pi))",
+      "AII": "KII*sqrt(R)/(2*mu*sqrt(2*pi))",
+      "AIII": "KIII*sqrt(2*R/pi)/mu"
+    },
+    "coefficient_note": "Derived from mixed_lefm_field.py angular formulas using c*cos(theta)=c-F3 and s*cos(theta)=-s+F4."
+  },
+  "integration_cache_selection": {
+    "volume_cloud": "frozen a0 theta32, 4 radial x 32 angular x 4 z = 512 rows",
+    "side_cloud": "frozen side cloud, 256 rows",
+    "cap_cloud": "frozen a0 cap16, both caps together, 512 rows",
+    "offgrid_cloud": "frozen common offgrid, 128 rows",
+    "raw_cached_shape_rows": 1408,
+    "new_mls_queries": 0,
+    "cached_mls_selection": "cloud unique_row_ids index base_mls_values and base_mls_gradients_per_m; append four branch functions in this script",
+    "batch_limit_rows": 256,
+    "new_query_xyz_rows": 0,
+    "analytic_evaluations": "Evaluate field and four global branches only at these already cached xyz rows; no provider call.",
+    "boundary_load": "full traction sigma*n on side and both end caps; no projection or dropped components",
+    "boundary_region_slices_half_open_after_side_then_caps": {
+      "side": [0, 256],
+      "cap_bottom": [256, 512],
+      "cap_top": [512, 768]
+    },
+    "volume_stiffness": "raw K=sum(w*B.T*D*B), no symmetrization, ridge, pseudoinverse, or mode truncation"
+  },
+  "rigid_gauge": {
+    "definition": "six physical volume moments: V^-1 integral [u_x,u_y,u_z, ((x-center) cross u)/R] dV",
+    "mode_order": ["mean_translation_x", "mean_translation_y", "mean_translation_z", "mean_rotation_x_over_R", "mean_rotation_y_over_R", "mean_rotation_z_over_R"],
+    "center_xyz_m": [0.0, 0.0, 0.0],
+    "rotation_normalization_radius_m": 0.01,
+    "target": "g=C_phys*q_exact, computed separately for each manufactured load; preserve nonzero g and g dot lambda",
+    "coefficient_rigid_modes_role": "frozen six coefficient vectors are used only to qualify six null modes and physical-gauge coupling rank"
+  },
+  "load_cases": [
+    {"case_id": "pure_I", "K_Pa_sqrt_m": [100.0, 0.0, 0.0]},
+    {"case_id": "pure_II", "K_Pa_sqrt_m": [0.0, 100.0, 0.0]},
+    {"case_id": "pure_III", "K_Pa_sqrt_m": [0.0, 0.0, 100.0]},
+    {"case_id": "mixed_70_40_100", "K_Pa_sqrt_m": [70.0, 40.0, 100.0]}
+  ],
+  "predeclared_gates": {
+    "scaled_raw_asymmetry_max": 1e-12,
+    "spectrum_zero_eigenvalues": 6,
+    "spectrum_positive_eigenvalues": 87,
+    "significant_negative_eigenvalues": 0,
+    "spectrum_zero_negative_tolerance": "64*eps*93*max(abs(eigenvalues))",
+    "rigid_null_relative_error_max": 2.6432189770275727e-12,
+    "kkt_backward_error_max": 1e-9,
+    "gauge_relative_error_max": 1e-9,
+    "energy_identity_relative_error_max": 1e-9,
+    "engineering_field_relative_error_max": 0.02,
+    "exact_representation_relative_error_max": 1e-11,
+    "exact_representation_absolute_epsilon_factor": 64.0,
+    "physical_moment_relative_error_max": 1e-11,
+    "output_combined_limit_bytes": 12582912,
+    "explicit_working_memory_estimate_limit_bytes": 67108864,
+    "future_single_run_external_timeout_seconds": 60
+  },
+  "limitations": [
+    "Cached study is an a0 theta32 quadrature benchmark, not a convergence proof.",
+    "Manufactured LEFM fields and the E=1 MPa toy material are numerical checks, not ceramic data.",
+    "No crack advance, material law, or autonomous fracture qualification is implemented."
+  ]
+}

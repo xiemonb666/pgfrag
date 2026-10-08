@@ -1,0 +1,7 @@
+{
+  "manifest_sha256_before": "25d703e1ee43b8534ceeee7b86174d5f88b469457983c4387e2f0624e0e36f1b",
+  "manifest_mtime_before": "2026-10-04T16:40:16.4383468+08:00",
+  "manifest_sha256_after": "25d703e1ee43b8534ceeee7b86174d5f88b469457983c4387e2f0624e0e36f1b",
+  "manifest_mtime_after": "2026-10-04T16:40:16.4383468+08:00",
+  "unchanged_during_audit": true
+}

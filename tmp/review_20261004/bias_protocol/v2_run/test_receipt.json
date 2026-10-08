@@ -1,0 +1,41 @@
+{
+  "schema": "pgfrag.bias-protocol-v2-test-receipt.v1",
+  "started_at_local": "2026-10-04T17:14:21.6262478+08:00",
+  "ended_at_local": "2026-10-04T17:14:21.9864552+08:00",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "--junitxml=pgfrag/tmp/review_20261004/bias_protocol/v2_run/junit.xml",
+    "pgfrag/tests/test_bias_protocol.py"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src"
+  },
+  "stdout_artifact": "stdout.txt",
+  "stderr_artifact": "stderr.txt",
+  "junit_artifact": "junit.xml",
+  "exit_code": 0,
+  "junit_counts": {
+    "failures": 0,
+    "skipped": 0,
+    "errors": 0,
+    "tests": 11
+  },
+  "source_hashes_before": {
+    "pgfrag\\tests\\test_bias_protocol.py": "6ccc0281ab3d818cb1f7cd2fd96351a83a128ddda8f593070cc40720b3b3c610",
+    "pgfrag\\src\\pgfrag\\bias_protocol.py": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779"
+  },
+  "source_hashes_after": {
+    "pgfrag\\tests\\test_bias_protocol.py": "6ccc0281ab3d818cb1f7cd2fd96351a83a128ddda8f593070cc40720b3b3c610",
+    "pgfrag\\src\\pgfrag\\bias_protocol.py": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779"
+  },
+  "source_hashes_unchanged": true,
+  "solver_invoked": false,
+  "whole_suite_invoked": false
+}

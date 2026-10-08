@@ -1,0 +1,62 @@
+{
+  "schema": "mixed93_moving_front_checkpoint_independent_review.v1",
+  "status": "REVIEWED_DIAGNOSTIC_COMPLETENESS_GAPS_NO_NUMERIC_GO",
+  "reviewed_source": {
+    "path": "pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py",
+    "sha256": "9432b3ac91706676eab02db98d1230313f6175f03a50a4691200d87994e4fcc1",
+    "lines": 662,
+    "baseline_path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/pre_checkpoint_snapshot/mixed93_moving_front_reanalysis.py",
+    "baseline_sha256": "a124f68a4e605a244123c30f9256838c343816531d7cda78445d9a755f39442f"
+  },
+  "case": {
+    "sha256": "89024e62b006224819a0331796b5c3bce55cbea4e9bd732309d2bac1069acbf4",
+    "pins_sha256": "283b260918bcb39d7d010308ec7de8f48768420752fa14096fbc053516da5b63",
+    "execution_authorized": false,
+    "snapshot_equal_after_removing_checkpoint_fields": true,
+    "added_fields": [
+      "capture_contract",
+      "output_contract.failure_checkpoint",
+      "explicit_array_estimate.checkpoint_arrays_counted_at_runtime"
+    ],
+    "pin_reference_count": 9,
+    "pin_dependency_count": 14,
+    "pin_hash_mismatches": 0
+  },
+  "capture_wrapper": {
+    "sha256_reported_by_source_owner": "162a409663659b0d9430edb9e002f7f857014e072cf5fcb2431b2ea0b887e324",
+    "implementation_reviewed": false
+  },
+  "verified": {
+    "cap_provider_batches": [256, 192, 256, 256, 256, 128],
+    "cap_provider_rows": 1344,
+    "batch_records_precede_status_gate": true,
+    "separate_failure_schema_and_files": true,
+    "failure_claims_primary_result_written": false,
+    "json_allow_nan_false_and_numpy_scalar_conversion": true,
+    "core_mechanics_math_changed": false
+  },
+  "findings": [
+    {
+      "severity": "diagnostic_completeness",
+      "finding": "Computed volume/C, spectrum outputs, or returned KKT q/lambda/metrics can be lost when a subsequent acceptance gate raises before checkpoint recording.",
+      "suggestion": "Record each completed computation before its next acceptance gate; keep failure artifacts explicitly diagnostic."
+    },
+    {
+      "severity": "label_clarity",
+      "finding": "failure.json uses actual_return_code=2 before the enclosing process return is observed.",
+      "suggestion": "Rename to expected_driver_return_code or omit; outer capture is authoritative."
+    },
+    {
+      "severity": "scope_limit",
+      "finding": "Failure checkpoint catches _run exceptions only; preflight and primary-result writer failures bypass it, and size-limit failure occurs after writes.",
+      "suggestion": "Treat wrapper process status and output directory contents as authoritative; decide if broader failure coverage is required."
+    }
+  ],
+  "execution": {
+    "numeric_imports_or_execution": false,
+    "npz_payload_read": false,
+    "provider_or_solver_called": false,
+    "tests_run": false,
+    "numeric_go_inferred": false
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pgfrag.invalid/schema/material-visibility-native-mask-v1.json",
+  "title": "PGFRAG static material visibility mask for native bond construction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "static_contract_status", "native_mask_eligibility", "native_gate",
+    "source", "coordinates", "points", "candidate_generation",
+    "raw_euclidean_candidate_pairs", "counts", "pair_map_sha256", "mask",
+    "evidence", "initial_physics_events"
+  ],
+  "properties": {
+    "schema": { "const": "pgfrag.material-visibility-native-mask.v1" },
+    "static_contract_status": { "const": "VALID" },
+    "native_mask_eligibility": {
+      "enum": [
+        "BLOCKED_UNKNOWN", "BLOCKED_EMPTY_CANDIDATE_SET", "BLOCKED_EMPTY_MASK",
+        "BLOCKED_ZERO_DEGREE", "CANDIDATE_MASK_POSITIVE_DEGREE_NATIVE_UNVERIFIED"
+      ]
+    },
+    "native_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "raw_candidate_set_reproduced", "native_graph_readback",
+        "initialization_authorized", "candidate_pair_count_nonzero",
+        "included_pair_count_nonzero", "zero_degree_point_ids"
+      ],
+      "properties": {
+        "status": { "const": "UNVERIFIED" },
+        "raw_candidate_set_reproduced": { "const": false },
+        "native_graph_readback": { "const": "NOT_RUN" },
+        "initialization_authorized": { "const": false },
+        "candidate_pair_count_nonzero": { "type": "boolean" },
+        "included_pair_count_nonzero": { "type": "boolean" },
+        "zero_degree_point_ids": {
+          "type": "array", "maxItems": 5000,
+          "items": { "type": "integer", "minimum": 0 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_cad_path", "source_cad_sha256", "classifier_source_sha256", "source_hash_status",
+        "source_status", "source_accuracy_mm", "source_accuracy_basis"
+      ],
+      "properties": {
+        "source_cad_path": { "type": "string", "minLength": 1 },
+        "source_cad_sha256": { "$ref": "#/$defs/sha256" },
+        "classifier_source_sha256": { "$ref": "#/$defs/sha256" },
+        "source_hash_status": { "const": "MATCHED_ACTUAL_FILE_BYTES" },
+        "source_status": { "const": "READY" },
+        "source_accuracy_mm": { "type": "number", "minimum": 0 },
+        "source_accuracy_basis": { "type": "string", "minLength": 1 }
+      }
+    },
+    "coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_unit", "native_unit", "m_per_input_unit", "reference_frame",
+        "native_frame", "native_frame_from_reference_frame_m"
+      ],
+      "properties": {
+        "input_unit": { "const": "mm" },
+        "native_unit": { "const": "m" },
+        "m_per_input_unit": { "const": 0.001 },
+        "reference_frame": { "type": "string", "minLength": 1 },
+        "native_frame": { "type": "string", "minLength": 1 },
+        "native_frame_from_reference_frame_m": { "$ref": "#/$defs/transform" }
+      }
+    },
+    "points": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "payload_path", "payload_sha256", "order", "point_ids_order_sha256", "rows"
+      ],
+      "properties": {
+        "payload_path": { "type": "string", "minLength": 1 },
+        "payload_sha256": { "$ref": "#/$defs/sha256" },
+        "order": { "const": "exact_payload_row_order" },
+        "point_ids_order_sha256": { "$ref": "#/$defs/sha256" },
+        "rows": {
+          "type": "array", "minItems": 1, "maxItems": 5000,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["point_id", "native_index", "position_mm"],
+            "properties": {
+              "point_id": { "type": "integer", "minimum": 0 },
+              "native_index": { "type": "integer", "minimum": 1, "maximum": 5000 },
+              "position_mm": {
+                "type": "array", "minItems": 3, "maxItems": 3,
+                "items": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "candidate_generation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric", "horizon_m", "candidate_rule", "scope"],
+      "properties": {
+        "metric": { "const": "euclidean_reference_distance" },
+        "horizon_m": { "type": "number", "exclusiveMinimum": 0 },
+        "candidate_rule": { "const": "exact_pinned_Peridynamics_find_bonds_convention" },
+        "scope": { "const": "one_body_one_uniform_horizon" }
+      }
+    },
+    "raw_euclidean_candidate_pairs": {
+      "type": "array", "maxItems": 250000,
+      "items": { "$ref": "#/$defs/pair_decision" }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "raw_euclidean_candidate_pairs", "initial_material_bond_pairs",
+        "geometry_excluded_pairs", "unknown_pairs"
+      ],
+      "properties": {
+        "raw_euclidean_candidate_pairs": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "initial_material_bond_pairs": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "geometry_excluded_pairs": { "type": "integer", "minimum": 0, "maximum": 250000 },
+        "unknown_pairs": { "type": "integer", "minimum": 0, "maximum": 250000 }
+      }
+    },
+    "pair_map_sha256": { "$ref": "#/$defs/sha256" },
+    "mask": {
+      "type": "object", "additionalProperties": false,
+      "required": ["included_pairs", "geometry_excluded_pairs", "unknown_pairs", "mask_sha256"],
+      "properties": {
+        "included_pairs": { "type": "array", "maxItems": 250000, "items": { "$ref": "#/$defs/canonical_pair" } },
+        "geometry_excluded_pairs": { "type": "array", "maxItems": 250000, "items": { "$ref": "#/$defs/canonical_pair" } },
+        "unknown_pairs": { "type": "array", "maxItems": 250000, "items": { "$ref": "#/$defs/canonical_pair" } },
+        "mask_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "classifier_result_path", "classifier_result_sha256", "classifier_source_path", "classifier_source_sha256",
+        "raw_hit_interval_sidecar_path", "raw_hit_interval_sidecar_sha256",
+        "sidecar_selection", "visibility_algorithm"
+      ],
+      "properties": {
+        "classifier_result_path": { "type": "string", "minLength": 1 },
+        "classifier_result_sha256": { "$ref": "#/$defs/sha256" },
+        "classifier_source_path": { "type": "string", "minLength": 1 },
+        "classifier_source_sha256": { "$ref": "#/$defs/sha256" },
+        "raw_hit_interval_sidecar_path": { "type": "string", "minLength": 1 },
+        "raw_hit_interval_sidecar_sha256": { "$ref": "#/$defs/sha256" },
+        "sidecar_selection": {
+          "type": "object", "additionalProperties": false,
+          "required": ["test_nodeid", "call_index"],
+          "properties": {
+            "test_nodeid": { "type": "string", "minLength": 1 },
+            "call_index": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "visibility_algorithm": { "type": "string", "minLength": 1 }
+      }
+    },
+    "initial_physics_events": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "evidence_status", "planned_physical_broken_bond_pairs",
+        "geometry_exclusions_are_physics_events"
+      ],
+      "properties": {
+        "evidence_status": { "const": "PLANNED_NOT_OBSERVED_NATIVE_NOT_RUN" },
+        "planned_physical_broken_bond_pairs": { "const": 0 },
+        "geometry_exclusions_are_physics_events": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "canonical_pair": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": { "type": "integer", "minimum": 0 }
+    },
+    "pair_decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair", "classification", "reason"],
+      "properties": {
+        "pair": { "$ref": "#/$defs/canonical_pair" },
+        "classification": { "enum": ["IN_MATERIAL", "OUT_OR_VOID", "UNKNOWN"] },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "transform": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "array", "minItems": 4, "maxItems": 4,
+        "items": { "type": "number" }
+      }
+    }
+  }
+}

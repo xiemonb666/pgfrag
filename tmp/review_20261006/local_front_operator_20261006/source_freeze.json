@@ -1,0 +1,69 @@
+{
+  "schema": "local-front-operator-source-freeze.v1",
+  "case_id": "local_front_scalar_antiplane_poisson_operator_20261006",
+  "source_status": "READY_FOR_REVIEW",
+  "runtime_executed_at_freeze": false,
+  "provider_operator_solver_or_pytest_invoked_at_freeze": false,
+  "owned_sources": {
+    "pgfrag/experiments/local_front_operator_20261006/fixed_case.json": {
+      "sha256": "bee0638bdbafdcd9dd1af02152faf3d87384503b6a029a70831f71b5369c162b",
+      "bytes": 7609
+    },
+    "pgfrag/experiments/local_front_operator_20261006/operator_diagnostic.py": {
+      "sha256": "77b0db5f26855ffb6d444154d42b04c5644fc99737be177420a3efad76ac9e59",
+      "bytes": 60973
+    },
+    "pgfrag/experiments/local_front_operator_20261006/README.md": {
+      "sha256": "64bf3e86b88bd3aef705f25f9cb5967d2e3d372bc14bb392c2585b7b9e6301ed",
+      "bytes": 3956
+    },
+    "pgfrag/tmp/review_20261006/local_front_operator_20261006/SOURCE_REVIEW.md": {
+      "sha256": "5d3ccee25c47aee57d937e49e08b9d3c904d623393b21c7cbc20ced416a8d273",
+      "bytes": 6183
+    }
+  },
+  "read_only_dependencies": {
+    "pgfrag/experiments/local_front_provider_20261006/local_front_provider.py": "c586ec99dee8dc61f7a74904e1c0ce196d8ca562cbc2bb6f61411a8262c96421",
+    "pgfrag/experiments/local_front_support_contract_20261006/fixed_case.json": "0bdbb20032e105851d2909ff54850ebc54d3f2041c25ab5e42e9102244d90ca5",
+    "pgfrag/experiments/local_front_support_contract_20261006/support_topology.py": "ea20e51d2b774c7e6b8b48403359b56bab1ba6f5405dba41f34813b6aec4578e",
+    "pgfrag/experiments/local_front_support_contract_20261006/role_manifest.json": "e5e318f80b5dfedbc8ba122f82df3cca1585e604272399d21bc35907d1d28f01",
+    "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9"
+  },
+  "fixed_run_caps": {
+    "source_count": 100,
+    "source_hard_cap": 125,
+    "scalar_dof_count": 140,
+    "scalar_dof_hard_cap": 375,
+    "volume_query_count": 256,
+    "volume_query_hard_cap": 256,
+    "estimated_explicit_numeric_array_bytes": 4517536,
+    "numeric_array_cap_bytes": 8388608,
+    "wall_timeout_seconds": 60,
+    "run_solver": false,
+    "apply_load": false,
+    "regularize_or_truncate": false
+  },
+  "spectrum_promotion_rule": {
+    "complete_assembly_status": "OK",
+    "significant_negative_eigenvalue_count_must_equal": 0,
+    "near_zero_mode_count_must_equal": 1,
+    "expected_null_mode": "BASE-only scalar constant translation",
+    "invalid_spectrum_worker_return_code": 3,
+    "invalid_spectrum_primary_promotion": false,
+    "invalid_spectrum_staging_and_unknown_receipt": true,
+    "solve_allowed_on_passing_spectrum": true,
+    "solve_allowed_on_invalid_spectrum": false,
+    "solver_invoked": false
+  },
+  "runtime_facts_pending": [
+    "provider and MLS status for all 256 quadrature queries",
+    "support counts and condition numbers",
+    "assembled K, symmetry, and full spectrum",
+    "additional null modes or significant negative modes",
+    "BASE affine interpolation error and independent tensor energy comparison",
+    "mean row and constant-translation residual"
+  ]
+}

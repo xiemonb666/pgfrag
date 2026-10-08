@@ -1,0 +1,76 @@
+{
+  "schema": "pgfrag.native_point_history.freeze.v2",
+  "status": "FROZEN_NOT_TESTED_PENDING_MAIN_AGENT_REVIEW",
+  "v1_freeze_preserved": true,
+  "v1_pytest_result_preserved": {
+    "exit_code": 0,
+    "stdout_file": "../v1_frozen/pytest_stdout.txt",
+    "stderr_file": "../v1_frozen/pytest_stderr.txt"
+  },
+  "native_origin_status": "CALLER_SUPPLIED_ARCHIVE_NOT_AUTHENTICATED",
+  "observed_probe_source": {
+    "path": "experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+    "bytes": 23957,
+    "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+  },
+  "bond_events_v1_contract": {
+    "path": "pgfrag/tmp/review_20261004/bond_events/bond_events.py.frozen",
+    "sha256": "b783bc47eb54ced777706b9a2aaba118400ffedbebebcae5c9666bb95211cd9b"
+  },
+  "v1_changes_from": "v1_frozen/native_point_history.py.frozen, test_native_point_history.py.frozen, and hand-authored fixture copies",
+  "v2_diff": {
+    "path": "v2_diff.patch",
+    "bytes": 21211,
+    "sha256": "9a5f747c81b1e929a484cfb7878212efc0304c0ea84be0cb4df8879c4403c2e7"
+  },
+  "frozen_files": [
+    {
+      "source": "src/pgfrag/native_point_history.py",
+      "frozen": "native_point_history.py.frozen",
+      "bytes": 52774,
+      "sha256": "104a65afc0157b99d9a62ee6c455b8dff58b18e2b81b246124e0e50c61272845"
+    },
+    {
+      "source": "tests/test_native_point_history.py",
+      "frozen": "test_native_point_history.py.frozen",
+      "bytes": 10724,
+      "sha256": "93c6cda63959e53bc65781c861942d9b3d8df962b285475d68a92de483a872f0"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/input/points.csv",
+      "frozen": "fixture/input/points.csv",
+      "bytes": 63,
+      "sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/input/metadata.toml",
+      "frozen": "fixture/input/metadata.toml",
+      "bytes": 853,
+      "sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/snapshot/summary.toml",
+      "frozen": "fixture/snapshot/summary.toml",
+      "bytes": 618,
+      "sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/snapshot/point_state_history.csv",
+      "frozen": "fixture/snapshot/point_state_history.csv",
+      "bytes": 736,
+      "sha256": "bf5da4c95244bc99a9afd206746baa699562bf123092ec03f6a21ad18c1d00f9"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/snapshot/directed_bond_state_history.csv",
+      "frozen": "fixture/snapshot/directed_bond_state_history.csv",
+      "bytes": 344,
+      "sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0"
+    },
+    {
+      "source": "tmp/review_20261004/native_point_history/fixture/snapshot/canonical_bond_state_history.csv",
+      "frozen": "fixture/snapshot/canonical_bond_state_history.csv",
+      "bytes": 112,
+      "sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e"
+    }
+  ]
+}

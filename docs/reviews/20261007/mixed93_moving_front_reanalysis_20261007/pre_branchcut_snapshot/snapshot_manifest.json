@@ -1,0 +1,21 @@
+{
+  "schema": "mixed93_moving_front_pre_branchcut_snapshot.v1",
+  "captured_utc": "2026-10-06T19:11:30Z",
+  "files": [
+    {
+      "path": "CASE_DRAFT.json",
+      "bytes": 9598,
+      "sha256": "16aea0256b566704e1229bcfd3b7b8bf3bf33ae91fedaf6a3eaaa57038e36c77"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 9838,
+      "sha256": "77d09e52080b5e0dc9b20c6e118cef6b762ac816c41b421e7eb1404917d3bbb9"
+    },
+    {
+      "path": "SOURCE_PINS_DRAFT.json",
+      "bytes": 6117,
+      "sha256": "0fa26013c582b35da882b70f9c3288ab9169e39fc64d5bef7fdaa49946e38fdd"
+    }
+  ]
+}

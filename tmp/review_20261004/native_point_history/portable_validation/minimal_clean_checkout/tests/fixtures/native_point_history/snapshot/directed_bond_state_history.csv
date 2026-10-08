@@ -1,0 +1,7 @@
+step,time_s,dt_s,directed_source_point_id,directed_neighbor_point_id,canonical_point_i_id,canonical_point_j_id,directed_active,canonical_active
+0,0,0.25,11,22,11,22,true,true
+0,0,0.25,22,11,11,22,true,true
+1,0.25,0.25,11,22,11,22,true,true
+1,0.25,0.25,22,11,11,22,true,true
+2,0.5,0.25,11,22,11,22,false,false
+2,0.5,0.25,22,11,11,22,false,false

@@ -1,0 +1,132 @@
+{
+  "schema": "mixed93_mechanics_objectivity_independent_review.v1",
+  "case_id": "mixed93_mechanics_objectivity_20261007",
+  "disposition": "REVISE_BEFORE_NUMERIC_EXECUTION",
+  "review_mode": "STATIC_SOURCE_ONLY",
+  "provider_calls": 0,
+  "field_evaluations": 0,
+  "assemblies": 0,
+  "solves": 0,
+  "tests_run": 0,
+  "renderer_or_CAD_used": false,
+  "npz_payload_opened": false,
+  "identity": {
+    "design_path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/DESIGN.md",
+    "design_sha256": "c0770113cd847d1cb473855f581fa84c619d14a3194c9efddcd58eb4dee4e901",
+    "case_draft_path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/CASE_DRAFT.json",
+    "case_draft_sha256": "057788ea1729d2a635b5054ea45126fed8539aa6aa8e2fb384ce8033b0c05797",
+    "source_pins_path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_20261007/source_pins.json",
+    "source_pins_sha256": "7dd1a2ce2e5bc697bac98afb44eb33f7bdc281dde0911466075f8c5ee9ab85943",
+    "declared_pin_entries": 17,
+    "declared_pin_entries_matching": 17,
+    "pin_mismatches": [],
+    "supplemental_sources": [
+      {
+        "path": "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/mixed93_cached_lefm_solve.py",
+        "sha256": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c",
+        "identity_note": "Declared in the matching objectivity source pins; contains private cached assembly, moment, force, reconstruction, and solve helpers."
+      },
+      {
+        "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+        "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+        "identity_note": "Digest matches the separate mixed93 cached-solver SOURCE_PINS manifest; its public API includes semantic raw stiffness and force assembly."
+      },
+      {
+        "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+        "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+        "identity_note": "Actual worker path and digest; distinct from mixed93_actual_cohesive_bridge.py, the static validator pinned in the current manifest."
+      },
+      {
+        "path": "pgfrag/experiments/mls_rotation_covariance_20261007/mls_rotation_covariance.py",
+        "sha256": "431efad4df87d127853c2d970724fc8931ec9dbb1323ac31dab7f3a2ff212e40",
+        "identity_note": "Declared in the matching objectivity source pins; source confirms direct provider weight and physical-gradient covariance formulas."
+      },
+      {
+        "path": "pgfrag/experiments/mixed_lefm_benchmark_20261006/mixed_lefm_field.py",
+        "sha256": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+        "identity_note": "Declared transitively in the separate mixed93 cached-solver SOURCE_PINS manifest; provides CrackFrame and evaluate_point/evaluate_local_point."
+      }
+    ]
+  },
+  "verified_contract": {
+    "coordinate_map": "x'=Qx+t; Q proper orthogonal",
+    "scalar_basis_gradient": "N'=N; grad_x' N'=Q grad_x N",
+    "coefficient_map": "A=I_31 kron Q; q'=Aq",
+    "stiffness_map": "K'=A K A^T; independently reassemble K'",
+    "force_map": "f'=A f for co-transformed surface loads and scalar measures",
+    "centered_gauge_map": "B=diag(Q,Q); C'=B C A^T; g'=B g; physical lambda'=B lambda, with r=x-c and c'=Qc+t",
+    "physical_units": {
+      "K": "N/m",
+      "C": "dimensionless",
+      "q_and_g": "m",
+      "f_and_physical_lambda": "N",
+      "strain": "dimensionless",
+      "stress": "Pa",
+      "quadratic_energy_and_work": "J"
+    },
+    "voigt": {
+      "strain_order": ["eps_xx", "eps_yy", "eps_zz", "gamma_xy", "gamma_yz", "gamma_xz"],
+      "stress_order": ["sig_xx", "sig_yy", "sig_zz", "tau_xy", "tau_yz", "tau_xz"],
+      "gamma_definition": "gamma_ij=2*eps_ij",
+      "rotation_rule": "convert strain/stress to symmetric tensors, rotate with Q T Q^T, then convert using the distinct engineering-strain and stress conventions"
+    },
+    "local_frame": "H'=QH and o'=Qo+t imply crack-local xi=H^T(x-o) is invariant; branch values stay fixed and world gradients rotate by Q",
+    "mls_parameters": "transform reference_origin; keep reference_scale, support_radius, R, L and material scalars unchanged under rigid motion",
+    "quadrature": "rotate volume and surface positions/normals; keep scalar measures unchanged"
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "BLOCKS_EXECUTION",
+      "topic": "crack-local enrichment and reference field",
+      "evidence": "Cached _branch_values forwards world x,y to branch_functions_local; cached _reference calls evaluate_local_point with the supplied xyz. Those calls rely on the identity crack frame.",
+      "required_design_change": "Evaluate branches from transformed local coordinates relative to the crack origin/tip, map local gradients through H', and construct the field with CrackFrame/evaluate_point so reported vectors and tensors are world-frame values."
+    },
+    {
+      "id": "F2",
+      "severity": "BLOCKS_EXECUTION",
+      "topic": "physical moment center",
+      "evidence": "_physical_moment_matrix sets center to zero and uses relative=xyz; _direct_physical_moments uses cross(xyz,u).",
+      "required_design_change": "Use r=x-c in both matrix and direct moments, with c'=Qc+t, or add an explicit center parameter. Record the selected center."
+    },
+    {
+      "id": "F3",
+      "severity": "CLARIFY_BEFORE_EXECUTION",
+      "topic": "boundary wrench reference point",
+      "evidence": "The design requests force/moment wrench covariance without naming the moment point or translation term.",
+      "required_design_change": "State F'=QF and either M_c'=Q M_c about a co-transformed center or M_0'=Q M_0+t cross F' about the global origin; scale the residual robustly when the net wrench nearly cancels."
+    },
+    {
+      "id": "F4",
+      "severity": "DESIGN_ACCURACY",
+      "topic": "reusable operator interfaces",
+      "evidence": "mixed_enriched_operator.py exposes public raw stiffness and force assembly over supplied semantic rows; the cached solver's moment/reconstruction/KKT routines are private. Neither is an end-to-end transformed solver.",
+      "required_design_change": "Revise the interface inventory to identify reusable public raw K/f operations and private moment/field/solve helpers accurately; state the missing frame-aware row construction and orchestration boundary."
+    },
+    {
+      "id": "F5",
+      "severity": "MISSING_STUDY",
+      "topic": "quadrature orientation sensitivity",
+      "evidence": "The draft separates source-cloud rotation from tetrahedral mesh direction runs, but tetra remeshing changes basis and integration together; co-rotating existing quadrature tests coordinate covariance only.",
+      "required_design_change": "Add a separate quadrature-rule/orientation sensitivity design holding physical geometry and basis/cloud fixed, or declare the integration effect intentionally unresolved."
+    },
+    {
+      "id": "F6",
+      "severity": "PROVISIONAL_GATES",
+      "topic": "resource and tolerance claims",
+      "evidence": "Counts are arithmetically consistent, but no K-rotation timing, output schema, memory trace, or conditioning study supports the 30 s/8 MiB/64 MiB caps or proposed errors.",
+      "required_design_change": "Keep these as provisional targets, define retained evidence and memory scope, use dimensional/backward-scaled wrench residuals, and preserve UNKNOWN for unsupported/rank/cap failures."
+    }
+  ],
+  "orientation_studies": {
+    "coordinate_covariance": "Rotate all geometry, sources, quadrature, loads, crack frame, MLS origin, and gauge center together. This is a reparameterization test.",
+    "source_cloud_only": "Proposed 0/+37/-23 degree cloud rotations hold the physical state and quadrature fixed; they measure interpolation/source-layout sensitivity.",
+    "quadrature_only": "Not currently specified; integration-rule sensitivity must be isolated from cloud and mesh changes.",
+    "tetra_mesh_and_crack_front": "Proposed four one-step polyline runs measure local mesh-direction sensitivity; they do not establish a full crack path or surface objectivity."
+  },
+  "minimal_source_only_adapter_recommendation": "Define a non-mutating rigid-transform/crack-frame facade for point, vector, tensor, MLS-origin, and moment-center maps; evaluate front basis in local coordinates and emit world gradients/fields. No implementation or numeric run was performed.",
+  "remaining_limits": [
+    "The moving-front provider remains an antiplane scalar provider without a mixed93 vector assembly or solver path.",
+    "The result is a design review, not measured K-rotation covariance, fracture qualification, mesh-direction resolution, or a numerical acceptance claim."
+  ]
+}

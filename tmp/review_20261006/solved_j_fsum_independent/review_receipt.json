@@ -1,0 +1,77 @@
+{
+  "schema": "solved_j_independent_review_receipt.v1",
+  "started_at_utc": "2026-10-05T22:58:37.955937+00:00",
+  "finished_at_utc": "2026-10-05T22:58:38.267800+00:00",
+  "elapsed_seconds_excluding_python_imports": 0.3119127999525517,
+  "within_10s_processing_budget": true,
+  "input_bytes_total": 1020467,
+  "interpreter": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "input_hashes_before": {
+    "source_run_receipt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\run_receipt.json",
+      "bytes": 1650,
+      "sha256": "6a7eef3761ccc07a941dcb49805cf20c127825230f738560a32d5b2669f60b6b"
+    },
+    "stage": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\.solved_field_j_coupling.json.34676.worker.json",
+      "bytes": 649133,
+      "sha256": "1377e428a12f53bbc9dc9537c4dbf5d0c3f67a937bcdeceee6ddc6c98dfdfac9"
+    },
+    "primary": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+      "bytes": 369684,
+      "sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3"
+    }
+  },
+  "input_hashes_after": {
+    "source_run_receipt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\run_receipt.json",
+      "bytes": 1650,
+      "sha256": "6a7eef3761ccc07a941dcb49805cf20c127825230f738560a32d5b2669f60b6b"
+    },
+    "stage": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\.solved_field_j_coupling.json.34676.worker.json",
+      "bytes": 649133,
+      "sha256": "1377e428a12f53bbc9dc9537c4dbf5d0c3f67a937bcdeceee6ddc6c98dfdfac9"
+    },
+    "primary": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+      "bytes": 369684,
+      "sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3"
+    }
+  },
+  "inputs_unchanged": {
+    "source_run_receipt": true,
+    "stage": true,
+    "primary": true
+  },
+  "parent_gate_preserved": "UNKNOWN_WORKER_RESULT_CONTRACT",
+  "review_character_count": 410,
+  "outputs": {
+    "numeric_results": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_fsum_independent\\numeric_results.json",
+      "bytes": 11771,
+      "sha256": "b8d2ca2f96f29de8629f8089726c6132fe31a70870c76032152d06862f3f20ed"
+    },
+    "review": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_fsum_independent\\REVIEW.md",
+      "bytes": 781,
+      "sha256": "1f08f4969ba17bebc898ffc938c08df8e6e9c73e177b05a2a069539b7d405955"
+    },
+    "plot": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_fsum_independent\\solved_j_review.png",
+      "bytes": 253920,
+      "sha256": "b212ef41968b1bbcc0ef62ec0ae0a4ac6a7b5d5aa7f5098f43f97882e5be1e0c"
+    },
+    "source_receipt_copy": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_fsum_independent\\source_run_receipt.json",
+      "bytes": 1650,
+      "sha256": "6a7eef3761ccc07a941dcb49805cf20c127825230f738560a32d5b2669f60b6b"
+    },
+    "review_script": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_fsum_independent\\review_solved_j.py",
+      "bytes": 13895,
+      "sha256": "c98f11010f3db31bc944f67eb5a481db23766c11eecc26fe6486c4630d602a03"
+    }
+  }
+}

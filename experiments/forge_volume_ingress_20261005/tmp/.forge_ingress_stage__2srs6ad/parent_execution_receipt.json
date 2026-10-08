@@ -1,0 +1,65 @@
+{
+  "candidate_run_promoted": false,
+  "cell_progress_receipt": {
+    "path": "cell_in_progress.json",
+    "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+    "status": "BLOCKED_PARENT_EXECUTION"
+  },
+  "child_alive_after_stop": false,
+  "child_exit_code": 0,
+  "child_result": {
+    "blocked_marker_errors": [],
+    "error_type": "IngressBlocked",
+    "reason": "could not stabilize report-inclusive output byte count",
+    "stage_retained": true,
+    "status": "BLOCKED",
+    "worker_failure_receipt_write_error": null,
+    "worker_failure_receipt_written": true
+  },
+  "child_status": "BLOCKED",
+  "elapsed_seconds": 4.422000000020489,
+  "hard_timeout_seconds": 180,
+  "launch_error": null,
+  "partial_ledger_status": "BLOCKED_PARENT_EXECUTION",
+  "process_stop_errors": [],
+  "request_record_sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+  "schema": "pgfrag.volume_ingress.parent_execution_receipt.v1",
+  "stage_blocking_marker_errors": [],
+  "stage_inventory_before_parent_receipt": {
+    "files": [
+      {
+        "bytes": 2372,
+        "path": "cell_in_progress.json",
+        "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+      },
+      {
+        "bytes": 118930,
+        "path": "cell_ledger.json",
+        "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+      },
+      {
+        "bytes": 119097,
+        "path": "cell_ledger.partial.json",
+        "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+      },
+      {
+        "bytes": 77304,
+        "path": "material_points.json",
+        "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+      },
+      {
+        "bytes": 1032,
+        "path": "request.json",
+        "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+      },
+      {
+        "bytes": 4302,
+        "path": "worker_failure.json",
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    ],
+    "total_bytes": 323037
+  },
+  "status": "BLOCKED_STAGE_RETAINED",
+  "timed_out": false
+}

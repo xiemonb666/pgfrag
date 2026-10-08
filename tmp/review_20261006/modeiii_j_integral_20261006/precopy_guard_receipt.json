@@ -1,0 +1,36 @@
+{
+  "artifact_id": "modeiii_j_integral_precopy_guard_v2",
+  "status": "PASS",
+  "elapsed_seconds": 0.0027758998330682516,
+  "maximum_seconds": 5.0,
+  "tests_run": 3,
+  "failures": 0,
+  "errors": 0,
+  "cases": [
+    {
+      "case": "257_rows_rejected_before_numpy_conversion",
+      "status": "PASS",
+      "reason": "sample_count_out_of_range",
+      "numpy_conversion_attempted": false
+    },
+    {
+      "case": "wrong_trailing_shape_rejected_before_numpy_conversion",
+      "status": "PASS",
+      "reason": "invalid_contour_coordinates_shape",
+      "input_shape": [
+        8,
+        4
+      ],
+      "numpy_conversion_attempted": false
+    },
+    {
+      "case": "small_correct_contour_shape_accepted",
+      "status": "PASS",
+      "sample_count": 8,
+      "J_J_per_m2": 0.0
+    }
+  ],
+  "field_reference_called": false,
+  "analytic_224_sample_validation_rerun": false,
+  "actual_static_j_computed": false
+}

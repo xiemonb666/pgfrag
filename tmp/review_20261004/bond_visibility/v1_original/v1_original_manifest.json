@@ -1,0 +1,36 @@
+{
+  "archive": "bond visibility v1 review baseline, byte-for-byte copies",
+  "source_sha256_basis": "computed from archived bytes before v2 edits",
+  "files": [
+    {
+      "name": "bond_visibility.py",
+      "source_path": "pgfrag/src/pgfrag/bond_visibility.py",
+      "sha256": "7b87ffd1bb94f4474de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86",
+      "byte_length": 38074
+    },
+    {
+      "name": "test_bond_visibility.py",
+      "source_path": "pgfrag/tests/test_bond_visibility.py",
+      "sha256": "533702781d8d27295260b108e2783949cdac1691709704fa96edfed6fccfa84a",
+      "byte_length": 9793
+    },
+    {
+      "name": "design_and_freeze.md",
+      "source_path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+      "sha256": "f95c86eada924153ae0c0467e928d765d4d23750dc6abc5759215e5a3a3d227e",
+      "byte_length": 5364
+    },
+    {
+      "name": "independent_review.md",
+      "source_path": "pgfrag/tmp/review_20261004/bond_visibility/independent_review.md",
+      "sha256": "270f623bef711e94f21251ce047cd651521ce309c3a87d38ed16257095ce6f58",
+      "byte_length": 10696
+    },
+    {
+      "name": "independent_review.json",
+      "source_path": "pgfrag/tmp/review_20261004/bond_visibility/independent_review.json",
+      "sha256": "ab172121cba83a0d637031d67c4d7207c82f4d0ccc437649b90e5a7889d3de6f",
+      "byte_length": 7853
+    }
+  ]
+}

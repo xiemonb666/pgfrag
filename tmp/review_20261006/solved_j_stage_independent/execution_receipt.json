@@ -1,0 +1,53 @@
+{
+  "schema": "modeiii_solved_j_independent_execution_receipt.v1",
+  "started_at_local": "2026-10-06T06:43:19.0889811+08:00",
+  "command": "\"C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe\" -B \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\independent_review.py\"",
+  "return_code": 1,
+  "timed_out": false,
+  "process_wall_seconds": 1.854306,
+  "process_wall_limit_seconds": 8.8,
+  "readback_input_budget_bytes": 3145728,
+  "input_json_files": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+      "bytes": 369684,
+      "sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+      "touched": false
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\run_receipt.json",
+      "bytes": 1650,
+      "sha256": "6a7eef3761ccc07a941dcb49805cf20c127825230f738560a32d5b2669f60b6b",
+      "touched": false
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_field_j_coupling_20261006\\runs\\run01\\.solved_field_j_coupling.json.34676.worker.json",
+      "bytes": 649133,
+      "sha256": "1377e428a12f53bbc9dc9537c4dbf5d0c3f67a937bcdeceee6ddc6c98dfdfac9",
+      "touched": false
+    }
+  ],
+  "touched_files_before_receipt_write": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\.mplconfig\\fontlist-v3.11.0.json",
+      "bytes": 149919,
+      "sha256": "c19c3778182d851566811e0286e38331904f48f29276fabcfcf1d2ea511bbea7"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\independent_review.py",
+      "bytes": 30097,
+      "sha256": "e0ca290f36e8f0e747a25277c5bceb11213f5d4b76e776df9c9caeed98eeeb22"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\stderr.log",
+      "bytes": 398,
+      "sha256": "d45f5e68d3f843893cae937b19c2e37657f4e5eb3bae95ea61e360ff30f1842d"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\solved_j_stage_independent\\execution_receipt.json"
+}

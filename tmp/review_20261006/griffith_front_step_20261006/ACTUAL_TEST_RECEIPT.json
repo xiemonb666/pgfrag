@@ -1,0 +1,23 @@
+{
+  "all_fixture_states_labelled": true,
+  "diagram_sha256": "ae593fb7b69d594a8efe52ef55671546980446b75a4b2b76e352e6031985343d",
+  "elapsed_seconds": 0.01116270013153553,
+  "error_count": 0,
+  "execution": "bounded Python unittest fixture suite",
+  "failure_count": 0,
+  "fixture_state_count": 4,
+  "fixture_states_sha256": "e46e3cb66b95132f590c6c2931168c19e92bcf4d3d6ef729ee118db996cef227",
+  "limit_fixture_states": 64,
+  "native_runtime_invoked": false,
+  "production_writes": false,
+  "python": "3.12.14",
+  "schema_version": "pgfrag.griffith-front-step.actual-test-receipt.v1",
+  "solver_invoked": false,
+  "source_sha256": {
+    "griffith_front_step.py": "3576a2aa6a68771578ed93e70d618f893b3465db476006f98e811ab12b44fba2",
+    "run_fixture.py": "7d2b1ee0d90cfdf90589145180529d2aad13b18c51741cc7a1266b3c898242f5",
+    "test_griffith_front_step.py": "d7bcb8b51ce596133aecb8e17c3ef57084d16db49b9429241c3b9046097cc4c5"
+  },
+  "test_count": 15,
+  "test_output": "test_G_above_Gc_proposes_geometry_only (test_griffith_front_step.GriffithFrontStepTests.test_G_above_Gc_proposes_geometry_only) ... ok\ntest_arrest_when_G_below_Gc (test_griffith_front_step.GriffithFrontStepTests.test_arrest_when_G_below_Gc) ... ok\ntest_bound_fixture_reanalysis_can_exercise_commit_branch_without_solver_claim (test_griffith_front_step.GriffithFrontStepTests.test_bound_fixture_reanalysis_can_exercise_commit_branch_without_solver_claim) ... ok\ntest_equal_G_and_Gc_does_not_propose (test_griffith_front_step.GriffithFrontStepTests.test_equal_G_and_Gc_does_not_propose) ... ok\ntest_missing_driving_evidence_is_unknown (test_griffith_front_step.GriffithFrontStepTests.test_missing_driving_evidence_is_unknown) ... ok\ntest_missing_energy_rolls_back_to_old_committed_surface (test_griffith_front_step.GriffithFrontStepTests.test_missing_energy_rolls_back_to_old_committed_surface) ... ok\ntest_negative_Gc_is_rejected (test_griffith_front_step.GriffithFrontStepTests.test_negative_Gc_is_rejected) ... ok\ntest_no_automatic_commit_and_reject_retains_old_version (test_griffith_front_step.GriffithFrontStepTests.test_no_automatic_commit_and_reject_retains_old_version) ... ok\ntest_out_of_domain_candidate_is_rejected (test_griffith_front_step.GriffithFrontStepTests.test_out_of_domain_candidate_is_rejected) ... ok\ntest_requested_advance_cannot_exceed_cap (test_griffith_front_step.GriffithFrontStepTests.test_requested_advance_cannot_exceed_cap) ... ok\ntest_reversed_direction_is_rejected (test_griffith_front_step.GriffithFrontStepTests.test_reversed_direction_is_rejected) ... ok\ntest_seed_frame_mismatch_is_rejected (test_griffith_front_step.GriffithFrontStepTests.test_seed_frame_mismatch_is_rejected) ... ok\ntest_stale_field_needs_recompute (test_griffith_front_step.GriffithFrontStepTests.test_stale_field_needs_recompute) ... ok\ntest_uncoupled_field_needs_recompute (test_griffith_front_step.GriffithFrontStepTests.test_uncoupled_field_needs_recompute) ... ok\ntest_unreviewed_contour_or_path_sensitivity_is_unknown (test_griffith_front_step.GriffithFrontStepTests.test_unreviewed_contour_or_path_sensitivity_is_unknown) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.011s\n\nOK\n"
+}

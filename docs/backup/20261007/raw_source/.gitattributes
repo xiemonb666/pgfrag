@@ -1,0 +1,25 @@
+/src/pgfrag/bond_events.py -text
+/tests/test_bond_events.py -text
+
+/src/pgfrag/energy_ledger.py -text
+/tests/test_energy_ledger.py -text
+/src/pgfrag/bias_protocol.py -text
+/tests/test_bias_protocol.py -text
+
+/experiments/pd_point_event_probe_20261004/** -text
+
+/src/pgfrag/native_point_history.py -text
+/tests/test_native_point_history.py -text
+/src/pgfrag/mesh_resolution_audit.py -text
+/tests/test_mesh_resolution_audit.py -text
+/tests/fixtures/native_point_history/input/points.csv -text
+/tests/fixtures/native_point_history/input/metadata.toml -text
+/tests/fixtures/native_point_history/snapshot/summary.toml -text
+/tests/fixtures/native_point_history/snapshot/point_state_history.csv -text
+/tests/fixtures/native_point_history/snapshot/directed_bond_state_history.csv -text
+/tests/fixtures/native_point_history/snapshot/canonical_bond_state_history.csv -text
+/tests/fixtures/bond_events/native_shaped_fixture.json -text
+/tests/fixtures/energy_ledger/audit_cases.json -text
+/docs/evidence/20261005/** -text
+
+/docs/backup/20261007/raw_source/** -text

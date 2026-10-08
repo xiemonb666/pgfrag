@@ -1,0 +1,16 @@
+{
+  "status": "SCRATCH_ONLY_MANIFEST_EDGE",
+  "utc": "2026-10-05T10:42:39.664Z",
+  "original_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+  "scratch_sha256": "917f36054a28bb9c45dd398f0703350a95e0552ac83c94fd5be59eeb69d32d41",
+  "changed_line": 418,
+  "changed_field": "deps.Peridynamics[1].deps",
+  "before": "deps = [\"AbaqusReader\", \"Dates\", \"IterativeSolvers\", \"LibGit2\", \"LinearAlgebra\", \"LinearMaps\", \"MPI\", \"PointNeighbors\", \"PrecompileTools\", \"Printf\", \"ProgressMeter\", \"StaticArrays\", \"ThreadPinning\", \"TimerOutputs\"]",
+  "after": "deps = [\"AbaqusReader\", \"Dates\", \"IterativeSolvers\", \"LibGit2\", \"LinearAlgebra\", \"LinearMaps\", \"MPI\", \"PointNeighbors\", \"PrecompileTools\", \"Printf\", \"ProgressMeter\", \"SHA\", \"StaticArrays\", \"TOML\", \"ThreadPinning\", \"TimerOutputs\"]",
+  "only_raw_changed_line": true,
+  "added_stdlibs": [
+    "SHA",
+    "TOML"
+  ],
+  "pkg_commands": "none"
+}

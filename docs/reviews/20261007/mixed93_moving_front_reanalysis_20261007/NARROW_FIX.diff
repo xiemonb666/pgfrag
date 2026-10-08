@@ -1,0 +1,83 @@
+--- pre_batchfix_snapshot/mixed93_moving_front_reanalysis.py
++++ current/mixed93_moving_front_reanalysis.py
+@@ -174,18 +174,21 @@
+         raise StudyError('cap points/weights leave the physical disk')
+     return (xyz, normals, weights, np.asarray(region, dtype=np.int64))
+ 
+-def _query_cap_mls(np, mls, source_xyz, queries, config):
++def _query_cap_mls(np, mls, source_xyz, queries, coarse_rows, config):
+     values, gradients, statuses, supports, conditions, batches = ([], [], [], [], [], [])
+-    for start in range(0, len(queries), MAX_BATCH):
+-        stop = min(start + MAX_BATCH, len(queries)); batch = np.ascontiguousarray(queries[start:stop])
+-        result = mls.shape_functions_3d(source_xyz, batch, config); batches.append(stop - start)
+-        if any((getattr(status, 'value', status) != 'OK' for status in result.statuses)):
+-            bad = [(i + start, getattr(status, 'value', status)) for i, status in enumerate(result.statuses) if getattr(status, 'value', status) != 'OK']
+-            raise StudyError(f'cap MLS query blocked: {bad[:4]}')
+-        values.append(np.asarray(result.weights, dtype=np.float64)); gradients.append(np.asarray(result.gradients, dtype=np.float64))
+-        supports.append(np.asarray(result.support_counts, dtype=np.int64))
+-        conditions.append(np.asarray(result.condition_numbers, dtype=np.float64))
+-        statuses.extend((getattr(status, 'value', status) for status in result.statuses))
++    if not 0 < coarse_rows < len(queries):
++        raise StudyError('coarse/fine cap MLS split is missing or outside the query table')
++    for group_start, group_stop in ((0, coarse_rows), (coarse_rows, len(queries))):
++        for start in range(group_start, group_stop, MAX_BATCH):
++            stop = min(start + MAX_BATCH, group_stop); batch = np.ascontiguousarray(queries[start:stop])
++            result = mls.shape_functions_3d(source_xyz, batch, config); batches.append(stop - start)
++            if any((getattr(status, 'value', status) != 'OK' for status in result.statuses)):
++                bad = [(i + start, getattr(status, 'value', status)) for i, status in enumerate(result.statuses) if getattr(status, 'value', status) != 'OK']
++                raise StudyError(f'cap MLS query blocked: {bad[:4]}')
++            values.append(np.asarray(result.weights, dtype=np.float64)); gradients.append(np.asarray(result.gradients, dtype=np.float64))
++            supports.append(np.asarray(result.support_counts, dtype=np.int64))
++            conditions.append(np.asarray(result.condition_numbers, dtype=np.float64))
++            statuses.extend((getattr(status, 'value', status) for status in result.statuses))
+     all_values = np.concatenate(values, axis=0); all_gradients = np.concatenate(gradients, axis=0)
+     all_supports = np.concatenate(supports); all_conditions = np.concatenate(conditions)
+     if all_values.shape != (len(queries), 27) or all_gradients.shape != (len(queries), 27, 3):
+@@ -193,7 +196,7 @@
+     if all_supports.shape != (len(queries),) or bool(np.any(all_supports != len(source_xyz))):
+         raise StudyError('cap MLS support counts differ from the complete frozen 27-source cloud')
+     _finite(np, 'cap MLS values', all_values); _finite(np, 'cap MLS gradients', all_gradients)
+-    if not bool(np.isfinite(all_conditions).all()) or bool(np.any(all_conditions > config.max_condition_number)) or max(batches) > MAX_BATCH:
++    if not bool(np.isfinite(all_conditions).all()) or bool(np.any(all_conditions > config.max_condition_number)) or max(batches) > MAX_BATCH or sum(batches) != len(queries):
+         raise StudyError('cap MLS condition/batch diagnostics are invalid')
+     return (all_values, all_gradients, statuses, all_supports, all_conditions, batches)
+ 
+@@ -341,7 +344,7 @@
+     gauge_rel = float(np.linalg.norm(gauge, ord=np.inf) / max(float(np.linalg.norm(cphys, ord=np.inf) * np.linalg.norm(q, ord=np.inf)), np.finfo(float).tiny))
+     twice_u = float(q @ (kraw @ q)); work = float(q @ force)
+     gauge_work = 0.0; energy_rel = abs(twice_u - work + gauge_work) / max(abs(twice_u), abs(work), abs(gauge_work), np.finfo(float).tiny)
+-    metrics = {'scaled_saddle_backward_error': saddle_rel, 'physical_weak_relative_error': weak_rel, 'physical_gauge_relative_error': gauge_rel, 'energy_identity_relative_error': energy_rel, 'twice_strain_energy_J': twice_u, 'strain_energy_J': 0.5 * twice_u, 'external_work_J': work, 'gauge_multiplier_work_J': gauge_work, 'potential_U_minus_W_J': 0.5 * twice_u - work, 'passed': max(saddle_rel, weak_rel, gauge_rel, energy_rel) <= KKT_TOL}
++    metrics = {'scaled_saddle_backward_error': saddle_rel, 'physical_weak_relative_error': weak_rel, 'physical_gauge_relative_error': gauge_rel, 'energy_identity_relative_error': energy_rel, 'twice_strain_energy_J': twice_u, 'strain_energy_J': 0.5 * twice_u, 'external_work_J': work, 'external_work_interpretation': 'q dot f force-displacement pairing under the fixed dead load; not integrated loading-path work', 'gauge_multiplier_work_J': gauge_work, 'potential_U_minus_W_J': 0.5 * twice_u - work, 'passed': max(saddle_rel, weak_rel, gauge_rel, energy_rel) <= KKT_TOL}
+     arrays = {'Cbar_scaled': cbar, 'gauge_row_scale': d, 'Chat_scaled': chat, 'saddle_scaled': saddle, 'rhs_scaled': rhs, 'solution_scaled': solution, 'lambda_scaled': lhat}
+     return (q, lam, metrics, arrays)
+ 
+@@ -399,7 +402,7 @@
+             raise StudyError('cap query positions are not unique across coarse/fine rules')
+         provider_cfg = case['provider']
+         config = mls.MLS3DConfig(reference_origin=tuple(provider_cfg['reference_origin_m']), reference_scale=float(provider_cfg['reference_scale_m']), support_radius=float(provider_cfg['support_radius_m']), max_condition_number=float(provider_cfg['max_condition_number']), rank_relative_tolerance=float(provider_cfg['rank_relative_tolerance']), switch_tolerance=float(provider_cfg['switch_tolerance']), duplicate_tolerance=float(provider_cfg['duplicate_tolerance']))
+-        cap_base_values, cap_base_gradients, cap_status, cap_supports, cap_conditions, query_batches = _query_cap_mls(np, mls, source_xyz, cap_xyz, config)
++        cap_base_values, cap_base_gradients, cap_status, cap_supports, cap_conditions, query_batches = _query_cap_mls(np, mls, source_xyz, cap_xyz, coarse_count, config)
+         if query_batches != [256, 192, 256, 256, 256, 128]:
+             raise StudyError(f'actual cap query batch order differs from declaration: {query_batches}')
+         split = {'coarse': slice(0, coarse_count), 'fine': slice(coarse_count, NEW_CAP_ROWS)}
+@@ -510,7 +513,7 @@
+             'fixed_physical_load_wrench': wrench_metrics,
+             'states': [],
+             'energy_release': {'definition': '-(Pi_candidate-Pi_old)/(L*delta_a)',
+-                'classification': 'finite fixed-load two-state diagnostic only; no Gc/CZM/growth inference'},
++                'classification': 'finite difference of two fixed-dead-load potential functionals; not integrated path work or a crack-growth criterion'},
+             'limitations': ['finite fixed quadrature; no convergence proof',
+                 'a>0 candidate solution is unknown under the frozen old-tip load',
+                 'near-tip LEFM is a small-strain idealization',
+--- pre_batchfix_snapshot/case.json
++++ current/case.json
+@@ -250,7 +250,8 @@
+   },
+   "energy_release_diagnostic": {
+     "U_J": "0.5*q^T*K*q",
+-    "W_J": "q^T*f",
++    "W_J": "q^T*f force-displacement pairing under the fixed dead load; not integrated loading-path work",
++    "W_interpretation": "The algebraic pairing used in the fixed-load potential functional, not work integrated over an incremental loading path",
+     "Pi_J": "U-W",
+     "G_fd_J_per_m2": "-(Pi_candidate-Pi_old)/(L*0.0005)",
+     "area_convention": "one-sided projected area L*delta_a; report two-face area separately",

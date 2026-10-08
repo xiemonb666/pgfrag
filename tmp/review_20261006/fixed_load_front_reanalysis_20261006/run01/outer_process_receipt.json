@@ -1,0 +1,63 @@
+{
+  "schema": "modeiii_pu_full3d_fixed_load_front_reanalysis_outer_process_receipt.v1",
+  "record_status": "POST_HOC_RECORD_FROM_EXISTING_TOOL_RETURN_AND_RESULT",
+  "execution_repeated": false,
+  "event_date": "2026-10-06",
+  "process": {
+    "launcher": "System.Diagnostics.Process via PowerShell; UseShellExecute=false; CreateNoWindow=true",
+    "working_directory": "C:/Users/xiemo/Desktop/ShardForge",
+    "executable": "C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe",
+    "arguments_property": "-B \"C:/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis.py\" --execute --output \"C:/Users/xiemo/Desktop/ShardForge/pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json\"",
+    "argv": [
+      "C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe",
+      "-B",
+      "C:/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis.py",
+      "--execute",
+      "--output",
+      "C:/Users/xiemo/Desktop/ShardForge/pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json"
+    ],
+    "timeout_seconds": 60,
+    "timeout_fired": false,
+    "elapsed_seconds_reported_by_wrapper": 0.5507252,
+    "child_process_exit_code": 0,
+    "functions_exec_wrapper_exit_code": 0
+  },
+  "invocation_inputs": {
+    "core_path": "pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis.py",
+    "core_sha256_at_invocation": "9707fa3c47403e0dada8081e3fba9273249e9a05fc2055b0e3a20a69b62c952c",
+    "case_path": "pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis_case.json",
+    "case_sha256_at_invocation": "8f919a55127b6f310e6f262b4a550f8daa9cd214496d824c3e1848ed0b1b46df",
+    "readme_sha256_at_invocation": "75f16a4acdb19e48d59b24190848ddf274b62920930e918fc6cb79c25738e2a4",
+    "source_pins_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "source_pins_sha256_preflight_observation": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "operator_result_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/run01/result.json",
+    "operator_result_sha256_preflight_observation": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "baseline_result_path": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run02/static_solve_bridge_result.json",
+    "baseline_result_sha256_preflight_observation": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+    "preflight_method": "stdlib-only AST/JSON/SHA/schema check before the authorized invocation"
+  },
+  "post_execution_identity": {
+    "operator_sha256_reported_by_child_stdout_and_result": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "baseline_sha256_reported_by_child_stdout_and_result": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+    "source_pins_json_sha256_echoed_by_child_or_result": "NOT_REPORTED",
+    "source_pin_validation_note": "The runner's _verify_sources path completed without blocking before it produced the result; the SOURCE_PINS file SHA was independently checked in the preflight. No dedicated post-run SOURCE_PINS digest was returned or captured.",
+    "result_path": "pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json",
+    "result_status": "FINITE_CHANGE_RELEASE_DIAGNOSTIC_ONLY_NOT_COMMITTED",
+    "result_bytes": 539566,
+    "result_sha256": "a60e51c85c26510c358ee57cafa4bfdda6ed89ea463d99bcc86551f64220732c"
+  },
+  "stream_persistence": {
+    "raw_stdout_bytes": "NOT_PERSISTED",
+    "raw_stderr_bytes": "NOT_PERSISTED",
+    "stdout_text_evidence": "The original functions.exec tool response displayed the wrapper's EXEC_SECONDS, EXEC_RC, and STDOUT lines. A textual reconstruction is included in OUTER_PROCESS_ADDENDUM.md; this is not a raw byte capture.",
+    "stderr_text_evidence": "The original tool response contained no STDERR= line. Because the raw stream was not persisted, this receipt does not assert or reconstruct its exact bytes.",
+    "wrapper_text_reconstruction_path": "OUTER_PROCESS_ADDENDUM.md"
+  },
+  "interpretation": {
+    "residual_gate_scope": "Numerical solve-trust checks only; not a material, fracture-physics, or growth-commit PASS.",
+    "gc_compared": false,
+    "growth_committed": false,
+    "rerun_or_threshold_change": false,
+    "receipt_created_after_execution": true
+  }
+}

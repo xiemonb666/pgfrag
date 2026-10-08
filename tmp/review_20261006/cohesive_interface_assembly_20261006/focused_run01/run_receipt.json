@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "checker_executed_once": true,
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_interface_assembly_20261006\\check_interface_numerics.py"
+  ],
+  "timeout_seconds": 10.0,
+  "real_return_code": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.3356453999876976,
+  "stdout_bytes": 2496,
+  "stderr_bytes": 0,
+  "combined_output_under_1_mib": true,
+  "raw_stdout_file": "raw.stdout.bin",
+  "raw_stderr_file": "raw.stderr.bin",
+  "numeric_result_file": "numeric_result.json",
+  "parse_error": null,
+  "pins_before": {
+    "assembly": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "checker": "5dc47e90f7bde645854cd8333c177e52f5d0fbab118477f4990eb215b1b5e577",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+  },
+  "pins_after": {
+    "assembly": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "checker": "5dc47e90f7bde645854cd8333c177e52f5d0fbab118477f4990eb215b1b5e577",
+    "scalar": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+  },
+  "pins_unchanged": true
+}

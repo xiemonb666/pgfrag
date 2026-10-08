@@ -1,0 +1,196 @@
+from __future__ import annotations
+
+import hashlib
+from pathlib import Path
+import shutil
+import tempfile
+import unittest
+
+from pgfrag.native_point_history import NATIVE_ORIGIN_STATUS, read_native_point_history
+
+
+FIXTURE_ROOT = Path(__file__).resolve().parent / "fixtures" / "native_point_history"
+
+
+def _read(snapshot: Path | None = None, fixture_root: Path = FIXTURE_ROOT):
+    selected_snapshot = snapshot or fixture_root / "snapshot"
+    return read_native_point_history(
+        selected_snapshot,
+        fixture_root / "input" / "points.csv",
+        fixture_root / "input" / "metadata.toml",
+    )
+
+
+class NativePointHistoryTests(unittest.TestCase):
+    def test_complete_hand_authored_history_exports_raw_bond_events_mapping(self) -> None:
+        result = _read()
+        self.assertEqual(result.status, "READY")
+        self.assertEqual(result.native_origin_status, "CALLER_SUPPLIED_ARCHIVE_NOT_AUTHENTICATED")
+        self.assertEqual(result.native_origin_status, NATIVE_ORIGIN_STATUS)
+        self.assertEqual(result.source_reference, "hand-authored native point history fixture")
+        self.assertEqual(result.point_ids, (11, 22))
+        self.assertEqual(result.rest_positions_m[22], (0.001, 0.0, 0.0))
+        self.assertEqual(result.point_volumes_m3, {11: 1e-9, 22: 1e-9})
+        self.assertEqual(result.point_masses_kg, {11: 2e-6, 22: 2e-6})
+        self.assertEqual(result.initial_bonds, ((11, 22),))
+        self.assertEqual([frame.step for frame in result.frames], [0, 1, 2])
+        self.assertEqual([frame.time_s for frame in result.frames], [0.0, 0.25, 0.5])
+        self.assertEqual([frame.step_dt_s for frame in result.frames], [None, 0.25, 0.25])
+        self.assertEqual([frame.accepted_dt_s for frame in result.frames], [0.25, 0.25, 0.25])
+        self.assertEqual([state.active for state in result.frames[-1].directed_bonds], [False, False])
+
+        mapping = result.bond_events_mapping
+        self.assertIsNotNone(mapping)
+        assert mapping is not None
+        self.assertEqual(mapping["expected_final_step"], 2)
+        self.assertEqual(mapping["expected_dt_s"], 0.25)
+        self.assertEqual(mapping["initial_bonds"], [[11, 22]])
+        self.assertEqual(mapping["frames"][0]["step_dt_s"], None)
+        self.assertEqual(mapping["frames"][2]["directed_bonds"][0]["native_field"],
+                         "directed_bond_state_history.csv:line-6:directed_active")
+        self.assertEqual(mapping["provenance"]["native_origin_status"], NATIVE_ORIGIN_STATUS)
+        self.assertEqual(mapping["provenance"]["native_source"], result.source_reference)
+        self.assertEqual(len(result.files), 7)
+        self.assertTrue(all(item.bytes is not None and item.sha256 for item in result.files))
+        self.assertEqual(result.to_dict()["interpretation"]["R2"], "UNKNOWN_NOT_DERIVED")
+        self.assertNotIn("events", result.to_dict())
+
+    def test_snapshot_summary_status_does_not_authenticate_origin(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            copied = Path(temporary) / "snapshot"
+            shutil.copytree(FIXTURE_ROOT / "snapshot", copied)
+            summary = copied / "summary.toml"
+            summary.write_text(summary.read_text(encoding="utf-8").replace(
+                'status = "COMPLETED"', 'status = "CALLER_CLAIMS_COMPLETED"'
+            ), encoding="utf-8")
+            result = _read(copied)
+        self.assertEqual(result.status, "READY")
+        self.assertEqual(result.summary_status, "CALLER_CLAIMS_COMPLETED")
+        self.assertEqual(result.native_origin_status, NATIVE_ORIGIN_STATUS)
+
+    def test_reciprocal_mismatch_is_incomplete_and_has_no_event_mapping(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            copied = Path(temporary) / "snapshot"
+            shutil.copytree(FIXTURE_ROOT / "snapshot", copied)
+            directed = copied / "directed_bond_state_history.csv"
+            text = directed.read_text(encoding="utf-8")
+            directed.write_text(text.replace(
+                "1,0.25,0.25,22,11,11,22,true,true",
+                "1,0.25,0.25,22,11,11,22,false,true",
+            ), encoding="utf-8")
+            result = _read(copied)
+        self.assertEqual(result.status, "INCOMPLETE")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertTrue(any("reciprocal native bond states disagree" in reason for reason in result.reasons))
+
+    def test_boolean_tokens_are_exact_and_truncated_tail_keeps_only_raw_prefix(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            copied = Path(temporary) / "snapshot"
+            shutil.copytree(FIXTURE_ROOT / "snapshot", copied)
+            directed = copied / "directed_bond_state_history.csv"
+            directed.write_text(directed.read_text(encoding="utf-8").replace(
+                "0,0,0.25,11,22,11,22,true,true",
+                "0,0,0.25,11,22,11,22,TRUE,true",
+            ), encoding="utf-8")
+            bool_result = _read(copied)
+        self.assertEqual(bool_result.status, "INCOMPLETE")
+        self.assertIsNone(bool_result.bond_events_mapping)
+        self.assertTrue(any("exact lowercase string" in reason for reason in bool_result.reasons))
+
+        with tempfile.TemporaryDirectory() as temporary:
+            copied = Path(temporary) / "snapshot"
+            shutil.copytree(FIXTURE_ROOT / "snapshot", copied)
+            point_file = copied / "point_state_history.csv"
+            data = point_file.read_bytes()
+            point_file.write_bytes(data[:-2])
+            result = _read(copied)
+        self.assertEqual(result.status, "INCOMPLETE")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertEqual([frame.step for frame in result.frames], [0, 1])
+        self.assertEqual(len(result.raw_point_rows), 5)
+        self.assertTrue(any("truncated" in reason for reason in result.reasons))
+
+    def test_empty_snapshot_is_not_run(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            result = _read(Path(temporary) / "empty-snapshot")
+        self.assertEqual(result.status, "NOT_RUN")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertEqual(result.native_origin_status, NATIVE_ORIGIN_STATUS)
+
+    def test_nonfinite_point_state_is_incomplete(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture = Path(temporary) / "fixture"
+            shutil.copytree(FIXTURE_ROOT, fixture)
+            point_file = fixture / "snapshot" / "point_state_history.csv"
+            lines = point_file.read_text(encoding="utf-8").splitlines()
+            first = lines[1].split(",")
+            first[8] = "NaN"  # x_current_m is schema numeric state.
+            lines[1] = ",".join(first)
+            point_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            result = _read(fixture_root=fixture)
+        self.assertEqual(result.status, "INCOMPLETE")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertTrue(any("must be finite" in reason for reason in result.reasons))
+
+    def test_point_active_count_must_match_directed_native_states(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture = Path(temporary) / "fixture"
+            shutil.copytree(FIXTURE_ROOT, fixture)
+            point_file = fixture / "snapshot" / "point_state_history.csv"
+            lines = point_file.read_text(encoding="utf-8").splitlines()
+            target_index = next(index for index, line in enumerate(lines) if line.startswith("1,0.25,0.25,2,22,"))
+            fields = lines[target_index].split(",")
+            fields[27] = "0"  # n_active_bonds; both directed step-one states are active.
+            lines[target_index] = ",".join(fields)
+            point_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            result = _read(fixture_root=fixture)
+        self.assertEqual(result.status, "INCOMPLETE")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertTrue(any("n_active_bonds disagrees" in reason for reason in result.reasons))
+
+    def test_density_volume_overflow_is_rejected_even_when_each_input_is_finite(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture = Path(temporary) / "fixture"
+            shutil.copytree(FIXTURE_ROOT, fixture)
+            points_path = fixture / "input" / "points.csv"
+            point_lines = points_path.read_text(encoding="utf-8").splitlines()
+            for index in range(1, len(point_lines)):
+                fields = point_lines[index].split(",")
+                fields[4] = "2"
+                point_lines[index] = ",".join(fields)
+            point_bytes = ("\n".join(point_lines) + "\n").encode("utf-8")
+            points_path.write_bytes(point_bytes)
+            digest = hashlib.sha256(point_bytes).hexdigest()
+
+            metadata_path = fixture / "input" / "metadata.toml"
+            metadata = metadata_path.read_text(encoding="utf-8")
+            metadata = metadata.replace(
+                "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3", digest
+            ).replace("declared_volume_sum_m3 = 2e-9", "declared_volume_sum_m3 = 4.0")
+            metadata_path.write_text(metadata, encoding="utf-8")
+
+            summary_path = fixture / "snapshot" / "summary.toml"
+            summary = summary_path.read_text(encoding="utf-8")
+            summary = summary.replace(
+                "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3", digest
+            ).replace("point_volume_sum_m3 = 2e-9", "point_volume_sum_m3 = 4.0")
+            summary = summary.replace("point_mass_sum_kg = 4e-6", "point_mass_sum_kg = 2.0")
+            summary = summary.replace("rho_kg_m3 = 2000.0", "rho_kg_m3 = 1e308")
+            summary_path.write_text(summary, encoding="utf-8")
+
+            point_history = fixture / "snapshot" / "point_state_history.csv"
+            state_lines = point_history.read_text(encoding="utf-8").splitlines()
+            for index in range(1, len(state_lines)):
+                fields = state_lines[index].split(",")
+                fields[28] = "2"
+                fields[29] = "1"
+                state_lines[index] = ",".join(fields)
+            point_history.write_text("\n".join(state_lines) + "\n", encoding="utf-8")
+            result = _read(fixture_root=fixture)
+        self.assertEqual(result.status, "INCOMPLETE")
+        self.assertIsNone(result.bond_events_mapping)
+        self.assertTrue(any("density × point volume product is not positive finite" in reason for reason in result.reasons))
+
+
+if __name__ == "__main__":
+    unittest.main()

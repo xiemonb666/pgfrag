@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pgfrag.fracture_artifact.v1.schema.json",
+  "title": "PG fracture artifact to A12 observation and audit truth contract",
+  "description": "Strict producer artifact envelope. Contextual reciprocity, lineage, units, leakage and qualification rules are additionally enforced by fracture_artifact_contract.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "artifact_id", "qualification", "mother", "material", "load",
+    "solver", "discretization", "fragmentation_basis", "fragments",
+    "fracture_surface_pairs", "events", "observation", "clean_ground_truth"
+  ],
+  "properties": {
+    "schema": {"const": "pgfrag.fracture_artifact.v1"},
+    "artifact_id": {"$ref": "#/$defs/id"},
+    "qualification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["class", "physical_validation_receipt"],
+      "properties": {
+        "class": {"enum": ["FIXTURE_GEOMETRY_ONLY", "SIMULATION_UNCALIBRATED", "PHYSICALLY_VALIDATED"]},
+        "physical_validation_receipt": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "object", "additionalProperties": false,
+             "required": ["receipt_id", "evidence_manifest_sha256", "criteria_sha256", "verifier_id", "signature_sha256"],
+             "properties": {
+               "receipt_id": {"$ref": "#/$defs/id"},
+               "evidence_manifest_sha256": {"$ref": "#/$defs/sha256"},
+               "criteria_sha256": {"$ref": "#/$defs/sha256"},
+               "verifier_id": {"$ref": "#/$defs/id"},
+               "signature_sha256": {"$ref": "#/$defs/sha256"}
+             }}
+          ]
+        }
+      }
+    },
+    "mother": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mother_id", "mesh_path", "mesh_sha256", "reference_frame"],
+      "properties": {
+        "mother_id": {"$ref": "#/$defs/id"}, "mesh_path": {"$ref": "#/$defs/relativePath"}, "mesh_sha256": {"$ref": "#/$defs/sha256"},
+        "reference_frame": {
+          "type": "object", "additionalProperties": false,
+          "required": ["name", "length_unit", "mass_unit", "volume_unit", "time_unit"],
+          "properties": {"name": {"const": "right_handed_z_up"}, "length_unit": {"const": "m"}, "mass_unit": {"const": "kg"}, "volume_unit": {"const": "m3"}, "time_unit": {"const": "s"}}
+        }
+      }
+    },
+    "material": {
+      "type": "object", "additionalProperties": false, "required": ["qualification", "parameters"],
+      "properties": {
+        "qualification": {"enum": ["UNCALIBRATED", "CALIBRATED"]},
+        "parameters": {
+          "type": "object", "additionalProperties": false,
+          "required": ["density_kg_m3", "young_modulus_pa", "poisson_ratio", "fracture_toughness_j_m2"],
+          "properties": {
+            "density_kg_m3": {"$ref": "#/$defs/measurement"},
+            "young_modulus_pa": {"$ref": "#/$defs/measurement"},
+            "poisson_ratio": {"$ref": "#/$defs/measurement"},
+            "fracture_toughness_j_m2": {"$ref": "#/$defs/measurement"}
+          }
+        }
+      }
+    },
+    "load": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "source_sha256", "boundary_conditions_sha256", "peak_force_n", "time_window_s"],
+      "properties": {"kind": {"$ref": "#/$defs/id"}, "source_sha256": {"$ref": "#/$defs/sha256"}, "boundary_conditions_sha256": {"$ref": "#/$defs/sha256"}, "peak_force_n": {"$ref": "#/$defs/measurement"}, "time_window_s": {"$ref": "#/$defs/measurement"}}
+    },
+    "solver": {
+      "type": "object", "additionalProperties": false,
+      "required": ["execution_status", "solver_id", "version", "source_sha256", "build_sha256", "job_sha256", "result_sha256", "run_id"],
+      "properties": {
+        "execution_status": {"enum": ["NOT_RUN", "COMPLETED"]}, "solver_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/id"}, "run_id": {"$ref": "#/$defs/id"},
+        "source_sha256": {"$ref": "#/$defs/sha256Knowledge"}, "build_sha256": {"$ref": "#/$defs/sha256Knowledge"}, "job_sha256": {"$ref": "#/$defs/sha256Knowledge"}, "result_sha256": {"$ref": "#/$defs/sha256Knowledge"}
+      }
+    },
+    "discretization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "recipe_sha256", "point_roster_sha256", "spacing_m", "horizon_m"],
+      "properties": {"method": {"$ref": "#/$defs/id"}, "recipe_sha256": {"$ref": "#/$defs/sha256"}, "point_roster_sha256": {"$ref": "#/$defs/sha256"}, "spacing_m": {"$ref": "#/$defs/measurement"}, "horizon_m": {"$ref": "#/$defs/measurement"}}
+    },
+    "fragmentation_basis": {"enum": ["CLOSED_MESH_PARTITION", "SOLVER_STATE_AND_CLOSED_MESH"]},
+    "fragments": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/fragment"}},
+    "fracture_surface_pairs": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/pair"}},
+    "events": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/event"}},
+    "observation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["capture_id", "frame", "length_unit", "processing_recipe_sha256", "fragment_observations"],
+      "properties": {"capture_id": {"$ref": "#/$defs/id"}, "frame": {"const": "sensor_observation"}, "length_unit": {"const": "m"}, "processing_recipe_sha256": {"$ref": "#/$defs/sha256"}, "fragment_observations": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/observationFragment"}}}
+    },
+    "clean_ground_truth": {
+      "type": "object", "additionalProperties": false, "required": ["namespace", "labels"],
+      "properties": {"namespace": {"const": "pgfrag.clean_ground_truth.v1"}, "labels": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/label"}}}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "measurement": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["state", "value", "unit"], "properties": {"state": {"const": "KNOWN"}, "value": {"type": "number"}, "unit": {"type": "string", "minLength": 1}}},
+        {"type": "object", "additionalProperties": false, "required": ["state", "reason"], "properties": {"state": {"enum": ["UNKNOWN", "NOT_APPLICABLE"]}, "reason": {"type": "string", "minLength": 1}}}
+      ]
+    },
+    "sha256Knowledge": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["state", "value"], "properties": {"state": {"const": "KNOWN"}, "value": {"$ref": "#/$defs/sha256"}}},
+        {"type": "object", "additionalProperties": false, "required": ["state", "reason"], "properties": {"state": {"enum": ["UNKNOWN", "NOT_APPLICABLE"]}, "reason": {"type": "string", "minLength": 1}}}
+      ]
+    },
+    "mesh": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "format", "frame", "length_unit", "watertight", "closure_method"],
+      "properties": {"path": {"$ref": "#/$defs/relativePath"}, "sha256": {"$ref": "#/$defs/sha256"}, "format": {"enum": ["PLY", "OBJ", "VTK", "GLB", "MESH_REFERENCE"]}, "frame": {"const": "mother_reference"}, "length_unit": {"const": "m"}, "watertight": {"type": "boolean"}, "closure_method": {"$ref": "#/$defs/id"}}
+    },
+    "fragment": {
+      "type": "object", "additionalProperties": false, "required": ["fragment_id", "closed_mesh", "mass_kg", "volume_m3", "lineage"],
+      "properties": {
+        "fragment_id": {"$ref": "#/$defs/id"}, "closed_mesh": {"$ref": "#/$defs/mesh"}, "mass_kg": {"$ref": "#/$defs/measurement"}, "volume_m3": {"$ref": "#/$defs/measurement"},
+        "lineage": {"oneOf": [
+          {"type": "object", "additionalProperties": false, "required": ["state", "parent_fragment_ids", "creation_event_id"], "properties": {"state": {"const": "KNOWN"}, "parent_fragment_ids": {"type": "array", "maxItems": 100000, "items": {"$ref": "#/$defs/id"}}, "creation_event_id": {"type": ["string", "null"]}}},
+          {"type": "object", "additionalProperties": false, "required": ["state", "reason"], "properties": {"state": {"const": "UNKNOWN"}, "reason": {"type": "string", "minLength": 1}}}
+        ]}
+      }
+    },
+    "vectors": {"type": "array", "minItems": 3, "maxItems": 100000, "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}},
+    "triangles": {"type": "array", "minItems": 1, "maxItems": 200000, "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0}}},
+    "surface": {
+      "type": "object", "additionalProperties": false, "required": ["surface_id", "reciprocal_surface_id", "fragment_id", "mother_coordinates", "normals", "triangles", "parent_surface_id"],
+      "properties": {
+        "surface_id": {"$ref": "#/$defs/id"}, "reciprocal_surface_id": {"$ref": "#/$defs/id"}, "fragment_id": {"$ref": "#/$defs/id"}, "triangles": {"$ref": "#/$defs/triangles"}, "parent_surface_id": {"type": ["string", "null"]},
+        "mother_coordinates": {"type": "object", "additionalProperties": false, "required": ["frame", "length_unit", "vertices"], "properties": {"frame": {"const": "mother_reference"}, "length_unit": {"const": "m"}, "vertices": {"$ref": "#/$defs/vectors"}}},
+        "normals": {"type": "object", "additionalProperties": false, "required": ["frame", "unit", "vectors"], "properties": {"frame": {"const": "mother_reference"}, "unit": {"const": "1"}, "vectors": {"$ref": "#/$defs/vectors"}}}
+      }
+    },
+    "pair": {"type": "object", "additionalProperties": false, "required": ["pair_id", "event_id", "negative_fragment_id", "positive_fragment_id", "reference_area_m2", "negative_surface", "positive_surface"], "properties": {"pair_id": {"$ref": "#/$defs/id"}, "event_id": {"$ref": "#/$defs/id"}, "negative_fragment_id": {"$ref": "#/$defs/id"}, "positive_fragment_id": {"$ref": "#/$defs/id"}, "reference_area_m2": {"$ref": "#/$defs/measurement"}, "negative_surface": {"$ref": "#/$defs/surface"}, "positive_surface": {"$ref": "#/$defs/surface"}}},
+    "event": {"type": "object", "additionalProperties": false, "required": ["event_id", "time_s", "solver_step", "parent_event_id", "fracture_pair_ids", "kind"], "properties": {"event_id": {"$ref": "#/$defs/id"}, "time_s": {"$ref": "#/$defs/measurement"}, "solver_step": {"$ref": "#/$defs/measurement"}, "parent_event_id": {"type": ["string", "null"]}, "fracture_pair_ids": {"type": "array", "maxItems": 100000, "items": {"$ref": "#/$defs/id"}}, "kind": {"$ref": "#/$defs/id"}}},
+    "payloadRef": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "format"], "properties": {"path": {"$ref": "#/$defs/relativePath"}, "sha256": {"$ref": "#/$defs/sha256"}, "format": {"enum": ["PLY", "JSON"]}}},
+    "relativePath": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?/)[^\\\\:]+$"},
+    "observationFragment": {"type": "object", "additionalProperties": false, "required": ["observation_fragment_id", "observed_mesh", "visibility_mask", "sample_count", "visible_area_m2"], "properties": {"observation_fragment_id": {"type": "string", "pattern": "^obs_[0-9a-f]{16}$"}, "observed_mesh": {"$ref": "#/$defs/payloadRef"}, "visibility_mask": {"$ref": "#/$defs/payloadRef"}, "sample_count": {"$ref": "#/$defs/measurement"}, "visible_area_m2": {"$ref": "#/$defs/measurement"}}},
+    "label": {"type": "object", "additionalProperties": false, "required": ["pair_id", "relation_kind", "negative_fragment_id", "positive_fragment_id", "event_id", "label_provenance_sha256"], "properties": {"pair_id": {"$ref": "#/$defs/id"}, "relation_kind": {"enum": ["FIXTURE_PAIR", "SIMULATED_CANDIDATE", "UNKNOWN", "R2"]}, "negative_fragment_id": {"$ref": "#/$defs/id"}, "positive_fragment_id": {"$ref": "#/$defs/id"}, "event_id": {"$ref": "#/$defs/id"}, "label_provenance_sha256": {"$ref": "#/$defs/sha256"}}
+  }
+}
+}

@@ -1,0 +1,314 @@
+{
+  "schema": "pgfrag.pd.point_event.execution_receipt.v1",
+  "run_id": "zero_load_control_run01",
+  "status": "DATA_GATE_PASS_WITH_NONFATAL_PACKAGE_PRECOMPILE_ERROR_RECORDED",
+  "wrapper_invocation": {
+    "command": "PowerShell call operator invoking the absolute frozen launcher path",
+    "launcher_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\launch_zero_load_probe.ps1",
+    "actual_wrapper_exit_code": 0,
+    "exec_session_id": 81609,
+    "exec_console_output_text": "",
+    "wrapper_exit_evidence": "functions.exec_command session 81609 completed with exit_code 0"
+  },
+  "julia_child": {
+    "process_id": 83652,
+    "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+    "argv": [
+      "--project=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia",
+      "--startup-file=no",
+      "--history-file=no",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\run_pd_point_event_probe.jl",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.points.csv",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.metadata.toml",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\common_case.toml",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\case_zero_load_control.toml"
+    ],
+    "observed_exit_code": 0,
+    "exit_code_observed": true,
+    "timed_out": false,
+    "wait_completed": true,
+    "launch_exception": null,
+    "timeout_seconds": 120,
+    "started_utc": "2026-10-04T08:59:49.8884462Z",
+    "finished_utc": "2026-10-04T09:01:24.9812379Z",
+    "elapsed_seconds": 95.092791
+  },
+  "freeze": {
+    "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\manifest.json",
+    "manifest_bytes": 18192,
+    "manifest_sha256": "c6ef0d7292da4c451aeecf302eb714b9c615f61c8ef65581d40f599d7e88a897",
+    "source_file_count": 31,
+    "source_file_hashes": [
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/README.md",
+        "role": "experiment_contract",
+        "sha256": "2efafea5b7d6811eb5e6007d2a915d9336b32ca2ecc80b2760b78cb7627a7386"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+        "role": "native_event_observer",
+        "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/make_point_inputs.ps1",
+        "role": "deterministic_fixture_generator",
+        "sha256": "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/freeze_manifest.ps1",
+        "role": "manifest_builder",
+        "sha256": "0dd9128d7ebb6db22fda0b4f9a34751bed8b26c9b92a2e53cba85e80a08b3af6"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1",
+        "role": "frozen_zero_load_launcher",
+        "sha256": "eba9c6d94b100ca2144b4f213402d450b450b10dbcec2db7f9805b81dee8b13e"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/common_case.toml",
+        "role": "common_native_solver_and_material_config",
+        "sha256": "ca2e4a64946d32f2ba6abdc1bd5b4d1768f5f7587812f3bcce490c0713a0f3bf"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/case_zero_load_control.toml",
+        "role": "first_runtime_gate_only",
+        "sha256": "a2e6694d047e70ed445ee9037bbcbabbd99095dd060ebe1c78bed674199b2178"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/case_tinyload_event_diagnostic.toml",
+        "role": "future_separately_authorized_case",
+        "sha256": "53f7aca2d222eb714c1640a27d389aa845669b7cbf26a449f831e4eb307f4a7c"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+        "role": "primary_frozen_points",
+        "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+        "role": "primary_point_contract",
+        "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.points.csv",
+        "role": "jitter_candidate_frozen_points",
+        "sha256": "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5"
+      },
+      {
+        "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.metadata.toml",
+        "role": "jitter_candidate_point_contract",
+        "sha256": "47e4fe7d1d66063b2c234e48e65bae286fc4cdfda8d18b5913a3367da3a92e19"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+        "role": "native_julia_project",
+        "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+        "role": "native_julia_lockfile",
+        "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+        "role": "native_backend_provenance",
+        "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/run_fixture.jl",
+        "role": "frozen_baseline_runner_reference",
+        "sha256": "2468586567a2a777de155febd8b1ad9829016f682ede7b69c5f2f7a5c9952534"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/Peridynamics.jl",
+        "role": "native_package_module",
+        "sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl",
+        "role": "native_submit_sequence",
+        "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+        "role": "native_step_output_hooks",
+        "sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/job.jl",
+        "role": "native_job_and_options_contract",
+        "sha256": "6b44e29743dda45e272033c08f985cfbeed91e9f83821b02a2a25549e9c314e1"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl",
+        "role": "native_initial_force_call",
+        "sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/systems.jl",
+        "role": "native_system_logger_path",
+        "sha256": "0078283af05c365df7cccf41cee4e10bcf27a2cc44717d0f41db20f30855bda2"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/time_solvers.jl",
+        "role": "native_generic_time_solver_logger",
+        "sha256": "03dbb2371e6bc6a2036f3256c505b9d503477b5a4b9fb4580360d7dfcfeed157"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+        "role": "native_velocity_verlet_clock_and_step",
+        "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+        "role": "native_arbitrary_point_body",
+        "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/point_sets.jl",
+        "role": "native_point_identity_sets",
+        "sha256": "88aef64ec47026b36278c7ab266b8393c41e7e74a85c76b1a33a2aa29ec57c0f"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+        "role": "native_velocity_boundary_conditions",
+        "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
+        "role": "native_velocity_initial_conditions",
+        "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+        "role": "native_bond_failure_dispatch",
+        "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+        "role": "native_osb_critical_stretch_failure",
+        "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+      },
+      {
+        "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/logs.jl",
+        "role": "native_options_logger_access",
+        "sha256": "6c64b1e723adbed0dd0f55fded302b30776018851910360030b5eaebb2d6715a"
+      }
+    ],
+    "runtime_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+    "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "runtime_version_path_component": "julia-1.10.12; version not runtime-probed under the static-only instruction",
+    "runner_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+    "launcher_sha256": "eba9c6d94b100ca2144b4f213402d450b450b10dbcec2db7f9805b81dee8b13e",
+    "input_files_prelaunch": [
+      {
+        "path": "input/coupon_uniform_voxel_5cube_125.points.csv",
+        "bytes": 4923,
+        "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+      },
+      {
+        "path": "input/coupon_uniform_voxel_5cube_125.metadata.toml",
+        "bytes": 1587,
+        "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+      }
+    ],
+    "input_files_postrun": [
+      {
+        "path": "input/coupon_uniform_voxel_5cube_125.points.csv",
+        "bytes": 4923,
+        "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+      },
+      {
+        "path": "input/coupon_uniform_voxel_5cube_125.metadata.toml",
+        "bytes": 1587,
+        "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+      }
+    ]
+  },
+  "point_state_audit": {
+    "status": "PASS",
+    "rows_total": 250,
+    "rows_per_step": {
+      "0": 125,
+      "1": 125
+    },
+    "unique_source_ids_per_step": 125,
+    "native_indices_per_step": "exactly 1..125",
+    "all_positions_velocities_accelerations_force_densities_damage_volumes_masses_times_and_dt_finite": true,
+    "max_abs_velocity_m_s": 0.0,
+    "max_abs_step0_velocity_m_s": 0.0,
+    "volume_sum_m3": 1.249999999999999e-07,
+    "mass_kg_each_step": 0.00026250000000000004,
+    "expected_mass_kg": 0.00026249999999999977,
+    "accepted_dt_s": 4.925124976599115e-07,
+    "native_stability_bound_dt_s": 4.925124976599115e-07,
+    "step0_time_s": 0.0,
+    "step1_time_s": 4.925124976599115e-07,
+    "maximum_absolute_logged_force_density_N_m3": 0.0
+  },
+  "bond_state_audit": {
+    "status": "PASS",
+    "samples": 2,
+    "directed_rows_total": 12248,
+    "directed_rows_per_step": 6124,
+    "canonical_rows_total": 6124,
+    "canonical_rows_per_step": 3062,
+    "reciprocal_directions_present_and_equal": true,
+    "directed_states_match_canonical_states": true,
+    "directed_transition_rows": 0,
+    "canonical_transition_rows": 0
+  },
+  "output_contract": {
+    "out_empty_before_and_after": true,
+    "snapshot_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01",
+    "launch_receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.launch_receipt.json",
+    "stdout_log": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stdout.log",
+    "stdout_bytes": 123,
+    "stdout_sha256": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8",
+    "stderr_log": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stderr.log",
+    "stderr_bytes": 483,
+    "stderr_sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee",
+    "snapshot_files": [
+      {
+        "path": "snapshots/zero_load_control_run01/canonical_bond_state_history.csv",
+        "bytes": 286024,
+        "sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3"
+      },
+      {
+        "path": "snapshots/zero_load_control_run01/canonical_bond_transitions.csv",
+        "bytes": 70,
+        "sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692"
+      },
+      {
+        "path": "snapshots/zero_load_control_run01/directed_bond_state_history.csv",
+        "bytes": 709252,
+        "sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845"
+      },
+      {
+        "path": "snapshots/zero_load_control_run01/directed_bond_transitions.csv",
+        "bytes": 142,
+        "sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137"
+      },
+      {
+        "path": "snapshots/zero_load_control_run01/point_state_history.csv",
+        "bytes": 49725,
+        "sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175"
+      },
+      {
+        "path": "snapshots/zero_load_control_run01/summary.toml",
+        "bytes": 1732,
+        "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+      }
+    ]
+  },
+  "package_precompile_stderr": {
+    "present": true,
+    "severity": "ERROR output from package precompile workload, but Julia child and wrapper both exited 0 and native probe summary is COMPLETED",
+    "text": "┌ Error: precompilation errored\n│   exception =\n│    LoadError: ArgumentError: Peridynamics headless backend rejects file-output Job options; use the PGFrag CSV/NPZ result adapter\n│    in expression starting at C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\auxiliary\\precompile_workload.jl:1\n└ @ Peridynamics C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl:160\n"
+  },
+  "interpretation_limits": [
+    "This gate proves two native output hook samples for this run, one chunk/thread, exact stable point mapping, graph reciprocity, zero bond transitions, and mass/time checks.",
+    "It does not prove loaded fracture detection, physical fragment count, crack surfaces, energy closure, material calibration, directional-bias removal, R2, or training qualification."
+  ]
+}

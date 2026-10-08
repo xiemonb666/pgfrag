@@ -1,0 +1,91 @@
+{
+  "fixture_schema": "pgfrag.energy-ledger.inputs.v1",
+  "tolerances": {
+    "negative_dissipation_abs_j": 1e-12,
+    "negative_dissipation_definition": "Predeclared absolute roundoff floor; raw D below -1e-12 J fails, while raw values within the floor remain signed and visible.",
+    "negative_dissipation_source": "pgfrag/experiments/cohesive_bilinear_patch_20261004/manifest_bilinear_modeI_201_v2.json:checks.dissipated_min_J",
+    "balance_abs_j": 1e-12,
+    "balance_rel": 1e-10,
+    "balance_definition": "Per-sample residual passes when abs(residual) <= max(abs_tol_J, rel_tol * sum(abs(each baseline delta term))).",
+    "balance_source": "Synthetic analytic positive control in this fixture; no physical-run closure tolerance is claimed.",
+    "constitutive_relative_max": 0.01,
+    "constitutive_tolerance_definition": "Final native dissipated energy versus Gc*A, relative error at most 1 percent.",
+    "constitutive_tolerance_source": "pgfrag/experiments/cohesive_bilinear_patch_20261004/manifest_bilinear_modeI_201_v2.json:checks.final_dissipated_relative_error_vs_GcA"
+  },
+  "source_grounded_values": {
+    "extrinsic_dt_dissipated_endpoint_J": [
+      0.0,
+      -5.572968137645039e-05
+    ],
+    "extrinsic_dt2_dissipated_endpoint_J": [
+      0.0,
+      -9.726359554870569e-06
+    ],
+    "run03_roundoff_minimum_J": -1.3877787807814456e-23,
+    "run03_dissipated_initial_and_final_J": [
+      0.0,
+      3.0399999999999994e-05
+    ],
+    "run03_gc_times_area_J": 3.0399999999999997e-05,
+    "run03_reported_relative_error": 1.1145170358609216e-16,
+    "run03_solver_points": 201,
+    "run03_solver_steps": 201,
+    "run03_native_energy_keys": [
+      "kinetic",
+      "potential",
+      "dissipated",
+      "reversible",
+      "cohesive contact"
+    ],
+    "run03_energy_balance": "NOT_APPLICABLE: all XYZ DOFs on both half blocks are prescribed."
+  },
+  "positive_control": {
+    "clock_s": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "kinetic_J": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bulk_stored_J": [
+      10.0,
+      11.0,
+      12.0
+    ],
+    "cohesive_reversible_J": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "cohesive_contact_J": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "dissipated_J": [
+      0.0,
+      0.4,
+      1.0
+    ],
+    "external_work_J": [
+      0.0,
+      1.4,
+      3.0
+    ],
+    "expected_residuals_J": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "evidence_sources": {
+    "extrinsic_report": "relicweave-synlab/docs/a12/COHESIVE_CAPABILITY_20261004.md, rows for mode-I dt and dt/2; signed raw values and contact-key caveat.",
+    "physics_gate_report": "pgfrag/tmp/review_20261004/physics_acceptance_audit/report.md, energy/contact gate and UNKNOWN interpretations.",
+    "intrinsic_run03_summary": "tmp/review_20261004/implementation/evidence_archive_candidate_20261004_luna/copies/cohesive_bilinear_patch/run03/analysis/run03_analysis.json, 201-point summary. This is an all-DOF-prescribed constitutive toy only.",
+    "akantu_source": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/material_cohesive.cc and solid_mechanics_model.cc.",
+    "pd_source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl and short_range_force_contact.jl; pgfrag/src/pgfrag/resources/julia/run_fixture.jl."
+  }
+}

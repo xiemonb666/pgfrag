@@ -1,0 +1,75 @@
+{
+  "review_id": "continuous_polyline_bias_bounds_v2_convex_segment_upper",
+  "review_mode": "SOURCE_REVIEW_WITH_ONE_APPROVED_FOCUSED_RUN",
+  "experiment_path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006",
+  "review_snapshot_path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source",
+  "static_actions": ["python_ast_parse", "json_parse", "line_count", "sha256"],
+  "not_run": ["v1_suite_replay", "pytest", "solver", "provider", "render"],
+  "historical_source_only_receipt": {
+    "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/pins_before_focused_run02.json",
+    "sha256": "a3c0d3980ab186504b592d2973af51af9d0eb7a687d4a241b28a168636821160"
+  },
+  "historical_source_only_readme": {
+    "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/README_source_only.md",
+    "sha256": "eb2d79f42fb0100526d49223079fd5a42436942a1fd226c1a81024054dbff4f3"
+  },
+  "approved_focused_run": {
+    "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/focused_run02",
+    "test_groups": 5,
+    "metric_return_records": 7,
+    "exit_code": 0,
+    "duration_ms": 225.828,
+    "deadline_ms": 15000,
+    "output_limit_bytes": 2097152,
+    "stdout_sha256": "c1b7ceac8df1bc7bded35da3cd6e3e7bbd68a11184789f82a0404544d8bb1692",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "metric_return_records_sha256": "36250ea79ded21695da2378f389ed1ed70a86fc306d783c04433b0c3135b8ffc",
+    "run_receipt_sha256": "2b93b076959083e92c06f217d4bb6829fcafa24db8aa947a3a2a3c2ea12370f6",
+    "source_pins_unchanged": true
+  },
+  "pinned_v1_dependency": {
+    "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/continuous_polyline_bias_bounds.py",
+    "line_count": 235,
+    "sha256": "f1120332240df70e58fab20ba9fefcdac00751bcc8783f02a865cd9e45704375"
+  },
+  "experiment_files": [
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/convex_segment_upper.py",
+      "line_count": 121,
+      "sha256": "326f4b2f22468e0913974e8572ee0d489a47baf2b375ab18bb66780a29954ec2"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/tests/test_convex_segment_upper.py",
+      "line_count": 65,
+      "sha256": "6681d22b3f1a588264e8e4c2753db18ccd7f92ce042cf93cdce4418b65e1fe1e"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/CONVEX_SEGMENT_UPPER.md",
+      "line_count": 13,
+      "sha256": "1f18505a1d379d79b11d31227e930f757e0734a5a23c79bbd061665f589f4e86"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/fixtures/sparse_vertex_set_counterexample.json",
+      "line_count": 22,
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ],
+  "review_snapshot_files": [
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/convex_segment_upper.py",
+      "sha256": "326f4b2f22468e0913974e8572ee0d489a47baf2b375ab18bb66780a29954ec2"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/tests/test_convex_segment_upper.py",
+      "sha256": "6681d22b3f1a588264e8e4c2753db18ccd7f92ce042cf93cdce4418b65e1fe1e"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/README.md",
+      "sha256": "1f18505a1d379d79b11d31227e930f757e0734a5a23c79bbd061665f589f4e86"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/fixtures/sparse_vertex_set_counterexample.json",
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ]
+}

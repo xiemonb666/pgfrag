@@ -1,0 +1,361 @@
+{
+  "artifact_id": "fixture-artifact-contract-001",
+  "clean_ground_truth": {
+    "labels": [
+      {
+        "event_id": "event_fixture_0001",
+        "label_provenance_sha256": "ad9d8d87883e70caad3d3d8f020904f63aaec72b7e883fbd5e047b3ebe0b2a59",
+        "negative_fragment_id": "fragment_fixture_neg",
+        "pair_id": "pair_fixture_0001",
+        "positive_fragment_id": "fragment_fixture_pos",
+        "relation_kind": "FIXTURE_PAIR"
+      }
+    ],
+    "namespace": "pgfrag.clean_ground_truth.v1"
+  },
+  "discretization": {
+    "horizon_m": {
+      "reason": "geometry fixture has no nonlocal horizon",
+      "state": "NOT_APPLICABLE"
+    },
+    "method": "FIXTURE_TRIANGLE_PATCH",
+    "point_roster_sha256": "252d7edb03ecb8f4aab7c4413c7b603c6c7a69b5b5086b461f3561e9f7bca906",
+    "recipe_sha256": "ebd90b676b17433bf21281fe6cda287cda95861f03660bed08ecd52c51d5f51b",
+    "spacing_m": {
+      "reason": "geometry fixture has no material-point discretization",
+      "state": "NOT_APPLICABLE"
+    }
+  },
+  "events": [
+    {
+      "event_id": "event_fixture_0001",
+      "fracture_pair_ids": [
+        "pair_fixture_0001"
+      ],
+      "kind": "FIXTURE_SPLIT",
+      "parent_event_id": null,
+      "solver_step": {
+        "state": "KNOWN",
+        "unit": "1",
+        "value": 0.0
+      },
+      "time_s": {
+        "state": "KNOWN",
+        "unit": "s",
+        "value": 0.0
+      }
+    }
+  ],
+  "fracture_surface_pairs": [
+    {
+      "event_id": "event_fixture_0001",
+      "negative_fragment_id": "fragment_fixture_neg",
+      "negative_surface": {
+        "fragment_id": "fragment_fixture_neg",
+        "mother_coordinates": {
+          "frame": "mother_reference",
+          "length_unit": "m",
+          "vertices": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.001,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.001,
+              0.0
+            ]
+          ]
+        },
+        "normals": {
+          "frame": "mother_reference",
+          "unit": "1",
+          "vectors": [
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ]
+        },
+        "parent_surface_id": null,
+        "reciprocal_surface_id": "surface_fixture_pos",
+        "surface_id": "surface_fixture_neg",
+        "triangles": [
+          [
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "pair_id": "pair_fixture_0001",
+      "positive_fragment_id": "fragment_fixture_pos",
+      "positive_surface": {
+        "fragment_id": "fragment_fixture_pos",
+        "mother_coordinates": {
+          "frame": "mother_reference",
+          "length_unit": "mm",
+          "vertices": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.001,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.001,
+              0.0
+            ]
+          ]
+        },
+        "normals": {
+          "frame": "mother_reference",
+          "unit": "1",
+          "vectors": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "parent_surface_id": null,
+        "reciprocal_surface_id": "surface_fixture_neg",
+        "surface_id": "surface_fixture_pos",
+        "triangles": [
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "reference_area_m2": {
+        "state": "KNOWN",
+        "unit": "m2",
+        "value": 5e-07
+      }
+    }
+  ],
+  "fragmentation_basis": "CLOSED_MESH_PARTITION",
+  "fragments": [
+    {
+      "closed_mesh": {
+        "closure_method": "FIXTURE_ASSERTION_ONLY",
+        "format": "MESH_REFERENCE",
+        "frame": "mother_reference",
+        "length_unit": "m",
+        "path": "payload/fragment_neg.obj",
+        "sha256": "12729b283df176283bab43728127dc7460bd49f5d9e7a7a6f400f7ae855000ec",
+        "watertight": true
+      },
+      "fragment_id": "fragment_fixture_neg",
+      "lineage": {
+        "creation_event_id": "event_fixture_0001",
+        "parent_fragment_ids": [],
+        "state": "KNOWN"
+      },
+      "mass_kg": {
+        "state": "KNOWN",
+        "unit": "kg",
+        "value": 0.002
+      },
+      "volume_m3": {
+        "state": "KNOWN",
+        "unit": "m3",
+        "value": 1e-06
+      }
+    },
+    {
+      "closed_mesh": {
+        "closure_method": "FIXTURE_ASSERTION_ONLY",
+        "format": "MESH_REFERENCE",
+        "frame": "mother_reference",
+        "length_unit": "m",
+        "path": "payload/fragment_pos.obj",
+        "sha256": "857b4dbc128552e47878809461885a79b826a50ae7ed3d642fa9e12681da4a69",
+        "watertight": true
+      },
+      "fragment_id": "fragment_fixture_pos",
+      "lineage": {
+        "creation_event_id": "event_fixture_0001",
+        "parent_fragment_ids": [],
+        "state": "KNOWN"
+      },
+      "mass_kg": {
+        "state": "KNOWN",
+        "unit": "kg",
+        "value": 0.002
+      },
+      "volume_m3": {
+        "state": "KNOWN",
+        "unit": "m3",
+        "value": 1e-06
+      }
+    }
+  ],
+  "load": {
+    "boundary_conditions_sha256": "33f117324cbd56a2938a5bf57f6151db4329afc9c3c25b15e9c6662ae29def28",
+    "kind": "FIXTURE_NO_PHYSICAL_LOAD",
+    "peak_force_n": {
+      "state": "KNOWN",
+      "unit": "N",
+      "value": 0.0
+    },
+    "source_sha256": "ba52050fc84c8e1da1871d217607faa9dc710cc5cb24b9c9a1aa3c84ee1fb94f",
+    "time_window_s": {
+      "state": "KNOWN",
+      "unit": "s",
+      "value": 0.0
+    }
+  },
+  "material": {
+    "parameters": {
+      "density_kg_m3": {
+        "state": "KNOWN",
+        "unit": "kg/m3",
+        "value": 2000.0
+      },
+      "fracture_toughness_j_m2": {
+        "reason": "geometry-only fixture has no calibrated fracture toughness",
+        "state": "UNKNOWN"
+      },
+      "poisson_ratio": {
+        "state": "KNOWN",
+        "unit": "1",
+        "value": 0.25
+      },
+      "young_modulus_pa": {
+        "state": "KNOWN",
+        "unit": "Pa",
+        "value": 5000000000.0
+      }
+    },
+    "qualification": "UNCALIBRATED"
+  },
+  "mother": {
+    "mesh_path": "payload/mother.obj",
+    "mesh_sha256": "c681e4ba7f1ba885bb48ee432a4aa4c48e7d9cdc73c3233bc76c4c8d02244763",
+    "mother_id": "mother_fixture_001",
+    "reference_frame": {
+      "length_unit": "m",
+      "mass_unit": "kg",
+      "name": "right_handed_z_up",
+      "time_unit": "s",
+      "volume_unit": "m3"
+    }
+  },
+  "observation": {
+    "capture_id": "fixture-capture-001",
+    "fragment_observations": [
+      {
+        "observation_fragment_id": "obs_0000000000000001",
+        "observed_mesh": {
+          "format": "PLY",
+          "path": "payload/observed_neg.ply",
+          "sha256": "d54a17c7b97baf646597fa84d3987221aa7d8c2b99e3c4a2de1182e24deddd59"
+        },
+        "sample_count": {
+          "state": "KNOWN",
+          "unit": "1",
+          "value": 3.0
+        },
+        "visibility_mask": {
+          "format": "JSON",
+          "path": "payload/visibility_neg.json",
+          "sha256": "bca341b50821a6af469af5f9683a17e70634a593f6dde80c73bef5e5de8d3e24"
+        },
+        "visible_area_m2": {
+          "state": "KNOWN",
+          "unit": "m2",
+          "value": 4e-07
+        }
+      },
+      {
+        "observation_fragment_id": "obs_0000000000000002",
+        "observed_mesh": {
+          "format": "PLY",
+          "path": "payload/observed_pos.ply",
+          "sha256": "d54a17c7b97baf646597fa84d3987221aa7d8c2b99e3c4a2de1182e24deddd59"
+        },
+        "sample_count": {
+          "state": "KNOWN",
+          "unit": "1",
+          "value": 0.0
+        },
+        "visibility_mask": {
+          "format": "JSON",
+          "path": "payload/visibility_pos.json",
+          "sha256": "1f8fbf5ae4460448e81b5dcf2e320b219a209c7cd80e6e026cdadd5312372769"
+        },
+        "visible_area_m2": {
+          "state": "KNOWN",
+          "unit": "m2",
+          "value": 0.0
+        }
+      }
+    ],
+    "frame": "sensor_observation",
+    "length_unit": "m",
+    "processing_recipe_sha256": "84d048a8d138ab41e5689839360da6d1867f57b294d5ff8f623d35b6987bc1d3"
+  },
+  "qualification": {
+    "class": "FIXTURE_GEOMETRY_ONLY",
+    "physical_validation_receipt": null
+  },
+  "schema": "pgfrag.fracture_artifact.v1",
+  "solver": {
+    "build_sha256": {
+      "reason": "fixture only; no solver build was used",
+      "state": "UNKNOWN"
+    },
+    "execution_status": "NOT_RUN",
+    "job_sha256": {
+      "reason": "fixture only; no solver job exists",
+      "state": "UNKNOWN"
+    },
+    "result_sha256": {
+      "reason": "fixture only; no solver result exists",
+      "state": "UNKNOWN"
+    },
+    "run_id": "no-run-fixture",
+    "solver_id": "NOT_RUN",
+    "source_sha256": {
+      "reason": "fixture only; no solver source was executed",
+      "state": "UNKNOWN"
+    },
+    "version": "NOT_RUN"
+  }
+}

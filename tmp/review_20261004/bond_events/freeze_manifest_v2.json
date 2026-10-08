@@ -1,0 +1,43 @@
+{
+  "schema": "pgfrag.bond_events.review_freeze.v2",
+  "v1": {
+    "freeze_manifest_sha256": "37a861675dd3fbc13e1b87673143b52df98a8245b2b6fdeb0b2f0256876c7175",
+    "test_status": "PRESERVED_PASS",
+    "test_argv": "& \"C:\\Users\\xiemo\\.local\\bin\\uv.exe\" run --no-project --no-progress --with pytest --python \"C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" python -m pytest -q tests/test_bond_events.py",
+    "test_exit_code": 0,
+    "test_output": "pytest_run.txt",
+    "source_sha256": "b783bc47eb54ced777706b9a2aaba118400ffedbebebcae5c9666bb95211cd9b",
+    "test_sha256": "43b709faf10592a0ec760f2b3350c9367da9ac24236b07759691c28162ac4b8a",
+    "raw_fixture_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f",
+    "test_receipt_sha256": "d3f3a3c255a919d3df48210f0c374484487190b6cbf261f0298f1648cf9e25da"
+  },
+  "v2": {
+    "test_status": "NOT_RUN_WAITING_FOR_ROOT_REVIEW",
+    "source": "bond_events.py.v2-frozen",
+    "test": "test_bond_events.py.v2-frozen",
+    "raw_fixture": "native_shaped_fixture.json.v2-frozen",
+    "diff": "v1_to_v2.patch",
+    "files": [
+      {
+        "path": "bond_events.py.v2-frozen",
+        "bytes": 34756,
+        "sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db"
+      },
+      {
+        "path": "test_bond_events.py.v2-frozen",
+        "bytes": 15848,
+        "sha256": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e"
+      },
+      {
+        "path": "native_shaped_fixture.json.v2-frozen",
+        "bytes": 2201,
+        "sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+      },
+      {
+        "path": "v1_to_v2.patch",
+        "bytes": 17979,
+        "sha256": "adc9255e0768aedbe4ef8c38b9bfeac72f596406322e311bba73b39b56b85e7d"
+      }
+    ]
+  }
+}
