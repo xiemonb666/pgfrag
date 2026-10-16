@@ -1,0 +1,46 @@
+{
+  "schema": "pgfrag.architecture_decision.v1",
+  "date": "2026-10-05",
+  "status": "RECOMMENDATION_FOR_MAIN_AGENT_REVIEW",
+  "selected_path": "B_EXPLICIT_SURFACE_COUPLED_TO_MECHANICS",
+  "first_formulation_target": "Ai_Augarde_2018_3D_adaptive_cracking_particle_LEFM",
+  "first_experiment": "Bounded inclined penny-shaped crack benchmark reproduction, a few growth increments, one rotated layout and one refinement; no fragment-count target",
+  "first_experiment_claim": "EXPLICIT_SURFACE_MECHANICS_NUMERICAL_BENCHMARK_ONLY",
+  "current_osb_role": "RETAIN_NATIVE_EVENT_AND_MECHANICS_DIAGNOSTIC",
+  "modify_osb_upfront": false,
+  "preserve_osb_mechanics_in_new_truth_backend": false,
+  "nonlocal_pd_coupling": "OPTIONAL_SEPARATE_FORMULATION_RESEARCH_NOT_IMPLIED_BY_CPM",
+  "path_a_role": "OPTIONAL_RECONSTRUCTION_PROXY_AND_EXPORT_PLUMBING",
+  "path_c_role": "FALLBACK_OR_ALTERNATE_EXPLICIT_SURFACE_IMPLEMENTATION_NOT_SELECTED_NOW",
+  "current_pg_geometric_gt": "UNKNOWN",
+  "current_pg_historical_r2": "UNKNOWN",
+  "simulated_gt_requires_experimental_calibration": false,
+  "physical_realism_claim_requires_calibration_and_held_out_validation": true,
+  "measured_truth_claim": false,
+  "native_event_pilot_may_continue_independently": true,
+  "required_before_model_r2": [
+    "authoritative mechanically active reference-space surface",
+    "positive-area shared patch between distinct final fragments",
+    "conservative verified material partition",
+    "immutable side and interface lineage",
+    "explicit treatment of branching, descendants and unresolved topology"
+  ],
+  "gates": [
+    "surface-mechanics and export consistency",
+    "mass and complementarity",
+    "layout orientation and refinement",
+    "energy and mechanical benchmark convergence",
+    "wall, process-zone and heterogeneity scale resolution",
+    "material calibration and measured roughness validation for realism claims",
+    "historical R2 preservation and observation-only inference"
+  ],
+  "material_roughness_status": "NOT_ESTABLISHED_BY_SELECTED_BENCHMARK",
+  "known_reference_limits": [
+    "Ai_Augarde_2018_target_is_LEFM_not_a_ready_cohesive_ceramic_fragmentation_solver",
+    "Giannakeas_2020_XFEM_PD_reference_demonstrates_2D_examples_not_ready_3D_rough_surfaces",
+    "phase_field_requires_declared_diffuse_to_sharp_geometry_semantics"
+  ],
+  "qualified_full_packs_added": 0,
+  "implementation_or_solver_run_performed": false,
+  "files_written": ["DECISION.md", "decision.json"]
+}

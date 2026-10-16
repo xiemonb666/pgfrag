@@ -1,0 +1,2 @@
+ERROR: LoadError: Some tests did not pass: 0 passed, 0 failed, 1 errored, 0 broken.
+in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\initial_bond_policy_native_20261005\tests\test_initial_bond_policy.jl:72

@@ -1,0 +1,22 @@
+......F....                                                              [100%]
+================================== FAILURES ===================================
+____________ test_overflow_has_one_terminal_status_count_per_cell _____________
+
+    def test_overflow_has_one_terminal_status_count_per_cell():
+        edge_m = 1.0e104
+        expected_log_volume = math.log(math.sqrt(2.0) / 12.0) + 3.0 * math.log(edge_m)
+        assert expected_log_volume > math.log(sys.float_info.max)
+        report = audit_tetra_mesh(regular_tetra(edge_m=edge_m), [[0, 1, 2, 3]])
+        geometry = report["tetra_geometry"]
+        assert geometry["per_cell"][0]["status"] == "UNKNOWN_NUMERIC_RANGE/OVERFLOW"
+        assert geometry["cell_status_counts"]["UNKNOWN_NUMERIC_RANGE/OVERFLOW"] == 1
+        assert sum(geometry["cell_status_counts"].values()) == 1
+        assert geometry["unknown_numeric_range_count"] == 1
+>       assert geometry["unknown_numeric_range_cell_indices"] == [0]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'unknown_numeric_range_cell_indices'
+
+tests\test_mesh_resolution_audit.py:151: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_mesh_resolution_audit.py::test_overflow_has_one_terminal_status_count_per_cell
+1 failed, 10 passed in 0.31s

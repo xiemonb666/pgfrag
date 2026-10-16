@@ -1,0 +1,194 @@
+{
+  "schema": "akantu-free-cohesive-patch-v1",
+  "case_id": "free_native_intrinsic_modeI_patch_20261015_v1",
+  "classification": "UNVALIDATED_COUPLED_NATIVE_TOY_SOURCE_FREEZE",
+  "run_authorization": "NOT_AUTHORIZED_BY_THIS_FREEZE",
+  "purpose": "Boundary-driven native bulk/cohesive coupling spike on one predeclared central interface; no free crack-path, calibration, mesh-convergence, or fragment qualification claim.",
+  "backend": {
+    "distribution": "akantu",
+    "version": "5.0.7.post1",
+    "python": "3.12.15",
+    "runtime": "third_party/akantu-runtime isolated WSL venv",
+    "execution_mode": "explicit lumped mass",
+    "threads": 1
+  },
+  "geometry": {
+    "units": "SI",
+    "mesh_file": "block_2x2x4mm.msh",
+    "mesh_sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "msh_version": "2.2",
+    "dimensions_m": [0.002, 0.002, 0.004],
+    "bulk_volume_m3": 1.6e-8,
+    "input_nodes": 45,
+    "input_bulk_tetrahedra": 96,
+    "central_interface": {
+      "physical_name": "interface",
+      "plane": "z = 0.002 m",
+      "input_triangles": 8,
+      "rest_area_m2": 4.0e-6,
+      "insertion": "intrinsic at initialization; no extrinsic insertion"
+    },
+    "expected_native_after_insertion": {
+      "nodes": 54,
+      "bulk_tetrahedra": 96,
+      "cohesive_3d6": 8,
+      "cohesive_quadrature_points_per_element": 3,
+      "total_cohesive_quadrature_points": 24
+    },
+    "bulk_resolution": {
+      "minimum_input_edge_m": 0.001,
+      "process_zone_length_formula": "l_star = E * G_c / sigma_c^2",
+      "process_zone_length_m": 0.00010857142857142857,
+      "process_zone_to_minimum_edge_ratio": 0.10857142857142857,
+      "resolution_interpretation": "UNDER_RESOLVED for physical process-zone or crack-path claims; the 96-tet mesh is retained only for a bounded coupling/observation spike."
+    }
+  },
+  "material": {
+    "status": "UNVALIDATED_TOY; copied unchanged from cohesive_bilinear_patch_20261004",
+    "material_file": "material.dat",
+    "material_sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666",
+    "bulk": {
+      "law": "linear isotropic elasticity",
+      "E_Pa": 70000000000.0,
+      "nu": 0.22,
+      "rho_kg_m3": 2500.0,
+      "finite_deformation": false
+    },
+    "cohesive": {
+      "law": "Akantu cohesive_bilinear",
+      "sigma_c_Pa": 70000000.0,
+      "G_c_J_m2": 7.6,
+      "beta": 3.0,
+      "kappa": 1.0,
+      "delta_0_m": 2.1714285714285715e-8,
+      "delta_c_nominal_m": 2.1714285714285715e-7,
+      "delta_c_relation": "delta_c = 2 * G_c / sigma_c_input; the bilinear law rescales its internal sigma_c_eff so the elastic branch reaches sigma_c_input at delta_0 and softens to zero at delta_c.",
+      "normal_initial_tangent_Pa_per_m": 3.2236842105263157e15,
+      "shear_initial_tangent_Pa_per_m": 2.9013157894736842e16,
+      "initial_tangent_derivation": "K_n = sigma_c_input / delta_0; K_t = (beta^2 / kappa) * K_n. beta=3 and kappa=1, so K_t=9*K_n. These are source-derived pre-peak opening/sliding slopes, not separate user-specified stiffness parameters.",
+      "tangent_source_urls": [
+        "https://gitlab.com/akantu/akantu/-/raw/v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_bilinear.cc",
+        "https://gitlab.com/akantu/akantu/-/raw/v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear_inline_impl.hh"
+      ],
+      "native_tangent_api_policy": "Do not use the cohesive tangent API as the exact initial force derivative without resolving its sigma_c versus sigma_c_eff behavior; assemble the source-derived bilinear slopes directly for the stability bound.",
+      "penalty_Pa_per_m": 0.0,
+      "contact_after_breaking": false
+    }
+  },
+  "boundary_conditions": {
+    "loading": "smooth half-cosine prescribed z displacement on the physical top boundary; all other top translations remain free",
+    "bottom": "prescribe z = 0 on physical bottom boundary; x/y remain free except for the minimum in-plane rigid-mode pins",
+    "minimal_in_plane_pins": [
+      {
+        "input_node_id_zero_based": 0,
+        "coordinate_m": [-0.001, -0.001, 0.0],
+        "prescribed_components": ["x", "y"],
+        "value_m": 0.0
+      },
+      {
+        "input_node_id_zero_based": 2,
+        "coordinate_m": [0.001, -0.001, 0.0],
+        "prescribed_components": ["y"],
+        "value_m": 0.0
+      }
+    ],
+    "interface_and_bulk": "No interface DOF is prescribed. Every cohesive-side DOF and every bulk DOF away from the top/bottom z constraints and three pin components is free.",
+    "expected_blocked_components_after_insertion": 21,
+    "expected_total_native_dof_components": 162,
+    "expected_free_dof_components": 141,
+    "expected_free_cohesive_dof_components": 54,
+    "expected_free_geometric_interior_bulk_dof_components": 6,
+    "geometric_interior_input_node_id_zero_based": 22,
+    "geometric_interior_input_node_coordinate_m": [0.0, 0.0, 0.002],
+    "boundary_node_identity": "Read input physical triangle groups and carry source IDs through native bulk element ID + local vertex ordinal; no nearest-coordinate mapping. Coordinates are only an exact rest-state consistency check."
+  },
+  "loading": {
+    "mode": "boundary-driven Mode-I opening with native bulk equilibrium and intrinsic cohesive interface",
+    "top_target_displacement_m": 8.0e-6,
+    "ramp": "s(t) = 0.5 * s_max * (1 - cos(pi*t/T)); 8000 steps",
+    "ramp_steps": 8000,
+    "hold_steps": 2000,
+    "time_step_s": 2.0e-9,
+    "total_steps": 10000,
+    "ramp_duration_s": 1.6e-5,
+    "hold_duration_s": 4.0e-6,
+    "endtime_s": 2.0e-5,
+    "bulk_stable_step_fraction_limit": 0.03,
+    "bulk_stable_step_gate": "Read getStableTimeStep() after native cohesive insertion; the reviewed implementation loops only regular bulk elements. Require dt <= 0.03 * this bulk-only value as a bulk sanity check; it is not a total cohesive-plus-bulk CFL gate.",
+    "expected_bulk_stable_step_s_from_existing_tiny_preflight": 7.326084549265489e-8,
+    "expected_dt_over_bulk_stable_step": 0.027299999999999998,
+    "nominal_longitudinal_wave_speed_m_s": 5653.0,
+    "nominal_continuum_courant_cL_dt_over_h": 0.011306,
+    "nominal_cosine_ramp_steps_to_delta_0": 265,
+    "nominal_cosine_ramp_steps_to_delta_c": 841,
+    "step_cap": 10000,
+    "wall_time_cap_s": 300,
+    "solver_attempts": 1,
+    "retry_policy": "none"
+  },
+  "stability": {
+    "total_stability_status": "NOT_ESTABLISHED_REQUIRES_ROOT_BOUND",
+    "lambda_max_upper_bound_per_s2": null,
+    "method": "Independent initial K_bulk + K_cohesive against lumped M bound over all free DOFs, supplied and reviewed by the parent agent; no native cohesive-CFL API is assumed.",
+    "fraction_limit": 0.03,
+    "gate": "Before solver step 1 require an established parent-reviewed whole-system lambda_max upper bound and dt <= fraction_limit * 2/sqrt(lambda_max_upper_bound_per_s2). Until then the source runner must stop before the first solver step."
+  },
+  "quadrature_observation": {
+    "api": "model.flattenInternalReal(field_name, _ek_cohesive, _not_ghost)",
+    "fields": {
+      "opening": {"components": 3, "unit": "m"},
+      "tractions": {"components": 3, "unit": "Pa", "sign": "native energy-conjugate sign for opening; retain raw components"},
+      "damage": {"components": 1, "unit": "1"},
+      "delta max": {"components": 1, "unit": "m"}
+    },
+    "layout": "Require raw native arrays of shape (24, components), retain all three integration-point rows for every cohesive triangle, and reshape element-major to (8, 3, components) without cell averaging. Element-major quadrature ordering is an explicit contract to be checked against native connectivity and source API during the authorized run.",
+    "history": "Save every post-solve step plus the initialized state. Keep raw signed values, no absolute-value or sign correction."
+  },
+  "energy_contract": {
+    "native_keys": ["kinetic", "potential", "dissipated", "reversible", "cohesive contact"],
+    "native_sign_policy": "Record every getEnergy value and traction-opening dot product raw-signed. The inspected Akantu v5.0.7 MaterialCohesive::updateEnergies uses +0.5 * delta_opening dot (traction + previous_traction), so traction is energy-conjugate to opening; a simultaneous side-orientation reversal of both leaves the dot product unchanged. Prior extrinsic runs' negative native dissipated values are not explained by a traction sign flip. Preserve any negative value and fail its diagnostic gate; never apply abs() or clamp it.",
+    "native_energy_history_check": "Independently integrate raw quadrature traction/opening increments with positive rest-area weights. Compare cumulative signed interface work against native dissipated + reversible energy. A mismatch or negative native dissipated energy is a diagnostic failure, not a sign-corrected PASS. getEnergy reads stored material energy in the inspected v5.0.7 source; each native key is queried once per post-solve state.",
+    "solver_history_lifecycle_review": "Checked-in source confirms model afterSolveStep forwards to constitutive materials and energy getters read/copy current fields; the bundled source omits TimeStepSolver/savePreviousState implementation, so exact pre/post snapshot ordering remains unverified and must be tested by the independent native history identity.",
+    "interface_work_identity_tolerance_J": 1e-12,
+    "negative_native_dissipation_absolute_tolerance_J": 1e-12,
+    "negative_native_dissipation_tolerance_definition": "A raw value below -1e-12 J fails; values within the predeclared roundoff floor remain signed and visible in raw history.",
+    "actuator_force_definition": "Record raw sums of mass*acceleration, internal force, and external force on top z constraints. actuator_reaction_estimate = sum(mass*acceleration - internal_force - external_force) using the predeclared residual convention; this is a diagnostic estimate and retains all three source arrays/sums.",
+    "actuator_work": "positive actuator-work estimate: trapezoidal integral of the declared top constrained reaction estimate against commanded top z displacement; diagnostic only, independent of the cohesive interface work ledger.",
+    "cohesive_traction_opening_work": "Retain raw signed native traction dot opening and cumulative integral of native tractions dot delta(opening) over each positive rest-area parent facet/quadrature point. The native energy-conjugate sign is retained; no negative sign is applied.",
+    "fracture_energy_reference_J": 3.04e-5,
+    "energy_balance": "report W_actuator_estimate - (K + bulk potential + native reversible + native dissipated + native cohesive contact) with every native term raw-signed; diagnostic only, not an automatic PASS criterion. Independently report W_interface_native - (native reversible + native dissipated) as the source-formula history closure."
+  },
+  "lineage_contract": {
+    "method": "input bulk tetrahedron ID + local vertex ordinal + native post-insertion cohesive connectivity",
+    "prohibited": "nearest-coordinate or tolerance-based node matching",
+    "per_parent_facet_fields": ["input_face_id", "input_face_node_ids", "parent_input_tetrahedron_ids", "native_cohesive_element_id", "side_a_native_node_ids", "side_b_native_node_ids", "side_parent_tetrahedron_ids", "positive_rest_area_m2"],
+    "requirements": "Each declared interface face must have exactly two input parents, exactly one post-insertion bulk parent per cohesive side, paired source-node sets, equal side areas, positive area, and total area 4e-6 m2."
+  },
+  "acceptance": {
+    "native_topology_54_96_8_unchanged_each_step": true,
+    "whole_system_intrinsic_cohesive_plus_bulk_stability_bound_before_step_1": true,
+    "exact_native_bulk_cell_local_ordinal_lineage": true,
+    "all_24_cohesive_quadrature_points_saved_every_step": true,
+    "internal_bulk_and_cohesive_dofs_free": true,
+    "damage_and_delta_max_finite_and_monotone_per_quadrature_point": true,
+    "full_debond_definition": "all 24 native quadrature damage values reach 1 within 1e-12; a subsequent hold interval retains damage=1 and native traction norm <= 0.01*sigma_c at every quadrature point; the lower/upper bulk node sets remain disjoint and the only cross-plane element is the cohesive interface whose post-failure traction is zero.",
+    "negative_native_dissipation": "FAIL_DIAGNOSTIC_RETAIN_RAW; do not attribute it to traction orientation or relabel the state observation",
+    "native_work_history_closure": "diagnostic; any discrepancy beyond declared tolerance blocks a sign/history closure PASS",
+    "energy_balance_and_GcA": "diagnostic only; no PASS requirement for actuator energy balance or GcA",
+    "failure_policy": "If any source/shape/CFL/topology/lineage/BC gate fails, stop before or at the first failed check; no retuning and no retry."
+  },
+    "scope_limits": [
+    "central preinserted planar interface only; no free crack path or rough surface",
+    "the process-zone length is about one ninth of the minimum mesh edge; no spatial resolution claim",
+    "toy E, strength and Gc are uncalibrated and must not be spread over the vessel",
+    "no numerical solver has been run for this frozen case",
+    "no fragment lineage or positive-area parent-facet qualification has been claimed; this emits the native lineage contract for future integration"
+  ],
+  "source_files": {
+    "runner": "run_native_free_patch.py",
+    "independent_analyzer": "analyze_native_free_patch.py",
+    "shared_contract": "free_patch_contract.py",
+    "source_tests": "test_source_contract.py",
+    "launcher": "launch_free_patch.sh"
+  }
+}

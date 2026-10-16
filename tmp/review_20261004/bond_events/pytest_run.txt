@@ -1,0 +1,8 @@
+argv = & "C:\Users\xiemo\.local\bin\uv.exe" run --no-project --no-progress --with pytest --python "C:\Users\xiemo\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" python -m pytest -q tests/test_bond_events.py
+working_directory = C:\Users\xiemo\Desktop\ShardForge\pgfrag
+PYTHONPATH = C:\Users\xiemo\Desktop\ShardForge\pgfrag\src
+exit_code = 0
+
+Installed 6 packages in 164ms
+...............                                                          [100%]
+15 passed in 0.06s

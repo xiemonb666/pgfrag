@@ -1,0 +1,856 @@
+===== FILE PDF PAGE 56 =====
+Chapter 2
+Formulation of the element free
+Galerkin method
+2.1 Introduction
+In this chapter, fundamental formulations of the EFGM are demonstrated before intro-
+ducing the CPM, since the CPM is based on the EFGM and is speciﬁc to crack problems.
+It starts from the moving least squares approximation, which is used to approximate the
+displacement ﬁeld with a set of nodes, while elements are not involved to discretise the
+problem domain. Then the basic theory of solid mechanics is introduced, precisely the
+equilibrium of solids under static or quasi-static external loadings. These equilibrium
+equations are not solved directly but are converted to the weak form, which provides nu-
+merical beneﬁt of reduced order diﬀerentiation of the governing equations. Major issues
+in meshless methods of integration and imposing essential boundary conditions are dis-
+cussed and several approaches are provided to address these issues. Finally, an example
+is used to demonstrate the diﬀerence between the FEM and the EFGM.
+2.2 Moving least squares approximation
+In the EFGM, a set of nodes are used to discretise the problem domain with on elements,
+and the approximation between these nodes is carried out by the moving least squares
+(MLS) approximation in the EFGM. The MLS approximation was ﬁrst proposed in [53] for
+curve and surface ﬁtting. Then this approach was introduced to the problem discretisation
+– 31 –
+===== FILE PDF PAGE 57 =====
+32 Chapter 2. Formulation of the element free Galerkin method
+process as in [2, 52] without using any element, triggering the development of MMs.
+Displacements are approximated by polynomial interpolation, and the displacement
+approximation uh is
+uh(x) = pT(x)a(x), (2.1)
+where x is a vector of location (for instance x = [x, y, z]T in 3D), p(x) is a basis function,
+e.g. linear basis function in 3D is p(x) = [1 , x, y, z]T, and a(x) is a vector of unknown
+coeﬃcients at x. An error term is formed being the diﬀerence between unknown nodal
+values and the approximation, as
+J =
+n∑
+i
+wi(x)
+(
+pT(xi)a(x) − ui
+)2
+, (2.2)
+where i is the node index, n is the number of nodes with inﬂuence domain covering x, xi
+is the location vector of node i, ui is the nodal value of u at x = xi and wi(x) is a weight
+function. The requirements for a weight function are: non-negativity, monotonically
+decreasing, continuous and diﬀerentiable. The ﬁrst two requirements ensure a weight
+function which will lead to stable results in the approximation and to have a localized
+property, and the latter guarantees a smooth approximation with high order consistency in
+basis functions. Each node is deﬁned with an inﬂuence domain (also named as “support”)
+which is normally rectangular or circular in 2D and cuboidal or spherical in 3D, and the
+weight function becomes zero outside the support. There are many options for the weight
+function as in [2, 58, 217, 218], e.g.
+w(r) =
+
+
+
+1 − 6r2 + 8r3 − 3r4 if r ≤ 1,
+0 if r > 1,
+(2.3)
+where r = ∥x − xi∥/r0 with r0 the radius of a circular support and w(∥x − xi∥/r0)
+is written as wi(x) for short. The support size r0 is typically 2-4 times larger than the
+average distance to neighbouring nodes [55]. The unknown a is determined by minimizing
+the error term, i.e. ∂J/∂aj = 0 where aj is the jth component of a, then we have
+a = A−1(x) · B(x)u, (2.4)
+===== FILE PDF PAGE 58 =====
+2.2. Moving least squares approximation 33
+where
+A(x) =
+n∑
+i
+wi(x)pT(xi) · p(xi), (2.5)
+B(x) = [w1(x)p(x1), w2(x)p(x2), ..., wn(x)p(xn)], (2.6)
+u = [u1, u2, ..., un]T, (2.7)
+where u is the displacement vector for n nodes. Substituting the above into Equation
+(2.1), the displacement approximation uh(x) is obtained by a linear combination of shape
+functions Φi(x) and nodal values ui as
+uh(x) =
+n∑
+i=1
+Φi(x)ui = ΦTu , (2.8)
+where i is the node index with coordinate xi and n is the number of nodes with inﬂuence
+domain covering x. The shape functions Φ i(x) are deﬁned by basis vectors p(xi) and
+weight functions wi(x),
+Φ(x) = pT(x)A−1(x)B(x). (2.9)
+The partial derivatives of shape functions Φ(x) are required to solve the PDEs and can
+be calculated by
+∂Φ(x)
+∂xj
+= ∂pT(x)
+∂xj
+A−1(x)B(x) + pT(x)
+[ ∂A−1(x)
+∂xj
+B(x) + A−1(x) ∂B(x)
+∂xj
+]
+. (2.10)
+Note that in the diﬀuse element method [52], the terms containing partial variation
+of A(x) and B(x) are neglected, where results are greatly detracted from the accurate
+value as in [2]. If the zero-order basis function is used, i.e. p(x) = [1], the well-known
+Shephard’s functions can be obtained,
+Φi(x) = wi(x)∑n
+i=1 wi(x) . (2.11)
+Because they use the MLS approximation, MMs can provide continuous results without
+using post-processing approaches, which are required in the FEM. While the FEM is
+interpolatory, MMs based on the MLS approximation are not and hence do not possess
+the Kronecker delta property. Extra techniques are therefore needed to impose essential
+===== FILE PDF PAGE 59 =====
+34 Chapter 2. Formulation of the element free Galerkin method
+boundary conditions, which will be discussed in Section 2.6.
+2.3 Equilibrium equation
+Consider a problem domain Ω as in Figure 2.1, which is under external tractions ¯t
+on Γ t and displacement boundary conditions ¯ uon Γ u. Here ¯t and ¯ uare vectors, e.g.
+¯t = [¯tx, ¯ty, ¯tz]T and ¯ u= [¯ux, ¯uy, ¯uz]T in 3D, where over bars are used for constraints on
+boundaries. Subscripts x, y and z are components of ¯t and ¯ uwith their corresponding
+directions in the global Cartesian coordinate system and sometimes are described by x1,
+x2 and x3 with subscripts 1, 2 and 3 in the tensorial form. In continuum mechanics, stress
+is a physical quantity representing the internal force between neighbouring particles in a
+continuous material. Choosing an arbitrary inﬁnitesimal cube inside the body, the nine
+stress components are shown in Figure 2.2, where the two subscripts indicate the face and
+the direction respectively. The Cauchy stress tensor is
+[σ] =
+
+
+σxx σxy σxz
+σyx σyy σyz
+σzx σzy σzz
+
+ =
+
+
+σ11 σ12 σ13
+σ21 σ22 σ23
+σ31 σ32 σ33
+
+ . (2.12)
+Due to the balance of shear stresses between neighbouring surfaces, only six stress com-
+ponents are independent, i.e.
+σxy = σyx, σ yz = σzy, σ xz = σzx. (2.13)
+The stress tensor is also written in a vector format named as the Voigt notation, i.e.
+σ = [σxx, σyy, σzz, σxy, σyz, σxz]T. (2.14)
+For clarity in the thesis, the tensor format is written in square bracket, e.g. [σ], while the
+vector format in the Voigt notation is just bold, e.g. σ. The equilibrium equations for
+===== FILE PDF PAGE 60 =====
+2.3. Equilibrium equation 35
+Ω
+Γu
+Γt ¯t
+¯ u
+Figure 2.1: A problem domain with essential boundary conditions and external loadings.
+x
+y
+z
+σzx
+σzy
+σzz
+σyx
+σyy
+σyz
+σxx
+σxy
+σxz
+Figure 2.2: Stress components in an inﬁnitesimal cube.
+static problems require the force balance of the inﬁnitesimal cube, i.e.
+
+
+
+∂σxx
+∂x + ∂σyx
+∂y + ∂σzx
+∂z + bx = 0,
+∂σxy
+∂x + ∂σyy
+∂y + ∂σzy
+∂z + by = 0,
+∂σxz
+∂x + ∂σyz
+∂y + ∂σzz
+∂z + bz = 0,
+(2.15)
+where b = [bx, by, bz]T is the body force per unit volume. A tensorial form of equilibrium
+equations can be written as
+∇ · [σ] + b = 0 in Ω, (2.16)
+===== FILE PDF PAGE 61 =====
+36 Chapter 2. Formulation of the element free Galerkin method
+or
+∂σij
+∂xj
++ bi = 0, i, j ∈ {1, 2, 3}, (2.17)
+in which the subscripts x, y and z are replaced by x1, x2 and x3 respectively and ∂σij/∂xj
+uses Einstein summation. The solution of equilibrium equations should satisfy both es-
+sential boundary conditions and external loadings,
+[σ] · n = ¯t on Γt, (2.18)
+u = ¯u on Γu, (2.19)
+where n is the outer normal of boundaries Γ, i.e. n = [nx, ny, nz]T andu is the displace-
+ment vector for one node, u = [ ux, uy, uz]T. If the stress σ uses the Voigt notation of
+Equation (2.14), Equation (2.18) becomes [ n]T ·σ = ¯t where [n]T is written as
+[n]T =
+
+
+nx 0 0 ny 0 nz
+0 ny 0 nx nz 0
+0 0 nz 0 ny nx
+
+ . (2.20)
+To solve the equilibrium equations, the relationship between stressσ and displacement u
+should be speciﬁed. In solid mechanics, strain is deﬁned as a geometrical measurement
+representing the relative deformation between neighbouring particles in a continuous ma-
+terial. Similar to the stress expression, strain in matrix is deﬁned as
+[ε] =
+
+
+εxx εxy εxz
+εyx εyy εyz
+εzx εzy εzz
+
+ =
+
+
+ε11 ε12 ε13
+ε21 ε22 ε23
+ε31 ε32 ε33
+
+ , (2.21)
+and strain in the Voigt notation is
+ε = [εxx, εyy, εzz, γxy, γyz, γxz]T, (2.22)
+where engineering shear strains are used, γxy = 2εxy, γyz = 2εyz, γxz = 2εxz. The relation
+between stress and strain is called the constitutive model, and the standard form for
+===== FILE PDF PAGE 62 =====
+2.3. Equilibrium equation 37
+isotropic elastic materials is
+εij = 1
+E [(1 + ν)σij − νσkkδij], (2.23)
+where δij is the Kronecker delta function, i.e.
+δij =
+
+
+
+0 if i ̸= j,
+1 if i = j.
+(2.24)
+Also, stresses can be written in terms of strains as
+σij = 2µν
+1 − 2ν δijεkk + 2µεij, (2.25)
+where E and ν are Young’s modulus and Poisson’s ratio respectively, µ is the shear
+modulus of the material and has the relationship with other material properties,
+µ = E
+2(1 + ν) . (2.26)
+Equation (2.23) can be written in matrix form, as
+σ = D ·ε, (2.27)
+where D is the constitutive matrix, e.g. for an isotropic linear elastic material in 3D,
+D = E
+(1 + ν)(1 − 2ν)
+
+
+1 − ν ν ν 0 0 0
+ν 1 − ν ν 0 0 0
+ν ν 1 − ν 0 0 0
+0 0 0 1−2ν
+2 0 0
+0 0 0 0 1−2ν
+2 0
+0 0 0 0 0 1−2ν
+2
+
+
+. (2.28)
+The linear elasticity theory can be converted to 2D with the assumptions of plane stress
+or plane strain. The former assumes all stress components in the z direction are zero for
+problems with small dimension in that direction, i.e. σzz = σyz = σxz = 0. In contrast, the
+===== FILE PDF PAGE 63 =====
+38 Chapter 2. Formulation of the element free Galerkin method
+plane strain approximation assumes all strain components to be zero in the z direction,
+i.e. εzz = εyz = εxz = 0, and is suitable for problems which are thick in the z direction.
+With these assumptions, the 2D constitutive matrix D can be written as
+D =
+¯E
+1 − ¯ν
+
+
+1 ¯ ν 0
+¯ν 1 0
+0 0 1−¯ν
+2
+
+ , (2.29)
+where
+¯E =
+
+
+
+E plane stress,
+E
+1−ν2 plane strain,
+¯ν =
+
+
+
+ν plane stress,
+ν
+1−ν plane strain.
+(2.30)
+The relation between displacement and strain follows the compatibility condition, e.g. for
+small strain,
+εij = 1
+2( ∂ui
+∂xj
++ ∂uj
+∂xi
+). (2.31)
+Equation (2.31) can be written in tensorial form as
+ε = Lu, (2.32)
+where u is the displacement vector for one node and L is a diﬀerential operator, e.g. for
+3D cases,
+L =
+
+
+∂
+∂x 0 0 ∂
+∂y 0 ∂
+∂z
+0 ∂
+∂y 0 ∂
+∂x
+∂
+∂z 0
+0 0 ∂
+∂z 0 ∂
+∂y
+∂
+∂x
+
+
+T
+, (2.33)
+and in 2D,
+L =
+
+
+∂
+∂x 0 ∂
+∂y
+0 ∂
+∂y
+∂
+∂x
+
+
+T
+. (2.34)
+2.4 Weak form
+Governing equations in Equation (2.16) are in the strong form and usually diﬃcult to solve
+in all but trivial cases. The diﬃculties lie in the requirement of second-order consistency
+over the entire problem domain. Alternatively, the weak form of the governing equations
+===== FILE PDF PAGE 64 =====
+2.4. Weak form 39
+is widely used in numerical methods in that only the ﬁrst order consistency is required
+for a second order PDE. The weak form is built on the basis of Hamilton’s principle. In
+continuum mechanics, the system energy L consists of kinetic energy T , internal energy
+U and external work Wf, as
+L = T − U + Wf . (2.35)
+For static problems, T is zero and the external work is
+Wf =
+∫
+Ω
+uTbdΩ +
+∫
+Γt
+uT¯tdΓt. (2.36)
+Assuming the material is linear elastic, the internal energy U is
+U = 1
+2
+∫
+Ω
+εTσdΩ. (2.37)
+The variational form of Equation (2.35) satisﬁes all possible states while the actual solu-
+tion makes the function L a minimum, i.e. δL = 0 where δ indicates the virtual status.
+The weak form of governing equations can be obtained as
+∫
+Γt
+δuT¯t dΓt +
+∫
+Ω
+δuTbdΩ −
+∫
+Ω
+δεTσdΩ = 0. (2.38)
+Equation (2.38) can also be regarded as the principle of virtual work, i.e. the virtual work
+by external forces and internal forces are equal.
+Considering the constitutive model in Equation (2.27) and the compatibility in Equa-
+tion (2.32), the weak form becomes
+∫
+Ω
+δ(Lu)TD(Lu)dΩ =
+∫
+Γt
+δuT¯t dΓt +
+∫
+Ω
+δuTbdΩ. (2.39)
+The discretisation of the weak form is obtained using Equation (2.8), which yields
+Ku = f, (2.40)
+where
+Kij =
+∫
+Ω
+BT
+i DBjdΩ, (2.41a)
+===== FILE PDF PAGE 65 =====
+40 Chapter 2. Formulation of the element free Galerkin method
+fi =
+∫
+Γt
+Φi¯t dΓt +
+∫
+Ω
+ΦibdΩ, (2.41b)
+Bi =
+
+
+Φi,x 0
+0 Φ i,y
+Φi,y Φi,x
+
+ . (2.41c)
+Here the subscripts in the bold variable Kij do not mean the components of a matrix but
+stand for the stiﬀness between the nodes i and j.
+2.5 Integration
+The weak form Equation (2.40) involves integration over the entire problem domain. In
+the conventional FEM, Gaussian quadrature is used on each element and then the results
+are summed together. This idea is borrowed in some meshless methods and background
+meshes are used for integration. Comparing with the FEM using element vertexes as
+nodes, background meshes in meshless methods can be independent of nodes. To pursue
+truly meshless methods, other integration approaches have been developed, either by
+nodal integration or by integration over supports, which are both introduced below.
+2.5.1 Gaussian quadrature
+Gaussian quadrature of a function or integral is an approximation of the deﬁnite integral
+and is usually stated as a weighted summation of function values at some speciﬁed points
+within the integration domain. The domain of integration is conventionally taken as [-1,1]
+and arbitrary ranges can be converted to this conventional range, e.g. for a function f(x)
+with integration range [a,b],
+∫ b
+a
+f(x)dx = b − a
+2
+∫ 1
+−1
+f( b − a
+2 x + b + a
+2 )dx. (2.42)
+The Gaussian quadrature can be written as
+∫ 1
+−1
+f(x)dx =
+n∑
+i=1
+wif(xi), (2.43)
+where n is the number of Gauss points, i is the index, and xi and wi are the location and
+weight respectively of a point i. The determination of wi and xi can be found in many
+===== FILE PDF PAGE 66 =====
+2.5. Integration 41
+Table 2.1: Weights and points in Gaussian quadrature.
+n xi wi
+2 ±0.57735 1
+3 0 0.88889
+±0.77460 0.55556
+4 ±0.33998 0.65215
+±0.86114 0.34785
+5
+0 0.56889
+±0.53847 0.47863
+±0.90618 0.23693
+6
+±0.66121 0.36076
+±0.23862 0.46791
+±0.93247 0.17132
+n xi wi
+7
+0 0.41796
+±0.40585 0.38183
+±0.74153 0.27971
+±0.94911 0.12948
+8
+±0.18343 0.36268
+±0.52553 0.31371
+±0.79667 0.22238
+±0.96029 0.10123
+x
+y
+0
+(x1,y 1) (x2,y 2)
+(x3,y 3)
+(x4,y 4)
+ξ
+η
+0
+(−1, −1) (1, −1)
+(1, 1)(−1, 1)
+Figure 2.3: Gaussian quadrature from global coordinates to local coordinates.
+mathematical references e.g. [219] and the values are given directly in Table 2.1.
+The extension of the Gaussian quadrature from 1D to high-order dimensions is straight-
+forward. For instance, if integration is required over a quadrilateral element in 2D global
+coordinates as in Figure 2.3 (a), the integration is ﬁrst given over a standard element in
+local coordinates, i.e.
+∫ 1
+−1
+∫ 1
+−1
+f(ξ, η)dξdη =
+n∑
+i
+n∑
+j
+wiwjf(ξi, ηj), (2.44)
+===== FILE PDF PAGE 67 =====
+42 Chapter 2. Formulation of the element free Galerkin method
+where n is the order of Gaussian quadrature and wi, wj, ξi and ηj can be selected from Ta-
+ble 2.1. The transformation between global coordinates and local coordinates is obtained
+using the chain rule, 
+dx
+dy
+
+ =
+
+
+∂x
+∂ξ
+∂x
+∂η
+∂y
+∂ξ
+∂y
+∂η
+
+
+
+dξ
+dη
+
+ =J T
+
+dξ
+dη
+
+ , (2.45)
+where J is the Jacobian matrix, and the scalar symbol J is the determinant of J, i.e.
+J = det(J). The area of an inﬁnitesimal element can be written as
+dΩ = ∥d⃗ x× d⃗ y∥ = ∥( ∂x
+∂ξ d⃗ξ + ∂x
+∂η d⃗ η) × ( ∂y
+∂ξ d⃗ξ + ∂y
+∂η d⃗ η)∥ = J∥d⃗ξ × d⃗ η∥. (2.46)
+The integration over an arbitrary quadrilateral element is then given as
+∫
+Ω
+f(x, y)dΩ =
+∫ 1
+−1
+∫ 1
+−1
+f
+(
+x(ξ), y(η)
+)
+Jdξdη =
+n∑
+i
+n∑
+j
+wiwjJf
+(
+x(ξi), y(ηj)
+)
+. (2.47)
+Gauss points in global coordinates are located by ξi and ηj in local coordinates following
+the mapping law between the two coordinate systems, i.e.
+x =
+4∑
+k=1
+Nk(ξ, η)xk, y =
+4∑
+k=1
+Nk(ξ, η)yk, (2.48)
+where Nk(ξ, η) are shape functions in Gaussian quadrature, i.e. for a linear quad,
+N1 = (1 − ξ)(1 − η)
+4 , N 2 = (1 + ξ)(1 − η)
+4 ,
+N3 = (1 + ξ)(1 + η)
+4 , N 4 = (1 − ξ)(1 + η)
+4 .
+(2.49)
+The Jacobian matrix is determined as
+J =
+
+
+∑4
+k=1
+∂Nk
+∂ξ xk
+∑4
+k=1
+∂Nk
+∂ξ yk
+∑4
+k=1
+∂Nk
+∂η xk
+∑4
+k=1
+∂Nk
+∂η yk
+
+ . (2.50)
+2.5.2 Direct nodal integration
+Nodal integration is a method for calculating a spatial integration by sampling the in-
+tegrand only at nodes, which can be regarded as the order-one Gaussian quadrature,
+===== FILE PDF PAGE 68 =====
+2.5. Integration 43
+Figure 2.4: Voronoi cells for nodal integration.
+and no background mesh is required so the resulting scheme is truly meshless. A spatial
+integration can be written as
+∫
+Ω
+f(x, y)dΩ =
+n∑
+i=1
+qif(xi, yi), (2.51)
+where i is the index of nodes and a node i has a location of ( xi, yi) and weight qi is a
+fraction of the total area Ω. There are several methods to choose the weight, e.g. in [113],
+qi = air2
+i∑n
+i=1 air2
+i
+AΩ, (2.52)
+where AΩ is the integral area of Ω, ri is the support size associated with node i and ai
+is the fraction of the support according to the location of node i, e.g. for interior nodes
+ai = 1; for nodes at edges ai = 0.5; for nodes at corners ai = 0.25.
+An alternative to deﬁne the weight qi in Equation (2.51) is through Voronoi cells
+[114, 202, 220], as in Figure 2.4. The area of a Voronoi cell Ai is the weight for a node
+i, i.e. qi = Ai. Since the nodal integration is like order-one Gaussian integration, it is
+more eﬃcient than higher order Gaussian quadrature but suﬀers however from serious
+stability issues linked to rank deﬁciency when integration points cannot collect suﬃcient
+information. Some stress points are added between nodes as additional quadrature points
+but are not used in the problem discretisation [202].
+2.5.3 Integration over supports
+Except for the integration methods mentioned above, the integration can be calculated
+over the support of each node rather than using background cells, which is ideal for
+===== FILE PDF PAGE 69 =====
+44 Chapter 2. Formulation of the element free Galerkin method
+Ω
+Ωi
+i
+Figure 2.5: Computational model for integration over supports.
+methods based on a local weak form such as the MLPG and can also be used for other
+Galerkin MMs as in [115, 221, 222]. Dividing the intersections of supports has been
+tried in [221] and applied in adaptive calculations, but these intersections form complex
+geometries which are usually too complicated for practical applications. The partition of
+unity quadrature is more promising where no division is required [115, 222]. An integration
+for function f(x, y) over a domain Ω can be written as
+∫
+Ω
+f(x, y)dΩ =
+∫
+Ω
+f(x, y)H
+n∑
+i=1
+widΩ =
+n∑
+i=1
+∫
+Ωi
+f(x, y)HwidΩ, (2.53)
+where n is the number of nodes, i is the index of a node i with support Ω i and weight
+function wi, as in Figure 2.5, Ω ⊆ ⋃n
+i=1 Ωi. All weight functions follow the partition of
+unity, i.e. ∑n
+i=1 wi(x, y) = 1, and wi(x, y) = 0 if (x, y) /∈ Ωi. wi can be chosen to coincide
+with MLS shape functions or through Shephard’s functions in Equation (2.11). H is the
+function indicating whether a point is inside the domain Ω,
+H(x, y) =
+
+
+
+1 if ( x, y) ∈ Ω,
+0 if ( x, y) /∈ Ω.
+(2.54)
+Overall, nodal integration and integration over supports are faster than Gauss integra-
+tion and no background meshes are required, which is desired to achieve truly meshless
+methods, however, the speed of these two methods comes with a sacriﬁce of accuracy, as
+===== FILE PDF PAGE 70 =====
+2.6. Imposition of boundary conditions 45
+mentioned in [114, 115]. For fracture modelling, there are high stress gradients around the
+crack tip, and crack propagation is sensitive to numerical errors in the problem approxi-
+mation. Therefore, Gaussian integration is used in this thesis, to guarantee the integration
+accuracy for modelling crack problems.
+2.6 Imposition of boundary conditions
+One disadvantage of the MLS approximation is lack of the Kronecker delta property, due
+to which essential boundary conditions cannot be imposed directly as in the FEM. A
+number of techniques have been developed to solve this problem by modifying the weak
+form [2, 54, 109, 110] or by employing shape function with the Kronecker delta property
+[111, 112]. The most common approaches are Lagrange multipliers, penalty and Nitsche’s
+methods.
+2.6.1 Lagrange multipliers
+In the Lagrange multiplier method, essential boundary conditions are incorporated into
+the Hamilton Equation (2.35) with a vector of unknown Lagrange multipliers λ, i.e.
+[L] = L +
+∫
+Γu
+λT(u − ¯u) dΓu. (2.55)
+Equation (2.55) ensure satisfaction of the displacement boundary condition, although trial
+functions do not satisfy Equation (2.19). The weak form equation in Equation (2.38) is
+modiﬁed to
+∫
+Ω
+δεTσ dΩ −
+∫
+Γu
+δλT(u − ¯u) dΓu −
+∫
+Γu
+δuTλ dΓu =
+∫
+Ω
+δuTb dΩ +
+∫
+Γt
+δuT¯t dΓt. (2.56)
+The physical meaning of Lagrange multipliers λ is the traction along essential boundary
+Γu as mentioned in [54]. The Lagrange multipliers λ are expressed by arc length s along
+the boundary and shape functions Ni(s),
+λ(x) =
+k∑
+i=1
+Ni(s)λi, x ∈ Γu , (2.57)
+===== FILE PDF PAGE 71 =====
+46 Chapter 2. Formulation of the element free Galerkin method
+δλ(x) =
+k∑
+i=1
+Ni(s)δλi, x ∈ Γu , (2.58)
+where k is the total number of constraints at essential boundaries, λi are nodal values of
+Lagrange multipliers and δλi are the virtual status. The determination of Ni(s) can be
+through the same shape functions for displacement approximation or be constructed by
+the Lagrangian interpolation,
+Ni(s) = (s − s1) · · ·(s − si−1)(s − si+1) · · ·(s − sk)
+(si − s1) · · ·(si − si−1)(si − si+1) · · ·(si − sk) . (2.59)
+With Lagrange multipliers, Equation (2.40) is modiﬁed to
+
+ K G
+GT 0
+
+
+
+
+
+u
+λ
+
+
+ =
+
+
+
+f
+q
+
+
+ , (2.60)
+where K and f are obtained by Equation (2.41) and
+Gik = −
+∫
+Γu
+ΦiNkdΓu, (2.61a)
+qk = −
+∫
+Γu
+Nk¯udΓu. (2.61b)
+Although the number of system unknowns increases and the system stiﬀness matrix is
+not deﬁnite positive any more, essential boundary conditions are rigorously enforced in
+the weak form equations, therefore accurate results can be achieved [2, 3]. The Lagrange
+multipliers can be replaced by their physical counterpart at the outset, so that the modiﬁed
+weak form results in a positive deﬁnite and sparse matrix [54]. However, the accuracy is
+somewhat reduced as in [108], and more nodes are required in the approximation.
+2.6.2 The penalty method
+Similar to Lagrange multipliers, the Hamilton equations can also be modiﬁed by intro-
+ducing a penalty factor β [109],
+L = L − 1
+2
+∫
+Γu
+β(u − ¯u)T(u − ¯u) dΓu. (2.62)
+===== FILE PDF PAGE 72 =====
+2.6. Imposition of boundary conditions 47
+Then the weak form of Equation (2.38) becomes
+∫
+Ω
+δεTσ dΩ +
+∫
+Γu
+βδuT(u − ¯u) dΓu =
+∫
+Ω
+δuTb dΩ +
+∫
+Γt
+δuT¯t dΓt. (2.63)
+The discrete weak form of Equation (2.40) is changed to
+(K + βKu)u = f + βfu, (2.64)
+where
+Ku
+ij =
+∫
+Γu
+ΦiΦjdΓu, (2.65a)
+fu
+i =
+∫
+Γu
+Φi¯udΓu. (2.65b)
+Since β is a predeﬁned constant factor ( β ≫ 1, e.g. β = 10 5E in [223]), there are no
+extra unknowns compared with the Lagrange multiplier method, and the system stiﬀness
+matrix remains positive deﬁnite. However, a very large penalty factor β will lead to the
+system becoming ill-conditioned, and how to deﬁne suitable values ofβ is still problematic
+[109].
+2.6.3 Nitsche’s method
+Nitsche’s method is considered an improvement on the penalty method which is achieved
+by adding a number of terms to the weak form of system equations rather than introducing
+only one penalty term [110], i.e.
+L = L − 1
+2
+∫
+Γu
+β(u − ¯u)T(u − ¯u) dΓu +
+∫
+Γu
+tT(u − ¯u) dΓu , (2.66)
+where t is the reaction force at the displacement boundary Γ u and is obtained from the
+stress ﬁeld as t = [σ] · n. The governing equation of Equation (2.38) becomes
+∫
+Ω
+δεTσ dΩ −
+∫
+Γu
+δtT(u − ¯u) dΓu −
+∫
+Γu
+tTδu dΓu+
+∫
+Γu
+β(u − ¯u)Tδu dΓu =
+∫
+Ω
+δuTb dΩ +
+∫
+Γt
+δuT¯t dΓt.
+(2.67)

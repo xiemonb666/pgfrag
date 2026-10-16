@@ -1,0 +1,429 @@
+{
+  "analysis_status": "ANALYSIS_COMPLETE_DIAGNOSTIC; NO_PHYSICAL_OR_FRAGMENT_QUALIFICATION",
+  "case_id": "free_native_intrinsic_modeI_patch_20261015_v1",
+  "classification": "UNVALIDATED_COUPLED_NATIVE_TOY_SOURCE_FREEZE",
+  "native_run_status": "RUN_COMPLETE_RAW_HISTORY_CLOSED",
+  "solver_steps_completed": 10000,
+  "history_frames_saved": 10001,
+  "expected_history_frames": 10001,
+  "run_directory": "/home/xiemo/free_cohesive_patch_20261015/free_native_intrinsic_modeI_patch_20261015_run02",
+  "source_integrity": {
+    "case_sha256_matches_started": true,
+    "mesh_sha256_matches_case": true,
+    "material_sha256_matches_case": true,
+    "runner_sha256_matches_started": true,
+    "contract_sha256_matches_started": true,
+    "analyzer_sha256_matches_started": true,
+    "test_sha256_matches_started": true,
+    "launcher_sha256_matches_started": true,
+    "stability_status_matches_case": true,
+    "stability_lambda_matches_case": true
+  },
+  "gates": {
+    "closed_initialized_plus_every_postsolve_history": true,
+    "frozen_input_and_source_bytes_verified": true,
+    "native_54_96_8_topology_unchanged": true,
+    "exact_source_cell_ordinal_and_positive_parentfacet_lineage": true,
+    "all_24_quadrature_values_saved_without_cell_averaging": true,
+    "native_fields_and_raw_energy_arrays_finite": true,
+    "free_bulk_and_all_cohesive_side_dofs_contract": true,
+    "pre_and_post_solve_boundary_readback_le_1e-12m": true,
+    "prescribed_half_cosine_and_hold_contract": true,
+    "bulk_only_stable_step_sanity_check": true,
+    "parent_reviewed_total_cohesive_plus_bulk_stability_bound": true,
+    "damage_finite_bounded_and_monotone_at_each_qp": true,
+    "delta_max_finite_and_monotone_at_each_qp": true,
+    "raw_native_dissipation_not_below_roundoff_floor": true,
+    "independent_signed_interface_work_matches_native_total_history": true
+  },
+  "energy_and_sign_diagnostics": {
+    "native_energy_keys": [
+      "kinetic",
+      "potential",
+      "dissipated",
+      "reversible",
+      "cohesive contact"
+    ],
+    "native_traction_convention": "energy-conjugate to native opening; raw t dot opening retained; no sign flip",
+    "source_formula": "D = cumulative sum(0.5 * delta_opening dot (t + t_previous)) - 0.5 * t dot opening",
+    "native_dissipation_root_cause_diagnosis": "NO_MATERIAL_NEGATIVE_D_IN_THIS_INTRINSIC_RUN_AND_SIGNED_HISTORY_IDENTITY_CLOSED; the former extrinsic post-insertion negative-D episode remains unexplained and is not claimed resolved.",
+    "negative_dissipation_absolute_tolerance_J": 1e-12,
+    "raw_dissipated_min_J": -7.221390726138327e-15,
+    "raw_dissipated_min_history_index": 2994,
+    "raw_negative_dissipation_sample_count": 1674,
+    "below_tolerance_dissipation_sample_count": 0,
+    "independent_signed_interface_work_final_J": 3.0410667858528943e-05,
+    "native_dissipated_plus_reversible_final_J_raw": 3.0410667858528932e-05,
+    "max_abs_independent_work_vs_native_total_residual_J": 1.0164395367051604e-20,
+    "max_abs_cumulative_work_array_consistency_error_J": 0.0,
+    "history_identity_tolerance_J": 1e-12,
+    "traction_dot_opening_Pa_m_raw_min": 0.0,
+    "traction_dot_opening_Pa_m_raw_max": 4.222221837768218,
+    "interface_work_increment_J_raw_min": 0.0,
+    "interface_work_increment_J_raw_max": 2.959065064551983e-08,
+    "raw_energy_first_last_J": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.00012108446472419937,
+        0.00045127533820431395,
+        3.0410667858528932e-05,
+        0.0,
+        0.0
+      ]
+    ],
+    "actuator_energy_balance_residual_first_last_J_raw": [
+      -0.0,
+      -1.2507408893628301e-08
+    ],
+    "actuator_balance_is_diagnostic_only": true,
+    "full_debond_state_by_declared_damage_and_hold_rule": {
+      "first_history_index": 4130,
+      "hold_end_exclusive": 6131
+    }
+  },
+  "lineage": {
+    "input_interface_faces": 8,
+    "native_cohesive_elements": 8,
+    "positive_rest_area_sum_m2": 4e-06,
+    "parent_facets": [
+      {
+        "input_face_id": 1,
+        "input_face_node_ids": [
+          18,
+          19,
+          22
+        ],
+        "parent_input_tetrahedron_ids": [
+          53,
+          73
+        ],
+        "native_cohesive_element_id": 0,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          47,
+          46,
+          45
+        ],
+        "side_b_native_node_ids": [
+          18,
+          19,
+          22
+        ],
+        "side_parent_tetrahedron_ids": [
+          73,
+          53
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 73,
+          "lower": 53
+        },
+        "post_insertion_bulk_parent_rows": [
+          48,
+          28
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 2,
+        "input_face_node_ids": [
+          18,
+          21,
+          22
+        ],
+        "parent_input_tetrahedron_ids": [
+          54,
+          75
+        ],
+        "native_cohesive_element_id": 1,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          48,
+          47,
+          45
+        ],
+        "side_b_native_node_ids": [
+          21,
+          18,
+          22
+        ],
+        "side_parent_tetrahedron_ids": [
+          75,
+          54
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 75,
+          "lower": 54
+        },
+        "post_insertion_bulk_parent_rows": [
+          50,
+          29
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 3,
+        "input_face_node_ids": [
+          19,
+          20,
+          23
+        ],
+        "parent_input_tetrahedron_ids": [
+          59,
+          79
+        ],
+        "native_cohesive_element_id": 2,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          46,
+          50,
+          49
+        ],
+        "side_b_native_node_ids": [
+          19,
+          20,
+          23
+        ],
+        "side_parent_tetrahedron_ids": [
+          79,
+          59
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 79,
+          "lower": 59
+        },
+        "post_insertion_bulk_parent_rows": [
+          54,
+          34
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 4,
+        "input_face_node_ids": [
+          19,
+          22,
+          23
+        ],
+        "parent_input_tetrahedron_ids": [
+          60,
+          81
+        ],
+        "native_cohesive_element_id": 3,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          45,
+          46,
+          49
+        ],
+        "side_b_native_node_ids": [
+          22,
+          19,
+          23
+        ],
+        "side_parent_tetrahedron_ids": [
+          81,
+          60
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 81,
+          "lower": 60
+        },
+        "post_insertion_bulk_parent_rows": [
+          56,
+          35
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 5,
+        "input_face_node_ids": [
+          21,
+          22,
+          25
+        ],
+        "parent_input_tetrahedron_ids": [
+          65,
+          85
+        ],
+        "native_cohesive_element_id": 4,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          48,
+          45,
+          51
+        ],
+        "side_b_native_node_ids": [
+          21,
+          22,
+          25
+        ],
+        "side_parent_tetrahedron_ids": [
+          85,
+          65
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 85,
+          "lower": 65
+        },
+        "post_insertion_bulk_parent_rows": [
+          60,
+          40
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 6,
+        "input_face_node_ids": [
+          21,
+          24,
+          25
+        ],
+        "parent_input_tetrahedron_ids": [
+          66,
+          87
+        ],
+        "native_cohesive_element_id": 5,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          52,
+          48,
+          51
+        ],
+        "side_b_native_node_ids": [
+          24,
+          21,
+          25
+        ],
+        "side_parent_tetrahedron_ids": [
+          87,
+          66
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 87,
+          "lower": 66
+        },
+        "post_insertion_bulk_parent_rows": [
+          62,
+          41
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 7,
+        "input_face_node_ids": [
+          22,
+          23,
+          26
+        ],
+        "parent_input_tetrahedron_ids": [
+          71,
+          91
+        ],
+        "native_cohesive_element_id": 6,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          45,
+          49,
+          53
+        ],
+        "side_b_native_node_ids": [
+          22,
+          23,
+          26
+        ],
+        "side_parent_tetrahedron_ids": [
+          91,
+          71
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 91,
+          "lower": 71
+        },
+        "post_insertion_bulk_parent_rows": [
+          66,
+          46
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      },
+      {
+        "input_face_id": 8,
+        "input_face_node_ids": [
+          22,
+          25,
+          26
+        ],
+        "parent_input_tetrahedron_ids": [
+          72,
+          93
+        ],
+        "native_cohesive_element_id": 7,
+        "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+        "side_a_native_node_ids": [
+          51,
+          45,
+          53
+        ],
+        "side_b_native_node_ids": [
+          25,
+          22,
+          26
+        ],
+        "side_parent_tetrahedron_ids": [
+          93,
+          72
+        ],
+        "side_parent_by_geometric_side": {
+          "upper": 93,
+          "lower": 72
+        },
+        "post_insertion_bulk_parent_rows": [
+          68,
+          47
+        ],
+        "positive_rest_area_m2": 5e-07,
+        "side_a_positive_rest_area_m2": 5e-07,
+        "side_b_positive_rest_area_m2": 5e-07
+      }
+    ],
+    "native_cohesive_element_id_note": "local row index from native getConnectivity; not a persistent global ID"
+  },
+  "free_dof_contract": {
+    "blocked_components": 21,
+    "free_components": 141,
+    "free_cohesive_side_components": 54,
+    "free_geometric_interior_bulk_components": 6
+  },
+  "scope": [
+    "central preinserted planar interface only; no free crack path or rough surface",
+    "the process-zone length is about one ninth of the minimum mesh edge; no spatial resolution claim",
+    "toy E, strength and Gc are uncalibrated and must not be spread over the vessel",
+    "no numerical solver has been run for this frozen case",
+    "no fragment lineage or positive-area parent-facet qualification has been claimed; this emits the native lineage contract for future integration"
+  ],
+  "interpretation": "A completed run is a bounded native coupling observation only. No fracture calibration, crack path, process-zone resolution, fragment, R2, or pretraining eligibility claim is made.",
+  "analysis_source_sha256": "204383555f12414ddcfa7ae7b9ae93706f37dc432f95ed98497a6b02f8d7ef91",
+  "analysis_argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/free_cohesive_patch_20261015/frozen_run03/analyze_native_free_patch.py",
+    "/home/xiemo/free_cohesive_patch_20261015/free_native_intrinsic_modeI_patch_20261015_run02"
+  ]
+}

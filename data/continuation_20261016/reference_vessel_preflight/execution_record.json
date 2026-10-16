@@ -1,0 +1,135 @@
+{
+  "schema": "pgfrag.reference_vessel_zero_step_preflight_execution.v1",
+  "status": "FAILED_PRESERVED_NO_RETRY",
+  "case_sha256": "2c4a54a3889d7f79cc23af644304bb6966383f534c75fd6905a2298fee596efe",
+  "case_bytes": 6477,
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "native_exit_code": 2,
+  "started_unix_s": 1792115364.0705209,
+  "ended_unix_s": null,
+  "elapsed_s": -1792115364.071,
+  "python": "3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3 ]",
+  "runtime": "WSL Ubuntu; Akantu 5.0.7-post1; NumPy 2.5.3",
+  "cpu_affinity": "single allowed CPU 0",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE"
+  },
+  "input_snapshots_at_runner_start": {
+    "case.json": "2c4a54a3889d7f79cc23af644304bb6966383f534c75fd6905a2298fee596efe",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "mesh.msh": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+  },
+  "input_hashes_verified_after_process": true,
+  "source_geometry_hashes_verified_after_process": true,
+  "wrapper_receipt": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\run01\\receipt.json",
+    "bytes": 918,
+    "sha256": "fe12b2945d4367204959c0e4bc55937f9d30a1f5f02059dfe12671dd01a97e60"
+  },
+  "failure": {
+    "error": "ValueError(\"physical surface group 'interface' is empty\")",
+    "native_initialization_reached": false,
+    "physical_names_in_mesh": [
+      "cut_interface",
+      "source_exterior"
+    ],
+    "wrapper_required_interface_group": "interface",
+    "loading_builder_required_exterior_group": "exterior",
+    "action_taken": "NO_MESH_ALIAS_OR_RETRY"
+  },
+  "mesh_qp_count_from_report": 1623,
+  "forecast": {
+    "status": "TOTAL_BLOCKED_BEFORE_NATIVE_DT_AND_PATCH",
+    "output_cap_bytes": 67108864,
+    "qp_count": 1623,
+    "qp_fields_double_per_frame": 14,
+    "qp_field_bytes_per_frame": 181776,
+    "other_time_array_double_per_frame": 40,
+    "other_time_array_bytes_per_frame": 320,
+    "patch_displacement_bytes_per_selected_node_per_frame": 8,
+    "node_state_bytes_per_saved_node_frame": 1750656,
+    "wrapper_array_header_allowance_bytes": 3072,
+    "wrapper_output_cap_safety_margin_bytes": 2000000,
+    "max_time_frames_from_qp_and_time_arrays_alone_before_safety_margin": 357,
+    "total_50us_node_stride_50_bytes": null,
+    "total_50us_node_stride_1_bytes": null,
+    "formula": "wrapper forecast = (steps+1)*(181776 + 320 + 8*patch_node_count) + saved_frames*1750656 + 3072; saved_frames = floor(steps/stride)+1+(steps mod stride != 0). Required steps and patch_node_count were unavailable because native preflight stopped at physical-name validation."
+  },
+  "actual_output_artifacts": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\case.json",
+      "bytes": 6477,
+      "sha256": "2c4a54a3889d7f79cc23af644304bb6966383f534c75fd6905a2298fee596efe"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\cohesive_mesh.py",
+      "bytes": 26147,
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\cohesive_stability.py",
+      "bytes": 19680,
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\cohesive_vessel.py",
+      "bytes": 29970,
+      "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\material.dat",
+      "bytes": 471,
+      "sha256": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\inputs\\mesh.msh",
+      "bytes": 4410557,
+      "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\run01\\receipt.json",
+      "bytes": 918,
+      "sha256": "fe12b2945d4367204959c0e4bc55937f9d30a1f5f02059dfe12671dd01a97e60"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\run01\\result.json",
+      "bytes": 1073,
+      "sha256": "f29a83f3e73859964c778bb63e950260e31674e288223cf5cf7a570c8dcc246d"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\run01\\started.json",
+      "bytes": 1158,
+      "sha256": "78afa6f221bfd63ff503795f61772f8183c0149aecfb538fd107e3243247e32e"
+    },
+    {
+      "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\stdout.log",
+      "bytes": 1065,
+      "sha256": "983d3ef19145e70dfd65918e1d9e5e9c223a69314d3918209856cbec4814b7f7"
+    },
+    {
+      "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\native_preflight\\native_exit_code.txt",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    }
+  ],
+  "recommendation": "Do not allocate the full solver history from this failed preflight. Resolve the physical-group name contract first, then rerun only with main-agent direction; total bytes require native steps and feasible patch size."
+}

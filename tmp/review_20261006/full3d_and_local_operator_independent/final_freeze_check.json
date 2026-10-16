@@ -1,0 +1,63 @@
+{
+  "schema": "full3d_final_source_static_review.v1",
+  "status": "READY_STATIC_ONLY",
+  "meaning": "source is statically ready for a separately authorized one-shot diagnostic; no actual numerical qualification",
+  "freeze": {
+    "pins_path": "tmp/review_20261006/full3d_cracked_elastic_operator_20261006/SOURCE_PINS.json",
+    "pins_json_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "entrypoint_path": "pgfrag/experiments/full3d_cracked_elastic_operator_20261006/full3d_operator_diagnostic.py",
+    "entrypoint_sha256": "e0f0cbbf0e60f65ce573ae8eed163e56c9b40a58be85b251445fd988e251936a",
+    "pins_verified": 9,
+    "pin_mismatches": [],
+    "prepared_run_authorized": false
+  },
+  "promotion": {
+    "strict_gate_called_for_rc0_bounded_stage": true,
+    "gate_requires_status_assembly_eligibility_solve_allowed_and_finite_tree": true,
+    "gate_checks_complete_spectrum_values_and_six_zero_156_positive_counts": true,
+    "gate_checks_replay_array_shapes_finiteness_registry_and_batch_statuses": true,
+    "nonzero_worker_return_code_never_promotes": true,
+    "rc3_failed_spectrum_keeps_stage_and_writes_metadata_receipt": true,
+    "success_moves_stage_only_after_gate_passes": true,
+    "pure_gate_fixture_uses_actual_lowercase_basis_enum_wire_values": true,
+    "pure_gate_fixture_spectrum": {"near_zero": 6, "positive": 156, "significant_negative": 0},
+    "fixture_is_not_a_numerical_stiffness_or_spectrum_test": true
+  },
+  "reviewed_contract": {
+    "sources": 27,
+    "semantic_dofs": 162,
+    "scalar_basis_rows": 54,
+    "queries": 384,
+    "provider_batches": [256, 128],
+    "saved_raw_K_shape": [162, 162],
+    "saved_boundary_f_shape": [162],
+    "saved_rigid_mode_shapes": [[162, 6], [6, 162]],
+    "saved_query_xyz_shape": [384, 3],
+    "saved_basis_shape": [384, 54],
+    "saved_gradient_shape": [384, 54, 3],
+    "saved_exact_field_shapes_finite_checked": true,
+    "registry_semantic_order_and_actual_emitter_enum_match": true,
+    "global_F1_rows_source_major": true,
+    "rigid_modes_base_only_translation_and_omega_cross_centered_source": true,
+    "front_entries_zero_in_rigid_modes": true,
+    "complete_engineering_shear_voigt_D_and_B": true,
+    "sigma_zz_law_from_full_3d_D": true,
+    "von_mises_computed_or_claimed": false
+  },
+  "cap_wrench": {
+    "parameterization": "r=R*s^2",
+    "area_jacobian": "2*R^2*s^3 ds dtheta",
+    "top_and_bottom_in_plane_traction_included": true,
+    "Q_units": "N",
+    "cap_Mz": "top +(4/5)*Q*R; bottom -(4/5)*Q*R",
+    "cap_Mz_units": "N*m",
+    "case_and_emitter_formula_match": true
+  },
+  "execution": {
+    "provider_operator_solver_or_test_executed": false,
+    "actual_spectrum_verified": false,
+    "actual_traction_balance_verified": false,
+    "overall_mechanics_qualification": false
+  },
+  "remaining_blockers": []
+}

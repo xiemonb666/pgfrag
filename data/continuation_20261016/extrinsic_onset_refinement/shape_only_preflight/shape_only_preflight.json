@@ -1,0 +1,1255 @@
+{
+  "coupon_measure": {
+    "candidate_area_checks": [
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 76,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 79,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 91,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 93,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 104,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 107,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 117,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27"
+      },
+      {
+        "area_m2": 5e-07,
+        "matches_actual_frozen_interface_area_0_5e_minus6": true,
+        "native_triangle_slot": 119,
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      }
+    ],
+    "derivation": "exact native facet connectivity and coordinates; exact stable source FIDs; supported native three-point symmetric shape table; public native normals unit and parallel to each exact facet geometry normal; area/3 per point",
+    "normal_orientation": "native sign is recorded separately per FID; no MSH winding orientation is assumed",
+    "qp_weight_records": [
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 76,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 79,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 91,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 93,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 104,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 107,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 117,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27"
+      },
+      {
+        "area_m2": 5e-07,
+        "native_triangle_slot": 119,
+        "qp_weights_m2_native_order": [
+          1.6666666666666665e-07,
+          1.6666666666666665e-07,
+          1.6666666666666665e-07
+        ],
+        "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      }
+    ],
+    "scope": "only the eight planar affine Tri3 facets in this exact frozen coupon",
+    "status": "VERIFIED_COUPON_AFFINE_TRI3",
+    "weights_source": "coupon-specific geometric measure; no per-QP weight/Jacobian getter is claimed"
+  },
+  "created_utc": "2026-10-16T09:01:49.988630+00:00",
+  "elapsed_wall_seconds": 2.073314878000005,
+  "frozen_input_hashes": {
+    "manifest_sha256": "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68",
+    "material_dat_sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f",
+    "source_msh_sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+    "wheel_sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b"
+  },
+  "limits": {
+    "native_solver_evolution": "none",
+    "no_retries": true,
+    "output_cap_bytes": 16777216,
+    "wall_cap_seconds": 60
+  },
+  "native_initialization": {
+    "BC_calls": 0,
+    "analysis_method": "_explicit_lumped_mass",
+    "cohesive_checks": 0,
+    "cohesive_elements": 0,
+    "eligible_candidate_facets": 8,
+    "initial_mass_assemblies": 1,
+    "inserted_facets": 0,
+    "insertion_mode": "extrinsic",
+    "mesh_elements": 96,
+    "mesh_nodes": 45,
+    "observation_assemblies": 0,
+    "solver_steps": 0
+  },
+  "public_api_layout": {
+    "FEEngine.getNbIntegrationPoints": {
+      "type": "_triangle_3",
+      "value": 3
+    },
+    "FEEngine.getNormalsOnIntegrationPoints": {
+      "candidate_orientation_check": {
+        "candidate_evidence": [
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 76,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 79,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 91,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 93,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 104,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 107,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 117,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+            "unit_ok": true
+          },
+          {
+            "dot_with_exact_connectivity_normal": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "native_triangle_slot": 119,
+            "normal_lengths": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "normals_native_qp_order": [
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ],
+              [
+                -0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "one_orientation_across_qps_ok": true,
+            "orientation_sign_against_connectivity_order": 1,
+            "parallel_ok": true,
+            "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27",
+            "unit_ok": true
+          }
+        ],
+        "failed_candidate_indices": [],
+        "status": "NATIVE_NORMALS_MATCH_EXACT_TRIANGLE_GEOMETRY"
+      },
+      "layout": {
+        "grouping": "contiguous nqp rows per ascending triangle_3 ElementTypeMap slot",
+        "normalized_shape": [
+          232,
+          3,
+          3
+        ],
+        "raw_shape": [
+          696,
+          3
+        ],
+        "status": "ELEMENT_MAJOR_QP_GROUPING_FROM_NQP_AND_EXACT_TRIANGLE_SLOT_COUNT"
+      },
+      "method": "public getNormalsOnIntegrationPoints(_triangle_3,_not_ghost)"
+    },
+    "FEEngine.getShapes": {
+      "layout": {
+        "layout": "FLAT_ELEMENT_MAJOR_REPEATED_QP_NODE",
+        "normalized_shape": [
+          232,
+          3,
+          3
+        ],
+        "qp_slot_pairing": "one row of getShapes per QP in API-returned order; candidate facet slots remain ascending ElementTypeMap order",
+        "raw_c_contiguous": true,
+        "raw_dtype": "float64",
+        "raw_order_values_preserved": true,
+        "raw_shape": [
+          696,
+          3
+        ],
+        "selected_candidate_shape_functions_in_native_qp_order": [
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ],
+          [
+            [
+              0.6666666666666667,
+              0.16666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.1666666666666667,
+              0.6666666666666666,
+              0.16666666666666666
+            ],
+            [
+              0.16666666666666674,
+              0.16666666666666666,
+              0.6666666666666666
+            ]
+          ]
+        ]
+      },
+      "method": "public getShapes(_triangle_3,_not_ghost,0)",
+      "symmetric_rule_check": {
+        "candidate_evidence": [
+          {
+            "candidate_index_in_native_slot_order": 0,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 1,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 2,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 3,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 4,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 5,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 6,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          },
+          {
+            "candidate_index_in_native_slot_order": 7,
+            "partition_of_unity_ok": true,
+            "shape_values_in_native_qp_order": [
+              [
+                0.6666666666666667,
+                0.16666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.1666666666666667,
+                0.6666666666666666,
+                0.16666666666666666
+              ],
+              [
+                0.16666666666666674,
+                0.16666666666666666,
+                0.6666666666666666
+              ]
+            ],
+            "symmetric_three_point_rule_ok": true
+          }
+        ],
+        "failed_candidate_indices": [],
+        "status": "SYMMETRIC_THREE_POINT_TRI3_SHAPE_RULE_VERIFIED"
+      }
+    },
+    "Mesh.getMeshFacets_and_getConnectivity": {
+      "all_slot_source_fids": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,2,5",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,5,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,5,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,2,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,2,11",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,11,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,11,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,4,5",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,5,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,4,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,4,13",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,13,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,13,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,10,11",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,11,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,10,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|1,10,13",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,13,14",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,3,6",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|3,6,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,6,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,3,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,3,12",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|3,12,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,12,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,5,6",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,6,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,5,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,14,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,14,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,11,12",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,12,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|2,11,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,14,15",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,5,8",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,8,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,8,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,5,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,14,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,14,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,7,8",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|7,8,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,7,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,7,16",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|7,16,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,16,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,14,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,13,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|4,13,16",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,16,17",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,6,9",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|6,9,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,9,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,6,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|6,15,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,15,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,8,9",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|8,9,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,8,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|8,17,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,17,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,15,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|5,14,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,17,18",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,14,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,14,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,11,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,11,20",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,14,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,13,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,13,22",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,19,20",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,19,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|10,19,22",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|12,15,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,15,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,12,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,12,21",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|12,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,15,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,14,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,20,21",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|11,20,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,17,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,17,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,14,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|16,17,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,16,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,16,25",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|16,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,22,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|13,22,25",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|15,18,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,18,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,15,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|15,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|17,18,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,17,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|17,26,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,26,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|14,23,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,23,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,29",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,29,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,29,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,31",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,31,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,31,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,28,29",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,29,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,28,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,28,31",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,31,32",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|21,24,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,24,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,30",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|21,30,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,30,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,32,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,32,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,29,30",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,30,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,29,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,32,33",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,26,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,32,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,32,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|25,26,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,34",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|25,34,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,34,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,32,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,31,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,31,34",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,34,35",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|24,27,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,27,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|24,33,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,33,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|26,27,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|26,35,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,35,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,33,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,32,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,35,36",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,32,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,32,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,29,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,29,38",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,38,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,38,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,32,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,31,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,31,40",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,40,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,40,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,37,38",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|37,38,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,37,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|28,37,40",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|37,40,41",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|30,33,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,33,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,30,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,30,39",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|30,39,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,39,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,33,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,32,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,41,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,41,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,38,39",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|38,39,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|29,38,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|38,41,42",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,35,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,35,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,32,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,41,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,41,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|34,35,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,34,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,34,43",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|34,43,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,43,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|40,41,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,40,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|31,40,43",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|40,43,44",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|33,36,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,36,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,33,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|33,42,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,42,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|35,36,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,35,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|35,44,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,44,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|41,42,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|32,41,45",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|41,44,45"
+      ],
+      "candidate_fids_equal_frozen_interface_set": true,
+      "candidate_records_in_native_slot_order": [
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            18,
+            19,
+            22
+          ],
+          "native_triangle_slot": 76,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+          "source_node_ids_sorted": [
+            19,
+            20,
+            23
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            -0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            21,
+            18,
+            22
+          ],
+          "native_triangle_slot": 79,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+          "source_node_ids_sorted": [
+            19,
+            22,
+            23
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            19,
+            20,
+            23
+          ],
+          "native_triangle_slot": 91,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+          "source_node_ids_sorted": [
+            20,
+            21,
+            24
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            -0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            22,
+            19,
+            23
+          ],
+          "native_triangle_slot": 93,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+          "source_node_ids_sorted": [
+            20,
+            23,
+            24
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            21,
+            22,
+            25
+          ],
+          "native_triangle_slot": 104,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+          "source_node_ids_sorted": [
+            22,
+            23,
+            26
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            -0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            24,
+            21,
+            25
+          ],
+          "native_triangle_slot": 107,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+          "source_node_ids_sorted": [
+            22,
+            25,
+            26
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            22,
+            23,
+            26
+          ],
+          "native_triangle_slot": 117,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+          "source_node_ids_sorted": [
+            23,
+            24,
+            27
+          ]
+        },
+        {
+          "area_m2_from_exact_native_coordinates": 5e-07,
+          "geometry_unit_normal_from_connectivity_order": [
+            -0.0,
+            0.0,
+            1.0
+          ],
+          "native_connectivity_node_rows_ordered": [
+            25,
+            22,
+            26
+          ],
+          "native_triangle_slot": 119,
+          "source_facet_classification": "internal",
+          "source_facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27",
+          "source_node_ids_sorted": [
+            23,
+            26,
+            27
+          ]
+        }
+      ],
+      "candidate_slots_ascending": [
+        76,
+        79,
+        91,
+        93,
+        104,
+        107,
+        117,
+        119
+      ],
+      "connectivity_array_shape": [
+        232,
+        3
+      ],
+      "facet_nodes_exactly_equal_source_nodes": true,
+      "native_tetra_connectivity_exactly_equal_source": true,
+      "native_triangle_slot_count": 232,
+      "status": "EXACT_NODE_ROW_AND_STABLE_FID_MAP"
+    }
+  },
+  "raw_arrays_path": "pgfrag/data/continuation_20261016/extrinsic_onset_refinement/shape_only_preflight/zero_step_native_arrays.npz",
+  "runtime": {
+    "akantu_distribution": "5.0.7-post1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python_executable": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+    "python_version": "3.12.15",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "schema": "pgfrag.extrinsic_onset_refinement.shape_only_preflight.v1",
+  "status": "VERIFIED_COUPON_AFFINE_TRI3"
+}

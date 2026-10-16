@@ -1,0 +1,370 @@
+{
+  "argv": [
+    "<julia-executable>",
+    "--project=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\alpha300_halfdt\\run_attempt_01\\source_snapshot\\run_bowl_dynamics.jl",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\alpha300_halfdt\\run_attempt_01\\case.toml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\alpha300_halfdt\\run_attempt_01"
+  ],
+  "argv_sha256": "2b32ff5c8416702ad9c94be3b6535145d3636cced5ce02317d4a37593e75b1e3",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "prepared_only": true,
+  "run_id": "native_bowl_h1mm_fixed_delta_300s-1_800steps_run_attempt_01",
+  "source_receipts": [
+    {
+      "bytes": 8223,
+      "path": "source_snapshot/backend_provenance.json",
+      "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+    },
+    {
+      "bytes": 44442,
+      "path": "source_snapshot/bowl_dynamics.py",
+      "sha256": "54142a8e5094da28a4dd35b03251385da66a3a57a2718267407fd399c828adec"
+    },
+    {
+      "bytes": 6147,
+      "path": "source_snapshot/forge_manifest.json",
+      "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67"
+    },
+    {
+      "bytes": 22753,
+      "path": "source_snapshot/Manifest.toml",
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "bytes": 107,
+      "path": "source_snapshot/Project.toml",
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+    },
+    {
+      "bytes": 24321,
+      "path": "source_snapshot/run_bowl_dynamics.jl",
+      "sha256": "59a5469f6f492b31fe84209273a055c8fe3165da82a1626b5629108296cd000d"
+    },
+    {
+      "bytes": 1077,
+      "path": "source_snapshot/vendor/Peridynamics.jl/LICENSE",
+      "sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e"
+    },
+    {
+      "bytes": 1185,
+      "path": "source_snapshot/vendor/Peridynamics.jl/Project.toml",
+      "sha256": "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986"
+    },
+    {
+      "bytes": 3959,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/AbaqusMeshConverter/AbaqusMeshConverter.jl",
+      "sha256": "b3d09a00fba94ea3a66e132b2bc61573cafea3fcbdf8d35d35dde1e674c836b1"
+    },
+    {
+      "bytes": 1473,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/autoinfiltrate.jl",
+      "sha256": "2ab4eaa27d72eedcb9935f1e3ba3ef390c852172f7076c7ff77b95b110b1f4ec"
+    },
+    {
+      "bytes": 855,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/docs.jl",
+      "sha256": "49993307de0cb0c0efe6a0b044c4acfcfc906486d7692fe81d6db49058ea2f49"
+    },
+    {
+      "bytes": 1616,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/errors.jl",
+      "sha256": "1a07d4a16cb04991fd20eb7bcdfa0450bca569829d0510f2e71fecaaf0390226"
+    },
+    {
+      "bytes": 846,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/function_arguments.jl",
+      "sha256": "849063710e2d5e36417896c1cd6fc1ee89a7fade0ac173544d33941c6e871bbb"
+    },
+    {
+      "bytes": 5049,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/io.jl",
+      "sha256": "19bbb3cc000907b2f8264ec2cb1a85ac1cc8cfad6a15a22995fe4eea4c76bb0a"
+    },
+    {
+      "bytes": 19215,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/logs.jl",
+      "sha256": "6c64b1e723adbed0dd0f55fded302b30776018851910360030b5eaebb2d6715a"
+    },
+    {
+      "bytes": 6455,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/mpi.jl",
+      "sha256": "87a69069a294ecae1a649e499e3c7ba396d714c1c1b7234036ea324a17849077"
+    },
+    {
+      "bytes": 987,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/nans.jl",
+      "sha256": "6aa73883be67da379f854f2306db1115de6117595066b87b8aaaff6bbcbe84ac"
+    },
+    {
+      "bytes": 2936,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/precompile_workload.jl",
+      "sha256": "c1caeee907c1e9279bc32721c4e5a11e4f20e655413acdaeb5175938acd29dcb"
+    },
+    {
+      "bytes": 16196,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/process_each_export.jl",
+      "sha256": "3e6010e541437f1323d41618c7b95c4d078f073e684b8eb043a060a0679346f1"
+    },
+    {
+      "bytes": 5444,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/auxiliary/static_arrays.jl",
+      "sha256": "2f89e55879e12dc63bca05ccfc8b9446910e6e98c7de54d8dc5fd91f9b1a8a1e"
+    },
+    {
+      "bytes": 426,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/data_handler.jl",
+      "sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+    },
+    {
+      "bytes": 3235,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/halo_exchange.jl",
+      "sha256": "375f4d49d113737b93405909fe3e9dd47e6c8afb5c1240ab06c99acc2b24d140"
+    },
+    {
+      "bytes": 6153,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/job.jl",
+      "sha256": "6b44e29743dda45e272033c08f985cfbeed91e9f83821b02a2a25549e9c314e1"
+    },
+    {
+      "bytes": 15832,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/mpi_body_data_handler.jl",
+      "sha256": "84b8303ddeaa18902d40904b2e540591678a81566df38c72303e0585eefb9150"
+    },
+    {
+      "bytes": 110,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/mpi_multibody_data_handler.jl",
+      "sha256": "e32b0c3c83dab0657fcf9b6219f9b10a16b1aa52d84232533f710efb56082272"
+    },
+    {
+      "bytes": 2788,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/parameter_handler.jl",
+      "sha256": "2630c4ba6651152071d6a4b7528a88e651e02a9c37337f39bde26cc0dd30264c"
+    },
+    {
+      "bytes": 4157,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/parameters.jl",
+      "sha256": "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847"
+    },
+    {
+      "bytes": 15633,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/storages.jl",
+      "sha256": "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c"
+    },
+    {
+      "bytes": 21642,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/study.jl",
+      "sha256": "7adb4dc8274ac1d5702be1079c67ad72f6e0c3f3aa6a43a9dc272b3c22109c9b"
+    },
+    {
+      "bytes": 3674,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/submit.jl",
+      "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa"
+    },
+    {
+      "bytes": 4211,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/systems.jl",
+      "sha256": "0078283af05c365df7cccf41cee4e10bcf27a2cc44717d0f41db20f30855bda2"
+    },
+    {
+      "bytes": 8327,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+      "sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+    },
+    {
+      "bytes": 4349,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/threads_multibody_data_handler.jl",
+      "sha256": "245eb4e3d8ab28c3b89f3f97df09996bee51e44520587cde14c669c7ff165bee"
+    },
+    {
+      "bytes": 1591,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/core/time_solvers.jl",
+      "sha256": "03dbb2371e6bc6a2036f3256c505b9d503477b5a4b9fb4580360d7dfcfeed157"
+    },
+    {
+      "bytes": 18152,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "bytes": 3795,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/body_chunk.jl",
+      "sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4"
+    },
+    {
+      "bytes": 7135,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/bond_associated_system.jl",
+      "sha256": "9709c0b39515e04eba79e8b2b27ab493c26ae49a662dbc500d380d323467c3cc"
+    },
+    {
+      "bytes": 14917,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "bytes": 6975,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/bond_system_corrections.jl",
+      "sha256": "63c3a3c458f84dcaa0ad3345c141f67fad2ae42f165b1df3c32ecc6e9c508186"
+    },
+    {
+      "bytes": 4407,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/chunk_handler.jl",
+      "sha256": "ee37278c8966dedc3248d561e75a5897584eec9695827c521d5c7a26dc12f28d"
+    },
+    {
+      "bytes": 1729,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/condition_handler.jl",
+      "sha256": "cece417ce115927bae3ed2f80ca1fc9d6b8adedd5b7c0c2f2f83ebffd2e95499"
+    },
+    {
+      "bytes": 1943,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/decomposition.jl",
+      "sha256": "d766e8c582355a00725abd1ed17343fd0b7a2fac2de9a0947920bd8761031e22"
+    },
+    {
+      "bytes": 22607,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/interaction_system.jl",
+      "sha256": "7b70c14c7922f8a6ff7c28bd54978b471bcc0a72df59f59bfdd6f2d574e78716"
+    },
+    {
+      "bytes": 2423,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/kernels.jl",
+      "sha256": "37a68ed8ecdcc3ad77ccff08ba35a43201b7d99df6002ee732fc49a1d77261fb"
+    },
+    {
+      "bytes": 4899,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/multibody_setup.jl",
+      "sha256": "4c54404769b64ee45ab39f8bb79527fd30d49c98bf5b33d9895fae94df333def"
+    },
+    {
+      "bytes": 22121,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/point_generators.jl",
+      "sha256": "a74d09854bc8c962448341377c40b1cfeddc2e37ac99a751e6c75e9f94af5d73"
+    },
+    {
+      "bytes": 6499,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/point_sets.jl",
+      "sha256": "88aef64ec47026b36278c7ab266b8393c41e7e74a85c76b1a33a2aa29ec57c0f"
+    },
+    {
+      "bytes": 3881,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/predefined_cracks.jl",
+      "sha256": "6b2d67e1af7934016e2f40d0f695f42c3cee899229a3a65d422ec31a9341d9d2"
+    },
+    {
+      "bytes": 1630,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/discretization/zem_stabilization.jl",
+      "sha256": "ad47de68861c0419a14cadf57fc965b35a7fb950161aaefee98d1398e5b3f729"
+    },
+    {
+      "bytes": 6157,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/Peridynamics.jl",
+      "sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+    },
+    {
+      "bytes": 12720,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/ba_correspondence.jl",
+      "sha256": "f1afac27e2499667cd55d1fa6af7bd6a7f05d1686d850f5061771e0df868652c"
+    },
+    {
+      "bytes": 9424,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/bond_based.jl",
+      "sha256": "23c4cb05e348e94eab32a8e1ec8fa411eb246e89b242e201b383e349617a5da0"
+    },
+    {
+      "bytes": 26235,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+      "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+    },
+    {
+      "bytes": 9899,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/constitutive_models.jl",
+      "sha256": "fd9d6ec000cda97ce00fe9034dddaf74db5efbc80ba54f1c8c9b613802056f5d"
+    },
+    {
+      "bytes": 24146,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/continuum_kinematics_inspired.jl",
+      "sha256": "5394f24e61dbc755ae5a37475b496fcb68c28cd05092196fa1129bf6daffc3d4"
+    },
+    {
+      "bytes": 14854,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/correspondence.jl",
+      "sha256": "cbeeedb24cf3bdee319b3cc2d68c72b2fb63d7e0235a6dfd54033294d7e24b9e"
+    },
+    {
+      "bytes": 7878,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/correspondence_rotated.jl",
+      "sha256": "6d2c3a1c3d32100531f44a9c7085cb31bd5c7f59de5cabf15c4072109c5862f9"
+    },
+    {
+      "bytes": 7116,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/dh_bond_based.jl",
+      "sha256": "5a9c8a313396dfc8ababde4dc488a331ed7baedf2de1657e8b86e05e519646cc"
+    },
+    {
+      "bytes": 6507,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/fracture.jl",
+      "sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075"
+    },
+    {
+      "bytes": 8002,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/generalized_bond_based.jl",
+      "sha256": "47bbad027bf3c30caf39a12cbb6890e8039dee8e5da1f488ba1d3e1f68e929df"
+    },
+    {
+      "bytes": 6626,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
+      "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+    },
+    {
+      "bytes": 8596,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/material_parameters.jl",
+      "sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab"
+    },
+    {
+      "bytes": 11286,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "bytes": 26617,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/rk_correspondence.jl",
+      "sha256": "ed79647c7e075cb0755d7f973cf45f7e77d808ed0f91a65a9df7095448886c3d"
+    },
+    {
+      "bytes": 7164,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/rk_correspondence_rotated.jl",
+      "sha256": "dda7924cb5b7ed455c45f58a9bcda2c6b26dedbdc9011d52bed627fb41a562cd"
+    },
+    {
+      "bytes": 5587,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/short_range_force_contact.jl",
+      "sha256": "177250862210b0057ced9a2420c54786348de29f034e6be905bcd51ac413f72b"
+    },
+    {
+      "bytes": 3089,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/physics/stress.jl",
+      "sha256": "e01883cfda12c83e7336979fa133b285a692f90430bd7590730d995650bfeaf9"
+    },
+    {
+      "bytes": 14612,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/time_solvers/dynamic_relaxation.jl",
+      "sha256": "b370aac941bae52a90fd340bef888f6242f777251d7c75ec1b004591e05eb937"
+    },
+    {
+      "bytes": 31150,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/time_solvers/newton_krylov.jl",
+      "sha256": "c09336de44c48b272bfa6dbec2c2ff13cc8f0ee74c80a9e0fba357d251ee8c9b"
+    },
+    {
+      "bytes": 12397,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+    },
+    {
+      "bytes": 12106,
+      "path": "source_snapshot/vendor/Peridynamics.jl/src/VtkReader/VtkReader.jl",
+      "sha256": "e729cad6adf7b85520add6766864860b4bf45776c2e887e90cbf2067a3e59f84"
+    }
+  ]
+}

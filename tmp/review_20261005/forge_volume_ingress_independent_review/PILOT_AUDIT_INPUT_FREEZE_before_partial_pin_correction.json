@@ -1,0 +1,77 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_actual_pilot_audit_input_freeze.v1",
+  "status": "ADAPTER_UPDATED_AWAITING_ROOT_REVIEW",
+  "review_date": "2026-10-05",
+  "input_scope": {
+    "retained_stage": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/.forge_ingress_stage__2srs6ad",
+    "supervisor_summary": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/candidate_run01_supervisor/pilot_results_summary.json",
+    "producer_summary_use": "provenance/finalization/promotion cross-check only; not an analytic geometry oracle"
+  },
+  "retained_stage_files": {
+    "cell_in_progress.json": {
+      "bytes": 2372,
+      "sha256": "5A166E9EEF48A505B9BC00880D6BC264E87430AEF1D748511E1059CC852E99E3"
+    },
+    "cell_ledger.json": {
+      "bytes": 118930,
+      "sha256": "605AC46FA610141F45998CF66BB4CFE6381BC74C5C3E7E93C54FD22BFE44B56D"
+    },
+    "cell_ledger.partial.json": {
+      "bytes": 119097,
+      "sha256": "544ED3557F0E24D68E91DD8EE5B566EDE773D0F54B3F58633272AE2CAAC49B1"
+    },
+    "material_points.json": {
+      "bytes": 77304,
+      "sha256": "EA0C64B996173735185368934C2BD6DFB7734CE1990813599C8F695B89BD1C0B"
+    },
+    "parent_execution_receipt.json": {
+      "bytes": 2151,
+      "sha256": "97310270BE5A002B78E24B75E61D3F8C301F66B8C3095DDEF61CAF475F2A6BB5"
+    },
+    "request.json": {
+      "bytes": 1032,
+      "sha256": "EF3D3E668B183ECB2AF98B02E0800AB93779E9A1EF91DE9BFA151CA608334CBB"
+    },
+    "worker_failure.json": {
+      "bytes": 4302,
+      "sha256": "5EB4C9739430BF1F9A26E8CE6F51D0D951E879791FE10A2F37FA586A8A6C5E1E"
+    }
+  },
+  "supervisor_summary": {
+    "bytes": 9870,
+    "sha256": "391AE016166451F1135C0467CB90D24BFE751A3F39C199D1561705039D678213"
+  },
+  "analytic_source": {
+    "path": "pgfrag/tmp/review_20261005/forge_volume_ingress_independent_review/analytic_roi_reference.py",
+    "sha256": "F2E8A7208E2522BE69236DE95C5B3DE824FEEDAB98BA4E840CA89D223349CC9D",
+    "role": "independent exact-form 1D disk/rectangle moment calculation; standard library only"
+  },
+  "audit_adapter": {
+    "path": "pgfrag/tmp/review_20261005/forge_volume_ingress_independent_review/pilot_actual_audit.py",
+    "sha256": "06F1A1D3E64EDB3F950C260F673999048FFA2584025EE77FD922AF99A09F92B5",
+    "ast_parse": "PASS_SOURCE_ONLY_AST_PARSE",
+    "role": "read-only raw stage and supervisor summary adapter; no CAD imports or worker invocation",
+    "added_gates": "per-positive-cell delivered volume-weighted centroid vs independent analytic centroid (x/y/z, fixed 1e-6 mm) and independent strict annulus/source-slab/grid-slab point membership"
+  },
+  "method_review": {
+    "path": "pgfrag/tmp/review_20261005/forge_volume_ingress_independent_review/PILOT_AUDIT_ADAPTER_REVIEW.md",
+    "sha256": "948F3BE5DF0F07C8AA0C2A9FCA8CF543DC46DB3B39BDA53EADF7427E014CFAE4"
+  },
+  "prior_source_snapshot": {
+    "path": "pgfrag/tmp/review_20261005/forge_volume_ingress_independent_review/PILOT_AUDIT_INPUT_FREEZE_before_centroid_gate.json",
+    "sha256": "670AFABF71F90D5BD9858AB3624DFF8AFA1666AA8507C3693126803E7E6BF16E",
+    "description": "preserved prior adapter/source freeze before centroid and analytic-membership gates"
+  },
+  "producer_execution": {
+    "status": "BLOCKED_REPORT_FINALIZATION",
+    "worker_exit_code": 2,
+    "report_present": false,
+    "candidate_not_promoted": true,
+    "rerun": false
+  },
+  "audit_execution": {
+    "performed": false,
+    "cad_or_solver_invoked": false,
+    "waiting_for_root_review_and_authorization": true
+  }
+}

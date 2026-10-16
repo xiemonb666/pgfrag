@@ -1,0 +1,60 @@
+{
+  "design_contract": {
+    "opening_scale": "shared 0..delta0 m in equal-aspect x/z panels",
+    "point_sources": [
+      "evidence.interface",
+      "evidence.baseline.points",
+      "evidence.coupled.points"
+    ],
+    "traction_law": "virgin t=K0*delta shown only on [0,delta0]; no softening extrapolation",
+    "traction_signs": "saved internal +t*n bookkeeping share; saved physical upper -t*n and lower +t*n",
+    "visible_labels": [
+      "NO_GROWTH",
+      "NO_MATERIAL_CALIBRATION",
+      "FIXED_CRACK_TOY_ELASTIC_DIAGNOSTIC"
+    ],
+    "worker_schema": "mixed93_actual_cohesive_bridge_numeric_result.v1"
+  },
+  "execution_authorized": false,
+  "input_result": {
+    "exists": false,
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "sha256": null
+  },
+  "limits": {
+    "future_attempts": 1,
+    "future_combined_output_bytes": 2097152,
+    "future_wall_seconds": 15,
+    "renderer_max_lines": 160,
+    "runner_max_lines": 130
+  },
+  "non_self_referential": true,
+  "owner_directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual",
+  "producer_worker_source": {
+    "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+    "sha256_actual": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+    "sha256_expected": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+  },
+  "schema": "mixed93_actual_cohesive_saved_visual_source_freeze.v1",
+  "sha256": {
+    "README.md": "f54ffe64223d25fd4a669c0d961587c3cd82880c81aad58fa838976920dd8f27",
+    "SOURCE_PINS.json": "d1dedf708610ec1e58ddfd81fa133d0c42dad1b43bc250bda2f3e92cb300cf95",
+    "case.json": "d4080c664ae2c77d5159e32b8596e810c66cd33efde540571d40e37d2116e653",
+    "render_saved_bridge.py": "7b2d76077cccae089217d7ece8410507131a57b5bc1e3ff73a26bcb32d44692e",
+    "run_saved_bridge_visual.py": "2a5910d50742a91b1de6fbceffc834d743b01b6dbd51cab956e433cbcdb8db5d"
+  },
+  "source_lines": {
+    "render_saved_bridge.py": 152,
+    "run_saved_bridge_visual.py": 130
+  },
+  "source_only_check": {
+    "actual_result_opened": false,
+    "command": "VesselForge python.exe -B run_saved_bridge_visual.py",
+    "exit_code": 0,
+    "matplotlib_imported": false,
+    "numerical_or_provider_modules_imported": false,
+    "rendered": false,
+    "response_status": "SOURCE_READY_ACTUAL_RESULT_PENDING"
+  },
+  "status": "SOURCE_READY_ACTUAL_RESULT_PENDING"
+}

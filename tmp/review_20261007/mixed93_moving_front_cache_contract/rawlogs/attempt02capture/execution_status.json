@@ -1,0 +1,9 @@
+{
+  "attempt_id": "attempt02capture",
+  "exit_code": 0,
+  "wall_seconds": 0.2158471,
+  "stdout_bytes": 17361,
+  "stderr_bytes": 0,
+  "python": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "archive_payload_policy": "named arrays only; BASE values/gradients NPY headers only"
+}

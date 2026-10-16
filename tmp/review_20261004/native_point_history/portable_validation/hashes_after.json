@@ -1,0 +1,256 @@
+{
+  "created_utc": "2026-10-04T14:13:24.686Z",
+  "files": [
+    {
+      "path_from_pgfrag": "experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "live_bytes": 23957,
+      "live_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+      "copy_bytes": 23957,
+      "copy_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/__init__.py",
+      "live_bytes": 122,
+      "live_sha256": "d45c208386d910e5815546599533bd56c54e1154c3a8b7155092cb47322e43a1",
+      "copy_bytes": 122,
+      "copy_sha256": "d45c208386d910e5815546599533bd56c54e1154c3a8b7155092cb47322e43a1",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/assets.py",
+      "live_bytes": 13625,
+      "live_sha256": "9e56b9f1f2ef289b061cf9a1f4241d473990f895d330e40cfc7b100caeaad889",
+      "copy_bytes": 13625,
+      "copy_sha256": "9e56b9f1f2ef289b061cf9a1f4241d473990f895d330e40cfc7b100caeaad889",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/backend.py",
+      "live_bytes": 42840,
+      "live_sha256": "8b3577201e0e8e94e747b3c5c3529c2d117d8ceccb729f0d2d2510dd3fd834dc",
+      "copy_bytes": 42840,
+      "copy_sha256": "8b3577201e0e8e94e747b3c5c3529c2d117d8ceccb729f0d2d2510dd3fd834dc",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/bias_protocol.py",
+      "live_bytes": 46259,
+      "live_sha256": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779",
+      "copy_bytes": 46259,
+      "copy_sha256": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/bond_events.py",
+      "live_bytes": 34756,
+      "live_sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+      "copy_bytes": 34756,
+      "copy_sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/bond_visibility.py",
+      "live_bytes": 38074,
+      "live_sha256": "7b87ffd1bb94f4474de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86",
+      "copy_bytes": 38074,
+      "copy_sha256": "7b87ffd1bb94f4474de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/cli.py",
+      "live_bytes": 2569,
+      "live_sha256": "40129b7761bbbda378be0184987cc9db7de027d00a2a1b8c234bc2d3dd8fb14e",
+      "copy_bytes": 2569,
+      "copy_sha256": "40129b7761bbbda378be0184987cc9db7de027d00a2a1b8c234bc2d3dd8fb14e",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/energy_ledger.py",
+      "live_bytes": 37240,
+      "live_sha256": "6d7cea82c0e1bd105e143e3a3f5324595d2594c99201d9de7a0003d28496ad0e",
+      "copy_bytes": 37240,
+      "copy_sha256": "6d7cea82c0e1bd105e143e3a3f5324595d2594c99201d9de7a0003d28496ad0e",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/errors.py",
+      "live_bytes": 207,
+      "live_sha256": "924baceb63793ac5bdb53c7e0f4299aae649d8c8a67716f106bd287e0d5e3bfb",
+      "copy_bytes": 207,
+      "copy_sha256": "924baceb63793ac5bdb53c7e0f4299aae649d8c8a67716f106bd287e0d5e3bfb",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/hashing.py",
+      "live_bytes": 552,
+      "live_sha256": "3f2b4149fa382c0c5e7ac9aa6ead5b05996c992e9bbf7e6a8a625c03585d8590",
+      "copy_bytes": 552,
+      "copy_sha256": "3f2b4149fa382c0c5e7ac9aa6ead5b05996c992e9bbf7e6a8a625c03585d8590",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/jobs.py",
+      "live_bytes": 10520,
+      "live_sha256": "c9d1e70ea063a47dea5136c59a65583a9fecd3cd1d44b1f94eaa2aaf8e32caad",
+      "copy_bytes": 10520,
+      "copy_sha256": "c9d1e70ea063a47dea5136c59a65583a9fecd3cd1d44b1f94eaa2aaf8e32caad",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/mesh_resolution_audit.py",
+      "live_bytes": 42919,
+      "live_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "copy_bytes": 42919,
+      "copy_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "src/pgfrag/native_point_history.py",
+      "live_bytes": 52774,
+      "live_sha256": "104a65afc0157b99d9a62ee6c455b8dff58b18e2b81b246124e0e50c61272845",
+      "copy_bytes": 52774,
+      "copy_sha256": "104a65afc0157b99d9a62ee6c455b8dff58b18e2b81b246124e0e50c61272845",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/bond_events/native_shaped_fixture.json",
+      "live_bytes": 2201,
+      "live_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f",
+      "copy_bytes": 2201,
+      "copy_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/energy_ledger/audit_cases.json",
+      "live_bytes": 3707,
+      "live_sha256": "559ddce00f53217e0c0992248d4b9b4078566c0557cc0bf09018e991c12ab81e",
+      "copy_bytes": 3707,
+      "copy_sha256": "559ddce00f53217e0c0992248d4b9b4078566c0557cc0bf09018e991c12ab81e",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/input/metadata.toml",
+      "live_bytes": 853,
+      "live_sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36",
+      "copy_bytes": 853,
+      "copy_sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/input/points.csv",
+      "live_bytes": 63,
+      "live_sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3",
+      "copy_bytes": 63,
+      "copy_sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/canonical_bond_state_history.csv",
+      "live_bytes": 112,
+      "live_sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e",
+      "copy_bytes": 112,
+      "copy_sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/directed_bond_state_history.csv",
+      "live_bytes": 344,
+      "live_sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0",
+      "copy_bytes": 344,
+      "copy_sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/point_state_history.csv",
+      "live_bytes": 736,
+      "live_sha256": "bf5da4c95244bc99a9afd206746baa699562bf123092ec03f6a21ad18c1d00f9",
+      "copy_bytes": 736,
+      "copy_sha256": "bf5da4c95244bc99a9afd206746baa699562bf123092ec03f6a21ad18c1d00f9",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/fixtures/native_point_history/snapshot/summary.toml",
+      "live_bytes": 618,
+      "live_sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a",
+      "copy_bytes": 618,
+      "copy_sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/test_bond_events.py",
+      "live_bytes": 15825,
+      "live_sha256": "ca2f7c1258cdd9607bc36b2745796122d8a7ff8c38dc431cb814d6d4b331f499",
+      "copy_bytes": 15825,
+      "copy_sha256": "ca2f7c1258cdd9607bc36b2745796122d8a7ff8c38dc431cb814d6d4b331f499",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/test_energy_ledger.py",
+      "live_bytes": 27925,
+      "live_sha256": "e647e819e79e6fedf4879314410c4327a88552dbc6aeb786b0d05c6d685f24cd",
+      "copy_bytes": 27925,
+      "copy_sha256": "e647e819e79e6fedf4879314410c4327a88552dbc6aeb786b0d05c6d685f24cd",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    },
+    {
+      "path_from_pgfrag": "tests/test_native_point_history.py",
+      "live_bytes": 10669,
+      "live_sha256": "fbfcfe162e1ce6420e773523790884b29e39532789a18e8afd4b309af83db785",
+      "copy_bytes": 10669,
+      "copy_sha256": "fbfcfe162e1ce6420e773523790884b29e39532789a18e8afd4b309af83db785",
+      "live_unchanged": true,
+      "copy_matches_live": true,
+      "copy_unchanged": true
+    }
+  ],
+  "all_source_test_fixture_observer_hashes_unchanged": true
+}

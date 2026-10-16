@@ -1,0 +1,13 @@
+test_base_front_and_heaviside_identities_share_one_source (__main__.FakeFieldContractTests.test_base_front_and_heaviside_identities_share_one_source) ... ok
+test_dof_and_source_cap_failures_leave_registry_unchanged (__main__.FakeFieldContractTests.test_dof_and_source_cap_failures_leave_registry_unchanged) ... ok
+test_engineering_strain_order_matches_frozen_elastic_convention (__main__.FakeFieldContractTests.test_engineering_strain_order_matches_frozen_elastic_convention) ... ok
+test_fake_field_row_matches_registry_and_keeps_per_coefficient_columns (__main__.FakeFieldContractTests.test_fake_field_row_matches_registry_and_keeps_per_coefficient_columns) ... ok
+test_insertion_order_does_not_change_canonical_ids_or_slots (__main__.FakeFieldContractTests.test_insertion_order_does_not_change_canonical_ids_or_slots) ... ok
+test_malformed_or_mismatched_ids_fail_closed (__main__.FakeFieldContractTests.test_malformed_or_mismatched_ids_fail_closed) ... ok
+test_non_ok_rows_refuse_partial_data (__main__.FakeFieldContractTests.test_non_ok_rows_refuse_partial_data) ... ok
+test_quadrature_budget_and_dof_budget_caps (__main__.FakeFieldContractTests.test_quadrature_budget_and_dof_budget_caps) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK

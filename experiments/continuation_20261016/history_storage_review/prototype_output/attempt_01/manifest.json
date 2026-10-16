@@ -1,0 +1,117 @@
+{
+  "schema": "pgfrag.lossless_history_chunks.prototype.v1",
+  "state": "COMPLETE",
+  "total_frames": 13,
+  "committed_frames": 13,
+  "chunk_frames": 5,
+  "node_saved_steps": [
+    0,
+    3,
+    6,
+    9,
+    12
+  ],
+  "fields": {
+    "opening_m": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5,
+        3
+      ]
+    },
+    "traction_Pa": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5,
+        3
+      ]
+    },
+    "damage": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5
+      ]
+    },
+    "delta_max_m": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5
+      ]
+    },
+    "contact_traction_Pa": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5,
+        3
+      ]
+    },
+    "contact_opening_m": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5,
+        3
+      ]
+    },
+    "contact_energy_check": {
+      "dtype": "<f8",
+      "tail_shape": [
+        3
+      ]
+    },
+    "interface_work_check": {
+      "dtype": "<f8",
+      "tail_shape": [
+        4
+      ]
+    },
+    "energy_J": {
+      "dtype": "<f8",
+      "tail_shape": [
+        5
+      ]
+    },
+    "ledger": {
+      "dtype": "<f8",
+      "tail_shape": [
+        28
+      ]
+    },
+    "patch_displacement_x_m": {
+      "dtype": "<f8",
+      "tail_shape": [
+        9
+      ]
+    },
+    "node_state": {
+      "dtype": "<f8",
+      "tail_shape": [
+        7,
+        4,
+        3
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "file": "chunk_000000.npz",
+      "frame_start": 0,
+      "frame_stop": 5,
+      "bytes": 6613,
+      "sha256": "e47bb56277abca0b0719977a60ff085f1081b8460297df241f7a84659d4dc515"
+    },
+    {
+      "file": "chunk_000001.npz",
+      "frame_start": 5,
+      "frame_stop": 10,
+      "bytes": 6351,
+      "sha256": "bbd780a5a46a305af4a06d138260844d34aa3548fbb7007eba46f9a18d7524e3"
+    },
+    {
+      "file": "chunk_000002.npz",
+      "frame_start": 10,
+      "frame_stop": 13,
+      "bytes": 5080,
+      "sha256": "57a89751ed35ea43d0a1246d5e957d95c93e12be23ddc0812b8f7d88cde98040"
+    }
+  ]
+}

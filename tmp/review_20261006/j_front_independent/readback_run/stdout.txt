@@ -1,0 +1,11 @@
+{
+  "status": "INDEPENDENT_READBACK_OK",
+  "sample_count": 224,
+  "analytic_J_J_per_m2": 0.013,
+  "maximum_absolute_relative_error": 8.679744315207977e-05,
+  "branch_upper_sample_count": 56,
+  "branch_lower_sample_count": 56,
+  "max_gradient_abs_difference": 4.84869951806108e-19,
+  "max_rotated_normal_abs_difference": 3.1401849173675503e-16,
+  "output": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\j_front_independent\\independent_readback.json"
+}

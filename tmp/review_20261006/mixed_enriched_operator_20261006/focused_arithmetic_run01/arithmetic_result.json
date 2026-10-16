@@ -1,0 +1,50 @@
+{
+  "27_source_inventory": "unique IDs only; no 93-DOF matrix or spectrum",
+  "checks": [
+    "independent_B_reconstruction",
+    "mixed_affine_plus_four_global_branch_representation",
+    "semantic_layout_counts_and_unique_IDs",
+    "independent_24DOF_raw_K_and_unsymmetrized_asymmetry",
+    "raw_K_and_six_physical_rigid_nulls",
+    "405_diagnostic_six_additional_branch_null_candidates",
+    "raw_surface_traction_force",
+    "ambiguous_nonfinite_and_ID_mismatch_fail_closed"
+  ],
+  "metrics": {
+    "K_max_abs_error": 0.0,
+    "K_relative_max_error": 0.0,
+    "K_scale_max_abs": 78891900030.11142,
+    "diagnostic_branch_null_ratios": [
+      1.4472252835391117e-16,
+      9.31259100853434e-17,
+      1.1240140613552453e-16,
+      1.9741460309559945e-16,
+      4.921689095929934e-17,
+      1.1718817525332465e-16
+    ],
+    "diagnostic_rigid_null_ratios": [
+      4.8353471828781006e-17,
+      4.8353471828781006e-17,
+      4.8353471828781006e-17,
+      2.2532267773405035e-17,
+      3.032379962028341e-17,
+      2.0215866413522275e-17
+    ],
+    "matrix_dof_counts": [
+      24,
+      60
+    ],
+    "physical_null_ratios": [
+      4.8353471828781006e-17,
+      4.8353471828781006e-17,
+      4.8353471828781006e-17,
+      2.0215866413522275e-17,
+      2.0215866413522275e-17,
+      2.0215866413522275e-17
+    ],
+    "raw_K_max_abs_asymmetry": 3.814697265625e-06,
+    "raw_K_relative_asymmetry": 4.8353471828781006e-17
+  },
+  "physical_eligibility": "NOT_CERTIFIED; 93-DOF spectrum not counted.",
+  "status": "PASS_ARITHMETIC_ONLY"
+}

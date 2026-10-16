@@ -1,0 +1,67 @@
+{
+  "schema": "pgfrag.reference_v6_native_initialization_preflight_control.v1",
+  "status": "READY_FOR_SINGLE_NATIVE_INITIALIZATION_PREFLIGHT",
+  "run_mode": "NATIVE_INITIALIZATION_ONLY_ZERO_SOLVER_STEPS",
+  "runtime": "WSL Ubuntu; Akantu 5.0.7-post1; Python 3.12.15; NumPy 2.5.3",
+  "runtime_python": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+  "command_argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_v6_preflight/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_v6_preflight/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_v6_preflight/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "command_shell": "bash run_native_preflight.sh; timeout --foreground --signal=TERM --kill-after=5s 300s; taskset -c 0; external PowerShell watchdog 330s",
+  "external_watchdog_s": 330,
+  "wrapper_wall_time_s": 300,
+  "output_budget_bytes": 268435456,
+  "history_cap_bytes": 67108864,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE"
+  },
+  "cpu_affinity": "CPU 0 via taskset -c 0",
+  "case_sha256": "2954e053b46af8aa5cee977c29a762f37749d739893933391aa5eb2a6dbc6788",
+  "input_hashes": {
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "known_exterior_fid_role_rows.json": "49d3d0b4a7546ff269d0d865c92d34b15a895db3406fc954b67817c9d6ac2fcf",
+    "known_exterior_fid_roles.npz": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "mesh.msh": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+    "mesh.original.msh": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+    "mesh_alias_receipt.json": "a5d8e38f834d7b81a7da675d052ad24175787e2b2ed6314a02d04936964f0125",
+    "source_geometry_provenance.json": "3afe16a1b8adbd2b037295aa31cce00e2650a0f209319f7a0025ac15de66c5f5",
+    "source_mesh.npz": "781cf815d05b9db7587ecde192f0b7c27a2947780f814d439a73fc0b24a0e820",
+    "source_mesh_result.json": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924",
+    "t4_cell_row_correspondence.npz": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c"
+  },
+  "source_geometry_hashes": {
+    "canonical_step_sha256": "32b2735010a086eb809674ca07bc4cd0dc5ca499e3adc539eedeca7657e1df9d",
+    "upstream_original_v6_step_sha256": "1cd34bc5f5b3cf8b6b937afeb7345b982c9de01165f0d570ca11b83f3ea31c0e",
+    "source_face_lineage_sha256": "9e6c789989cb0f5f42ed9c37f0264bc02899a9c29f571254938a4781640bcfd2",
+    "run05_result_sha256": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924",
+    "original_msh_sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+    "alias_msh_sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490"
+  },
+  "stdout_path": "native_preflight/stdout.log",
+  "stderr_path": "native_preflight/stderr.log",
+  "exit_code_path": "native_preflight/native_exit_code.txt",
+  "forecast_status": "WHOLE_OUTPUT_FORECAST_PASS_RUN_NOT_STARTED",
+  "forecasted_whole_inputs_and_outputs_bytes": 169389979,
+  "runner_script_hashes": {
+    "prepare_preflight.py": "e6e6fb4715b1add5abbf2cdf5f3790877f19a2dcc22c4a0c346c12ce76778a15",
+    "run_preflight.ps1": "7b847cb215b161abb7e88231fe2707562e76c203d9124301615a1561bd5a56b4",
+    "run_native_preflight.sh": "6a48e5b790393e8e2aa17eb64480826490346e00617fe7cfceb2e6bae2d0666a"
+  },
+  "audit_script": {
+    "path": "pgfrag/data/continuation_20261016/reference_v6_preflight/audit_preflight.py",
+    "sha256": "144e3f4a2a1067421846eb81781dc09fa43771f19300a714744b714764522989",
+    "bytes": 49913
+  }
+}

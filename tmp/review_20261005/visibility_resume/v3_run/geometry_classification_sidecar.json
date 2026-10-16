@@ -1,0 +1,1129 @@
+{
+  "schema": "pgfrag.bond-visibility-geometry-sidecar.v1",
+  "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+  "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+  "pytest_exit_code": 0,
+  "captured_call_count": 4,
+  "results": [
+    {
+      "test_nodeid": "tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+      "call_index": 0,
+      "result": {
+        "schema": "pgfrag.bond-visibility.v1",
+        "status": "STATIC_CLASSIFICATION_COMPLETE",
+        "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+        "scope": "static reference-coordinate candidate classification only; native graph is not connected",
+        "source": {
+          "source_origin": "IN_MEMORY_TEST_FIXTURE",
+          "source_path": null,
+          "source_geometry_sha256": null,
+          "expected_sha256": null,
+          "sha256_status": "UNBOUND_IN_MEMORY_FIXTURE",
+          "status": "READY",
+          "unknown_reasons": [],
+          "source_length_unit": "mm",
+          "si_conversion": {
+            "m_per_mm": 0.001,
+            "volume_m3_per_mm3": 1e-09
+          },
+          "frame": "right_handed_z_up",
+          "source_accuracy_mm": 0.005,
+          "source_accuracy_basis": "analytic fixture dimensions and OCC construction; test-only provenance",
+          "backend_versions": {
+            "cadquery": "test-fixture",
+            "ocp": "test-fixture"
+          },
+          "solid_count": 1,
+          "material_domain_ids": [
+            "body"
+          ]
+        },
+        "tolerances": {
+          "distance_tolerance_mm": 0.0001,
+          "source_accuracy_mm": 0.005,
+          "combined_occupancy_uncertainty_band_mm": 0.0051,
+          "thin_open_interval_unknown_at_or_below_mm": 0.0102,
+          "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
+          "numeric_range_status": "FINITE",
+          "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred"
+        },
+        "reference_coordinates": {
+          "coordinate_unit": "mm",
+          "frame": "right_handed_z_up",
+          "configuration": "fixed undeformed reference coordinates",
+          "point_count": 2
+        },
+        "initial_topology_ledger": {
+          "ledger_kind": "static material-visibility mask over Euclidean horizon candidates",
+          "candidate_directed_input_count": 1,
+          "candidate_undirected_pair_count": 1,
+          "classification_counts": {
+            "IN_MATERIAL": 0,
+            "OUT_OR_VOID": 1,
+            "UNKNOWN": 0
+          },
+          "initial_material_bond_candidate_count": 0,
+          "geometry_excluded_pair_count": 1,
+          "unknown_pair_count": 0,
+          "unknown_retained_separately": true,
+          "native_graph_mutated": false,
+          "native_neighbor_counts_recomputed": false,
+          "native_physics_initialized": false,
+          "whole_asset_physics_status": "NOT_ASSESSED"
+        },
+        "pairs": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "classification": "OUT_OR_VOID",
+            "reason": "AIR_PATH",
+            "reason_codes": [
+              "AIR_PATH"
+            ],
+            "reciprocal": {
+              "directed_records": [
+                {
+                  "source_point_id": 0,
+                  "target_point_id": 1,
+                  "state": "OUT_OR_VOID"
+                },
+                {
+                  "source_point_id": 1,
+                  "target_point_id": 0,
+                  "state": "OUT_OR_VOID"
+                }
+              ],
+              "same_classification": true
+            },
+            "material_domain_ids": [
+              "body",
+              "body"
+            ],
+            "endpoints": [
+              {
+                "point_id": 0,
+                "position_mm": [
+                  -8.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  -0.008,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "point_id": 1,
+                "position_mm": [
+                  8.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  0.008,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "segment_length_mm": 16.0,
+            "segment_length_m": 0.016,
+            "raw_hits": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 1,
+                "face_index_zero_based": 6,
+                "parameter_mm_from_canonical_pair_start": 2.0,
+                "point_mm": [
+                  -6.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  -0.006,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 0
+              },
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 2,
+                "face_index_zero_based": 11,
+                "parameter_mm_from_canonical_pair_start": 14.0,
+                "point_mm": [
+                  6.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  0.006,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 1
+              }
+            ],
+            "hit_events": [
+              {
+                "cluster_index": 0,
+                "parameter_mm": 2.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 6
+                  }
+                ]
+              },
+              {
+                "cluster_index": 1,
+                "parameter_mm": 14.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 11
+                  }
+                ]
+              }
+            ],
+            "open_intervals": [
+              {
+                "t_start_mm": 0.0,
+                "t_end_mm": 2.0,
+                "length_mm": 2.0,
+                "length_m": 0.002,
+                "midpoint_t_mm": 1.0,
+                "midpoint_mm": [
+                  -7.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  -0.007,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "body",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 2.0,
+                "t_end_mm": 14.0,
+                "length_mm": 12.0,
+                "length_m": 0.012,
+                "midpoint_t_mm": 8.0,
+                "midpoint_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "OUT_OR_VOID",
+                "material_domain_id": null,
+                "reason": "OPEN_INTERVAL_OUTSIDE_ALL_SOLIDS",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 14.0,
+                "t_end_mm": 16.0,
+                "length_mm": 2.0,
+                "length_m": 0.002,
+                "midpoint_t_mm": 15.0,
+                "midpoint_mm": [
+                  7.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.007,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "body",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "diagnostic_intervals_only": false,
+            "tangent_or_non_crossing_event_clusters": [],
+            "admissible_static_candidate": false
+          }
+        ]
+      }
+    },
+    {
+      "test_nodeid": "tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+      "call_index": 0,
+      "result": {
+        "schema": "pgfrag.bond-visibility.v1",
+        "status": "STATIC_CLASSIFICATION_COMPLETE",
+        "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+        "scope": "static reference-coordinate candidate classification only; native graph is not connected",
+        "source": {
+          "source_origin": "IN_MEMORY_TEST_FIXTURE",
+          "source_path": null,
+          "source_geometry_sha256": null,
+          "expected_sha256": null,
+          "sha256_status": "UNBOUND_IN_MEMORY_FIXTURE",
+          "status": "READY",
+          "unknown_reasons": [],
+          "source_length_unit": "mm",
+          "si_conversion": {
+            "m_per_mm": 0.001,
+            "volume_m3_per_mm3": 1e-09
+          },
+          "frame": "right_handed_z_up",
+          "source_accuracy_mm": 0.005,
+          "source_accuracy_basis": "analytic fixture dimensions and OCC construction; test-only provenance",
+          "backend_versions": {
+            "cadquery": "test-fixture",
+            "ocp": "test-fixture"
+          },
+          "solid_count": 1,
+          "material_domain_ids": [
+            "body"
+          ]
+        },
+        "tolerances": {
+          "distance_tolerance_mm": 0.0001,
+          "source_accuracy_mm": 0.005,
+          "combined_occupancy_uncertainty_band_mm": 0.0051,
+          "thin_open_interval_unknown_at_or_below_mm": 0.0102,
+          "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
+          "numeric_range_status": "FINITE",
+          "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred"
+        },
+        "reference_coordinates": {
+          "coordinate_unit": "mm",
+          "frame": "right_handed_z_up",
+          "configuration": "fixed undeformed reference coordinates",
+          "point_count": 2
+        },
+        "initial_topology_ledger": {
+          "ledger_kind": "static material-visibility mask over Euclidean horizon candidates",
+          "candidate_directed_input_count": 1,
+          "candidate_undirected_pair_count": 1,
+          "classification_counts": {
+            "IN_MATERIAL": 0,
+            "OUT_OR_VOID": 1,
+            "UNKNOWN": 0
+          },
+          "initial_material_bond_candidate_count": 0,
+          "geometry_excluded_pair_count": 1,
+          "unknown_pair_count": 0,
+          "unknown_retained_separately": true,
+          "native_graph_mutated": false,
+          "native_neighbor_counts_recomputed": false,
+          "native_physics_initialized": false,
+          "whole_asset_physics_status": "NOT_ASSESSED"
+        },
+        "pairs": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "classification": "OUT_OR_VOID",
+            "reason": "ENDPOINT_OUTSIDE_OR_WRONG_DOMAIN",
+            "reason_codes": [
+              "ENDPOINT_OUTSIDE_OR_WRONG_DOMAIN"
+            ],
+            "reciprocal": {
+              "directed_records": [
+                {
+                  "source_point_id": 0,
+                  "target_point_id": 1,
+                  "state": "OUT_OR_VOID"
+                },
+                {
+                  "source_point_id": 1,
+                  "target_point_id": 0,
+                  "state": "OUT_OR_VOID"
+                }
+              ],
+              "same_classification": true
+            },
+            "material_domain_ids": [
+              "body",
+              "body"
+            ],
+            "endpoints": [
+              {
+                "point_id": 0,
+                "position_mm": [
+                  -11.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  -0.011,
+                  0.0,
+                  0.0
+                ],
+                "state": "OUT_OR_VOID",
+                "reason": "ENDPOINT_OUTSIDE_MATERIAL",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              },
+              {
+                "point_id": 1,
+                "position_mm": [
+                  11.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  0.011,
+                  0.0,
+                  0.0
+                ],
+                "state": "OUT_OR_VOID",
+                "reason": "ENDPOINT_OUTSIDE_MATERIAL",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              }
+            ],
+            "segment_length_mm": 22.0,
+            "segment_length_m": 0.022,
+            "raw_hits": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 1,
+                "face_index_zero_based": 0,
+                "parameter_mm_from_canonical_pair_start": 1.0,
+                "point_mm": [
+                  -10.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  -0.01,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 0
+              },
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 2,
+                "face_index_zero_based": 6,
+                "parameter_mm_from_canonical_pair_start": 5.0,
+                "point_mm": [
+                  -6.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  -0.006,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 1
+              },
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 3,
+                "face_index_zero_based": 11,
+                "parameter_mm_from_canonical_pair_start": 17.0,
+                "point_mm": [
+                  6.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  0.006,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 2
+              },
+              {
+                "solid_index": 0,
+                "material_domain_id": "body",
+                "raw_hit_index": 4,
+                "face_index_zero_based": 5,
+                "parameter_mm_from_canonical_pair_start": 21.0,
+                "point_mm": [
+                  10.0,
+                  0.0,
+                  0.0
+                ],
+                "point_m": [
+                  0.01,
+                  0.0,
+                  0.0
+                ],
+                "point_status": "FINITE",
+                "face_identity_status": "MAPPED",
+                "cluster_index": 3
+              }
+            ],
+            "hit_events": [
+              {
+                "cluster_index": 0,
+                "parameter_mm": 1.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 0
+                  }
+                ]
+              },
+              {
+                "cluster_index": 1,
+                "parameter_mm": 5.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 6
+                  }
+                ]
+              },
+              {
+                "cluster_index": 2,
+                "parameter_mm": 17.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 11
+                  }
+                ]
+              },
+              {
+                "cluster_index": 3,
+                "parameter_mm": 21.0,
+                "parameter_span_mm": 0.0,
+                "raw_hit_count": 1,
+                "distinct_parameter_count": 1,
+                "unresolved": false,
+                "resolution_status": "EXACT_PARAMETER_CLUSTER",
+                "diagnostic_cut_only": false,
+                "solid_face_refs": [
+                  {
+                    "solid_index": 0,
+                    "face_index_zero_based": 5
+                  }
+                ]
+              }
+            ],
+            "open_intervals": [
+              {
+                "t_start_mm": 0.0,
+                "t_end_mm": 1.0,
+                "length_mm": 1.0,
+                "length_m": 0.001,
+                "midpoint_t_mm": 0.5,
+                "midpoint_mm": [
+                  -10.5,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  -0.0105,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "OUT_OR_VOID",
+                "material_domain_id": null,
+                "reason": "OPEN_INTERVAL_OUTSIDE_ALL_SOLIDS",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 1.0,
+                "t_end_mm": 5.0,
+                "length_mm": 4.0,
+                "length_m": 0.004,
+                "midpoint_t_mm": 3.0,
+                "midpoint_mm": [
+                  -8.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  -0.008,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "body",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 5.0,
+                "t_end_mm": 17.0,
+                "length_mm": 12.0,
+                "length_m": 0.012,
+                "midpoint_t_mm": 11.0,
+                "midpoint_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "OUT_OR_VOID",
+                "material_domain_id": null,
+                "reason": "OPEN_INTERVAL_OUTSIDE_ALL_SOLIDS",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 17.0,
+                "t_end_mm": 21.0,
+                "length_mm": 4.0,
+                "length_m": 0.004,
+                "midpoint_t_mm": 19.0,
+                "midpoint_mm": [
+                  8.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.008,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "body",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "t_start_mm": 21.0,
+                "t_end_mm": 22.0,
+                "length_mm": 1.0,
+                "length_m": 0.001,
+                "midpoint_t_mm": 21.5,
+                "midpoint_mm": [
+                  10.5,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.0105,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "OUT_OR_VOID",
+                "material_domain_id": null,
+                "reason": "OPEN_INTERVAL_OUTSIDE_ALL_SOLIDS",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "OUT"
+                  }
+                ]
+              }
+            ],
+            "diagnostic_intervals_only": false,
+            "tangent_or_non_crossing_event_clusters": [],
+            "admissible_static_candidate": false
+          }
+        ]
+      }
+    },
+    {
+      "test_nodeid": "tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material",
+      "call_index": 0,
+      "result": {
+        "schema": "pgfrag.bond-visibility.v1",
+        "status": "STATIC_CLASSIFICATION_COMPLETE",
+        "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+        "scope": "static reference-coordinate candidate classification only; native graph is not connected",
+        "source": {
+          "source_origin": "IN_MEMORY_TEST_FIXTURE",
+          "source_path": null,
+          "source_geometry_sha256": null,
+          "expected_sha256": null,
+          "sha256_status": "UNBOUND_IN_MEMORY_FIXTURE",
+          "status": "READY",
+          "unknown_reasons": [],
+          "source_length_unit": "mm",
+          "si_conversion": {
+            "m_per_mm": 0.001,
+            "volume_m3_per_mm3": 1e-09
+          },
+          "frame": "right_handed_z_up",
+          "source_accuracy_mm": 0.005,
+          "source_accuracy_basis": "analytic fixture dimensions and OCC construction; test-only provenance",
+          "backend_versions": {
+            "cadquery": "test-fixture",
+            "ocp": "test-fixture"
+          },
+          "solid_count": 1,
+          "material_domain_ids": [
+            "body"
+          ]
+        },
+        "tolerances": {
+          "distance_tolerance_mm": 0.0001,
+          "source_accuracy_mm": 0.005,
+          "combined_occupancy_uncertainty_band_mm": 0.0051,
+          "thin_open_interval_unknown_at_or_below_mm": 0.0102,
+          "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
+          "numeric_range_status": "FINITE",
+          "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred"
+        },
+        "reference_coordinates": {
+          "coordinate_unit": "mm",
+          "frame": "right_handed_z_up",
+          "configuration": "fixed undeformed reference coordinates",
+          "point_count": 2
+        },
+        "initial_topology_ledger": {
+          "ledger_kind": "static material-visibility mask over Euclidean horizon candidates",
+          "candidate_directed_input_count": 1,
+          "candidate_undirected_pair_count": 1,
+          "classification_counts": {
+            "IN_MATERIAL": 1,
+            "OUT_OR_VOID": 0,
+            "UNKNOWN": 0
+          },
+          "initial_material_bond_candidate_count": 1,
+          "geometry_excluded_pair_count": 0,
+          "unknown_pair_count": 0,
+          "unknown_retained_separately": true,
+          "native_graph_mutated": false,
+          "native_neighbor_counts_recomputed": false,
+          "native_physics_initialized": false,
+          "whole_asset_physics_status": "NOT_ASSESSED"
+        },
+        "pairs": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "classification": "IN_MATERIAL",
+            "reason": "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN",
+            "reason_codes": [
+              "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN"
+            ],
+            "reciprocal": {
+              "directed_records": [
+                {
+                  "source_point_id": 0,
+                  "target_point_id": 1,
+                  "state": "IN_MATERIAL"
+                },
+                {
+                  "source_point_id": 1,
+                  "target_point_id": 0,
+                  "state": "IN_MATERIAL"
+                }
+              ],
+              "same_classification": true
+            },
+            "material_domain_ids": [
+              "body",
+              "body"
+            ],
+            "endpoints": [
+              {
+                "point_id": 0,
+                "position_mm": [
+                  -8.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  -0.008,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "point_id": 1,
+                "position_mm": [
+                  -7.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  -0.007,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "segment_length_mm": 1.0,
+            "segment_length_m": 0.001,
+            "raw_hits": [],
+            "hit_events": [],
+            "open_intervals": [
+              {
+                "t_start_mm": 0.0,
+                "t_end_mm": 1.0,
+                "length_mm": 1.0,
+                "length_m": 0.001,
+                "midpoint_t_mm": 0.5,
+                "midpoint_mm": [
+                  -7.5,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  -0.0075,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "body",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "body",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "diagnostic_intervals_only": false,
+            "tangent_or_non_crossing_event_clusters": [],
+            "admissible_static_candidate": true
+          }
+        ]
+      }
+    },
+    {
+      "test_nodeid": "tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material",
+      "call_index": 1,
+      "result": {
+        "schema": "pgfrag.bond-visibility.v1",
+        "status": "STATIC_CLASSIFICATION_COMPLETE",
+        "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+        "scope": "static reference-coordinate candidate classification only; native graph is not connected",
+        "source": {
+          "source_origin": "IN_MEMORY_TEST_FIXTURE",
+          "source_path": null,
+          "source_geometry_sha256": null,
+          "expected_sha256": null,
+          "sha256_status": "UNBOUND_IN_MEMORY_FIXTURE",
+          "status": "READY",
+          "unknown_reasons": [],
+          "source_length_unit": "mm",
+          "si_conversion": {
+            "m_per_mm": 0.001,
+            "volume_m3_per_mm3": 1e-09
+          },
+          "frame": "right_handed_z_up",
+          "source_accuracy_mm": 0.005,
+          "source_accuracy_basis": "analytic fixture dimensions and OCC construction; test-only provenance",
+          "backend_versions": {
+            "cadquery": "test-fixture",
+            "ocp": "test-fixture"
+          },
+          "solid_count": 1,
+          "material_domain_ids": [
+            "coupon"
+          ]
+        },
+        "tolerances": {
+          "distance_tolerance_mm": 0.0001,
+          "source_accuracy_mm": 0.005,
+          "combined_occupancy_uncertainty_band_mm": 0.0051,
+          "thin_open_interval_unknown_at_or_below_mm": 0.0102,
+          "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
+          "numeric_range_status": "FINITE",
+          "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred"
+        },
+        "reference_coordinates": {
+          "coordinate_unit": "mm",
+          "frame": "right_handed_z_up",
+          "configuration": "fixed undeformed reference coordinates",
+          "point_count": 2
+        },
+        "initial_topology_ledger": {
+          "ledger_kind": "static material-visibility mask over Euclidean horizon candidates",
+          "candidate_directed_input_count": 1,
+          "candidate_undirected_pair_count": 1,
+          "classification_counts": {
+            "IN_MATERIAL": 1,
+            "OUT_OR_VOID": 0,
+            "UNKNOWN": 0
+          },
+          "initial_material_bond_candidate_count": 1,
+          "geometry_excluded_pair_count": 0,
+          "unknown_pair_count": 0,
+          "unknown_retained_separately": true,
+          "native_graph_mutated": false,
+          "native_neighbor_counts_recomputed": false,
+          "native_physics_initialized": false,
+          "whole_asset_physics_status": "NOT_ASSESSED"
+        },
+        "pairs": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "classification": "IN_MATERIAL",
+            "reason": "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN",
+            "reason_codes": [
+              "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN"
+            ],
+            "reciprocal": {
+              "directed_records": [
+                {
+                  "source_point_id": 0,
+                  "target_point_id": 1,
+                  "state": "IN_MATERIAL"
+                },
+                {
+                  "source_point_id": 1,
+                  "target_point_id": 0,
+                  "state": "IN_MATERIAL"
+                }
+              ],
+              "same_classification": true
+            },
+            "material_domain_ids": [
+              "coupon",
+              "coupon"
+            ],
+            "endpoints": [
+              {
+                "point_id": 0,
+                "position_mm": [
+                  -2.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  -0.002,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "coupon",
+                    "state": "IN"
+                  }
+                ]
+              },
+              {
+                "point_id": 1,
+                "position_mm": [
+                  2.0,
+                  0.0,
+                  0.0
+                ],
+                "position_m": [
+                  0.002,
+                  0.0,
+                  0.0
+                ],
+                "state": "IN_MATERIAL",
+                "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+                "solid_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "coupon",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "segment_length_mm": 4.0,
+            "segment_length_m": 0.004,
+            "raw_hits": [],
+            "hit_events": [],
+            "open_intervals": [
+              {
+                "t_start_mm": 0.0,
+                "t_end_mm": 4.0,
+                "length_mm": 4.0,
+                "length_m": 0.004,
+                "midpoint_t_mm": 2.0,
+                "midpoint_mm": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "midpoint_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "occupancy": "IN_MATERIAL",
+                "material_domain_id": "coupon",
+                "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+                "diagnostic_only": false,
+                "solid_classifier_states": [
+                  {
+                    "solid_index": 0,
+                    "material_domain_id": "coupon",
+                    "state": "IN"
+                  }
+                ]
+              }
+            ],
+            "diagnostic_intervals_only": false,
+            "tangent_or_non_crossing_event_clusters": [],
+            "admissible_static_candidate": true
+          }
+        ]
+      }
+    }
+  ]
+}

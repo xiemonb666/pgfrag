@@ -1,0 +1,688 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.independent_review.v1",
+  "status": "FAIL",
+  "fatal_error": "IndexError: index 4500 is out of bounds for axis 0 with size 4500\nTraceback (most recent call last):\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_independent_review.py\", line 1775, in main\n    report = audit_pilot(audit, receipt_info)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_independent_review.py\", line 1402, in audit_pilot\n    xi, xj = int(grid_indexes[0][i0]), int(grid_indexes[0][j0])\n                                           ~~~~~~~~~~~~~~~^^^^\nIndexError: index 4500 is out of bounds for axis 0 with size 4500\n",
+  "meaning_of_pass": "No output state was independently accepted; see fatal_error and checks.",
+  "checks": {
+    "receipt_schema": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\launcher_receipt.json",
+        "bytes": 2755,
+        "sha256": "0bae8302c765effdd2614f72a2e1802d4779aa9ea4910829a1281f063c4eb557",
+        "schema": "pgfrag.free_fracture_pilot.launch_receipt.v1",
+        "status": "COMPLETED_EXIT_0"
+      }
+    },
+    "receipt_completed_exit_zero": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "receipt_process_started_and_not_killed": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "receipt_no_timeout_or_cap_exceeded": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "receipt_final_budget_authority": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "receipt_summary_status_provenance": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "receipt_output_path_matches_fixed_attempt": {
+      "pass": true,
+      "evidence": {
+        "value": null,
+        "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results"
+      }
+    },
+    "authorized_final_summary_hash_matches_receipt": {
+      "pass": true,
+      "evidence": {
+        "authorized_expected_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+        "receipt_summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c"
+      }
+    },
+    "source_freeze_sha256_is_the_reviewed_freeze": {
+      "pass": true,
+      "evidence": {
+        "expected": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217",
+        "actual": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217"
+      }
+    },
+    "frozen_source_pin_count": {
+      "pass": true,
+      "evidence": {
+        "declared": 84,
+        "observed": 84
+      }
+    },
+    "frozen_pin_paths_unique": {
+      "pass": true,
+      "evidence": {
+        "pin_count": 84,
+        "unique": 84
+      }
+    },
+    "all_frozen_source_pins_match": {
+      "pass": true,
+      "evidence": {
+        "verified": 84,
+        "failed": 0
+      }
+    },
+    "explicit_source_pin_run_free_fracture_pilot.jl": {
+      "pass": true,
+      "evidence": {
+        "observed": {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_free_fracture_pilot.jl",
+          "bytes": 82117,
+          "sha256": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+        },
+        "expected_sha256": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+      }
+    },
+    "explicit_source_pin_fixed_case.toml": {
+      "pass": true,
+      "evidence": {
+        "observed": {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\fixed_case.toml",
+          "bytes": 3276,
+          "sha256": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+        },
+        "expected_sha256": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+      }
+    },
+    "explicit_source_pin_run_once.ps1": {
+      "pass": true,
+      "evidence": {
+        "observed": {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_once.ps1",
+          "bytes": 17288,
+          "sha256": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d"
+        },
+        "expected_sha256": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d"
+      }
+    },
+    "fixed_case_schema_and_source_only_status": {
+      "pass": true,
+      "evidence": {
+        "schema": "pgfrag.free_fracture_pilot.case.v1",
+        "run_status": "SOURCE_ONLY_NOT_RUN"
+      }
+    },
+    "case_id_matches_frozen_source": {
+      "pass": true,
+      "evidence": {
+        "case": "analytic_osb_free_fracture_pilot_h0600_delta1800",
+        "freeze": "analytic_osb_free_fracture_pilot_h0600_delta1800"
+      }
+    },
+    "fixed_case_sha_matches_freeze_and_receipt": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\fixed_case.toml",
+        "bytes": 3276,
+        "sha256": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+      }
+    },
+    "result_inventory_exact_and_flat": {
+      "pass": true,
+      "evidence": {
+        "expected": [
+          "canonical_bonds.csv",
+          "energy_reaction_history.csv",
+          "graph_component_labels.i32le",
+          "graph_component_labels_layout.toml",
+          "graph_state_history.csv",
+          "native_failure_events.csv",
+          "point_reference.csv",
+          "point_state_history.f64le",
+          "point_state_layout.toml",
+          "summary.toml"
+        ],
+        "observed": [
+          "canonical_bonds.csv",
+          "energy_reaction_history.csv",
+          "graph_component_labels.i32le",
+          "graph_component_labels_layout.toml",
+          "graph_state_history.csv",
+          "native_failure_events.csv",
+          "point_reference.csv",
+          "point_state_history.f64le",
+          "point_state_layout.toml",
+          "summary.toml"
+        ],
+        "nested_files": []
+      }
+    },
+    "result_directory_under_case_output_cap": {
+      "pass": true,
+      "evidence": {
+        "bytes": 88921168
+      }
+    },
+    "receipt_driver_sha256_binds": {
+      "pass": true,
+      "evidence": {
+        "receipt": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b",
+        "observed": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+      }
+    },
+    "receipt_fixed_case_sha256_binds": {
+      "pass": true,
+      "evidence": {
+        "receipt": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd",
+        "observed": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+      }
+    },
+    "receipt_source_freeze_sha256_binds": {
+      "pass": true,
+      "evidence": {
+        "receipt": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217",
+        "observed": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217"
+      }
+    },
+    "receipt_pin_run_free_fracture_pilot.jl": {
+      "pass": true,
+      "evidence": {
+        "expected": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b",
+        "receipt": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b",
+        "pass": true
+      }
+    },
+    "receipt_pin_fixed_case.toml": {
+      "pass": true,
+      "evidence": {
+        "expected": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd",
+        "receipt": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd",
+        "pass": true
+      }
+    },
+    "receipt_pin_run_once.ps1": {
+      "pass": true,
+      "evidence": {
+        "expected": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d",
+        "receipt": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d",
+        "pass": true
+      }
+    },
+    "receipt_pin_julia.exe": {
+      "pass": true,
+      "evidence": {
+        "expected": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+        "receipt": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+        "pass": true
+      }
+    },
+    "receipt_experiment_output_bytes_match": {
+      "pass": true,
+      "evidence": {
+        "receipt": 88921168,
+        "observed": 88921168
+      }
+    },
+    "receipt_final_attempt_bytes_match": {
+      "pass": false,
+      "evidence": {
+        "receipt_recorded_bytes": 88924215,
+        "independently_observed_final_attempt_tree_bytes": 88924268,
+        "signed_delta_observed_minus_receipt": 53,
+        "tolerance_bytes": 0
+      }
+    },
+    "actual_final_attempt_tree_within_case_attempt_cap": {
+      "pass": true,
+      "evidence": {
+        "actual_final_attempt_tree_bytes": 88924268,
+        "case_max_attempt_bytes": 209715200
+      }
+    },
+    "actual_result_tree_within_case_output_cap": {
+      "pass": true,
+      "evidence": {
+        "actual_result_tree_bytes": 88921168,
+        "case_max_output_bytes": 199229440
+      }
+    },
+    "actual_result_tree_within_frozen_output_cap": {
+      "pass": true,
+      "evidence": {
+        "actual_result_tree_bytes": 88921168,
+        "frozen_max_experiment_output_bytes": 199229440
+      }
+    },
+    "receipt_summary_sha256_binds": {
+      "pass": true,
+      "evidence": {
+        "receipt": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+        "observed": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c"
+      }
+    },
+    "receipt_stdout_log_binds": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\native_stdout.log",
+        "bytes": 118,
+        "sha256": "84478924ac9ba53b17a977e36b87a1bfa12ede462605963fd5641070e7bebab8",
+        "receipt_bytes": 118,
+        "receipt_sha256": "84478924ac9ba53b17a977e36b87a1bfa12ede462605963fd5641070e7bebab8",
+        "receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\native_stdout.log"
+      }
+    },
+    "receipt_stderr_log_binds": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\native_stderr.log",
+        "bytes": 227,
+        "sha256": "b87722a6adc7800d3eea59db8e3e633b3e2cb9e160eaf980b5772bce56980937",
+        "receipt_bytes": 227,
+        "receipt_sha256": "b87722a6adc7800d3eea59db8e3e633b3e2cb9e160eaf980b5772bce56980937",
+        "receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\native_stderr.log"
+      }
+    },
+    "point_state_history.f64le_sidecar_schema": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\point_state_layout.toml",
+        "bytes": 1816,
+        "sha256": "6e5f1ca4ccf7c8680bf693a6f96236dca1e52382bf58126c2cfeaa276074959d",
+        "schema": "pgfrag.free_fracture_pilot.point_state_binary.v1"
+      }
+    },
+    "point_state_history.f64le_byte_and_digest_binding": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\point_state_history.f64le",
+        "bytes": 73332000,
+        "sha256": "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf",
+        "sidecar_bytes": 73332000,
+        "sidecar_sha256": "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf"
+      }
+    },
+    "point_state_history.f64le_declared_data_file": {
+      "pass": true,
+      "evidence": {
+        "declared": "point_state_history.f64le",
+        "observed": "point_state_history.f64le"
+      }
+    },
+    "graph_component_labels.i32le_sidecar_schema": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\graph_component_labels_layout.toml",
+        "bytes": 684,
+        "sha256": "7a6a0e137dcccd807f6942b807699f65e9a3f062d26c8e817296a90ebc195899",
+        "schema": "pgfrag.free_fracture_pilot.graph_labels_binary.v1"
+      }
+    },
+    "graph_component_labels.i32le_byte_and_digest_binding": {
+      "pass": true,
+      "evidence": {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results\\graph_component_labels.i32le",
+        "bytes": 1746000,
+        "sha256": "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16",
+        "sidecar_bytes": 1746000,
+        "sidecar_sha256": "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16"
+      }
+    },
+    "graph_component_labels.i32le_declared_data_file": {
+      "pass": true,
+      "evidence": {
+        "declared": "graph_component_labels.i32le",
+        "observed": "graph_component_labels.i32le"
+      }
+    },
+    "bounded_case_uses_expected_point_and_step_counts": {
+      "pass": true,
+      "evidence": {
+        "points": 4500,
+        "grid": [
+          20,
+          15,
+          15
+        ],
+        "steps": 96,
+        "states": 97,
+        "phase_interval_ceilings": [
+          27,
+          16,
+          27,
+          27
+        ]
+      }
+    },
+    "frozen_dt_is_exact_expected_value": {
+      "pass": true,
+      "evidence": {
+        "case_dt": 3.75e-08,
+        "point_layout_dt": 3.75e-08,
+        "graph_layout_dt": 3.75e-08
+      }
+    },
+    "point_binary_layout_is_frozen_shape_and_names": {
+      "pass": true,
+      "evidence": {
+        "shape": [
+          21,
+          4500,
+          97
+        ],
+        "field_count": 21,
+        "state_count": 97
+      }
+    },
+    "graph_binary_layout_is_frozen_shape_and_labels": {
+      "pass": true,
+      "evidence": {
+        "shape": [
+          4500,
+          97
+        ],
+        "format": "signed Int32, little-endian"
+      }
+    },
+    "point_binary_exact_element_count": {
+      "pass": true,
+      "evidence": {
+        "elements": 9166500,
+        "expected": 9166500,
+        "bytes": 73332000
+      }
+    },
+    "all_point_tensor_fields_finite": {
+      "pass": true,
+      "evidence": {
+        "shape": [
+          21,
+          4500,
+          97
+        ]
+      }
+    },
+    "graph_label_binary_exact_element_count": {
+      "pass": true,
+      "evidence": {
+        "elements": 436500,
+        "expected": 436500
+      }
+    },
+    "point_reference_row_count": {
+      "pass": true,
+      "evidence": {
+        "rows": 4500,
+        "expected": 4500
+      }
+    },
+    "point_reference_ids_are_complete_and_ordered": {
+      "pass": true,
+      "evidence": {
+        "first": 1,
+        "last": 4500,
+        "unique": 4500
+      }
+    },
+    "reference_coordinates_form_complete_analytic_lattice": {
+      "pass": true,
+      "evidence": {
+        "unique_lattice_points": 4500,
+        "axis_max_error_m": [
+          1.734723475976807e-18,
+          4.336808689942018e-19,
+          4.336808689942018e-19
+        ],
+        "expected_grid": [
+          20,
+          15,
+          15
+        ]
+      }
+    },
+    "point_volumes_and_masses_match_uniform_cell_case": {
+      "pass": true,
+      "evidence": {
+        "volume_m3": 2.1599999999999995e-10,
+        "mass_kg": 4.535999999999999e-07,
+        "total_mass_kg": 0.002041199999999999,
+        "expected_total_mass_kg": 0.0020412
+      }
+    },
+    "reference_horizon_columns_recompute": {
+      "pass": true,
+      "evidence": {
+        "complete_points": 1134,
+        "expected_complete_points": 1134,
+        "max_margin_delta_m": 0.0
+      }
+    },
+    "grip_masks_match_analytic_end_layers": {
+      "pass": true,
+      "evidence": {
+        "left_count": 225,
+        "right_count": 225,
+        "overlap": 0
+      }
+    },
+    "canonical_roster_nonempty_and_bounded": {
+      "pass": true,
+      "evidence": {
+        "canonical_bonds": 204778
+      }
+    },
+    "canonical_roster_initial_state_and_permissions": {
+      "pass": true,
+      "evidence": {
+        "pairs": 204778,
+        "all_active_at_reference": true,
+        "all_fail_permitted": true
+      }
+    },
+    "canonical_reference_lengths_match_point_geometry": {
+      "pass": true,
+      "evidence": {
+        "max_abs_delta_m": 0.0
+      }
+    },
+    "canonical_roster_degrees_match_point_reference": {
+      "pass": true,
+      "evidence": {
+        "roster_degree_sum": 409556,
+        "csv_degree_sum": 409556,
+        "max_degree_delta": 0
+      }
+    },
+    "canonical_critical_stretch_matches_fixed_osb_formula": {
+      "pass": true,
+      "evidence": {
+        "roster_first": 0.002081665999466133,
+        "formula": 0.002081665999466133,
+        "max_abs_delta": 0.0
+      }
+    },
+    "event_rows_have_valid_reciprocal_transition_fields": {
+      "pass": true,
+      "evidence": {
+        "event_count": 6810
+      }
+    },
+    "graph_and_energy_csv_state_counts": {
+      "pass": true,
+      "evidence": {
+        "graph_rows": 97,
+        "energy_rows": 97,
+        "expected_states": 97
+      }
+    },
+    "binary_active_bond_count_encoding_is_exact_integer": {
+      "pass": true,
+      "evidence": {
+        "min": 10.0,
+        "max": 122.0
+      }
+    },
+    "first_break_events_recomputed_from_deformed_coordinates": {
+      "pass": true,
+      "evidence": {
+        "event_count": 6810,
+        "threshold_ambiguous_edge_state_checks": 0,
+        "witnesses_recorded": 50
+      }
+    },
+    "active_counts_damage_and_graph_labels_recomputed_each_state": {
+      "pass": true,
+      "evidence": {
+        "states": 97,
+        "points": 4500,
+        "active_count_mismatch_states": 0,
+        "max_component_count": 2,
+        "final_component_count": 2
+      }
+    },
+    "graph_history_csv_matches_independent_topology": {
+      "pass": true,
+      "evidence": {
+        "columns": 16,
+        "max_abs_numeric_delta": {
+          "step": 0.0,
+          "directed_bond_count": 0.0,
+          "active_directed_bonds": 0.0,
+          "canonical_pair_count": 0.0,
+          "active_canonical_pairs": 0.0,
+          "broken_canonical_pairs": 0.0,
+          "new_break_events": 0.0,
+          "cumulative_break_events": 0.0,
+          "graph_component_count": 0.0,
+          "time_s": 0.0,
+          "largest_component_mass_kg": 0.0,
+          "largest_component_mass_fraction": 1.7763568394002505e-15,
+          "total_material_mass_kg": 3.469446951953614e-18,
+          "max_bond_stretch": 7.95077979148795e-15,
+          "max_stretch_over_critical": 3.819444760466695e-12,
+          "max_point_damage": 0.0
+        }
+      }
+    },
+    "96_step_physical_time_secant_grip_path": {
+      "pass": true,
+      "evidence": {
+        "n_steps": 96,
+        "dt_s": 3.75e-08,
+        "total_time_s": 3.6e-06,
+        "target_displacement_m": 3.5596488590870876e-05,
+        "max_right_grip_path_error_m": 1.4230153513872246e-19,
+        "max_right_grip_point_spread_m": 1.5924219408380846e-19,
+        "max_left_grip_displacement_m": 0.0,
+        "max_right_yz_displacement_m": 0.0,
+        "tolerance_m": 1e-14
+      }
+    },
+    "captured_half_velocity_is_the_native_grip_secant": {
+      "pass": true,
+      "evidence": {
+        "right_grip_secant_max_abs_error_m_s": 1.0835776720341528e-12,
+        "fixed_components_max_abs_vhalf_m_s": 0.0,
+        "tolerance_m_s": 1.0672272235650509e-08
+      }
+    },
+    "raw_full_velocity_kinetic_energy_partition": {
+      "pass": true,
+      "evidence": {
+        "max_abs_partition_delta_J": 2.7755575615628914e-17,
+        "status": "raw solver diagnostic; constrained-grip physical KE UNKNOWN"
+      }
+    },
+    "energy_reaction_history_recomputed_from_binary": {
+      "pass": true,
+      "evidence": {
+        "rows": 97,
+        "numeric_columns": 39,
+        "max_abs_column_deltas": {
+          "step": 0.0,
+          "time_s": 0.0,
+          "bc_impulse_interval_start_s": 0.0,
+          "bc_impulse_interval_end_s": 0.0,
+          "mass_kg": 3.469446951953614e-18,
+          "momentum_x_kg_m_s": 0.0,
+          "momentum_y_kg_m_s": 0.0,
+          "momentum_z_kg_m_s": 0.0,
+          "native_net_force_x_N": 0.0,
+          "native_net_force_y_N": 0.0,
+          "native_net_force_z_N": 0.0,
+          "osb_strain_energy_J": 4.336808689942018e-19,
+          "kinetic_energy_J": 1.0547118733938987e-15,
+          "free_dof_kinetic_energy_J": 3.2526065174565133e-19,
+          "constrained_dof_raw_full_step_kinetic_energy_J": 6.245004513516506e-16,
+          "left_grip_u_x_mean_m": 0.0,
+          "right_grip_u_x_mean_m": 1.1519648082658485e-19,
+          "left_bc_impulse_x_N_s": 0.0,
+          "left_bc_impulse_y_N_s": 0.0,
+          "left_bc_impulse_z_N_s": 0.0,
+          "left_bc_force_average_x_N": 0.0,
+          "left_bc_force_average_y_N": 0.0,
+          "left_bc_force_average_z_N": 0.0,
+          "right_bc_impulse_x_N_s": 0.0,
+          "right_bc_impulse_y_N_s": 0.0,
+          "right_bc_impulse_z_N_s": 0.0,
+          "right_bc_force_average_x_N": 0.0,
+          "right_bc_force_average_y_N": 0.0,
+          "right_bc_force_average_z_N": 0.0,
+          "left_bc_discrete_kinetic_work_J": 3.155443620884047e-29,
+          "right_bc_discrete_kinetic_work_J": 3.8163916471489756e-17,
+          "total_bc_discrete_kinetic_work_step_J": 3.8163916471489756e-17,
+          "actuator_work_trapezoid_surrogate_step_J": 2.6129272356900657e-15,
+          "actuator_work_trapezoid_surrogate_cumulative_J": 4.066191827689636e-15,
+          "max_free_dof_impulse_residual_N_s": 0.0,
+          "momentum_update_residual_x_N_s": 0.0,
+          "momentum_update_residual_y_N_s": 0.0,
+          "momentum_update_residual_z_N_s": 0.0,
+          "energy_balance_residual_diagnostic_J": 9.71445146547012e-16
+        }
+      }
+    },
+    "velocity_verlet_state_time_levels_and_free_dof_updates": {
+      "pass": true,
+      "evidence": {
+        "max_position_drift_error_m": 3.3881317890172014e-21,
+        "max_free_vhalf_update_error_m_s": 0.0,
+        "max_full_velocity_reconstruction_error_m_s": 0.0,
+        "max_acceleration_force_density_error_m_s2": 0.0,
+        "position_tolerance_m": 2e-15,
+        "velocity_tolerance_m_s": 1.0672272235650456e-08,
+        "acceleration_tolerance_m_s2": 0.0019265437516909727
+      }
+    },
+    "free_dof_impulse_is_zero_and_momentum_identity_recomputed": {
+      "pass": true,
+      "evidence": {
+        "max_free_dof_impulse_N_s": 0.0,
+        "max_abs_momentum_update_residual_N_s": 3.835365185167472e-17
+      }
+    }
+  },
+  "scientific_status": {
+    "physical_fragment_claim": "NOT_ESTABLISHED",
+    "surface_response": "UNKNOWN",
+    "grid_bias": "UNKNOWN",
+    "fracture_dissipation": "NOT_COMPUTED"
+  }
+}

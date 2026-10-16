@@ -1,0 +1,118 @@
+{
+  "bindings": {
+    "elastic_result_sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "opening_receipt_sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925",
+    "opening_result_sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb"
+  },
+  "checkpoints": {
+    "full_failure_dissipation_j": 1e-06,
+    "step_10": {
+      "Q_fraction": 0.0,
+      "cohesive_work_increment_j": 0.0,
+      "control_reaction_N": 0.0,
+      "dissipated_energy_j": 1e-06,
+      "max_damage": 1.0,
+      "min_damage": 1.0,
+      "partial_count": 0,
+      "stored_energy_j": 0.0
+    },
+    "step_11": {
+      "Q_fraction": 1.1,
+      "cohesive_work_increment_j": 0.0,
+      "control_reaction_N": 0.05633707731947365,
+      "dissipated_energy_j": 1e-06,
+      "max_damage": 1.0,
+      "min_damage": 1.0,
+      "partial_count": 0,
+      "stored_energy_j": 0.0
+    },
+    "step_3": {
+      "Q_fraction": 0.3,
+      "cohesive_work_increment_j": 4.5392423521598444e-07,
+      "control_reaction_N": 0.05405459989152985,
+      "dissipated_energy_j": 5.560558278687673e-07,
+      "max_damage": 1.0,
+      "min_damage": 0.0,
+      "partial_count": 8,
+      "stored_energy_j": 2.2024699527330967e-07
+    },
+    "step_4": {
+      "Q_fraction": 0.12,
+      "cohesive_work_increment_j": -1.8500747602958013e-07,
+      "control_reaction_N": 0.021621839956611953,
+      "dissipated_energy_j": 5.560558278687673e-07,
+      "max_damage": 1.0,
+      "min_damage": 0.0,
+      "partial_count": 8,
+      "stored_energy_j": 3.5239519243729554e-08
+    },
+    "step_5": {
+      "Q_fraction": 0.3,
+      "cohesive_work_increment_j": 1.8500747602958013e-07,
+      "control_reaction_N": 0.05405459989152985,
+      "dissipated_energy_j": 5.560558278687673e-07,
+      "max_damage": 1.0,
+      "min_damage": 0.0,
+      "partial_count": 8,
+      "stored_energy_j": 2.2024699527330967e-07
+    },
+    "step_8": {
+      "Q_fraction": 1.1,
+      "cohesive_work_increment_j": 2.174092782109085e-08,
+      "control_reaction_N": 0.05633707731947365,
+      "dissipated_energy_j": 1e-06,
+      "max_damage": 1.0,
+      "min_damage": 1.0,
+      "partial_count": 0,
+      "stored_energy_j": 0.0
+    }
+  },
+  "classification": "FIXED_FACE_GLOBAL_MODE_I_OPENING_CONTROL_TOY_HISTORY_DIAGNOSTIC_ONLY",
+  "counts": {
+    "npz_content_reads": 0,
+    "point_state_checks": 192,
+    "quadrature_points": 16,
+    "solver_or_provider_calls": 0,
+    "steps": 12
+  },
+  "execution_scope": "saved JSON only; no solver, NPZ, provider, or author imports",
+  "gates": {
+    "binary_json_consistency": "PASS",
+    "capture_receipt": "PASS",
+    "exact_path_work_and_energy": "PASS",
+    "force_balance_and_signs": "PASS",
+    "interfaces_and_opening": "PASS",
+    "one_side_area_Gc": "PASS",
+    "pointwise_law_and_history": "PASS",
+    "required_checkpoints": "PASS",
+    "unit_control_equilibrium": "PASS"
+  },
+  "limitations": [
+    "toy material fixture, not ceramic calibration",
+    "no crack growth or front advance",
+    "path subdivision is analytic bookkeeping, not solver convergence"
+  ],
+  "metrics": {
+    "energy_tolerance": {
+      "absolute_tolerance_j": 1e-22,
+      "relative_tolerance": 2e-09,
+      "units": {
+        "area_weight": "m^2",
+        "area_weighted_cohesive_energy": "J",
+        "bulk_stored": "J",
+        "cohesive_dissipation_per_area": "J/m^2",
+        "cohesive_stored_per_area": "J/m^2",
+        "cohesive_work_per_area": "J/m^2",
+        "force": "N",
+        "force_per_area": "Pa",
+        "stiffness": "N/m"
+      }
+    },
+    "full_failure_dissipation_j": 1e-06,
+    "maximum_branch_subdivision_energy_error_j": 4.9190654122027505e-24,
+    "maximum_noncontrol_force_residual_n": 1.7211709488207203e-16,
+    "one_side_area_m2": 9.999999999999998e-05
+  },
+  "schema": "mixed93_opening_history_independent_result.v1",
+  "status": "ACCEPTED_DIAGNOSTIC_ONLY"
+}

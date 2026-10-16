@@ -1,0 +1,32 @@
+[
+  {
+    "path": "pgfrag/src/pgfrag/bond_visibility.py",
+    "sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+    "byte_length": 46437
+  },
+  {
+    "path": "pgfrag/tests/test_bond_visibility.py",
+    "sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+    "byte_length": 19003
+  },
+  {
+    "path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+    "sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9",
+    "byte_length": 7746
+  },
+  {
+    "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_diff.patch",
+    "sha256": "3fd0b7231ee6f28d906f768062c1bec271d4f7cef22ea5f33dd076a8a6512850",
+    "byte_length": 40880
+  },
+  {
+    "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.json",
+    "sha256": "1b1cf3e7e1df4a8189266a2b4b78f61b0d0832abc332a7e715bbfff611a0e8b9",
+    "byte_length": 3416
+  },
+  {
+    "path": "pgfrag/tmp/review_20261004/bond_visibility/v2_freeze_manifest.sha256",
+    "sha256": "1bd1e2c7462dfcf0628c74cbac113d5d3d1c5e6eb0809ce49f7dfd8b88ed2025",
+    "byte_length": 89
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "steps": 3244,
+  "dt_s": 1.5413070283600494e-08,
+  "native_bulk_stable_dt_s": 3.854377218288659e-08,
+  "dt_fraction_limit": 0.4,
+  "dt_fraction_limit_s": 1.5417508873154634e-08,
+  "dt_within_native_fraction_limit": true,
+  "mass_all_node_audit_pass": true,
+  "same_lowload_cohesive_patch_node_ids_and_weights": true,
+  "all_native_dofs_free": true,
+  "mesh_counts": {
+    "nodes": 1212,
+    "tets": 4342,
+    "cohesive_elements": 0
+  },
+  "mass_kg": 0.005841729055176267,
+  "output_bytes_forecast_including_inputs_and_margin": 9723667,
+  "scope": "native fully bonded bulk stability check only"
+}

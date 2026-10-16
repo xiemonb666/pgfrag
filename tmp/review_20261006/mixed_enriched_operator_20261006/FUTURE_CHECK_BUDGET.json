@@ -1,0 +1,58 @@
+{
+  "status": "SOURCE_ONLY_PLANNED_NOT_RUN",
+  "execution_authorized": false,
+  "requires": "Root review of the 93-DOF semantic adapter and separate explicit authorization before any numerical K/force case.",
+  "source_files": {
+    "implementation": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+    "checker_source": "pgfrag/tmp/review_20261006/mixed_enriched_operator_20261006/operator_arithmetic_check.py"
+  },
+  "hard_bounds": {
+    "source_count_max": 27,
+    "chunk_count_max": 256,
+    "rows_per_chunk_max": 256,
+    "primary_global_layout": {
+      "scalar_functions_max": 31,
+      "vector_dofs_max": 93,
+      "formula": "27 SOURCE_BASE scalar shapes plus four GLOBAL_FRONT scalar shapes, each times ux/uy/uz"
+    },
+    "separate_per_source_diagnostic_layout": {
+      "scalar_functions_max": 135,
+      "vector_dofs_max": 405,
+      "formula": "27 sources times BASE plus four source-owned branch terms, each times ux/uy/uz"
+    }
+  },
+  "planned_tiny_case_budget": {
+    "synthetic_sources_for_arithmetic": 4,
+    "semantic_id_only_inventory_sources": 27,
+    "distinct_query_coordinates_max": 3,
+    "helper_build_calls_max": 7,
+    "volume_points_per_chunk": 2,
+    "surface_points_per_chunk": 1,
+    "stiffness_assemblies": 3,
+    "force_assemblies": 1,
+    "layouts_assembled": ["global_front", "per_source_front_diagnostic"]
+  },
+  "predeclared_tolerances": {
+    "direct_analytic_and_B_checks": "3e-11 * max(scale, abs(a), abs(b)); gradient scale is 1/R in 1/m",
+    "candidate_mode_null_action": "2e-11 times max absolute row-sum bound for K times the candidate vector",
+    "threshold_policy": "No threshold adjustment after viewing any later authorized result."
+  },
+  "planned_checks": [
+    "independently reconstruct all engineering six-Voigt B columns from displacement-gradient tensors",
+    "verify exact affine plus four-global-branch representation using a synthetic linearly reproducing tetrahedral base row",
+    "verify 27-source counts and unique scope-tagged IDs: 93 global-front and 405 diagnostic",
+    "verify paired source permutation preserves semantic IDs and the raw 24-DOF K bytes",
+    "rebuild the complete 4-source 24x24 primary K entry-by-entry from direct tensor B and an independent Lamé C formula; require relative maximum error <= 3e-11",
+    "report raw unsymmetrized K maximum asymmetry and relative asymmetry, plus physical and diagnostic candidate null residual ratios",
+    "report assembled dimensions 24 and 60; for 27 sources check unique IDs only, with no 93-DOF matrix or spectrum",
+    "check the six physical rigid candidate vectors annihilate the synthetic 24-DOF raw K",
+    "check the six per-source branch-dependency candidates on the separate 405-layout diagnostic K",
+    "compare isotropic C and one raw surface force against independent formulas; check immutable byte outputs",
+    "verify ambiguous cut, nonfinite weight, and semantic ID mismatch fail closed"
+  ],
+  "not_included": [
+    "No MLS, actual field/provider, actual geometry/quadrature, solver, KKT, eigenspectrum, fracture, or material calibration run. The checker assembles only 24- and 60-DOF synthetic matrices; 27-source coverage is semantic-ID inventory only.",
+    "The planned null-vector action checks do not count the spectrum. Mechanical eligibility still requires a separately authorized actual 93-DOF spectrum confirming six physical zero modes and no unexplained nulls.",
+    "No rank truncation, ridge, pseudoinverse, load projection, or symmetrization."
+  ]
+}

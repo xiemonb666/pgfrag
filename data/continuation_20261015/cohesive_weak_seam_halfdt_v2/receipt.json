@@ -1,0 +1,95 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_vessel_20261015/weak_seam_halfdt_v2/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_vessel_20261015/weak_seam_halfdt_v2/case.json",
+    "--out",
+    "/home/xiemo/cohesive_vessel_20261015/weak_seam_halfdt_v2_run01"
+  ],
+  "started_unix_s": 1792059205.3873222,
+  "ended_unix_s": 1792059286.3855798,
+  "status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC",
+  "files": {
+    "checkpoint.json": {
+      "bytes": 123,
+      "sha256": "b01d7c66489e5e3c1086aa256546305b34f2b7ae7c74edf63db9345a7a9c1fc3"
+    },
+    "completion.json": {
+      "bytes": 553,
+      "sha256": "c0c56df5b19985a684ef5876e4e839709fe5698601aa04dc5e213bb5e2db0ccb"
+    },
+    "history/contact_traction_Pa.npy": {
+      "bytes": 73818992,
+      "sha256": "4aa3ea8bb69974b26ac856b800f73c5e46791e6884549db6bfe2b54cf87ebbd7"
+    },
+    "history/damage.npy": {
+      "bytes": 24606416,
+      "sha256": "77b6d06a67c0a862cf34fc6be55e9027bb3cd5bc35278b6ffd35ef93d8e0c9d1"
+    },
+    "history/delta_max_m.npy": {
+      "bytes": 24606416,
+      "sha256": "d7d923de8e0a21b03ed2cc4d221b67cf0863c87427db02d8860b742db5173fb1"
+    },
+    "history/energy_J.npy": {
+      "bytes": 259688,
+      "sha256": "359d0cacb5bce4573826491e08abd6456d1cd1aa47a10a2232bdf263c882cb7a"
+    },
+    "history/layout.json": {
+      "bytes": 1231,
+      "sha256": "2468eac6115af8eb1821cc8a1241d0e6336966d1b1ce9a91bf19757e0b67cd83"
+    },
+    "history/ledger.npy": {
+      "bytes": 1453664,
+      "sha256": "a6b611042c90c0eac1bcf5482aeb2717a57060f9b8a2a619be79eeba6c36990a"
+    },
+    "history/node_saved_steps.npy": {
+      "bytes": 52040,
+      "sha256": "655d27e1f1c4e76fa7edf4bf80ebefb52c5cfb7b20495739fad74e5fbda7a725"
+    },
+    "history/node_state.npy": {
+      "bytes": 820417376,
+      "sha256": "f5a848c325e62c76c83621fe370ab4023f1f19e50e4cd201381287b92c3f85dd"
+    },
+    "history/opening_m.npy": {
+      "bytes": 73818992,
+      "sha256": "fe97b1a2b2f505964ac9695a620d1402831564d701fd025e162e399152b80daa"
+    },
+    "history/patch_displacement_x_m.npy": {
+      "bytes": 11005472,
+      "sha256": "9ef48365c16f94807f8718fdf0c7725c7faf72e1a918e8cea049103d58195af5"
+    },
+    "history/traction_Pa.npy": {
+      "bytes": 73818992,
+      "sha256": "b5d8973665c92004c311e57220f19719c10555cbd2008ecb49d0926636ce34dc"
+    },
+    "initial_bound.json": {
+      "bytes": 472,
+      "sha256": "4e6f03d772a535c009a0fcc2bbc0c551dc7d9162f669a51a9a26f6eaa9717842"
+    },
+    "initial_state.npz": {
+      "bytes": 88502,
+      "sha256": "e835da4dd6376280f520268e5a4dbb8e34b5d487211edee324a281e2a7c4db41"
+    },
+    "lineage.json": {
+      "bytes": 3448070,
+      "sha256": "49ca479a3bab17497cc362c19b510027c913ab63dccfa6d259fb24f9e5398716"
+    },
+    "loading.json": {
+      "bytes": 10287,
+      "sha256": "5b7981baf905ba92101250debc1957b7f17bfdf24da2f54f9c3a685fa6794b24"
+    },
+    "qp_first_full_damage_step.npy": {
+      "bytes": 3920,
+      "sha256": "84133dbadf67dba8ea27144e456e84c271095f71cce292313bbb086a74b0ab7f"
+    },
+    "result.json": {
+      "bytes": 581,
+      "sha256": "35bfd4ba86a8993bfafa4e7ee4faf653d44fa97e79b2f93328439816b0c221a2"
+    },
+    "started.json": {
+      "bytes": 1327,
+      "sha256": "fffaadc3d35292ca60ae2fbdf50e8eca50a6492d34b19d6143e60843970c6f5f"
+    }
+  },
+  "persistent_bytes_before_receipt": 1107413114
+}

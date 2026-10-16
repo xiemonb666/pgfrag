@@ -1,0 +1,59 @@
+{
+  "schema": "mixed93_actual_cohesive_saved_visual_case.v1",
+  "case_id": "mixed93_actual_cohesive_saved_visual_20261007",
+  "status": "SOURCE_READY_RESULT_PINNED_NO_RENDER_REQUESTED",
+  "classification": "FIXED_CRACK_TOY_ELASTIC_DIAGNOSTIC",
+  "claims": ["NO_GROWTH", "NO_MATERIAL_CALIBRATION"],
+  "execution_authorization": {
+    "authorized": true,
+    "authorized_by": "ROOT",
+    "authorized_utc": "2026-10-06T19:14:12Z"
+  },
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "expected_schema": "mixed93_actual_cohesive_bridge_numeric_result.v1",
+    "expected_status": "ACCEPTED_DIAGNOSTIC_ONLY",
+    "expected_classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION"
+  },
+  "producer_worker_source": {
+    "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+    "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+  },
+  "geometry": {
+    "crack_plane": "y=0, x in [-R,0], z in [-L/2,L/2]",
+    "radius_m": 0.01,
+    "length_m": 0.01,
+    "front_axis": "z",
+    "normal_unit_lower_to_upper": [0.0, 1.0, 0.0],
+    "expected_saved_qps": 16
+  },
+  "toy_law": {
+    "k0_pa_per_m": 100000000.0,
+    "tpeak_pa": 1000.0,
+    "delta0_m": 0.00001,
+    "deltaf_m": 0.00002,
+    "traction_plot": "show virgin t=K0*delta only from zero through the observed maximum opening; annotate numeric delta0 and that all actual points are below delta0; do not draw softening"
+  },
+  "saved_result_fields": {
+    "interface": "evidence.interface",
+    "baseline_points": "evidence.baseline.points",
+    "coupled_points": "evidence.coupled.points",
+    "solution_summary": "solution",
+    "accepted_gates": "gates"
+  },
+  "plot_contract": {
+    "opening_panels": "baseline and coupled-final openings at the same saved x/z points, shared color range [0,1.1*maximum actual saved opening] m and equal spatial axes",
+    "traction_panel": "show the virgin t=K0*delta line only over the observed opening range; annotate numeric delta0 and actual points below delta0; never draw or fit post-delta0 softening",
+    "sign_panel": "project the saved internal face-force share/area and saved physical upper/lower traction vectors onto the saved unit normal",
+    "q_change_annotation": "read stored q_change_norm_m and internal_force_norm_n; do not recompute a solve",
+    "layout": "use constrained GridSpec with a dedicated shared-colorbar column, separate legend/header/footer space, and no manual subplots_adjust",
+    "output": "one PNG from saved result values only; no MLS, field, geometry, query, or solve construction"
+  },
+  "limits": {
+    "max_wall_seconds": 15,
+    "max_combined_output_bytes": 2097152,
+    "attempts": 1,
+    "planned_output_dir": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/run01"
+  }
+}

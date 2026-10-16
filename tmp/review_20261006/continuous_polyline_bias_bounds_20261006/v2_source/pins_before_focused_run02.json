@@ -1,0 +1,53 @@
+{
+  "review_id": "continuous_polyline_bias_bounds_v2_convex_segment_upper",
+  "review_mode": "SOURCE_ONLY_STATIC",
+  "experiment_path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006",
+  "review_snapshot_path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source",
+  "static_actions": ["python_ast_parse", "json_parse", "line_count", "sha256"],
+  "not_run": ["metric", "unittest", "pytest", "solver", "provider", "render"],
+  "pinned_v1_dependency": {
+    "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/continuous_polyline_bias_bounds.py",
+    "line_count": 235,
+    "sha256": "f1120332240df70e58fab20ba9fefcdac00751bcc8783f02a865cd9e45704375"
+  },
+  "experiment_files": [
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/convex_segment_upper.py",
+      "line_count": 121,
+      "sha256": "326f4b2f22468e0913974e8572ee0d489a47baf2b375ab18bb66780a29954ec2"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/tests/test_convex_segment_upper.py",
+      "line_count": 65,
+      "sha256": "6681d22b3f1a588264e8e4c2753db18ccd7f92ce042cf93cdce4418b65e1fe1e"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/CONVEX_SEGMENT_UPPER.md",
+      "line_count": 13,
+      "sha256": "eb2d79f42fb0100526d49223079fd5a42436942a1fd226c1a81024054dbff4f3"
+    },
+    {
+      "path": "pgfrag/experiments/continuous_polyline_bias_bounds_20261006/fixtures/sparse_vertex_set_counterexample.json",
+      "line_count": 22,
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ],
+  "review_snapshot_files": [
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/convex_segment_upper.py",
+      "sha256": "326f4b2f22468e0913974e8572ee0d489a47baf2b375ab18bb66780a29954ec2"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/tests/test_convex_segment_upper.py",
+      "sha256": "6681d22b3f1a588264e8e4c2753db18ccd7f92ce042cf93cdce4418b65e1fe1e"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/README.md",
+      "sha256": "eb2d79f42fb0100526d49223079fd5a42436942a1fd226c1a81024054dbff4f3"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/fixtures/sparse_vertex_set_counterexample.json",
+      "sha256": "e09a8d8ae9bf56a13699cdae0a2322a655a1f4f18982ec2545ad6b106c480dcc"
+    }
+  ]
+}

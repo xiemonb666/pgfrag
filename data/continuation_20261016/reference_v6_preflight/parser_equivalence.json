@@ -1,0 +1,62 @@
+{
+  "schema": "pgfrag.v6_msh_alias_parser_equivalence.v1",
+  "status": "PASS_RAW_AND_PARSER_EQUIVALENCE",
+  "parser": "frozen inputs/cohesive_mesh.py read_gmsh22",
+  "source_msh_sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+  "executed_alias_msh_sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+  "raw_nodes_block_byte_equal": true,
+  "raw_elements_block_byte_equal": true,
+  "all_bytes_outside_physical_names_byte_equal": true,
+  "raw_element_records_ids_tags_connectivity_and_order_equal": true,
+  "parsed_node_coordinates_and_order_equal": true,
+  "parsed_node_tags_order_equal": true,
+  "parsed_connectivity_element_ids_physical_tags_and_order_equal": true,
+  "run05_t4_cross_format_match": "EXACT_ELEMENT_ID_MAP_TO_ORIGINAL_CELL_TAGS_AND_ORDERED_CORNER_NODE_TAGS",
+  "run05_t4_msh_row_to_npz_row_correspondence_path": "t4_cell_row_correspondence.npz",
+  "run05_t4_msh_row_to_npz_row_correspondence_sha256": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c",
+  "volume_physical_group_unchanged": true,
+  "physical_names_original": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "cut_interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "source_exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "physical_names_derived": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "counts": {
+    "msh_nodes": 25579,
+    "T4": 86624,
+    "interface_Tri3": 356,
+    "exterior_Tri3": 44182
+  },
+  "known_fid_role_binding_rows": 44182,
+  "known_fid_role_binding_sha256": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+  "msh_t4_to_npz_cell_row_correspondence_sha256": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c",
+  "method": "raw MSH block byte comparison plus frozen parser connectivity/tag/order comparison; FID/role bound by exact sorted source nodeTags keys"
+}

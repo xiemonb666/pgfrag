@@ -1,0 +1,74 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_case.v1",
+  "case_name": "weak_seam_v2",
+  "authorization": "USER_CONTINUATION_20261015_ROOT_REVIEWED_NEW_BOUNDED_EXPERIMENT",
+  "classification": "UNVALIDATED_PREINSERTED_WEAK_SEAM_DIAGNOSTIC",
+  "source_forge_manifest_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+  "source_mesh_result_sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+  "bulk_material": {
+    "E_pa": 70000000000.0,
+    "Gc_j_m2": 7.6,
+    "nu": 0.25,
+    "rho_kg_m3": 2300.0
+  },
+  "interface": {
+    "sigma_c_Pa": 10000000.0,
+    "Gc_J_m2": 7.6,
+    "delta0_m": 1e-08,
+    "beta": 1,
+    "kappa": 1,
+    "calibration": "NONE",
+    "predefined_plane": "x=0",
+    "penalty_Pa_m": 0
+  },
+  "loading": {
+    "peak_force_N": 1600.0,
+    "pulse_duration_s": 2.5e-05,
+    "patch_x_threshold_m": 0.0085,
+    "type": "REFERENCE_DIRECTION_POSITIVE_NODAL_PATCH_FORCES",
+    "profile": "peak*sin(pi*t/25us)^2 for 0<t<25us, else zero",
+    "force_line": "reference complete bulk lumped mass COM y,z; relative-entropy projection with strictly positive weights",
+    "constraints": "NONE; ALL NATIVE DOFS FREE"
+  },
+  "time": {
+    "total_s": 5e-05,
+    "initial_bound_fraction": 0.4,
+    "refinement_factor": 1,
+    "dt_policy": "T/(ceil(T/min(.4*independent total critical dt,.4*native bulk dt))*refinement)"
+  },
+  "limits": {
+    "max_steps": 40000,
+    "wall_time_s": 300,
+    "output_cap_bytes": 2147483648
+  },
+  "output": {
+    "node_stride": 50,
+    "flush_stride": 250,
+    "all_native_qp_steps": true
+  },
+  "gates": {
+    "damage_tolerance": 1e-10,
+    "traction_zero_tolerance_Pa": 0.01,
+    "max_abs_principal_small_strain": 0.01,
+    "max_polar_rotation_rad": 0.05,
+    "min_det_F": 0.8,
+    "scope": "sampled each saved nodal state; small-strain numerical applicability, not ceramic elasticity/calibration"
+  },
+  "limitations": [
+    "prescribed weak seam, not homogeneous free crack path",
+    "no collision/contact; physical interpretation ends at surface intersection",
+    "initial fixed-normal stiffness bound, not nonlinear accuracy proof",
+    "zero/lowload and half-dt comparisons required before qualification",
+    "material parameters and historical vessel style uncalibrated",
+    "full time series QP native doubles retained; nodal states are declared stride samples"
+  ],
+  "input_hashes": {
+    "mesh.msh": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+    "mesh_result.json": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+    "forge_manifest.json": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+    "material.dat": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+    "cohesive_vessel.py": "81756ac503d3f65b3c60ffd9b1b8755d86972144e471fff74600be99990a24a9",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1"
+  }
+}

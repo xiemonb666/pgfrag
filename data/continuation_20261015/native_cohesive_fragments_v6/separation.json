@@ -1,0 +1,11 @@
+{
+  "method": "global x-plane witness over every saved nodal state after all QPs fail; no volume-tag fragment labels",
+  "node_history_stride": 1,
+  "first_all_qp_damage_step": 716,
+  "first_all_qp_damage_and_zero_traction_step": 716,
+  "all_subsequent_states_joint_failure_gate": true,
+  "self_intersection_continuous_time_certificate": false,
+  "minimum_saved_global_x_gap_m": 1.2143283447267419e-06,
+  "all_saved_postdebond_components_x_separated": true,
+  "final_global_x_gap_m": 0.00038635405786445454
+}

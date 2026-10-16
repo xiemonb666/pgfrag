@@ -1,0 +1,164 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_benchmark_preflight_budget.v1",
+  "status": "EXACT_HISTORY_AND_ALL_OUTPUT_BUDGET_PASS; RUN_NOT_YET_STARTED",
+  "solver_evolution_performed": false,
+  "classification": "PLACEHOLDER_COST_ESTIMATE_UNCALIBRATED; NO SPECIMEN PHYSICAL DATA",
+  "input_freeze": {
+    "frozen_files": {
+      "case.json": {
+        "sha256": "98236bd6d0a8507d93bb80a7be8ce752835dd309b45043032b5d1ec88f009b5f",
+        "bytes": 7181
+      },
+      "cohesive_mesh.py": {
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "bytes": 26147
+      },
+      "cohesive_stability.py": {
+        "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "bytes": 19680
+      },
+      "cohesive_vessel.py": {
+        "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+        "bytes": 29970
+      },
+      "material.dat": {
+        "sha256": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+        "bytes": 471
+      },
+      "mesh.msh": {
+        "sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+        "bytes": 4410546
+      },
+      "mesh.original.msh": {
+        "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+        "bytes": 4410557
+      },
+      "mesh_alias_receipt.json": {
+        "sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0",
+        "bytes": 3051
+      }
+    },
+    "current_modules_match_previous_executed_bundle": true,
+    "alias_mesh_sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "original_source_mesh_sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+    "alias_receipt_sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0",
+    "physical_name_adapter_only": true,
+    "no_forge_manifest_copied": true,
+    "source_geometry_candidate": "daily_aberdeen_108x53_v5",
+    "source_v5_exterior_ancestry_status": "PRESENT_BUT_UNBOUND",
+    "unknown_exterior_triangles": 35784
+  },
+  "case_changes_from_prior_zero_step_preflight": {
+    "time_total_s": 1e-07,
+    "history_node_stride": 1,
+    "flush_stride": 10,
+    "max_steps": 256,
+    "wrapper_wall_time_s": 120,
+    "history_output_cap_bytes": 134217728,
+    "peak_force_N": 0.0,
+    "unchanged_physics_material_load_patch_and_stability_fraction": true
+  },
+  "native_counts": {
+    "nodes_after_seam_insertion": 18634,
+    "bulk_T4": 56139,
+    "cohesive_Tri3": 541,
+    "interface_QP": 1623,
+    "balanced_patch_nodes": 3708
+  },
+  "time_forecast": {
+    "maximum_dt_s": 2.2218618999061582e-09,
+    "actual_dt_s": 2.173913043478261e-09,
+    "solver_steps": 46,
+    "frames_including_initial": 47,
+    "node_state_frames": 47
+  },
+  "exact_history_forecast": {
+    "float64_fields_and_shapes": {
+      "opening_m": [
+        47,
+        1623,
+        3
+      ],
+      "traction_Pa": [
+        47,
+        1623,
+        3
+      ],
+      "damage": [
+        47,
+        1623
+      ],
+      "delta_max_m": [
+        47,
+        1623
+      ],
+      "contact_traction_Pa": [
+        47,
+        1623,
+        3
+      ],
+      "contact_opening_m": [
+        47,
+        1623,
+        3
+      ],
+      "contact_energy_check": [
+        47,
+        3
+      ],
+      "interface_work_check": [
+        47,
+        4
+      ],
+      "energy_J": [
+        47,
+        5
+      ],
+      "ledger": [
+        47,
+        28
+      ],
+      "patch_displacement_x_m": [
+        47,
+        3708
+      ],
+      "node_state": [
+        47,
+        18634,
+        4,
+        3
+      ]
+    },
+    "node_saved_steps_shape": [
+      47
+    ],
+    "node_saved_steps_dtype": "<i8",
+    "raw_numeric_array_bytes": 94029328,
+    "wrapper_forecast_bytes_including_256_each_for_12_arrays": 94032400,
+    "node_saved_steps_npy_bytes": 504,
+    "layout_json_bytes": 1517,
+    "history_folder_estimate_bytes": 94034421,
+    "wrapper_cap_check_forecast_plus_2mb_bytes": 96032400,
+    "history_cap_bytes": 134217728,
+    "history_cap_check_passes": true
+  },
+  "all_output_budget": {
+    "budget_bytes": 268435456,
+    "frozen_inputs_and_all_benchmark_scripts_bytes_before_budget_reports": 8956390,
+    "static_native_outputs_estimated_from_same_geometry_preflight_bytes": 45659833,
+    "qp_first_full_damage_summary_bytes": 13112,
+    "history_folder_estimate_bytes": 94034421,
+    "additional_runtime_receipt_log_and_small_json_allowance_bytes": 4000000,
+    "estimated_all_bytes": 152663756,
+    "remaining_bytes": 115771700,
+    "check_passes": true,
+    "scope_note": "The exact prepared byte count covers frozen input files and all benchmark scripts present before this budget report is written. The 4,000,000-byte allowance covers this budget report and README, runtime JSON/receipts/logs, and small audit report. It also includes the prior same-geometry static artifact size, all forecast histories, and first-damage summary. No wall-time guarantee is implied."
+  },
+  "source_geometry_limitations": {
+    "geometry_source": "daily_aberdeen_108x53_v5",
+    "exterior_ancestry": "PRESENT_BUT_UNBOUND",
+    "unknown_exterior_triangle_count": 35784,
+    "fragments_or_surface_paint_qualified": false
+  },
+  "attempt_policy": "Exactly one native run_attempt_01; no restart, retuning, force change, or automatic retry."
+}

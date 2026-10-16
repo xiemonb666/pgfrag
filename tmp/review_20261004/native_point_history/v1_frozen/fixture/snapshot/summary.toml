@@ -1,0 +1,17 @@
+status = "COMPLETED"
+experiment_kind = "isolated_native_pd_point_event_probe"
+input_id = "hand-authored-two-point-v1"
+point_input_sha256 = "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3"
+source_point_count = 2
+native_body_index_semantics = "row order in the frozen point CSV; point_id is the preserved source identity"
+point_volume_sum_m3 = 2e-9
+point_mass_sum_kg = 4e-6
+rho_kg_m3 = 2000.0
+n_steps = 2
+dt_s = 0.25
+time_s = 0.5
+sample_count_including_step_zero = 3
+directed_bond_state_rows = 6
+canonical_bond_state_rows = 3
+initial_directed_bond_count = 2
+initial_canonical_undirected_bond_count = 1

@@ -1,0 +1,15 @@
+{
+  "status": "MATH_AUDIT_COMPLETE",
+  "output_json": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\mesh_resolution_audit\\fixture_report.json",
+  "tetrahedron_count": {
+    "positive": 2,
+    "negative": 1,
+    "zero": 1,
+    "unknown": 0
+  },
+  "wall_status": "SOURCE_DOCUMENTED_GLOBAL_INTERVAL",
+  "h_to_wall": 6.760407640085653,
+  "normal_status": "SOURCE_DOCUMENTED_LOCAL_NORMAL_MAP",
+  "process_zone_status": "SOURCE_DOCUMENTED",
+  "direction_bias_status": "UNKNOWN"
+}

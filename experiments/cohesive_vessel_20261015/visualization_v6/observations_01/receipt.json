@@ -1,0 +1,8 @@
+{
+  "source_feature_sha256": "3eb4feeedef77f06d62f937d8fdf68ba6c832338e3e29219b4ca81c422d32220",
+  "source_dataset_manifest_sha256": "2a22e8a8eaaca3df3c43a643054495417cde47a251fea46a3bc668beb5cfe6e7",
+  "output_sha256": "1eda7cd64469ceb419970c1afe1d5c7aaf270354dbca3c3a7ad1740b8a227fda",
+  "views": 6,
+  "offline_targets_opened": false,
+  "script_sha256": "d529d1182272364319097dcf82a03b87eb418d86f5f2991fc4b5a03711d3f4ae"
+}

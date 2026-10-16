@@ -1,0 +1,13 @@
+{
+  "completed_utc": "2026-10-04T14:13:24.686Z",
+  "exit_code": 0,
+  "signal": null,
+  "spawn_error": null,
+  "timed_out": false,
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\stdout.txt",
+  "stdout_bytes": 108,
+  "stdout_sha256": "f887e8f70b6205cbb8f3a06486bad2f32226bf87bda51165c4e8cd3d701b4187",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\stderr.txt",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

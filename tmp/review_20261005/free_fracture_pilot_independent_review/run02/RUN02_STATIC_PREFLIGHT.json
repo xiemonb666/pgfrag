@@ -1,0 +1,52 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.run02_static_preflight.v1",
+  "status": "PASS",
+  "run01_artifacts_preserved": true,
+  "declared_run02_changes": [
+    "REPO_ROOT path-depth adjustment for copy under run02/",
+    "clearance reduction API np.minimum(..., axis=1) corrected to np.min(..., axis=1)",
+    "run02-specific wrapper/snapshot-helper root-depth adjustments"
+  ],
+  "invalid_numpy_ufunc_axis_calls": [],
+  "source_bindings": {
+    "driver": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_free_fracture_pilot.jl",
+      "bytes": 82117,
+      "sha256": "9922d52c13468df5152d88c1fdb1b7c9fc6ce473a1a3a9e56507aaf37479f50b"
+    },
+    "fixed_case": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\fixed_case.toml",
+      "bytes": 3276,
+      "sha256": "45b9f8bb5d10522fa2e6fa91ca8d944e2d6af27396034b489e27a026783bbedd"
+    },
+    "launcher": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_once.ps1",
+      "bytes": 17288,
+      "sha256": "97434a0f5b17dd93ae7a0064f98515b4651aad583b0a039b7907c646c89ba69d"
+    }
+  },
+  "native_pin_count": 84,
+  "artifacts": {
+    "pilot_independent_review.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_independent_review.py",
+      "bytes": 104983,
+      "sha256": "14179191572b25c7acdf50699c040a9493461f112d9a0b9305df0f6a2d162826"
+    },
+    "run_bounded_review.ps1": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\run_bounded_review.ps1",
+      "bytes": 3716,
+      "sha256": "23287fe464830f8d2e43c9a4677c1e82b4dc3c1ecda1032b38af1a0bd53f203d"
+    },
+    "snapshot_bindings.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\snapshot_bindings.py",
+      "bytes": 8303,
+      "sha256": "3bf87b494232ce4cb7c546f2ae282faf21ae24a931f52f618045650d75e1b597"
+    },
+    "pilot_input_hash_inventory.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_input_hash_inventory.json",
+      "bytes": 3041,
+      "sha256": "480696292e9dc58cb368ebdb35102b1d727f716a42a215a1759cf6b678fce87d"
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\mixed93_consistent_mass_20261006\case.json", line 6, in <module>
+    "authorized": true,
+                  ^^^^
+NameError: name 'true' is not defined. Did you mean: 'True'?

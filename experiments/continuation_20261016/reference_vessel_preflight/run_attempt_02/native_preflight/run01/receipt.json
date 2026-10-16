@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "started_unix_s": 1792115636.494455,
+  "ended_unix_s": 1792115649.380653,
+  "status": "ZERO_STEP_PREFLIGHT_PASS",
+  "files": {
+    "initial_bound.json": {
+      "bytes": 637,
+      "sha256": "2715fadf00553ce80186970e4099e3cf6a754da13d4de93c0e3b79037fdd2b1f"
+    },
+    "initial_state.npz": {
+      "bytes": 1346053,
+      "sha256": "a909b2f2dd6a8d651aea5505672a52ce2b255705e3ee932462413b75de13d7b1"
+    },
+    "lineage.json": {
+      "bytes": 44140744,
+      "sha256": "5b2c5cbe7c1f2d403ac82e80306c0d89720d8d7670adb7a6a475bec5e908b330"
+    },
+    "loading.json": {
+      "bytes": 170316,
+      "sha256": "3e1d0c0741fdc05aad124edd090fe954579e2c24e37f4bd1b22f37f8a5dbf86c"
+    },
+    "result.json": {
+      "bytes": 782,
+      "sha256": "60b761f856050fe50bc9d6d2cf0aa72236e83f8e9e6936e855f8ba681adec2db"
+    },
+    "started.json": {
+      "bytes": 1301,
+      "sha256": "5de40b4ede9460635fe635ae45b8a28bdba65ee6b91156821523346040de9235"
+    }
+  },
+  "persistent_bytes_before_receipt": 45659833
+}

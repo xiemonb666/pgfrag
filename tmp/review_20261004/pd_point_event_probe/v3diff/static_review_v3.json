@@ -1,0 +1,40 @@
+{
+  "schema": "pgfrag.pd.point_event.static_review.v3",
+  "status": "STATIC_FREEZE_VERIFIED; ONE_ROOT_AUTHORIZED_RUNTIME_LAUNCH_PENDING",
+  "prepared_utc_date": "2026-10-04",
+  "candidate_directory": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3",
+  "preserved_v2_directory": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze",
+  "runtime_authorization": "Root explicitly authorized exactly one invocation of launch_zero_load_probe.ps1 for run01 after this exact nullable-exit-code correction and pin verification.",
+  "source_checks": "31 manifest source hashes plus Julia executable hash verified; all finalfreeze_v3 experiment files match manifest pins.",
+  "launcher_correction": "Get-ObservedProcessExitCode refreshes, checks HasExited, reads into RawExitCode, preserves null as null, and casts only a non-null raw process exit code.",
+  "input_review": {
+    "status": "INDEPENDENT_STATIC_AUDIT_PASSED_WITH_QUADRATURE_SCOPE_LIMITS",
+    "report": "pgfrag/tmp/review_20261004/point_input_independent_review/independent_review.md",
+    "sha256": "afb007de49e79707e3d5f13744749f854278552ffbdfc859c5d8adf3ff6527c",
+    "scope": "125 unique stable IDs, finite SI xyz, positive voxel quadrature volumes, per-cell occupancy, sum/COM/mass; jitter is bounded and not a proof of eliminated directional bias or exact Voronoi/specimen volume."
+  },
+  "runtime_gate": {
+    "case": "zero_load_control",
+    "points": 125,
+    "steps": 1,
+    "threads": 1,
+    "timeout_seconds": 120,
+    "out_must_be_empty": true,
+    "snapshots_receipts_are_out_siblings": true,
+    "one_invocation_only": true,
+    "no_tinyload_or_retry": true
+  },
+  "post_run_acceptance": [
+    "Record actual wrapper exit and nullable observed child exit, timeout flag, argv, process id, and launch/wait exception.",
+    "Preserve manifest/runtime/runner/launcher/input hashes and stdout/stderr/launch receipt.",
+    "If solver exits unsuccessfully or times out, preserve all outputs and stop; do not launch a repair run.",
+    "On success, inspect exactly 250 point-state rows for steps 0 and 1, complete native IDs, finite coordinates/velocities/forces, time and dt, positive volume/mass closure.",
+    "Check complete reciprocal directed bond states against canonical states at both steps and verify zero transitions.",
+    "Do not claim physical fracture, verified fragments, energy closure, calibration, R2, or training qualification."
+  ],
+  "remaining_blocks": [
+    "Exact event-hook dispatch is an internal native API; this single preflight only qualifies hook dispatch/completeness.",
+    "E, rho, and Gc are unvalidated prototype values.",
+    "This no-damage zero-load gate does not demonstrate fracture or event detection under load."
+  ]
+}

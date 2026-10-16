@@ -1,0 +1,147 @@
+{
+  "schema": "relicweave.physics_core_review_addendum_pins.v1",
+  "review_status": "ROOT_REVIEW_PENDING",
+  "document": {
+    "path": "pgfrag/docs/progress/20261006_physics_core_review_addendum.md",
+    "bytes": 2369,
+    "characters": 1175,
+    "sha256": "289905f634bafc3f53db69acf94c06987e54f00630d2fccd891641a4b84f52f7"
+  },
+  "frozen_baseline": {
+    "path": "pgfrag/docs/progress/20261006_physics_core_status.md",
+    "sha256": "662ea38af7b1e500d9c673225ebb7ebbf5f81466ec5d6cbc58606761f5202f7a"
+  },
+  "evidence_files": [
+    {
+      "path": "pgfrag/docs/progress/20261006_physics_core_status.md",
+      "bytes": 3343,
+      "sha256": "662ea38af7b1e500d9c673225ebb7ebbf5f81466ec5d6cbc58606761f5202f7a"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/enriched_cohesive_trace_20261006/future_run01/run_receipt.json",
+      "bytes": 2364,
+      "sha256": "7decce58661a8704b03fa80a839164ce51245e2aa81c50d7518a310162cee83a"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/enriched_cohesive_trace_20261006/future_run01/numeric_result.json",
+      "bytes": 23569,
+      "sha256": "c6c3770ca3073305d9e3605be8888a11ea21d378be9a2b39e115f736ba0e8690"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/README.md",
+      "bytes": 2335,
+      "sha256": "1f18505a1d379d79b11d31227e930f757e0734a5a23c79bbd061665f589f4e86"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/v2_source/pins.json",
+      "bytes": 3784,
+      "sha256": "4c18f12dacd19f6edf2cddfb5e4c8e7d678a7ac2b23abdec1e1c73ce1f7bf73f"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/focused_run02/run_receipt.json",
+      "bytes": 886,
+      "sha256": "2b93b076959083e92c06f217d4bb6829fcafa24db8aa947a3a2a3c2ea12370f6"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/continuous_polyline_bias_bounds_20261006/focused_run02/metric_return_records.json",
+      "bytes": 4376,
+      "sha256": "36250ea79ded21695da2378f389ed1ed70a86fc306d783c04433b0c3135b8ffc"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/SOURCE_PINS.json",
+      "bytes": 1930,
+      "sha256": "68436ab01c0333be427ad20f7e9862e88521dda465d35f9405f5a8ec1b8d6cce"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/execution_capture/execution_receipt.json",
+      "bytes": 5870,
+      "sha256": "32bfd3dcedcf2275768c482cfd936f12482756ef3e97ebe73176167d25e4d2a1"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/execution_capture/stderr.bin",
+      "bytes": 2586,
+      "sha256": "d9b1de8626c37b363db57db5ef6ab2f5e585efbf122be36be2a46b2c75a39ecf"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz",
+      "bytes": 1569232,
+      "sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/serializer_only_check01/result.json",
+      "bytes": 3027,
+      "sha256": "c09d8e90f70f59bc98e1746e5309f180fe892803be4c0014dc211411a9297291"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/run_receipt.json",
+      "bytes": 4058,
+      "sha256": "ea61fbb508a2f5ef052cc31e996f575b9bf5897ec6ca459bbb29ea2656ede703"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json",
+      "bytes": 17303,
+      "sha256": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_meridian_20261006/README.md",
+      "bytes": 725,
+      "sha256": "fd9e17a49929c13c1c91d89f425a9e8f620c755812198046e632614f0f4a8f74"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_meridian_20261006/source_pins.json",
+      "bytes": 2817,
+      "sha256": "768411b3a61cd703f4bce149573f589a3ccd1fb66acf2d74e490df32ca335766"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_meridian_20261006/run01_capture/receipt.json",
+      "bytes": 6269,
+      "sha256": "b6206156c334cfdca32e0d35634141edb6f8361e9eb8f63093fed462c180675d"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_meridian_20261006/curvature_constrained_meridian_result.json",
+      "bytes": 491496,
+      "sha256": "839c461cdf0dcae93f362ee7d80d0446cf52b6b1e1f04ed18842e17527673185"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/convex_meridian_feasibility_20261006/convex_meridian_feasibility_result.json",
+      "bytes": 1314,
+      "sha256": "e7feb43d773cd12d9c0fd7b1b3fca4d3467f0f0770f2cad2bccc0b789e69cce8"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/exact_curvature_certificate_20261006/exact_curvature_certificate.json",
+      "bytes": 191724,
+      "sha256": "b08a550d14e59ed9945408bafc42a921692f1ef7f9c4540dc77f8a364ede8bde"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_saved_independent/independent_audit.json",
+      "bytes": 520952,
+      "sha256": "fe0c7c0f1af9fda79d2f94b607b58629bf1e04317a3bd22b290ea92340bbdc0b"
+    },
+    {
+      "path": "vesselforge/tmp/review_20261006/curvature_constrained_meridian_20261006/run01_capture/render_only_saved_layout_fixed_01/saved_meridian_geometry_preview.png",
+      "bytes": 148614,
+      "sha256": "73714e1782cf3831926f40c3406eeef64cf733e6cc40a00b6467db9c05320ea3"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_consistent_mass_20261006/run01/result.json",
+      "bytes": 7953,
+      "sha256": "48535218766ed986b5f26c19da7bbb35bd2583840028a674bfa791e632f14bbe"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_consistent_mass_20261006/run01/EXECUTION_CAPTURE.json",
+      "bytes": 11447,
+      "sha256": "9b96b51e7f0058672b22c11932c0c6bf6dac4441516854a113b176f3230d5743"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_visual/mixed93_saved_stress_norms_2x2.png",
+      "bytes": 174497,
+      "sha256": "49a631ac7cc2e7ad126f3ecf85033d5c85608d97712f7978b99b703db605d702"
+    },
+    {
+      "path": "pgfrag/tmp/review_20261006/mixed93_saved_visual/render_execution01/execution_receipt.json",
+      "bytes": 1479,
+      "sha256": "2efb404b517d8afb2a88902b77e711443d523ac6d580b9f0a3e8cc19923dcb9b"
+    }
+  ],
+  "boundary": "Evidence records are bounded to the cited run receipts, JSON/stdout, README and source pins. Method checks and cached manufactured fields do not qualify physical fracture, actual specimen coupling, or complete A12 packs."
+}

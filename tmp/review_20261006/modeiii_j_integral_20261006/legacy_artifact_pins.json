@@ -1,0 +1,21 @@
+{
+  "artifact_id": "modeiii_j_integral_20261006_legacy_pins",
+  "status": "PINNED_BEFORE_PRECOPY_GUARD_V2",
+  "items": [
+    {
+      "label": "legacy_source",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral.py",
+      "sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA"
+    },
+    {
+      "label": "analytic_json_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.json",
+      "sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0"
+    },
+    {
+      "label": "analytic_png_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.png",
+      "sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4"
+    }
+  ]
+}

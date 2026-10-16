@@ -1,0 +1,17 @@
+{
+  "schema": "fixed_load_front_independent_attempt_receipt.v1",
+  "attempt": 1,
+  "process_return_code": 1,
+  "elapsed_ms": 190,
+  "source_sha256": "d1a9f187742abf4801a0fd6247a85bab86675474c00aced37404b8ac9fa627ff",
+  "source_pins_sha256": "fbabc9e140bbf8dc489e9b5c945be8d03990c38a9fb13c800f56d63a448850ac",
+  "input_post_hashes_match_pre_run_pins": true,
+  "input_post_sha256": {
+    "fixed_result": "a60e51c85c26510c358ee57cafa4bfdda6ed89ea463d99bcc86551f64220732c",
+    "baseline_result": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3",
+    "operator_result": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+  },
+  "merged_stdout_stderr_log": {"path": "attempt01_stdout_merged.log", "bytes": 732, "sha256": "c4cd96b8fac8edfdaa04c4ad35853ff265e35de7d16120d0189ab791a04ffb1"},
+  "failure": "Checker assumed mu_Pa/lambda_Pa were numeric; actual frozen metadata stores formula strings. Stopped before K assembly, eigvalsh, equilibrium, energy ledger, or any solver call. No audit pass was produced.",
+  "no_author_module_imported_or_called": true
+}

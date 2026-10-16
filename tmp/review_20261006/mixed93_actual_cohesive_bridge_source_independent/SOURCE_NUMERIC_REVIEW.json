@@ -1,0 +1,42 @@
+{
+  "schema": "mixed93_actual_cohesive_bridge_source_independent_review.v1",
+  "verdict": "SOURCE_READY_WITH_EXTERNAL_ATTEMPT_WATCHDOG_REQUIRED",
+  "scope": "read-only source and metadata audit; no numerical imports, NPZ parsing, provider, primitive, solver, or tests",
+  "freeze": {
+    "worker": {"path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py", "lines": 479, "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"},
+    "supervisor": {"path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge_once.py", "lines": 160, "sha256": "99341a82fa1cbe4192fcac3bf76030e7d094c254606414753c80de6e31a3fba9"},
+    "numeric_source_pins_sha256": "090d6fc5f8c695765a7bb6fe91490d0e7c54aeca337a6f9f318734de4cae3a14",
+    "numeric_source_readme_sha256": "124a012d43cd643a7e490ae3d6fb1e2399f17368182988bfbf5fb07297783f76",
+    "case_sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+    "static_checker_sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412",
+    "original_source_pins_sha256": "9cb1fee478dadc080d22a872f29af80e91de8549902334be79fa518cac4554f3"
+  },
+  "pin_readback": {
+    "numeric_references_expected": 20,
+    "numeric_references_matching": 20,
+    "accepted_npz_raw_byte_sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "accepted_npz_opened_or_parsed": false,
+    "case_and_pin_execution_authorization": false,
+    "numeric_runs_directory_exists": false
+  },
+  "api_review": {
+    "mls_config_and_batched_shape_result_fields_match": true,
+    "mixed93_semantic_order_and_front_index_82_match": true,
+    "trace_point_ledger_and_result_attributes_match": true,
+    "shared_derivative_scalar_class_identity_matches": true,
+    "positive_internal_force_vs_physical_upper_traction_signs_match": true,
+    "primitive_call_and_kkt_attempt_counters_increment_before_call": true,
+    "successful_path_evidence_contract": "16 query rows, 16 QP H+/H-/J records, six rigid modes, baseline/final point ledgers, at most 3 assemblies and 1 KKT solve",
+    "external_force_pairing_mislabeled_as_incremental_work": false,
+    "worker_result_and_receipt_json_allow_nan_false": true
+  },
+  "limitations": {
+    "external_watchdog_required": "inner total_seconds_from_preflight is sampled at child return; external watchdog must time entire outer process including post-pins and receipt serialization and reject elapsed > 60 s",
+    "memory": "64 MiB is an estimated working-memory gate, not measured RSS",
+    "partial_qp_failure": "interface_qps is assigned only after the full loop; a NOT_ACCEPTED loop failure may leave zero without implying no partial constructions; accept only complete 16-row successful ledger",
+    "metadata_json": "supervisor disabled-state and lock metadata dumps omit allow_nan=False but contain only fixed strings/bools and finite PID/time metadata",
+    "physical_scope": "toy fixed-crack Mode-I elastic cohesive diagnostic only; material calibration, process-zone, mixed-mode, and growth remain unqualified"
+  },
+  "numerical_execution_performed": false,
+  "source_ready_is_not_numerical_pass": true
+}

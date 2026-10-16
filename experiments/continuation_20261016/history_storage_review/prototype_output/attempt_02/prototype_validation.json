@@ -1,0 +1,28 @@
+{
+  "status": "TINY_LOSSLESS_CHUNK_STORE_PASS",
+  "schema": "pgfrag.lossless_history_chunks.prototype.v1",
+  "numpy_version": "2.5.3",
+  "synthetic_frames": 13,
+  "chunk_frame_ranges": [
+    [
+      0,
+      5
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      10,
+      13
+    ]
+  ],
+  "incomplete_temp_ignored_at_committed_prefix": true,
+  "committed_prefix_frames_during_crash_simulation": 10,
+  "all_core_fields_bitwise_equal_float64": true,
+  "node_state_and_step_index_bitwise_equal": true,
+  "manifest_shape_dtype_coverage_hash_checks": "PASS",
+  "prototype_output_bytes_including_manifest_and_validation": 20762,
+  "output_cap_bytes": 67108864,
+  "not_solver_or_physics_validation": true
+}

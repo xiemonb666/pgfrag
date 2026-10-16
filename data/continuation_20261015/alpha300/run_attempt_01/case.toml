@@ -1,0 +1,41 @@
+schema = "pgfrag.native_bowl_case.v1"
+run_id = "native_bowl_h1mm_fixed_delta_300s-1_400steps_run_attempt_01"
+points_csv = "points.csv"
+source_forge_manifest_sha256 = "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67"
+source_manifest_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\data\\continuation_20261015\\spherical_bowl\\three_bands\\manifest.json"
+
+[geometry]
+outer_radius_m = 0.012
+inner_radius_m = 0.0080000000000000002
+center_x_m = 0
+center_y_m = 0
+center_z_m = 0.012
+h_m = 0.001
+spacing_m = 0.001
+delta_m = 0.0025000000000000001
+n_points = 2516
+analytic_volume_m3 = 2.546784444510125e-06
+
+[material]
+rho_kg_m3 = 2300
+E_pa = 70000000000
+nu = 0.25
+Gc_j_m2 = 7.5999999999999996
+calibration_status = "UNVALIDATED_PROTOTYPE"
+total_mass_kg = 0.0057867999999999999
+
+[loading]
+mode = "imposed_strain_rate_release"
+alpha_s_1 = 300
+momentum_constraint = "subtract mass-mean translation, then solve inertia tensor for zero angular momentum"
+
+[solver]
+steps = 400
+safety_factor = 0.5
+time_resolution_case = "baseline"
+threads = 1
+max_runtime_s = 120
+max_output_bytes = 268435456
+max_points = 12000
+max_steps = 1000
+max_pairs = 2000000

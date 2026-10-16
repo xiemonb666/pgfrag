@@ -1,0 +1,385 @@
+{
+  "all_checks_pass": true,
+  "analytic_membership": {
+    "point_ids_outside_analytic_material_or_cell_slab": [],
+    "source_z_interval_mm": [
+      0.0,
+      10.0
+    ],
+    "strict_radial_interval_mm": [
+      8.0,
+      10.0
+    ]
+  },
+  "analytic_roi": {
+    "cell_count": 96,
+    "cell_size_mm": 0.5,
+    "direct_centroid_mm": [
+      8.9811813730558,
+      0.0,
+      5.0
+    ],
+    "direct_minus_grid_volume_mm3": 0.0,
+    "direct_planar_area_mm2": 4.0083813592722475,
+    "direct_volume_mm3": 8.016762718544495,
+    "inner_radius_mm": 8.0,
+    "outer_radius_mm": 10.0,
+    "roi_aabb_mm": [
+      7.5,
+      10.5,
+      -1.0,
+      1.0,
+      4.0,
+      6.0
+    ],
+    "sum_cell_centroid_mm": [
+      8.9811813730558,
+      0.0,
+      5.0
+    ],
+    "sum_cell_volume_mm3": 8.016762718544495
+  },
+  "centroid_comparison": {
+    "axes": [
+      "x",
+      "y",
+      "z"
+    ],
+    "max_absolute_delta_by_axis_mm": {
+      "x": 3.538680459769239e-11,
+      "y": 8.854528221746705e-12,
+      "z": 8.881784197001252e-16
+    },
+    "max_absolute_delta_mm": 3.538680459769239e-11,
+    "mismatched_positive_cell_indices": [],
+    "positive_cell_tolerance_mm": 1e-06
+  },
+  "checks": [
+    {
+      "details": {
+        "actual_stage_files": 7,
+        "summary_inventory_matches_frozen_stage": true,
+        "summary_stage_files": 7
+      },
+      "name": "retained_stage_inventory_matches_summary",
+      "passed": true
+    },
+    {
+      "details": {
+        "duplicate_point_ids": [],
+        "ledger_cells": 96,
+        "points": 80,
+        "unique_cell_ids": 96
+      },
+      "name": "96_cells",
+      "passed": true
+    },
+    {
+      "details": {
+        "bad_indices": []
+      },
+      "name": "cell_index_ijk_aabb_map",
+      "passed": true
+    },
+    {
+      "details": {
+        "positive_cell_mismatches": [],
+        "positive_cell_status_errors": [],
+        "zero_cell_mismatches": []
+      },
+      "name": "cell_common_matches_independent_analytic",
+      "passed": true
+    },
+    {
+      "details": {
+        "mismatch_indices": []
+      },
+      "name": "cell_components_reconcile",
+      "passed": true
+    },
+    {
+      "details": {
+        "component_ids_missing_point_rows": [],
+        "duplicate_ids": [],
+        "errors": [],
+        "unlinked_point_ids": []
+      },
+      "name": "component_point_mapping",
+      "passed": true
+    },
+    {
+      "details": {
+        "mass_error_ids": [],
+        "rho_kg_m3": 2100.0,
+        "volume_conversion_error_ids": []
+      },
+      "name": "SI_volume_and_rhoV",
+      "passed": true
+    },
+    {
+      "details": {
+        "classifier_counts": {
+          "IN": 80
+        },
+        "classifier_error_ids": [],
+        "outside_cell_ids": [],
+        "position_error_ids": [],
+        "topology_counts": {
+          "PASS": 80
+        }
+      },
+      "name": "strict_classifier_and_centroid_mapping",
+      "passed": true
+    },
+    {
+      "details": {
+        "axes_checked": [
+          "x",
+          "y",
+          "z"
+        ],
+        "max_absolute_delta_by_axis_mm": {
+          "x": 3.538680459769239e-11,
+          "y": 8.854528221746705e-12,
+          "z": 8.881784197001252e-16
+        },
+        "max_absolute_delta_mm": 3.538680459769239e-11,
+        "mismatched_positive_cell_indices": [],
+        "tolerance_mm": 1e-06
+      },
+      "name": "volume_weighted_cell_centroid_matches_independent_analytic",
+      "passed": true
+    },
+    {
+      "details": {
+        "point_ids_outside_analytic_material_or_cell_slab": [],
+        "source_z_interval_mm": [
+          0.0,
+          10.0
+        ],
+        "strict_radial_interval_mm": [
+          8.0,
+          10.0
+        ]
+      },
+      "name": "analytic_annulus_and_slab_membership",
+      "passed": true
+    },
+    {
+      "details": {
+        "fixture_declared_rho_kg_m3": 2100.0,
+        "points_with_unexpected_surface_mapping": [],
+        "pointset_provenance_rho_kg_m3": 2100.0
+      },
+      "name": "declared_density_and_unprojected_surface_mapping",
+      "passed": true
+    },
+    {
+      "details": {
+        "bad_cell_map_indices": [],
+        "cell_count": 96,
+        "duplicate_point_ids": [],
+        "point_count": 80,
+        "pointset_declared_count": 80
+      },
+      "name": "all_cells_and_points_map",
+      "passed": true
+    },
+    {
+      "details": {
+        "all_volume_reconciliations_pass": true,
+        "analytic_direct_minus_grid_mm3": 0.0,
+        "cell_sum_matches_analytic": true,
+        "component_sum_matches_cell_sum": true,
+        "delivered_point_volume_sum_mm3": 8.016762718544449,
+        "emitted_mass_sum_kg": 1.6835201708943325e-05,
+        "independent_analytic_direct_roi_mm3": 8.016762718544495,
+        "independent_analytic_sum_96_cells_mm3": 8.016762718544495,
+        "point_sum_matches_analytic": true,
+        "raw_brep_reference_roi_mm3": 8.01676271854943,
+        "raw_connected_component_sum_mm3": 8.016762718544449,
+        "raw_reference_minus_cell_sum_mm3": 4.980904577678302e-12,
+        "raw_sum_96_cell_commons_mm3": 8.016762718544449,
+        "reference_matches_analytic": true,
+        "reference_matches_cell_sum": true,
+        "rho_times_point_volume_sum_kg": 1.683520170894334e-05,
+        "volume_tolerance_mm3": 8.016762718544495e-08
+      },
+      "name": "independent_reference_vs_96_cell_reconciliation",
+      "passed": true
+    },
+    {
+      "details": {
+        "candidate_run_promoted": false,
+        "cell_ledger_status": "BLOCKED_PARENT_EXECUTION",
+        "final_status": "BLOCKED_REPORT_FINALIZATION; local geometry ledger retained",
+        "finalization_reason": "could not stabilize report-inclusive output byte count",
+        "ingress_report_in_retained_stage": false,
+        "outer_exit_code": 2,
+        "parent_receipt_status": "BLOCKED_STAGE_RETAINED",
+        "partial_ledger_status": "BLOCKED_PARENT_EXECUTION",
+        "raw_candidate_file_retained": true,
+        "worker_failure_class": "IngressBlocked"
+      },
+      "name": "finalization_failure_not_promoted",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds": 1.238868199987337,
+  "expected_geometry_source": "independent analytic R10/R8 disk-minus-disk 1D arc integrals; producer volumes were not used as expected values",
+  "finalization_and_promotion": {
+    "candidate_file_retained_but_not_promoted": true,
+    "final_status": "BLOCKED_REPORT_FINALIZATION; local geometry ledger retained",
+    "finalization_failure": {
+      "analysis": "_write_final_report resets output.total_bytes to zero on every fixed-point iteration, then compares the serialized report with a total computed from the zero-count serialization; it repeats the same candidate instead of feeding the new total into the next iteration.",
+      "exception_class": "IngressBlocked",
+      "ingress_report_present": false,
+      "parent_execution_receipt": {
+        "child_status": "BLOCKED",
+        "partial_ledger_status": "BLOCKED_PARENT_EXECUTION",
+        "path": "parent_execution_receipt.json",
+        "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+        "status": "BLOCKED_STAGE_RETAINED"
+      },
+      "reason": "could not stabilize report-inclusive output byte count",
+      "report_attempt_was_promoted": false,
+      "worker_failure_receipt": {
+        "path": "worker_failure.json",
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    },
+    "ingress_report_present": false,
+    "parent_receipt": {
+      "candidate_run_promoted": false,
+      "status": "BLOCKED_STAGE_RETAINED"
+    }
+  },
+  "input_freeze_verification": {
+    "all_frozen_inputs_match": true,
+    "stage_file_names_match_freeze": true,
+    "stage_files": [
+      {
+        "bytes": 2372,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "cell_in_progress.json",
+        "sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3"
+      },
+      {
+        "bytes": 118930,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "cell_ledger.json",
+        "sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d"
+      },
+      {
+        "bytes": 119097,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "cell_ledger.partial.json",
+        "sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1"
+      },
+      {
+        "bytes": 77304,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "material_points.json",
+        "sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b"
+      },
+      {
+        "bytes": 2151,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "parent_execution_receipt.json",
+        "sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5"
+      },
+      {
+        "bytes": 1032,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "request.json",
+        "sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb"
+      },
+      {
+        "bytes": 4302,
+        "exists": true,
+        "matches_freeze": true,
+        "path": "worker_failure.json",
+        "sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e"
+      }
+    ],
+    "stage_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\.forge_ingress_stage__2srs6ad",
+    "stage_total_bytes": 325188,
+    "stage_within_20_mib": true,
+    "summary_matches_freeze": true,
+    "summary_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01_supervisor\\pilot_results_summary.json"
+  },
+  "outputs": {
+    "cell_csv": "PILOT_CELL_AUDIT.csv",
+    "cell_volume_mass_delta_png": "PILOT_CELL_VOLUME_MASS_DELTA.png",
+    "point_csv": "PILOT_POINT_AUDIT.csv",
+    "xy_map_png": "PILOT_XY_CELL_MAP.png"
+  },
+  "producer_summary_arithmetic_crosscheck_only": {
+    "independent_analytic_reference_mm3": 8.016762718544495,
+    "independent_raw_cell_sum_mm3": 8.016762718544449,
+    "raw_cell_count": 96,
+    "raw_pointset_count": 80,
+    "summary_cell_count": 96,
+    "summary_pointset_count": 80,
+    "summary_raw_cell_sum_mm3": 8.016762718544449,
+    "summary_raw_reference_mm3": 8.01676271854943,
+    "summary_values_are_not_used_as_expected_geometry": true
+  },
+  "qualification": {
+    "local_geometry_diagnostic_only": true,
+    "native_integration": "NOT_CONNECTED",
+    "scientific_material_calibration": "UNKNOWN_UNVALIDATED",
+    "solver_or_physics": "NOT_RUN",
+    "whole_mother_coverage": "UNKNOWN_NOT_RUN"
+  },
+  "raw_counts": {
+    "cell_status_counts": {
+      "POSITIVE_COMPONENTS_CENTROIDS_IN": 80,
+      "ZERO_INTERSECTION": 16
+    },
+    "classifier_counts": {
+      "IN": 80
+    },
+    "ledger_cells": 96,
+    "point_rows": 80,
+    "positive_component_rows": 80,
+    "topology_counts": {
+      "PASS": 80
+    }
+  },
+  "rendering": {
+    "exception": null,
+    "outputs": {
+      "cell_volume_mass_delta_png": "PILOT_CELL_VOLUME_MASS_DELTA.png",
+      "xy_map_png": "PILOT_XY_CELL_MAP.png"
+    },
+    "status": "COMPLETE"
+  },
+  "schema": "pgfrag.forge_volume_ingress_independent_pilot_audit.v1",
+  "status": "GEOMETRY_DIAGNOSTIC_AUDITED_NOT_PROMOTED",
+  "whole_roi_reconciliation": {
+    "all_volume_reconciliations_pass": true,
+    "analytic_direct_minus_grid_mm3": 0.0,
+    "cell_sum_matches_analytic": true,
+    "component_sum_matches_cell_sum": true,
+    "delivered_point_volume_sum_mm3": 8.016762718544449,
+    "emitted_mass_sum_kg": 1.6835201708943325e-05,
+    "independent_analytic_direct_roi_mm3": 8.016762718544495,
+    "independent_analytic_sum_96_cells_mm3": 8.016762718544495,
+    "point_sum_matches_analytic": true,
+    "raw_brep_reference_roi_mm3": 8.01676271854943,
+    "raw_connected_component_sum_mm3": 8.016762718544449,
+    "raw_reference_minus_cell_sum_mm3": 4.980904577678302e-12,
+    "raw_sum_96_cell_commons_mm3": 8.016762718544449,
+    "reference_matches_analytic": true,
+    "reference_matches_cell_sum": true,
+    "rho_times_point_volume_sum_kg": 1.683520170894334e-05,
+    "volume_tolerance_mm3": 8.016762718544495e-08
+  }
+}

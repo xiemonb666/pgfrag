@@ -1,0 +1,95 @@
+{
+  "after_read_only_analysis": {
+    "analysis_code": {
+      "cohesive_mesh_reader_py": {
+        "byte_count": 26147,
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "workspace_relative_path": "pgfrag/src/pgfrag/cohesive_mesh.py"
+      },
+      "facet_ancestry_py": {
+        "byte_count": 25891,
+        "sha256": "c2efef1621bc3222a5fb7ea51cc84c7001fed2a9df54361207eff91495dea058",
+        "workspace_relative_path": "pgfrag/src/pgfrag/facet_ancestry.py"
+      },
+      "read_only_runner_py": {
+        "byte_count": 14673,
+        "sha256": "8efc6ba851fe525dcbd9b923d892d6002eaf19e4a68f5b75cf545711f507ed63",
+        "workspace_relative_path": "pgfrag/experiments/continuation_20261016/facet_ancestry/run_saved_96t4_case.py"
+      }
+    },
+    "historical_inputs": {
+      "dense_step_650_B": {
+        "byte_count": 4396,
+        "sha256": "3921836f4d9ca2f350ef8c06f5704f07de37cb50a06d1f490c7f34082cbf3c37",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_B.npz"
+      },
+      "dense_step_650_C": {
+        "byte_count": 4589,
+        "sha256": "033535d69c8a2787d22a8f4b32a67ccb17fa966effc01020052d42284a966d7f",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_C.npz"
+      },
+      "dense_step_650_D": {
+        "byte_count": 4873,
+        "sha256": "4d7de9e62ac58b2d160f22a2d334d43a4b2835e7d2a5a89dc44de59979426e98",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_D.npz"
+      },
+      "input_native_initial_npz": {
+        "byte_count": 1424,
+        "sha256": "c4abc0eaa4b2dce47a0142dc4d0f1f17a1e3292b989d9d924801bf0de2840eea",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/input_native_initial.npz"
+      },
+      "source_msh": {
+        "byte_count": 3605,
+        "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/block_2x2x4mm.msh"
+      }
+    }
+  },
+  "before_read_only_analysis": {
+    "analysis_code": {
+      "cohesive_mesh_reader_py": {
+        "byte_count": 26147,
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "workspace_relative_path": "pgfrag/src/pgfrag/cohesive_mesh.py"
+      },
+      "facet_ancestry_py": {
+        "byte_count": 25891,
+        "sha256": "c2efef1621bc3222a5fb7ea51cc84c7001fed2a9df54361207eff91495dea058",
+        "workspace_relative_path": "pgfrag/src/pgfrag/facet_ancestry.py"
+      },
+      "read_only_runner_py": {
+        "byte_count": 14673,
+        "sha256": "8efc6ba851fe525dcbd9b923d892d6002eaf19e4a68f5b75cf545711f507ed63",
+        "workspace_relative_path": "pgfrag/experiments/continuation_20261016/facet_ancestry/run_saved_96t4_case.py"
+      }
+    },
+    "historical_inputs": {
+      "dense_step_650_B": {
+        "byte_count": 4396,
+        "sha256": "3921836f4d9ca2f350ef8c06f5704f07de37cb50a06d1f490c7f34082cbf3c37",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_B.npz"
+      },
+      "dense_step_650_C": {
+        "byte_count": 4589,
+        "sha256": "033535d69c8a2787d22a8f4b32a67ccb17fa966effc01020052d42284a966d7f",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_C.npz"
+      },
+      "dense_step_650_D": {
+        "byte_count": 4873,
+        "sha256": "4d7de9e62ac58b2d160f22a2d334d43a4b2835e7d2a5a89dc44de59979426e98",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_D.npz"
+      },
+      "input_native_initial_npz": {
+        "byte_count": 1424,
+        "sha256": "c4abc0eaa4b2dce47a0142dc4d0f1f17a1e3292b989d9d924801bf0de2840eea",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/input_native_initial.npz"
+      },
+      "source_msh": {
+        "byte_count": 3605,
+        "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+        "workspace_relative_path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/block_2x2x4mm.msh"
+      }
+    }
+  },
+  "unchanged_during_analysis": true
+}

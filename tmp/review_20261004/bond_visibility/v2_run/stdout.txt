@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\xiemo\Desktop\ShardForge\pgfrag
+configfile: pyproject.toml
+collected 8 items
+
+pgfrag\tests\test_bond_visibility.py ........                            [100%]
+
+- generated xml file: C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261004\bond_visibility\v2_run\junit.xml -
+============================== 8 passed in 1.63s ==============================

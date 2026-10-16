@@ -1,0 +1,71 @@
+{
+  "byte_limit": 2097152,
+  "combined_output_bytes": 262314,
+  "input_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+  "input_sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+  "no_retry": true,
+  "outputs_excluding_capture": [
+    {
+      "bytes": 257749,
+      "path": "opening_history_saved_diagnostic.png",
+      "sha256": "8bcea264c56920585b75737484a5bd17516006d1d186e1293285521660145ac9"
+    },
+    {
+      "bytes": 0,
+      "path": "stderr.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 160,
+      "path": "stdout.bin",
+      "sha256": "dc89bc0ad2d0fa70e0f4a2b9dbf91c03a7588b1a61e669c8f31924c67501ff24"
+    }
+  ],
+  "pins_post": {
+    "case": "5c92fec7bda4ee309f3930803922fc392a907b93239a9d488f12919d6eb884d0",
+    "pins": "85e4c319d518e4415c52bcd41627f7ac281e638379e649d1bfd509ebb97aad7d",
+    "renderer": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1",
+    "result": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "runner": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c",
+    "source:case": "5c92fec7bda4ee309f3930803922fc392a907b93239a9d488f12919d6eb884d0",
+    "source:cohesive_derivative": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "source:cohesive_scalar_law": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "source:elastic_worker": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+    "source:mixed_enriched_operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "source:original_elastic_numeric_pins": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140",
+    "source:producer_case": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+    "source:producer_driver": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+    "source:readme": "3b80564739c0e4f08d6e5d2ac8d027d8e5d50a95bbb3eaba5dc07f6bc9e7cebf",
+    "source:renderer": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1",
+    "source:runner": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c",
+    "source:saved_elastic_result": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "source:trace_primitive": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+  },
+  "pins_pre": {
+    "case": "5c92fec7bda4ee309f3930803922fc392a907b93239a9d488f12919d6eb884d0",
+    "pins": "85e4c319d518e4415c52bcd41627f7ac281e638379e649d1bfd509ebb97aad7d",
+    "renderer": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1",
+    "result": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "runner": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c",
+    "source:case": "5c92fec7bda4ee309f3930803922fc392a907b93239a9d488f12919d6eb884d0",
+    "source:cohesive_derivative": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854",
+    "source:cohesive_scalar_law": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "source:elastic_worker": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+    "source:mixed_enriched_operator": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f",
+    "source:original_elastic_numeric_pins": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140",
+    "source:producer_case": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+    "source:producer_driver": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+    "source:readme": "3b80564739c0e4f08d6e5d2ac8d027d8e5d50a95bbb3eaba5dc07f6bc9e7cebf",
+    "source:renderer": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1",
+    "source:runner": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c",
+    "source:saved_elastic_result": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "source:trace_primitive": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+  },
+  "return_code": 0,
+  "root_go_authorized_by": "ROOT",
+  "schema": "mixed93_opening_history_saved_visual_capture.v1",
+  "status": "RENDERED",
+  "subprocess_seconds": 0.9774062000215054,
+  "timed_out": false,
+  "wall_seconds": 1.0001909001730382
+}

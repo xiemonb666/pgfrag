@@ -1,0 +1,11 @@
+{
+  "schema": "front-shadow-review-snapshot-v1",
+  "experiment": "pgfrag/experiments/front_shadow_counterexample_20261005",
+  "source_snapshot": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/source_snapshot",
+  "status": "HELPER_DIAGNOSTIC_PASSED",
+  "math_reviewed": true,
+  "single_run": "run_01",
+  "solver_called": false,
+  "cad_called": false,
+  "git_called": false
+}

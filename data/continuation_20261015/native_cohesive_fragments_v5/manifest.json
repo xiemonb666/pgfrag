@@ -1,0 +1,74 @@
+{
+  "schema": "pgfrag.native_cohesive_fragments.v1",
+  "units": "SI",
+  "files": {
+    "case.json": {
+      "sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+      "bytes": 3103
+    },
+    "cohesive_fragments.py": {
+      "sha256": "539dc189d2010510922acc20e0dd01a225267be2a1d13f5703b54a708d46c220",
+      "bytes": 33535
+    },
+    "export_native_fragments.py": {
+      "sha256": "2072f37c0ad0a8d460d6032171c300e1de5336517fd025814b3ba0ba6ce37b8c",
+      "bytes": 8892
+    },
+    "forge_manifest.json": {
+      "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+      "bytes": 6147
+    },
+    "fragments.json": {
+      "sha256": "6ff1e0cce6cd77a5a72a59ec4cca4758b5f2f730ef6a6dafd8aa5f26c661eff7",
+      "bytes": 8943234
+    },
+    "fragment_00.obj": {
+      "sha256": "e0c26538423c58db9fa29da0fa1f729a24c52320d9f1514909f706138c5ddf24",
+      "bytes": 62337
+    },
+    "fragment_01.obj": {
+      "sha256": "c5b7b3ecbd31aeb70b876981be0a58465df3ef4120c2454dbed6398b5c6654d7",
+      "bytes": 61050
+    },
+    "receipt.json": {
+      "sha256": "dcfa06c6ad304ce35cf8ff37b72ceb09b7dabbb6ac172a97cd47abbfece0a04c",
+      "bytes": 3383
+    },
+    "separation.json": {
+      "sha256": "555b830801d72f1fc27c46cb3007662f9b229ecd29a264c69290064bd6304295",
+      "bytes": 518
+    },
+    "state.npz": {
+      "sha256": "5eb84c75024af2e445499d0c5e4ee95ff159165bb78d224d7f93960039ecce49",
+      "bytes": 143376
+    }
+  },
+  "source": {
+    "run_receipt_sha256": "dcfa06c6ad304ce35cf8ff37b72ceb09b7dabbb6ac172a97cd47abbfece0a04c",
+    "frozen_case_sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+    "forge_manifest_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67"
+  },
+  "qualification": {
+    "status": "PREINSERTED_WEAK_SEAM_UNCALIBRATED",
+    "preinserted_weak_seam": true,
+    "material_calibration_status": "UNCALIBRATED",
+    "physical_pass": false,
+    "closed_native_topology": true,
+    "mesh_sensitivity": "NOT_ESTABLISHED",
+    "typed_R2_qualification": "NOT_ESTABLISHED",
+    "pretrain_eligible": false
+  },
+  "counts": {
+    "nodes": 1317,
+    "tetrahedra": 4342,
+    "fragments": 2,
+    "paired_failed_facets": 158
+  },
+  "paint": "continuous rest-coordinate recipe; per-face colours are preview only",
+  "limitations": [
+    "prescribed weak plane, uncalibrated material",
+    "linear geometry approximates CAD",
+    "no continuous-time self-intersection proof or contact dynamics",
+    "no global physical/PRETRAIN/R2 pass"
+  ]
+}

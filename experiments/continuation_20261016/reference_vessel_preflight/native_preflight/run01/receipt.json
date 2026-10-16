@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "started_unix_s": 1792115364.0705209,
+  "ended_unix_s": 1792115368.300411,
+  "status": "FAILED_PRESERVED_NO_RETRY",
+  "files": {
+    "result.json": {
+      "bytes": 1073,
+      "sha256": "f29a83f3e73859964c778bb63e950260e31674e288223cf5cf7a570c8dcc246d"
+    },
+    "started.json": {
+      "bytes": 1158,
+      "sha256": "78afa6f221bfd63ff503795f61772f8183c0149aecfb538fd107e3243247e32e"
+    }
+  },
+  "persistent_bytes_before_receipt": 2231
+}

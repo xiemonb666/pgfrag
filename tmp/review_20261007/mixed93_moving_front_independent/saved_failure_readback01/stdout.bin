@@ -1,0 +1,1307 @@
+{
+  "archive_array_headers": {
+    "candidate_front_C_physical": {
+      "dtype": "float64",
+      "nbytes": 4464,
+      "shape": [
+        6,
+        93
+      ]
+    },
+    "candidate_front_K_raw_N_per_m": {
+      "dtype": "float64",
+      "nbytes": 69192,
+      "shape": [
+        93,
+        93
+      ]
+    },
+    "candidate_front_K_scale_sqrt_m_per_sqrt_N": {
+      "dtype": "float64",
+      "nbytes": 744,
+      "shape": [
+        93
+      ]
+    },
+    "candidate_front_K_scaled_raw": {
+      "dtype": "float64",
+      "nbytes": 69192,
+      "shape": [
+        93,
+        93
+      ]
+    },
+    "candidate_front_eigenvalues_scaled": {
+      "dtype": "float64",
+      "nbytes": 744,
+      "shape": [
+        93
+      ]
+    },
+    "candidate_front_rigid_coupling_singular_values": {
+      "dtype": "float64",
+      "nbytes": 48,
+      "shape": [
+        6
+      ]
+    },
+    "candidate_front_rigid_gauge_coupling": {
+      "dtype": "float64",
+      "nbytes": 288,
+      "shape": [
+        6,
+        6
+      ]
+    },
+    "candidate_front_rigid_mode_coefficients": {
+      "dtype": "float64",
+      "nbytes": 4464,
+      "shape": [
+        6,
+        93
+      ]
+    },
+    "candidate_front_volume_gradients_per_m": {
+      "dtype": "float64",
+      "nbytes": 380928,
+      "shape": [
+        512,
+        31,
+        3
+      ]
+    },
+    "candidate_front_volume_values": {
+      "dtype": "float64",
+      "nbytes": 126976,
+      "shape": [
+        512,
+        31
+      ]
+    },
+    "candidate_front_volume_weights_m3": {
+      "dtype": "float64",
+      "nbytes": 4096,
+      "shape": [
+        512
+      ]
+    },
+    "candidate_front_volume_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 12288,
+      "shape": [
+        512,
+        3
+      ]
+    },
+    "cap_batch_0_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_0_gradients": {
+      "dtype": "float64",
+      "nbytes": 165888,
+      "shape": [
+        256,
+        27,
+        3
+      ]
+    },
+    "cap_batch_0_support_counts": {
+      "dtype": "int64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_0_weights": {
+      "dtype": "float64",
+      "nbytes": 55296,
+      "shape": [
+        256,
+        27
+      ]
+    },
+    "cap_batch_0_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "cap_batch_1_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 1536,
+      "shape": [
+        192
+      ]
+    },
+    "cap_batch_1_gradients": {
+      "dtype": "float64",
+      "nbytes": 124416,
+      "shape": [
+        192,
+        27,
+        3
+      ]
+    },
+    "cap_batch_1_support_counts": {
+      "dtype": "int64",
+      "nbytes": 1536,
+      "shape": [
+        192
+      ]
+    },
+    "cap_batch_1_weights": {
+      "dtype": "float64",
+      "nbytes": 41472,
+      "shape": [
+        192,
+        27
+      ]
+    },
+    "cap_batch_1_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 4608,
+      "shape": [
+        192,
+        3
+      ]
+    },
+    "cap_batch_2_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_2_gradients": {
+      "dtype": "float64",
+      "nbytes": 165888,
+      "shape": [
+        256,
+        27,
+        3
+      ]
+    },
+    "cap_batch_2_support_counts": {
+      "dtype": "int64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_2_weights": {
+      "dtype": "float64",
+      "nbytes": 55296,
+      "shape": [
+        256,
+        27
+      ]
+    },
+    "cap_batch_2_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "cap_batch_3_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_3_gradients": {
+      "dtype": "float64",
+      "nbytes": 165888,
+      "shape": [
+        256,
+        27,
+        3
+      ]
+    },
+    "cap_batch_3_support_counts": {
+      "dtype": "int64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_3_weights": {
+      "dtype": "float64",
+      "nbytes": 55296,
+      "shape": [
+        256,
+        27
+      ]
+    },
+    "cap_batch_3_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "cap_batch_4_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_4_gradients": {
+      "dtype": "float64",
+      "nbytes": 165888,
+      "shape": [
+        256,
+        27,
+        3
+      ]
+    },
+    "cap_batch_4_support_counts": {
+      "dtype": "int64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "cap_batch_4_weights": {
+      "dtype": "float64",
+      "nbytes": 55296,
+      "shape": [
+        256,
+        27
+      ]
+    },
+    "cap_batch_4_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "cap_batch_5_condition_numbers": {
+      "dtype": "float64",
+      "nbytes": 1024,
+      "shape": [
+        128
+      ]
+    },
+    "cap_batch_5_gradients": {
+      "dtype": "float64",
+      "nbytes": 82944,
+      "shape": [
+        128,
+        27,
+        3
+      ]
+    },
+    "cap_batch_5_support_counts": {
+      "dtype": "int64",
+      "nbytes": 1024,
+      "shape": [
+        128
+      ]
+    },
+    "cap_batch_5_weights": {
+      "dtype": "float64",
+      "nbytes": 27648,
+      "shape": [
+        128,
+        27
+      ]
+    },
+    "cap_batch_5_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 3072,
+      "shape": [
+        128,
+        3
+      ]
+    },
+    "cap_coarse_area_weights_m2": {
+      "dtype": "float64",
+      "nbytes": 3584,
+      "shape": [
+        448
+      ]
+    },
+    "cap_coarse_normals": {
+      "dtype": "float64",
+      "nbytes": 10752,
+      "shape": [
+        448,
+        3
+      ]
+    },
+    "cap_coarse_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 10752,
+      "shape": [
+        448,
+        3
+      ]
+    },
+    "cap_fine_area_weights_m2": {
+      "dtype": "float64",
+      "nbytes": 7168,
+      "shape": [
+        896
+      ]
+    },
+    "cap_fine_normals": {
+      "dtype": "float64",
+      "nbytes": 21504,
+      "shape": [
+        896,
+        3
+      ]
+    },
+    "cap_fine_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 21504,
+      "shape": [
+        896,
+        3
+      ]
+    },
+    "coarse_cap_traction_Pa": {
+      "dtype": "float64",
+      "nbytes": 10752,
+      "shape": [
+        448,
+        3
+      ]
+    },
+    "constitutive_matrix_Pa": {
+      "dtype": "float64",
+      "nbytes": 288,
+      "shape": [
+        6,
+        6
+      ]
+    },
+    "fine_cap_traction_Pa": {
+      "dtype": "float64",
+      "nbytes": 21504,
+      "shape": [
+        896,
+        3
+      ]
+    },
+    "old_front_C_physical": {
+      "dtype": "float64",
+      "nbytes": 4464,
+      "shape": [
+        6,
+        93
+      ]
+    },
+    "old_front_K_raw_N_per_m": {
+      "dtype": "float64",
+      "nbytes": 69192,
+      "shape": [
+        93,
+        93
+      ]
+    },
+    "old_front_K_scale_sqrt_m_per_sqrt_N": {
+      "dtype": "float64",
+      "nbytes": 744,
+      "shape": [
+        93
+      ]
+    },
+    "old_front_K_scaled_raw": {
+      "dtype": "float64",
+      "nbytes": 69192,
+      "shape": [
+        93,
+        93
+      ]
+    },
+    "old_front_eigenvalues_scaled": {
+      "dtype": "float64",
+      "nbytes": 744,
+      "shape": [
+        93
+      ]
+    },
+    "old_front_rigid_coupling_singular_values": {
+      "dtype": "float64",
+      "nbytes": 48,
+      "shape": [
+        6
+      ]
+    },
+    "old_front_rigid_gauge_coupling": {
+      "dtype": "float64",
+      "nbytes": 288,
+      "shape": [
+        6,
+        6
+      ]
+    },
+    "old_front_rigid_mode_coefficients": {
+      "dtype": "float64",
+      "nbytes": 4464,
+      "shape": [
+        6,
+        93
+      ]
+    },
+    "old_front_volume_gradients_per_m": {
+      "dtype": "float64",
+      "nbytes": 380928,
+      "shape": [
+        512,
+        31,
+        3
+      ]
+    },
+    "old_front_volume_values": {
+      "dtype": "float64",
+      "nbytes": 126976,
+      "shape": [
+        512,
+        31
+      ]
+    },
+    "old_front_volume_weights_m3": {
+      "dtype": "float64",
+      "nbytes": 4096,
+      "shape": [
+        512
+      ]
+    },
+    "old_front_volume_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 12288,
+      "shape": [
+        512,
+        3
+      ]
+    },
+    "semantic_ids": {
+      "dtype": "<U33",
+      "nbytes": 12276,
+      "shape": [
+        93
+      ]
+    },
+    "side_analytic_traction_KI1_Pa": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "side_normals": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "side_saved_traction_KI1_Pa": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "side_weights_m2": {
+      "dtype": "float64",
+      "nbytes": 2048,
+      "shape": [
+        256
+      ]
+    },
+    "side_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 6144,
+      "shape": [
+        256,
+        3
+      ]
+    },
+    "source_ids": {
+      "dtype": "<U8",
+      "nbytes": 864,
+      "shape": [
+        27
+      ]
+    },
+    "source_positions_xyz_m": {
+      "dtype": "float64",
+      "nbytes": 648,
+      "shape": [
+        27,
+        3
+      ]
+    }
+  },
+  "archive_header_keys": [
+    "source_ids",
+    "semantic_ids",
+    "constitutive_matrix_Pa",
+    "source_positions_xyz_m",
+    "cap_coarse_xyz_m",
+    "cap_coarse_normals",
+    "cap_coarse_area_weights_m2",
+    "cap_fine_xyz_m",
+    "cap_fine_normals",
+    "cap_fine_area_weights_m2",
+    "cap_batch_0_xyz_m",
+    "cap_batch_0_weights",
+    "cap_batch_0_gradients",
+    "cap_batch_0_support_counts",
+    "cap_batch_0_condition_numbers",
+    "cap_batch_1_xyz_m",
+    "cap_batch_1_weights",
+    "cap_batch_1_gradients",
+    "cap_batch_1_support_counts",
+    "cap_batch_1_condition_numbers",
+    "cap_batch_2_xyz_m",
+    "cap_batch_2_weights",
+    "cap_batch_2_gradients",
+    "cap_batch_2_support_counts",
+    "cap_batch_2_condition_numbers",
+    "cap_batch_3_xyz_m",
+    "cap_batch_3_weights",
+    "cap_batch_3_gradients",
+    "cap_batch_3_support_counts",
+    "cap_batch_3_condition_numbers",
+    "cap_batch_4_xyz_m",
+    "cap_batch_4_weights",
+    "cap_batch_4_gradients",
+    "cap_batch_4_support_counts",
+    "cap_batch_4_condition_numbers",
+    "cap_batch_5_xyz_m",
+    "cap_batch_5_weights",
+    "cap_batch_5_gradients",
+    "cap_batch_5_support_counts",
+    "cap_batch_5_condition_numbers",
+    "side_xyz_m",
+    "side_normals",
+    "side_weights_m2",
+    "side_saved_traction_KI1_Pa",
+    "side_analytic_traction_KI1_Pa",
+    "coarse_cap_traction_Pa",
+    "fine_cap_traction_Pa",
+    "old_front_volume_xyz_m",
+    "old_front_volume_weights_m3",
+    "old_front_volume_values",
+    "old_front_volume_gradients_per_m",
+    "old_front_C_physical",
+    "old_front_K_raw_N_per_m",
+    "old_front_K_scaled_raw",
+    "old_front_K_scale_sqrt_m_per_sqrt_N",
+    "old_front_eigenvalues_scaled",
+    "old_front_rigid_mode_coefficients",
+    "old_front_rigid_gauge_coupling",
+    "old_front_rigid_coupling_singular_values",
+    "candidate_front_volume_xyz_m",
+    "candidate_front_volume_weights_m3",
+    "candidate_front_volume_values",
+    "candidate_front_volume_gradients_per_m",
+    "candidate_front_C_physical",
+    "candidate_front_K_raw_N_per_m",
+    "candidate_front_K_scaled_raw",
+    "candidate_front_K_scale_sqrt_m_per_sqrt_N",
+    "candidate_front_eigenvalues_scaled",
+    "candidate_front_rigid_mode_coefficients",
+    "candidate_front_rigid_gauge_coupling",
+    "candidate_front_rigid_coupling_singular_values"
+  ],
+  "archive_uncompressed_bytes": 2710044,
+  "failure_error": "prior producer history no longer records rc=1 and no result JSON",
+  "failure_json_uncompressed_bytes_match": true,
+  "failure_status": "FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT",
+  "floating_array_finite_counts": {
+    "candidate_front_C_physical": {
+      "finite": 558,
+      "total": 558
+    },
+    "candidate_front_K_raw_N_per_m": {
+      "finite": 8649,
+      "total": 8649
+    },
+    "candidate_front_K_scale_sqrt_m_per_sqrt_N": {
+      "finite": 93,
+      "total": 93
+    },
+    "candidate_front_K_scaled_raw": {
+      "finite": 8649,
+      "total": 8649
+    },
+    "candidate_front_eigenvalues_scaled": {
+      "finite": 93,
+      "total": 93
+    },
+    "candidate_front_rigid_coupling_singular_values": {
+      "finite": 6,
+      "total": 6
+    },
+    "candidate_front_rigid_gauge_coupling": {
+      "finite": 36,
+      "total": 36
+    },
+    "candidate_front_rigid_mode_coefficients": {
+      "finite": 558,
+      "total": 558
+    },
+    "candidate_front_volume_gradients_per_m": {
+      "finite": 47616,
+      "total": 47616
+    },
+    "candidate_front_volume_values": {
+      "finite": 15872,
+      "total": 15872
+    },
+    "candidate_front_volume_weights_m3": {
+      "finite": 512,
+      "total": 512
+    },
+    "candidate_front_volume_xyz_m": {
+      "finite": 1536,
+      "total": 1536
+    },
+    "cap_batch_0_condition_numbers": {
+      "finite": 256,
+      "total": 256
+    },
+    "cap_batch_0_gradients": {
+      "finite": 20736,
+      "total": 20736
+    },
+    "cap_batch_0_weights": {
+      "finite": 6912,
+      "total": 6912
+    },
+    "cap_batch_0_xyz_m": {
+      "finite": 768,
+      "total": 768
+    },
+    "cap_batch_1_condition_numbers": {
+      "finite": 192,
+      "total": 192
+    },
+    "cap_batch_1_gradients": {
+      "finite": 15552,
+      "total": 15552
+    },
+    "cap_batch_1_weights": {
+      "finite": 5184,
+      "total": 5184
+    },
+    "cap_batch_1_xyz_m": {
+      "finite": 576,
+      "total": 576
+    },
+    "cap_batch_2_condition_numbers": {
+      "finite": 256,
+      "total": 256
+    },
+    "cap_batch_2_gradients": {
+      "finite": 20736,
+      "total": 20736
+    },
+    "cap_batch_2_weights": {
+      "finite": 6912,
+      "total": 6912
+    },
+    "cap_batch_2_xyz_m": {
+      "finite": 768,
+      "total": 768
+    },
+    "cap_batch_3_condition_numbers": {
+      "finite": 256,
+      "total": 256
+    },
+    "cap_batch_3_gradients": {
+      "finite": 20736,
+      "total": 20736
+    },
+    "cap_batch_3_weights": {
+      "finite": 6912,
+      "total": 6912
+    },
+    "cap_batch_3_xyz_m": {
+      "finite": 768,
+      "total": 768
+    },
+    "cap_batch_4_condition_numbers": {
+      "finite": 256,
+      "total": 256
+    },
+    "cap_batch_4_gradients": {
+      "finite": 20736,
+      "total": 20736
+    },
+    "cap_batch_4_weights": {
+      "finite": 6912,
+      "total": 6912
+    },
+    "cap_batch_4_xyz_m": {
+      "finite": 768,
+      "total": 768
+    },
+    "cap_batch_5_condition_numbers": {
+      "finite": 128,
+      "total": 128
+    },
+    "cap_batch_5_gradients": {
+      "finite": 10368,
+      "total": 10368
+    },
+    "cap_batch_5_weights": {
+      "finite": 3456,
+      "total": 3456
+    },
+    "cap_batch_5_xyz_m": {
+      "finite": 384,
+      "total": 384
+    },
+    "cap_coarse_area_weights_m2": {
+      "finite": 448,
+      "total": 448
+    },
+    "cap_coarse_normals": {
+      "finite": 1344,
+      "total": 1344
+    },
+    "cap_coarse_xyz_m": {
+      "finite": 1344,
+      "total": 1344
+    },
+    "cap_fine_area_weights_m2": {
+      "finite": 896,
+      "total": 896
+    },
+    "cap_fine_normals": {
+      "finite": 2688,
+      "total": 2688
+    },
+    "cap_fine_xyz_m": {
+      "finite": 2688,
+      "total": 2688
+    },
+    "coarse_cap_traction_Pa": {
+      "finite": 1344,
+      "total": 1344
+    },
+    "constitutive_matrix_Pa": {
+      "finite": 36,
+      "total": 36
+    },
+    "fine_cap_traction_Pa": {
+      "finite": 2688,
+      "total": 2688
+    },
+    "old_front_C_physical": {
+      "finite": 558,
+      "total": 558
+    },
+    "old_front_K_raw_N_per_m": {
+      "finite": 8649,
+      "total": 8649
+    },
+    "old_front_K_scale_sqrt_m_per_sqrt_N": {
+      "finite": 93,
+      "total": 93
+    },
+    "old_front_K_scaled_raw": {
+      "finite": 8649,
+      "total": 8649
+    },
+    "old_front_eigenvalues_scaled": {
+      "finite": 93,
+      "total": 93
+    },
+    "old_front_rigid_coupling_singular_values": {
+      "finite": 6,
+      "total": 6
+    },
+    "old_front_rigid_gauge_coupling": {
+      "finite": 36,
+      "total": 36
+    },
+    "old_front_rigid_mode_coefficients": {
+      "finite": 558,
+      "total": 558
+    },
+    "old_front_volume_gradients_per_m": {
+      "finite": 47616,
+      "total": 47616
+    },
+    "old_front_volume_values": {
+      "finite": 15872,
+      "total": 15872
+    },
+    "old_front_volume_weights_m3": {
+      "finite": 512,
+      "total": 512
+    },
+    "old_front_volume_xyz_m": {
+      "finite": 1536,
+      "total": 1536
+    },
+    "side_analytic_traction_KI1_Pa": {
+      "finite": 768,
+      "total": 768
+    },
+    "side_normals": {
+      "finite": 768,
+      "total": 768
+    },
+    "side_saved_traction_KI1_Pa": {
+      "finite": 768,
+      "total": 768
+    },
+    "side_weights_m2": {
+      "finite": 256,
+      "total": 256
+    },
+    "side_xyz_m": {
+      "finite": 768,
+      "total": 768
+    },
+    "source_positions_xyz_m": {
+      "finite": 81,
+      "total": 81
+    }
+  },
+  "front_matrix_checks": {
+    "candidate_front": {
+      "C_shape": [
+        6,
+        93
+      ],
+      "K_scaled_shape": [
+        93,
+        93
+      ],
+      "K_shape": [
+        93,
+        93
+      ],
+      "coupling_shape": [
+        6,
+        6
+      ],
+      "eigenvalue_count": 93,
+      "eigvalsh_recheck_finite": true,
+      "eigvalsh_recheck_max_abs_delta": 0.0,
+      "finite": true,
+      "gauge_coupling_max_abs_error": 0.0,
+      "gauge_coupling_rank_default": 6,
+      "gauge_coupling_singular_values": [
+        1.0,
+        1.0,
+        0.9999999999999999,
+        0.4999999999999999,
+        0.3333333333333336,
+        0.333333333333333
+      ],
+      "layout_and_finite": true,
+      "positive_raw_diagonal": true,
+      "raw_relative_asymmetry": 9.102953039210646e-17,
+      "rigid_null_relative_residuals": [
+        1.1897001425082914e-16,
+        9.525180364484854e-17,
+        4.9125961331322675e-17,
+        8.476636465012539e-17,
+        8.476636465012539e-17,
+        8.614967974338926e-17
+      ],
+      "rigid_shape": [
+        6,
+        93
+      ],
+      "saved_eigenvalue_counts": {
+        "positive": 87,
+        "significant_negative": 0,
+        "tolerance": 1.8925710495218885e-11,
+        "zero": 6
+      },
+      "scaled_matrix_reconstruction_relative_error": 0.0,
+      "stored_scaled_relative_asymmetry": 1.227670003851153e-16
+    },
+    "old_front": {
+      "C_shape": [
+        6,
+        93
+      ],
+      "K_scaled_shape": [
+        93,
+        93
+      ],
+      "K_shape": [
+        93,
+        93
+      ],
+      "coupling_shape": [
+        6,
+        6
+      ],
+      "eigenvalue_count": 93,
+      "eigvalsh_recheck_finite": true,
+      "eigvalsh_recheck_max_abs_delta": 0.0,
+      "finite": true,
+      "gauge_coupling_max_abs_error": 0.0,
+      "gauge_coupling_rank_default": 6,
+      "gauge_coupling_singular_values": [
+        1.0000000000000002,
+        1.0,
+        0.9999999999999996,
+        0.4999999999999999,
+        0.3333333333333334,
+        0.3333333333333331
+      ],
+      "layout_and_finite": true,
+      "positive_raw_diagonal": true,
+      "raw_relative_asymmetry": 9.834512976075329e-17,
+      "rigid_null_relative_residuals": [
+        1.0447651138212345e-16,
+        9.833087221417778e-17,
+        4.617307056976076e-17,
+        6.925960585464114e-17,
+        6.541184997382775e-17,
+        1.1369502709231083e-16
+      ],
+      "rigid_shape": [
+        6,
+        93
+      ],
+      "saved_eigenvalue_counts": {
+        "positive": 87,
+        "significant_negative": 0,
+        "tolerance": 1.8977975028815883e-11,
+        "zero": 6
+      },
+      "scaled_matrix_reconstruction_relative_error": 0.0,
+      "stored_scaled_relative_asymmetry": 1.2190012725512372e-16
+    }
+  },
+  "last_completed_phase": "candidate_front_rigid_checks_complete",
+  "nonperformed": [
+    "provider",
+    "field",
+    "assembly",
+    "KKT solve",
+    "new queries",
+    "front update"
+  ],
+  "physical_or_growth_qualification": "UNKNOWN_NOT_EVALUATED",
+  "provider": {
+    "all_statuses_ok": true,
+    "batch_sizes": [
+      256,
+      192,
+      256,
+      256,
+      256,
+      128
+    ],
+    "batches": [
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 165888,
+            "shape": [
+              256,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 55296,
+            "shape": [
+              256,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 6144,
+            "shape": [
+              256,
+              3
+            ]
+          }
+        },
+        "requested": 256,
+        "returned_statuses": 256,
+        "start": 0,
+        "stop": 256
+      },
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 1536,
+            "shape": [
+              192
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 124416,
+            "shape": [
+              192,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 1536,
+            "shape": [
+              192
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 41472,
+            "shape": [
+              192,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 4608,
+            "shape": [
+              192,
+              3
+            ]
+          }
+        },
+        "requested": 192,
+        "returned_statuses": 192,
+        "start": 256,
+        "stop": 448
+      },
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 165888,
+            "shape": [
+              256,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 55296,
+            "shape": [
+              256,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 6144,
+            "shape": [
+              256,
+              3
+            ]
+          }
+        },
+        "requested": 256,
+        "returned_statuses": 256,
+        "start": 448,
+        "stop": 704
+      },
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 165888,
+            "shape": [
+              256,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 55296,
+            "shape": [
+              256,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 6144,
+            "shape": [
+              256,
+              3
+            ]
+          }
+        },
+        "requested": 256,
+        "returned_statuses": 256,
+        "start": 704,
+        "stop": 960
+      },
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 165888,
+            "shape": [
+              256,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 2048,
+            "shape": [
+              256
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 55296,
+            "shape": [
+              256,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 6144,
+            "shape": [
+              256,
+              3
+            ]
+          }
+        },
+        "requested": 256,
+        "returned_statuses": 256,
+        "start": 960,
+        "stop": 1216
+      },
+      {
+        "arrays": {
+          "condition_numbers": {
+            "dtype": "float64",
+            "nbytes": 1024,
+            "shape": [
+              128
+            ]
+          },
+          "gradients": {
+            "dtype": "float64",
+            "nbytes": 82944,
+            "shape": [
+              128,
+              27,
+              3
+            ]
+          },
+          "support_counts": {
+            "dtype": "int64",
+            "nbytes": 1024,
+            "shape": [
+              128
+            ]
+          },
+          "weights": {
+            "dtype": "float64",
+            "nbytes": 27648,
+            "shape": [
+              128,
+              27
+            ]
+          },
+          "xyz_m": {
+            "dtype": "float64",
+            "nbytes": 3072,
+            "shape": [
+              128,
+              3
+            ]
+          }
+        },
+        "requested": 128,
+        "returned_statuses": 128,
+        "start": 1216,
+        "stop": 1344
+      }
+    ],
+    "returned_rows": 1344,
+    "status_count": 1344
+  },
+  "schema": "mixed93_saved_failure_readback.v1",
+  "status": "SAVED_ARRAY_DIAGNOSTIC_ONLY"
+}

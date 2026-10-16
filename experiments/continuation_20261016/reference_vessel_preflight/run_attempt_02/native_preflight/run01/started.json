@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "started_unix_s": 1792115636.494455,
+  "source_input_inventory": {
+    "case.json": "6c8bf83846642efbb8052593cabb406d95faaf1476973109d20c969880efd3f8",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "mesh.msh": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "mesh_alias_receipt.json": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+  },
+  "python": "3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3 ]"
+}

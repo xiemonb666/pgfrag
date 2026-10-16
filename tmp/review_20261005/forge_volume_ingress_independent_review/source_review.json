@@ -1,0 +1,74 @@
+{
+  "schema": "pgfrag.forge_volume_ingress_independent_source_review.v1",
+  "status": "SOURCE_SNAPSHOT_ONLY_NOT_CLEARED_FOR_RUN",
+  "review_date": "2026-10-05",
+  "source_snapshot": {
+    "worker": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/worker.py",
+      "sha256": "9819b66d7659dc61b29a34b038b2e5c8f4863d5635662faeea97effb0fc06034",
+      "observed_mtime_utc": "2026-10-05T05:30:24Z"
+    },
+    "contract": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/CONTRACT.md",
+      "sha256": "845bd7957b34549e5aef1af963bce8f995dc6b72160187d8800efe75c601ce23",
+      "observed_mtime_utc": "2026-10-05T05:28:54Z"
+    },
+    "plan": {
+      "path": "pgfrag/experiments/forge_volume_ingress_20261005/tmp/plan.json",
+      "sha256": "901ba1538d424cfb3879e59ff69bf5ee52f28e95423517d2bd8606a6d91d0a75",
+      "observed_mtime_utc": "2026-10-05T05:22:34Z"
+    },
+    "pin_qualification": "worker and contract were still being edited; hashes pin this reviewed snapshot only, not a final freeze"
+  },
+  "findings": [
+    {
+      "id": "F-01",
+      "severity": "blocker",
+      "title": "Failed stage is deleted and promised receipts are not written",
+      "evidence": [
+        "worker.py:990-1034 removes stage on timeout, missing child result, and child failure/blocked status",
+        "CONTRACT.md:51 promises parent_execution_receipt.json and worker_failure.json"
+      ],
+      "impact": "Partial cell ledger and failed-stage evidence are discarded on failure paths; the 64 KiB reserve is not receipt generation.",
+      "required_resolution": "Final pinned worker must retain bounded failure evidence and write the documented parent and worker failure receipts, or contract must be revised and root must reassess preservation requirements."
+    },
+    {
+      "id": "F-02",
+      "severity": "high",
+      "title": "Plan JSON is stale versus root-selected ROI",
+      "evidence": [
+        "worker.py:35-36 and 397-408 freezes h=0.5 mm, root ROI, and 96 cells",
+        "CONTRACT.md:12-16 documents x=[7.5,10.5], y=[-1,1], z=[4,6] mm",
+        "plan.json:49 and 111-114 retains full-bounds budget and says no h/ROI is selected"
+      ],
+      "impact": "The three review artifacts do not describe a consistent approved run configuration.",
+      "required_resolution": "Update or supersede plan.json before treating the artifact set as a single reviewable package."
+    },
+    {
+      "id": "F-03",
+      "severity": "unverified",
+      "title": "Void-only cell Boolean common behavior requires runtime evidence",
+      "evidence": [
+        "worker.py:517-575 inspects Volume, Solids, Faces, and isValid before zero classification",
+        "worker.py:726-734 emits ZERO_INTERSECTION only after those gates"
+      ],
+      "impact": "A CAD-free source review cannot establish that the installed OpenCascade runtime yields a valid zero-volume empty common for the exterior cells.",
+      "required_resolution": "After final source freeze and separate root authorization, verify through the bounded actual API entrypoint."
+    }
+  ],
+  "static_positive_observations": [
+    "ROI is not clipped to source bounds and is frozen to the root-selected 96-cell grid.",
+    "Shared bounds helper calls AddOptimal_s with use_triangulation=False and use_shape_tolerance=False.",
+    "Source performs exact B-rep commons, finite/positive component checks, centroid IN classification, local volume reconciliation, and pinned input-hash rechecks.",
+    "SI conversions are mm-to-m and mm3-to-m3; mass derives from converted B-rep volume and declared density, not h cubed."
+  ],
+  "execution": {
+    "cad_worker_run": false,
+    "pytest": false,
+    "native_solver": false,
+    "full_suite": false,
+    "production_files_changed": false,
+    "git_used": false
+  },
+  "scope": "Read-only review of source, contract, plan, and local API source semantics. No runtime behavior was asserted."
+}

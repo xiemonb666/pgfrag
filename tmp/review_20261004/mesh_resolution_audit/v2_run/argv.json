@@ -1,0 +1,19 @@
+{
+  "status": "AUTHORIZED_SINGLE_TEST_INVOCATION",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_mesh_resolution_audit.py",
+    "--junitxml=tmp/review_20261004/mesh_resolution_audit/v2_run/junit.xml"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "env_overrides": {
+    "PYTHONPATH": "src"
+  },
+  "junit_path": "tmp/review_20261004/mesh_resolution_audit/v2_run/junit.xml",
+  "source_sha256_before": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+  "test_sha256_before": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66",
+  "freeze_manifest_pin_count": 9
+}

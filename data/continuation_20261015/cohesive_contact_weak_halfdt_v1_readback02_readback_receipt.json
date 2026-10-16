@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETED_RUN_READBACK_ALL_HASHES_PASS",
+  "source": "/home/xiemo/cohesive_vessel_20261015/contact_weak_halfdt_v1_run01",
+  "destination": "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/data/continuation_20261015/cohesive_contact_weak_halfdt_v1_readback02",
+  "receipt_sha256": "d6fcc10b2bd9f33b532c5c5772d132d0dcba487f49fbcdfe1fa7f7e32fb79f05",
+  "verified_payload_count": 23,
+  "verified_bytes": 1181596208
+}

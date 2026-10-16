@@ -1,0 +1,42 @@
+{
+  "status": "RUN_COMPLETE_RAW_HISTORY_CLOSED",
+  "solver_steps_completed": 10000,
+  "history_frames_saved": 10001,
+  "expected_history_frames": 10001,
+  "counts": {
+    "nodes": 54,
+    "bulk_tets": 96,
+    "cohesive_3d6": 8
+  },
+  "blocked_dof_components": 21,
+  "free_dof_components": 141,
+  "free_cohesive_dof_components": 54,
+  "free_geometric_interior_bulk_dof_components": 6,
+  "stability_contract": {
+    "bulk_get_stable_time_step_s": 7.326084549265489e-08,
+    "bulk_fraction_limit": 0.03,
+    "bulk_check_max_dt_s": 2.1978253647796465e-09,
+    "bulk_check_is_total_cohesive_cfl": false,
+    "total_stability_status": "ESTABLISHED_PARENT_REVIEWED_BOUND",
+    "lambda_max_upper_bound_per_s2": 6.148965883903991e+16,
+    "derived_total_stable_time_step_s": 8.065456513019983e-09,
+    "total_fraction_limit": 0.5,
+    "solver_dt_s": 2e-09,
+    "total_gate_passed_before_step_1": true
+  },
+  "bulk_stable_step_s": 7.326084549265489e-08,
+  "solver_dt_s": 2e-09,
+  "solver_dt_over_bulk_stable_step": 0.02729971223442295,
+  "solver_dt_over_derived_total_stable_step": 0.2479710846833556,
+  "native_lineage": "native_lineage.json",
+  "initial_state": "initial_state.npz",
+  "raw_history_directory": "raw_history",
+  "trace": "trace.jsonl",
+  "solver_attempts": 1,
+  "native_dissipation_sign_status": "RAW_RETAINED; analyzer determines diagnostic gate",
+  "classification": "UNVALIDATED_COUPLED_NATIVE_TOY_SOURCE_FREEZE",
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/free_cohesive_patch_20261015/frozen_run03/run_native_free_patch.py"
+  ],
+  "ended_unix_time_s": 1792057331.730589
+}

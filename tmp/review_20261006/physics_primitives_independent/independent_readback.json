@@ -1,0 +1,112 @@
+{
+  "scope": "read-only CSV/manifests/source-pin readback; no implementation import/call, solver, CAD, random fixture, or trajectory rerun",
+  "csv_data_rows_read": 1067,
+  "csv_row_limit": 2000,
+  "cohesive": {
+    "rows": 149,
+    "parameters": {
+      "delta0_m": 1e-05,
+      "deltaf_m": 2e-05
+    },
+    "max_abs_csv_minus_independent_kappa_m": 0.0,
+    "max_abs_csv_minus_independent_damage": 0.0,
+    "max_abs_csv_minus_independent_stored_J_m2": 0.0,
+    "max_abs_csv_minus_independent_dissipation_J_m2": 1.4210854715202004e-14,
+    "max_abs_csv_minus_independent_traction_Pa": 0.0,
+    "max_abs_psi_plus_D_minus_work_J_m2": 8.526512829121202e-14,
+    "minimum_damage_increment": 0.0,
+    "minimum_dissipation_increment_J_m2": 0.0,
+    "final_kappa_m": 1.9200000000000003e-05,
+    "final_damage": 0.9583333333333334,
+    "final_dissipation_J_m2": 92.0
+  },
+  "rest_material_field": {
+    "rows": 196,
+    "mode_count": 24,
+    "max_abs_csv_minus_manifest_fourier_sum": 1.3877787807814457e-17,
+    "sample_min": -0.08970498226630291,
+    "sample_max": 0.08474287062324136,
+    "grid_unique_x": 14,
+    "grid_unique_y": 14,
+    "all_z_zero": true,
+    "wave_number_times_e_fold_length": 2.199123071161498,
+    "shell_root_q": 2.199123071161498,
+    "sin_q_over_q": 0.3678794411714423,
+    "exp_minus_one": 0.36787944117144233,
+    "finite_realization_covariance_claim": "The seeded finite set of directions has discrete spectral lines and an anisotropic, oscillatory empirical correlation; correlation_length_m is the target isotropic ensemble e-fold length, not a fitted or guaranteed local realization statistic."
+  },
+  "rigid_plane_contact": {
+    "total_trajectory_rows": 722,
+    "cases": [
+      {
+        "case_id": "dt_0p001",
+        "rows": 481,
+        "dt_s": 0.001,
+        "max_abs_gap_identity_m": 0.0,
+        "max_abs_force_error_N": 0.0,
+        "max_abs_potential_error_J": 2.220446049250313e-16,
+        "max_abs_kinetic_error_J": 0.0,
+        "max_abs_total_energy_identity_error_J": 4.440892098500626e-16,
+        "max_abs_saved_vs_independent_impulse_Ns": 1.7763568394002505e-15,
+        "independent_net_impulse_Ns": 4.000013300850761,
+        "point_delta_momentum_Ns": 4.000013300850764,
+        "momentum_impulse_balance_error_Ns": 2.6645352591003757e-15,
+        "max_abs_total_energy_residual_vs_2J": 5.0001218842243844e-05
+      },
+      {
+        "case_id": "dt_0p002",
+        "rows": 241,
+        "dt_s": 0.002,
+        "max_abs_gap_identity_m": 0.0,
+        "max_abs_force_error_N": 0.0,
+        "max_abs_potential_error_J": 4.440892098500626e-16,
+        "max_abs_kinetic_error_J": 0.0,
+        "max_abs_total_energy_identity_error_J": 4.440892098500626e-16,
+        "max_abs_saved_vs_independent_impulse_Ns": 1.3322676295501878e-15,
+        "independent_net_impulse_Ns": 4.000028435307511,
+        "point_delta_momentum_Ns": 4.0000284353075095,
+        "momentum_impulse_balance_error_Ns": -1.7763568394002505e-15,
+        "max_abs_total_energy_residual_vs_2J": 0.00020000296217004276
+      }
+    ],
+    "source_pin_checks": {
+      "rigid_plane_contact.py": {
+        "snapshot_matches_pin": true,
+        "current_matches_focused_snapshot": true
+      },
+      "run_toy_diagnostic.py": {
+        "snapshot_matches_pin": true,
+        "current_matches_focused_snapshot": true
+      },
+      "run_focused_checks.py": {
+        "snapshot_matches_pin": true,
+        "current_matches_focused_snapshot": true
+      }
+    },
+    "prior_artifact_pin_checks": {
+      "actual_trajectory_force_energy_impulse.csv": {
+        "current_matches_focused_pin": true,
+        "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+      },
+      "comparison_errors.csv": {
+        "current_matches_focused_pin": true,
+        "history_note": "comparison_errors.csv was post-run corrected for metric-column semantics; its pre-correction bytes were not preserved"
+      },
+      "contact_trajectory_energy.png": {
+        "current_matches_focused_pin": true,
+        "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+      },
+      "diagnostic_summary.json": {
+        "current_matches_focused_pin": true,
+        "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+      },
+      "check_receipt.json": {
+        "current_matches_focused_pin": true,
+        "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+      }
+    },
+    "focused_receipt_passed_groups": 6,
+    "original_run_source_snapshot_available": false,
+    "comparison_errors_pre_correction_bytes_available": false
+  }
+}

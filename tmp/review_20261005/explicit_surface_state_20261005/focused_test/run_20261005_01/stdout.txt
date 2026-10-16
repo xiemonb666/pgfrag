@@ -1,0 +1,114 @@
+....F.........FF.F                                                       [100%]
+================================== FAILURES ===================================
+_ ExplicitSurfaceStateTests.test_duplicate_triangle_reversed_winding_is_rejected _
+pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = <test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_duplicate_triangle_reversed_winding_is_rejected>
+
+    def test_duplicate_triangle_reversed_winding_is_rejected(self):
+        vertices = np.asarray(
+            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=np.float64
+        )
+>       with self.assertRaisesRegex(surface.SurfaceStateError, "duplicate triangles"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "duplicate triangles" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:155: AssertionError
+_ ExplicitSurfaceStateTests.test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess _
+pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = <test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess>
+
+    def test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess(self):
+        vertices = np.asarray(
+            [
+                [0.0, 0.0, 0.0],
+                [1.0, 0.0, 0.0],
+                [0.0, 1.0, 0.0],
+                [0.0, -1.0, 0.0],
+                [0.0, 0.0, 1.0],
+            ],
+            dtype=np.float64,
+        )
+>       with self.assertRaisesRegex(surface.SurfaceStateError, "nonmanifold edge"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "nonmanifold edge" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:176: AssertionError
+_ ExplicitSurfaceStateTests.test_touching_front_cycles_remain_unknown_junction _
+
+self = <test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_touching_front_cycles_remain_unknown_junction>
+
+    def test_touching_front_cycles_remain_unknown_junction(self):
+        # Two individually valid triangles touch only at one vertex. A naive
+        # edge-count check sees no nonmanifold edge, but the combined front has
+        # a multi-branch vertex and must remain explicitly unknown.
+        vertices = np.asarray(
+            [
+                [0.0, 0.0, 0.0],
+                [1.0, 0.0, 0.0],
+                [0.0, 1.0, 0.0],
+                [-1.0, 0.0, 0.0],
+                [0.0, -1.0, 0.0],
+            ],
+            dtype=np.float64,
+        )
+>       patch = _patch(vertices=vertices, triangles=[[0, 1, 2], [0, 3, 4]])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:56: in _patch
+    return surface.CrackPatch(
+<string>:12: in __init__
+    ???
+experiments\explicit_surface_state_20261005\explicit_surface_state.py:219: in __post_init__
+    raw_triangles = _strict_ndarray_2d(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [[0, 1, 2], [0, 3, 4]], shape_tail = (3,), name = 'triangles'
+max_rows = 200000, min_rows = 1, allowed_kinds = 'iu', max_itemsize = 8
+
+    def _strict_ndarray_2d(
+        value: Any,
+        *,
+        shape_tail: tuple[int, ...],
+        name: str,
+        max_rows: int,
+        min_rows: int,
+        allowed_kinds: str,
+        max_itemsize: int,
+    ) -> np.ndarray:
+        """Preflight an exact ndarray before any copy or array-like conversion."""
+    
+        if type(value) is not np.ndarray:
+>           raise SurfaceStateError(f"{name} must be a numpy.ndarray")
+E           pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+experiments\explicit_surface_state_20261005\explicit_surface_state.py:84: SurfaceStateError
+_ ExplicitSurfaceStateTests.test_zero_area_and_nearly_degenerate_triangles_are_rejected _
+pgfrag_explicit_surface_candidate.SurfaceStateError: triangles must be a numpy.ndarray
+
+During handling of the above exception, another exception occurred:
+
+self = <test_explicit_surface_state.ExplicitSurfaceStateTests testMethod=test_zero_area_and_nearly_degenerate_triangles_are_rejected>
+
+    def test_zero_area_and_nearly_degenerate_triangles_are_rejected(self):
+        collinear = np.asarray(
+            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [2.0, 0.0, 0.0]], dtype=np.float64
+        )
+>       with self.assertRaisesRegex(surface.SurfaceStateError, "degenerate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: "degenerate" does not match "triangles must be a numpy.ndarray"
+
+experiments\explicit_surface_state_20261005\test_explicit_surface_state.py:162: AssertionError
+=========================== short test summary info ===========================
+FAILED experiments/explicit_surface_state_20261005/test_explicit_surface_state.py::ExplicitSurfaceStateTests::test_duplicate_triangle_reversed_winding_is_rejected
+FAILED experiments/explicit_surface_state_20261005/test_explicit_surface_state.py::ExplicitSurfaceStateTests::test_three_faces_on_one_edge_are_nonmanifold_not_a_front_guess
+FAILED experiments/explicit_surface_state_20261005/test_explicit_surface_state.py::ExplicitSurfaceStateTests::test_touching_front_cycles_remain_unknown_junction
+FAILED experiments/explicit_surface_state_20261005/test_explicit_surface_state.py::ExplicitSurfaceStateTests::test_zero_area_and_nearly_degenerate_triangles_are_rejected
+4 failed, 14 passed in 0.31s

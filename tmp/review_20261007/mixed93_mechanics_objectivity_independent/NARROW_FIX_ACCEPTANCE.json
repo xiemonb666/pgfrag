@@ -1,0 +1,15 @@
+{
+  "disposition": "accepted for source-only coordinate-covariance diagnostic; no numeric PASS or fracture qualification",
+  "scope": "Review only; no solver, tests, numeric imports, or NPZ payload access",
+  "identities": {
+    "old_adapter_snapshot_sha256": "f9b35bd271e1ac9e86bedb813435f3a0b9b045bc84f4b1e1e56c1f10244c346f",
+    "current_adapter_sha256": "6ca66a86dcf801464afc1104d69b55b3421aadda6860482bc898170ce5c253ce",
+    "case_draft_sha256_unchanged": "a189527e639190192312dd8e9685d493f2b241aaed7680c2979e42a63390574e",
+    "source_pins_sha256": "367ca3c1dfd694a760941b42bb2b54b5f00a64560978cd11f5f1f6413d874178"
+  },
+  "diff": {"old_lines": 321, "current_lines": 323, "only_insertions": ["FrameState.mls_origin_world_m: object", "pass already-computed mls_origin to FrameState constructor"], "effect": "supplies the field used by record serialization; no transform law, arrays, math, gate, or control flow changed"},
+  "source_pins": {"entries": 20, "hashes_match": 20, "npz": "raw-byte hash only; payload unopened"},
+  "preserved_prior_review": {"FINAL_SOURCE_REVIEW.md": "b53053fc8dc29df1458610dc28f20692113f23f05d7e6af8671aa64525acfed0", "FINAL_SOURCE_REVIEW.json": "313aab05baf3cbb8b59a54585126afceba248dd5562d511b44e3aaaf81f0d563"},
+  "case_counts": {"mls_rows": 2560, "chunks_per_state": 5, "rows_per_chunk": 256, "analytic_boundary_evaluations_total": 1536, "fresh_K_C_f_assemblies": 2, "spectrum_checks": 2, "99x99_solves": 2},
+  "status": "No run or tests occurred. Source-cloud, quadrature, tetra mesh, and crack-path bias remain UNKNOWN; gates and helper contracts are as documented in FINAL_SOURCE_REVIEW. Root accepted only the fixed source diagnostic scope."
+}

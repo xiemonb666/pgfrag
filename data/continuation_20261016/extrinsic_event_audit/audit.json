@@ -1,0 +1,787 @@
+{
+  "created_by": "pgfrag/experiments/continuation_20261016/extrinsic_event_audit/audit_event.py",
+  "elapsed_seconds": 0.12422359999982291,
+  "historical_inputs_modified": false,
+  "input_hashes": [
+    {
+      "bytes": 97463,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/phase_evidence.jsonl",
+      "sha256": "0b50927ea7b00ada21a3193eaac134d5a3742df95dfa60a94378787e7d7a8c57"
+    },
+    {
+      "bytes": 1424,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/input_native_initial.npz",
+      "sha256": "c4abc0eaa4b2dce47a0142dc4d0f1f17a1e3292b989d9d924801bf0de2840eea"
+    },
+    {
+      "bytes": 262,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/events.json",
+      "sha256": "25c1557c84cc0f6a6f7628db27c92afcd82522abc41c6598e569a53ff77a42e5"
+    },
+    {
+      "bytes": 46773,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/preflight.json",
+      "sha256": "f9958c4b1192e6646e41d8ba9cb2dfb63d6633cd45f29a606e2aa959bef94f77"
+    },
+    {
+      "bytes": 1682,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/execution_receipt.json",
+      "sha256": "586cf75a2fcc1469f56498db8d1767e63e95054aa82783820691e549573c1f34"
+    },
+    {
+      "bytes": 593,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/driver_source_identity.json",
+      "sha256": "e6b866676e75fdebf6aa11892f42ac2d41aa46706a5f2a7261f2f9cbb257a3c2"
+    },
+    {
+      "bytes": 291,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/material.dat",
+      "sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f"
+    },
+    {
+      "bytes": 488,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/generated_geometry.json",
+      "sha256": "eec01312e181581c1d433b2619b6fd8a4a42677769c4dbc25053d0a2c355188b"
+    },
+    {
+      "bytes": 4396,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_B.npz",
+      "sha256": "3921836f4d9ca2f350ef8c06f5704f07de37cb50a06d1f490c7f34082cbf3c37"
+    },
+    {
+      "bytes": 4589,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_C.npz",
+      "sha256": "033535d69c8a2787d22a8f4b32a67ccb17fa966effc01020052d42284a966d7f"
+    },
+    {
+      "bytes": 4873,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00650_D.npz",
+      "sha256": "4d7de9e62ac58b2d160f22a2d334d43a4b2835e7d2a5a89dc44de59979426e98"
+    },
+    {
+      "bytes": 5006,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00651_D.npz",
+      "sha256": "7be860d1825fedf87c0ec0f4bec41b77b96af9ba9246503a70f82347d41bbf45"
+    },
+    {
+      "bytes": 5058,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/dense_states/step_00652_D.npz",
+      "sha256": "187f10b076726c14cdb8c87ca8057a8a80a43f6c0452ae7a9b5e3bd1a55171fc"
+    },
+    {
+      "bytes": 147862,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/trace.csv",
+      "sha256": "3514e7b2bfaf23e5c228e3cbd2b40b1ccf797860f7fcb53c81b59f68a277e718"
+    },
+    {
+      "bytes": 3605,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/block_2x2x4mm.msh",
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    }
+  ],
+  "insertion_state_650": {
+    "acceleration_numeric_audit": {
+      "note": "velocity differences between C and D span a native solve step and are not labeled as instantaneous acceleration",
+      "numeric_value_verified": false,
+      "source_semantics": "cached v5.0.7 SolidMechanicsModelCohesive::onNodesAdded copies acceleration from each source node to its duplicate",
+      "status": "UNAVAILABLE_numeric acceleration is absent from the saved phase NPZ arrays"
+    },
+    "force_separation_audit": {
+      "bulk_internal_force_separate_vector_saved": false,
+      "cohesive_internal_force_separate_vector_saved": false,
+      "evidence_gap": "phase snapshots save internal_force only; the probe sample_arrays helper did not capture getExternalForce(), separate bulk/cohesive force contributions, or acceleration",
+      "external_force_getter_exposed_in_preflight": true,
+      "external_force_vector_saved": false,
+      "recorded_internal_force": "combined model.getInternalForce() nodal vector",
+      "scalar_top_reaction_in_trace_only": true,
+      "source_ancestry": [
+        "SolidMechanicsModelCohesive::assembleInternalForces computes cohesive traction before calling SolidMechanicsModel::assembleInternalForces",
+        "SolidMechanicsModel::assembleInternalForces assembles constitutive-law forces into the shared internal_force vector"
+      ]
+    },
+    "phase_B_preinsertion": {
+      "internal_force_summary": {
+        "max_nodal_norm_N": 66.67813226965315,
+        "new_node_vector_sum_N": null,
+        "saved_native_getter": "model.getInternalForce()",
+        "saved_vector_name": "internal_force",
+        "vector_sum_N": [
+          -5.551115123125783e-17,
+          -1.8041124150158794e-16,
+          5.684341886080802e-14
+        ]
+      },
+      "kinematics_from_saved_phase_mass": {
+        "angular_momentum_about_mass_center_kg_m2_s": [
+          3.2352722916186756e-11,
+          -3.235272291618206e-11,
+          2.9888361977013695e-26
+        ],
+        "kinetic_energy_from_saved_lumped_mass_J": 1.6375140065599604e-07,
+        "linear_momentum_kg_m_s": [
+          8.271806125530277e-24,
+          2.481541837659083e-23,
+          2.867008550121451e-06
+        ],
+        "mass_center_m": [
+          -1.550963648536927e-20,
+          1.0339757656912844e-20,
+          0.0020019000760588585
+        ],
+        "mass_kg": 4e-05
+      },
+      "mass_summary": {
+        "mass_columns_equal": true,
+        "new_node_per_component_total_kg": null,
+        "node_count": 45,
+        "per_component_total_kg": [
+          4e-05,
+          4e-05,
+          4e-05
+        ]
+      },
+      "node_count": 45,
+      "saved_array_keys": [
+        "bulk_tetra_connectivity",
+        "cohesive_connectivity",
+        "displacement",
+        "internal_force",
+        "mass",
+        "rest_nodes",
+        "velocity"
+      ]
+    },
+    "phase_C_after_insertion_before_solve": {
+      "acceleration_array_saved": false,
+      "duplicate_displacement_mismatch_norms_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "duplicate_mass_match_norms_kg": [
+        4.330127018922193e-06,
+        2.1650635094610963e-06,
+        1.4433756729740647e-06,
+        2.1650635094610963e-06,
+        2.1650635094610963e-06,
+        7.216878364870322e-07,
+        2.1650635094610963e-06,
+        7.216878364870322e-07,
+        1.4433756729740647e-06
+      ],
+      "duplicate_node_source_and_clone_indices_zero_based": [
+        [
+          22,
+          45
+        ],
+        [
+          19,
+          46
+        ],
+        [
+          18,
+          47
+        ],
+        [
+          21,
+          48
+        ],
+        [
+          23,
+          49
+        ],
+        [
+          20,
+          50
+        ],
+        [
+          25,
+          51
+        ],
+        [
+          24,
+          52
+        ],
+        [
+          26,
+          53
+        ]
+      ],
+      "duplicate_velocity_mismatch_norms_m_s": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "internal_force_summary": {
+        "max_nodal_norm_N": 66.67813226965315,
+        "new_node_vector_sum_N": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "saved_native_getter": "model.getInternalForce()",
+        "saved_vector_name": "internal_force",
+        "vector_sum_N": [
+          -5.551115123125783e-17,
+          -1.8041124150158794e-16,
+          5.684341886080802e-14
+        ]
+      },
+      "kinematics_from_saved_phase_mass": {
+        "angular_momentum_about_mass_center_kg_m2_s": [
+          3.2352722916186756e-11,
+          -3.235272291618206e-11,
+          2.9888361977013695e-26
+        ],
+        "kinetic_energy_from_saved_lumped_mass_J": 1.6375140065599606e-07,
+        "linear_momentum_kg_m_s": [
+          8.271806125530277e-24,
+          2.481541837659083e-23,
+          2.867008550121451e-06
+        ],
+        "mass_center_m": [
+          -1.550963648536927e-20,
+          1.0339757656912847e-20,
+          0.0020019000760588585
+        ],
+        "mass_kg": 3.9999999999999996e-05
+      },
+      "kinematics_interpretation": "pre-solve snapshot mass has zero rows for appended duplicates; record as stale-mass diagnostic, not operative post-insertion result",
+      "mass_summary": {
+        "mass_columns_equal": true,
+        "new_node_per_component_total_kg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "node_count": 54,
+        "per_component_total_kg": [
+          4e-05,
+          4e-05,
+          4e-05
+        ]
+      },
+      "new_nodes": 9,
+      "node_count": 54,
+      "saved_array_keys": [
+        "bulk_tetra_connectivity",
+        "cohesive_connectivity",
+        "displacement",
+        "internal_force",
+        "mass",
+        "rest_nodes",
+        "velocity"
+      ]
+    },
+    "phase_D_post_solve_kinematics": {
+      "angular_momentum_about_mass_center_kg_m2_s": [
+        3.258181473226835e-11,
+        -3.258181473226795e-11,
+        2.1002632740604218e-26
+      ],
+      "kinetic_energy_difference_from_native_getter_J": 5.293955920339377e-23,
+      "kinetic_energy_from_saved_lumped_mass_J": 1.648483312076419e-07,
+      "linear_momentum_kg_m_s": [
+        4.963083675318166e-24,
+        5.37667398159468e-23,
+        2.869928136940603e-06
+      ],
+      "mass_center_m": [
+        1.6802106192483375e-20,
+        0.0,
+        0.00200190430548277
+      ],
+      "mass_kg": 4e-05,
+      "native_kinetic_energy_getter_J": 1.6484833120764185e-07,
+      "post_solve_mass_summary": {
+        "mass_columns_equal": true,
+        "new_node_per_component_total_kg": [
+          5e-06,
+          5e-06,
+          5e-06
+        ],
+        "node_count": 54,
+        "per_component_total_kg": [
+          4e-05,
+          4e-05,
+          4e-05
+        ]
+      }
+    },
+    "phase_D_post_solve_state": {
+      "acceleration_array_saved": false,
+      "duplicate_displacement_mismatch_norms_m": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "duplicate_mass_match_norms_kg": [
+        0.0,
+        7.216878364870324e-07,
+        7.216878364870323e-07,
+        7.216878364870324e-07,
+        7.216878364870324e-07,
+        0.0,
+        7.216878364870324e-07,
+        0.0,
+        7.216878364870323e-07
+      ],
+      "duplicate_velocity_mismatch_norms_m_s": [
+        0.009836028184310052,
+        0.007441496243471838,
+        0.007406134976530705,
+        0.007441496243472546,
+        0.015120554487579438,
+        0.008954799072260131,
+        0.01512055448758293,
+        0.008954799072260815,
+        0.021735645020703402
+      ],
+      "internal_force_summary": {
+        "max_nodal_norm_N": 66.65879988134246,
+        "new_node_vector_sum_N": [
+          0.019746386998220566,
+          0.01974638699832952,
+          0.98711534208031
+        ],
+        "saved_native_getter": "model.getInternalForce()",
+        "saved_vector_name": "internal_force",
+        "vector_sum_N": [
+          -5.551115123125783e-17,
+          -2.42861286636753e-17,
+          -1.0480505352461478e-13
+        ]
+      },
+      "mass_summary": {
+        "mass_columns_equal": true,
+        "new_node_per_component_total_kg": [
+          5e-06,
+          5e-06,
+          5e-06
+        ],
+        "node_count": 54,
+        "per_component_total_kg": [
+          4e-05,
+          4e-05,
+          4e-05
+        ]
+      },
+      "node_count": 54,
+      "saved_array_keys": [
+        "bulk_tetra_connectivity",
+        "cohesive_connectivity",
+        "displacement",
+        "internal_force",
+        "mass",
+        "rest_nodes",
+        "velocity"
+      ],
+      "total_mass_change_from_B_per_component_kg": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "tagged_source_internal_parameter_rule": {
+      "delta_c_eff_rule_for_explicit_nominal_delta_c": "new_delta = sigma_limit / new_sigma * delta_c",
+      "delta_c_eff_rule_when_nominal_delta_c_is_zero": "new_delta = 2 * G_c / new_sigma",
+      "official_inline_source_url": "https://gitlab.com/akantu/akantu/-/raw/v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear_inline_impl.hh",
+      "reason": "the run's wheel is v5.0.7.post1 and the locally hashed source is tagged v5.0.7; actual per-QP internal parameters and native stress/normal state were not captured",
+      "runtime_per_qp_values_present_in_frozen_phase_evidence": false,
+      "sigma_c_eff_rule": "new_sigma is stress_check(q), the insertion effective stress at QP q",
+      "source_file": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.cc",
+      "stored_internal_fields": [
+        "sigma_c_eff",
+        "delta_c_eff",
+        "insertion_stress"
+      ],
+      "wheel_specific_651_law_verified": false
+    }
+  },
+  "material_input": {
+    "geometry_summary_from_frozen_generated_geometry_json": {
+      "bulk_tetrahedra": 96,
+      "bulk_volume_m3": 1.6e-08,
+      "cells": [
+        2,
+        2,
+        4
+      ],
+      "dimensions_m": [
+        0.002,
+        0.002,
+        0.004
+      ],
+      "interface_area_m2": 4e-06,
+      "interface_facets": 8,
+      "material": {
+        "E_Pa": 70000000000.0,
+        "Gc_J_m2": 7.6,
+        "beta": 3.0,
+        "delta_c_m": 2.1714285714285712e-07,
+        "nu": 0.22,
+        "rho_kg_m3": 2500.0,
+        "sigma_c_Pa": 70000000.0
+      },
+      "nodes_before_insertion": 45,
+      "toy_material_unvalidated": true,
+      "units": "SI"
+    },
+    "nominal_values_read_from_frozen_material_input": {
+      "G_c_J_m2": 7.6,
+      "beta": 3.0,
+      "delta_c_m": 2.1714285714285715e-07,
+      "kappa": "not specified in input; tagged source default is 1.0",
+      "sigma_c_Pa": 70000000.0,
+      "volume_s": "not specified in input; tagged source default is 0.0, whose scaleInsertionTraction branch does nothing"
+    },
+    "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/material.dat",
+    "runtime_per_qp_parameters": {
+      "circular_inversion_guard": "No sigma_c_eff value was inferred from the 651 traction and then used to validate that same traction",
+      "delta_c_eff_saved": false,
+      "delta_max_or_damage_saved": false,
+      "jacobian_or_mass_normalized_eigen_audit": "NOT_RUN; actual per-QP sigma_c_eff and delta_c_eff are not established in the saved wheel state",
+      "normals_saved": false,
+      "sigma_c_eff_saved": false,
+      "stress_tensors_saved": false,
+      "traction_law_reproduction_651": "NOT_CLAIMED; saved fields do not include per-QP effective parameters or state history, and run wheel provenance is not identical to tagged source"
+    },
+    "sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f"
+  },
+  "offline_limitations": [
+    "No nodal acceleration values, external force vector, or separate bulk/cohesive internal-force vectors were captured.",
+    "Per-QP sigma_c_eff, delta_c_eff, delta_max, damage, and stress tensors were not captured; actual wheel-specific 651 law validation and the requested finite-state Jacobian are unavailable.",
+    "The cached source manifest is tagged v5.0.7; the recorded installed wheel identifies as v5.0.7.post1.",
+    "This audit identifies the signed trajectory that reproduces the first negative getter; it does not prove that under-resolution is the only causal contribution."
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "run_identity": {
+    "driver_identity_solver_sha256": "65fb7e4a4590d1cbb0a015a4ff35a0b5261528926394c5a2cac692cf76e42be6",
+    "initial_bulk_tetrahedra": 96,
+    "initial_cohesive_elements": 0,
+    "initial_mesh_nodes": 45,
+    "insertion_events": [
+      {
+        "api_return": 8,
+        "cohesive_count": 8,
+        "mesh_nodes": 54,
+        "prescribed_boundary_time_s": 3.807850029291154e-05,
+        "step": 650
+      }
+    ],
+    "original_probe_driver": {
+      "bytes": 46087,
+      "exists": true,
+      "path": "pgfrag/experiments/cohesive_event_probe_20261004/probe_driver.py",
+      "sha256": "65fb7e4a4590d1cbb0a015a4ff35a0b5261528926394c5a2cac692cf76e42be6"
+    },
+    "receipt_driver_hash_matches_local_source": true,
+    "receipt_driver_sha256": "65fb7e4a4590d1cbb0a015a4ff35a0b5261528926394c5a2cac692cf76e42be6",
+    "run_id": "coarse654_20261004_01"
+  },
+  "schema": "offline-extrinsic-event-audit-v1",
+  "scope": "read-only reconstruction from an existing run; no native library import, solver call, calibration, or new evolution",
+  "script_sha256": "56a76e4bfc0093c03c1000f73b95492d99f95077a25fca9d7c63bb097e699ba1",
+  "solver_steps_launched_by_audit": 0,
+  "source_hashes": {
+    "cached_source_files": [
+      {
+        "bytes": 34669,
+        "exists": true,
+        "local_matches_manifest_download": true,
+        "manifest_api_content_sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465",
+        "manifest_downloaded_sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465",
+        "manifest_ref": "v5.0.7",
+        "manifest_sha_match": true,
+        "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model.cc",
+        "sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465"
+      },
+      {
+        "bytes": 21074,
+        "exists": true,
+        "local_matches_manifest_download": true,
+        "manifest_api_content_sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64",
+        "manifest_downloaded_sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64",
+        "manifest_ref": "v5.0.7",
+        "manifest_sha_match": true,
+        "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/solid_mechanics_model_cohesive.cc",
+        "sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64"
+      },
+      {
+        "bytes": 12273,
+        "exists": true,
+        "local_matches_manifest_download": true,
+        "manifest_api_content_sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2",
+        "manifest_downloaded_sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2",
+        "manifest_ref": "v5.0.7",
+        "manifest_sha_match": true,
+        "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.cc",
+        "sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2"
+      },
+      {
+        "bytes": 6701,
+        "exists": true,
+        "local_matches_manifest_download": true,
+        "manifest_api_content_sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc",
+        "manifest_downloaded_sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc",
+        "manifest_ref": "v5.0.7",
+        "manifest_sha_match": true,
+        "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.hh",
+        "sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc"
+      }
+    ],
+    "source_manifest": {
+      "bytes": 2840,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/source_manifest.json",
+      "sha256": "de3a1991e6ea3a99d4132bb86255c38b051e00226c57ff334128cdf5c4d1f398"
+    },
+    "wheel_and_runtime_provenance": {
+      "downloaded_wheel": {
+        "bytes": 6592004,
+        "exists": true,
+        "path": "third_party/akantu-runtime/downloads/akantu-5.0.7.post1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b"
+      },
+      "inline_impl_in_local_source_cache": false,
+      "inline_impl_reference_url": "https://gitlab.com/akantu/akantu/-/raw/v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear_inline_impl.hh",
+      "installed_metadata": {
+        "bytes": 6793,
+        "exists": true,
+        "path": "third_party/akantu-runtime/venv/lib/python3.12/site-packages/akantu-5.0.7.post1.dist-info/METADATA",
+        "sha256": "b8ca3ca73dfede16fc4ed0b15a6e22966fa5b12f88f296b77e81185f1809db4f"
+      },
+      "installed_record": {
+        "bytes": 1273,
+        "exists": true,
+        "path": "third_party/akantu-runtime/venv/lib/python3.12/site-packages/akantu-5.0.7.post1.dist-info/RECORD",
+        "sha256": "17f9a75f13919c10432a8aefc4a20026aaee6e28668a4ba5dfd6ae551fbedad8"
+      },
+      "provenance_status": "WHEEL_5.0.7.post1_AND_TAGGED_SOURCE_v5.0.7_ARE_DISTINCT_EVIDENCE; no wheel-specific per-QP internal fields were saved",
+      "tagged_source_manifest": {
+        "bytes": 2840,
+        "exists": true,
+        "path": "third_party/akantu-runtime/source-v5.0.7/source_manifest.json",
+        "sha256": "de3a1991e6ea3a99d4132bb86255c38b051e00226c57ff334128cdf5c4d1f398"
+      },
+      "tagged_source_ref": "v5.0.7",
+      "wheel_version_from_preflight": "5.0.7-post1"
+    }
+  },
+  "work_reconstruction": {
+    "first_negative_native_dissipated_record": {
+      "native_dissipated_J": -5.572968137645039e-05,
+      "phase": "D",
+      "step": 652
+    },
+    "interface_area_by_cohesive_element": [
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 0,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 1,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 2,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 3,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 4,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 5,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 6,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      },
+      {
+        "area_m2": 5e-07,
+        "cohesive_element_index": 7,
+        "face_a_area_m2": 5e-07,
+        "face_b_area_m2": 5e-07,
+        "paired_face_coordinate_max_abs_m": 0.0
+      }
+    ],
+    "interface_total_area_m2": 4e-06,
+    "maximum_paired_face_coordinate_difference_m": 0.0,
+    "native_cohesive_element_count_at_650_C": 8,
+    "native_qp_count": 24,
+    "qp_area_m2": [
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07,
+      1.6666666666666665e-07
+    ],
+    "qp_area_rule": "each 3-point Tri3 quadrature point receives the actual triangle area divided by 3",
+    "step_650_native_insertion": {
+      "A_cohesive_count": 0,
+      "B_cohesive_count": 0,
+      "C_cohesive_count": 8,
+      "D_cohesive_count": 8,
+      "D_native_dissipated_J": 0.0
+    },
+    "step_651": {
+      "cumulative_work_J": 3.6823662360605853e-07,
+      "native_dissipated_J": 1.7262621338279373e-07,
+      "native_match_within_roundoff_tolerance": true,
+      "qp_signed_delta_work_J": [
+        1.0520345576304485e-08,
+        1.1124824304227254e-08,
+        1.2405766833929356e-08,
+        1.1124824304224865e-08,
+        1.0520345576303845e-08,
+        1.2405766833928638e-08,
+        1.2693990551576334e-08,
+        1.4122898488792068e-08,
+        1.6991553262582233e-08,
+        1.4079414343739185e-08,
+        1.2703601609552104e-08,
+        1.7325188110392985e-08,
+        1.2703601609550903e-08,
+        1.407941434373947e-08,
+        1.732518811039611e-08,
+        1.4122898488794117e-08,
+        1.2693990551575619e-08,
+        1.69915532625852e-08,
+        1.678712441117147e-08,
+        2.0297241005529025e-08,
+        2.506636330522876e-08,
+        2.0297241005532505e-08,
+        1.6787124411172404e-08,
+        2.506636330522961e-08
+      ],
+      "reconstructed_dissipated_J": 1.7262621338279373e-07,
+      "reconstruction_minus_native_J": 0.0,
+      "reversible_energy_J": 1.956104102232648e-07,
+      "signed_delta_work_J": 3.6823662360605853e-07,
+      "tolerance_J": 1e-18
+    },
+    "step_652": {
+      "cumulative_work_J": -5.572968137645038e-05,
+      "most_negative_qp_opening_direction_cosine_651_to_652": -0.17413704088597765,
+      "most_negative_qp_work_J": -5.54174231655884e-06,
+      "most_negative_qp_zero_based": 7,
+      "native_dissipated_J": -5.572968137645039e-05,
+      "native_match_within_roundoff_tolerance": true,
+      "negative_qp_work_count": 22,
+      "opening_euclidean_max_651_m": 2.172888188630732e-09,
+      "opening_euclidean_max_652_m": 5.345020981094809e-07,
+      "qp_signed_delta_work_J": [
+        -2.05305260046407e-06,
+        -4.545619025325735e-06,
+        -2.4338566428166564e-06,
+        -4.54561902531669e-06,
+        -2.0530526004605478e-06,
+        -2.4338566428139908e-06,
+        -4.827917348433571e-06,
+        -5.54174231655884e-06,
+        -1.1498203452909838e-06,
+        -1.960146871201095e-06,
+        -3.847184983966658e-06,
+        -8.990123182485438e-07,
+        -3.847184983959232e-06,
+        -1.960146871198861e-06,
+        -8.990123182473532e-07,
+        -5.5417423165582544e-06,
+        -4.827917348426893e-06,
+        -1.1498203452891542e-06,
+        -3.668453257852886e-07,
+        3.369442863033213e-08,
+        -4.574556505845661e-07,
+        3.3694428630093464e-08,
+        -3.668453257853056e-07,
+        -4.574556505845768e-07
+      ],
+      "reconstructed_dissipated_J": -5.572968137645038e-05,
+      "reconstruction_minus_native_J": 6.776263578034403e-21,
+      "reversible_energy_J": 0.0,
+      "signed_delta_work_J": -5.609791800005644e-05,
+      "tolerance_J": 1e-18,
+      "traction_zero_qp_count_652": 24
+    }
+  }
+}

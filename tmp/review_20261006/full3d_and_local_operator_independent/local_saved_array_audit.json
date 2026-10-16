@@ -1,0 +1,52 @@
+{
+  "review_kind": "INDEPENDENT_SAVED_ARRAY_READBACK_ONLY",
+  "promotion_result": "OUTER125_FAILED_NOT_PROMOTED",
+  "input_path": "pgfrag/tmp/review_20261006/local_front_operator_20261006/runs/run01/.local_front_scalar_operator.json.149216.worker.json",
+  "input_sha256": "ebdea44857ab2b1a358fc679d0b1e4996943905a5996ba83f8f8f1ba68340762",
+  "worker_status": "ASSEMBLED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+  "worker_assembly_status": "OK",
+  "worker_solver_invoked": false,
+  "K_shape": [
+    140,
+    140
+  ],
+  "K_sha256_recomputed": "72861a1d13aae4e417c6ee4334aa6d0d0c7c9c1d5d6dc82eca2cb9982b7368a8",
+  "K_finite": true,
+  "relative_frobenius_asymmetry_recomputed": 0.0,
+  "eigenvalue_count": 140,
+  "eigenvalue_saved_vector_max_abs_delta_N_per_m": 0.0,
+  "eigenvalue_min_N_per_m": -7.500666754367559e-13,
+  "eigenvalue_max_N_per_m": 15748.62459196132,
+  "raw_negative_count_recomputed": 1,
+  "negative_beyond_roundoff_count_recomputed": 0,
+  "near_zero_count_recomputed": 1,
+  "extra_near_zero_after_expected_scalar_translation": 0,
+  "near_zero_threshold_N_per_m": 1.4091096657489039e-07,
+  "no_regularization_or_rank_truncation_claim_in_worker": true,
+  "semantic_counts_reconstructed": {
+    "base": 100,
+    "front_f1_shifted": 30,
+    "heaviside": 10
+  },
+  "registry_order_and_uniqueness_pass": true,
+  "normalized_mean_row_sum": 0.9999999999999999,
+  "translation_K_residual_scaled_recomputed": 3.517788863560648e-15,
+  "normalized_mean_of_translation_m": 0.9999999999999998,
+  "quadrature_point_count": 256,
+  "quadrature_all_weights_positive": true,
+  "quadrature_volume_sum_m3": 6.399999999999998e-06,
+  "expected_box_volume_m3": 6.4e-06,
+  "quadrature_coords_finite": true,
+  "affine_coefficients_reconstructed_from_semantic_lattice": true,
+  "affine_quadratic_form_dTKd_Nm": 2.461538461538473,
+  "affine_discrete_energy_J_recomputed": 1.2307692307692366,
+  "affine_exact_scalar_energy_J_recomputed": 1.2307692307692308,
+  "affine_energy_relative_delta": 4.690692279041286e-15,
+  "full_3d_elasticity_claim": false,
+  "arrays_are_saved_source_data_only_no_reassembly_or_solver": true,
+  "limitations": [
+    "This independent readback does not change the failed OUTER125 promotion receipt.",
+    "The artifact is a scalar antiplane Poisson operator diagnostic, not a full 3-D elasticity solve.",
+    "This review independently checks persisted arrays and algebraic probes only; it does not rerun MLS or assemble K."
+  ]
+}

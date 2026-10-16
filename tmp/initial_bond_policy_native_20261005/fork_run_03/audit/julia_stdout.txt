@@ -1,0 +1,12 @@
+MANIFEST_SEMANTIC_DELTA=Peridynamics.deps only; SHA/TOML existing stdlibs
+ACTIVE_PROJECT=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_03\project\Project.toml
+PACKAGE_SOURCE_PATH=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_03\project\vendor\Peridynamics.jl\src\Peridynamics.jl
+EXPECTED_PACKAGE_SOURCE_PATH=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_03\project\vendor\Peridynamics.jl\src\Peridynamics.jl
+Test Summary:                                   | Pass  Total  Time
+MPI body handler excludes policy-bearing bodies |    2      2  0.0s
+Test Summary:                         | Pass  Total  Time
+initial bond policy transport helpers |    9      9  0.3s
+Test Summary:                                                 | Pass  Total  Time
+full directed candidate comparison and canonical external IDs |   12     12  0.5s
+Test Summary:                                            | Pass  Total  Time
+geometry exclusions are removed before later graph setup |    4      4  0.0s

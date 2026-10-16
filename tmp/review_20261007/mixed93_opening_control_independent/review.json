@@ -1,0 +1,57 @@
+{
+  "schema": "mixed93_opening_control_independent_source_review.v1",
+  "verdict": "SOURCE_READY_WITH_EXTERNAL_ONE_SHOT_WATCHDOG_REQUIRED",
+  "review_date": "2026-10-07",
+  "source_only": true,
+  "execution_performed": false,
+  "numeric_imported": false,
+  "npz_opened": false,
+  "provider_calls": 0,
+  "primitive_calls": 0,
+  "kkt_solves": 0,
+  "pins": {
+    "driver_path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+    "driver_sha256": "300bfb3094b11cfb86706485b160b7d42e6f0edf83238b9a9469a6b35273ffad",
+    "driver_line_count": 468,
+    "case_sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+    "pins_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/SOURCE_PINS.json",
+    "pins_sha256": "f9f2cb9a5c505c49795957ede4e21465ce293e41ebcbc20c0faeb06b49d0459c",
+    "execution_authorized": false,
+    "root_go_authorized": false,
+    "reference_hashes_verified": [
+      "saved_elastic_result",
+      "original_elastic_numeric_pins",
+      "elastic_worker",
+      "trace_primitive",
+      "cohesive_scalar_law",
+      "cohesive_derivative",
+      "mixed_enriched_operator",
+      "case",
+      "driver"
+    ]
+  },
+  "mathematical_review": {
+    "status": "NO_SOURCE_LEVEL_BLOCKER_FOUND_FOR_DECLARED_FIXED_FACE_MODE_I_DIAGNOSTIC",
+    "kkt_order": 100,
+    "physical_gauges": 6,
+    "prescribed_control_index_zero_based": 82,
+    "control_response_scaling": "D=diag(1/sqrt(Kii)); Cbar=G*C*D; q=D*y; physical gauge lambda=G*lambda_scaled; equations impose C*q=0 and q[82]=1",
+    "interface_points": 16,
+    "trace_identity": "J=Hplus-Hminus; normal opening row alpha_i=2*sqrt(-x_i/R) at coefficient 82; no projection",
+    "path_levels_in_Qstar": [0, 0.05, 0.15, 0.3, 0.12, 0.3, 0.5, 0.75, 1.1, 0.65, 0, 1.1],
+    "path_calls_on_accepted_run": 12,
+    "force_balance": "only index 82 is controlled; non-control generalized force is gated; positive force is Kq+C.T*lambda+f_gamma at index 82",
+    "work_balance": "independent exact piecewise-linear cohesive work vs primitive cumulative work; exact quadratic bulk work plus cohesive work vs stored+dissipated energy change",
+    "history": "commits trial states after each step and checks irreversible damage/kappa",
+    "zero_opening_tangent": "recorded as a corner observation; not used in a solve",
+    "regularization_or_truncation": "none"
+  },
+  "limitations_or_external_gates": [
+    "K symmetry is inherited from the immutable previously accepted pinned result; this driver does not recheck it locally.",
+    "The internal wall timer excludes argument parsing, pin/case reads, result serialization, disk write, and stdout; use an external whole-process watchdog.",
+    "The 8 MiB limit applies to the result payload, not combined file and stdout output; enforce combined accounting externally.",
+    "The exclusive output create occurs after numerical work and does not itself enforce retries=0; invoke under an external one-shot guard.",
+    "Failed-run metadata omits partial primitive-attempt counts; the successful loop has at most 12 calls."
+  ],
+  "scope": "fixed-face global Mode-I opening-history toy only; no crack-growth, material-qualification, roughness, multibody, or general-fracture claim"
+}

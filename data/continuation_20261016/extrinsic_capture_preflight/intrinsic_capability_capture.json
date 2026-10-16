@@ -1,0 +1,1341 @@
+{
+  "array_archive": {
+    "bytes": 5615,
+    "keys": {
+      "field__bulk_stress": {
+        "dtype": "float64",
+        "finite_count": 864,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          96,
+          9
+        ],
+        "size": 864
+      },
+      "field__contact_opening": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "field__contact_tractions": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "field__damage": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__delta_c_eff": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 1.0637784025801232e-06,
+        "finite_max": 2.1714285714285715e-07,
+        "finite_max_abs": 2.1714285714285715e-07,
+        "finite_min": 2.1714285714285715e-07,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__delta_max": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__insertion_stress": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "field__normal": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "field__opening": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "field__reversible_energy": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__sigma_c_eff": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__total_energy": {
+        "dtype": "float64",
+        "finite_count": 24,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          1
+        ],
+        "size": 24
+      },
+      "field__tractions": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "material__bulk_getStress": {
+        "dtype": "float64",
+        "finite_count": 864,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          96,
+          9
+        ],
+        "size": 864
+      },
+      "material__getOpening": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "material__getTraction": {
+        "dtype": "float64",
+        "finite_count": 72,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          24,
+          3
+        ],
+        "size": 72
+      },
+      "native__getAcceleration": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getBlockedDOFs": {
+        "dtype": "bool",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getDisplacement": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getExternalForce": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getInternalForce": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getMass": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 1.14564392373896e-05,
+        "finite_max": 2.5e-06,
+        "finite_max_abs": 2.5e-06,
+        "finite_min": 2.0833333333333333e-07,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__getVelocity": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.0,
+        "finite_max": 0.0,
+        "finite_max_abs": 0.0,
+        "finite_min": 0.0,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      },
+      "native__nodes": {
+        "dtype": "float64",
+        "finite_count": 162,
+        "finite_l2_norm": 0.01944222209522358,
+        "finite_max": 0.004,
+        "finite_max_abs": 0.004,
+        "finite_min": -0.001,
+        "shape": [
+          54,
+          3
+        ],
+        "size": 162
+      }
+    },
+    "path": "pgfrag/data/continuation_20261016/extrinsic_capture_preflight/intrinsic_capability_native_arrays.npz",
+    "sha256": "224d97aede20ee5581d10d17973c7d1f644b64c6f095cc51408ca448d36364dd"
+  },
+  "cached_native_sources": [
+    {
+      "bytes": 34669,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model.cc",
+      "sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465"
+    },
+    {
+      "bytes": 21074,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/solid_mechanics_model_cohesive.cc",
+      "sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64"
+    },
+    {
+      "bytes": 17941,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/material_cohesive.cc",
+      "sha256": "46bbb9639a975c04e1ca136bb2ecd26efccb80b21294ea98ade9aae9ac849b13"
+    },
+    {
+      "bytes": 12273,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.cc",
+      "sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2"
+    },
+    {
+      "bytes": 6701,
+      "exists": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.hh",
+      "sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc"
+    }
+  ],
+  "capture_plan": {
+    "first_preflight_result": "The current run establishes public API availability and initial shapes only; its zero stress/force values are not insertion evidence.",
+    "future_native_step_capture": [
+      "The frozen driver order is A before applyBC; B immediately after applyBC and before checkCohesiveStress; C immediately after checkCohesiveStress/insertion and before solveStep; D after solveStep.",
+      "Before each step, record the driver's prescribed time step*dt and the applied BC value/vector. The 5.0.7.post1 wheel exposes no public model.getTime(), so do not claim a native model clock; retain the driver's step/dt clock and any separate time_before field as unavailable.",
+      "At B, capture displacement, velocity, acceleration, mass, blocked DOFs, external/internal force, bulk stress, facet stress, and cohesive fields before insertion. applyBC occurs first; it changes the prescribed displacement, while the existing bulk stress is not recomputed by that setter.",
+      "checkCohesiveStress interpolates the already available bulk stress to candidate facets; capture both the pre-check bulk/facet stress and the B displacement. Do not call assembleInternalForces merely to observe state.",
+      "At C, immediately after insertion but before solveStep/reassembly, capture duplicated node IDs and public parent mapping if exposed, displacement, velocity, acceleration, blocked DOFs, and the appended zero-mass rows.",
+      "At D, after solveStep and its operative mass update, capture the same arrays and native cohesive fields again. Attach phase label, step, driver's prescribed time, applied BC, and observed node/cohesive counts."
+    ],
+    "insertion_field_interpretation": "An intrinsic initialized field array proves getter capability only. In this run delta_c_eff equals the nominal explicit delta_c default, while sigma_c_eff, insertion_stress, and cohesive normal are zero before any check/traction evaluation. It does not prove the old extrinsic checkCohesiveStress insertion values, their update phase, or the wheel-specific 651 law."
+  },
+  "elapsed_seconds": 0.54691869,
+  "extrinsic_facet_selection": {
+    "already_inserted_facets": null,
+    "eligible_face_slots": null,
+    "eligible_interface_facets": null,
+    "expected_eligible_from_frozen_manifest": 8,
+    "interpretation": "Only populated for mode=extrinsic. Intrinsic mode is a separate initial-condition capability probe, not an extrinsic insertion/event record."
+  },
+  "field_capture": {
+    "bulk_stress": {
+      "array_key": "field__bulk_stress",
+      "dtype": "float64",
+      "element_type": "ElementType._tetrahedron_4",
+      "expected_components_from_cached_source": 9,
+      "finite_count": 864,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "stress",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "bulk material stress tensor at integration points; read before any force assembly",
+      "shape": [
+        96,
+        9
+      ],
+      "size": 864,
+      "status": "ok"
+    },
+    "contact_opening": {
+      "array_key": "field__contact_opening",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "contact_opening",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "penalty-contact opening vector, separate from cohesive opening",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok"
+    },
+    "contact_tractions": {
+      "array_key": "field__contact_tractions",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "contact_tractions",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "penalty-contact traction vector, separate from cohesive traction",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok"
+    },
+    "damage": {
+      "array_key": "field__damage",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "damage",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "cohesive scalar damage internal variable",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok"
+    },
+    "delta_c_eff": {
+      "array_key": "field__delta_c_eff",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 1.0637784025801232e-06,
+      "finite_max": 2.1714285714285715e-07,
+      "finite_max_abs": 2.1714285714285715e-07,
+      "finite_min": 2.1714285714285715e-07,
+      "native_field_name": "delta_c_eff",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "per-cohesive-quadrature-point effective critical displacement; populated by insertion checks",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok",
+      "value_interpretation": "equals the explicit nominal delta_c default in this initialization; not an insertion-derived effective value"
+    },
+    "delta_max": {
+      "array_key": "field__delta_max",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "delta max",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "maximum effective opening history; native internal field name includes a space",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok"
+    },
+    "insertion_stress": {
+      "array_key": "field__insertion_stress",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "insertion_stress",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "stress vector recorded at insertion; populated by insertion checks",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok",
+      "value_interpretation": "zero-initialized here; this separate intrinsic setup did not capture an extrinsic insertion stress"
+    },
+    "normal": {
+      "array_key": "field__normal",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "normal",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "cohesive integration-point geometric normal, as registered by MaterialCohesive",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok",
+      "value_interpretation": "zero cohesive internal field before traction evaluation; use the separately captured FacetsFEEngine geometric normals for orientation"
+    },
+    "opening": {
+      "array_key": "field__opening",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "opening",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "current cohesive opening/separation vector, updated during cohesive traction evaluation",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok",
+      "value_interpretation": "zero opening in the unloaded initial intrinsic setup; getter capability only"
+    },
+    "reversible_energy": {
+      "array_key": "field__reversible_energy",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "reversible_energy",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "native cohesive reversible-energy internal field",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok"
+    },
+    "sigma_c_eff": {
+      "array_key": "field__sigma_c_eff",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "sigma_c_eff",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "per-cohesive-quadrature-point effective critical stress; registered by MaterialCohesiveLinear",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok",
+      "value_interpretation": "zero-initialized here; no extrinsic checkInsertion call occurred"
+    },
+    "total_energy": {
+      "array_key": "field__total_energy",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 1,
+      "finite_count": 24,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "total_energy",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "native cohesive total-energy internal field",
+      "shape": [
+        24,
+        1
+      ],
+      "size": 24,
+      "status": "ok"
+    },
+    "tractions": {
+      "array_key": "field__tractions",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "tractions",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "current cohesive traction vector, updated during cohesive traction evaluation",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok",
+      "value_interpretation": "zero traction in the unloaded initial intrinsic setup; getter capability only"
+    }
+  },
+  "frozen_inputs": [
+    {
+      "bytes": 3605,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/block_2x2x4mm.msh",
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    {
+      "bytes": 291,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/material.dat",
+      "sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f"
+    },
+    {
+      "bytes": 488,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/generated_geometry.json",
+      "sha256": "eec01312e181581c1d433b2619b6fd8a4a42677769c4dbc25053d0a2c355188b"
+    },
+    {
+      "bytes": 4757,
+      "exists": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/manifest.json",
+      "sha256": "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68"
+    },
+    {
+      "bytes": 46087,
+      "exists": true,
+      "path": "pgfrag/experiments/cohesive_event_probe_20261004/probe_driver.py",
+      "sha256": "65fb7e4a4590d1cbb0a015a4ff35a0b5261528926394c5a2cac692cf76e42be6"
+    }
+  ],
+  "interface_geometry": {
+    "normal_caveat": "This directed mesh-surface normal is a geometric fallback; only a native cohesive `normal` field can establish the post-insertion material orientation.",
+    "source": "saved Gmsh 2.2 interface triangles and node coordinates, directed by file connectivity order",
+    "total_area_m2": 4e-06,
+    "triangle_count": 8,
+    "triangles": [
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "node_ids_in_msh_order": [
+          19,
+          20,
+          23
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "node_ids_in_msh_order": [
+          19,
+          22,
+          23
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "node_ids_in_msh_order": [
+          20,
+          21,
+          24
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "node_ids_in_msh_order": [
+          20,
+          23,
+          24
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "node_ids_in_msh_order": [
+          22,
+          23,
+          26
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "node_ids_in_msh_order": [
+          22,
+          25,
+          26
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "node_ids_in_msh_order": [
+          23,
+          24,
+          27
+        ],
+        "physical_tag": 2
+      },
+      {
+        "area_m2": 5e-07,
+        "directed_unit_normal_from_msh_triangle_order": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "node_ids_in_msh_order": [
+          23,
+          26,
+          27
+        ],
+        "physical_tag": 2
+      }
+    ]
+  },
+  "limits": {
+    "total_output_bytes": 16777216,
+    "wall_seconds": 60
+  },
+  "material_access": {
+    "count": 2,
+    "errors": [],
+    "getter": "getMaterial",
+    "status": "observed"
+  },
+  "missing_cached_source": {
+    "path": "src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear_inline_impl.hh",
+    "status": "not present in local source cache; no source-hash claim"
+  },
+  "mode": "intrinsic-capability",
+  "native_array_copies": {
+    "getAcceleration": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getAcceleration",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getBlockedDOFs": {
+      "dtype": "bool",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getBlockedDOFs",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getDisplacement": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getDisplacement",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getExternalForce": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getExternalForce",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getInternalForce": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getInternalForce",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getMass": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 1.14564392373896e-05,
+      "finite_max": 2.5e-06,
+      "finite_max_abs": 2.5e-06,
+      "finite_min": 2.0833333333333333e-07,
+      "method": "getMass",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    },
+    "getVelocity": {
+      "dtype": "float64",
+      "finite_count": 162,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "getVelocity",
+      "shape": [
+        54,
+        3
+      ],
+      "size": 162,
+      "status": "ok"
+    }
+  },
+  "native_mesh_counts": {
+    "cohesive_3d_6": 8,
+    "nodes": 54,
+    "tetrahedron_4": 96
+  },
+  "native_steps_and_mutations": {
+    "automatic_insertions_during_capture": 0,
+    "boundary_conditions_applied": 0,
+    "evolution_calls": 0,
+    "internal_force_assemblies_after_initialization": 0,
+    "intrinsic_cohesive_elements_created_during_init": 8,
+    "mass_assembly_calls_after_initFull": 1,
+    "note": "assembleMassLumped was called once after initFull to match the old probe setup. In the separate intrinsic capability run, initFull itself created 8 cohesive elements before this initial mass assembly. No solve, load, BC, stress test, explicit step, or force assembly was called.",
+    "post_step_mass_reassemblies": 0,
+    "solver_steps": 0,
+    "stress_checks": 0
+  },
+  "native_time_at_capture": {
+    "reason": "actual wheel model exposes no public getTime() method",
+    "status": "unavailable"
+  },
+  "normal_access_fallback": {
+    "cohesive_model_getStressOnFacets": {
+      "error": "Exception('akantu::debug::Exception : No element of type (not_ghost:_triangle_3) in this const ElementTypeMapArray<double> class(\"solid_mechanics_model:facet_stress\") [../../../install/include/akantu/element_type_map_tmpl.hh:285]')",
+      "status": "error"
+    },
+    "facets_feengine_getNormalsOnIntegrationPoints": {
+      "available": true,
+      "doc": "getNormalsOnIntegrationPoints(self: akantu.py11_akantu.FEEngine, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+      "error": "Exception('akantu::debug::Exception : No element of type (not_ghost:_triangle_3) in this const ElementTypeMapArray<double> class(\"solid_mechanics_model:fem:FacetsFEEngine:normals_on_quad_points\") [../../../install/include/akantu/element_type_map_tmpl.hh:285]')",
+      "signature": null,
+      "signature_error": "ValueError('no signature found for builtin <built-in method getNormalsOnIntegrationPoints of PyCapsule object at 0x7af2395251d0>')",
+      "status": "error"
+    },
+    "geometry_recovery": "Saved Gmsh 2.2 physical interface triangles: area and directed unit normal are computed from actual node coordinates and triangle connectivity in file order.",
+    "native_cohesive_field": {
+      "array_key": "field__normal",
+      "dtype": "float64",
+      "element_type": "ElementType._cohesive_3d_6",
+      "expected_components_from_cached_source": 3,
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "native_field_name": "normal",
+      "population_status": "array_available; values are the zero-step initialized state only",
+      "semantics_from_cached_source": "cohesive integration-point geometric normal, as registered by MaterialCohesive",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok",
+      "value_interpretation": "zero cohesive internal field before traction evaluation; use the separately captured FacetsFEEngine geometric normals for orientation"
+    }
+  },
+  "public_api": {
+    "materials": [
+      {
+        "index": 0,
+        "public_field_related_methods": {
+          "getPotentialEnergy": {
+            "available": true,
+            "doc": "getPotentialEnergy(*args, **kwargs)\nOverloaded function.\n\n1. getPotentialEnergy(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType) -> AkaArray\n\n2. getPotentialEnergy(self: akantu.py11_akantu.Material, element: akantu.py11_akantu.Element) -> float\n\n3. getPotentialEnergy(self: akantu.py11_akantu.Material) -> float",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getPotentialEnergy of PyCapsule object at 0x7af237e75ce0>')"
+          },
+          "getStress": {
+            "available": true,
+            "doc": "getStress(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getStress of PyCapsule object at 0x7af239527e40>')"
+          }
+        },
+        "requested_cohesive_getter_availability": {
+          "getContactOpening": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getContactTraction": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDamage": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDeltaCEff": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDeltaMax": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getInsertionStress": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getNormal": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getOpening": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getSigmaCEff": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getStress": {
+            "available": true,
+            "doc": "getStress(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getStress of PyCapsule object at 0x7af239527e40>')"
+          },
+          "getTraction": {
+            "attribute_type": null,
+            "available": false
+          }
+        },
+        "type": "MaterialLinearElastic3D"
+      },
+      {
+        "index": 1,
+        "public_field_related_methods": {
+          "getOpening": {
+            "available": true,
+            "doc": "getOpening(self: akantu.py11_akantu.MaterialCohesive, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getOpening of PyCapsule object at 0x7af237e74b40>')"
+          },
+          "getPotentialEnergy": {
+            "available": true,
+            "doc": "getPotentialEnergy(*args, **kwargs)\nOverloaded function.\n\n1. getPotentialEnergy(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType) -> AkaArray\n\n2. getPotentialEnergy(self: akantu.py11_akantu.Material, element: akantu.py11_akantu.Element) -> float\n\n3. getPotentialEnergy(self: akantu.py11_akantu.Material) -> float",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getPotentialEnergy of PyCapsule object at 0x7af237e75ce0>')"
+          },
+          "getStress": {
+            "available": true,
+            "doc": "getStress(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getStress of PyCapsule object at 0x7af239527e40>')"
+          },
+          "getTraction": {
+            "available": true,
+            "doc": "getTraction(self: akantu.py11_akantu.MaterialCohesive, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getTraction of PyCapsule object at 0x7af237e76100>')"
+          }
+        },
+        "requested_cohesive_getter_availability": {
+          "getContactOpening": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getContactTraction": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDamage": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDeltaCEff": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getDeltaMax": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getInsertionStress": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getNormal": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getOpening": {
+            "available": true,
+            "doc": "getOpening(self: akantu.py11_akantu.MaterialCohesive, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getOpening of PyCapsule object at 0x7af237e74b40>')"
+          },
+          "getSigmaCEff": {
+            "attribute_type": null,
+            "available": false
+          },
+          "getStress": {
+            "available": true,
+            "doc": "getStress(self: akantu.py11_akantu.Material, el_type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getStress of PyCapsule object at 0x7af239527e40>')"
+          },
+          "getTraction": {
+            "available": true,
+            "doc": "getTraction(self: akantu.py11_akantu.MaterialCohesive, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+            "signature": null,
+            "signature_error": "ValueError('no signature found for builtin <built-in method getTraction of PyCapsule object at 0x7af237e76100>')"
+          }
+        },
+        "type": "MaterialCohesiveLinear3D"
+      }
+    ],
+    "model": {
+      "assembleInternalForces": {
+        "available": true,
+        "doc": "assembleInternalForces(self: akantu.py11_akantu.SolidMechanicsModel) -> None",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method assembleInternalForces of PyCapsule object at 0x7af237e75230>')"
+      },
+      "assembleMassLumped": {
+        "available": true,
+        "doc": "assembleMassLumped(self: akantu.py11_akantu.SolidMechanicsModel) -> None",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method assembleMassLumped of PyCapsule object at 0x7af237e752f0>')"
+      },
+      "flattenInternalReal": {
+        "available": true,
+        "doc": "flattenInternalReal(self: akantu.py11_akantu.ConstitutiveLawsHandlerakantu::Materialakantu::Model, field_name: str, kind: akantu.py11_akantu.ElementKind = <ElementKind._ek_regular: 0>, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> akantu.py11_akantu.ElementTypeMapArrayReal",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method flattenInternalReal of PyCapsule object at 0x7af237e74b70>')"
+      },
+      "getAcceleration": {
+        "available": true,
+        "doc": "getAcceleration(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getAcceleration of PyCapsule object at 0x7af237e756e0>')"
+      },
+      "getBlockedDOFs": {
+        "available": true,
+        "doc": "getBlockedDOFs(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getBlockedDOFs of PyCapsule object at 0x7af237e755c0>')"
+      },
+      "getBlockedDofs": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getDisplacement": {
+        "available": true,
+        "doc": "getDisplacement(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getDisplacement of PyCapsule object at 0x7af237e75410>')"
+      },
+      "getElementInserter": {
+        "available": true,
+        "doc": "getElementInserter(self: akantu.py11_akantu.SolidMechanicsModelCohesive) -> akantu.py11_akantu.CohesiveElementInserter",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getElementInserter of PyCapsule object at 0x7af237e768e0>')"
+      },
+      "getExternalForce": {
+        "available": true,
+        "doc": "getExternalForce(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getExternalForce of PyCapsule object at 0x7af237e753b0>')"
+      },
+      "getFEEngine": {
+        "available": true,
+        "doc": "getFEEngine(self: akantu.py11_akantu.Model, name: str = '') -> akantu.py11_akantu.FEEngine",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getFEEngine of PyCapsule object at 0x7af239526a30>')"
+      },
+      "getInternalForce": {
+        "available": true,
+        "doc": "getInternalForce(*args, **kwargs)\nOverloaded function.\n\n1. getInternalForce(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray\n\n2. getInternalForce(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getInternalForce of PyCapsule object at 0x7af237e75590>')"
+      },
+      "getMass": {
+        "available": true,
+        "doc": "getMass(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getMass of PyCapsule object at 0x7af237e75620>')"
+      },
+      "getMaterial": {
+        "available": true,
+        "doc": "getMaterial(*args, **kwargs)\nOverloaded function.\n\n1. getMaterial(self: akantu.py11_akantu.SolidMechanicsModel, material_id: int) -> akantu::Material\n\n2. getMaterial(self: akantu.py11_akantu.SolidMechanicsModel, material_name: str) -> akantu::Material\n\n3. getMaterial(self: akantu.py11_akantu.SolidMechanicsModel, element: akantu.py11_akantu.Element) -> akantu::Material",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getMaterial of PyCapsule object at 0x7af2398a67c0>')"
+      },
+      "getMaterials": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getNbMaterials": {
+        "available": true,
+        "doc": "getNbMaterials(self: akantu.py11_akantu.SolidMechanicsModel) -> int",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getNbMaterials of PyCapsule object at 0x7af23950fa50>')"
+      },
+      "getNormals": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getNormalsOnIntegrationPoints": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getStress": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getTime": {
+        "attribute_type": null,
+        "available": false
+      },
+      "getVelocity": {
+        "available": true,
+        "doc": "getVelocity(self: akantu.py11_akantu.SolidMechanicsModel) -> AkaArray",
+        "signature": null,
+        "signature_error": "ValueError('no signature found for builtin <built-in method getVelocity of PyCapsule object at 0x7af237e75680>')"
+      },
+      "other_public_stress_normal_methods": {
+        "checkCohesiveStress": {
+          "available": true,
+          "doc": "checkCohesiveStress(self: akantu.py11_akantu.SolidMechanicsModelCohesive) -> int",
+          "signature": null,
+          "signature_error": "ValueError('no signature found for builtin <built-in method checkCohesiveStress of PyCapsule object at 0x7af237e768b0>')"
+        },
+        "getStressOnFacets": {
+          "available": true,
+          "doc": "getStressOnFacets(self: akantu.py11_akantu.SolidMechanicsModelCohesive, type: akantu.py11_akantu.ElementType, ghost_type: akantu.py11_akantu.GhostType = <GhostType._not_ghost: 0>) -> AkaArray",
+          "signature": null,
+          "signature_error": "ValueError('no signature found for builtin <built-in method getStressOnFacets of PyCapsule object at 0x7af237e76940>')"
+        }
+      },
+      "other_public_time_methods": {
+        "getStableTimeStep": {
+          "available": true,
+          "doc": "getStableTimeStep(self: akantu.py11_akantu.SolidMechanicsModel) -> float",
+          "signature": null,
+          "signature_error": "ValueError('no signature found for builtin <built-in method getStableTimeStep of PyCapsule object at 0x7af237e75350>')"
+        },
+        "getTimeStepSolver": {
+          "available": true,
+          "doc": "getTimeStepSolver(self: akantu.py11_akantu.ModelSolver, solver_id: str = '') -> akantu.py11_akantu.TimeStepSolver",
+          "signature": null,
+          "signature_error": "ValueError('no signature found for builtin <built-in method getTimeStepSolver of PyCapsule object at 0x7af239526820>')"
+        },
+        "setTimeStep": {
+          "available": true,
+          "doc": "setTimeStep(self: akantu.py11_akantu.SolidMechanicsModel, time_step: float, solver_id: str = '') -> None",
+          "signature": null,
+          "signature_error": "ValueError('no signature found for builtin <built-in method setTimeStep of PyCapsule object at 0x7af237e75140>')"
+        }
+      }
+    }
+  },
+  "public_material_getter_captures": {
+    "bulk_material_getStress": {
+      "dtype": "float64",
+      "finite_count": 864,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "MaterialLinearElastic3D.getStress(_tetrahedron_4, _not_ghost)",
+      "shape": [
+        96,
+        9
+      ],
+      "size": 864,
+      "status": "ok"
+    },
+    "cohesive_material_getOpening": {
+      "dtype": "float64",
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "MaterialCohesiveLinear3D.getOpening(_cohesive_3d_6, _not_ghost)",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok"
+    },
+    "cohesive_material_getTraction": {
+      "dtype": "float64",
+      "finite_count": 72,
+      "finite_l2_norm": 0.0,
+      "finite_max": 0.0,
+      "finite_max_abs": 0.0,
+      "finite_min": 0.0,
+      "method": "MaterialCohesiveLinear3D.getTraction(_cohesive_3d_6, _not_ghost)",
+      "shape": [
+        24,
+        3
+      ],
+      "size": 72,
+      "status": "ok"
+    }
+  },
+  "runtime": {
+    "akantu_distribution_version": "5.0.7.post1",
+    "akantu_version": "5.0.7-post1",
+    "mkl_num_threads": "1",
+    "numpy_version": "2.5.3",
+    "omp_num_threads": "1",
+    "openblas_num_threads": "1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python_executable": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+    "python_version": "3.12.15",
+    "runtime_wheel": {
+      "bytes": 6592004,
+      "exists": true,
+      "path": "third_party/akantu-runtime/downloads/akantu-5.0.7.post1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b"
+    }
+  },
+  "schema": "pgfrag.extrinsic_capture_preflight.v1",
+  "script": {
+    "bytes": 32811,
+    "exists": true,
+    "path": "pgfrag/experiments/continuation_20261016/extrinsic_capture_preflight/capture_preflight.py",
+    "sha256": "097acee662d3fd890543e17db4f3fe955aa3007d3e2c68e359f812ea68c8a4a3"
+  },
+  "source_distinction": "The installed runtime is the 5.0.7.post1 wheel. The cached inspected source is tagged v5.0.7 and is recorded separately; it is not represented as the wheel's exact source.",
+  "status": "CAPTURED_ZERO_STEP_API_PREFLIGHT"
+}

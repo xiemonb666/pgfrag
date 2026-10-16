@@ -1,0 +1,76 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.input_hash_inventory.v1",
+  "inventory_scope": "flat completed results directory; hashes and sizes only, no CSV/TOML/binary values interpreted",
+  "receipt": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\launcher_receipt.json",
+    "bytes": 2755,
+    "sha256": "0bae8302c765effdd2614f72a2e1802d4779aa9ea4910829a1281f063c4eb557",
+    "status": "COMPLETED_EXIT_0",
+    "summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+    "recorded_final_attempt_bytes": 88924215,
+    "independently_observed_final_attempt_tree_bytes": 88924268,
+    "observed_minus_recorded_bytes": 53
+  },
+  "results_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\free_fracture_pilot_20261005\\run_attempt_01\\results",
+  "expected_summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+  "result_file_count": 10,
+  "total_result_bytes": 88921168,
+  "manifest_sha256": "922353f92501004041c89f6377e2636df106b0883e5220bdb2106967b855e063",
+  "files": [
+    {
+      "name": "canonical_bonds.csv",
+      "bytes": 12255264,
+      "sha256": "cc0f33ecdc350fe28c6f3bcffe506bbfa327a4df2ad84494e5aa6c38f4d8aa47"
+    },
+    {
+      "name": "energy_reaction_history.csv",
+      "bytes": 65563,
+      "sha256": "8287c68ca0cc612b406d87759c4792e15eb8836722273a5e14df0aec0f07f667"
+    },
+    {
+      "name": "graph_component_labels_layout.toml",
+      "bytes": 684,
+      "sha256": "7a6a0e137dcccd807f6942b807699f65e9a3f062d26c8e817296a90ebc195899"
+    },
+    {
+      "name": "graph_component_labels.i32le",
+      "bytes": 1746000,
+      "sha256": "7575f682d5e5efbb96f3128102550b14f0a906b5f92cc23df1e4a3976cff4d16"
+    },
+    {
+      "name": "graph_state_history.csv",
+      "bytes": 17567,
+      "sha256": "37c12ca66913c1d192b68364adfe40ce70bae01779f2cc90096788673c645f62"
+    },
+    {
+      "name": "native_failure_events.csv",
+      "bytes": 957282,
+      "sha256": "e37e0785da631d62be4413d54577ba14439d24b347fa728e832124ea0a5e30b6"
+    },
+    {
+      "name": "point_reference.csv",
+      "bytes": 520394,
+      "sha256": "7194fadbcd2af23b3205aa4349b471d6cb9457d24ee84b88e91404af35579257"
+    },
+    {
+      "name": "point_state_history.f64le",
+      "bytes": 73332000,
+      "sha256": "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf"
+    },
+    {
+      "name": "point_state_layout.toml",
+      "bytes": 1816,
+      "sha256": "6e5f1ca4ccf7c8680bf693a6f96236dca1e52382bf58126c2cfeaa276074959d"
+    },
+    {
+      "name": "summary.toml",
+      "bytes": 24598,
+      "sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c"
+    }
+  ],
+  "case_max_attempt_bytes": 209715200,
+  "case_max_output_bytes": 199229440,
+  "frozen_max_experiment_output_bytes": 199229440,
+  "actual_attempt_tree_within_case_cap": true,
+  "actual_result_tree_within_case_and_freeze_cap": true
+}

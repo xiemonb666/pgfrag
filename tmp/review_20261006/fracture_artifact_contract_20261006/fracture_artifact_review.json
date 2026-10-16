@@ -1,0 +1,119 @@
+{
+  "fixed_cases": {
+    "complete_fixture.json": {
+      "error_codes": [],
+      "read_observation": "PASS",
+      "valid": true
+    },
+    "crossfragmentwrongpair.json": {
+      "error_codes": [
+        "SURFACE_FRAGMENT_PAIR_MISMATCH"
+      ],
+      "read_observation": "REJECT",
+      "reader_code": "INVALID_ARTIFACT",
+      "reader_error_codes": [
+        "SURFACE_FRAGMENT_PAIR_MISMATCH"
+      ],
+      "valid": false
+    },
+    "gtleak.json": {
+      "error_codes": [
+        "GT_LEAK_IN_OBSERVATION",
+        "UNKNOWN_FIELD"
+      ],
+      "read_observation": "REJECT",
+      "reader_code": "INVALID_ARTIFACT",
+      "reader_error_codes": [
+        "GT_LEAK_IN_OBSERVATION",
+        "UNKNOWN_FIELD"
+      ],
+      "valid": false
+    },
+    "missinglabels.json": {
+      "error_codes": [
+        "MISSING_FIELD",
+        "MISSING_OR_INVALID_LABELS"
+      ],
+      "read_observation": "REJECT",
+      "reader_code": "INVALID_ARTIFACT",
+      "reader_error_codes": [
+        "MISSING_FIELD",
+        "MISSING_OR_INVALID_LABELS"
+      ],
+      "valid": false
+    },
+    "nonfinite.json": {
+      "error_codes": [
+        "NONFINITE_NUMBER",
+        "NONFINITE_OR_NONNUMERIC_VALUE"
+      ],
+      "read_observation": "REJECT",
+      "reader_code": "STRICT_JSON_REJECTED",
+      "valid": false
+    },
+    "units_mismatch.json": {
+      "error_codes": [
+        "UNIT_MISMATCH"
+      ],
+      "read_observation": "REJECT",
+      "reader_code": "INVALID_ARTIFACT",
+      "reader_error_codes": [
+        "UNIT_MISMATCH"
+      ],
+      "valid": false
+    },
+    "unknown_zero_distinction.json": {
+      "error_codes": [],
+      "read_observation": "PASS",
+      "valid": true
+    }
+  },
+  "focused_tests": {
+    "failed": 0,
+    "observed_seconds": 0.081,
+    "passed": 9,
+    "status": "PASS"
+  },
+  "inference_projection": {
+    "all_payload_sha256_verified": true,
+    "keys": [
+      "observation",
+      "schema",
+      "verified_payloads"
+    ],
+    "mother_or_gt_fields_returned": false,
+    "observation_keys": [
+      "capture_id",
+      "fragment_observations",
+      "frame",
+      "length_unit",
+      "processing_recipe_sha256"
+    ],
+    "payload_content_included": true,
+    "schema": "a12.fracture_observation.v1",
+    "verified_payload_count": 4
+  },
+  "open_source_gap": "Fragment mesh hashes are checked, but closed-mesh topology/volume and pair-to-real-face binding are not computed by this contract. A dedicated planar fixture mesh validator is awaiting parent review.",
+  "sample_path": "pgfrag/experiments/fracture_artifact_contract_20261006/fixtures/sample_fracture_artifact.json",
+  "sample_scope": {
+    "event_count": 1,
+    "fixture_record_count": 7,
+    "fragment_count": 2,
+    "label_count": 1,
+    "observation_count": 2,
+    "solver_invocations": 0,
+    "surface_pair_count": 1
+  },
+  "sample_sha256": "ac3c727b9acab2f7b6ac6a6a77ff8f0498ebc1febb43da263d1cbb79b020a76a",
+  "sample_validation": {
+    "errors": [],
+    "observation_projection_safe": true,
+    "physical_receipt_verified": false,
+    "pretraining_qualified": false,
+    "qualification_class": "FIXTURE_GEOMETRY_ONLY",
+    "schema": "pgfrag.fracture_artifact_validation.v1",
+    "valid": true
+  },
+  "schema": "pgfrag.fracture_artifact_contract_review.v1",
+  "schema_check": "PASS"
+}

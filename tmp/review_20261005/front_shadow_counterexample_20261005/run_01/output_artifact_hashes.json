@@ -1,0 +1,36 @@
+{
+  "schema": "front-shadow-run-output-hashes-v1",
+  "run": "run_01",
+  "artifacts": [
+    {
+      "artifact": "results.json",
+      "path": "pgfrag/experiments/front_shadow_counterexample_20261005/results.json",
+      "sha256": "49527F1AA8283C17E44BD44BF236C707E0AB76BE31C4EC7DAED8C22DA3AA3976",
+      "bytes": 18876
+    },
+    {
+      "artifact": "front_shadow_counterexample.png",
+      "path": "pgfrag/experiments/front_shadow_counterexample_20261005/front_shadow_counterexample.png",
+      "sha256": "949102D833D6B60A2672C5B7126B76D0174E265079A31535100DE54D24E137F0",
+      "bytes": 206389
+    },
+    {
+      "artifact": "stdout.txt",
+      "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/run_01/stdout.txt",
+      "sha256": "E23ADEEE6A11F24545EFAE35B36CB0DF14AC9B5BF7A1C9FEDE580B7B7724ECCF",
+      "bytes": 110
+    },
+    {
+      "artifact": "stderr.txt",
+      "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/run_01/stderr.txt",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "artifact": "receipt.json",
+      "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/run_01/receipt.json",
+      "sha256": "ED594B984F8AB9572FFA0402256894FB3DF076DE876D35F331CAAEDA4BD40C1F",
+      "bytes": 1857
+    }
+  ]
+}

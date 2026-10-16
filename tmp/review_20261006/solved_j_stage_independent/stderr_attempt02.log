@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261006\solved_j_stage_independent\independent_review_attempt02.py", line 216, in <module>
+    sample_xyz = vec(sample["coordinate_m"], 3)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261006\solved_j_stage_independent\independent_review_attempt02.py", line 37, in vec
+    out = np.fromstring(text, sep=" ", dtype=np.float64)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'list'

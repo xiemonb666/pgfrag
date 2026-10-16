@@ -1,0 +1,168 @@
+{
+  "schema_version": "pgfrag.explicit-fragment-interface-pair-ledger.v1",
+  "qualification": "FIXTURE_GEOMETRY_ONLY",
+  "surface_id": "explicit_cut_surface_01",
+  "pairing_rule": "exact input-surface triangle identity and exact canonical mother coordinates; piece-local vertex IDs are distinct",
+  "vertex_pairs": [
+    {
+      "input_surface_vertex_index": 0,
+      "mother_coordinate_m": [
+        0.7,
+        -1,
+        -1
+      ],
+      "negative_vertex_id": "negative:v0",
+      "positive_vertex_id": "positive:v0",
+      "negative_local_vertex_index": 0,
+      "positive_local_vertex_index": 0
+    },
+    {
+      "input_surface_vertex_index": 1,
+      "mother_coordinate_m": [
+        -0.039999999999999925,
+        1,
+        -1
+      ],
+      "negative_vertex_id": "negative:v3",
+      "positive_vertex_id": "positive:v1",
+      "negative_local_vertex_index": 3,
+      "positive_local_vertex_index": 1
+    },
+    {
+      "input_surface_vertex_index": 2,
+      "mother_coordinate_m": [
+        -0.48,
+        1,
+        1
+      ],
+      "negative_vertex_id": "negative:v6",
+      "positive_vertex_id": "positive:v7",
+      "negative_local_vertex_index": 6,
+      "positive_local_vertex_index": 7
+    },
+    {
+      "input_surface_vertex_index": 3,
+      "mother_coordinate_m": [
+        0.2599999999999998,
+        -1,
+        1
+      ],
+      "negative_vertex_id": "negative:v5",
+      "positive_vertex_id": "positive:v4",
+      "negative_local_vertex_index": 5,
+      "positive_local_vertex_index": 4
+    }
+  ],
+  "reciprocal_vertex_pairs": [
+    {
+      "negative_vertex_id": "positive:v0",
+      "positive_vertex_id": "negative:v0",
+      "mother_coordinate_m": [
+        0.7,
+        -1,
+        -1
+      ]
+    },
+    {
+      "negative_vertex_id": "positive:v1",
+      "positive_vertex_id": "negative:v3",
+      "mother_coordinate_m": [
+        -0.039999999999999925,
+        1,
+        -1
+      ]
+    },
+    {
+      "negative_vertex_id": "positive:v7",
+      "positive_vertex_id": "negative:v6",
+      "mother_coordinate_m": [
+        -0.48,
+        1,
+        1
+      ]
+    },
+    {
+      "negative_vertex_id": "positive:v4",
+      "positive_vertex_id": "negative:v5",
+      "mother_coordinate_m": [
+        0.2599999999999998,
+        -1,
+        1
+      ]
+    }
+  ],
+  "triangle_pairs": [
+    {
+      "pair_id": "explicit_cut_surface_01:triangle:0",
+      "input_surface_triangle_index": 0,
+      "negative_face_index": 10,
+      "positive_face_index": 10,
+      "negative_face_id": "fixture_piece_negative:f10",
+      "positive_face_id": "fixture_piece_positive:f10",
+      "mother_coordinates_m": [
+        [
+          0.7,
+          -1,
+          -1
+        ],
+        [
+          -0.039999999999999925,
+          1,
+          -1
+        ],
+        [
+          -0.48,
+          1,
+          1
+        ]
+      ],
+      "negative_outward_normal": [
+        0.9185141640913215,
+        0.3398502407137889,
+        0.20207311610009074
+      ],
+      "positive_outward_normal": [
+        -0.9185141640913215,
+        -0.3398502407137889,
+        -0.20207311610009074
+      ],
+      "outward_normal_dot": -1
+    },
+    {
+      "pair_id": "explicit_cut_surface_01:triangle:1",
+      "input_surface_triangle_index": 1,
+      "negative_face_index": 11,
+      "positive_face_index": 11,
+      "negative_face_id": "fixture_piece_negative:f11",
+      "positive_face_id": "fixture_piece_positive:f11",
+      "mother_coordinates_m": [
+        [
+          0.7,
+          -1,
+          -1
+        ],
+        [
+          -0.48,
+          1,
+          1
+        ],
+        [
+          0.2599999999999998,
+          -1,
+          1
+        ]
+      ],
+      "negative_outward_normal": [
+        0.9185141640913215,
+        0.33985024071378883,
+        0.2020731161000908
+      ],
+      "positive_outward_normal": [
+        -0.9185141640913215,
+        -0.33985024071378883,
+        -0.2020731161000908
+      ],
+      "outward_normal_dot": -0.9999999999999999
+    }
+  ]
+}

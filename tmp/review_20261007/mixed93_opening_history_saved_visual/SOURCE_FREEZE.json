@@ -1,0 +1,53 @@
+{
+  "schema": "mixed93_opening_history_saved_visual_source_freeze.v1",
+  "status": "SOURCE_READY_RESULT_PENDING",
+  "owner_directory": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual",
+  "non_self_referential": true,
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+    "exists_at_initial_preflight": false,
+    "path_present_at_later_metadata_check": true,
+    "payload_read": false,
+    "sha256": null
+  },
+  "producer_contract": {
+    "schema": "mixed93_opening_control_result.v1",
+    "status": "DIAGNOSTIC_ONLY",
+    "classification": "FIXED_FACE_GLOBAL_MODE_I_OPENING_CONTROL_TOY_HISTORY_DIAGNOSTIC_ONLY",
+    "driver_path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+    "driver_sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+    "producer_case_path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+    "producer_case_sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+  },
+  "source_lines": {
+    "render_saved_opening_history.py": 168,
+    "run_saved_opening_history_visual.py": 136
+  },
+  "sha256": {
+    "README.md": "3b80564739c0e4f08d6e5d2ac8d027d8e5d50a95bbb3eaba5dc07f6bc9e7cebf",
+    "SOURCE_PINS.json": "f640a306956b58b33d4e953065b6bff7dece15b3500b4eac93ea65dbf65e5c24",
+    "case.json": "0b3c5f7812a2f74db8a94ada639bae49956fbd3715e15f0bb91fb77d72e1ec64",
+    "render_saved_opening_history.py": "e1b49b9c793e95ac10456977bb913773e73386172b2505142ce7e84c09cda1c1",
+    "run_saved_opening_history_visual.py": "26c4392bf968168fb1132c7147621d3c88284a684d79a056d529bbc0dd9d811c"
+  },
+  "point_selection": {
+    "minimum_alpha": "ascending saved analytic_alpha, then quadrature_id",
+    "median_alpha": "upper-middle actual QP rank for sixteen rows",
+    "maximum_alpha": "descending endpoint of same saved QP order"
+  },
+  "source_only_state": {
+    "opening_history_result_read": false,
+    "numerical_or_provider_modules_imported": false,
+    "matplotlib_imported": false,
+    "runner_executed": false,
+    "rendered": false,
+    "execution_authorized": false,
+    "root_go_authorized": false
+  },
+  "future_run_limits": {
+    "attempts": 1,
+    "max_wall_seconds": 15,
+    "max_combined_output_bytes": 2097152,
+    "exclusive_output_path": "pgfrag/tmp/review_20261007/mixed93_opening_history_saved_visual/run01"
+  }
+}

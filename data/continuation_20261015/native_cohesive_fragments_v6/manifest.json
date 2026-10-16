@@ -1,0 +1,79 @@
+{
+  "schema": "pgfrag.native_cohesive_fragments.v1",
+  "units": "SI",
+  "files": {
+    "case.json": {
+      "sha256": "390d4775a88ddc5c2a17c132fb394ecc9cefb5ac956886e2b0b00ff855e6bc6c",
+      "bytes": 3234
+    },
+    "cohesive_fragments.py": {
+      "sha256": "539dc189d2010510922acc20e0dd01a225267be2a1d13f5703b54a708d46c220",
+      "bytes": 33535
+    },
+    "control_comparison.json": {
+      "sha256": "5f08b9e4af7b97e418040a0d90f2e4d2a329b14009c1d7864f46aee80cd94fb6",
+      "bytes": 3387
+    },
+    "export_native_fragments.py": {
+      "sha256": "aee320792faf945bbfcdddfca2c404ef95afa9855c483da1f6edc07c42e230b1",
+      "bytes": 9969
+    },
+    "forge_manifest.json": {
+      "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+      "bytes": 6147
+    },
+    "fragments.json": {
+      "sha256": "5020caae1b2d98d7b7a06139958b7c9d033bd5ce82b726d651ebfb2b4932edc2",
+      "bytes": 8943305
+    },
+    "fragment_00.obj": {
+      "sha256": "391bcac49c7ebc320aa656f5f7b128093964911c4361948b517dd12c2fef1cc4",
+      "bytes": 62340
+    },
+    "fragment_01.obj": {
+      "sha256": "4be4fe9342bb8d053e823d92a5456396dad95898d21343406e138d08007fccce",
+      "bytes": 61056
+    },
+    "receipt.json": {
+      "sha256": "c1162285546963f5c7631531cc2530e61427d7ab46a5ffdb156a148a93f8cdb2",
+      "bytes": 3855
+    },
+    "separation.json": {
+      "sha256": "87a4e3c53f80102ee9949c444da68bf68eeb24f66fbe01d55db327685bec2c06",
+      "bytes": 520
+    },
+    "state.npz": {
+      "sha256": "e649c8a0286825f1d0bef645d14498e65ed56e8e93abff5d3900ed30b2e50cc2",
+      "bytes": 143632
+    }
+  },
+  "source": {
+    "run_receipt_sha256": "c1162285546963f5c7631531cc2530e61427d7ab46a5ffdb156a148a93f8cdb2",
+    "frozen_case_sha256": "390d4775a88ddc5c2a17c132fb394ecc9cefb5ac956886e2b0b00ff855e6bc6c",
+    "forge_manifest_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67"
+  },
+  "qualification": {
+    "status": "PREINSERTED_WEAK_SEAM_UNCALIBRATED",
+    "preinserted_weak_seam": true,
+    "material_calibration_status": "UNCALIBRATED",
+    "physical_pass": false,
+    "physical_control_status": "PASSED_NARROW_ELASTIC_COMPLIANCE",
+    "closed_native_topology": true,
+    "mesh_sensitivity": "NOT_ESTABLISHED",
+    "typed_R2_qualification": "NOT_ESTABLISHED",
+    "pretrain_eligible": false
+  },
+  "counts": {
+    "nodes": 1317,
+    "tetrahedra": 4342,
+    "fragments": 2,
+    "paired_failed_facets": 158
+  },
+  "paint": "continuous rest-coordinate recipe; per-face colours are preview only",
+  "limitations": [
+    "prescribed weak plane, uncalibrated material",
+    "linear geometry approximates CAD",
+    "no continuous-time self-intersection proof or contact dynamics",
+    "no global physical/PRETRAIN/R2 pass"
+  ]
+}

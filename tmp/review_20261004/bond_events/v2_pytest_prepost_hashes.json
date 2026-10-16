@@ -1,0 +1,18 @@
+{
+  "schema": "pgfrag.bond_events.prepost_hashes.v1",
+  "before": {
+    "source_sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+    "test_sha256": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e",
+    "raw_fixture_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+  },
+  "after": {
+    "source_sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+    "test_sha256": "5e3adde115d5a4e46fb388213fc8a16197baa7c7f743a5f6e5ddec2e66f2253e",
+    "raw_fixture_sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+  },
+  "unchanged": {
+    "source": true,
+    "test": true,
+    "raw_fixture": true
+  }
+}

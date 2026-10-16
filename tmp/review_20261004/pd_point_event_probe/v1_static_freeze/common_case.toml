@@ -1,0 +1,22 @@
+[geometry]
+horizon_m = 0.003
+description = "3D 5 mm coupon; neighborhood horizon is a declared diagnostic setting"
+
+[material]
+model = "OSB"
+rho_kg_m3 = 2100.0
+E_pa = 5000000000.0
+nu = 0.24
+Gc_j_m2 = 45.0
+calibration_status = "UNVALIDATED_PROTOTYPE"
+provenance = "Illustrative API/solver exercise values; no specimen measurement or calibration"
+
+[solver]
+safety_factor = 0.8
+dt_mode = "AUTO_NATIVE_STABLE_BOUND"
+
+[limits]
+max_points = 512
+max_steps = 5
+max_chunks = 1
+timeout_seconds = 120

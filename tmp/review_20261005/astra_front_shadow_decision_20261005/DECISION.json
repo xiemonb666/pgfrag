@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-05",
+  "status": "DECISION_ONLY_NOT_COUPLED",
+  "finding": "SHARP_VISIBILITY_HAS_OFF_CRACK_GHOST_JUMP_COUNTEREXAMPLE",
+  "preferred_method": "CONTINUOUS_MLS_WITH_TOPOLOGY_RESTRICTED_HEAVISIDE_AND_FRONT_PU_ENRICHMENT",
+  "alternative_method": "CONTINUOUS_3D_DIFFRACTION_SUPPORT_PENDING_FULL_SPECIFICATION",
+  "architecture_B_retained": true,
+  "exact_CPM2018_reproduction_claim": false,
+  "current_visibility_max_claim": "GEOMETRIC_PRIMITIVE",
+  "R2_or_GT_promotion": false,
+  "counterexample": {
+    "proof_type": "ANALYTIC_SHERMAN_MORRISON_NOT_EXECUTED",
+    "triangle": [[0,-1,0],[0,1,0],[-2,0,0]],
+    "switching_source": [-1,0,-1],
+    "query_path": "q(t)=(1+t,0,1)",
+    "other_sources": "q0+a*(1,1,1), q0+a*(1,-1,-1), q0+a*(-1,1,-1), q0+a*(-1,-1,1)",
+    "a": 0.25,
+    "support_radius": 4,
+    "coefficient_values": "switching_source=1, other_sources=0",
+    "left_trace": 0,
+    "right_trace": "ws/[4*w0+ws*(1+8/a^2)] > 0",
+    "both_moment_matrices_full_rank": true
+  },
+  "first_coupled_benchmark": {
+    "type": "FROZEN_EXTRUDED_STRAIGHT_FRONT_MODE_III_ANALYTIC_BVP",
+    "displacement": "u=(0,0,A*sqrt(r)*sin(theta/2)); A=(KIII/mu)*sqrt(2/pi)",
+    "domain": "radius R length L slit cylinder, negative-x radial crack sheet",
+    "outer_boundary": "exact sigma*n on lateral surface AND end caps",
+    "gauge": "six integral rigid motion constraints",
+    "exact_energy": "pi*mu*A^2*R*L/4 = KIII^2*R*L/(2*mu)",
+    "next_benchmark": "FROZEN_INCLINED_PENNY_CRACK_WITH_CURVED_FRONT_CHART_REVIEW",
+    "is_paper_reproduction": false,
+    "numerical_tolerances": "UNSET_MAIN_AGENT_MUST_PREDECLARE",
+    "execution_budget": "UNSET_NO_RUN_AUTHORIZED_BY_THIS_REPORT"
+  },
+  "main_agent_decisions": [
+    "Accept implementation-method change from sharp masked CPM draft to PU enriched EFGM while retaining explicit-surface architecture B",
+    "Accept straight-front Mode III before inclined penny benchmark",
+    "Freeze enriched DOF/provider contract, independent error metrics, quadrature and run budget"
+  ],
+  "not_executed": ["solver", "CAD", "pytest", "production edits", "DOCX edits", "Git mutations", "subagent delegation"],
+  "source_limits": {
+    "Ai_thesis": "Official local PDF and selected chapters inspected; pp128-130 do not establish off-crack H1 conformity",
+    "Moes_1999": "Full primary article text mirror inspected sections3.1,3.3; 2D FE construction, not a reproduced 3D EFGM implementation",
+    "Belytschko_Fleming_1999": "Publisher search extraction abstract/introduction only; corroboration, not full algorithm specification"
+  },
+  "input_sha256": {
+    "pgfrag/experiments/explicit_crack_formulation_20261005/FORMULATION_CONTRACT.md": "56E36E197985E4B829B95090F224E67C7B7A94BB6C977961B1DBB45F21B681EB",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "pgfrag/experiments/explicit_visibility_20261005/visibility3d.py": "9D5097CA33CE899CF788AD43EF0740A34296216A8FD7AA490868C27FFE1EBB03",
+    "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py": "41A5AC6EF6359ED1640EE681C94A3496C18652B29CC72C679B3E37C20DD9AC0D",
+    "pgfrag/tmp/review_20261005/astra_crack_surface_architecture/DECISION.md": "284C444662960B2F15D8AE99D61AED2B25091048FF3C104DCE72D2139F6D3B47",
+    "pgfrag/tmp/review_20261005/explicit_crack_formulation/thesis_ch6_selected_pages.txt": "66352381A60A9CE401084BA9727613A6C9BB689F49B8C4461BB95A68A4F7E84E",
+    "pgfrag/tmp/review_20261005/explicit_crack_formulation/ai_phd_thesis_official.pdf": "51F7480AAECC8E6BA68B148447BE595D5A68E50FB3D33A2A184B377B586740F0"
+  }
+}

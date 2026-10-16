@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/free_cohesive_patch_20261015/frozen_run03/run_native_free_patch.py"
+  ],
+  "case_sha256": "0ae62cb26e22cffd06c0fb358778d52263ac0c687c126d0bcab171e54123a51c",
+  "mesh_sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+  "material_sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666",
+  "runner_sha256": "dae53bff0125eba2f60c625df46528ef245df61c26ada3fb37fd8768864b610f",
+  "contract_sha256": "6168d2c5f9ae7a6686bb78eae7d3654cfa26a3cd94f721a4443b48c4094ca59e",
+  "analyzer_sha256": "204383555f12414ddcfa7ae7b9ae93706f37dc432f95ed98497a6b02f8d7ef91",
+  "test_sha256": "6a942ff3d5c91a69b0386b31691733c114b99e66506f0cd5a646de402c33ae3e",
+  "launcher_sha256": "0630511090ec7f49b870932aa06e90f6a0d2d6fadfd7c20673a999302c5c270f",
+  "total_stability_status": "ESTABLISHED_PARENT_REVIEWED_BOUND",
+  "lambda_max_upper_bound_per_s2": 6.148965883903991e+16,
+  "python": "3.12.15",
+  "solver_attempts": 1,
+  "retry_policy": "none",
+  "started_unix_time_s": 1792057143.4837925
+}

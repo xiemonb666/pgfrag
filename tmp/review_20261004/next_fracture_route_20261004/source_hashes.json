@@ -1,0 +1,95 @@
+{
+  "schema": "pgfrag.next_fracture_route_audit.sources.v1",
+  "report": {
+    "path": "pgfrag/tmp/review_20261004/next_fracture_route_20261004/report.md",
+    "bytes": 6975,
+    "sha256": "de306406d47037d4a13db183a7d645d2ca11518d1038be863191532280a981f6"
+  },
+  "scope": "read-only local-source audit; no solver run; no production edits; no Git; run03 not inspected",
+  "sources": [
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/run_fixture.jl",
+      "bytes": 13349,
+      "sha256": "2468586567a2a777de155febd8b1ad9829016f682ede7b69c5f2f7a5c9952534",
+      "evidence": "L50-L91: current uniform_box/body/material/load; L120-L205: native bond states, terminal-only export; L238-L260: energy/contact/surface UNKNOWN."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/backend.py",
+      "bytes": 42840,
+      "sha256": "8b3577201e0e8e94e747b3c5c3529c2d117d8ceccb729f0d2d2510dd3fd834dc",
+      "evidence": "L90-L99 output capability absences; L615-L630 geometry/contact/lineage/event/energy gaps; L640-L685 validation scope."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "bytes": 18152,
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421",
+      "evidence": "L83-L120 native Body accepts generic matrix positions and vector volumes."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "bytes": 14917,
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa",
+      "evidence": "L288-L304 native bond failure updates bond_active from critical stretch each force evaluation."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "bytes": 12397,
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+      "evidence": "L165-L197 native solve loop and per-step force-density update; no callback parameter in this loop."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/fracture.jl",
+      "bytes": 6507,
+      "sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075",
+      "evidence": "L92-L133 critical stretch Gc parameter relation depends on K and horizon delta."
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+      "bytes": 8223,
+      "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d",
+      "evidence": "Pinned backend version 0.5.4+pgfrag.1; mechanics source files recorded as identical to upstream hashes."
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_capability/run_contract.py",
+      "bytes": 29542,
+      "sha256": "67dd1eb98acc5f5369b9cbf1a9bfbd7f6681068172e537768e788274cb10652d",
+      "evidence": "L318-L335 Akantu extrinsic cohesive with one declared physical interface."
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/COHESIVE_CAPABILITY_20261004.md",
+      "bytes": 12534,
+      "sha256": "feda3dffc27e820603d7bd94de0ada7638d3b54a02aea6938f7e4a14cb0c5a52",
+      "evidence": "L5, L35-L55, L62-L71 actual fixed-interface outcome, energy FAIL/NOT_REACHED, contact-key UNKNOWN/NOT_RUN and limited lineage."
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_bilinear_patch_20261004/run_intrinsic_bilinear_modeI_201_v2.py",
+      "bytes": 15898,
+      "sha256": "f684ffe396f2ad742b8bb0673bf0deb14963382a49eb5431bb659cbcfca5c605",
+      "evidence": "L122-L190 known-interface intrinsic toy setup and all-DOF controlled loading."
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_bilinear_patch_20261004/controlled_intrinsic_bilinear_modeI_201_run02/derived_partial_v4/analysis_partial_v2.json",
+      "bytes": 25897,
+      "sha256": "a2cc0397429f2fc103eb73916aaf37c017149331a466d2c629cee3d1cb777233",
+      "evidence": "L1-L20, L870-L880 run02 timed out after 168/201 frames; final constitutive/energy gates not evaluated."
+    },
+    {
+      "path": "pgfrag/docs/research/INNOVATION_LEDGER.md",
+      "bytes": 23126,
+      "sha256": "957008f5fb755cb995337e90ea8dd1639cbc32dcadc0f46fb7b931fd7fbff952",
+      "evidence": "L27, L85, L141-L173 current physical/independent-remesh gaps, frozen scale/orientation test design, no evidence-based tolerance yet."
+    },
+    {
+      "path": "relicweave-synlab/synlab/fracture/event.py",
+      "bytes": 32407,
+      "sha256": "1680dd5cd9e7fda61b2d10f3e9317eca0f259a2f061490be158116c5c69ddbb0",
+      "evidence": "L206-L300 shared-cut event construction; L364-L440 pairs complementary faces from same discrete cutter."
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/fracture_truth.md",
+      "bytes": 6915,
+      "sha256": "68776d4edd7ad4d553ecaaf3354e79ab137075b06c499f26ca5c543e039e420f",
+      "evidence": "L19-L32 R2 requires two new surfaces, unique source triangles, low ambiguity, material-interior sampling, area, gap and normal gates."
+    }
+  ]
+}

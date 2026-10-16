@@ -1,0 +1,514 @@
+{
+  "schema": "pgfrag.independent_native_vessel_audit.v1",
+  "status": "AUDIT_ARITHMETIC_PASS",
+  "qualification_status": "NOT_PHYSICAL_QUALIFIED",
+  "qualification_reason": "preinserted weak seam and uncalibrated prototype material; numerical identities do not establish physical qualification",
+  "coverage_status": "ALL_NATIVE_STEPS_AND_NODES",
+  "run": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\cohesive_weak_seam_v4",
+    "frozen_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_vessel_20261015\\weak_seam_v4",
+    "solver_steps": 3244,
+    "dt_s": 1.5413070283600494e-08,
+    "total_time_s": 5e-05,
+    "native_node_count": 1317,
+    "bulk_T4_count": 4342,
+    "cohesive_Tri3_count": 158,
+    "cohesive_QP_count": 474,
+    "node_saved_frames": 3245,
+    "node_stride": 1,
+    "all_nodes_every_solver_step_saved": true,
+    "runner_claimed_result_status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC"
+  },
+  "integrity": {
+    "frozen_file_count": 8,
+    "run_start_inventory_count": 9,
+    "case_input_count": 7,
+    "frozen_bytes_match_source_freeze": true,
+    "run_start_inventory_matches_frozen_bytes": true,
+    "case_input_hashes_match_frozen_bytes": true,
+    "result_source_inputs_unchanged_claim_rechecked": true,
+    "frozen_files": {
+      "case.json": {
+        "sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+        "bytes": 3103,
+        "match": true
+      },
+      "cohesive_mesh.py": {
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "bytes": 26147,
+        "match": true
+      },
+      "cohesive_stability.py": {
+        "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "bytes": 19680,
+        "match": true
+      },
+      "cohesive_vessel.py": {
+        "sha256": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+        "bytes": 24139,
+        "match": true
+      },
+      "forge_manifest.json": {
+        "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "bytes": 6147,
+        "match": true
+      },
+      "material.dat": {
+        "sha256": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+        "bytes": 456,
+        "match": true
+      },
+      "mesh.msh": {
+        "sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+        "bytes": 267172,
+        "match": true
+      },
+      "mesh_result.json": {
+        "sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+        "bytes": 1761,
+        "match": true
+      }
+    },
+    "run_start_inventory": {
+      "case.json": {
+        "sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+        "expected_sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+        "match": true
+      },
+      "cohesive_mesh.py": {
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "expected_sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "match": true
+      },
+      "cohesive_stability.py": {
+        "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "expected_sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "match": true
+      },
+      "cohesive_vessel.py": {
+        "sha256": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+        "expected_sha256": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+        "match": true
+      },
+      "forge_manifest.json": {
+        "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "expected_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "match": true
+      },
+      "material.dat": {
+        "sha256": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+        "expected_sha256": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+        "match": true
+      },
+      "mesh.msh": {
+        "sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+        "expected_sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+        "match": true
+      },
+      "mesh_result.json": {
+        "sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+        "expected_sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+        "match": true
+      },
+      "source_freeze.json": {
+        "sha256": "e7db4c1d524498d821fd7e44be38e73574e3710a0c978661dbcb6ebc7e3ec0ee",
+        "expected_sha256": "e7db4c1d524498d821fd7e44be38e73574e3710a0c978661dbcb6ebc7e3ec0ee",
+        "match": true
+      }
+    },
+    "case_inputs": {
+      "mesh.msh": {
+        "sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+        "expected_sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+        "match": true
+      },
+      "mesh_result.json": {
+        "sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+        "expected_sha256": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+        "match": true
+      },
+      "forge_manifest.json": {
+        "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "expected_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "match": true
+      },
+      "material.dat": {
+        "sha256": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+        "expected_sha256": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+        "match": true
+      },
+      "cohesive_vessel.py": {
+        "sha256": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+        "expected_sha256": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+        "match": true
+      },
+      "cohesive_mesh.py": {
+        "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "expected_sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "match": true
+      },
+      "cohesive_stability.py": {
+        "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "expected_sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "match": true
+      }
+    }
+  },
+  "receipt": {
+    "status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC",
+    "file_count": 20,
+    "verified_bytes": 555569764,
+    "all_sha256_and_byte_counts_match": true,
+    "files": {
+      "checkpoint.json": {
+        "bytes": 128,
+        "expected_bytes": 128,
+        "sha256": "99698752f3c60b460a5c55d1222cd764a36ddae97ddce2b7f081956ffed0e266",
+        "expected_sha256": "99698752f3c60b460a5c55d1222cd764a36ddae97ddce2b7f081956ffed0e266",
+        "match": true
+      },
+      "completion.json": {
+        "bytes": 552,
+        "expected_bytes": 552,
+        "sha256": "4fdcf7e9a6e774703f065a9adf031f25a087bdc4b3166349bdee7aee9cf1f20b",
+        "expected_sha256": "4fdcf7e9a6e774703f065a9adf031f25a087bdc4b3166349bdee7aee9cf1f20b",
+        "match": true
+      },
+      "history/contact_traction_Pa.npy": {
+        "bytes": 36915248,
+        "expected_bytes": 36915248,
+        "sha256": "93bc9ccab4d8f306abba8770b10ddae4c30720fd75dc161b977ed36fcccb986c",
+        "expected_sha256": "93bc9ccab4d8f306abba8770b10ddae4c30720fd75dc161b977ed36fcccb986c",
+        "match": true
+      },
+      "history/damage.npy": {
+        "bytes": 12305168,
+        "expected_bytes": 12305168,
+        "sha256": "4fa7f1ecb232d3f9eb8bcb9765a3ca995d3028884cba1794b1f719c621c1370b",
+        "expected_sha256": "4fa7f1ecb232d3f9eb8bcb9765a3ca995d3028884cba1794b1f719c621c1370b",
+        "match": true
+      },
+      "history/delta_max_m.npy": {
+        "bytes": 12305168,
+        "expected_bytes": 12305168,
+        "sha256": "ab6da88b8ea21fa88d7e40356a64118a7362e4cc8cd8088bae7dc22b9461c65e",
+        "expected_sha256": "ab6da88b8ea21fa88d7e40356a64118a7362e4cc8cd8088bae7dc22b9461c65e",
+        "match": true
+      },
+      "history/energy_J.npy": {
+        "bytes": 129928,
+        "expected_bytes": 129928,
+        "sha256": "d421840500a178b0d903d972b3e55c579aa8e6054c1eb104454a02c7c4cbde46",
+        "expected_sha256": "d421840500a178b0d903d972b3e55c579aa8e6054c1eb104454a02c7c4cbde46",
+        "match": true
+      },
+      "history/layout.json": {
+        "bytes": 1231,
+        "expected_bytes": 1231,
+        "sha256": "2468eac6115af8eb1821cc8a1241d0e6336966d1b1ce9a91bf19757e0b67cd83",
+        "expected_sha256": "2468eac6115af8eb1821cc8a1241d0e6336966d1b1ce9a91bf19757e0b67cd83",
+        "match": true
+      },
+      "history/ledger.npy": {
+        "bytes": 727008,
+        "expected_bytes": 727008,
+        "sha256": "c33d9aabbf6327d1316f4ddb4af45359aba15c23be5b2da6d5e5f4c1e08ce1bc",
+        "expected_sha256": "c33d9aabbf6327d1316f4ddb4af45359aba15c23be5b2da6d5e5f4c1e08ce1bc",
+        "match": true
+      },
+      "history/node_saved_steps.npy": {
+        "bytes": 26088,
+        "expected_bytes": 26088,
+        "sha256": "173ce94123643284154e50669cca9463fab81a1baa266500a92b3fc848a2c4cf",
+        "expected_sha256": "173ce94123643284154e50669cca9463fab81a1baa266500a92b3fc848a2c4cf",
+        "match": true
+      },
+      "history/node_state.npy": {
+        "bytes": 410271968,
+        "expected_bytes": 410271968,
+        "sha256": "093c8c838c24d026aeb8c69887cbfee9d8f9081b991c3553e051b9fcf8ada0e9",
+        "expected_sha256": "093c8c838c24d026aeb8c69887cbfee9d8f9081b991c3553e051b9fcf8ada0e9",
+        "match": true
+      },
+      "history/opening_m.npy": {
+        "bytes": 36915248,
+        "expected_bytes": 36915248,
+        "sha256": "3341e484b837b005c4d768215d4a7f8045e7c3c7f0e7f6806cb00142754626b7",
+        "expected_sha256": "3341e484b837b005c4d768215d4a7f8045e7c3c7f0e7f6806cb00142754626b7",
+        "match": true
+      },
+      "history/patch_displacement_x_m.npy": {
+        "bytes": 5503648,
+        "expected_bytes": 5503648,
+        "sha256": "5db0350a5b539a8dfa8d0588a4e0f0512f5e7849ab970c522857c9070b4a82b0",
+        "expected_sha256": "5db0350a5b539a8dfa8d0588a4e0f0512f5e7849ab970c522857c9070b4a82b0",
+        "match": true
+      },
+      "history/traction_Pa.npy": {
+        "bytes": 36915248,
+        "expected_bytes": 36915248,
+        "sha256": "a1b6828d01324a7fcf86b7eca008d426193adb3d17033ecaeeb8194e23dd6fed",
+        "expected_sha256": "a1b6828d01324a7fcf86b7eca008d426193adb3d17033ecaeeb8194e23dd6fed",
+        "match": true
+      },
+      "initial_bound.json": {
+        "bytes": 473,
+        "expected_bytes": 473,
+        "sha256": "f0e4cf85fb45b57cf260e0fabb0acb28133e28fffdecde3d6584f20e79cf9ae5",
+        "expected_sha256": "f0e4cf85fb45b57cf260e0fabb0acb28133e28fffdecde3d6584f20e79cf9ae5",
+        "match": true
+      },
+      "initial_state.npz": {
+        "bytes": 88502,
+        "expected_bytes": 88502,
+        "sha256": "e835da4dd6376280f520268e5a4dbb8e34b5d487211edee324a281e2a7c4db41",
+        "expected_sha256": "e835da4dd6376280f520268e5a4dbb8e34b5d487211edee324a281e2a7c4db41",
+        "match": true
+      },
+      "lineage.json": {
+        "bytes": 3448070,
+        "expected_bytes": 3448070,
+        "sha256": "49ca479a3bab17497cc362c19b510027c913ab63dccfa6d259fb24f9e5398716",
+        "expected_sha256": "49ca479a3bab17497cc362c19b510027c913ab63dccfa6d259fb24f9e5398716",
+        "match": true
+      },
+      "loading.json": {
+        "bytes": 10287,
+        "expected_bytes": 10287,
+        "sha256": "5b7981baf905ba92101250debc1957b7f17bfdf24da2f54f9c3a685fa6794b24",
+        "expected_sha256": "5b7981baf905ba92101250debc1957b7f17bfdf24da2f54f9c3a685fa6794b24",
+        "match": true
+      },
+      "qp_first_full_damage_step.npy": {
+        "bytes": 3920,
+        "expected_bytes": 3920,
+        "sha256": "72c84810349c75f2e34516e31fc7b56a7d5cd56b6bf887337cddde37a986cead",
+        "expected_sha256": "72c84810349c75f2e34516e31fc7b56a7d5cd56b6bf887337cddde37a986cead",
+        "match": true
+      },
+      "result.json": {
+        "bytes": 575,
+        "expected_bytes": 575,
+        "sha256": "d0cf3461fcf55e0d4e7a6be00555db29f7878963b458edc5c402b718405acba7",
+        "expected_sha256": "d0cf3461fcf55e0d4e7a6be00555db29f7878963b458edc5c402b718405acba7",
+        "match": true
+      },
+      "started.json": {
+        "bytes": 1306,
+        "expected_bytes": 1306,
+        "sha256": "44e4b60208831c8696b2b495daa4c3e04fb13990bb847dd9362bfb60f40e721f",
+        "expected_sha256": "44e4b60208831c8696b2b495daa4c3e04fb13990bb847dd9362bfb60f40e721f",
+        "match": true
+      }
+    }
+  },
+  "mesh_and_mass": {
+    "frozen_MSH_node_count": 1212,
+    "frozen_MSH_T4_count": 4342,
+    "frozen_interface_Tri3_count": 158,
+    "native_to_source_coordinates_exact": true,
+    "native_T4_rows_and_local_ordinals_exact_after_ancestry_map": true,
+    "native_cohesive_pairs_match_all_interface_faces": true,
+    "T4_volume_m3": 2.5398821979027247e-06,
+    "T4_lumped_mass_kg": 0.005841729055176267,
+    "saved_native_mass_relative_max_error": 1.0926624702483224e-15,
+    "all_native_DOFs_free": true,
+    "cohesive_face_area_m2": 0.00012562331510181291,
+    "quadrature_area_sum_m2": 0.00012562331510181291,
+    "QP_area_weights_match_face_area_divided_by_three": true
+  },
+  "loading": {
+    "unit_load_matches_saved_initial_input": true,
+    "reference_resultant_N_per_N": [
+      -3.8489177123235407e-16,
+      0.0,
+      0.0
+    ],
+    "reference_torque_Nm_per_N": [
+      0.0,
+      -3.161352730702942e-12,
+      -3.5013164293747198e-12
+    ],
+    "maximum_force_line_yz_reconstruction_error_m": 0.0,
+    "load_factor_matches_frozen_profile": true,
+    "external_work_rebuilt_J": 0.10443290265805376,
+    "native_ledger_external_work_J": 0.10443290265805377,
+    "external_work_max_abs_residual_J": 1.3877787807814457e-17,
+    "external_work_max_relative_residual": 1.3288712134388054e-16
+  },
+  "cohesive_history": {
+    "all_QP_arrays_complete_and_finite": true,
+    "damage_min": 0.0,
+    "damage_max": 1.0,
+    "damage_minimum_time_increment": 0.0,
+    "damage_irreversible": true,
+    "delta_max_min_m": 1e-08,
+    "delta_max_max_m": 0.0004578485904991623,
+    "delta_max_minimum_increment_m": 0.0,
+    "delta_max_irreversible": true,
+    "first_full_damage_step_min": 507,
+    "first_full_damage_step_max": 722,
+    "first_full_damage_steps_match_saved_per_QP": true,
+    "all_QPs_full_at_final_step": true,
+    "actual_discrete_damaged_area_final_m2": 0.00012562331510181297,
+    "Gc_times_actual_discrete_damaged_area_final_J": 0.0009547371947737785,
+    "native_dissipated_energy_final_J": 0.0009545672102122966,
+    "dissipation_vs_Gc_Ah_max_abs_error_J": 1.870148368124597e-07,
+    "dissipation_vs_Gc_Ah_max_relative_to_fracture_energy": 0.0001958809584838393,
+    "dissipation_vs_Gc_Ah_final_relative_to_fracture_energy": 0.00017804330072440294,
+    "native_dissipated_energy_min_J": -1.448929203362886e-23,
+    "native_dissipated_energy_monotone": true,
+    "contact_traction_max_abs_Pa": 0.0,
+    "cohesive_contact_energy_max_abs_J": 0.0,
+    "qp_trapezoidal_work_final_J": 0.000954567210212297,
+    "native_D_plus_reversible_final_J": 0.0009545672102122966,
+    "qp_work_max_abs_residual_J": 7.589415207398531e-19,
+    "qp_work_max_relative_to_fracture_energy": 7.94921916621968e-16,
+    "qp_work_max_relative_to_total_energy": 7.26727968936489e-18,
+    "fracture_energy_normalization_J": 0.0009547371947737785,
+    "total_energy_normalization_J": 0.1044326836423409
+  },
+  "saved_node_state": {
+    "status": "PASS_ALL_STEPS",
+    "saved_node_frames": 3245,
+    "solver_steps": 3244,
+    "all_node_states_each_step": true,
+    "kinetic_energy_max_abs_difference_J": 2.914335439641036e-16,
+    "algorithmic_kinetic_max_abs_difference_J": 2.914335439641036e-16,
+    "bulk_T4_energy_max_abs_difference_J": 7.15573433840433e-18,
+    "momentum_max_abs_difference_kg_m_s": 1.2551334212414222e-17,
+    "angular_momentum_max_abs_difference_kg_m2_s": 8.107031747509714e-20,
+    "external_torque_max_abs_difference_Nm": 4.7982451345518484e-15,
+    "internal_torque_max_abs_difference_Nm": 0.0,
+    "force_balance_max_abs_N": 2.1316282072803006e-14,
+    "force_balance_max_relative_to_force_scale": 1.499046486561817e-15,
+    "native_minus_rebuilt_plain_kinetic_max_abs_J": 4.163336342344337e-17,
+    "bulk_T4_energy_max_relative_to_fracture_scale": 7.494978071007126e-15,
+    "bulk_T4_energy_max_relative_to_native_potential": 1.3419137839124963e-15,
+    "deformation_metrics": {
+      "max_abs_principal_small_strain": 0.000825058087207321,
+      "min_det_F": 0.9994948373861251,
+      "max_polar_rotation_rad": 0.0032680577878352727,
+      "min_principal_stretch": 0.9991749609602347,
+      "max_principal_stretch": 1.0007959488875668
+    },
+    "ledger_force_residual_max_abs_difference_N": 2.0872192862952943e-14
+  },
+  "strict_all_step_dynamics": {
+    "status": "OBSERVED",
+    "all_node_states_each_solver_step": true,
+    "position_recurrence_max_abs_m": 1.3559141773691745e-20,
+    "position_recurrence_relative_to_state_scale": 5.904695250603345e-17,
+    "velocity_recurrence_max_abs_mps": 1.69037960712215e-15,
+    "velocity_recurrence_relative_to_state_scale": 2.0861279810558487e-16,
+    "Ma_minus_internal_minus_external_max_relative_to_force_scale": 1.499046486561817e-15,
+    "algorithmic_kinetic_increment_identity_max_abs_J": 5.699515295484736e-17,
+    "algorithmic_kinetic_increment_identity_relative_to_fracture_energy": 5.969721643488725e-14,
+    "algorithmic_kinetic_increment_identity_relative_to_total_energy": 5.457597273861451e-16,
+    "internal_force_work_plus_delta_U_D_reversible_max_abs_J": 2.1901571325066635e-07,
+    "internal_force_work_balance_relative_to_fracture_energy": 0.00022939895339739154,
+    "internal_force_work_balance_relative_to_total_energy": 2.097195108006109e-06,
+    "external_work_minus_delta_Kalg_U_D_reversible_max_abs_J": 2.1901571325977365e-07,
+    "external_work_balance_relative_to_fracture_energy": 0.00022939895340693062,
+    "external_work_balance_relative_to_total_energy": 2.097195108093316e-06,
+    "native_ledger_external_energy_residual_max_abs_J": 2.1901571347054255e-07,
+    "native_ledger_internal_energy_residual_max_abs_J": 2.190157132541358e-07,
+    "native_ledger_kalg_increment_identity_residual_max_abs_J": 3.8762260545430194e-16
+  },
+  "energy_balance": {
+    "status": "OBSERVED",
+    "reconstructed_external_work_J": 0.10443290265805376,
+    "internal_work_from_saved_nodal_forces_J": -0.0011020536514437258,
+    "material_energy_increase_delta_U_D_reversible_J": 0.0011018346357304768,
+    "bulk_T4_small_strain_energy_final_J": 0.00014726742551818015,
+    "fracture_energy_scale_Gc_times_discrete_damaged_area_J": 0.0009547371947737785,
+    "total_energy_scale_J": 0.10443268364234064,
+    "internal_force_work_balance_relative_to_fracture_energy": 0.00022939895339739154,
+    "internal_force_work_balance_relative_to_total_energy": 2.097195108006109e-06,
+    "external_work_balance_relative_to_fracture_energy": 0.00022939895340693062,
+    "external_work_balance_relative_to_total_energy": 2.097195108093316e-06,
+    "large_kinetic_energy_does_not_set_the_fracture_normalized_acceptance_scale": true
+  },
+  "free_phase_momentum_and_current_torque": {
+    "status": "OBSERVED",
+    "first_free_step": 1622,
+    "first_free_time_s": 2.5e-05,
+    "free_phase_external_force_max_N": 0.0,
+    "linear_momentum_drift_max_kg_m_s": 3.3714452399562916e-17,
+    "angular_momentum_drift_max_kg_m2_s": 6.344540856893238e-10,
+    "angular_momentum_is_reported_as_observed_not_required_exact_under_small_strain_formulation": true,
+    "external_torque_max_norm_Nm": 0.00011700609399095105,
+    "internal_torque_max_norm_Nm": 0.0007417053451470157,
+    "external_torque_at_final_step_Nm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "internal_torque_at_final_step_Nm": [
+      3.483212529317801e-05,
+      0.0002253025804162381,
+      -2.0784477419124616e-05
+    ]
+  },
+  "source_deformation_applicability_gates": {
+    "max_abs_principal_small_strain": {
+      "observed": 0.000825058087207321,
+      "limit": 0.01,
+      "pass": true
+    },
+    "max_polar_rotation_rad": {
+      "observed": 0.0032680577878352727,
+      "limit": 0.05,
+      "pass": true
+    },
+    "min_det_F": {
+      "observed": 0.9994948373861251,
+      "limit": 0.8,
+      "pass": true
+    }
+  },
+  "audit_tolerances": {
+    "mass_relative": 1e-12,
+    "external_work_vs_ledger_relative": 1e-10,
+    "cohesive_work_vs_fracture_energy_relative": 0.01,
+    "dissipation_vs_Gc_times_discrete_area_relative": 0.01,
+    "state_and_force_recurrence_relative": 1e-08,
+    "energy_identity_relative_to_fracture_energy": 0.01,
+    "bulk_T4_energy_relative_to_native_potential": 1e-08
+  },
+  "checks": {
+    "receipt_all_sha256_and_byte_counts_match": true,
+    "frozen_input_bytes_and_run_start_inventory_unchanged": true,
+    "native_initial_mesh_maps_exactly_to_frozen_MSH": true,
+    "T4_rebuilt_mass_matches_saved_native_mass": true,
+    "cohesive_pairs_and_quadrature_area_match_frozen_interface": true,
+    "loading_weights_and_profile_reconstructed": true,
+    "all_native_QP_states_complete_and_finite": true,
+    "damage_irreversible_and_bounded": true,
+    "delta_max_irreversible": true,
+    "first_full_damage_step_matches_every_QP_history": true,
+    "all_QPs_reached_full_damage": true,
+    "native_dissipation_nonnegative_and_monotone": true,
+    "native_dissipation_matches_Gc_times_actual_discrete_damaged_area": true,
+    "all_QP_trapezoidal_traction_opening_work_matches_native_D_plus_reversible": true,
+    "contact_traction_and_contact_energy_are_zero": true,
+    "external_work_rebuilt_from_patch_displacement_and_frozen_weights": true,
+    "all_native_DOFs_free": true,
+    "strict_all_step_node_checks": true,
+    "saved_nodal_K_P_L_and_torques_reconstructed": true,
+    "Ma_equals_internal_plus_external_on_all_free_DOFs": true,
+    "central_difference_position_and_velocity_recurrences": true,
+    "algorithmic_kinetic_increment_identity": true,
+    "internal_force_work_balances_delta_bulk_U_plus_D_plus_reversible": true,
+    "external_work_matches_delta_Kalg_plus_U_plus_D_plus_reversible": true,
+    "independent_bulk_T4_small_strain_energy_matches_native_potential": true,
+    "source_deformation_applicability_gates": true
+  },
+  "failed_checks": [],
+  "limitations": [
+    "This audit checks serialized arithmetic and the discrete linear-elastic model only; a pass is not material calibration or physical qualification.",
+    "Angular momentum and current internal/external torques are reported from saved states. No all-time exact angular-momentum claim is made for the small-strain formulation.",
+    "A run with sparse node_saved_steps reports strict all-step nodal identities as NOT_OBSERVED, even when sampled states and all-step QP histories are available."
+  ],
+  "output_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_vessel_20261015\\outaudit\\weak_seam_v4_run04"
+}

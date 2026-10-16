@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "name": "source",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\energy_ledger.py",
+      "sha256": "6d7cea82c0e1bd105e143e3a3f5324595d2594c99201d9de7a0003d28496ad0e",
+      "bytes": 37240
+    },
+    {
+      "name": "test",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_energy_ledger.py",
+      "sha256": "dfe97f0fe35dd8673f73163c858b1b89668407cd32badc38957a8e4be9cce15c",
+      "bytes": 27940
+    },
+    {
+      "name": "input",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\input\\audit_cases.json",
+      "sha256": "559ddce00f53217e0c0992248d4b9b4078566c0557cc0bf09018e991c12ab81e",
+      "bytes": 3707
+    }
+  ]
+}

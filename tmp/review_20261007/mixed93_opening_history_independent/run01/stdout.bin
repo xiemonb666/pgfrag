@@ -1,0 +1,1 @@
+{"schema": "mixed93_opening_history_independent_result.v1", "status": "NOT_ACCEPTED", "classification": "DIAGNOSTIC_ONLY", "failure": {"gate": "audit", "type": "KeyError", "detail": "'analytic_alpha'"}, "limitations": ["failed saved JSON audit", "no material or growth qualification"]}

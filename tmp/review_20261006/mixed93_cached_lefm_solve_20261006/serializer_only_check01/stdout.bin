@@ -1,0 +1,1 @@
+{"decoded": {"bool": false, "float": 0.25, "int": 3}, "decoded_types": {"bool": "bool", "float": "float", "int": "int"}, "nan_rejected": true, "status": "PASS", "unsupported_rejected": true}

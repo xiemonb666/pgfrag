@@ -1,0 +1,60 @@
+{
+  "scope": "reviewed new coupled-patch attempt",
+  "files": [
+    {
+      "path": "analyze_native_free_patch.py",
+      "bytes": 20186,
+      "sha256": "204383555f12414ddcfa7ae7b9ae93706f37dc432f95ed98497a6b02f8d7ef91"
+    },
+    {
+      "path": "block_2x2x4mm.msh",
+      "bytes": 3605,
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    {
+      "path": "case.json",
+      "bytes": 14923,
+      "sha256": "0ae62cb26e22cffd06c0fb358778d52263ac0c687c126d0bcab171e54123a51c"
+    },
+    {
+      "path": "cohesive_stability.py",
+      "bytes": 19680,
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1"
+    },
+    {
+      "path": "free_patch_contract.py",
+      "bytes": 15472,
+      "sha256": "6168d2c5f9ae7a6686bb78eae7d3654cfa26a3cd94f721a4443b48c4094ca59e"
+    },
+    {
+      "path": "launch_free_patch.sh",
+      "bytes": 331,
+      "sha256": "0630511090ec7f49b870932aa06e90f6a0d2d6fadfd7c20673a999302c5c270f"
+    },
+    {
+      "path": "material.dat",
+      "bytes": 423,
+      "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666"
+    },
+    {
+      "path": "native_zero_step_state.npz",
+      "bytes": 3273,
+      "sha256": "4e2b6f87560ee6b04eec3ae01a7e2f38becf7c6373f674e8bf3bd66f533e842d"
+    },
+    {
+      "path": "root_cohesive_bound.json",
+      "bytes": 2750,
+      "sha256": "5c74688985987ae6862298a1c6a365c74565214bd6b3e80797330050407bfd76"
+    },
+    {
+      "path": "run_native_free_patch.py",
+      "bytes": 32296,
+      "sha256": "eb9da2362e4683c6b04ff832904ef01b0ae081f50e49d2453f00968ab8bf7688"
+    },
+    {
+      "path": "test_source_contract.py",
+      "bytes": 6561,
+      "sha256": "6a942ff3d5c91a69b0386b31691733c114b99e66506f0cd5a646de402c33ae3e"
+    }
+  ]
+}

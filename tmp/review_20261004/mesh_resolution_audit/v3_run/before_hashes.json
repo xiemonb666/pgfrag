@@ -1,0 +1,198 @@
+{
+  "pins": [
+    {
+      "path": "pgfrag/src/pgfrag/mesh_resolution_audit.py",
+      "expected_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "actual_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "expected_bytes": 42919,
+      "actual_bytes": 42919,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tests/test_mesh_resolution_audit.py",
+      "expected_sha256": "cd643e72c4d448bf02597b00a8e636662429f7f55f669f081e28004f46fd4c1e",
+      "actual_sha256": "cd643e72c4d448bf02597b00a8e636662429f7f55f669f081e28004f46fd4c1e",
+      "expected_bytes": 12066,
+      "actual_bytes": 12066,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/scope_and_limits.md",
+      "expected_sha256": "61858d0afee5a0172fff230399d4010af32630b385f337be0aec8f00875aa4ca",
+      "actual_sha256": "61858d0afee5a0172fff230399d4010af32630b385f337be0aec8f00875aa4ca",
+      "expected_bytes": 6022,
+      "actual_bytes": 6022,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v3.diff",
+      "expected_sha256": "8fbd722c5b80ec29aacfad48b24c66895b2f77762aba2643b737ad90d87a9c64",
+      "actual_sha256": "8fbd722c5b80ec29aacfad48b24c66895b2f77762aba2643b737ad90d87a9c64",
+      "expected_bytes": 3494,
+      "actual_bytes": 3494,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/fixture_cases.json",
+      "expected_sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "actual_sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "expected_bytes": 1679,
+      "actual_bytes": 1679,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/mesh_resolution_audit.py",
+      "expected_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "actual_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+      "expected_bytes": 42919,
+      "actual_bytes": 42919,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/test_mesh_resolution_audit.py",
+      "expected_sha256": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66",
+      "actual_sha256": "6ba990536acf4ae925c0ab1d8e59c4d70821e90e3422cbc4d6367e493f988b66",
+      "expected_bytes": 11890,
+      "actual_bytes": 11890,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/scope_and_limits.md",
+      "expected_sha256": "5ea0e43c42602e2e05c42e6ece35a45c4ad615b195c02185c0dd8148f99685c1",
+      "actual_sha256": "5ea0e43c42602e2e05c42e6ece35a45c4ad615b195c02185c0dd8148f99685c1",
+      "expected_bytes": 5331,
+      "actual_bytes": 5331,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/v2.diff",
+      "expected_sha256": "35f3323db55e799be4109b5fc9379fe26e5afa5835192337931ca9398d0dca9a",
+      "actual_sha256": "35f3323db55e799be4109b5fc9379fe26e5afa5835192337931ca9398d0dca9a",
+      "expected_bytes": 40649,
+      "actual_bytes": 40649,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/v2_freeze_manifest.json",
+      "expected_sha256": "320c54492b8cdbbfdc77693a8b13aac0460120ee815201350a6b0776ba112dc8",
+      "actual_sha256": "320c54492b8cdbbfdc77693a8b13aac0460120ee815201350a6b0776ba112dc8",
+      "expected_bytes": 3843,
+      "actual_bytes": 3843,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/fixture_cases.json",
+      "expected_sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "actual_sha256": "a1caa07686d99b9aa3dd8f4ed88780ba6af11ce3c57185dc8634c21b7272344b",
+      "expected_bytes": 1679,
+      "actual_bytes": 1679,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_snapshot/snapshot_manifest.json",
+      "expected_sha256": "5ba8140f5bad01d5fba24f3dd08d3cc89976f9e7ac15dd2cbd4b5cc79362c24a",
+      "actual_sha256": "5ba8140f5bad01d5fba24f3dd08d3cc89976f9e7ac15dd2cbd4b5cc79362c24a",
+      "expected_bytes": 1583,
+      "actual_bytes": 1583,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/argv.json",
+      "expected_sha256": "3ddc16385767c07649b3ebb8be3412ac5eda8544241ca60b09c7b78d2c95b7d4",
+      "actual_sha256": "3ddc16385767c07649b3ebb8be3412ac5eda8544241ca60b09c7b78d2c95b7d4",
+      "expected_bytes": 739,
+      "actual_bytes": 739,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/before_hashes.json",
+      "expected_sha256": "fa4859eab9a10ac4c6fdd71e1ca8d07d1deba7d644a568d646c9213f42c155a1",
+      "actual_sha256": "fa4859eab9a10ac4c6fdd71e1ca8d07d1deba7d644a568d646c9213f42c155a1",
+      "expected_bytes": 2981,
+      "actual_bytes": 2981,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/execution_status.json",
+      "expected_sha256": "04df91321db2acdc2116c5f2a684c79c4a21482fdb44711fcecf4415fcb3d306",
+      "actual_sha256": "04df91321db2acdc2116c5f2a684c79c4a21482fdb44711fcecf4415fcb3d306",
+      "expected_bytes": 133,
+      "actual_bytes": 133,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/exit_code.txt",
+      "expected_sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+      "actual_sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+      "expected_bytes": 3,
+      "actual_bytes": 3,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/junit_case_ids.json",
+      "expected_sha256": "523bd7b9332a1bdf6cc6c8a7131dd98d43ba8719697ad08e50febe16a5d29ca0",
+      "actual_sha256": "523bd7b9332a1bdf6cc6c8a7131dd98d43ba8719697ad08e50febe16a5d29ca0",
+      "expected_bytes": 3524,
+      "actual_bytes": 3524,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/junit.xml",
+      "expected_sha256": "df8d25ccfe9519fd4ec21c34ad340e7e228b4766786f1f9588853f8b22f77a44",
+      "actual_sha256": "df8d25ccfe9519fd4ec21c34ad340e7e228b4766786f1f9588853f8b22f77a44",
+      "expected_bytes": 2428,
+      "actual_bytes": 2428,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/post_hashes.json",
+      "expected_sha256": "341699fb73b2a7a3bdeaa01e76d6c5085d00a977387af8ade2c3ee3395f537ec",
+      "actual_sha256": "341699fb73b2a7a3bdeaa01e76d6c5085d00a977387af8ade2c3ee3395f537ec",
+      "expected_bytes": 3120,
+      "actual_bytes": 3120,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/preflight.json",
+      "expected_sha256": "494b078e72d5daa77eac4e5da9ca349663c1a21606a43ab93b9f0d6112985ced",
+      "actual_sha256": "494b078e72d5daa77eac4e5da9ca349663c1a21606a43ab93b9f0d6112985ced",
+      "expected_bytes": 4043,
+      "actual_bytes": 4043,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/prior_path_diagnostic.json",
+      "expected_sha256": "d36519800a0cd03bdc0a9acbe5e1a2709efb43d5d86b544f5de360d2c1dc7f65",
+      "actual_sha256": "d36519800a0cd03bdc0a9acbe5e1a2709efb43d5d86b544f5de360d2c1dc7f65",
+      "expected_bytes": 484,
+      "actual_bytes": 484,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/run_receipt.json",
+      "expected_sha256": "1db31593f552fae7022318a361406a1f7e0e52cdbd446c07ed03e342874a3ce1",
+      "actual_sha256": "1db31593f552fae7022318a361406a1f7e0e52cdbd446c07ed03e342874a3ce1",
+      "expected_bytes": 1094,
+      "actual_bytes": 1094,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/stderr.txt",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_bytes": 0,
+      "actual_bytes": 0,
+      "matches": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261004/mesh_resolution_audit/v2_run/stdout.txt",
+      "expected_sha256": "761fb5009c54c7e15eeaa629258a5a8928dfca03073a01665f4e7528b657ff86",
+      "actual_sha256": "761fb5009c54c7e15eeaa629258a5a8928dfca03073a01665f4e7528b657ff86",
+      "expected_bytes": 934,
+      "actual_bytes": 934,
+      "matches": true
+    }
+  ],
+  "source_sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9",
+  "test_sha256": "cd643e72c4d448bf02597b00a8e636662429f7f55f669f081e28004f46fd4c1e"
+}

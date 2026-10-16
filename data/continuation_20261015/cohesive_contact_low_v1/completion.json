@@ -1,0 +1,17 @@
+{
+  "steps_completed": 3244,
+  "qp_frames_written": 3245,
+  "node_frames_written": 66,
+  "deformation_maxima_sampled": {
+    "max_abs_principal_small_strain": 8.464707436696763e-07,
+    "max_polar_rotation_rad": 1.4922008236791144e-06,
+    "min_det_F": 0.9999995662605834
+  },
+  "last_metrics": {
+    "max_abs_principal_small_strain": 2.3055958188106656e-08,
+    "min_det_F": 0.9999999844208867,
+    "max_polar_rotation_rad": 5.16191365590357e-08,
+    "min_principal_stretch": 0.999999976944042,
+    "max_principal_stretch": 1.000000014934055
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": "mixed93_opening_history_independent_source_pins.v1",
+  "status": "SOURCE_READY_RUN01_NOT_ACCEPTED_RUN02_PENDING_ROOT_GO",
+  "execution_authorized": false,
+  "root_go": {
+    "authorized": false,
+    "token": null,
+    "authorized_by": null,
+    "authorized_utc": null
+  },
+  "source_files": {
+    "checker": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/check_saved_opening_history.py",
+      "sha256": "878a050026deae1a272cb8fa6a85f25b3fd46bc34166bca6237764f79c68dd55"
+    },
+    "case": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.json",
+      "sha256": "abb863a00c94e7d5d47a190a0f0f56c2b4a972b375c001e2520f9c3cdf3b9043"
+    },
+    "readme": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/README.md",
+      "sha256": "ad5a1e4e9761b79a324e6ec0aa55c465b335cb2795747a39043e2427cd6a5a69"
+    },
+    "design": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/DESIGN.md",
+      "sha256": "d469731e243e3947893440cf9c9188b2a11208a72737d2279ba8b89d43d6f80b"
+    },
+    "capture_wrapper": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/capture_once.py",
+      "sha256": "1f430d42c171fb138d313f00c6278a89dfec16cd8b83eefbc814acedf18b24bb"
+    }
+  },
+  "pending_opening_input_binding": {
+    "result_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+    "result_sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "receipt_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/receipt.json",
+    "receipt_sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925",
+    "independent_output_path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/run02/result.json",
+    "execution": "disabled until separate root review and exact GO"
+  },
+  "preserved_source_snapshots": {
+    "case_before_result_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.pre_result_binding_20261007.json",
+      "sha256": "7e7e426c83b632fc2276e5ce33eec66f78f079e296ef1d150f5fead5696cfde2"
+    },
+    "pins_before_result_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/SOURCE_PINS.pre_result_binding_20261007.json",
+      "sha256": "5524e1d774232c51cc7de050427a1ad037055704cc5485b1d388cd997a26b732"
+    },
+    "checker_before_missing_close_fix": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/check_saved_opening_history.pre_close_fix_20261007.py",
+      "sha256": "089e2ad7337554456f9bd1431860c0984410456b01f96cc58cd36a20d602e0ce"
+    },
+    "case_before_hash_revalidation": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.pre_hash_validation_20261007.json",
+      "sha256": "681edaca75a84c2aa9bc058d289422433ac4de6c0560c268f29f04b81ae27df3"
+    },
+    "pins_before_hash_revalidation": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/SOURCE_PINS.pre_hash_validation_20261007.json",
+      "sha256": "9967fff33d513f31f72ee262f8157b7b9a91f1261ee1cdd5682c742bae75df8d"
+    },
+    "case_before_capture_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.pre_capture_binding_20261007.json",
+      "sha256": "86e9331467754329e2c0b7557fae936f61134aa38236cc8dfb6cc2aa1cb45ecd"
+    },
+    "pins_before_capture_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/SOURCE_PINS.pre_capture_binding_20261007.json",
+      "sha256": "fc2783d2a1b460cb0fde4a156d25c87f2e04d50f4343ab70f393574e2f718617"
+    },
+    "readme_before_capture_contract": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/README.pre_capture_contract_20261007.md",
+      "sha256": "918b30ffa81a5a710304fb6d9806e2bf446e179db59462ef7e5933e171ca5f19"
+    },
+    "design_before_capture_contract": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/DESIGN.pre_capture_contract_20261007.md",
+      "sha256": "5653d384c38413aaf7085ea6d174d7acec5b0312079cfe2e751aa64f8c97f01a"
+    },
+    "checker_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/check_saved_opening_history.py.pre_run02_20261007.snapshot",
+      "sha256": "25ca8e8c77708e5a6c6a09b91cadfa76f893ab90f72fd935ee6a1bf7368ca468"
+    },
+    "wrapper_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/capture_once.py.pre_run02_20261007.snapshot",
+      "sha256": "9a6082d3075f1c4116ba660e4b046bfb91246b035acd83c8360e1d1b9cab3515"
+    },
+    "case_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.json.pre_run02_20261007.snapshot",
+      "sha256": "dc3e30c4c098a7cb74c1ac4b4a4ff1d1be20f2cdd41ea5d8dc5ab74899445d72"
+    },
+    "pins_after_run01_root_go_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/SOURCE_PINS.json.pre_run02_20261007.snapshot",
+      "sha256": "90958ac5d831341e9cd8c7a58c9a54caea23aee25c236942d9483403f0c064d8"
+    },
+    "readme_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/README.md.pre_run02_20261007.snapshot",
+      "sha256": "0056774a2b63818c6cefb2dde1c4eb0171896c5e97d47774c9cc99a158fb223c"
+    },
+    "design_before_run02": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/DESIGN.md.pre_run02_20261007.snapshot",
+      "sha256": "35dedff14d652d0634ea43b32595dac2bb044446f25b3c47ed1a7e486a21c33c"
+    }
+  },
+  "static_contract": {
+    "standard_library_only": true,
+    "reads_npz": false,
+    "imports_producer_or_author": false,
+    "calls_solver_or_eigensolver": false,
+    "opens_providers": false,
+    "numerical_checker_executed": true,
+    "capture_wrapper_written": true,
+    "last_checker_attempt": "run01 NOT_ACCEPTED; KeyError analytic_alpha; no result.json"
+  },
+  "provenance_notes": {
+    "trace_pin_revalidation": {
+      "prior_static_claim": "An earlier report incorrectly asserted that the trace pin matched.",
+      "preserved_pre_correction_case": {
+        "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.pre_hash_validation_20261007.json",
+        "sha256": "681edaca75a84c2aa9bc058d289422433ac4de6c0560c268f29f04b81ae27df3"
+      },
+      "pre_correction_trace_pin_chars": 65,
+      "recomputed_from_source_path": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+      "recomputed_sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+      "producer_saved_disabled_pin_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/SOURCE_PINS_DISABLED_FINAL.snapshot.json",
+      "producer_saved_disabled_pin_sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+      "validation": "SHA-256 was recomputed from source bytes, length asserted as 64, and exact-equality checked against the producer saved disabled source pin.",
+      "status": "CORRECTED_AND_MATCHED"
+    }
+  },
+  "attempt_history": {
+    "run01": {
+      "status": "NOT_ACCEPTED",
+      "addendum_path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/run01_failure_timing_addendum.json",
+      "addendum_sha256": "bf7c5acb2d2c5ffc7014868e2d88d818e4af5de052c11f98914586c7110d7d32",
+      "capture_receipt_sha256": "22aef0373d3653a7e4b10b13d57dc02b3653c044a8038a3fcfdac62c327f2ef0",
+      "result_created": false,
+      "retry_count": 0
+    }
+  }
+}

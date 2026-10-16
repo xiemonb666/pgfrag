@@ -1,0 +1,188 @@
+{
+  "schema": "pgfrag.mixed93_physical_front_next_design.v1",
+  "status": "DESIGN_ONLY_READ_ONLY_REVIEW",
+  "scope": {
+    "only_writable_files": [
+      "pgfrag/tmp/review_20261007/mixed93_physical_front_next_design/DESIGN.md",
+      "pgfrag/tmp/review_20261007/mixed93_physical_front_next_design/PLAN.json"
+    ],
+    "read_only_inputs": [
+      "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/README.md",
+      "pgfrag/experiments/mixed93_cached_lefm_solve_20261006/case.json",
+      "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/README.md",
+      "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/case.json",
+      "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_source_independent/REVIEW.md",
+      "pgfrag/experiments/cohesive_interface_assembly_20261006/README.md",
+      "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+      "pgfrag/experiments/explicit_surface_state_20261005/README.md",
+      "pgfrag/experiments/griffith_front_step_20261006/README.md",
+      "pgfrag/experiments/griffith_front_energy_gate_v2_20261006/README.md",
+      "pgfrag/experiments/fixed_load_front_reanalysis_20261006/README.md",
+      "pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/result.json",
+      "pgfrag/tmp/review_20261006/fixed_load_front_reanalysis_20261006/run01/outer_process_receipt.json",
+      "pgfrag/tmp/review_20261006/tip_aligned_saved_independent/audit.json",
+      "pgfrag/tmp/review_20261006/tip_aligned_quadrature_study_20261006/run01/result.json"
+    ],
+    "prohibited": [
+      "solver or native/provider execution",
+      "NPZ access",
+      "tests",
+      "existing code/case/docx modification",
+      "Git operations",
+      "recursive delegation",
+      "production surface writes"
+    ],
+    "current_fixed_front_budget": {
+      "new_mls_queries_max": 16,
+      "cohesive_assembly_calls_max": 3,
+      "kkt_solves": 1,
+      "scope": "single fixed straight Mode-I front; not a two-state growth budget"
+    }
+  },
+  "review_findings": {
+    "mixed93_actual_case_sha256": "fcc4b46ed101b0f6067a9f3ec10816909c9fa931edd5a8cdde4c7f46cb3f3a71",
+    "mixed93_driver_sha256": "023d730454802ec755df41c9878744aa086cd5b97a8a88e9d5bbd4181b6f1412",
+    "mixed93_case_status": "SOURCE_READY_EXECUTION_DISABLED",
+    "mixed93_classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+    "global_front_layout": "MIXED93_BASE81_GLOBAL12; fixed single straight front benchmark",
+    "toy_fracture_parameters": {
+      "k0_pa_per_m": 100000000,
+      "tpeak_pa": 1000,
+      "gc_j_per_m2": 0.01,
+      "classification": "toy bridge parameters; not calibrated material data"
+    },
+    "fixed_load_modeiii_diagnostic": {
+      "status": "FINITE_CHANGE_RELEASE_DIAGNOSTIC_ONLY_NOT_COMMITTED",
+      "delta_a_m": 0.0005,
+      "delta_potential_j": -2.7331683517067647e-8,
+      "one_sided_area_m2": 5e-6,
+      "G_diagnostic_j_per_m2": 0.005466336703413529,
+      "gc_compared": false,
+      "growth_committed": false
+    },
+    "tip_aligned_diagnostic": {
+      "delta_a_m": 0.0005,
+      "G_delta_a_theta32_j_per_m2": 0.014116681273446048,
+      "G_delta_a_theta64_j_per_m2": 0.01411683052373485,
+      "physical_fracture_status": "UNKNOWN_NOT_ASSESSED",
+      "certified_quadrature_error_bound": false
+    }
+  },
+  "recommended_mainline": [
+    {
+      "sequence": 1,
+      "name": "bind-current-driving-field",
+      "input": "actual parent ExplicitSurfaceState, real solved field, current J result, real Gc provenance",
+      "gate": "same surface/field/source/solver hashes; current coupled mode; contour and path sensitivity checked",
+      "failure": "UNKNOWN or NEEDS_RECOMPUTE; keep parent active"
+    },
+    {
+      "sequence": 2,
+      "name": "propose-one-bounded-strip",
+      "input": "caller-requested geometric advance, +x frame, finite step cap, domain bounds",
+      "gate": "G<Gc arrests; G=Gc holds; G>Gc creates one geometry-only immutable candidate",
+      "failure": "no candidate commit or automatic second step"
+    },
+    {
+      "sequence": 3,
+      "name": "rebuild-candidate-basis-and-geometry",
+      "input": "candidate front geometry and immutable history mapping",
+      "gate": "re-evaluate candidate basis/gradients/MLS/quadrature/assembly; bind new generation/hash; never treat old coefficients as a candidate solution",
+      "failure": "unknown history/basis mapping => UNKNOWN"
+    },
+    {
+      "sequence": 4,
+      "name": "equilibrate-old-and-candidate-under-identical-physical-load",
+      "input": "verified parent equilibrium (or solve it) and candidate reanalysis",
+      "gate": "same real load/material/boundary control; candidate state contains all solved side displacement arrays; converged and stable branch",
+      "failure": "not converged/stable or receipt mismatch => NEEDS_RECOMPUTE; preserve parent"
+    },
+    {
+      "sequence": 5,
+      "name": "close-complete-energy-ledger",
+      "input": "delta stored, external work, chosen fracture dissipation, area, gauge/support work, explicit tolerance basis",
+      "gate": "choose either quasi-static Griffith Gc*delta_area gate or a separate cohesive-history dissipation gate; never count the same cohesive fracture twice",
+      "failure": "missing terms, wrong units, ambiguous total-potential mapping, excess residual, dynamic/mixed/unstable => UNKNOWN or NEEDS_RECOMPUTE"
+    },
+    {
+      "sequence": 6,
+      "name": "one-terminal-state",
+      "input": "candidate-bound current external reanalysis plus selected energy gate",
+      "gate": "only COMMITTED_EXPERIMENTAL_REANALYSIS; retain EXPERIMENTAL_UNCALIBRATED label",
+      "failure": "reject or preserve active parent; no automatic next step"
+    }
+  ],
+  "energy_conventions": {
+    "quasistatic_griffith_gate_v2": {
+      "assumption": "no inertia and no other dissipation",
+      "delta_total_potential": "delta_stored_elastic_energy - external_work_increment",
+      "residual": "external_work_increment - delta_stored_elastic_energy - Gc_delta_area",
+      "tolerance": "abs_tol_J + relative_tol * reference_energy_J",
+      "required": [
+        "finite abs_tol_J >= 0",
+        "finite relative_tol >= 0",
+        "finite reference_energy_J > 0",
+        "units J and m^2",
+        "parent/candidate/reanalyzed-state and solver/source/ledger bindings",
+        "documented tolerance basis plus hash"
+      ],
+      "legacy_delta_potential_bridge": "NOT_BRIDGED"
+    },
+    "cohesive_history_gate": {
+      "residual": "external_work_increment - delta_stored_energy - cohesive_dissipation_increment - explicitly inventoried_other_dissipation",
+      "gc_delta_area": "must not be separately subtracted for the same already-counted cohesive fracture dissipation",
+      "status_in_current_v2": "UNSUPPORTED"
+    },
+    "gauge_work": {
+      "current_identity": "2U - W + g_dot_lambda = 0",
+      "required_resolution": "same zero-target pure gauge with zero work, or audited incremental reaction work included with a derived sign convention; otherwise UNKNOWN"
+    }
+  },
+  "parallelizable_design_work": [
+    {
+      "name": "current-J-receipt-contract",
+      "deliverable": "field/source/solver/parent hash bindings plus current contour/path sensitivity schema and mode check"
+    },
+    {
+      "name": "moving-front-basis-budget",
+      "deliverable": "candidate-tip MLS/basis/quadrature rebuild inventory, reusable-cache proof, bounded query/memory estimates"
+    },
+    {
+      "name": "physical-energy-and-gauge-convention",
+      "deliverable": "sign-reviewed external boundary/support work, stored/cohesive energy and once-counted area definition"
+    },
+    {
+      "name": "external-reanalysis-receipt",
+      "deliverable": "candidate exact-geometry, same-load, both-side displacement and stability/convergence proof binding"
+    }
+  ],
+  "astra_decisions_required": [
+    "Choose Griffith traction-free surface creation with Gc*delta_area or a cohesive-history dissipation gate; current v2 only supports the former and current cohesive parameters are toy.",
+    "Resolve whether the 93 nonzero manufactured gauge target is replaced by the same zero-target rigid gauge for both fixed-load solves or whether physical constraint/support reaction work is measured and included. Do not discard g_dot_lambda."
+  ],
+  "explicitly_not_implemented": [
+    "crack initiation",
+    "front turning or branching",
+    "multiple arbitrary cracks/fronts",
+    "fragment count prediction",
+    "crack speed or dynamic law",
+    "mixed cohesive modes",
+    "snapback continuation",
+    "real-material calibration",
+    "production surface promotion"
+  ],
+  "verification": {
+    "performed": [
+      "read-only source/README/JSON inspection",
+      "PLAN.json parsed successfully after write"
+    ],
+    "not_performed_by_instruction": [
+      "solver/native/provider run",
+      "NPZ access",
+      "test execution",
+      "Git status/diff"
+    ],
+    "receipt": "No test receipt exists for this design-only task; no test was run."
+  }
+}
+

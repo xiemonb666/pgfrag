@@ -1,0 +1,67 @@
+{
+  "schema": "pgfrag.native_point_history.pytest_run.v1",
+  "executable": "C:\\Users\\xiemo\\.local\\bin\\uv.exe",
+  "argv": [
+    "run",
+    "--no-project",
+    "--no-progress",
+    "--with",
+    "pytest",
+    "--python",
+    "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_native_point_history.py"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "environment": {
+    "PYTHONPATH": "src"
+  },
+  "stdout_file": "pytest_stdout.txt",
+  "stderr_file": "pytest_stderr.txt",
+  "exit_code": 0,
+  "after_sha": [
+    {
+      "path": "src/pgfrag/native_point_history.py",
+      "bytes": 45007,
+      "sha256": "cd48dadd82d30a77c375facd57341dca188cdbee4ee6c15fc780e0b62219ef8e"
+    },
+    {
+      "path": "tests/test_native_point_history.py",
+      "bytes": 6331,
+      "sha256": "6d7e2c0236f33366a96711d99f511b894d387c2b1470541a685ff1c1162b33b1"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/input/points.csv",
+      "bytes": 63,
+      "sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/input/metadata.toml",
+      "bytes": 853,
+      "sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/snapshot/summary.toml",
+      "bytes": 618,
+      "sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/snapshot/point_state_history.csv",
+      "bytes": 736,
+      "sha256": "863230e7fa88b4a7b35526f2ad6d5d92fd2a69759f8a66bf61a6f9e8c3b99f09"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/snapshot/directed_bond_state_history.csv",
+      "bytes": 344,
+      "sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0"
+    },
+    {
+      "path": "tmp/review_20261004/native_point_history/fixture/snapshot/canonical_bond_state_history.csv",
+      "bytes": 112,
+      "sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e"
+    }
+  ]
+}

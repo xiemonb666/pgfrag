@@ -1,0 +1,10 @@
+INDEPENDENT_PILOT_AUDIT_BLOCKED TypeError: minimum() takes from 2 to 3 positional arguments but 1 was given
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\free_fracture_pilot_independent_review\pilot_independent_review.py", line 1775, in main
+    report = audit_pilot(audit, receipt_info)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\free_fracture_pilot_independent_review\pilot_independent_review.py", line 722, in audit_pilot
+    clearance = np.minimum(lengths_m[None, :] / 2 - np.abs(xyz), axis=1)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: minimum() takes from 2 to 3 positional arguments but 1 was given
+

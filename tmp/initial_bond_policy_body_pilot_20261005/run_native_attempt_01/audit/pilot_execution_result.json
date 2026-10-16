@@ -1,0 +1,176 @@
+{
+  "attempt_label": "GEOMETRY_FILTER_FIXTURE_ONLY",
+  "status": "NATIVE_BODY_GRAPH_READBACK_PASS_FIXTURE_ONLY",
+  "generator": {
+    "argv": [
+      "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\generate_fixture_policy.py",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles"
+    ],
+    "executable_sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+    "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+    "started_utc": "2026-10-05T12:12:03.9570943+00:00",
+    "ended_utc": "2026-10-05T12:12:04.1332079+00:00",
+    "duration_ms": 172,
+    "timeout_ms": 10000,
+    "timed_out": false,
+    "process_id": 7904,
+    "child_exit_code": 0,
+    "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\generator_stdout.txt",
+    "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\generator_stderr.txt",
+    "stdout_sha256": "18ce3631a14c94f500a3c7b38752e43967aa3d64f90360a872b2d02b331cca59",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "julia": {
+    "argv": [
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+      "--startup-file=no",
+      "--history-file=no",
+      "--threads=1",
+      "--compiled-modules=no",
+      "--project=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\native_body_pilot.jl",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\audit_contract.json",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\native_mask.toml",
+      "e05bb1ece896e39b13d50d8758564cc0d5b233e70be56d848d3dec93c49016fc",
+      "eafeb66c037c42381cb93f35e14157436531e556de7cca3a079713ce78dda451",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\audit_contract.json",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\native_mask.toml",
+      "338ebd01bf2126f3747730f2aaccae1493dfcc98cdda78ee9609642a8c6f2d5f",
+      "c333a796d19ce789d8036d28c5f241a89309740abfe447de8987f365d189bf85",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\native_graph_readback.txt"
+    ],
+    "executable_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+    "environment_overrides": {
+      "JULIA_DEPOT_PATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\depot;C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\depot",
+      "JULIA_PKG_OFFLINE": "true",
+      "JULIA_PKG_PRECOMPILE_AUTO": "0"
+    },
+    "started_utc": "2026-10-05T12:12:04.1838631+00:00",
+    "ended_utc": "2026-10-05T12:12:31.1880632+00:00",
+    "duration_ms": 27004,
+    "timeout_ms": 60000,
+    "timed_out": false,
+    "process_id": 132620,
+    "child_exit_code": 0,
+    "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\julia_stdout.txt",
+    "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\julia_stderr.txt",
+    "graph_receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\native_graph_readback.txt",
+    "stdout_sha256": "b9bc4013fbccb81fbb6e1ddb52ea057cac0e12a313857602d20aea7f09776c03",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "protected_pin_status": "ALL_PINNED_FILES_UNCHANGED",
+  "tree_integrity_status": "ALL_PROTECTED_TREES_UNCHANGED",
+  "artifact_bytes": 940943,
+  "artifact_limit_bytes": 20971520,
+  "fixture_external_pins": [
+    {
+      "label": "positive JSON",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\audit_contract.json",
+      "expected_sha256": "e05bb1ece896e39b13d50d8758564cc0d5b233e70be56d848d3dec93c49016fc",
+      "actual_sha256": "e05bb1ece896e39b13d50d8758564cc0d5b233e70be56d848d3dec93c49016fc"
+    },
+    {
+      "label": "positive TOML",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\positive_mask\\native_mask.toml",
+      "expected_sha256": "eafeb66c037c42381cb93f35e14157436531e556de7cca3a079713ce78dda451",
+      "actual_sha256": "eafeb66c037c42381cb93f35e14157436531e556de7cca3a079713ce78dda451"
+    },
+    {
+      "label": "blocked JSON",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\audit_contract.json",
+      "expected_sha256": "338ebd01bf2126f3747730f2aaccae1493dfcc98cdda78ee9609642a8c6f2d5f",
+      "actual_sha256": "338ebd01bf2126f3747730f2aaccae1493dfcc98cdda78ee9609642a8c6f2d5f"
+    },
+    {
+      "label": "blocked TOML",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\native_mask.toml",
+      "expected_sha256": "c333a796d19ce789d8036d28c5f241a89309740abfe447de8987f365d189bf85",
+      "actual_sha256": "c333a796d19ce789d8036d28c5f241a89309740abfe447de8987f365d189bf85"
+    }
+  ],
+  "post_run_integrity": {
+    "captured_utc": "2026-10-05T12:12:31.8595160+00:00",
+    "pinned_files_equal": true,
+    "protected_single_files": [
+      {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Project.toml",
+        "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+        "equal_to_expected": true
+      },
+      {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Manifest.toml",
+        "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+        "equal_to_expected": true
+      },
+      {
+        "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+        "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+        "equal_to_expected": true
+      },
+      {
+        "path": "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+        "equal_to_expected": true
+      }
+    ],
+    "protected_tree_comparisons": [
+      {
+        "label": "original_vendor",
+        "before_sha256": "d83340d3d6812afd1df64b5beb19d9ef4c53d9b5d3f4a23f823a078a4ffcddc8",
+        "after_sha256": "d83340d3d6812afd1df64b5beb19d9ef4c53d9b5d3f4a23f823a078a4ffcddc8",
+        "equal": true,
+        "before_file_count": 65,
+        "after_file_count": 65,
+        "before_total_bytes": 554702,
+        "after_total_bytes": 554702
+      },
+      {
+        "label": "shared_depot",
+        "before_sha256": "67bf5caaa3d43c3a311f79ef148cd208f35ade303a14ea345677825478d7306b",
+        "after_sha256": "67bf5caaa3d43c3a311f79ef148cd208f35ade303a14ea345677825478d7306b",
+        "equal": true,
+        "before_file_count": 2974,
+        "after_file_count": 2974,
+        "before_total_bytes": 144737124,
+        "after_total_bytes": 144737124
+      },
+      {
+        "label": "run03_project",
+        "before_sha256": "0f092e13c51c7d32905a7623948dc43857164e0b2b5de4eed3be3c4c78307da2",
+        "after_sha256": "0f092e13c51c7d32905a7623948dc43857164e0b2b5de4eed3be3c4c78307da2",
+        "equal": true,
+        "before_file_count": 68,
+        "after_file_count": 68,
+        "before_total_bytes": 628946,
+        "after_total_bytes": 628946
+      },
+      {
+        "label": "run03_depot",
+        "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "equal": true,
+        "before_file_count": 0,
+        "after_file_count": 0,
+        "before_total_bytes": 0,
+        "after_total_bytes": 0
+      }
+    ],
+    "fresh_scratch_depot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\depot",
+    "fresh_scratch_depot_file_count": 0
+  },
+  "execution_status": "NATIVE_BODY_GRAPH_READBACK_PASS_FIXTURE_ONLY",
+  "completed_utc": "2026-10-05T12:12:31.8633987+00:00",
+  "audit_notes": [
+    "Fixture-only two-box policy; external JSON and TOML receipt hashes were checked against actual bytes before Julia.",
+    "Native body and BondSystem only; no BodyChunk, ThreadsBodyDataHandler, solver, force evaluation, CAD, or production job.",
+    "The 20 MiB limit is total scratch artifact bytes, not process RSS.",
+    "Any generator or Julia failure is preserved; this runner performs no retry."
+  ],
+  "runner_script_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_once.ps1",
+  "runner_script_sha256": "e24b78402d098ecb152a8238c1245fd4d17c7cdac791d6e78f2e48c45bcc0e78",
+  "artifact_file_count": 30,
+  "artifact_cap_status": "WITHIN_20_MIB"
+}

@@ -1,0 +1,11 @@
+{
+  "native_initial_node_count": 1212,
+  "native_initial_t4_count": 4342,
+  "cohesive_element_count": 0,
+  "native_initial_nodes_exact_source_order": true,
+  "native_initial_t4_exact_source_order": true,
+  "native_to_source_zero_based": "arange(node_count)",
+  "source_zero_ancestry_exact": true,
+  "all_native_dofs_free": true,
+  "mesh_sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d"
+}

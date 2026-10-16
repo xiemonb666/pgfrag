@@ -1,0 +1,24 @@
+{
+  "all_pins_64_hex_lowercase": true,
+  "audit_invoked": false,
+  "corrected_partial_ledger_pin": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+  "new_adapter_sha256": "f66da67ddfa71af83b25cb95c6160e0757a934a896a4880a847d8f7dda830203",
+  "new_freeze_sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60",
+  "normalized_paths": [
+    "$.retained_stage_files.cell_in_progress.json.sha256",
+    "$.retained_stage_files.cell_ledger.json.sha256",
+    "$.retained_stage_files.material_points.json.sha256",
+    "$.retained_stage_files.parent_execution_receipt.json.sha256",
+    "$.retained_stage_files.request.json.sha256",
+    "$.retained_stage_files.worker_failure.json.sha256",
+    "$.supervisor_summary.sha256",
+    "$.analytic_source.sha256",
+    "$.method_review.sha256",
+    "$.prior_source_snapshot.sha256"
+  ],
+  "normalized_pin_count": 12,
+  "prior_freeze_copy_sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b",
+  "prior_freeze_sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b",
+  "schema": "pgfrag.forge_volume_ingress_freeze_pin_canonicalization.v1",
+  "status": "PIN_CANONICALIZATION_COMPLETE_NOT_EXECUTED"
+}

@@ -1,0 +1,10 @@
+INDEPENDENT_PILOT_AUDIT_BLOCKED IndexError: index 4500 is out of bounds for axis 0 with size 4500
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\free_fracture_pilot_independent_review\run02\pilot_independent_review.py", line 1775, in main
+    report = audit_pilot(audit, receipt_info)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\free_fracture_pilot_independent_review\run02\pilot_independent_review.py", line 1402, in audit_pilot
+    xi, xj = int(grid_indexes[0][i0]), int(grid_indexes[0][j0])
+                                           ~~~~~~~~~~~~~~~^^^^
+IndexError: index 4500 is out of bounds for axis 0 with size 4500
+

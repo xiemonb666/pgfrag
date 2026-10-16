@@ -1,0 +1,57 @@
+{
+  "status": "PILOT_STARTED_ONCE",
+  "started_utc": "2026-10-05T09:54:52.4893633Z",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-u",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\worker.py",
+    "--run-bounded-pilot",
+    "--output-dir",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01"
+  ],
+  "outer_timeout_seconds": 190,
+  "worker_timeout_seconds": 180,
+  "source_freeze_sha256_before": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "input_hashes_before": [
+    {
+      "path": "manifest.json",
+      "sha256": "DF781DC6C818512AF8D66B164288AA0D5991097EA0166B85556119DE2C9FBA41"
+    },
+    {
+      "path": "fields/surface_fields.npz",
+      "sha256": "3526D706C83A37667EDEFE965C9F9C92D550BDFBD090A88B5B10539A98E0835D"
+    },
+    {
+      "path": "geometry/mesh_lineage.npz",
+      "sha256": "3C68077EA376E26DC0710068D9DEAB22423F07F1E04386F1D0EC51271AFCAD8D"
+    },
+    {
+      "path": "geometry/solid.step",
+      "sha256": "5C68BBC29B2B0BC684CC6C551C2769872C4C490D588B9A3EA2CBB98E7F74135E"
+    },
+    {
+      "path": "geometry/surface.npz",
+      "sha256": "79E05B8470A9F327CB9C015E6FEA873A286E16D2A3C88D9756BE0D9D9FCD3117"
+    },
+    {
+      "path": "metadata/face_semantics.json",
+      "sha256": "A5C6A26BA37F02DAE51C2A8083A38B3548A457FE8555452A3959DF8A7101B848"
+    },
+    {
+      "path": "metadata/wall_reference.json",
+      "sha256": "A7033BC9F3742677931B6BE142D5ED42FD871BC6CBB1F08A12682288E6D06B76"
+    },
+    {
+      "path": "validation/geometry.json",
+      "sha256": "B3972C50AA99D10F104471FD69280128A90980E15A8DCBB290BE171BEAC6BD61"
+    }
+  ],
+  "migration_receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261005\\geometry_resume\\migration_binding_result.json",
+  "migration_receipt_sha256_before": "4C20E462F1ACEDB81AB9A1ECDD9D19A4D97359AE2D5A28456B127593D971F860",
+  "output_dir": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01",
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01_supervisor\\stdout.log",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01_supervisor\\stderr.log",
+  "rerun_allowed": false
+}

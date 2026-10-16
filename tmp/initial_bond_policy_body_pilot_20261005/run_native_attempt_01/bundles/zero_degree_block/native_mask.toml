@@ -1,0 +1,997 @@
+
+[transport]
+schema = "pgfrag.native-material-visibility-toml.v1"
+audit_contract_json_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\audit_contract.json"
+audit_contract_json_sha256 = "338ebd01bf2126f3747730f2aaccae1493dfcc98cdda78ee9609642a8c6f2d5f"
+static_contract_status = "VALID"
+native_mask_eligibility = "BLOCKED_ZERO_DEGREE"
+qualification_status = "TRANSPORT_ONLY_NATIVE_UNVERIFIED"
+initialization_authorized = false
+
+[source]
+source_cad_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\fixedcase_source_marker.txt"
+source_cad_sha256 = "2091ec6772be7411e42efa37038017460050c26cbd977fc1cab9edbdcbb830fe"
+classifier_source_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\generate_fixture_policy.py"
+classifier_source_sha256 = "570dba4a4360b1d22b9aea336c4ee4539364c8c7acb9282900c5258bb1488a5d"
+source_hash_status = "MATCHED_ACTUAL_FILE_BYTES"
+source_status = "READY"
+source_accuracy_mm = 0.0
+source_accuracy_basis = "GEOMETRY_FILTER_FIXTURE_ONLY schema placeholder; zero is not a CAD accuracy claim"
+
+[coordinates]
+input_unit = "mm"
+native_unit = "m"
+m_per_input_unit = 0.001
+reference_frame = "fixedcase_reference_mm"
+native_frame = "Peridynamics_Body_position_m"
+native_frame_from_reference_frame_m = [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]
+
+[points]
+payload_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\fixedcase_points.csv"
+payload_sha256 = "0f635481d102e98c4ace79dc880e3cdfc5cbe80fe5a1ee73eac463c113c5fab7"
+order = "exact_payload_row_order"
+point_ids_order_sha256 = "b5d9a726fc1c6fc464f97f80f3b922be5b9eb78f1539b9f3e2408d8ca9594360"
+count = 16
+
+[[points.rows]]
+point_id = 100
+native_index = 1
+position_mm = [0.0, 0.0, 0.0]
+
+[[points.rows]]
+point_id = 105
+native_index = 2
+position_mm = [0.0, 0.0, 1.0]
+
+[[points.rows]]
+point_id = 110
+native_index = 3
+position_mm = [0.0, 1.0, 0.0]
+
+[[points.rows]]
+point_id = 115
+native_index = 4
+position_mm = [0.0, 1.0, 1.0]
+
+[[points.rows]]
+point_id = 104
+native_index = 5
+position_mm = [1.0, 0.0, 0.0]
+
+[[points.rows]]
+point_id = 109
+native_index = 6
+position_mm = [1.0, 0.0, 1.0]
+
+[[points.rows]]
+point_id = 114
+native_index = 7
+position_mm = [1.0, 1.0, 0.0]
+
+[[points.rows]]
+point_id = 103
+native_index = 8
+position_mm = [1.0, 1.0, 1.0]
+
+[[points.rows]]
+point_id = 108
+native_index = 9
+position_mm = [2.5, 0.0, 0.0]
+
+[[points.rows]]
+point_id = 113
+native_index = 10
+position_mm = [2.5, 0.0, 1.0]
+
+[[points.rows]]
+point_id = 102
+native_index = 11
+position_mm = [2.5, 1.0, 0.0]
+
+[[points.rows]]
+point_id = 107
+native_index = 12
+position_mm = [2.5, 1.0, 1.0]
+
+[[points.rows]]
+point_id = 112
+native_index = 13
+position_mm = [3.5, 0.0, 0.0]
+
+[[points.rows]]
+point_id = 101
+native_index = 14
+position_mm = [3.5, 0.0, 1.0]
+
+[[points.rows]]
+point_id = 106
+native_index = 15
+position_mm = [3.5, 1.0, 0.0]
+
+[[points.rows]]
+point_id = 111
+native_index = 16
+position_mm = [3.5, 1.0, 1.0]
+
+[candidate_generation]
+metric = "euclidean_reference_distance"
+horizon_m = 0.0018
+candidate_rule = "exact_pinned_Peridynamics_find_bonds_convention"
+scope = "one_body_one_uniform_horizon"
+
+[counts]
+raw_euclidean_candidate_pairs = 60
+initial_material_bond_pairs = 49
+geometry_excluded_pairs = 11
+unknown_pairs = 0
+
+[hashes]
+pair_map_sha256 = "ee3d673cfdb47e712f14c8eea454c1faa00427552bcba5fd5e7055a77d2d397f"
+mask_sha256 = "d93d619e300b58d69a381596a187421f69b6963fa288833f808a30eb1e7e98a6"
+
+[mask]
+included_pair_count = 49
+geometry_excluded_pair_count = 11
+unknown_pair_count = 0
+unknown_pairs = []
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 104
+native_i = 1
+native_j = 5
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 105
+native_i = 1
+native_j = 2
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 109
+native_i = 1
+native_j = 6
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 110
+native_i = 1
+native_j = 3
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 114
+native_i = 1
+native_j = 7
+
+[[mask.included_pairs]]
+point_i = 100
+point_j = 115
+native_i = 1
+native_j = 4
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 102
+native_i = 14
+native_j = 11
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 106
+native_i = 14
+native_j = 15
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 107
+native_i = 14
+native_j = 12
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 108
+native_i = 14
+native_j = 9
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 111
+native_i = 14
+native_j = 16
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 112
+native_i = 14
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 101
+point_j = 113
+native_i = 14
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 106
+native_i = 11
+native_j = 15
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 107
+native_i = 11
+native_j = 12
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 108
+native_i = 11
+native_j = 9
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 111
+native_i = 11
+native_j = 16
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 112
+native_i = 11
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 102
+point_j = 113
+native_i = 11
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 104
+point_j = 105
+native_i = 5
+native_j = 2
+
+[[mask.included_pairs]]
+point_i = 104
+point_j = 109
+native_i = 5
+native_j = 6
+
+[[mask.included_pairs]]
+point_i = 104
+point_j = 110
+native_i = 5
+native_j = 3
+
+[[mask.included_pairs]]
+point_i = 104
+point_j = 114
+native_i = 5
+native_j = 7
+
+[[mask.included_pairs]]
+point_i = 104
+point_j = 115
+native_i = 5
+native_j = 4
+
+[[mask.included_pairs]]
+point_i = 105
+point_j = 109
+native_i = 2
+native_j = 6
+
+[[mask.included_pairs]]
+point_i = 105
+point_j = 110
+native_i = 2
+native_j = 3
+
+[[mask.included_pairs]]
+point_i = 105
+point_j = 114
+native_i = 2
+native_j = 7
+
+[[mask.included_pairs]]
+point_i = 105
+point_j = 115
+native_i = 2
+native_j = 4
+
+[[mask.included_pairs]]
+point_i = 106
+point_j = 107
+native_i = 15
+native_j = 12
+
+[[mask.included_pairs]]
+point_i = 106
+point_j = 108
+native_i = 15
+native_j = 9
+
+[[mask.included_pairs]]
+point_i = 106
+point_j = 111
+native_i = 15
+native_j = 16
+
+[[mask.included_pairs]]
+point_i = 106
+point_j = 112
+native_i = 15
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 106
+point_j = 113
+native_i = 15
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 107
+point_j = 108
+native_i = 12
+native_j = 9
+
+[[mask.included_pairs]]
+point_i = 107
+point_j = 111
+native_i = 12
+native_j = 16
+
+[[mask.included_pairs]]
+point_i = 107
+point_j = 112
+native_i = 12
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 107
+point_j = 113
+native_i = 12
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 108
+point_j = 111
+native_i = 9
+native_j = 16
+
+[[mask.included_pairs]]
+point_i = 108
+point_j = 112
+native_i = 9
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 108
+point_j = 113
+native_i = 9
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 109
+point_j = 110
+native_i = 6
+native_j = 3
+
+[[mask.included_pairs]]
+point_i = 109
+point_j = 114
+native_i = 6
+native_j = 7
+
+[[mask.included_pairs]]
+point_i = 109
+point_j = 115
+native_i = 6
+native_j = 4
+
+[[mask.included_pairs]]
+point_i = 110
+point_j = 114
+native_i = 3
+native_j = 7
+
+[[mask.included_pairs]]
+point_i = 110
+point_j = 115
+native_i = 3
+native_j = 4
+
+[[mask.included_pairs]]
+point_i = 111
+point_j = 112
+native_i = 16
+native_j = 13
+
+[[mask.included_pairs]]
+point_i = 111
+point_j = 113
+native_i = 16
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 112
+point_j = 113
+native_i = 13
+native_j = 10
+
+[[mask.included_pairs]]
+point_i = 114
+point_j = 115
+native_i = 7
+native_j = 4
+
+[[mask.geometry_excluded_pairs]]
+point_i = 100
+point_j = 103
+native_i = 1
+native_j = 8
+
+[[mask.geometry_excluded_pairs]]
+point_i = 102
+point_j = 114
+native_i = 11
+native_j = 7
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 104
+native_i = 8
+native_j = 5
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 105
+native_i = 8
+native_j = 2
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 107
+native_i = 8
+native_j = 12
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 109
+native_i = 8
+native_j = 6
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 110
+native_i = 8
+native_j = 3
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 114
+native_i = 8
+native_j = 7
+
+[[mask.geometry_excluded_pairs]]
+point_i = 103
+point_j = 115
+native_i = 8
+native_j = 4
+
+[[mask.geometry_excluded_pairs]]
+point_i = 104
+point_j = 108
+native_i = 5
+native_j = 9
+
+[[mask.geometry_excluded_pairs]]
+point_i = 109
+point_j = 113
+native_i = 6
+native_j = 10
+
+[evidence]
+classifier_result_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\fixture_classifier_result.json"
+classifier_result_sha256 = "1b163bbb3af93e64519bf50652df315d4c0b870945a1e222c1c5a94d68ac588a"
+raw_hit_interval_sidecar_path = "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\bundles\\zero_degree_block\\fixture_interval_evidence.json"
+raw_hit_interval_sidecar_sha256 = "2b2c02b5da398dce197acf8a76d4487fb7ef5b29047be02dbadf962854670aa4"
+sidecar_test_nodeid = "GEOMETRY_FILTER_FIXTURE_ONLY::fixed_two_box_rule"
+sidecar_call_index = 1
+visibility_algorithm = "fixed_box_component_membership_fixture_v1"
+
+[native_gate]
+status = "UNVERIFIED"
+raw_candidate_set_reproduced = false
+native_graph_readback = "NOT_RUN"
+initialization_authorized = false
+zero_degree_external_point_ids = [103]
+
+[initial_physics_events]
+evidence_status = "PLANNED_NOT_OBSERVED_NATIVE_NOT_RUN"
+planned_physical_broken_bond_pairs = 0
+geometry_exclusions_are_physics_events = false
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 103
+native_i = 1
+native_j = 8
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 104
+native_i = 1
+native_j = 5
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 105
+native_i = 1
+native_j = 2
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 109
+native_i = 1
+native_j = 6
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 110
+native_i = 1
+native_j = 3
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 114
+native_i = 1
+native_j = 7
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 100
+point_j = 115
+native_i = 1
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 102
+native_i = 14
+native_j = 11
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 106
+native_i = 14
+native_j = 15
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 107
+native_i = 14
+native_j = 12
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 108
+native_i = 14
+native_j = 9
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 111
+native_i = 14
+native_j = 16
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 112
+native_i = 14
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 101
+point_j = 113
+native_i = 14
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 106
+native_i = 11
+native_j = 15
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 107
+native_i = 11
+native_j = 12
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 108
+native_i = 11
+native_j = 9
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 111
+native_i = 11
+native_j = 16
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 112
+native_i = 11
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 113
+native_i = 11
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 102
+point_j = 114
+native_i = 11
+native_j = 7
+classification = "OUT_OR_VOID"
+reason = "fixture void: segment spans the explicit empty x-gap"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 104
+native_i = 8
+native_j = 5
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 105
+native_i = 8
+native_j = 2
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 107
+native_i = 8
+native_j = 12
+classification = "OUT_OR_VOID"
+reason = "fixture void: segment spans the explicit empty x-gap"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 109
+native_i = 8
+native_j = 6
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 110
+native_i = 8
+native_j = 3
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 114
+native_i = 8
+native_j = 7
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 103
+point_j = 115
+native_i = 8
+native_j = 4
+classification = "OUT_OR_VOID"
+reason = "NEGATIVE_TEST_ONLY: forced exclusion to probe zero-degree rejection"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 105
+native_i = 5
+native_j = 2
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 108
+native_i = 5
+native_j = 9
+classification = "OUT_OR_VOID"
+reason = "fixture void: segment spans the explicit empty x-gap"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 109
+native_i = 5
+native_j = 6
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 110
+native_i = 5
+native_j = 3
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 114
+native_i = 5
+native_j = 7
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 104
+point_j = 115
+native_i = 5
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 105
+point_j = 109
+native_i = 2
+native_j = 6
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 105
+point_j = 110
+native_i = 2
+native_j = 3
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 105
+point_j = 114
+native_i = 2
+native_j = 7
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 105
+point_j = 115
+native_i = 2
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 106
+point_j = 107
+native_i = 15
+native_j = 12
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 106
+point_j = 108
+native_i = 15
+native_j = 9
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 106
+point_j = 111
+native_i = 15
+native_j = 16
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 106
+point_j = 112
+native_i = 15
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 106
+point_j = 113
+native_i = 15
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 107
+point_j = 108
+native_i = 12
+native_j = 9
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 107
+point_j = 111
+native_i = 12
+native_j = 16
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 107
+point_j = 112
+native_i = 12
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 107
+point_j = 113
+native_i = 12
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 108
+point_j = 111
+native_i = 9
+native_j = 16
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 108
+point_j = 112
+native_i = 9
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 108
+point_j = 113
+native_i = 9
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 109
+point_j = 110
+native_i = 6
+native_j = 3
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 109
+point_j = 113
+native_i = 6
+native_j = 10
+classification = "OUT_OR_VOID"
+reason = "fixture void: segment spans the explicit empty x-gap"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 109
+point_j = 114
+native_i = 6
+native_j = 7
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 109
+point_j = 115
+native_i = 6
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 110
+point_j = 114
+native_i = 3
+native_j = 7
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 110
+point_j = 115
+native_i = 3
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 111
+point_j = 112
+native_i = 16
+native_j = 13
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 111
+point_j = 113
+native_i = 16
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 112
+point_j = 113
+native_i = 13
+native_j = 10
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"
+
+[[raw_euclidean_candidate_pairs]]
+point_i = 114
+point_j = 115
+native_i = 7
+native_j = 4
+classification = "IN_MATERIAL"
+reason = "fixture component membership: same closed box"

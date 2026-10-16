@@ -1,0 +1,55 @@
+{
+  "execution_authorized": false,
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+  },
+  "limits": {
+    "attempts": 1,
+    "max_combined_output_bytes": 2097152,
+    "max_wall_seconds": 15
+  },
+  "producer_worker_source": {
+    "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+    "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+  },
+  "references": {
+    "case": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/case.json",
+      "sha256": "973e0155859707c6eae38c1d704ca84d640344069027b6ca07419586718263f8"
+    },
+    "readme": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/README.md",
+      "sha256": "256d33f2c57c1dcf81b70f86a870c6a465334d1c64d5ab2cb96859f3a7c22713"
+    },
+    "renderer": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/render_saved_bridge.py",
+      "sha256": "a3e700fa3767b8c2ea74a527d2625851d941c4ac1f9a0453a01efae0e9b0bebb"
+    },
+    "runner": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/run_saved_bridge_visual.py",
+      "sha256": "2a5910d50742a91b1de6fbceffc834d743b01b6dbd51cab956e433cbcdb8db5d"
+    }
+  },
+  "root_go": {
+    "authorized": false,
+    "token": null
+  },
+  "schema": "mixed93_actual_cohesive_saved_visual_pins.v1",
+  "source_only": {
+    "actual_result_opened": true,
+    "result_read_scope": "standard-library JSON metadata only",
+    "matplotlib_imported": false,
+    "rendered": false
+  },
+  "result_metadata_check": {
+    "bytes": 1440429,
+    "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+    "gate_count": 15,
+    "passed_gate_count": 15,
+    "schema": "mixed93_actual_cohesive_bridge_numeric_result.v1",
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "status": "ACCEPTED_DIAGNOSTIC_ONLY"
+  },
+  "status": "SOURCE_READY_RESULT_PINNED_NO_RENDER_REQUESTED"
+}

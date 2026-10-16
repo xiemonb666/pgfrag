@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-04T14:13:23.380Z",
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_native_point_history.py",
+    "tests/test_bond_events.py",
+    "tests/test_energy_ledger.py",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\portable_41cases.xml"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout",
+  "env_overrides": {
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout\\src"
+  },
+  "shell_command": "PYTHONPATH=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout\\src \"C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe\" -m pytest -q tests/test_native_point_history.py tests/test_bond_events.py tests/test_energy_ledger.py --junitxml=\"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\portable_41cases.xml\"",
+  "junit_report": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\portable_41cases.xml",
+  "intended_distinct_case_count": 41
+}

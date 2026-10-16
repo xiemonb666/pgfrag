@@ -1,0 +1,45 @@
+ERROR: LoadError: ArgumentError: Package Peridynamics does not have SHA in its dependencies:
+- You may have a partially installed environment. Try `Pkg.instantiate()`
+  to ensure all packages in the environment are installed.
+- Or, if you have Peridynamics checked out for development and have
+  added SHA as a dependency but haven't updated your primary
+  environment's manifest file, try `Pkg.resolve()`.
+- Otherwise you may need to report an issue with Peridynamics
+Stacktrace:
+  [1] macro expansion
+    @ .\loading.jl:1850 [inlined]
+  [2] macro expansion
+    @ .\lock.jl:270 [inlined]
+  [3] __require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1827
+  [4] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+  [5] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+  [6] require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1820
+  [7] include(mod::Module, _path::String)
+    @ Base .\Base.jl:495
+  [8] _require(pkg::Base.PkgId, env::String)
+    @ Base .\loading.jl:2098
+  [9] __require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1886
+ [10] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+ [11] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+ [12] _require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1877
+ [13] macro expansion
+    @ .\loading.jl:1864 [inlined]
+ [14] macro expansion
+    @ .\lock.jl:270 [inlined]
+ [15] __require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1827
+ [16] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+ [17] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+ [18] require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1820
+in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_01\project\vendor\Peridynamics.jl\src\Peridynamics.jl:1

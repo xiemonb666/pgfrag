@@ -1,0 +1,96 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\render_zero_load_diagnostic.py",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\native_zero_load_geometry_callback.png"
+  ],
+  "bond_wireframe_note": "Sparse deterministic sample of captured active native canonical bonds; visual connectivity only and does not depict fracture.",
+  "canonical_active_pairs_rendered": 99,
+  "canonical_edge_stride": 31,
+  "canonical_pairs_at_step_one": 3062,
+  "canonical_transitions": 0,
+  "directed_state_rows": 12248,
+  "directed_transitions": 0,
+  "freeze_receipt_status": "STATIC_PREFLIGHT_PASSED; ROOT_AUTHORIZED_SINGLE_LAUNCH",
+  "frozen_point_csv_path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+  "frozen_point_csv_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+  "input_sha256": {
+    "canonical_bond_state_history.csv": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3",
+    "canonical_bond_transitions.csv": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692",
+    "directed_bond_state_history.csv": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845",
+    "directed_bond_transitions.csv": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137",
+    "freeze_receipt.json": "99406070711a077bea3bbf10a283421c54691aa9717a9a6274a56ee82907c0ba",
+    "launch_receipt.json": "dcdfed856d6d78eb8d0a97be44bac504a275832505836af8e2147e35607c5bfa",
+    "point_state_history.csv": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175",
+    "stderr.log": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee",
+    "stdout.log": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8",
+    "summary.toml": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+  },
+  "julia_process_exit_code": 0,
+  "launch_receipt_status": "COMPLETED",
+  "matplotlib_version": "3.11.2",
+  "max_png_bytes_requested": 200000,
+  "max_rest_to_current_point_delta_m": 0.0,
+  "max_rest_to_current_point_delta_m_note": "Measured from captured CSV values; no synthetic displacement was added.",
+  "native_stderr_contains_precompile_error": true,
+  "native_stderr_excerpt": "\u250c Error: precompilation errored\n\u2502   exception =\n\u2502    LoadError: ArgumentError: Peridynamics headless backend rejects file-output Job options; use the PGFrag CSV/NPZ result adapter\n\u2502    in expression starting at C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\auxiliary\\precompile_workload.jl:1\n\u2514 @ Peridynamics C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl:160",
+  "native_stdout_completion_line": "PD_POINT_EVENT_PROBE_COMPLETED points=125 steps=1 directed_transitions=0 canonical_transitions=0 dt_s=4.925124976599115e-7",
+  "output_png": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\native_zero_load_geometry_callback.png",
+  "output_png_bytes": 222414,
+  "output_png_sha256": "ef0b1a2eada77ccbc7866462844d98c937bb9c57bb956aee96aa8d5d10e36a11",
+  "png_within_size_limit": false,
+  "point_count_per_step": {
+    "0": 125,
+    "1": 125
+  },
+  "python_version": "3.12.14",
+  "sample_metrics": {
+    "0": {
+      "damage_range": [
+        0.0,
+        0.0
+      ],
+      "displacement_m_range": [
+        0.0,
+        0.0
+      ],
+      "dt_s": 4.925124976599115e-07,
+      "max_displacement_norm_m": 0.0,
+      "max_velocity_norm_m_s": 0.0,
+      "time_s": 0.0,
+      "velocity_m_s_range": [
+        0.0,
+        0.0
+      ]
+    },
+    "1": {
+      "damage_range": [
+        0.0,
+        0.0
+      ],
+      "displacement_m_range": [
+        0.0,
+        0.0
+      ],
+      "dt_s": 4.925124976599115e-07,
+      "max_displacement_norm_m": 0.0,
+      "max_velocity_norm_m_s": 0.0,
+      "time_s": 4.925124976599115e-07,
+      "velocity_m_s_range": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "status": "RENDERED",
+  "steps": [
+    0,
+    1
+  ],
+  "summary_canonical_state_rows": 6124,
+  "summary_directed_state_rows": 12248,
+  "summary_load_kind": "zero_load",
+  "summary_point_input_sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da",
+  "summary_status": "COMPLETED"
+}

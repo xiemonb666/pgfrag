@@ -1,0 +1,59 @@
+{
+  "schema": "mixed93_opening_history_independent_source_pins.v1",
+  "status": "SOURCE_READY_RESULT_BOUND_EXECUTION_DISABLED",
+  "execution_authorized": false,
+  "root_go": {
+    "authorized": false,
+    "token": null,
+    "authorized_by": null,
+    "authorized_utc": null
+  },
+  "source_files": {
+    "checker": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/check_saved_opening_history.py",
+      "sha256": "25ca8e8c77708e5a6c6a09b91cadfa76f893ab90f72fd935ee6a1bf7368ca468"
+    },
+    "case": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.json",
+      "sha256": "681edaca75a84c2aa9bc058d289422433ac4de6c0560c268f29f04b81ae27df3"
+    },
+    "readme": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/README.md",
+      "sha256": "ffb5ad182319fce715bc3a7b9776a85b25af62d621b3fc68daa3e7fe10975aac"
+    },
+    "design": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/DESIGN.md",
+      "sha256": "2ca9528a21e4a2d1ff15d2d663348d856338ff6104ced77696ce47d3cb44c907"
+    }
+  },
+  "pending_opening_input_binding": {
+    "result_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/result.json",
+    "result_sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "receipt_path": "pgfrag/tmp/review_20261007/mixed93_opening_control_20261007/run01/receipt.json",
+    "receipt_sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925",
+    "independent_output_path": null,
+    "execution": "disabled until separate root review and exact GO"
+  },
+  "preserved_source_snapshots": {
+    "case_before_result_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/case.pre_result_binding_20261007.json",
+      "sha256": "7e7e426c83b632fc2276e5ce33eec66f78f079e296ef1d150f5fead5696cfde2"
+    },
+    "pins_before_result_binding": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/SOURCE_PINS.pre_result_binding_20261007.json",
+      "sha256": "5524e1d774232c51cc7de050427a1ad037055704cc5485b1d388cd997a26b732"
+    },
+    "checker_before_missing_close_fix": {
+      "path": "pgfrag/tmp/review_20261007/mixed93_opening_history_independent/check_saved_opening_history.pre_close_fix_20261007.py",
+      "sha256": "089e2ad7337554456f9bd1431860c0984410456b01f96cc58cd36a20d602e0ce"
+    }
+  },
+  "static_contract": {
+    "standard_library_only": true,
+    "reads_npz": false,
+    "imports_producer_or_author": false,
+    "calls_solver_or_eigensolver": false,
+    "opens_providers": false,
+    "numerical_checker_executed": false
+  }
+}

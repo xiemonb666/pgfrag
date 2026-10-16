@@ -1,0 +1,109 @@
+{
+  "schema": "mixed93_mechanics_objectivity_final_source_review.v1",
+  "case_id": "mixed93_mechanics_objectivity_20261007",
+  "disposition": "SOURCE_ACCEPTED_DIAGNOSTIC_ONLY_WITH_RECORD_CONSTRUCTION_BLOCKER",
+  "numeric_execution_status": "BLOCKED_BY_CASE_AUTHORIZATION_FALSE",
+  "review_mode": "STATIC_SOURCE_ONLY",
+  "provider_calls": 0,
+  "field_evaluations": 0,
+  "assemblies": 0,
+  "solves": 0,
+  "tests_run": 0,
+  "npz_payload_opened_or_parsed": false,
+  "npz_byte_hash_verified_only": true,
+  "identity": {
+    "adapter_path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/mechanics_objectivity_adapter.py",
+    "adapter_sha256": "f9b35bd271e1ac9e86bedb813435f3a0b9b045bc84f4b1e1e56c1f10244c346f",
+    "adapter_lines": 321,
+    "case_path": "pgfrag/experiments/mixed93_mechanics_objectivity_20261007/CASE_DRAFT.json",
+    "case_sha256": "a189527e639190192312dd8e9685d493f2b241aaed7680c2979e42a63390574e",
+    "source_pins_path": "pgfrag/tmp/review_20261007/mixed93_mechanics_objectivity_20261007/source_pins.json",
+    "source_pins_sha256": "2815ceb641c56568057793a8f345d7751b43f43b4ecadda7530f3d422c320f69",
+    "pin_entries": 17,
+    "pin_entries_matching": 17,
+    "pin_mismatches": [],
+    "case_authorization": {
+      "numeric_execution_authorized": false,
+      "execution_authorization_authorized": false,
+      "root_go_token_present": false
+    },
+    "prior_independent_review_preserved": true
+  },
+  "source_assessment": {
+    "rigid_transform": "Q=Rz(0.37)Rx(-0.23), t=(0.003,-0.007,0.004) m; proper-rotation check is present",
+    "coordinate_and_frame_pushforward": "source/volume/boundary points, normals, body/front/crack directions, H, origin, tip, MLS origin, and moment center are transformed; length and material scalars remain fixed",
+    "local_crack_frame": "local coordinates use the baseline tip/frame and remain invariant; local branches are evaluated in those coordinates; local gradients are mapped to world using transformed H",
+    "voigt": "engineering strain shear entries are halved to form epsilon tensors; stress shear entries are copied; each tensor is rotated with Q T Q^T",
+    "mechanics_maps": {
+      "A": "I_31 kron Q",
+      "B": "diag(Q,Q)",
+      "q_prime": "A q",
+      "K_prime": "A K A^T; fresh assembly is performed",
+      "C_prime": "B C A^T",
+      "f_prime": "A f",
+      "lambda_prime": "B lambda using restored physical multipliers",
+      "gauge_center": "c'=Qc+t and r=x-c"
+    },
+    "wrench": "F'=QF; centered M_c'=Q M_c; origin M_0'=Q M_0+t cross F'; residual scales use integral |traction| dA and R times that quantity"
+  },
+  "runtime_blocker": {
+    "id": "B1",
+    "severity": "BLOCKS_RESULT_RETURN",
+    "location": "mechanics_objectivity_adapter.py:311",
+    "finding": "record serialization accesses FrameState.mls_origin_world_m, but FrameState has no such field. make_frame_state computes mls_origin and stores it only in mls_config.",
+    "effect": "A capture reaching record construction raises AttributeError after fresh assemblies, spectrum checks, KKT solves, and gate comparisons, before returning a record.",
+    "narrow_fix_options": [
+      "add mls_origin_world_m to FrameState and populate it with the computed transformed origin",
+      "serialize frame.mls_config.reference_origin instead"
+    ],
+    "executed_or_runtime_reproduced": false
+  },
+  "private_helper_contracts": {
+    "_physical_moment_matrix": {
+      "call": "(np, values, relative_xyz, weights, radius)",
+      "returns": "(C shape 6x93, volume scalar, zero center vector)",
+      "adapter_use": "correct arity; passes xyz-center so the helper's fixed-zero relative coordinate is valid"
+    },
+    "_direct_physical_moments": {
+      "call": "(np, displacement, relative_xyz, weights, radius, volume)",
+      "returns": "six physical moments",
+      "adapter_use": "correct arity and relative coordinates"
+    },
+    "_scaled_spectrum_gate": {
+      "call": "(np, K)",
+      "returns": "(Kscaled, scale_vector, eigenvalues, metrics)",
+      "adapter_use": "correct arity; requires passed=true, 6 zero modes, 87 positive modes, 0 significant negative modes"
+    },
+    "_solve_case": {
+      "call": "(np, K, Kscaled, C, f, scale_vector, g)",
+      "returns": "(q shape 93, restored physical lambda shape 6, solve metrics, arrays)",
+      "adapter_use": "correct arity; source helper enforces KKT backward, physical weak, gauge, and energy-identity errors <= 1e-9 or raises"
+    },
+    "_reconstruct_field": {
+      "call": "(np, values, gradients, q, D)",
+      "returns": "(displacement n-by-3, engineering strain n-by-6, stress n-by-6, batch sizes)",
+      "adapter_use": "correct arity and shapes consumed"
+    }
+  },
+  "workload_contract": {
+    "states": 2,
+    "mls_rows_per_state": 1280,
+    "mls_rows_total": 2560,
+    "chunks_per_state": [256, 256, 256, 256, 256],
+    "analytic_boundary_field_evaluations_total": 1536,
+    "fresh_raw_K_C_f_assemblies": 2,
+    "fresh_spectrum_checks": 2,
+    "independent_KKT_solves_99x99": 2,
+    "arithmetic_consistent": true,
+    "actual_workload_measured": false
+  },
+  "diagnostic_limits": {
+    "zero_gauge_target_means_nonzero_g_transform_is_not_exercised": true,
+    "capture_caller_must_verify_source_pins_and_dependency_origins": true,
+    "relative_source_cloud_orientation_bias": "UNKNOWN",
+    "quadrature_orientation_or_rule_sensitivity": "UNKNOWN",
+    "tetrahedral_mesh_direction_bias": "UNKNOWN",
+    "crack_front_or_full_path_bias": "UNKNOWN",
+    "material_or_crack_growth_qualification": "UNKNOWN"
+  }
+}

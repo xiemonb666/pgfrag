@@ -1,0 +1,15 @@
+{
+  "independent_method": "rho * abs(det(T4 edge matrix)) / 6, equally lumped to all four nodes",
+  "nodes_checked": 1212,
+  "native_components_checked": 3636,
+  "native_total_mass_kg_component0": 0.005841729055176267,
+  "independent_total_mass_kg": 0.005841729055176267,
+  "native_mass_com_xyz_m": [
+    -9.147330067137216e-09,
+    2.8477052291999624e-10,
+    4.0193853728306067e-05
+  ],
+  "max_abs_per_node_component_mass_difference_kg": 1.1858461261560205e-20,
+  "max_relative_per_node_component_mass_difference": 1.8608505849524902e-15,
+  "all_node_mass_pass": true
+}

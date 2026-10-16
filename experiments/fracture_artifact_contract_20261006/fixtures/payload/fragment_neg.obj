@@ -1,0 +1,9 @@
+# synthetic closed tetra fixture; coordinates in m
+v 0 0 0
+v 0.001 0 0
+v 0 0.001 0
+v 0.0002 0.0002 -0.001
+f 1 2 3
+f 1 4 2
+f 2 4 3
+f 3 4 1

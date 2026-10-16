@@ -1,0 +1,75 @@
+{
+  "schema": "pgfrag.reference_v6_native_initialization_preflight_budget.v1",
+  "status": "WHOLE_OUTPUT_FORECAST_PASS_RUN_NOT_STARTED",
+  "native_solver_execution_started": false,
+  "solver_steps_forecast_as_executed": 0,
+  "solver_history_arrays_allocated": false,
+  "classification": "COST_INITIALIZATION_ONLY_UNVALIDATED; PREINSERTED_WEAK_SEAM_UNCALIBRATED",
+  "input_freeze": {
+    "case_sha256": "2954e053b46af8aa5cee977c29a762f37749d739893933391aa5eb2a6dbc6788",
+    "case_bytes": 15778,
+    "frozen_input_hashes": {
+      "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+      "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+      "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+      "known_exterior_fid_role_rows.json": "49d3d0b4a7546ff269d0d865c92d34b15a895db3406fc954b67817c9d6ac2fcf",
+      "known_exterior_fid_roles.npz": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+      "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+      "mesh.msh": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+      "mesh.original.msh": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+      "mesh_alias_receipt.json": "a5d8e38f834d7b81a7da675d052ad24175787e2b2ed6314a02d04936964f0125",
+      "source_geometry_provenance.json": "3afe16a1b8adbd2b037295aa31cce00e2650a0f209319f7a0025ac15de66c5f5",
+      "source_mesh.npz": "781cf815d05b9db7587ecde192f0b7c27a2947780f814d439a73fc0b24a0e820",
+      "source_mesh_result.json": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924",
+      "t4_cell_row_correspondence.npz": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c"
+    },
+    "current_module_hashes_match_frozen_copies": true,
+    "source_mesh_sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+    "alias_mesh_sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+    "alias_receipt_sha256": "a5d8e38f834d7b81a7da675d052ad24175787e2b2ed6314a02d04936964f0125",
+    "known_fid_role_array_sha256": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+    "t4_cell_row_correspondence_sha256": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c",
+    "forge_asset_manifest_copied": false,
+    "runner_script_hashes": {
+      "prepare_preflight.py": "e6e6fb4715b1add5abbf2cdf5f3790877f19a2dcc22c4a0c346c12ce76778a15",
+      "run_preflight.ps1": "7b847cb215b161abb7e88231fe2707562e76c203d9124301615a1561bd5a56b4",
+      "run_native_preflight.sh": "6a48e5b790393e8e2aa17eb64480826490346e00617fe7cfceb2e6bae2d0666a"
+    },
+    "audit_script_sha256": "144e3f4a2a1067421846eb81781dc09fa43771f19300a714744b714764522989",
+    "audit_script_bytes": 49913
+  },
+  "native_preflight_output_forecast": {
+    "synthetic_lineage": {
+      "synthetic_exact_lineage_bytes": 67911446,
+      "lineage_forecast_bytes_with_10pct_plus_1MiB_margin": 75751167,
+      "synthetic_input_node_count": 25579,
+      "synthetic_native_node_count": 25860,
+      "synthetic_bulk_T4_count": 86624,
+      "synthetic_cohesive_Tri3_count": 356,
+      "synthetic_interface_node_count_duplicated": 281,
+      "all_lineage_rows_use_input_tet_row_and_local_vertex_order": true,
+      "synthetic_material_density_kg_m3": 2300.0
+    },
+    "lineage_forecast_bytes": 75751167,
+    "history_cap_bytes": 67108864,
+    "history_cap_scope": "history arrays only; preflight_only returns before history allocation; stride forecasts recomputed independently after the attempt",
+    "native_history_bytes_forecast": 0,
+    "non_lineage_native_output_allowance_bytes": 25165824,
+    "forecast_report_self_allowance_bytes": 2097152,
+    "all_prepared_input_and_script_bytes": 66375836,
+    "whole_inputs_and_outputs_forecast_bytes": 169389979,
+    "whole_inputs_and_outputs_cap_bytes": 268435456,
+    "remaining_budget_bytes": 99045477,
+    "pass": true,
+    "no_runtime_or_solver_cost_claim": true
+  },
+  "actual_v6_mesh_counts": {
+    "MSH_nodes": 25579,
+    "T4": 86624,
+    "interface_Tri3": 356,
+    "exterior_Tri3": 44182,
+    "source_face_ids": 16,
+    "partition_volumes": 2
+  },
+  "one_attempt_policy": "Exactly one native Akantu initialization-only invocation; preserve any failure and do not retry, retune, or change parameters."
+}

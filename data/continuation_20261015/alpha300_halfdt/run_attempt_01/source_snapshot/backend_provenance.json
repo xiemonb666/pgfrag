@@ -1,0 +1,150 @@
+{
+  "backend_id": "peridynamics_jl_headless_0_5_4",
+  "backend_version": "0.5.4+pgfrag.1",
+  "headless_changed_source_files": [
+    {
+      "fork_sha256": "19bbb3cc000907b2f8264ec2cb1a85ac1cc8cfad6a15a22995fe4eea4c76bb0a",
+      "path": "vendor/Peridynamics.jl/src/auxiliary/io.jl",
+      "role": "headless VTK/IO surface only",
+      "upstream_sha256": "55f85f0b185df57f66f7f2e8fcddb86bdfabaaf0d91f0ce21be35a0c26f06ab8"
+    },
+    {
+      "fork_sha256": "6b44e29743dda45e272033c08f985cfbeed91e9f83821b02a2a25549e9c314e1",
+      "path": "vendor/Peridynamics.jl/src/core/job.jl",
+      "role": "headless VTK/IO surface only",
+      "upstream_sha256": "b495ef0eb3d5bd4ca9e956918118880b550279f9135e87fbac1e18b329833173"
+    },
+    {
+      "fork_sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116",
+      "path": "vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+      "role": "headless VTK/IO surface only",
+      "upstream_sha256": "f341855e3eac7fcf4ac7ffa139150c9f9c171c49ba6ad1bd146285422355d5f5"
+    },
+    {
+      "fork_sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4",
+      "path": "vendor/Peridynamics.jl/src/discretization/body_chunk.jl",
+      "role": "headless VTK/IO surface only",
+      "upstream_sha256": "e93ec9f1c56e880bdeac9dccd6c7b673d4ab26d7e649a727678e004d56309da4"
+    },
+    {
+      "fork_sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb",
+      "path": "vendor/Peridynamics.jl/src/Peridynamics.jl",
+      "role": "headless VTK/IO surface only",
+      "upstream_sha256": "9ffcd31aa6a09e74a8c894b9b58b21a7ebf1b5e0ec125f39c97beaea73fb9419"
+    }
+  ],
+  "adapter_runner": {"path": "run_fixture.jl", "sha256": "2468586567a2a777de155febd8b1ad9829016f682ede7b69c5f2f7a5c9952534"},
+  "headless_patch_path": "vendor/patches/peridynamics-0.5.4-headless.patch",
+  "headless_patch_sha256": "33dd180a5d388eb9e6a281e3fefcbe4838b8e1a1b96bb92c52aebefb7529078d",
+  "headless_scope": "Disable VTK/LightXML readers and writers and remove VTK-only cell metadata. No files under physics/** or time_solvers/** differ from the recorded v0.5.4 source hashes.",
+  "mechanics_source_files": [
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/ba_correspondence.jl",
+      "sha256": "f1afac27e2499667cd55d1fa6af7bd6a7f05d1686d850f5061771e0df868652c",
+      "upstream_sha256": "f1afac27e2499667cd55d1fa6af7bd6a7f05d1686d850f5061771e0df868652c"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/bond_based.jl",
+      "sha256": "23c4cb05e348e94eab32a8e1ec8fa411eb246e89b242e201b383e349617a5da0",
+      "upstream_sha256": "23c4cb05e348e94eab32a8e1ec8fa411eb246e89b242e201b383e349617a5da0"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+      "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b",
+      "upstream_sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/constitutive_models.jl",
+      "sha256": "fd9d6ec000cda97ce00fe9034dddaf74db5efbc80ba54f1c8c9b613802056f5d",
+      "upstream_sha256": "fd9d6ec000cda97ce00fe9034dddaf74db5efbc80ba54f1c8c9b613802056f5d"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/continuum_kinematics_inspired.jl",
+      "sha256": "5394f24e61dbc755ae5a37475b496fcb68c28cd05092196fa1129bf6daffc3d4",
+      "upstream_sha256": "5394f24e61dbc755ae5a37475b496fcb68c28cd05092196fa1129bf6daffc3d4"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/correspondence.jl",
+      "sha256": "cbeeedb24cf3bdee319b3cc2d68c72b2fb63d7e0235a6dfd54033294d7e24b9e",
+      "upstream_sha256": "cbeeedb24cf3bdee319b3cc2d68c72b2fb63d7e0235a6dfd54033294d7e24b9e"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/correspondence_rotated.jl",
+      "sha256": "6d2c3a1c3d32100531f44a9c7085cb31bd5c7f59de5cabf15c4072109c5862f9",
+      "upstream_sha256": "6d2c3a1c3d32100531f44a9c7085cb31bd5c7f59de5cabf15c4072109c5862f9"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/dh_bond_based.jl",
+      "sha256": "5a9c8a313396dfc8ababde4dc488a331ed7baedf2de1657e8b86e05e519646cc",
+      "upstream_sha256": "5a9c8a313396dfc8ababde4dc488a331ed7baedf2de1657e8b86e05e519646cc"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/fracture.jl",
+      "sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075",
+      "upstream_sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/generalized_bond_based.jl",
+      "sha256": "47bbad027bf3c30caf39a12cbb6890e8039dee8e5da1f488ba1d3e1f68e929df",
+      "upstream_sha256": "47bbad027bf3c30caf39a12cbb6890e8039dee8e5da1f488ba1d3e1f68e929df"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/initial_conditions.jl",
+      "sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0",
+      "upstream_sha256": "25f5420ae06faf7610b05015465d5a264d346288c8f00aee7d5f934a8f61d2e0"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/material_parameters.jl",
+      "sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab",
+      "upstream_sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846",
+      "upstream_sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/rk_correspondence.jl",
+      "sha256": "ed79647c7e075cb0755d7f973cf45f7e77d808ed0f91a65a9df7095448886c3d",
+      "upstream_sha256": "ed79647c7e075cb0755d7f973cf45f7e77d808ed0f91a65a9df7095448886c3d"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/rk_correspondence_rotated.jl",
+      "sha256": "dda7924cb5b7ed455c45f58a9bcda2c6b26dedbdc9011d52bed627fb41a562cd",
+      "upstream_sha256": "dda7924cb5b7ed455c45f58a9bcda2c6b26dedbdc9011d52bed627fb41a562cd"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/short_range_force_contact.jl",
+      "sha256": "177250862210b0057ced9a2420c54786348de29f034e6be905bcd51ac413f72b",
+      "upstream_sha256": "177250862210b0057ced9a2420c54786348de29f034e6be905bcd51ac413f72b"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/physics/stress.jl",
+      "sha256": "e01883cfda12c83e7336979fa133b285a692f90430bd7590730d995650bfeaf9",
+      "upstream_sha256": "e01883cfda12c83e7336979fa133b285a692f90430bd7590730d995650bfeaf9"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/time_solvers/dynamic_relaxation.jl",
+      "sha256": "b370aac941bae52a90fd340bef888f6242f777251d7c75ec1b004591e05eb937",
+      "upstream_sha256": "b370aac941bae52a90fd340bef888f6242f777251d7c75ec1b004591e05eb937"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/time_solvers/newton_krylov.jl",
+      "sha256": "c09336de44c48b272bfa6dbec2c2ff13cc8f0ee74c80a9e0fba357d251ee8c9b",
+      "upstream_sha256": "c09336de44c48b272bfa6dbec2c2ff13cc8f0ee74c80a9e0fba357d251ee8c9b"
+    },
+    {
+      "path": "vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+      "upstream_sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+    }
+  ],
+  "resource_limits": "local_smoke caps points at 1000, steps at 500, Julia threads at 1, and wall time at 120 seconds.",
+  "schema": "pgfrag.backend.provenance.v1",
+  "upstream_repository": "https://github.com/kaipartmann/Peridynamics.jl",
+  "upstream_source_archive": "third_party/pgfrag-runtime/Peridynamics.jl-v0.5.4-source.tar.gz",
+  "upstream_source_archive_sha256": "1b089cd3ab945b34f31458c0533f2d9d3b90eb69fd51b5d546746c55f30c68df",
+  "upstream_tag": "v0.5.4",
+  "vendored_license_path": "vendor/Peridynamics.jl/LICENSE",
+  "vendored_license_sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e"
+}

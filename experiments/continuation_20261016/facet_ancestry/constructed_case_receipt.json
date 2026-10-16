@@ -1,0 +1,41 @@
+{
+  "case_label": "constructed two T4s sharing one triangle",
+  "case_status": "CONSTRUCTED_ALGORITHM_VALIDATION_ONLY",
+  "eligible_internal_facet_identities": [
+    "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033|17,83,101"
+  ],
+  "empty_snapshot_active_facet_identities": [],
+  "empty_snapshot_missing_eligible_facet_identities": [
+    "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033|17,83,101"
+  ],
+  "event_delta": {
+    "current_active_count": 1,
+    "newly_active_facet_identities": [
+      "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033|17,83,101"
+    ],
+    "persistent_active_facet_identities": [],
+    "previous_active_count": 0,
+    "source_anchor_hash": "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033"
+  },
+  "inserted_snapshot_active_facet_identities": [
+    "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033|17,83,101"
+  ],
+  "inserted_snapshot_missing_eligible_facet_identities": [],
+  "interpretation": "connectivity ancestry only; not a fracture, material-state, QP-order, or solver claim",
+  "native_node_count_after_duplication": 8,
+  "native_node_to_source_node_id": {
+    "0": 101,
+    "1": 17,
+    "2": 83,
+    "3": 44,
+    "4": 129,
+    "5": 17,
+    "6": 83,
+    "7": 101
+  },
+  "physical_fracture_claim": false,
+  "solver_run": false,
+  "source_anchor_hash": "4ebdd351001c82e52c325b869b08be7c2e41654785dfd2b1a90f362777d46033",
+  "source_facet_count": 7,
+  "source_tetrahedron_count": 2
+}

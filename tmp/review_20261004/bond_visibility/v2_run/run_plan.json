@@ -1,0 +1,26 @@
+{
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml=pgfrag/tmp/review_20261004/bond_visibility/v2_run/junit.xml",
+    "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests",
+    "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void",
+    "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits",
+    "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"
+  ],
+  "environment": {
+    "PYTHONPATH": "pgfrag/src",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "stdout_path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/stdout.txt",
+  "stderr_path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/stderr.txt",
+  "junit_path": "pgfrag/tmp/review_20261004/bond_visibility/v2_run/junit.xml",
+  "cache_provider_disabled": true,
+  "retry_count": 0,
+  "started_utc": "2026-10-04T15:39:04.8655132Z"
+}

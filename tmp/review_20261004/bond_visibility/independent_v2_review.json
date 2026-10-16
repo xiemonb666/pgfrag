@@ -1,0 +1,72 @@
+{
+  "review": "bond_visibility_v2_independent_read_only_review",
+  "execution_performed": false,
+  "forbidden_execution_not_performed": ["Python import", "CAD", "STEP", "pytest", "Julia", "solver", "Git"],
+  "pins": {
+    "source_sha256": "3dfa2827a6e5b2e8589c0381e8729b2109092aaa7e30486777e4dfb927b21216",
+    "test_sha256": "ef2820f5813e7b83e433eac443f4063317c828152c85790dd3b98b85eb6e2307",
+    "diff_sha256": "3fd0b7231ee6f28d906f768062c1bec271d4f7cef22ea5f33dd076a8a6512850",
+    "freeze_manifest_sha256": "1b1cf3e7e1df4a8189266a2b4b78f61b0d0832abc332a7e715bbfff611a0e8b9",
+    "active_design_sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9"
+  },
+  "assessment": {
+    "v1_cluster_chain_false_acceptance": "fixed by source inspection",
+    "diagnostic_midpoints_as_eligibility_basis": "no bypass found; unresolved hits take precedence and pair remains UNKNOWN",
+    "numeric_overflow": "vector, hypot length, uncertainty band and doubled threshold, interval widths, interpolation points, and output fields have structured finite guards; tests check JSON allow_nan=false",
+    "recommended_next_step": "Root may authorize one bounded pytest command in design_and_freeze.md after review. This is a module check only, not asset admission or physical PASS."
+  },
+  "findings": [
+    {
+      "id": "V2-P1-NATIVE-ASSET-GATE-ABSENT",
+      "priority": "P1",
+      "kind": "pre_integration_release_blocker",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:731-1040; pgfrag/src/pgfrag/backend.py and assets.py",
+      "finding": "The ledger still reports native graph disconnected and whole_asset_physics_status=NOT_ASSESSED; backend/assets do not call the classifier. No asset-level rejection rule exists for UNKNOWN in critical regions, and no post-filter neighbor/bond/correction/kernel/storage graph is verified.",
+      "impact": "A successful pair ledger cannot admit a real vessel to native solving."
+    },
+    {
+      "id": "V2-P2-SUBNORMAL-MIDPOINT",
+      "priority": "P2",
+      "kind": "supported_numeric_edge_not_runtime_reproduced",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:73-80,498-577,652-659,874-895",
+      "finding": "Half-sum midpoint is stable for huge same-sign inputs but underflows for the smallest positive subnormal: _safe_midpoint(x,x) becomes 0 for x=5e-324. A singleton exact hit at that parameter can move to t=0, be omitted as a cut, and evade tangent detection because no interval ends before the moved event. Under mocked IN endpoint/midpoint states this path can reach IN_MATERIAL; actual OCC behavior at this scale is unverified and internal tolerances may force ON.",
+      "recommendation": "Return low when low==high; return UNKNOWN when a strict representable midpoint does not exist or the tolerance is below coordinate resolution. Add a pure-math and state-control regression."
+    },
+    {
+      "id": "V2-P2-CALLER-ATTESTED-PRECISION-AND-HASH",
+      "priority": "P2",
+      "kind": "source_provenance_gap",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:239-307,311-402",
+      "finding": "Source accuracy/basis remains a caller assertion; OCC subshape tolerances are not read or compared. The actual STEP bytes are compared with caller-supplied expected_sha256, but no trusted manifest binds that digest and candidate point set to the vessel asset.",
+      "impact": "UNKNOWN/native admission remains external; an understated accuracy declaration or wrong self-pinned STEP can still be reported as a valid source for that caller-provided geometry."
+    },
+    {
+      "id": "V2-P2-INVALID-BASIS-NAN-JSON",
+      "priority": "P2",
+      "kind": "serialization_gap_for_invalid_input",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:239-307,987-1018",
+      "finding": "Invalid source_accuracy_basis adds an UNKNOWN reason but is stored and emitted unchanged. If it is float NaN, result serialization with allow_nan=false fails although geometry is fail-closed.",
+      "recommendation": "Normalize invalid basis to None and add a strict JSON regression."
+    },
+    {
+      "id": "V2-P2-OCC-DEGENERATE-HITS-UNRUN",
+      "priority": "P2",
+      "kind": "runtime_validation_gap",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:426-495,642-721; pgfrag/tests/test_bond_visibility.py:153-175,250-437",
+      "finding": "No actual CAD/pytest run was performed. Correct handling of tangent, coincident, shared-edge/vertex and incomplete all-hit results remains dependent on the exact OCC runtime. IsDone=True with NbPnt=0 still yields one midpoint-classified interval, so endpoint/midpoint IN can be eligible if an intersection is missed.",
+      "recommendation": "The bounded hollow-shell/coupon run is the right first check; later add an endpoints-inside tangent path, coincident path, and shared-edge/vertex controls before real asset use."
+    }
+  ],
+  "test_review": {
+    "chain_controls": "Tests assert multi-parameter clusters and short-cavity mocked-IN intervals remain UNKNOWN, diagnostic-only, and noneligible.",
+    "numeric_controls": "Tests cover uncertainty sum/doubled threshold overflow, extreme endpoint-vector overflow, large hit midpoint, and allow_nan=false serialization; they do not exercise subnormal midpoint, hypot near the largest finite length, or extreme interpolation directly.",
+    "execution_status": "Tests are source only and remain unrun."
+  },
+  "v1_design_hash_discrepancy": {
+    "v1_review_claimed_live_design_sha256": "1e943da11387344169d66350dbdb9740db18ed6b245f8e5643c318141884fe2",
+    "v1_archive_design_sha256": "f95c86eada924153ae0c0467e928d765d4d23750dc6abc5759215e5a3a3d227e",
+    "active_v2_design_sha256": "b4d22bbc7079f0ef75a9e501f4e35f7445bdf9439af356a7da7b8379378c39c9",
+    "source_and_test_archive_match": true,
+    "explanation": "The prior review pin refers to the live v1 draft it read; the v1 archive manifest preserves different design bytes. The 1e943 bytes are not present in the archive, so exact textual delta cannot be recovered. The archive was left unchanged."
+  }
+}

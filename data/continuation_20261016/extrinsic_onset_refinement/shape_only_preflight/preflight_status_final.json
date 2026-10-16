@@ -1,0 +1,10 @@
+{
+  "cohesive_checks": 0,
+  "elapsed_wall_seconds": 2.073314878000005,
+  "measure_status": "VERIFIED_COUPON_AFFINE_TRI3",
+  "observation_assemblies": 0,
+  "output_bytes": 54952,
+  "output_cap_bytes": 16777216,
+  "solver_steps": 0,
+  "status": "COMPLETED_ZERO_STEP_SHAPE_ONLY"
+}

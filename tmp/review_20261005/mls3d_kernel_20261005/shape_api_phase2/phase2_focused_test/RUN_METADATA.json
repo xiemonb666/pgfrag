@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "pgfrag/experiments/mls3d_kernel_20261005/test_mls3d_shape.py",
+    "--junitxml=pgfrag/tmp/review_20261005/mls3d_kernel_20261005/shape_api_phase2/phase2_focused_test/junit.xml"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "timeout_ms": 30000,
+  "return_code": 0,
+  "elapsed_ms": 1465,
+  "testcase_count_junit": 7,
+  "stdout_file": "stdout.txt",
+  "stderr_file": "stderr.txt",
+  "junit_file": "junit.xml",
+  "phase1_and_phase2_source_identity": "PASS",
+  "artifact_status": "MATHEMATICAL_PRIMITIVE_ONLY",
+  "coupling_status": "NOT_COUPLED",
+  "fracture_claim": "NONE",
+  "r2_claim": "NONE"
+}

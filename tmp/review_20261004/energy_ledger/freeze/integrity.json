@@ -1,0 +1,32 @@
+{
+  "status": "FROZEN_MATCH",
+  "files": [
+    {
+      "name": "source",
+      "snapshot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\freeze\\source\\energy_ledger.py",
+      "sha256_snapshot": "6580515009ec3717a7f05b91266eab803e7bb191405cd06562595de87a782729",
+      "sha256_before": "6580515009ec3717a7f05b91266eab803e7bb191405cd06562595de87a782729",
+      "sha256_after": "6580515009ec3717a7f05b91266eab803e7bb191405cd06562595de87a782729",
+      "bytes": 27954,
+      "identical_snapshot_before_after": true
+    },
+    {
+      "name": "test",
+      "snapshot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\freeze\\tests\\test_energy_ledger.py",
+      "sha256_snapshot": "f74665600195f0ec566d934911bea21594ac663a5e535fe13aff4dd7ce25a57b",
+      "sha256_before": "f74665600195f0ec566d934911bea21594ac663a5e535fe13aff4dd7ce25a57b",
+      "sha256_after": "f74665600195f0ec566d934911bea21594ac663a5e535fe13aff4dd7ce25a57b",
+      "bytes": 15271,
+      "identical_snapshot_before_after": true
+    },
+    {
+      "name": "input",
+      "snapshot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\freeze\\input\\audit_cases.json",
+      "sha256_snapshot": "0594194e2014559f0ed89ec270d5f121e554741e109c97baf2922a4358f57ba8",
+      "sha256_before": "0594194e2014559f0ed89ec270d5f121e554741e109c97baf2922a4358f57ba8",
+      "sha256_after": "0594194e2014559f0ed89ec270d5f121e554741e109c97baf2922a4358f57ba8",
+      "bytes": 3368,
+      "identical_snapshot_before_after": true
+    }
+  ]
+}

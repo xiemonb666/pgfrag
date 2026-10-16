@@ -1,0 +1,59 @@
+{
+  "ledger_columns": [
+    "time_s",
+    "load_factor_N",
+    "interface_work_J",
+    "external_work_J",
+    "algorithmic_kinetic_J",
+    "momentum_x",
+    "momentum_y",
+    "momentum_z",
+    "angular_momentum_x",
+    "angular_momentum_y",
+    "angular_momentum_z",
+    "external_torque_x_Nm",
+    "external_torque_y_Nm",
+    "external_torque_z_Nm",
+    "ma_minus_f_internal_external_max_N",
+    "position_recurrence_max_m",
+    "velocity_recurrence_max_mps",
+    "external_work_minus_total_alg_J",
+    "max_damage",
+    "min_damage",
+    "internal_work_cumulative_J",
+    "kinetic_alg_increment_identity_residual_J",
+    "internal_work_plus_material_energy_J",
+    "native_minus_nodal_kinetic_J",
+    "internal_current_torque_x_Nm",
+    "internal_current_torque_y_Nm",
+    "internal_current_torque_z_Nm",
+    "max_contact_traction_Pa"
+  ],
+  "energy_columns": [
+    "kinetic",
+    "potential",
+    "dissipated",
+    "reversible",
+    "cohesive contact"
+  ],
+  "node_state_columns": [
+    "displacement_m",
+    "velocity_mps",
+    "acceleration_mps2",
+    "internal_force_N"
+  ],
+  "contact_energy_check_columns": [
+    "independent_quadrature_contact_energy_J",
+    "native_contact_energy_J",
+    "independent_minus_native_J"
+  ],
+  "interface_work_check_columns": [
+    "full_interface_work_J",
+    "cohesive_work_J",
+    "contact_work_J",
+    "cross_work_J"
+  ],
+  "qp_order": "native element-major, three quadrature points per cohesive_3d_6; no averaging",
+  "node_stride": 1,
+  "all_qp_states_retained": true
+}

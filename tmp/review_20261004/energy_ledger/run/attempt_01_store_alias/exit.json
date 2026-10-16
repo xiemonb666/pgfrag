@@ -1,0 +1,5 @@
+{
+  "exit_code": 9009,
+  "command": "-m pytest tests/test_energy_ledger.py -q --tb=short -p no:cacheprovider",
+  "executable": "C:\\Users\\xiemo\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+}

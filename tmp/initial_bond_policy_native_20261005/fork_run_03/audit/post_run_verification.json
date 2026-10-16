@@ -1,0 +1,81 @@
+{
+  "status": "FOCUSED_TESTS_PASS",
+  "julia_run": {
+    "status": "EXIT_0",
+    "started_utc": "2026-10-05T10:43:15.6808588Z",
+    "ended_utc": "2026-10-05T10:43:39.8283670Z",
+    "duration_ms": 24133,
+    "max_runtime_ms": 180000,
+    "timed_out": false,
+    "child_exit_code": 0,
+    "process_id": 124336,
+    "julia_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+    "julia_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "active_project": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project\\Project.toml",
+    "package_source_expected": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl",
+    "depot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\depot;C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\depot",
+    "package_manager_commands": "none",
+    "solver_cad_native_body_or_job": "none",
+    "manifest_semantic_check": "TOML parsed trees equal except Peridynamics.deps; SHA/TOML UUID+version assertions",
+    "focused_test_source": "C:/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/initial_bond_policy_native_20261005/tests/test_initial_bond_policy.jl",
+    "focused_test_source_sha256": "5c40945c0a31460fad662487fa513b3a724e2b4275912906ce5e2adb79d4ef74",
+    "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\audit\\julia_stdout.txt",
+    "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\audit\\julia_stderr.txt",
+    "stdout_sha256": "032375dc0e1adbd897f58da07bc727c0d86d432f93a2eba940ef9dbacf38639b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "actual_package_source_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl",
+  "expected_package_source_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl",
+  "old_test_source_sha256": "34bd2ae1fd5b2e65a756c2754200af28879337e4828bea89fa3763d343cab8d5",
+  "new_test_source_sha256": "5c40945c0a31460fad662487fa513b3a724e2b4275912906ce5e2adb79d4ef74",
+  "testsets": [
+    {
+      "testset": "MPI body handler excludes policy-bearing bodies",
+      "pass": 2,
+      "fail": 0,
+      "error": 0,
+      "broken": 0,
+      "total": 2
+    },
+    {
+      "testset": "initial bond policy transport helpers",
+      "pass": 9,
+      "fail": 0,
+      "error": 0,
+      "broken": 0,
+      "total": 9
+    },
+    {
+      "testset": "full directed candidate comparison and canonical external IDs",
+      "pass": 12,
+      "fail": 0,
+      "error": 0,
+      "broken": 0,
+      "total": 12
+    },
+    {
+      "testset": "geometry exclusions are removed before later graph setup",
+      "pass": 4,
+      "fail": 0,
+      "error": 0,
+      "broken": 0,
+      "total": 4
+    }
+  ],
+  "aggregate": {
+    "pass": 27,
+    "fail": 0,
+    "error": 0,
+    "broken": 0,
+    "total": 27
+  },
+  "source_patch_sha256": "68748b1cebe261b76f4adc8d1056e7319ee8c69176700bdd34f8008830dcc557",
+  "manifest_semantic_narrow_delta_passed": true,
+  "all_23_source_pins_verified_after": true,
+  "original_root_project_manifest_vendor_runtime_depot_unchanged": true,
+  "scratch_manifest_diff_only": "Peridynamics.deps adds existing SHA/TOML stdlib records",
+  "native_body_construction": "NOT_RUN",
+  "native_graph_readback": "NOT_RUN",
+  "solver_cad_production_job": "NOT_RUN",
+  "retries": 0
+}

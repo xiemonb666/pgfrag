@@ -1,0 +1,64 @@
+{
+  "schema": "pgfrag.pd.point_event.artifact_hash_manifest.v1",
+  "run_id": "zero_load_control_run01",
+  "wrapper_exit_code": 0,
+  "julia_child_exit_code": 0,
+  "timed_out": false,
+  "artifacts": [
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.freeze_receipt.json",
+      "bytes": 11194,
+      "sha256": "99406070711a077bea3bbf10a283421c54691aa9717a9a6274a56ee82907c0ba"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.launch_receipt.json",
+      "bytes": 2595,
+      "sha256": "dcdfed856d6d78eb8d0a97be44bac504a275832505836af8e2147e35607c5bfa"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stdout.log",
+      "bytes": 123,
+      "sha256": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stderr.log",
+      "bytes": 483,
+      "sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.execution_receipt.json",
+      "bytes": 15947,
+      "sha256": "cf16573ef82dc94b70de47c1c0919f094808ded2213bae8f28d5c1223fef471b"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\point_state_history.csv",
+      "bytes": 49725,
+      "sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\directed_bond_state_history.csv",
+      "bytes": 709252,
+      "sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\canonical_bond_state_history.csv",
+      "bytes": 286024,
+      "sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\directed_bond_transitions.csv",
+      "bytes": 142,
+      "sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\canonical_bond_transitions.csv",
+      "bytes": 70,
+      "sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692"
+    },
+    {
+      "path": "pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\summary.toml",
+      "bytes": 1732,
+      "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "campaign_launched": false,
+  "commands_for_root_review": [
+    "wsl.exe --exec env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python /mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/extrinsic_onset_refinement/refinement_driver.py --launch --reviewed-protocol-sha256 b8b8dc96ff9f16f2bdcd0eb47e87bcf731dc0652bcedb59896c3a1db0fcd23de --resolution h",
+    "wsl.exe --exec env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python /mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/extrinsic_onset_refinement/refinement_driver.py --launch --reviewed-protocol-sha256 b8b8dc96ff9f16f2bdcd0eb47e87bcf731dc0652bcedb59896c3a1db0fcd23de --resolution h_over_2",
+    "wsl.exe --exec env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python /mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/extrinsic_onset_refinement/refinement_driver.py --launch --reviewed-protocol-sha256 b8b8dc96ff9f16f2bdcd0eb47e87bcf731dc0652bcedb59896c3a1db0fcd23de --resolution h_over_4"
+  ],
+  "expected_campaign_solver_steps_h_h2_h4": 4662,
+  "output_forecast": {
+    "ancestry_phase_metadata_allowance_bytes": 5114880,
+    "d_array_payload_bytes": 216413370,
+    "d_chunk_container_allowance_bytes": 5242880,
+    "d_chunk_count_at_128_steps": 80,
+    "d_snapshot_uncompressed_array_bytes_per_step": 21663,
+    "d_snapshots_across_h_h2_h4_h8": 9990,
+    "event_archive_allowance_bytes": 15728640,
+    "forecast_method": "uncompressed D array payload plus explicit conservative fixed allowances; no compression ratio assumed",
+    "logs_status_protocol_allowance_bytes": 8388608,
+    "output_cap_bytes": 268435456,
+    "output_cap_mib": 256.0,
+    "scalar_trace_allowance_bytes": 10229760,
+    "scope": "worst-case 4-resolution envelope; h/8 remains root-gated and is not in the current three-run authorization request",
+    "total_forecast_bytes": 261118138,
+    "total_forecast_mib": 249.02166175842285,
+    "under_cap": true,
+    "worst_case_cohesive_elements": 8,
+    "worst_case_cohesive_qps": 24,
+    "worst_case_node_rows": 69
+  },
+  "protocol_path": "pgfrag/data/continuation_20261016/extrinsic_onset_refinement/frozen_protocol.json",
+  "protocol_sha256": "b8b8dc96ff9f16f2bdcd0eb47e87bcf731dc0652bcedb59896c3a1db0fcd23de",
+  "status": "PREPARED_NO_MODEL_NO_SOLVER_STEPS"
+}

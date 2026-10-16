@@ -1,0 +1,67 @@
+{
+  "schema": "pgfrag.native_cohesive_control_comparison.v1",
+  "status": "TRANSIENT_COMPLIANCE_DIAGNOSTIC",
+  "same_mesh_bulk_parameters_load_and_physical_time": true,
+  "source_receipt_sha256": {
+    "bulk": "d83ee33fdf253eedc4c93bb14350c38d5797a7d928e00dea16965404701c4035",
+    "elastic_seam": "0f6146ca7c94dfcc4974d28a126253c622b4fc2d1f4223cdf7416491b1ad7b30"
+  },
+  "peak_load_time_s": 1.25e-05,
+  "peak_force_N": 100.0,
+  "bulk_response_peak_load_m": 6.442884791215271e-07,
+  "seam_response_peak_load_m": 6.467483353443934e-07,
+  "relative_response_difference_at_peak_load": 0.003817942276758121,
+  "pulse_window_response_RMS_relative_difference": 0.007159924846900832,
+  "full_window_response_RMS_relative_difference": 0.013239769948539922,
+  "pulse_window_max_abs_difference_relative_bulk_peak_response": 0.007625309035923545,
+  "declared_2percent_transient_compliance_gate": true,
+  "controls": {
+    "zero_control_v1": {
+      "receipt_sha256": "e673822bd86178875d7a0eb322a1f2bf5218b33b39738d4f913077ec407d6b64",
+      "max_damage": 0.0,
+      "native_dissipation_min_J": 0.0,
+      "native_dissipation_final_J": 0.0,
+      "max_saved_abs_displacement_m": 0.0,
+      "max_saved_abs_velocity_mps": 0.0
+    },
+    "low_control_v1": {
+      "receipt_sha256": "1acb173e66ee9c90f654461bbb1c76ae73f2e33f35b4eac30f65769e2ec679b2",
+      "max_damage": 0.003897145872699846,
+      "native_dissipation_min_J": -5.072672694111395e-23,
+      "native_dissipation_final_J": 2.5400485531127773e-08,
+      "max_saved_abs_displacement_m": 2.6497097669453653e-06,
+      "max_saved_abs_velocity_mps": 0.23499705607033233
+    },
+    "low_elastic_control_v1": {
+      "receipt_sha256": "959eed43a6a396c8d131340005d18f3c33099c8e449a0cb3404f6da5e1e82e28",
+      "max_damage": 0.0,
+      "native_dissipation_min_J": -2.147827637469265e-27,
+      "native_dissipation_final_J": 8.970244939342059e-27,
+      "max_saved_abs_displacement_m": 2.6504705350793136e-08,
+      "max_saved_abs_velocity_mps": 0.0023668631581384336
+    },
+    "bonded_cohesive_control_v1": {
+      "receipt_sha256": "dd213a56d68b18c409cbf3ee11b53a459e69eee090f9fa02111a4cf507523010",
+      "max_damage": 0.0,
+      "native_dissipation_min_J": -3.0755442050502795e-23,
+      "native_dissipation_final_J": 6.853386765046884e-23,
+      "max_saved_abs_displacement_m": 2.6504704877085736e-06,
+      "max_saved_abs_velocity_mps": 0.2366866785238316
+    },
+    "contact_bonded_control_v1": {
+      "receipt_sha256": "0f6146ca7c94dfcc4974d28a126253c622b4fc2d1f4223cdf7416491b1ad7b30",
+      "max_damage": 0.0,
+      "native_dissipation_min_J": -8.019171852302773e-24,
+      "native_dissipation_final_J": 2.2660968315556072e-23,
+      "max_saved_abs_displacement_m": 9.47239563919764e-07,
+      "max_saved_abs_velocity_mps": 0.2125661279994133
+    }
+  },
+  "limitations": [
+    "transient same-pulse compliance diagnostic, not a static compliance measurement",
+    "100N weak-seam control has nonzero damage; it is retained and not counted as an undamaged control",
+    "1N weak-seam case and 100N reinforced elastic seam are separate controls; no fracture-load retuning",
+    "does not calibrate material, demonstrate mesh convergence or qualify full physical packages"
+  ],
+  "source_script_sha256": "c8c51a27a964886199b5fb2fa12f1d39bd8ccc3a9a8ebe63e167a95c95ce36c0"
+}

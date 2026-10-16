@@ -1,0 +1,986 @@
+{
+  "review_id": "external_review_native_20261004",
+  "review_mode": "read_only_static_evidence_review",
+  "attachment": {
+    "path": "C:/Users/xiemo/.codex/attachments/91ec634d-1d25-4a0f-b3d6-8541952e5011/已粘贴的文本.txt",
+    "sha256": "0b3544d4b2a02d8132660834ea5a3d44c71a2054836d3ffeb8ac29756a771bad",
+    "requested_item_ranges": [
+      "#1-41",
+      "#153-192",
+      "#202-210"
+    ],
+    "physical_line_ranges": [
+      "#1-41: lines 3-83",
+      "#153-192: lines 307-385",
+      "#202-210: lines 405-421"
+    ]
+  },
+  "constraints_observed": {
+    "no_source_or_test_edits": true,
+    "no_tests_or_solver_or_julia_or_cad_or_git": true,
+    "no_recursive_delegation": true,
+    "only_report_outputs_written": true,
+    "report_md": "pgfrag/tmp/review_20261004/external_review_native/report.md",
+    "report_json": "pgfrag/tmp/review_20261004/external_review_native/report.json"
+  },
+  "summary_cn": "stderr记录的是被catch的package precompilation workload/headless输出异常，不是recompile错误；随后native submit/VV零载荷一步与step hooks实际完成。raw文件已有力密度、体积、材料参数、dt、SI契约、版本和哈希，但没有非零构成行为、断裂、能量闭合、校准、真实A12链或批量训练资格。5mm/δ3mm、125点是诊断规模限制。root负责最终接受。",
+  "classification_definitions": {
+    "CONFIRMED_CURRENT_GAP": "此实验/产物确实未提供所述能力或观察，不等于已发现实现缺陷。",
+    "RISK_NOT_TESTED": "需要另一个输入、工况、物理尺度或比较试验。",
+    "EXISTING_RAW_EVIDENCE": "冻结源码、收据、CSV或summary已经记录对应事实。",
+    "DIAGNOSTIC_SCOPE_NOT_BUG": "限制与本零载荷 smoke probe 的声明范围一致。",
+    "INCORRECT_INFERENCE": "附件将已知异常/证据作了错误推断；图面本身可能仍未核验。"
+  },
+  "coverage_and_category_group_counts": {
+    "external_report_total_item_ids": 210,
+    "requested_item_id_count": 90,
+    "reviewed_item_ids": ["#1-41", "#153-192", "#202-210"],
+    "unreviewed_item_id_count": 120,
+    "finding_group_count": 37,
+    "category_group_counts_overlap": true,
+    "category_group_counts": {
+      "INCORRECT_INFERENCE": 11,
+      "CONFIRMED_CURRENT_GAP": 14,
+      "EXISTING_RAW_EVIDENCE": 9,
+      "RISK_NOT_TESTED": 13,
+      "DIAGNOSTIC_SCOPE_NOT_BUG": 8
+    },
+    "meaning": "Counts are finding groups carrying a category, not unique items per category. The external report contains assertions, not 210 confirmed bugs."
+  },
+  "evidence_register": [
+    {
+      "id": "E0",
+      "path": "C:/Users/xiemo/.codex/attachments/91ec634d-1d25-4a0f-b3d6-8541952e5011/已粘贴的文本.txt",
+      "sha256": "0b3544d4b2a02d8132660834ea5a3d44c71a2054836d3ffeb8ac29756a771bad"
+    },
+    {
+      "id": "E1",
+      "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/run_pd_point_event_probe.jl",
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+      "lines": [
+        "55-135 input contract",
+        "138-263 state and reciprocal graph checks",
+        "266-280 native hooks",
+        "292-385 material/dt/submit",
+        "388-430 CSV/summary"
+      ]
+    },
+    {
+      "id": "E2",
+      "files": [
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/case_zero_load_control.toml",
+          "sha256": "a2e6694d047e70ed445ee9037bbcbabbd99095dd060ebe1c78bed674199b2178",
+          "lines": "1-9"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/common_case.toml",
+          "sha256": "ca2e4a64946d32f2ba6abdc1bd5b4d1768f5f7587812f3bcce490c0713a0f3bf",
+          "lines": "1-20"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+          "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0",
+          "lines": "1-24"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/input/coupon_uniform_voxel_5cube_125.points.csv",
+          "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze_v3/make_point_inputs.ps1",
+          "sha256": "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0",
+          "lines": "5-20,31-75"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "files": [
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/summary.toml",
+          "sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7",
+          "lines": "1-39"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/point_state_history.csv",
+          "sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175",
+          "lines": "1-251"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/directed_bond_state_history.csv",
+          "sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/canonical_bond_state_history.csv",
+          "sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/directed_bond_transitions.csv",
+          "sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137",
+          "lines": "header only, line 1"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/canonical_bond_transitions.csv",
+          "sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692",
+          "lines": "header only, line 1"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "files": [
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.execution_receipt.json",
+          "sha256": "cf16573ef82dc94b70de47c1c0919f094808ded2213bae8f28d5c1223fef471b",
+          "json_pointers": [
+            "$.status",
+            "$.julia_child",
+            "$.point_state_audit",
+            "$.bond_state_audit",
+            "$.freeze"
+          ],
+          "freeze_source_file_count": 31,
+          "input_hashes_pre_post_match": true
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.launch_receipt.json",
+          "sha256": "dcdfed856d6d78eb8d0a97be44bac504a275832505836af8e2147e35607c5bfa"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.stdout.log",
+          "sha256": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8",
+          "lines": "1"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.stderr.log",
+          "sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee",
+          "lines": "1-5"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.artifact_hashes.json",
+          "sha256": "19f8533c414152c1318b516bfd7535a95ca1627137d6492b08f7f24eef3d0299",
+          "contents": "11 listed artifact hashes"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "files": [
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/Peridynamics.jl",
+          "sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb",
+          "lines": "157-161"
+        },
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/auxiliary/precompile_workload.jl",
+          "sha256": "c1caeee907c1e9279bc32721c4e5a11e4f20e655413acdaeb5175938acd29dcb",
+          "lines": "1-71; path-output submit 64-70"
+        },
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/submit.jl",
+          "sha256": "c23e6ae68fa8331023325723457a88945242d49946d39e9ad04508e0dff68ffa",
+          "lines": "14-26,99-114"
+        },
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+          "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+          "lines": "165-195,297-303"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "files": [
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+          "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421",
+          "lines": "101-124"
+        },
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+          "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa",
+          "lines": "178-182"
+        }
+      ]
+    },
+    {
+      "id": "E7",
+      "files": [
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+          "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+        },
+        {
+          "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+          "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+          "lines": "3-5,417-421",
+          "declared_versions": [
+            "Julia 1.10.12",
+            "Peridynamics 0.5.4+pgfrag.1"
+          ]
+        },
+        {
+          "path": "third_party/pgfrag-runtime/extract/julia-1.10.12/bin/julia.exe",
+          "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+          "status": "current GetFileHash matches runtime_sha256 recorded in frozen execution receipt"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/pd_point_event_probe/receipts/zero_load_control_run01.execution_receipt.json",
+          "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103"
+        }
+      ]
+    },
+    {
+      "id": "E8",
+      "files": [
+        {
+          "path": "pgfrag/tmp/review_20261004/energy_ledger/freeze_v2/source/energy_ledger.py",
+          "sha256": "6d7cea82c0e1bd105e143e3a3f5324595d2594c99201d9de7a0003d28496ad0e",
+          "lines": "1-4,28-31,846-850"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/energy_ledger/freeze_v2/integrity.json",
+          "sha256": "24a65fdfbfdf73185907f74aeecdc7b791aff6dd9e51f3ae821f866913f230f5",
+          "status": "FROZEN_PRE_REVIEW_NOT_TESTED"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_events/bond_events.py.v2-frozen",
+          "sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db",
+          "lines": "47-49,144-151,211-219"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_events/freeze_manifest_v2.json",
+          "sha256": "28415ad2d7e487324df3eeb665a41077a6c63298969f1f2b0c5cae282539ef34",
+          "status": "v2 test NOT_RUN_WAITING_FOR_ROOT_REVIEW at freeze time"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/energy_ledger/v2_run/receipt.json",
+          "sha256": "a9d22f28044cb834fc37630957295048f949e25c3dcfed4462b021fba8ce0e19",
+          "status": "later receipt reports 14 tests PASS; module tests do not establish physical qualification"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/energy_ledger/v2_run/stdout.txt",
+          "sha256": "874638d648852fb4725495a6790b404d715c1088f6ddb8a91c2af9f8782f3302",
+          "status": "captured later test output reports 14 passed"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_events/v2_pytest_receipt.json",
+          "sha256": "88a8783379122d6798161212aaf2eb61998d698d347e021fc58ed268b2cac41b",
+          "status": "later receipt and stdout report 19 tests PASS; adapter integration NOT_CONNECTED_TO_PGFRAG_RUNNER"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_events/v2_pytest_stdout.txt",
+          "sha256": "b88b69092c878a260d0a624793773ab4a11b90f4b9873e8a443b6043c414dd39",
+          "status": "captured later test output reports 19 passed"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_events/v2_pytest_junit.xml",
+          "sha256": "1ccc3bb73609c7666c76b2549d8067563521058e50027efe6a25d2842dc022c6",
+          "status": "19 tests, zero failures/errors/skips"
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "files": [
+        {
+          "path": "pgfrag/src/pgfrag/bias_protocol.py",
+          "sha256": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779",
+          "lines": "1-5,921-923,1060-1075"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bias_protocol/v2_freeze.json",
+          "sha256": "617c8d966f730a3075e3d1334c57eef28a017ee661ee7a9499fe920bc7803d04",
+          "status": "registered source hash matches exact file hash"
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bias_protocol/v2_run/test_receipt.json",
+          "sha256": "266eaeb93c7c2778ec9a30bccf68e02cda92dca20719f8b5ed445fd14009e85e",
+          "results": "11 tests pass; solver_invoked=false"
+        }
+      ]
+    }
+  ],
+  "root_only_review_note": {
+    "external_report_item": false,
+    "status": "HISTORICAL_V1_ERROR_CONFIRMED_AND_REVISED; loaded accepted dt NOT_RUN",
+    "issue": "The saved v1 design used a least-neighbor-corner estimate as if it controlled the global native dt. This is a confirmed historical estimate error: the native solver takes the minimum per-point dt across all points; v2 explicitly corrects the estimate and says its new loaded experiments remain unrun. The planned loaded case's actual accepted dt therefore remains NOT_RUN. Historical sources below, rather than the moving live decision.md alone, support the finding. The earlier live-revision hash is retained only in live_decision_capture.",
+    "live_decision_capture": {
+      "path": "pgfrag/tmp/review_20261004/pd_loaded_gate_design/decision.md",
+      "lines": "11,14-15",
+      "sha256_observed_in_previous_review": "2de9ac4fdbb5a2cd73b7e48cc6c7d3d4aa302c46be85c1c6f65cf5701bacf4b0",
+      "status": "Earlier live revision capture only; the file has since changed and this is not its current hash or the sole historical source."
+    },
+    "native_source": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+    "native_source_lines": "136-162",
+    "native_source_sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6",
+    "actual_dt_evidence": "pgfrag/tmp/review_20261004/pd_point_event_probe/snapshots/zero_load_control_run01/summary.toml",
+    "actual_dt_evidence_lines": "12,27",
+    "actual_dt_evidence_sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7",
+    "historical_sources": [
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_gate_design/decision_v1.md",
+        "sha256": "d29e2037905709164244dcb9ced0f29acd5d5a0702d5f331a6ce7feb56ad5e60",
+        "lines": "14",
+        "excerpt": "按 1 mm 立方 cell-center 点集、半径 δ=3 mm、最少邻居角点作独立求和，若包含 L=δ 的邻居，估算 accepted dt≈0.915 μs；若邻域搜索排除正好等于 δ 的点，约 0.987 μs。"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_gate_design/decision_v2_pre_wavecorrection.md",
+        "sha256": "b074ebafb34783a2056ec2bdc6e24483b35af6145b6e7fb9d9948f92c898da96",
+        "lines": "3,11",
+        "excerpt": "本稿纠正 v1 的稳定步估算错误。v1 把角点局部步长误当全局步长，导致 320 步预测高估约 2 倍。所有新增实验仍是设计，尚未运行。"
+      },
+      {
+        "path": "pgfrag/tmp/review_20261004/pd_loaded_gate_design/decision_history.diff.md",
+        "sha256": "4216eb0de0b072eec7dbe46a7cc77e725d6be00ceb0511f3978d20c64a7b1abd",
+        "lines": "7",
+        "excerpt": "Replaced the corner-only `0.915–0.987 μs` timestep estimate with the accepted native run01 `dt = 4.925124976599115e-7 s` and native graph counts `6,124 directed / 3,062 canonical` from `zero_load_control_run01/summary.toml`."
+      }
+    ],
+    "cavity_design_reference_check": {
+      "external_review_native_contains_cavity_design_hash": false,
+      "actual_design_path": "pgfrag/tmp/review_20261004/cavity_bond_safety/design.md",
+      "actual_design_sha256": "6035fa7c3fdead24a43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b",
+      "references_checked": [
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_visibility/design_and_freeze.md",
+          "sha256": "f95c86eada924153ae0c0467e928d765d4d23750dc6abc5759215e5a3a3d227e",
+          "line": "7",
+          "citation_text": "6035dfa7c3fdeade43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b",
+          "citation_hex_character_count": 63
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_visibility/independent_review.md",
+          "sha256": "270f623bef711e94f21251ce047cd651521ce309c3a87d38ed16257095ce6f58",
+          "line": "10",
+          "citation_text": "6035dfa7c3fdeade43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b",
+          "citation_hex_character_count": 63
+        },
+        {
+          "path": "pgfrag/tmp/review_20261004/bond_visibility/independent_review.json",
+          "sha256": "ab172121cba83a0d637031d67c4d7207c82f4d0ccc437649b90e5a7889d3de6f",
+          "line": "10",
+          "citation_text": "6035dfa7c3fdeade43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b",
+          "citation_hex_character_count": 63
+        }
+      ],
+      "assessment": "Actual GetFileHash is a 64-hex digest, while the three references above contain the same 63-hex citation string, so the citation is both malformed as SHA-256 and different from the actual file. This is a reference mismatch; no other report/source file was changed."
+    }
+  },
+  "findings": [
+    {
+      "item_ids": "#1-2",
+      "external_text_lines": [
+        3,
+        5
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE"
+      ],
+      "evidence_refs": [
+        "E4",
+        "E5"
+      ],
+      "note": "Recorded precompilation workload error is caught; it is not a recompile failure and does not contradict the actual zero-load run."
+    },
+    {
+      "item_ids": "#3-4",
+      "external_text_lines": [
+        7,
+        9
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E4",
+        "E5"
+      ],
+      "note": "Native submit/VV step and hooks ran; nonzero physics correctness remains untested."
+    },
+    {
+      "item_ids": "#5-8",
+      "external_text_lines": [
+        11,
+        13,
+        15,
+        17
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "note": "Zero response and no observed transitions are true for this zero-load step, not proof of a broken pipeline."
+    },
+    {
+      "item_ids": "#9",
+      "external_text_lines": [
+        19
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E5"
+      ],
+      "note": "Native state hooks establish source path, not constitutive correctness."
+    },
+    {
+      "item_ids": "#10",
+      "external_text_lines": [
+        21
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E5",
+        "E6"
+      ],
+      "note": "Native position storage is copied; nonzero multi-step trajectory not exercised."
+    },
+    {
+      "item_ids": "#11-12",
+      "external_text_lines": [
+        23,
+        25
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "CONFIRMED_CURRENT_GAP",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3"
+      ],
+      "note": "Step/time differ across rows; only one time step is present."
+    },
+    {
+      "item_ids": "#13",
+      "external_text_lines": [
+        27
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E3",
+        "E8"
+      ],
+      "note": "No complete ledger is emitted; UNKNOWN is explicit."
+    },
+    {
+      "item_ids": "#14",
+      "external_text_lines": [
+        29
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "note": "Per-point internal/external force densities are recorded; reaction and bond forces are not."
+    },
+    {
+      "item_ids": "#15",
+      "external_text_lines": [
+        31
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E3"
+      ],
+      "note": "No strain/stress or nonzero constitutive validation."
+    },
+    {
+      "item_ids": "#16-17",
+      "external_text_lines": [
+        33,
+        35
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE",
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "note": "Parameters are configured and passed into native material!; they remain UNVALIDATED_PROTOTYPE."
+    },
+    {
+      "item_ids": "#18",
+      "external_text_lines": [
+        37
+      ],
+      "classification": [
+        "RISK_NOT_TESTED",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3"
+      ],
+      "note": "δ/L=0.6, dx=1mm; no interior point has a full 3mm horizon neighborhood."
+    },
+    {
+      "item_ids": "#19",
+      "external_text_lines": [
+        39
+      ],
+      "classification": [
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E2"
+      ],
+      "note": "125 point fixture is a smoke input, not a convergence study."
+    },
+    {
+      "item_ids": "#20",
+      "external_text_lines": [
+        41
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "note": "Per-point declared voxel volume is emitted; it is not real-shell or Voronoi volume."
+    },
+    {
+      "item_ids": "#21-27",
+      "external_text_lines": [
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E3",
+        "E4"
+      ],
+      "note": "Full sampled graph, reciprocal checks, self/duplicate checks, counts and canonical semantics are recorded; expected geometric graph completeness is not independently proven."
+    },
+    {
+      "item_ids": "#28-29",
+      "external_text_lines": [
+        57,
+        59
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E3"
+      ],
+      "note": "No explicit bond-length distribution or stretch field."
+    },
+    {
+      "item_ids": "#30",
+      "external_text_lines": [
+        61
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E4"
+      ],
+      "note": "Nonfinite input/output and nonpositive volume checks exist; no separate subnormal audit."
+    },
+    {
+      "item_ids": "#31-33",
+      "external_text_lines": [
+        63,
+        65,
+        67
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E3",
+        "E5",
+        "E7"
+      ],
+      "note": "Native stable dt and VelocityVerlet are explicit and pinned; physical accuracy/convergence is untested."
+    },
+    {
+      "item_ids": "#34-35",
+      "external_text_lines": [
+        69,
+        71
+      ],
+      "classification": [
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2"
+      ],
+      "note": "All-point zero-velocity initial conditions are explicit; no velocity boundary or fixed-point set is installed."
+    },
+    {
+      "item_ids": "#36-37",
+      "external_text_lines": [
+        73,
+        75
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3"
+      ],
+      "note": "Synthetic point cube does not exercise A12/CAD/tetra ingestion."
+    },
+    {
+      "item_ids": "#38-40",
+      "external_text_lines": [
+        77,
+        79,
+        81
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "note": "Native path uses SI contracts; upstream mm-to-m geometry conversion is outside this probe."
+    },
+    {
+      "item_ids": "#41",
+      "external_text_lines": [
+        83
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2"
+      ],
+      "note": "No integrated relief/CAD/PG unit audit."
+    },
+    {
+      "item_ids": "#153-156",
+      "external_text_lines": [
+        307,
+        309,
+        311,
+        313
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3"
+      ],
+      "note": "No real vessel surface/volume/cavity input is included."
+    },
+    {
+      "item_ids": "#157-162",
+      "external_text_lines": [
+        315,
+        317,
+        319,
+        321,
+        323,
+        325
+      ],
+      "classification": [
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3",
+        "E5"
+      ],
+      "note": "Thin-wall/cavity/topological-neighborhood risks are not exercised by a solid cube."
+    },
+    {
+      "item_ids": "#163-165",
+      "external_text_lines": [
+        327,
+        329,
+        331
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2"
+      ],
+      "note": "No heterogeneous materials, ornament weakness regions, or real ceramic field."
+    },
+    {
+      "item_ids": "#166-176",
+      "external_text_lines": [
+        333,
+        335,
+        337,
+        339,
+        341,
+        343,
+        345,
+        347,
+        349,
+        351,
+        353
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "note": "No observed fracture phenomena; Gc parameter is not a measured fracture-energy history."
+    },
+    {
+      "item_ids": "#177-182",
+      "external_text_lines": [
+        355,
+        357,
+        359,
+        361,
+        363,
+        365
+      ],
+      "classification": [
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E5",
+        "E9"
+      ],
+      "note": "No direction/layout, resolution, horizon, dt sensitivity or benchmark. Rigid rotation is objectivity; changing horizon is model sensitivity, not dx convergence."
+    },
+    {
+      "item_ids": "#183-185",
+      "external_text_lines": [
+        367,
+        369,
+        371
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP",
+        "EXISTING_RAW_EVIDENCE"
+      ],
+      "evidence_refs": [
+        "E3",
+        "E4"
+      ],
+      "note": "One run has point/bond QC, but no batch failure isolation, per-sample dataset QC, or training eligibility."
+    },
+    {
+      "item_ids": "#186",
+      "external_text_lines": [
+        373
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "note": "This fixture's generator, config, input and runtime hashes are pinned; real artifact lineage is absent."
+    },
+    {
+      "item_ids": "#187-188",
+      "external_text_lines": [
+        375,
+        377
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E4",
+        "E7"
+      ],
+      "note": "Primary layout is deterministic; candidate has seed 17; Julia and Peridynamics versions/runtime are pinned. Repeat runs were not performed."
+    },
+    {
+      "item_ids": "#189",
+      "external_text_lines": [
+        379
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E4",
+        "E5"
+      ],
+      "note": "Precompile error does not imply run reproducibility failure; repeated execution is untested."
+    },
+    {
+      "item_ids": "#190-192",
+      "external_text_lines": [
+        381,
+        383,
+        385
+      ],
+      "classification": [
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E3"
+      ],
+      "note": "Geometry/ornament seed repeats and physical fracture consistency were not run."
+    },
+    {
+      "item_ids": "#202-204",
+      "external_text_lines": [
+        405,
+        407,
+        409
+      ],
+      "classification": [
+        "RISK_NOT_TESTED",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E3",
+        "E4"
+      ],
+      "note": "No source figures were reviewed; native PG numeric evidence exists, geometry/ornament panels are out of scope."
+    },
+    {
+      "item_ids": "#205-206",
+      "external_text_lines": [
+        411,
+        413
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE",
+        "DIAGNOSTIC_SCOPE_NOT_BUG"
+      ],
+      "evidence_refs": [
+        "E3",
+        "E4",
+        "E5"
+      ],
+      "note": "COMPLETED is experiment completion, not physics qualification; the receipt and summary expose that scope."
+    },
+    {
+      "item_ids": "#207",
+      "external_text_lines": [
+        415
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E8",
+        "E9"
+      ],
+      "note": "The independent modules are scoped checkers, not an integrated geometry-to-fracture qualification."
+    },
+    {
+      "item_ids": "#208",
+      "external_text_lines": [
+        417
+      ],
+      "classification": [
+        "CONFIRMED_CURRENT_GAP"
+      ],
+      "evidence_refs": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "note": "Local run/input IDs exist; full geometry-to-fracture artifact lineage does not."
+    },
+    {
+      "item_ids": "#209",
+      "external_text_lines": [
+        419
+      ],
+      "classification": [
+        "INCORRECT_INFERENCE"
+      ],
+      "evidence_refs": [
+        "E2",
+        "E4",
+        "E7"
+      ],
+      "note": "Hashes and immutable input identity exist for this native fixture."
+    },
+    {
+      "item_ids": "#210",
+      "external_text_lines": [
+        421
+      ],
+      "classification": [
+        "RISK_NOT_TESTED"
+      ],
+      "evidence_refs": [
+        "E4",
+        "E7"
+      ],
+      "note": "Dataset invalidation and requalification lifecycle is not evidenced."
+    }
+  ],
+  "unresolved": [
+    "Whether the three original figures display raw native metrics; images were not provided to this review.",
+    "Nonzero multi-step constitutive/fracture behavior, energy closure, contact, real A12 geometry-to-particle lineage, convergence, benchmark, repeat-run reproducibility, and training dataset lifecycle."
+  ],
+  "final_acceptance": "Reserved for root."
+}

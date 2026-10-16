@@ -1,0 +1,38 @@
+{
+  "argv": [
+    "synthetic-julia",
+    "--project=synthetic",
+    "run_bowl_dynamics.jl",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run\\case.toml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run",
+  "run_id": "synthetic_handtest",
+  "source_receipts": [
+    {
+      "bytes": 58,
+      "path": "source_snapshot/bowl_dynamics.py",
+      "sha256": "11c89ae90b501afe74dcee18c4a4dbe04bc08d0645a6844c1db71030ff329cbd"
+    },
+    {
+      "bytes": 52,
+      "path": "source_snapshot/run_bowl_dynamics.jl",
+      "sha256": "575f68f5207c9f52f3a3dbe1773ebe318c5394bc6dce66bbf74765bfd42e1cc9"
+    },
+    {
+      "bytes": 34,
+      "path": "source_snapshot/Project.toml",
+      "sha256": "575c1bcb747c90edc6d0c84648eab20f13334a4e039989fbe29869222c3edc87"
+    },
+    {
+      "bytes": 35,
+      "path": "source_snapshot/Manifest.toml",
+      "sha256": "d3fdc30aa0c44d528fab6e051e4d672dbd7a02d876a175a11cbe7ba730f8f6f5"
+    },
+    {
+      "bytes": 53,
+      "path": "asset/manifest.json",
+      "sha256": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0"
+    }
+  ]
+}

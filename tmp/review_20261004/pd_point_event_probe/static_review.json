@@ -1,0 +1,44 @@
+{
+  "schema": "pgfrag.pd.point_event.static_review.v1",
+  "experiment_id": "pd_point_event_probe_20261004",
+  "status": "STATIC_PREPARATION_CHECKS_PASS_RUNTIME_NOT_RUN",
+  "checks": {
+    "powershell_ast_parse": {
+      "status": "PASS",
+      "files": [
+        "pgfrag/experiments/pd_point_event_probe_20261004/make_point_inputs.ps1",
+        "pgfrag/experiments/pd_point_event_probe_20261004/freeze_manifest.ps1",
+        "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1"
+      ]
+    },
+    "manifest_json_parse": "PASS",
+    "input_and_case_toml_parse": {
+      "status": "PASS",
+      "file_count": 5
+    },
+    "point_csv_to_metadata_sha256_links": {
+      "status": "PASS",
+      "input_count": 2
+    },
+    "manifest_pinned_file_hashes": {
+      "status": "PASS",
+      "file_count": 30
+    },
+    "julia_executable_sha256": "PASS"
+  },
+  "not_performed": {
+    "julia_source_parser": "NOT_RUN: Julia invocation is held for the root agent final-freeze review.",
+    "julia_solver_or_preflight": "NOT_RUN",
+    "independent_point_volume_mass_direction_audit": "LEFT_FOR_ROOT_OWNED_PARALLEL_REVIEW"
+  },
+  "first_runtime_gate": {
+    "case": "zero_load_control",
+    "steps": 1,
+    "max_points": 512,
+    "threads": 1,
+    "timeout_seconds": 120,
+    "status": "AWAITING_ROOT_FINAL_FREEZE_REVIEW"
+  },
+  "manifest_path": "pgfrag/experiments/pd_point_event_probe_20261004/manifest.json",
+  "launcher_path": "pgfrag/experiments/pd_point_event_probe_20261004/launch_zero_load_probe.ps1"
+}

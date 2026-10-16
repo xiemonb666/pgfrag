@@ -1,0 +1,16 @@
+{
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "pgfrag/tests/test_mesh_resolution_audit.py"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

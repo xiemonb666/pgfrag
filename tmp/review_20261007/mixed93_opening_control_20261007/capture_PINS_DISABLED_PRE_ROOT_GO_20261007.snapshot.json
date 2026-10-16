@@ -1,0 +1,62 @@
+{
+  "execution_authorized": false,
+  "frozen_contract": {
+    "capture_case_sha256": "433b574c9f08624ef07b6c04ddb57f9fbfbe87f2856bc026ecab3dc3262992b2",
+    "capture_driver_sha256": "e2b2fbf5a9a2351b6616fdac7a87c634b9e5158cae02ae27e1da819740fe8aa8",
+    "disabled_source_pins_snapshot_sha256": "f9f2cb9a5c505c49795957ede4e21465ce293e41ebcbc20c0faeb06b49d0459c",
+    "final_disabled_source_pins_snapshot_sha256": "7530ea7445194117c2dec3d988691b74424bf2841de6cd8f1b69e6ab1c8a6980",
+    "opening_case_sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+    "opening_driver_sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+    "opening_source_pins_sha256": "7530ea7445194117c2dec3d988691b74424bf2841de6cd8f1b69e6ab1c8a6980",
+    "pre_fix_driver_snapshot_sha256": "300bfb3094b11cfb86706485b160b7d42e6f0edf83238b9a9469a6b35273ffad",
+    "pre_vf_capture_case_snapshot_sha256": "c892c2f0af19473c365007fb46c594dc3df655943e23da3f42b6c8429fb4aa56",
+    "pre_vf_capture_driver_snapshot_sha256": "d9f2922c66b9f02534ec90b3ba19d881e2d4efb48b183ee5836ad5da0b07a2d4"
+  },
+  "pre_vf_capture_pins_existed": false,
+  "root_go": {
+    "authorized": false,
+    "authorized_by": null,
+    "authorized_utc": null,
+    "token": null
+  },
+  "schema": "mixed93_opening_control_capture_pins.v1",
+  "source_references": {
+    "case": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "cohesive_derivative": {
+      "path": "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "cohesive_scalar_law": {
+      "path": "pgfrag/experiments/cohesive_scalar_law_20261006/cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "driver": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    },
+    "elastic_worker": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "mixed_enriched_operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "original_elastic_numeric_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/NUMERIC_SOURCE_PINS.json",
+      "sha256": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140"
+    },
+    "saved_elastic_result": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "trace_primitive": {
+      "path": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    }
+  },
+  "status": "SOURCE_READY_EXECUTION_DISABLED"
+}

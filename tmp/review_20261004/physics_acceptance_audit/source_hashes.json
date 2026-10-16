@@ -1,0 +1,113 @@
+{
+  "audit": "Toy-law to real-object free-fracture physics acceptance evidence audit",
+  "scope": "Read-only PG/cohesive source, frozen inputs, retained run02 and extrinsic evidence, A12 route guidance, and research ledgers; no solver, git, or dynamic run03 result access.",
+  "report_path": "pgfrag/tmp/review_20261004/physics_acceptance_audit/report.md",
+  "report_sha256": "20b0f2765f25b5b13b46b0ef9242a33a1d2de998c86322e20da9e95d4fdc8333",
+  "sources_and_evidence": [
+    {
+      "path": "pgfrag/docs/research/INNOVATION_LEDGER.md",
+      "bytes": 23126,
+      "sha256": "957008f5fb755cb995337e90ea8dd1639cbc32dcadc0f46fb7b931fd7fbff952"
+    },
+    {
+      "path": "pgfrag/docs/research/innovation_ledger.json",
+      "bytes": 24550,
+      "sha256": "e85a2ce4c33227eac699d1e3e005bb25e761e909dc8dd3cf6edd6fa31d2eec74"
+    },
+    {
+      "path": "vesselforge/docs/research/INNOVATION_LEDGER.md",
+      "bytes": 18868,
+      "sha256": "bc60113221dc959ae5d55cf1e5fe446e8b537efd82f0e779527e5129eade7324"
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/FRACTURE_ROUTE_ADVISORY_20261004.md",
+      "bytes": 13109,
+      "sha256": "f5b9bd8cea94948b439887e8067a65fe5b873a9254881a20d661e03a6aba0dcc"
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/COHESIVE_CAPABILITY_20261004.md",
+      "bytes": 12534,
+      "sha256": "feda3dffc27e820603d7bd94de0ada7638d3b54a02aea6938f7e4a14cb0c5a52"
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/COHESIVE_DIAGNOSTICS_20261004.md",
+      "bytes": 6550,
+      "sha256": "92976b25a88b9fa9d8903974d2a4015d5fe9fd04f34f517361ca22ae723fbbf4"
+    },
+    {
+      "path": "relicweave-synlab/docs/a12/CONTINUATION_20261004.md",
+      "bytes": 12816,
+      "sha256": "2873335608f63520debe06423dbec0c09cd0ccdbf53126ae5b0b6c349217ff44"
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_capability/run_contract.py",
+      "bytes": 29542,
+      "sha256": "67dd1eb98acc5f5369b9cbf1a9bfbd7f6681068172e537768e788274cb10652d"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/manifest.json",
+      "bytes": 4757,
+      "sha256": "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/modeI_dt/status.json",
+      "bytes": 3167,
+      "sha256": "4616bd48c93ddb35e546867022ede1b152ce75f1d40ca0309c12764ac18c0a84"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/modeI_dt/trace.csv",
+      "bytes": 395637,
+      "sha256": "82fbd48e66aac6fce3a97d45dc6e50e819ef45b38fdfe75b6d00b62e483ad0d9"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/modeI_dt2/status.json",
+      "bytes": 3175,
+      "sha256": "123ffcedbcc8f01abe0bf5df5ab97e128ff9d42a036adba63adab20ed6195ef0"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/modeI_dt2/trace.csv",
+      "bytes": 793559,
+      "sha256": "9ea52d4e2e81abcd93d4aede112e494713775d83a50535441c3f2f296b5cd65f"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_capability/api_semantics_review.json",
+      "bytes": 4874,
+      "sha256": "6d244139fe1afc7682dacab465ccdb0f0ef570121efa69545bf00ac7b6687e6c"
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_bilinear_patch_20261004/run_intrinsic_bilinear_modeI_201_v2.py",
+      "bytes": 15898,
+      "sha256": "f684ffe396f2ad742b8bb0673bf0deb14963382a49eb5431bb659cbcfca5c605"
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_bilinear_patch_20261004/manifest_bilinear_modeI_201_v2.json",
+      "bytes": 4639,
+      "sha256": "5c42f14f5c3b82370bf2d0df3bf0ab8a57b6d296968b78e7f80caa0a2256a166"
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_bilinear_patch_20261004/input/material.dat",
+      "bytes": 423,
+      "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666"
+    },
+    {
+      "path": "pgfrag/experiments/cohesive_bilinear_patch_20261004/input/block_2x2x4mm.msh",
+      "bytes": 3605,
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_bilinear_patch_20261004/controlled_intrinsic_bilinear_modeI_201_run02/external_execution_receipt_v2.json",
+      "bytes": 2277,
+      "sha256": "bbe74dc940b828cf276b2f01c50a50edfe9c11e55cf065b3739d41413e64567c"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_bilinear_patch_20261004/controlled_intrinsic_bilinear_modeI_201_run02/derived_partial_v4/analysis_partial_v2.json",
+      "bytes": 25897,
+      "sha256": "a2cc0397429f2fc103eb73916aaf37c017149331a466d2c629cee3d1cb777233"
+    },
+    {
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_bilinear_patch_20261004/controlled_intrinsic_bilinear_modeI_201_run02/trace.jsonl",
+      "bytes": 227622,
+      "sha256": "c96e8d632f0d6427dddb38ac1d1c3efbbab3b11220e3099db352dd49a9395dc8"
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "active_facet_parent_pairs": {
+    "C": [
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "native_cohesive_row": 0,
+        "side_parent_source_cell_ids": [
+          73,
+          53
+        ],
+        "side_parent_source_cell_rows": [
+          48,
+          28
+        ],
+        "source_node_ids": [
+          19,
+          20,
+          23
+        ],
+        "source_parent_cell_ids": [
+          53,
+          73
+        ],
+        "source_parent_cell_rows": [
+          28,
+          48
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "native_cohesive_row": 1,
+        "side_parent_source_cell_ids": [
+          75,
+          54
+        ],
+        "side_parent_source_cell_rows": [
+          50,
+          29
+        ],
+        "source_node_ids": [
+          19,
+          22,
+          23
+        ],
+        "source_parent_cell_ids": [
+          54,
+          75
+        ],
+        "source_parent_cell_rows": [
+          29,
+          50
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "native_cohesive_row": 2,
+        "side_parent_source_cell_ids": [
+          79,
+          59
+        ],
+        "side_parent_source_cell_rows": [
+          54,
+          34
+        ],
+        "source_node_ids": [
+          20,
+          21,
+          24
+        ],
+        "source_parent_cell_ids": [
+          59,
+          79
+        ],
+        "source_parent_cell_rows": [
+          34,
+          54
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "native_cohesive_row": 3,
+        "side_parent_source_cell_ids": [
+          81,
+          60
+        ],
+        "side_parent_source_cell_rows": [
+          56,
+          35
+        ],
+        "source_node_ids": [
+          20,
+          23,
+          24
+        ],
+        "source_parent_cell_ids": [
+          60,
+          81
+        ],
+        "source_parent_cell_rows": [
+          35,
+          56
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "native_cohesive_row": 4,
+        "side_parent_source_cell_ids": [
+          85,
+          65
+        ],
+        "side_parent_source_cell_rows": [
+          60,
+          40
+        ],
+        "source_node_ids": [
+          22,
+          23,
+          26
+        ],
+        "source_parent_cell_ids": [
+          65,
+          85
+        ],
+        "source_parent_cell_rows": [
+          40,
+          60
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "native_cohesive_row": 5,
+        "side_parent_source_cell_ids": [
+          87,
+          66
+        ],
+        "side_parent_source_cell_rows": [
+          62,
+          41
+        ],
+        "source_node_ids": [
+          22,
+          25,
+          26
+        ],
+        "source_parent_cell_ids": [
+          66,
+          87
+        ],
+        "source_parent_cell_rows": [
+          41,
+          62
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "native_cohesive_row": 6,
+        "side_parent_source_cell_ids": [
+          91,
+          71
+        ],
+        "side_parent_source_cell_rows": [
+          66,
+          46
+        ],
+        "source_node_ids": [
+          23,
+          24,
+          27
+        ],
+        "source_parent_cell_ids": [
+          71,
+          91
+        ],
+        "source_parent_cell_rows": [
+          46,
+          66
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27",
+        "native_cohesive_row": 7,
+        "side_parent_source_cell_ids": [
+          93,
+          72
+        ],
+        "side_parent_source_cell_rows": [
+          68,
+          47
+        ],
+        "source_node_ids": [
+          23,
+          26,
+          27
+        ],
+        "source_parent_cell_ids": [
+          72,
+          93
+        ],
+        "source_parent_cell_rows": [
+          47,
+          68
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      }
+    ],
+    "D": [
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "native_cohesive_row": 0,
+        "side_parent_source_cell_ids": [
+          73,
+          53
+        ],
+        "side_parent_source_cell_rows": [
+          48,
+          28
+        ],
+        "source_node_ids": [
+          19,
+          20,
+          23
+        ],
+        "source_parent_cell_ids": [
+          53,
+          73
+        ],
+        "source_parent_cell_rows": [
+          28,
+          48
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "native_cohesive_row": 1,
+        "side_parent_source_cell_ids": [
+          75,
+          54
+        ],
+        "side_parent_source_cell_rows": [
+          50,
+          29
+        ],
+        "source_node_ids": [
+          19,
+          22,
+          23
+        ],
+        "source_parent_cell_ids": [
+          54,
+          75
+        ],
+        "source_parent_cell_rows": [
+          29,
+          50
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "native_cohesive_row": 2,
+        "side_parent_source_cell_ids": [
+          79,
+          59
+        ],
+        "side_parent_source_cell_rows": [
+          54,
+          34
+        ],
+        "source_node_ids": [
+          20,
+          21,
+          24
+        ],
+        "source_parent_cell_ids": [
+          59,
+          79
+        ],
+        "source_parent_cell_rows": [
+          34,
+          54
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "native_cohesive_row": 3,
+        "side_parent_source_cell_ids": [
+          81,
+          60
+        ],
+        "side_parent_source_cell_rows": [
+          56,
+          35
+        ],
+        "source_node_ids": [
+          20,
+          23,
+          24
+        ],
+        "source_parent_cell_ids": [
+          60,
+          81
+        ],
+        "source_parent_cell_rows": [
+          35,
+          56
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "native_cohesive_row": 4,
+        "side_parent_source_cell_ids": [
+          85,
+          65
+        ],
+        "side_parent_source_cell_rows": [
+          60,
+          40
+        ],
+        "source_node_ids": [
+          22,
+          23,
+          26
+        ],
+        "source_parent_cell_ids": [
+          65,
+          85
+        ],
+        "source_parent_cell_rows": [
+          40,
+          60
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "native_cohesive_row": 5,
+        "side_parent_source_cell_ids": [
+          87,
+          66
+        ],
+        "side_parent_source_cell_rows": [
+          62,
+          41
+        ],
+        "source_node_ids": [
+          22,
+          25,
+          26
+        ],
+        "source_parent_cell_ids": [
+          66,
+          87
+        ],
+        "source_parent_cell_rows": [
+          41,
+          62
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "native_cohesive_row": 6,
+        "side_parent_source_cell_ids": [
+          91,
+          71
+        ],
+        "side_parent_source_cell_rows": [
+          66,
+          46
+        ],
+        "source_node_ids": [
+          23,
+          24,
+          27
+        ],
+        "source_parent_cell_ids": [
+          71,
+          91
+        ],
+        "source_parent_cell_rows": [
+          46,
+          66
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      },
+      {
+        "facet_identity": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27",
+        "native_cohesive_row": 7,
+        "side_parent_source_cell_ids": [
+          93,
+          72
+        ],
+        "side_parent_source_cell_rows": [
+          68,
+          47
+        ],
+        "source_node_ids": [
+          23,
+          26,
+          27
+        ],
+        "source_parent_cell_ids": [
+          72,
+          93
+        ],
+        "source_parent_cell_rows": [
+          47,
+          68
+        ],
+        "source_parent_local_face_ordinals": [
+          3,
+          0
+        ]
+      }
+    ]
+  },
+  "case_label": "historical 96-T4 coarse coupon; step 650 B/C/D saved dense states",
+  "cohesive_row_order_check": {
+    "in_memory_reversed_D_row_identity_mapping_verified": true,
+    "in_memory_reversed_D_rows_preserve_all_eight_stable_identities": true,
+    "in_memory_row_permutation": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "saved_C_and_D_identity_sets_equal": true,
+    "saved_C_and_D_native_cohesive_row_orders_equal": true
+  },
+  "created_utc": "2026-10-16T08:29:01.014555+00:00",
+  "event_deltas_from_empty_B": {
+    "B_to_C": {
+      "current_active_count": 8,
+      "newly_active_facet_identities": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      ],
+      "persistent_active_facet_identities": [],
+      "previous_active_count": 0,
+      "source_anchor_hash": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    "B_to_D": {
+      "current_active_count": 8,
+      "newly_active_facet_identities": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      ],
+      "persistent_active_facet_identities": [],
+      "previous_active_count": 0,
+      "source_anchor_hash": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    }
+  },
+  "historical_case_root": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01",
+  "input_hashes_file": "input_hashes.json",
+  "material_or_qp_state_claim": false,
+  "native_initial_contract": {
+    "empty_native_initial_cohesive_shape": [
+      0,
+      6
+    ],
+    "exact_native_initial_source_connectivity": true,
+    "exact_native_initial_source_rest_coordinates": true
+  },
+  "physical_fracture_claim": false,
+  "saved_historical_evidence_modified": false,
+  "snapshots": {
+    "B": {
+      "active_facet_identities": [],
+      "lineage_assumptions": [
+        "The supplied pre-insertion native bulk connectivity exactly equals the frozen source row/local-corner connectivity.",
+        "The native backend preserves source bulk row and local-corner identity after cohesive insertion; this API has no independent persistent native cell IDs.",
+        "Exact rest-coordinate consistency checks corroborate the row/local-corner mapping but do not independently prove persistent cell identity for indistinguishable coincident cells."
+      ],
+      "lineage_scope": "Source ancestry is assigned from frozen source cell row/local-corner ordinals and exact rest-coordinate checks. Post-insertion native bulk row/local-corner identity is conditional on the native backend preserving that correspondence.",
+      "missing_eligible_facet_identities": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      ],
+      "native_bulk_tetrahedron_count": 96,
+      "native_cohesive_shape": [
+        0,
+        6
+      ],
+      "native_rest_node_count": 45,
+      "qp_ordinal_stability_claimed": false
+    },
+    "C": {
+      "active_facet_identities": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      ],
+      "lineage_assumptions": [
+        "The supplied pre-insertion native bulk connectivity exactly equals the frozen source row/local-corner connectivity.",
+        "The native backend preserves source bulk row and local-corner identity after cohesive insertion; this API has no independent persistent native cell IDs.",
+        "Exact rest-coordinate consistency checks corroborate the row/local-corner mapping but do not independently prove persistent cell identity for indistinguishable coincident cells."
+      ],
+      "lineage_scope": "Source ancestry is assigned from frozen source cell row/local-corner ordinals and exact rest-coordinate checks. Post-insertion native bulk row/local-corner identity is conditional on the native backend preserving that correspondence.",
+      "missing_eligible_facet_identities": [],
+      "native_bulk_tetrahedron_count": 96,
+      "native_cohesive_shape": [
+        8,
+        6
+      ],
+      "native_rest_node_count": 54,
+      "qp_ordinal_stability_claimed": false
+    },
+    "D": {
+      "active_facet_identities": [
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,20,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|19,22,23",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,21,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|20,23,24",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,23,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|22,25,26",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,24,27",
+        "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638|23,26,27"
+      ],
+      "lineage_assumptions": [
+        "The supplied pre-insertion native bulk connectivity exactly equals the frozen source row/local-corner connectivity.",
+        "The native backend preserves source bulk row and local-corner identity after cohesive insertion; this API has no independent persistent native cell IDs.",
+        "Exact rest-coordinate consistency checks corroborate the row/local-corner mapping but do not independently prove persistent cell identity for indistinguishable coincident cells."
+      ],
+      "lineage_scope": "Source ancestry is assigned from frozen source cell row/local-corner ordinals and exact rest-coordinate checks. Post-insertion native bulk row/local-corner identity is conditional on the native backend preserving that correspondence.",
+      "missing_eligible_facet_identities": [],
+      "native_bulk_tetrahedron_count": 96,
+      "native_cohesive_shape": [
+        8,
+        6
+      ],
+      "native_rest_node_count": 54,
+      "qp_ordinal_stability_claimed": false
+    }
+  },
+  "solver_invoked": false,
+  "source_anchor_hash": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+  "source_id_basis": {
+    "source_cell_ids": "original Gmsh type-4 tetrahedron element IDs",
+    "source_node_ids": "original Gmsh MSH 2.2 node tags"
+  },
+  "source_mesh_counts": {
+    "eligible_internal_facet_count": 8,
+    "eligible_internal_facets_with_two_parents": 8,
+    "interface_tri3_count": 8,
+    "source_cell_id_count": 96,
+    "source_node_count": 45,
+    "source_tetrahedron_count": 96
+  },
+  "source_parent_and_side_pair_validation": "all eight saved C/D cohesive facets map to two known original MSH parent cell IDs, one parent incidence per side",
+  "status": "READ_ONLY_SAVED_NATIVE_ANCESTRY_DEMONSTRATION"
+}

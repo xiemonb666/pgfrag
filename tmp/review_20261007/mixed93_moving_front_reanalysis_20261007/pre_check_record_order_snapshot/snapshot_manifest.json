@@ -1,0 +1,25 @@
+{
+  "files": {
+    "SOURCE_PINS.json": {
+      "bytes": 5133,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/pre_check_record_order_snapshot/SOURCE_PINS.json",
+      "sha256": "283b260918bcb39d7d010308ec7de8f48768420752fa14096fbc053516da5b63"
+    },
+    "capture_once.py": {
+      "bytes": 8785,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/pre_check_record_order_snapshot/capture_once.py",
+      "sha256": "162a409663659b0d9430edb9e002f7f857014e072cf5fcb2431b2ea0b887e324"
+    },
+    "case.json": {
+      "bytes": 16746,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/pre_check_record_order_snapshot/case.json",
+      "sha256": "89024e62b006224819a0331796b5c3bce55cbea4e9bd732309d2bac1069acbf4"
+    },
+    "mixed93_moving_front_reanalysis.py": {
+      "bytes": 56168,
+      "path": "pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/pre_check_record_order_snapshot/mixed93_moving_front_reanalysis.py",
+      "sha256": "9432b3ac91706676eab02db98d1230313f6175f03a50a4691200d87994e4fcc1"
+    }
+  },
+  "schema": "mixed93_moving_front_pre_checkpoint_narrowfix.v1"
+}

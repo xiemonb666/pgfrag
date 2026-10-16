@@ -1,0 +1,176 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.run03_independent_review_execution_record.v1",
+  "overall_audit_status": "AUDITED_WITH_RECEIPT_SIZE_DISCREPANCY",
+  "native_arithmetic_validation": {
+    "status": "PASS",
+    "checks_passed": 25,
+    "checks_required": 25
+  },
+  "runner": {
+    "status": "COMPLETED",
+    "adapter_exit_code": 0,
+    "elapsed_ms": 6147,
+    "runtime_budget_seconds": 110,
+    "timed_out": false,
+    "stdout_bytes": 182,
+    "stderr_bytes": 0
+  },
+  "input_and_output_integrity": {
+    "source_freeze_sha256": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217",
+    "source_pins": {
+      "matched": 84,
+      "total": 84,
+      "all_match": true
+    },
+    "output_files": {
+      "matched": 10,
+      "total": 10,
+      "all_match": true
+    },
+    "pre_mismatch_count": 0,
+    "post_mismatch_count": 0,
+    "pre_post_result_tree_manifest_equal": true,
+    "attempt_tree_bytes": 88924268,
+    "result_tree_bytes": 88921168,
+    "max_attempt_bytes": 209715200,
+    "max_output_bytes": 199229440,
+    "within_caps": true
+  },
+  "receipt_size_check": {
+    "pass": false,
+    "tolerance_bytes": 0,
+    "recorded_bytes": 88924215,
+    "observed_bytes": 88924268,
+    "observed_minus_recorded_bytes": 53,
+    "only_failed_check": true
+  },
+  "numerical_reconstruction": {
+    "states": 97,
+    "steps": 96,
+    "points": 4500,
+    "canonical_bonds": 204778,
+    "events": 6810,
+    "threshold_ambiguous_edge_state_checks_within_128eps": 0,
+    "final_active_bonds": 197968,
+    "final_broken_bonds": 6810,
+    "final_graph_components": 2,
+    "final_largest_graph_component_mass_fraction": 0.9500000000000618
+  },
+  "grip_association": {
+    "first_break_events_touch_right_grip": 6810,
+    "events_within_one_horizon_of_right_edge": 6810,
+    "right_grip_mass_fraction": 0.05000000000000002,
+    "right_grip_layer_pair_events": 6810,
+    "right_grip_cross_boundary_events": 6810,
+    "right_grip_internal_pair_events": 0,
+    "interpretation": "All labels here describe connected components of the active canonical-bond graph only; they do not identify physical fragments or a crack surface."
+  },
+  "energy_diagnostic_only": {
+    "final_raw_ke_all_dof_J": 2.0199373874090586E-05,
+    "final_raw_ke_free_dof_J": 2.019937385738779E-05,
+    "final_raw_ke_grip_masked_dof_J": 1.6702790767361035E-14,
+    "final_integrated_osb_strain_energy_J": 1.9385236283559394E-05,
+    "final_cumulative_discrete_bc_kinetic_work_J": 0.003096080788883557,
+    "final_energy_balance_residual_diagnostic_J": -0.003056496178725907,
+    "physical_grip_kinetic_energy_status": "UNKNOWN",
+    "qualification": "diagnostic only; no fracture-dissipation or energy-closure qualification"
+  },
+  "scientific_status": {
+    "physical_material_validity": "UNKNOWN_UNCALIBRATED",
+    "physical_loading_validity": "UNKNOWN_UNCALIBRATED",
+    "surface_response_and_NoCorrection_bias": "UNKNOWN_NOT_QUALIFIED",
+    "grid_or_horizon_bias": "UNKNOWN_NOT_ASSESSED",
+    "fracture_dissipation": "UNKNOWN_NOT_COMPUTED",
+    "physical_crack_surface": "UNKNOWN_NOT_RECONSTRUCTED",
+    "physical_fragment_claim": "NOT_ESTABLISHED",
+    "active_graph_components_are_physical_fragments": false
+  },
+  "visualization": {
+    "geometry_uses_actual_mm_no_displacement_exaggeration": true,
+    "plotted_event_sample_count": 500,
+    "total_event_count": 6810,
+    "surface_reconstruction": false
+  },
+  "run02_failure_preserved": {
+    "status": "FAIL",
+    "audit_json_sha256": "6e7be91780f6f4d92256e3bda6ad44880cc703dde1762a8996430f93454ca9a4",
+    "adapter_sha256": "14179191572b25c7acdf50699c040a9493461f112d9a0b9305df0f6a2d162826"
+  },
+  "artifacts": {
+    "RUN03_FREEZE.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\RUN03_FREEZE.json",
+      "bytes": 7657,
+      "sha256": "4177cd3180f8d73fbd7540e11280faf20a22033832e202a33b6998fbb2684114"
+    },
+    "RUN03_STATIC_PREFLIGHT.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\RUN03_STATIC_PREFLIGHT.json",
+      "bytes": 4823,
+      "sha256": "ef32ff3ffc31f0067e8a887ccf7c91ad8389f0e6e75001c1645c1570d0eb1927"
+    },
+    "pilot_independent_review.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pilot_independent_review.py",
+      "bytes": 105069,
+      "sha256": "36681a593d18b29b2fe5f30dab0761e1f5afece91bfb5e85130cccaa2621ab7e"
+    },
+    "preflight_static.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\preflight_static.py",
+      "bytes": 7596,
+      "sha256": "b37b6a1ff4d3b7c97e01501753148ab253d40ab1c786f0cace2fca8be1c3f867"
+    },
+    "run_bounded_review.ps1": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\run_bounded_review.ps1",
+      "bytes": 3716,
+      "sha256": "23287fe464830f8d2e43c9a4677c1e82b4dc3c1ecda1032b38af1a0bd53f203d"
+    },
+    "snapshot_bindings.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\snapshot_bindings.py",
+      "bytes": 8303,
+      "sha256": "3bf87b494232ce4cb7c546f2ae282faf21ae24a931f52f618045650d75e1b597"
+    },
+    "pre_execution_snapshot.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pre_execution_snapshot.json",
+      "bytes": 29030,
+      "sha256": "7f9893fbbf4c55a7ccc47aa5e1126f2cd9bedf72b3ba43416bdc2d9d42431495"
+    },
+    "post_execution_snapshot.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\post_execution_snapshot.json",
+      "bytes": 29031,
+      "sha256": "757273866b84ab2c3ee4448edf5053157b967f4391b4f81d3ca38782bdb3ee97"
+    },
+    "bounded_runner_receipt.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\bounded_runner_receipt.json",
+      "bytes": 635,
+      "sha256": "c0861281595ed0e36b1d79de7236eb2ef2f1dd4365a9f3fd5a244d98172230d9"
+    },
+    "audit_output\\bounded_runner_stdout.txt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\bounded_runner_stdout.txt",
+      "bytes": 182,
+      "sha256": "de7dcd4cd4242902532c09e07b3e7c7491c7ca3c5a589b6973d462e036a3e4a5"
+    },
+    "audit_output\\bounded_runner_stderr.txt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\bounded_runner_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit_output\\pilot_independent_review.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\pilot_independent_review.json",
+      "bytes": 263935,
+      "sha256": "821dcef43d5220b443d818eaad95fc4df798a887c5181730f307fd94583136ee"
+    },
+    "audit_output\\PILOT_REVIEW_REPORT.md": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\PILOT_REVIEW_REPORT.md",
+      "bytes": 3562,
+      "sha256": "eba55a51feb26382af247f1a63b28b54757a9354390cf445e41f47b361b2de77"
+    },
+    "audit_output\\pilot_geometry_damage_first_breaks.png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\pilot_geometry_damage_first_breaks.png",
+      "bytes": 1177661,
+      "sha256": "bb1d67cf1810dc0074414baed836186fef2db8ab27791acf3ec13dc3b70e3593"
+    },
+    "audit_output\\pilot_timeline_graph_energy.png": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output\\pilot_timeline_graph_energy.png",
+      "bytes": 326496,
+      "sha256": "4b896ff2bc71f99b8416817f7910f1d2a8492b84b0828ccc4f803d448511c0a9"
+    }
+  }
+}

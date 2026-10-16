@@ -1,0 +1,5 @@
+{
+  "status": "FAILED_PRESERVED_NO_RETRY",
+  "error": "ValueError(\"physical surface group 'interface' is empty\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/cohesive_vessel.py\", line 500, in main\n    result = run(args.case.resolve(), args.out.resolve(), args.preflight_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/cohesive_vessel.py\", line 266, in run\n    contract = input_interface_contract(source)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/inputs/cohesive_mesh.py\", line 267, in input_interface_contract\n    raise ValueError(f\"physical surface group {interface_name!r} is empty\")\nValueError: physical surface group 'interface' is empty\n"
+}

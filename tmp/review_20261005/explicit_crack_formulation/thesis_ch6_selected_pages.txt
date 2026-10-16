@@ -1,0 +1,403 @@
+===== FILE PDF PAGE 153 =====
+128 Chapter 6. A framework for 3D cracks with the CPM
+A B(B′)
+C
+D
+E
+crack in 2D
+(a)
+A B
+E
+C
+D
+B′
+crack in 3D
+(b)
+Figure 6.1: The visibility criterion: (a) 2D crack; (b) 3D crack
+the intersection point E between the straight line connecting two particles C and D and a
+crack path AB as shown in Figure 6.1 (a). When E is within the segment AB, particles C
+and D are invisible to each other and are not inﬂuenced mutually. However, the situation
+for 3D cracks is diﬀerent, as presented in Figure 6.1 (b). For a crack in 3D with a curved
+front, the line for checking the visibility is AB shorter than AB′. Particles C and D are
+visible in that the intersection E is outside of the line AB.
+The adaptivity approach in Section 3.3 for 2D cracks is also modiﬁed here to be ap-
+plicable to 3D problems. The same error estimator of Equation (3.13) is used, while the
+reﬁnement strategy is diﬀerent where the division of background cells is changed from a
+quad-tree structure in 2D [227, 231] to an octree structure in 3D [225]. For instance, a
+background cell is divided into eight subparts and 19 new particles are added, a much
+larger number than the 5 new particles in 2D.
+6.2.2 Cracking particles in 3D
+In the original CPM for 3D crack problems [203, 204], each particle is deﬁned with a
+discontinuous circular plane in its support and the weight function is modiﬁed as shown
+in Figure 6.2 (a). Using these circular planes to describe nonplanar 3D crack surfaces can
+however give rise to issues of spurious cracking as mentioned in Section 3.2.2. The idea
+of the modiﬁed CPM in 2D (in Chapter 3) is here extended to 3D and an approach using
+nonplanar discontinuous segments is now presented as given in Figures 6.2 (b-d). Crack
+surfaces are described through a set of cracking particles as before but fully represented by
+a triangular mesh connecting these particles (Figure 6.3), where vertices of these triangular
+elements are the cracking particles. The orientations of these discontinuous “segments”
+(the triangular facets) are deﬁned according to the locations of the cracking particles:
+===== FILE PDF PAGE 154 =====
+6.2. Description of 3D crack surfaces 129
+Figure 6.2: The support of cracking particles in 3D: (a) the original CPM; (b-d) proposed
+CPM with diﬀerent segment numbers: 2, 3 and 4.
+particle a particle b
+particle c
+particle d
+Figure 6.3: Crack surfaces presented by triangular meshes in a cube problem domain.
+particle a located within a triangular element has a support as in Figure 6.2 (a); particle
+b on an edge in the mesh is deﬁned with a support in Figure 6.2 (b); supports of particles
+c and d on the vertices are depicted in Figure 6.2 (c-d). The information of all triangular
+facets connected to one cracking particle is recorded in a matrix. The maximum number
+of facets which can be connected to any particle is limited and set to eight for the sake of
+simplicity. Those particles in black in Figure 6.3 belong to the crack front particles and
+are not themselves split because the crack front has inﬂuence on both sides of the crack.
+For a cracking particle near to the crack front, its inﬂuence domain is fully truncated,
+although the crack does not necessarily cross the entire inﬂuence domain. This is because
+the cracking particle does not aﬀect the other side of the crack, when the visibility criterion
+is used to check the connectivity between particles. A pair of cracking particles sharing
+the same location cannot be distinguished from each other directly, and this is addressed
+by giving these cracking particles tiny shifts (e.g. 0.001 of their support sizes) to the two
+sides of the crack and then applying the standard algorithm for the visibility criterion.
+===== FILE PDF PAGE 155 =====
+130 Chapter 6. A framework for 3D cracks with the CPM
+This modiﬁcation is only applied for checking the connectivity between particles, while the
+original locations of cracking particles are used to calculate shape functions. It is notable
+that the description of crack surfaces can be obtained through other shapes of meshes,
+especially for cracks with simple geometries. For instance, a circular cell (the initial crack
+itself) can be used to represent the penny-shaped crack and the crack propagation can be
+described by a triangular mesh, as will be shown later.
+For simplicity, only linear problems with a single crack in 3D are considered here, al-
+though non-linear fracture problems with crack branching and crack coalescence have been
+studied by the CPM in [202–204]. The proposed CPM can cover problems of branched
+cracks [279], but crack branching itself, as a feature of dynamic crack propagation, is not
+contained in this implementation which uses an implicit quasi-static code. Whether a
+crack branches and how many branches generated are subject to the physics of the prob-
+lem and are not method dependent, and an additional criterion is required to model this
+phenomenon. The extension of the proposed CPM to dynamic fracture will be included
+in future research work.
+6.3 Crack propagation
+Crack propagation in 3D is comprised of two steps, advancing the crack front and gen-
+erating new crack surfaces. In the proposed method, the position of new crack front is
+obtained by giving the particles on the old crack front an increment following the max-
+imum circumferential stress criterion, as in Section 5.2.1, and new crack surfaces are
+created by connecting the two groups of particles on the old and new crack fronts with
+triangular facets.
+6.3.1 Calculation of SIFs in 3D
+Similar to the situation in 2D crack propagation, stress intensity factors (SIFs) at crack
+fronts are used to determine the orientation of the propagation increment instead of
+directly using the stresses at the crack front. After a solution for the governing equations
+is obtained, SIFs are extracted via either the J-integral [240] over a contour path, or the
+interaction integral [243] over a domain in 2D or 3D. For the former in 3D, the SIFs of
+three modes are decomposed by using symmetric and antisymmetric stresses speciﬁc to the
+crack surface as in [180, 280], but extra terms for the energy contribution from the normal
+===== FILE PDF PAGE 156 =====
+6.3. Crack propagation 131
+crack front
+integration volume
+2c
+2c
+2lc
+x
+y
+z
+Figure 6.4: A volume for the interaction integration at a crack front particle.
+direction of the contour plane are included, which contain the derivatives of stresses [281].
+These derivative terms can be avoided by using a domain integration instead, and the
+interaction integral is used to calculate SIFs in this chapter. The interaction integral in
+3D at one crack front particle is evaluated as
+I = 1
+lc
+∫
+V
+(σaux
+ij uj,1 + σijuaux
+j,1 − σaux
+jk εjkδ1i)q,i dV, i, j, k ∈ {1, 2, 3} , (6.1)
+and it has a relationship with SIFs as
+I = 2(1 − ν2)
+E (KIKaux
+I + KIIKaux
+II ) + µKIIIKaux
+III , (6.2)
+where q is a weight function e.g. q = (1 −|x|
+c )(1 −|y|
+c )(1 −|z|
+lc
+), c and lc are sizes of the
+volume as in Figure 6.4. The superscript “aux” indicates the auxiliary state, and the
+auxiliary ﬁeld is predeﬁned as in Appendix C and is used to calculate the SIFs of three
+modes. For instance, if Kaux
+I = 1, Kaux
+II = 0 and Kaux
+III = 0 then I = 2 (1−ν2)
+E KI. This
+integration is evaluated under a local coordinate system originated at the crack front
+particle as in Figure 6.4. Although a curvilinear coordinate system was applied in [282]
+for 3D cracks with curved and non-planar surfaces, the integration here is evaluated over
+a cube with a Cartesian coordinate system for the sake of simplicity, as in many other
+references [161, 272, 273, 283].
+The local Cartesian coordinate system for a particle on the crack front is built using
+===== FILE PDF PAGE 157 =====
+132 Chapter 6. A framework for 3D cracks with the CPM
+new front
+crack
+x
+y
+z
+∆a
+θc
+old front
+Figure 6.5: Local coordinates at crack fronts in 3D.
+the geometries of the triangular facets as shown in Figure 6.5, as
+⃗ x=
+∑m
+i
+⃗li∑m
+i li
+, ⃗ y =
+∑n
+i Ai⃗ ni∑n
+i Ai
+, ⃗ z = ⃗ x× ⃗ y, (6.3)
+where ⃗ xand ⃗ zare the extension and tangent vectors of the crack front respectively, and ⃗ y
+is the normal of the crack surface. li are the lengths of lines connected to the particle and
+⃗li are the vectors. Ai are the areas of triangular facets connected to the particle and ⃗ ni
+are the normals. m and n are the number of lines and triangular elements connected to
+the particle respectively. ⃗ xand ⃗ yobtained by Equation (6.3) are mostly not orthogonal,
+and in that case the projection of ⃗ yon ⃗ xneeds to be removed and ⃗ yis renormalised.
+6.3.2 Advancing the crack front
+Two parameters are involved to advance the crack front within the current algorithm,
+namely increment angle and length. The crack propagating angle can be determined by
+one of the three crack propagation criteria, including the maximum circumferential stress
+criterion, the minimum strain energy density criterion and the maximum strain energy
+release rate criterion as discussed in Section 5.2. Comparisons of all three criteria are given
+in [245] for 2D cracks and in [284] for 3D cracks. Here it is assumed that the deformation
+of mode III fracture does not aﬀect the propagation angle, for simplicity [273]. The
+increment angle θc is determined by the maximum circumferential stress criterion and is
+deﬁned with respect to the x axis within the xy plane under the local coordinate system
+in Figure 6.5, as in Equation (3.32).
+The magnitudes of increments along the crack front are set following the Paris’ law.
+===== FILE PDF PAGE 158 =====
+6.3. Crack propagation 133
+initial crack
+step 1
+step 2
+A
+B
+C
+D
+E
+Figure 6.6: Crack propagation steps in 3D with new crack surfaces described by triangular
+facets.
+Although the Paris’ law is originally used for fatigue fracture as mentioned in Section 1.4.4,
+it is used here for 3D cracks under a quasi-static loading, since it provides a relationship
+between the crack incremental length and the SIF at the crack front, e.g. examples in
+[180, 273]. For mixed-mode fracture in 3D, the SIF K in Equation (1.15) is replaced with
+the “equivalent” SIF measuring the magnitude of all SIFs of three modes , as
+K2
+eq =
+(
+KI cos3 θc
+2 − 3KII cos2 θc
+2 sin θc
+2
+)2
++ E
+(1 − ν2)2µ K2
+III. (6.4)
+The particle on the crack front with the maximum Keq is deﬁned with a given incremental
+length ∆amax, then the other particle i on the crack front is deﬁned with
+∆ai = ∆amax
+( ∆Keq
+∆Kmax
+eq
+)m
+. (6.5)
+After both the incremental lengths and angles along the crack front are obtained, the
+locations of the new crack front can be easily determined. Looping over all particles on
+the crack front, a particle i is given an increment which yields the location of the new
+crack front, as
+xnew
+i = xi + ∆aiQ−1 · [cos(θc), sin(θc), 0]T, (6.6)
+where xi and xnew
+i are positions of the crack front before and after crack propagation
+respectively, and Q is the rotation matrix from the global coordinates to the local coor-
+dinates. If no particle is located at xnew
+i , a new particle is created, otherwise the existing
+===== FILE PDF PAGE 159 =====
+134 Chapter 6. A framework for 3D cracks with the CPM
+particle at xnew
+i becomes cracked. For crack propagation step 1 to 2 as shown in Figure
+6.6, for instance, particles C and D on the new crack front are determined by Equa-
+tion (6.6) from particles A and B on the old crack front respectively. The new crack
+surface, the quadrangle ACDB , can be nonplanar and is decomposed into three planar
+triangular facets, where the particle E is the midpoint of the segment CD. The particle
+E is not propagated in the current algorithm for simplicity, although crack propagation
+can be executed for the particle E when the crack front segments cannot provide good
+approximation of curvature. The strategy here is similar to Duﬂot (2006) [273], and the
+diﬀerences exist in division of the supports of particles in the proposed method while these
+triangular cells were only used for describing the crack geometries in [273]. The two steps
+are duplicated to make successive crack propagation steps, and the adaptivity method
+mentioned above is executed for every crack propagation step so that the particle density
+around the crack front is adjusted to improve the eﬃciency. The whole process of crack
+propagation is demonstrated in Algorithm 6.1.
+Algorithm 6.1 Crack propagation for a 3D crack
+1: Achieve SIFs of all front particles by Equations (6.1, 6.2)
+2: Determine incremental angle θc by Equation (3.32)
+3: Calculate equivalent SIF by Equation (6.4)
+4: Find the maximum Keq
+5: for i=1:nc % loop over all crack front particles
+6: Set incremental magnitude ∆ ai by Equation (6.5)
+7: Obtain the position of new crack front by Equation (6.6)
+8: if there is no particle at the new position then
+9: Create new cracking particle
+10: else
+11: The particle at the new position becomes cracked
+12: end if
+13: end for
+14: Update the information of old front particles
+15: Create new triangular meshes connecting old and new front particles
+===== FILE PDF PAGE 160 =====
+6.4. Numerical examples 135
+6.4 Numerical examples
+The performance of the proposed methodology for modelling 3D cracks is demonstrated
+using the following three numerical examples. The ﬁrst is a penny-shaped crack located
+inside a cube under uniaxial tensile loading, and the theoretical solution of which is used
+to check the accuracy of the calculation. The second example is obtained by giving the
+crack a rotation but keeping the same boundary conditions as the ﬁrst example, which
+produces a mixed mode crack problem, and additionally crack propagation is considered.
+The ﬁnal example contains a lens-shaped crack, which is used to test the abilities of the
+proposed method for modelling curved crack surfaces. A cube domain with side length
+2w = 200mm is used in all three examples and is initially discretised with a regular
+distribution of 15 × 15 × 15 particles from which adaptive reﬁnement proceeds. The
+integration over the cube is performed using 14 × 14 × 14 cells each with 4 × 4 × 4 Gauss
+points, and the surface integration for external loadings is calculated by using 14×14 cells
+with 8 × 8 Gauss points for each. Based on the conservation of momentum, the average
+movement and rotation of the cube are all zero, as
+∫
+V
+uxdV = 0,
+∫
+V
+uydV = 0,
+∫
+V
+uzdV = 0, (6.7)
+∫
+V
+∂ux
+∂y − ∂uy
+∂x dV = 0,
+∫
+V
+∂ux
+∂z − ∂uz
+∂x dV = 0,
+∫
+V
+∂uy
+∂z − ∂uz
+∂y dV = 0, (6.8)
+and Lagrange multipliers are used to impose these displacement boundary conditions.
+This approach has been applied to 2D crack problems [270] for the imposition of essential
+boundary conditions and is applicable for both symmetric and asymmetric problems. It
+leads to exactly symmetric results for Example 1 and provides simpler implementation of
+displacement boundaries for Examples 2 and 3 than by ﬁxing some parts of the cube in
+[180]. It is not a burden for calculating these integrations in that they are obtained when
+the system stiﬀness matrix is assembled, and requires only six Lagrange multipliers for
+3D problems. For crack propagation in 3D, the constant in Equation (6.5) is deﬁned as
+m = 3 .32 for all three examples, taking the value from [273]. The error in SIFs for all
+===== FILE PDF PAGE 161 =====
+136 Chapter 6. A framework for 3D cracks with the CPM
+Figure 6.7: A penny-shaped crack in a cube, subjected to uniaxial tensile loading.
+particles at the crack front is measured by
+eKn =
+∑nc
+k=1 |Kk
+n − K0
+n|
+ncK0
+n
+, n ∈ {I, II, III } (6.9)
+where nc is the number of particles at the crack front, k is the index, Kn are calculated
+SIFs and K0
+n are the exact values.
+6.4.1 Penny-shaped crack
+The deformation of the penny-shaped crack under uniaxial tensile loading is mode I
+fracture. The conﬁguration is shown in Figure 6.7, where the crack has a radius a = w/10
+and linear elastic material properties are applied with Young’s modulus E = 100GPa and
+Poisson’s ratio ν = 0.3. The external loading is σ = 100MPa at both the upper and lower
+faces of the cube. An adaptivity approach is used to control particle densities around the
+crack front with the target global error ηt = 0.008. For this crack problem with a simple
+shape, a circular cell (the penny-shaped crack itself) is used directly instead of triangular
+facets for checking the connectivity between particles. A theoretical solution for both
+crack opening shapes and mode I SIF KI is given by Tada [248], as
+u = 4(1 − ν2)
+πE σ
+√
+a2 − r2, (6.10a)
+KI = 2
+π σ√πa. (6.10b)
+For the sake of results analysis, KI is normalised to K′
+I = KI
+2σ
+√
+π/a.
+===== FILE PDF PAGE 164 =====
+6.4. Numerical examples 139
+Figure 6.12: An inclined penny-shaped crack under uniaxial tensile loading.
+and given in Figure 6.11, where θ is deﬁned as the angle from the x axis and within
+the xy plane as depicted in Figure 6.7 and r is the distance to the centre of the crack.
+Figure 6.11 (a) depicts the displacements obtained by the proposed method for cracking
+particles at four diﬀerent directions from the centre of the circle which match well with
+the analytical solution in Equation (6.10). Although a uniform distribution of particles is
+used initially to model the crack with a curved front, the adaptivity approach can adjust
+particle densities around the crack front and maintains the accuracy of the calculation.
+SIFs from the calculation also agree with analytical results from Equation (6.10), as shown
+in Figure 6.11 (b).
+6.4.2 Inclined penny-shaped crack
+A mixed-mode fracture is studied by giving the penny-shaped crack in the ﬁrst example
+a rotation and keeping the other aspects, as given in Figure 6.12, where the crack has a
+larger radius a = w/5 and the rotation angle is β = π/6 from the x axis within the xz
+plane. The same material properties and boundary conditions as the ﬁrst example are
+used, and Equation (6.8) is still applicable although the problem is not symmetric to the
+xy plane at the centre of the cube. Here the crack is represented by a circular cell which
+is the penny-shaped crack itself, while new crack surfaces after crack propagation are
+described by a triangular mesh. The target error for the adaptivity approach is deﬁned
+a little higher to ηt = 0 .02, because it is hard to ensure high accuracy after the crack
+propagates to a complex shape.
+For the initial crack, the deformation under uniaxial tensile loading is given in Figure
+===== FILE PDF PAGE 165 =====
+140 Chapter 6. A framework for 3D cracks with the CPM
+(a)
+ (b)
+(c)
+ (d)
+Figure 6.13: Deformation (unit mm) enlarged by 200 times of an inclined penny-shaped
+crack under uniaxial tension: (a) xyz view; (b) xy view; (c) yz view; (d) xz view.
+6.13, where a small rotation of the crack relative to the original location is found. SIFs
+along the crack front are obtained and compared with analytical results from Tada [248]
+as in Equations (6.11 a-c), and good agreement is achieved as shown in Figure 6.14, where
+θ is deﬁned the same as the ﬁrst example.
+KI = 2σ cos2 β
+√ a
+π , (6.11a)
+KII = − 4σ
+2 − ν sin β cos β
+√ a
+π cos θ, (6.11b)
+===== FILE PDF PAGE 166 =====
+6.4. Numerical examples 141
+Figure 6.14: SIFs along the crack front for the inclined penny-shaped crack problem.
+(a)
+(b)
+(c)
+ (d)
+Figure 6.15: Crack propagation (unit mm) of the incline penny-shaped crack under uni-
+axial tension: (a) xyz view; (b) xy view; (c) yz view; (d) xz view.
+KIII = −4(1 − ν)σ
+2 − ν sin β cos β
+√ a
+π sin θ. (6.11c)
+It is also shown that the adaptivity approach can ensure the accuracy along a curved crack

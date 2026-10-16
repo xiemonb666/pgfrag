@@ -1,0 +1,12 @@
+{
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\render_zero_load_diagnostic.py",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\native_zero_load_geometry_callback.png"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "MPLCONFIGDIR": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\matplotlib_cache",
+  "PYTHONDONTWRITEBYTECODE": "1"
+}

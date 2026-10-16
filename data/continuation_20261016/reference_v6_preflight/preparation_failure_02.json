@@ -1,0 +1,61 @@
+{
+  "schema": "pgfrag.reference_v6_preparation_failure_receipt.v1",
+  "status": "PREPARATION_FAILED_BEFORE_NATIVE_EXECUTION",
+  "attempt": 2,
+  "timestamp_utc": "2026-10-16T09:01:07.5050183Z",
+  "failure": "The exact cross-format T4 row map used row_ordinal from parser records, but the frozen parser exposes row_ordinal only in the raw MSH Elements audit; the proof must use raw MSH row ordinals keyed by element ID.",
+  "exception": "KeyError: row_ordinal",
+  "native_solver_started": false,
+  "native_run_directory_created": false,
+  "solver_steps_executed": 0,
+  "retry_or_retune_performed": false,
+  "partial_input_directory": "inputs.failed_preparation_02",
+  "partial_inputs_before_rebuild": [
+    {
+      "path": "__pycache__/cohesive_mesh.cpython-312.pyc",
+      "bytes": 32956,
+      "sha256": "df7600cb528d4750a93cd838ec3f7641999cabc6de4756d9c79e82c8f79c9eb7"
+    },
+    {
+      "path": "cohesive_mesh.py",
+      "bytes": 26147,
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d"
+    },
+    {
+      "path": "cohesive_stability.py",
+      "bytes": 19680,
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1"
+    },
+    {
+      "path": "cohesive_vessel.py",
+      "bytes": 29970,
+      "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b"
+    },
+    {
+      "path": "material.dat",
+      "bytes": 471,
+      "sha256": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1"
+    },
+    {
+      "path": "mesh.msh",
+      "bytes": 6422627,
+      "sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490"
+    },
+    {
+      "path": "mesh.original.msh",
+      "bytes": 6422638,
+      "sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e"
+    },
+    {
+      "path": "source_mesh_result.json",
+      "bytes": 74760,
+      "sha256": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924"
+    },
+    {
+      "path": "source_mesh.npz",
+      "bytes": 2512088,
+      "sha256": "781cf815d05b9db7587ecde192f0b7c27a2947780f814d439a73fc0b24a0e820"
+    }
+  ],
+  "disposition": "Preserve this receipt; the next preparation uses raw MSH row ordinals and the already validated original-cell-tag/corner-node-tag correspondence. The single authorized native initialization-only attempt remains unused."
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "pgfrag.pd.point_event.static_review.v2",
+  "status": "CANDIDATE_FINALFREEZE_AWAITING_ROOT_REVIEW; NO_RUNTIME_AUTHORIZATION",
+  "prepared_utc_date": "2026-10-04",
+  "candidate_directory": "pgfrag/tmp/review_20261004/pd_point_event_probe/finalfreeze",
+  "diff_path": "pgfrag/tmp/review_20261004/pd_point_event_probe/v2diff/v2diff.patch",
+  "frozen_v1_directory": "pgfrag/tmp/review_20261004/pd_point_event_probe/v1_static_freeze",
+  "runner_sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290",
+  "launcher_sha256": "102b65f7085dd60d267f61de31765d61465d063c01fca4d98f736d85685e0df4",
+  "input_hashes_unchanged": [
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.points.csv",
+      "sha256": "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_cell_jitter_5cube_seed17.metadata.toml",
+      "sha256": "47e4fe7d1d66063b2c234e48e65bae286fc4cdfda8d18b5913a3367da3a92e19"
+    }
+  ],
+  "static_checks": [
+    "PowerShell AST parse passed for make_point_inputs.ps1, freeze_manifest.ps1, and launch_zero_load_probe.ps1.",
+    "Manifest JSON parsed; all 31 pinned file hashes and pinned Julia executable SHA-256 verified.",
+    "Frozen input CSV/metadata hashes match the v1 static manifest; inputs were not regenerated.",
+    "Vendored initial_conditions.jl hash and velocity_ic! signature are pinned; no vendored source was changed.",
+    "Runner source statically contains Julia-compatible enumerate(lines[2:end]) indexing and finite checks for rho, E, nu, Gc, and horizon.",
+    "Launcher source statically contains nullable process exit handling, timeout/wrapper policy, start/wait exception receipt fields, sibling logs, and CreateNew receipt semantics."
+  ],
+  "not_run": [
+    "Julia parser",
+    "Julia runtime",
+    "native solver",
+    "launcher",
+    "preflight",
+    "stock-native comparison",
+    "tinyload case"
+  ],
+  "first_future_runtime_gate": {
+    "required_root_release": true,
+    "points": 125,
+    "threads": 1,
+    "chunks": 1,
+    "case": "zero_load_control",
+    "steps": 1,
+    "timeout_seconds": 120,
+    "damage_requirement": "none",
+    "acceptance": [
+      "two native samples at step 0 and step 1",
+      "both exact experiment-local event hooks dispatch with export_allowed=false",
+      "native clock and accepted dt match the native stable bound",
+      "complete frozen point-ID mapping and positive rho-times-volume mass closure",
+      "complete reciprocal directed bond states equal canonical undirected states at both samples",
+      "no bond activity transition under zero initial velocity and no ongoing load",
+      "OUT remains empty; CSV snapshots and receipt/logs remain in sibling paths"
+    ]
+  },
+  "stop_conditions": [
+    "Stop before runtime if the source/manifest/runtime hash changes or any static parse/hash check fails.",
+    "Stop the first gate if either observer hook is missing, duplicated, reordered, or bypassed by native dispatch.",
+    "Stop if step 0/1 sample clock, stable dt, single chunk/thread, point IDs, positive mass closure, or reciprocal directed/canonical graph completeness fails.",
+    "Stop if zero-load creates an activity transition, OUT is not empty, or the child exit/timeout receipt is not numeric/explicitly UNKNOWN with the wrapper policy recorded.",
+    "Do not infer physical fragments, exact crack faces, energy balance, R2, or fragment count from this native graph-only gate."
+  ],
+  "technical_blocks": [
+    "Exact native output-generic dispatch remains an internal API and requires the first separately approved preflight proof.",
+    "E, rho, and Gc remain unvalidated prototype values; no calibration or physical validation is claimed.",
+    "The external point-set volume/mass/orientation audit is pending with the root-designated input reviewer."
+  ]
+}

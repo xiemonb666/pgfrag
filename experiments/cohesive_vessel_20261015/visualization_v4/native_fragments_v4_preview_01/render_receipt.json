@@ -1,0 +1,337 @@
+{
+  "schema": "pgfrag.native_fragment_visualization_receipt.v1",
+  "source_packet": {
+    "directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\native_cohesive_fragments_v4",
+    "manifest_sha256": "b3cca692466eb7e5e30b582a9d0e73995cdececae63dfb90ddbce2ff5b77ac2c",
+    "manifest_schema": "pgfrag.native_cohesive_fragments.v1",
+    "verified_packet_files": {
+      "case.json": {
+        "sha256": "69bac6f740c7ee03ae08021288afff63e3ef110dbd8f7f12202e5e2c69dc4dde",
+        "bytes": 3103
+      },
+      "cohesive_fragments.py": {
+        "sha256": "539dc189d2010510922acc20e0dd01a225267be2a1d13f5703b54a708d46c220",
+        "bytes": 33535
+      },
+      "export_native_fragments.py": {
+        "sha256": "1f8e0353bc003b40b6a9436e0b809fca840b3e119a1e5e738bc63138b434527e",
+        "bytes": 8240
+      },
+      "forge_manifest.json": {
+        "sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+        "bytes": 6147
+      },
+      "fragments.json": {
+        "sha256": "6ff1e0cce6cd77a5a72a59ec4cca4758b5f2f730ef6a6dafd8aa5f26c661eff7",
+        "bytes": 8943234
+      },
+      "fragment_00.obj": {
+        "sha256": "e0c26538423c58db9fa29da0fa1f729a24c52320d9f1514909f706138c5ddf24",
+        "bytes": 62337
+      },
+      "fragment_01.obj": {
+        "sha256": "c5b7b3ecbd31aeb70b876981be0a58465df3ef4120c2454dbed6398b5c6654d7",
+        "bytes": 61050
+      },
+      "receipt.json": {
+        "sha256": "dcfa06c6ad304ce35cf8ff37b72ceb09b7dabbb6ac172a97cd47abbfece0a04c",
+        "bytes": 3383
+      },
+      "separation.json": {
+        "sha256": "fe318274b64d2425f0128ff6f697d3cb725347272cc3b5a069e6c6a3774c9d44",
+        "bytes": 467
+      },
+      "state.npz": {
+        "sha256": "81a95379062bc16c743a5013e810b923b110aaac845c5976509875f827a6d2fd",
+        "bytes": 129982
+      }
+    },
+    "all_listed_packet_files_verified": true,
+    "forge_manifest_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+    "fragments_json_sha256": "6ff1e0cce6cd77a5a72a59ec4cca4758b5f2f730ef6a6dafd8aa5f26c661eff7",
+    "state_npz_sha256": "81a95379062bc16c743a5013e810b923b110aaac845c5976509875f827a6d2fd"
+  },
+  "renderer_code": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\cohesive_vessel_20261015\\render_native_fragments.py",
+    "sha256": "3a6ff2ff49f8788d85e2b879b2a2844baf57070e0e07d34399b89afd221ea7da",
+    "vtk_version": "9.6.2",
+    "numpy_version": "2.5.3",
+    "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe"
+  },
+  "extractor_winding_area_check": {
+    "status": "PASS",
+    "method": "synthetic native T4 pair with exact duplicate rest nodes and cyclic side-B ordering",
+    "source_node_ancestry_used": true,
+    "side_a_rest_area_m2": 0.5,
+    "side_b_rest_area_m2": 0.5,
+    "areas_exactly_equal": true,
+    "extractor_source_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\cohesive_fragments.py",
+    "extractor_source_sha256": "539dc189d2010510922acc20e0dd01a225267be2a1d13f5703b54a708d46c220"
+  },
+  "native_pose": {
+    "frame_label": "native packet state at case time.total_s",
+    "time_s": 5e-05,
+    "time_us": 50.0,
+    "current_nodes_source": "state.npz/current_nodes_m",
+    "model_coordinate_units": "metres",
+    "display_unit_scale": 1.0,
+    "component_x_gap_m": 0.0003840054932117519,
+    "component_x_gap_um": 384.0054932117519
+  },
+  "source_counts": {
+    "node_count": 1317,
+    "tetrahedron_count": 4342,
+    "component_tetrahedron_counts": [
+      2239,
+      2103
+    ],
+    "tetrahedron_rows_covered_once": 4342,
+    "boundary_triangle_count": 2208,
+    "component_boundary_triangle_counts": [
+      1116,
+      1092
+    ],
+    "face_region_counts": {
+      "1": 1066,
+      "2": 503,
+      "3": 323,
+      "255": 316
+    },
+    "face_kind_counts": {
+      "0": 1892,
+      "1": 316
+    },
+    "component_boundary_face_counts": {
+      "0": 1116,
+      "1": 1092
+    },
+    "failed_cohesive_facet_count": 158,
+    "all_native_tets_covered_exactly_once": true,
+    "all_native_boundary_triangles_rendered": true
+  },
+  "paint": {
+    "method": "continuous recipe evaluated at 1,024 rest-Z texel centers; linear albedo converted to sRGB bytes for display",
+    "texture_dimensions": [
+      1024,
+      1
+    ],
+    "rest_z_source_range_m": [
+      -1.7763568394e-18,
+      0.012
+    ],
+    "region_codes_textured": [
+      1
+    ],
+    "recipe": {
+      "bands": [
+        {
+          "center_z_mm": 3.8571428571428568,
+          "color": "red",
+          "width_mm": 0.42857142857142855
+        },
+        {
+          "center_z_mm": 6.2142857142857135,
+          "color": "dark",
+          "width_mm": 0.21428571428571427
+        },
+        {
+          "center_z_mm": 8.571428571428571,
+          "color": "red",
+          "width_mm": 0.42857142857142855
+        }
+      ],
+      "coordinate_map": "world_xyz_rest_mm; band centers use global Z",
+      "fracture_region_codes_excluded": [
+        255
+      ],
+      "geometry_relief_mm": 0.0,
+      "historical_style_validation": "NOT_VALIDATED",
+      "material_binding_id": "vf_prototype_matte_earth_01",
+      "palette_linear_rgb": {
+        "base": [
+          0.66,
+          0.49,
+          0.34
+        ],
+        "dark": [
+          0.095,
+          0.032,
+          0.018
+        ],
+        "red": [
+          0.48,
+          0.05,
+          0.025
+        ]
+      },
+      "pattern_id": "three_bands",
+      "seed": 20261015,
+      "source_note": "Deterministic procedural paint candidate; not matched to a dated or provenanced specimen.",
+      "surface_finish": {
+        "model": "constant_lambertian_preview",
+        "roughness": 0.78
+      },
+      "target_region_codes": [
+        1
+      ]
+    }
+  },
+  "display_transform": {
+    "actor_translation_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actor_rotation_degrees": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "actor_scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "assembly_geometry": "unchanged current_nodes_m from the packet",
+    "individual_fragment_geometry": "same unchanged current_nodes_m; each renderer filters to one component",
+    "individual_fragment_camera_reorientation_only": true,
+    "simulation_state_modified": false,
+    "native_tet_mesh_drawn_as": "all saved native boundary triangles; no downsampling or caps"
+  },
+  "cameras": {
+    "window_dimensions_px": [
+      2000,
+      1100
+    ],
+    "assembly_viewport_normalized": [
+      0.025,
+      0.035,
+      0.555,
+      0.885
+    ],
+    "assembly": {
+      "projection": "parallel",
+      "focal_point_m": [
+        1.2534916296862847e-07,
+        -1.1990383576299113e-07,
+        0.006016152915715632
+      ],
+      "position_m": [
+        1.2534916296862847e-07,
+        -0.0796030951206349,
+        0.013976450437395547
+      ],
+      "view_direction_unit": [
+        0.0,
+        -0.9950371902099893,
+        0.09950371902099893
+      ],
+      "view_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parallel_scale_m": 0.0145,
+      "camera_distance_m": 0.08
+    },
+    "fragment_0_viewport_normalized": [
+      0.59,
+      0.475,
+      0.98,
+      0.875
+    ],
+    "fragment_0_camera": {
+      "projection": "parallel",
+      "focal_point_m": [
+        0.005058473896165023,
+        0.00015187605669423094,
+        0.007189625592145128
+      ],
+      "position_m": [
+        -0.054667626132665195,
+        -0.02254404195426125,
+        0.019134845597911173
+      ],
+      "view_direction_unit": [
+        -0.9188630773666188,
+        -0.3491679693993151,
+        0.18377261547332377
+      ],
+      "view_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parallel_scale_m": 0.0138,
+      "camera_distance_m": 0.065
+    },
+    "fragment_1_viewport_normalized": [
+      0.59,
+      0.055,
+      0.98,
+      0.455
+    ],
+    "fragment_1_camera": {
+      "projection": "parallel",
+      "focal_point_m": [
+        -0.005096311788717368,
+        -5.661827859915825e-05,
+        0.007205933242057825
+      ],
+      "position_m": [
+        0.05462978824011285,
+        -0.02275253628955464,
+        0.01915115324782387
+      ],
+      "view_direction_unit": [
+        0.9188630773666188,
+        -0.3491679693993151,
+        0.18377261547332377
+      ],
+      "view_up": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "parallel_scale_m": 0.0138,
+      "camera_distance_m": 0.065
+    },
+    "background_linear_rgb_top": [
+      0.075,
+      0.088,
+      0.102
+    ],
+    "background_linear_rgb_bottom": [
+      0.02,
+      0.026,
+      0.034
+    ]
+  },
+  "labels": [
+    "WEAK SEAM / UNCALIBRATED",
+    "NATIVE t = 50 \u00b5s",
+    "ASSEMBLY / NATIVE SAVED POSE",
+    "independent camera / no simulated or actor motion"
+  ],
+  "image": {
+    "file": "native_t50us_weak_seam_two_panel.png",
+    "sha256": "199bf99ae68807e70d9e88e6541c76fbbd60abf35093b055a483f9c66891bd81",
+    "bytes": 935925,
+    "dimensions_px": [
+      2000,
+      1100
+    ],
+    "rendered_cell_count": 2208,
+    "rendered_triangle_count_by_component": [
+      1116,
+      1092
+    ]
+  },
+  "qualification": {
+    "status": "PREINSERTED_WEAK_SEAM_UNCALIBRATED",
+    "material_calibration_status": "UNCALIBRATED",
+    "physical_pass": false,
+    "typed_R2_qualification": "NOT_ESTABLISHED",
+    "pretrain_eligible": false
+  }
+}

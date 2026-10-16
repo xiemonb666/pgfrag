@@ -1,0 +1,575 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_history_storage_review.v1",
+  "status": "READ_ONLY_STORAGE_AUDIT_COMPLETE",
+  "classification": "COST_ESTIMATE_UNCALIBRATED; NO SPECIMEN PHYSICAL DATA; ZERO SOLVER EVOLUTION",
+  "solver_evolution_performed": false,
+  "runtime_forecast": "NOT_ESTIMATED; no trajectory was run, and lossless compression adds data-dependent CPU/I/O cost.",
+  "native_preflight_status": "ZERO_STEP_PREFLIGHT_PASS",
+  "root_independent_math_status": "INDEPENDENT_ZERO_STEP_READBACK_PASS",
+  "root_independent_receipt_sha256": "822023b1d8407290b6e620cfdf78dca84f10d0f4fb644b3af7db663aa3c8943b",
+  "frozen_preflight_modules_match_current_sources": {
+    "cohesive_vessel": true,
+    "cohesive_mesh": true,
+    "cohesive_stability": true
+  },
+  "mesh_counts_nodes_tets_cohesive_facets": [
+    18634,
+    56139,
+    541
+  ],
+  "quadrature_points": 1623,
+  "balanced_patch_nodes": 3708,
+  "selected_dt_s": 2.22182723071454e-09,
+  "steps_for_50us": 22504,
+  "frames_including_initial": 22505,
+  "per_frame_bytes": {
+    "qp_float64_doubles": 22722,
+    "qp_float64_bytes": 181776,
+    "energy_and_check_ledger_float64_doubles": 40,
+    "energy_and_check_ledger_bytes": 320,
+    "patch_displacement_bytes": 29664,
+    "all_non_node_bytes": 211760,
+    "node_snapshot_bytes": 1788864
+  },
+  "history_fields": [
+    {
+      "name": "opening_m",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        1623,
+        3
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP opening: cohesive/interface-work integration, contact/full-gap reconstruction, final fracture-state extraction."
+    },
+    {
+      "name": "traction_Pa",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        1623,
+        3
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP cohesive traction: work integration, full-damage/zero-traction failure gate, post-failure checks, final extraction."
+    },
+    {
+      "name": "damage",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623
+      ],
+      "shape_stride_1": [
+        22505,
+        1623
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP damage: bounds/irreversibility, first-full-damage timing, damaged-area/fracture-energy history, post-failure gate, final extraction."
+    },
+    {
+      "name": "delta_max_m",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623
+      ],
+      "shape_stride_1": [
+        22505,
+        1623
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP maximum opening: irreversible history-variable check."
+    },
+    {
+      "name": "contact_traction_Pa",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        1623,
+        3
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP contact traction: zero-contact check, failure/post-failure gate, final extraction."
+    },
+    {
+      "name": "contact_opening_m",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        1623,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        1623,
+        3
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step QP contact opening: independent quadrature contact energy/work and full-gap reconstruction."
+    },
+    {
+      "name": "contact_energy_check",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        3
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step wrapper-generated three-column check against independently rebuilt contact energy; redundant if the audit explicitly recomputes it."
+    },
+    {
+      "name": "interface_work_check",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        4
+      ],
+      "shape_stride_1": [
+        22505,
+        4
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step wrapper-generated work decomposition/cross-work check; redundant if recomputed from raw QP opening/traction."
+    },
+    {
+      "name": "energy_J",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        5
+      ],
+      "shape_stride_1": [
+        22505,
+        5
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step native kinetic/potential/dissipated/reversible/contact energy: independent energy and fracture balance."
+    },
+    {
+      "name": "ledger",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        28
+      ],
+      "shape_stride_1": [
+        22505,
+        28
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step time/load/work/momentum/torque/force/recurrence/energy residual diagnostics (28 float64 columns)."
+    },
+    {
+      "name": "patch_displacement_x_m",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        22505,
+        3708
+      ],
+      "shape_stride_1": [
+        22505,
+        3708
+      ],
+      "lifetime": "allocated/pre-sized before evolution; written at every solver frame",
+      "consumer": "Every-step displacement on 3708 loaded nodes: independent reconstruction of external work."
+    },
+    {
+      "name": "node_state",
+      "dtype": "<f8",
+      "shape_stride_50": [
+        452,
+        18634,
+        4,
+        3
+      ],
+      "shape_stride_1": [
+        22505,
+        18634,
+        4,
+        3
+      ],
+      "lifetime": "pre-sized for declared node_saved_steps; written only at saved stride frames, always including final frame",
+      "consumer": "Saved-step nodal displacement, velocity, acceleration, internal force: independent force/momentum/energy/deformation reconstruction; stride 1 also enables strict every-step recurrences and energy balance. Extraction checks saved states after joint failure and the final state."
+    },
+    {
+      "name": "node_saved_steps",
+      "dtype": "<i8",
+      "shape_stride_50": [
+        452
+      ],
+      "shape_stride_1": [
+        22505
+      ],
+      "lifetime": "written once before solver evolution; index map for node_state",
+      "consumer": "Exact int64 step map for node_state; must retain every declared stride frame and final frame."
+    },
+    {
+      "name": "qp_first_full_damage_step",
+      "dtype": "<i8",
+      "shape_stride_50": [
+        1623
+      ],
+      "shape_stride_1": [
+        1623
+      ],
+      "lifetime": "computed in RAM across the trajectory; written as one array in finally",
+      "consumer": "Small per-QP int64 summary written by native loop and compared with timing independently recomputed from the full damage history."
+    }
+  ],
+  "consumers_and_compatibility": {
+    "independent_audit": {
+      "path": "pgfrag/experiments/cohesive_vessel_20261015/audit_native_vessel.py",
+      "format_contract": "direct np.load(path, mmap_mode='r', allow_pickle=False) of standard NPY files; exact fixed shapes, finite values, complete completion.json required",
+      "all_step_requirements": [
+        "QP damage and delta_max for monotonicity/first failure",
+        "QP cohesive/contact opening and traction for work, contact energy, failure and post-failure checks",
+        "energy_J and 28-column ledger for balances/residuals",
+        "patch displacement every step for independently rebuilt external work"
+      ],
+      "node_stride_effect": "stride 1 enables strict full-step central-difference and internal/external work identities; stride 50 only permits sampled node-state reconstruction and is explicitly reported as such",
+      "streaming_risk": "audit currently uses full-history NumPy expressions including np.diff, trapezoid integration, contact norms and comparisons; an NPZ reader alone would decompress/copy chunks and old audit expressions can still materialize large arrays. A chunk-aware audit iterator/reduction is required for bounded peak RAM."
+    },
+    "fragment_extraction": {
+      "paths": [
+        "pgfrag/data/continuation_20261015/native_cohesive_fragments_v5/export_native_fragments.py",
+        "pgfrag/data/continuation_20261015/native_cohesive_fragments_v6/export_native_fragments.py"
+      ],
+      "format_contract": "direct NPY memmaps for node_state, damage, traction, opening, contact_traction, and direct node_saved_steps NPY",
+      "must_preserve": [
+        "all-step damage and traction to establish first joint full-damage/zero-traction frame and continued failure gate",
+        "all saved node snapshots after joint failure for gap/separation witness",
+        "final node displacement/velocity and final QP damage/traction/opening/contact state for output extraction"
+      ],
+      "compatibility_risk": "both exporters require existing individual NPY paths and receipt coverage; compressed chunks need a reader/exporter adaptation or a verified lazy compatibility layer. Reconstructing monolithic arrays would recreate peak-disk pressure."
+    },
+    "receipt_and_checkpoint": {
+      "current": "receipt.json inventories and hashes every file; audit rejects extra/missing files. Full-size NPY memmaps are pre-sized before step 0 and flushed every flush_stride frames (case stride 250), then checkpoint.json is written; finally flush occurs even on failure.",
+      "risk": "a pre-sized NPY tail is zero-filled/unwritten after a crash; checkpoint/result/completion must be used to reject incomplete histories. write_json writes directly, so current checkpoint JSON is not itself an atomic commit record.",
+      "chunk_design": "publish each chunk via temp file, flush+fsync, atomic rename, then atomically replace a manifest that records contiguous committed frame range, node steps, exact shapes/dtypes, byte count and SHA-256. Only a COMPLETE manifest with exact expected coverage can pass an independent audit; partial prefixes are diagnostic only and do not imply solver restartability."
+    }
+  },
+  "storage_forecasts": {
+    "50": {
+      "node_stride": 50,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_saved_frames": 452,
+      "node_saved_steps_dtype": "<i8",
+      "all_history_array_dtype": "<f8",
+      "array_shapes": {
+        "opening_m": [
+          22505,
+          1623,
+          3
+        ],
+        "traction_Pa": [
+          22505,
+          1623,
+          3
+        ],
+        "damage": [
+          22505,
+          1623
+        ],
+        "delta_max_m": [
+          22505,
+          1623
+        ],
+        "contact_traction_Pa": [
+          22505,
+          1623,
+          3
+        ],
+        "contact_opening_m": [
+          22505,
+          1623,
+          3
+        ],
+        "contact_energy_check": [
+          22505,
+          3
+        ],
+        "interface_work_check": [
+          22505,
+          4
+        ],
+        "energy_J": [
+          22505,
+          5
+        ],
+        "ledger": [
+          22505,
+          28
+        ],
+        "patch_displacement_x_m": [
+          22505,
+          3708
+        ],
+        "node_state": [
+          452,
+          18634,
+          4,
+          3
+        ]
+      },
+      "numeric_payload_bytes_exact": 5574225328,
+      "single_npy_array_header_bytes_exact_numpy_2_5_3": 1536,
+      "current_wrapper_forecast_bytes_256_byte_header_allowance_each": 5574228400,
+      "single_array_npy_files_logical_bytes_if_exact_header_used": 5574226864,
+      "node_saved_steps_npy_bytes_exact": 3744,
+      "layout_json_bytes_current_contract": 1518,
+      "current_history_folder_estimate_bytes": 5574233662,
+      "current_full_run_estimate_before_margin_bytes": 5619893495,
+      "current_run_allocation_with_2mb_plus_20pct_gib_rounded_up": 7,
+      "chunk_design": {
+        "format_forecasted": "uncompressed per-field .npy chunk files with atomic manifest commit; exact raw-storage alternative",
+        "chunk_frames": 250,
+        "chunk_count": 91,
+        "node_frames_per_chunk_count": {
+          "5": 90,
+          "2": 1
+        },
+        "max_raw_combined_chunk_bytes": 61884320,
+        "max_raw_combined_chunk_mib": 59.017486572265625,
+        "max_uncompressed_chunk_members_including_npy_headers_bytes": 61885856,
+        "chunk_npy_numeric_payload_plus_exact_headers_bytes": 5574365104,
+        "chunk_npy_header_overhead_bytes": 139776,
+        "manifest_json_bytes_for_declared_schema_and_paths": 361034,
+        "node_saved_steps_npy_bytes": 3744,
+        "layout_json_bytes": 1518,
+        "logical_history_bytes_exact_excluding_filesystem_allocation_units": 5574731400,
+        "total_history_files_including_manifest_and_layout": 1095,
+        "history_size_difference_from_current_folder_estimate_bytes": 497738,
+        "uncompressed_npz_bundle_member_bytes_before_zip_container": 5574365104,
+        "compressed_npz_final_bytes": null,
+        "compressed_size_reason": "No full trajectory exists; the zero-step preflight has no evolved history. Lossless deflate output cannot be forecast from mesh counts or synthetic data.",
+        "existing_64mib_case_cap_satisfied_by_this_uncompressed_alternative": false
+      },
+      "full_run_logical_bytes_with_chunked_npy_before_margin": 5620391233,
+      "filesystem_allocation_overhead_not_included": true,
+      "existing_output_cap_bytes": 67108864,
+      "current_history_forecast_bytes_over_case_cap": 5509119536,
+      "still_requires_storage_allocation_until_lossless_compression_is_measured": true
+    },
+    "1": {
+      "node_stride": 1,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_saved_frames": 22505,
+      "node_saved_steps_dtype": "<i8",
+      "all_history_array_dtype": "<f8",
+      "array_shapes": {
+        "opening_m": [
+          22505,
+          1623,
+          3
+        ],
+        "traction_Pa": [
+          22505,
+          1623,
+          3
+        ],
+        "damage": [
+          22505,
+          1623
+        ],
+        "delta_max_m": [
+          22505,
+          1623
+        ],
+        "contact_traction_Pa": [
+          22505,
+          1623,
+          3
+        ],
+        "contact_opening_m": [
+          22505,
+          1623,
+          3
+        ],
+        "contact_energy_check": [
+          22505,
+          3
+        ],
+        "interface_work_check": [
+          22505,
+          4
+        ],
+        "energy_J": [
+          22505,
+          5
+        ],
+        "ledger": [
+          22505,
+          28
+        ],
+        "patch_displacement_x_m": [
+          22505,
+          3708
+        ],
+        "node_state": [
+          22505,
+          18634,
+          4,
+          3
+        ]
+      },
+      "numeric_payload_bytes_exact": 45024043120,
+      "single_npy_array_header_bytes_exact_numpy_2_5_3": 1536,
+      "current_wrapper_forecast_bytes_256_byte_header_allowance_each": 45024046192,
+      "single_array_npy_files_logical_bytes_if_exact_header_used": 45024044656,
+      "node_saved_steps_npy_bytes_exact": 180168,
+      "layout_json_bytes_current_contract": 1517,
+      "current_history_folder_estimate_bytes": 45024227877,
+      "current_full_run_estimate_before_margin_bytes": 45069887710,
+      "current_run_allocation_with_2mb_plus_20pct_gib_rounded_up": 51,
+      "chunk_design": {
+        "format_forecasted": "uncompressed per-field .npy chunk files with atomic manifest commit; exact raw-storage alternative",
+        "chunk_frames": 25,
+        "chunk_count": 901,
+        "node_frames_per_chunk_count": {
+          "25": 900,
+          "5": 1
+        },
+        "max_raw_combined_chunk_bytes": 50015600,
+        "max_raw_combined_chunk_mib": 47.69859313964844,
+        "max_uncompressed_chunk_members_including_npy_headers_bytes": 50017136,
+        "chunk_npy_numeric_payload_plus_exact_headers_bytes": 45025427056,
+        "chunk_npy_header_overhead_bytes": 1383936,
+        "manifest_json_bytes_for_declared_schema_and_paths": 3802518,
+        "node_saved_steps_npy_bytes": 180168,
+        "layout_json_bytes": 1517,
+        "logical_history_bytes_exact_excluding_filesystem_allocation_units": 45029411259,
+        "total_history_files_including_manifest_and_layout": 10815,
+        "history_size_difference_from_current_folder_estimate_bytes": 5183382,
+        "uncompressed_npz_bundle_member_bytes_before_zip_container": 45025427056,
+        "compressed_npz_final_bytes": null,
+        "compressed_size_reason": "No full trajectory exists; the zero-step preflight has no evolved history. Lossless deflate output cannot be forecast from mesh counts or synthetic data.",
+        "existing_64mib_case_cap_satisfied_by_this_uncompressed_alternative": false
+      },
+      "full_run_logical_bytes_with_chunked_npy_before_margin": 45075071092,
+      "filesystem_allocation_overhead_not_included": true,
+      "existing_output_cap_bytes": 67108864,
+      "current_history_forecast_bytes_over_case_cap": 44958937328,
+      "still_requires_storage_allocation_until_lossless_compression_is_measured": true
+    }
+  },
+  "forecast_scope": {
+    "current_history_specs": "11 float64 arrays sampled every solver step plus node_state float64 at the declared stride; excludes the small QP first-full-damage summary and runtime JSON/control files.",
+    "excluded_qp_failure_summary": {
+      "path": "qp_first_full_damage_step.npy",
+      "shape": [
+        1623
+      ],
+      "dtype": "<i8",
+      "logical_bytes_numpy_2_5_3": 13112,
+      "consumer": "independent auditor recomputes and compares the per-QP full-damage step"
+    },
+    "run_budget_note": "The prior 2,000,000-byte safety allowance covers this small summary and JSON/control outputs, but its forecast is not a complete per-file inventory of a completed evolution run. Filesystem allocation units are also excluded."
+  },
+  "design_recommendation": {
+    "bounded_next_step": "Keep float64 and every QP value at every time step. Prototype chunked NumPy storage behind a versioned manifest; first preserve the current NPY layout as a legacy read contract. The tiny NPZ prototype verifies lossless chunks/commit markers but does not estimate vessel-data compression.",
+    "raw_npy_chunk_storage_effect": "recovery/commit granularity and bounded read blocks improve; logical numeric storage remains essentially the same as current full NPY arrays. It is not a fix for the 64 MiB cap.",
+    "lossless_compressed_npz_effect": "may reduce bytes, but exact real size and runtime are unknowable before a representative trajectory. Retain raw-size allocation as the safe forecast until the first actual chunk is measured and the entire run can be budgeted.",
+    "suggested_initial_chunk_sizes": {
+      "node_stride_50_time_frames": 250,
+      "node_stride_1_time_frames": 25,
+      "reason": "keeps combined raw QP/diagnostic and node-state payload below 64 MiB per chunk (about 59.0 MiB and 47.7 MiB respectively), before small headers"
+    },
+    "prohibited_savings_for_this_review": [
+      "diagnostic downsampling",
+      "float precision reduction",
+      "new physics parameters",
+      "treating compression ratios from synthetic arrays as real-history estimates"
+    ],
+    "no_solver_or_physical_qualification": true
+  },
+  "tiny_prototype": {
+    "script": "pgfrag/experiments/continuation_20261016/history_storage_review/prototype_chunk_store.py",
+    "result": "pgfrag/experiments/continuation_20261016/history_storage_review/prototype_output/attempt_03/prototype_validation.json",
+    "scope": "synthetic float64 arrays only; no native model or solver evolution"
+  },
+  "source_hashes": {
+    "history_cost_forecast": {
+      "path": "pgfrag/data/continuation_20261016/reference_vessel_preflight/run_attempt_02/history_cost_forecast.json",
+      "sha256": "570ad257d92a11e9a78a210b855e91d2d7a184736e8296461e938ed01b0a669c",
+      "bytes": 5135
+    },
+    "root_independent_math": {
+      "path": "experiments/continuation_20261016/root_preflight_math.json",
+      "sha256": "afc5e9358f406585b9dd7378b7c9f0c1a877f48c01b12b48ba9bdabf213319a1",
+      "bytes": 1427
+    },
+    "native_wrapper": {
+      "path": "pgfrag/src/pgfrag/cohesive_vessel.py",
+      "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+      "bytes": 29970
+    },
+    "cohesive_mesh_module": {
+      "path": "pgfrag/src/pgfrag/cohesive_mesh.py",
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+      "bytes": 26147
+    },
+    "cohesive_stability_module": {
+      "path": "pgfrag/src/pgfrag/cohesive_stability.py",
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+      "bytes": 19680
+    },
+    "independent_native_audit": {
+      "path": "pgfrag/experiments/cohesive_vessel_20261015/audit_native_vessel.py",
+      "sha256": "85c1e37b367597ecb90c94efae7da4f25d0232aa55ab8530b499ee9af138cb83",
+      "bytes": 88591
+    },
+    "fragment_export_v5": {
+      "path": "pgfrag/data/continuation_20261015/native_cohesive_fragments_v5/export_native_fragments.py",
+      "sha256": "2072f37c0ad0a8d460d6032171c300e1de5336517fd025814b3ba0ba6ce37b8c",
+      "bytes": 8892
+    },
+    "fragment_export_v6": {
+      "path": "pgfrag/data/continuation_20261015/native_cohesive_fragments_v6/export_native_fragments.py",
+      "sha256": "aee320792faf945bbfcdddfca2c404ef95afa9855c483da1f6edc07c42e230b1",
+      "bytes": 9969
+    },
+    "preflight_receipt": {
+      "path": "pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/native_preflight/run01/receipt.json",
+      "sha256": "822023b1d8407290b6e620cfdf78dca84f10d0f4fb644b3af7db663aa3c8943b",
+      "bytes": 1515
+    },
+    "executed_frozen_wrapper": {
+      "path": "pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_vessel.py",
+      "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+      "bytes": 29970
+    },
+    "executed_frozen_cohesive_mesh": {
+      "path": "pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_mesh.py",
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+      "bytes": 26147
+    },
+    "executed_frozen_cohesive_stability": {
+      "path": "pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_stability.py",
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+      "bytes": 19680
+    }
+  }
+}

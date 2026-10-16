@@ -1,0 +1,7 @@
+{"step": 0, "of": 46, "damage_max": 0.0, "elapsed_s": 11.906877713}
+{"step": 10, "of": 46, "damage_max": 0.0, "elapsed_s": 13.430840301000003}
+{"step": 20, "of": 46, "damage_max": 0.0, "elapsed_s": 14.901419234000002}
+{"step": 30, "of": 46, "damage_max": 0.0, "elapsed_s": 16.37547317}
+{"step": 40, "of": 46, "damage_max": 0.0, "elapsed_s": 17.852661091999998}
+{"step": 46, "of": 46, "damage_max": 0.0, "elapsed_s": 18.748574391}
+{"status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC", "solver_steps": 46, "counts": [18634, 56139, 541], "dt_s": 2.173913043478261e-09, "elapsed_s": 18.758411692000003, "all_qp_full_damage": false, "raw_history_bytes_forecast": 94032400, "deformation_maxima_sampled": {"max_abs_principal_small_strain": 2.3346526812578337e-15, "max_polar_rotation_rad": 2.9802322387695312e-08, "min_det_F": 0.9999999999999982}, "qualification": "PREINSERTED_WEAK_SEAM_UNCALIBRATED; NO_PHYSICAL_OR_TRAINING_QUALIFICATION", "source_inputs_unchanged": true}

@@ -1,0 +1,44 @@
+{
+  "status": "PATCH_APPLIED_TO_DISPOSABLE_COPY",
+  "utc": "2026-10-05T10:29:27.292Z",
+  "fork_root": "pgfrag/tmp/initial_bond_policy_native_20261005/fork_run_01/project",
+  "patch_sha256": "68748b1cebe261b76f4adc8d1056e7319ee8c69176700bdd34f8008830dcc557",
+  "target_count": 8,
+  "targets": [
+    {
+      "path": "src/Peridynamics.jl",
+      "sha256": "87cd708d01b2d766a8da1bce28d19b22262a2ab1b9b001ccbdc96674b0bc30ca"
+    },
+    {
+      "path": "src/discretization/body.jl",
+      "sha256": "e1b79560030e2675c40c7127d1e237edda64fcbe562e443ed5f2d21cd3ca8ed8"
+    },
+    {
+      "path": "src/discretization/bond_system.jl",
+      "sha256": "544de92a6611f5ba9ca906c54145cd5e720715a8fb9b8d7fa4a07e4b33cabfda"
+    },
+    {
+      "path": "src/core/threads_multibody_data_handler.jl",
+      "sha256": "e2bc105098eb766d0eb7683d56e0848ff39666fb1aa297c5baa91d4700e177a7"
+    },
+    {
+      "path": "src/core/mpi_multibody_data_handler.jl",
+      "sha256": "1f480688a354869aaf8527d0883e44cc436c87140c28f6bdb03e75e01910f627"
+    },
+    {
+      "path": "src/core/mpi_body_data_handler.jl",
+      "sha256": "60397cd45c1da41c4829d0d9d8be0ba85ed085d5a216f43d5ce91c89d663cf83"
+    },
+    {
+      "path": "src/discretization/initial_bond_policy.jl",
+      "sha256": "7057585eb58b6ef3d005d0988586b659e54a28b01911187b3cbafc05afc2ec17"
+    },
+    {
+      "path": "Project.toml",
+      "sha256": "9fadd5ef356be5152cd10ecc3fa7a1e103de622f15c197b05a38d67ca8e9a409"
+    }
+  ],
+  "outer_project_sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+  "outer_manifest_sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+  "vendor_manifest_present": false
+}

@@ -1,0 +1,18 @@
+ERROR: LoadError: MethodError: no method matching parameter_setup_type(::GeometryFilteredBody{BBMaterial{NoCorrection, CriticalStretch}}, ::Peridynamics.SingleParamChunk)
+
+Closest candidates are:
+  parameter_setup_type(!Matched::Body{M, P}, ::Peridynamics.SingleParamChunk) where {M, P}
+   @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\core\parameter_handler.jl:83
+
+Stacktrace:
+ [1] body_chunk_type
+   @ C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\discretization\body_chunk.jl:58 [inlined]
+ [2] chop_body_threads(body::GeometryFilteredBody{BBMaterial{NoCorrection, CriticalStretch}}, solver::VelocityVerlet, point_decomp::Peridynamics.PointDecomposition, param_spec::Peridynamics.SingleParamChunk)
+   @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\core\threads_body_data_handler.jl:43
+ [3] threads_data_handler(body::GeometryFilteredBody{BBMaterial{NoCorrection, CriticalStretch}}, solver::VelocityVerlet, n_chunks::Int64)
+   @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\core\threads_body_data_handler.jl:35
+ [4] run_bowl(case_path::String, outdir::String)
+   @ Main C:\Users\xiemo\Desktop\ShardForge\pgfrag\data\continuation_20261015\zero\run_attempt_02\source_snapshot\run_bowl_dynamics.jl:325
+ [5] top-level scope
+   @ C:\Users\xiemo\Desktop\ShardForge\pgfrag\data\continuation_20261015\zero\run_attempt_02\source_snapshot\run_bowl_dynamics.jl:507
+in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\data\continuation_20261015\zero\run_attempt_02\source_snapshot\run_bowl_dynamics.jl:507

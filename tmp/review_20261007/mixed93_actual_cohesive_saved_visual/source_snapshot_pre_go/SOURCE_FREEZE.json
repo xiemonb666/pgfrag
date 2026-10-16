@@ -1,0 +1,95 @@
+{
+  "schema": "mixed93_actual_cohesive_saved_visual_source_freeze.v1",
+  "status": "SOURCE_READY_RESULT_PINNED_NO_RENDER_REQUESTED",
+  "owner_directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual",
+  "non_self_referential": true,
+  "input_result": {
+    "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+    "exists": true,
+    "bytes": 1440429,
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "schema": "mixed93_actual_cohesive_bridge_numeric_result.v1",
+    "status": "ACCEPTED_DIAGNOSTIC_ONLY",
+    "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+    "gate_count": 15,
+    "passed_gate_count": 15
+  },
+  "producer_worker_source": {
+    "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+    "sha256_expected": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236",
+    "sha256_actual": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+  },
+  "source_lines": {
+    "render_saved_bridge.py": 160,
+    "run_saved_bridge_visual.py": 130
+  },
+  "sha256": {
+    "README.md": "256d33f2c57c1dcf81b70f86a870c6a465334d1c64d5ab2cb96859f3a7c22713",
+    "SOURCE_PINS.json": "02de510fe7d9f31998a53ed68a9fc87c5133413f3a0f942b6d389e1d414d29bf",
+    "case.json": "973e0155859707c6eae38c1d704ca84d640344069027b6ca07419586718263f8",
+    "render_saved_bridge.py": "a3e700fa3767b8c2ea74a527d2625851d941c4ac1f9a0453a01efae0e9b0bebb",
+    "run_saved_bridge_visual.py": "2a5910d50742a91b1de6fbceffc834d743b01b6dbd51cab956e433cbcdb8db5d"
+  },
+  "display_adjustment": {
+    "opening_scale": "shared 0..1.1*maximum actual saved baseline/coupled opening in metres",
+    "traction_line": "virgin t=K0*delta only from zero to observed maximum; numeric delta0 and actual-points-below-delta0/virgin-only note; no softening",
+    "layout": "constrained GridSpec; dedicated colorbar column and legend/header/footer axes; no subplots_adjust",
+    "sign_panel": "saved internal +t*n bookkeeping share and physical upper -t*n/lower +t*n retained"
+  },
+  "source_snapshot_pre_display_adjustment": {
+    "directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/source_snapshot_pre_display_adjustment",
+    "sha256": {
+      "README.md": "f54ffe64223d25fd4a669c0d961587c3cd82880c81aad58fa838976920dd8f27",
+      "SOURCE_PINS.json": "d1dedf708610ec1e58ddfd81fa133d0c42dad1b43bc250bda2f3e92cb300cf95",
+      "SOURCE_FREEZE.json": "bb1e3f4bb9d28a170f98714c4d127ddd5dda05a0df5e692b37780d2dac7fcdea",
+      "case.json": "d4080c664ae2c77d5159e32b8596e810c66cd33efde540571d40e37d2116e653",
+      "render_saved_bridge.py": "7b2d76077cccae089217d7ece8410507131a57b5bc1e3ff73a26bcb32d44692e"
+    }
+  },
+  "source_snapshot_pre_result_pin": {
+    "directory": "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/source_snapshot_pre_result_pin",
+    "sha256": {
+      "case.json": "df8960fc5b023076cad23c1ae358fe27ad65e8751a2d99f93b29eb9db923bdb4",
+      "SOURCE_PINS.json": "03ca1114a2dea5845c9852b3421cc94e50f4860bef400145cfcb042cb73719f6",
+      "SOURCE_FREEZE.json": "5d1a5a0b5f304c180d8ad3971cf54f0252e712e3ff6f8bbf1b63256ffd12f482"
+    }
+  },
+  "result_metadata_check": {
+    "reader": "VesselForge python.exe -B with standard-library json/hashlib/pathlib only",
+    "argv": [
+      "C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe",
+      "-B",
+      "-c",
+      "import json,hashlib,pathlib; p=pathlib.Path(r'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed93_actual_cohesive_bridge_20261006\\numeric_runs\\run01\\result.json'); b=p.read_bytes(); d=json.loads(b); g=d.get('gates',{}); print(json.dumps({'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'schema':d.get('schema'),'status':d.get('status'),'classification':d.get('classification'),'gate_count':len(g),'gate_passed_count':sum(1 for x in g.values() if isinstance(x,dict) and x.get('passed') is True)},sort_keys=True))"
+    ],
+    "bytes": 1440429,
+    "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+    "schema": "mixed93_actual_cohesive_bridge_numeric_result.v1",
+    "status": "ACCEPTED_DIAGNOSTIC_ONLY",
+    "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+    "gate_count": 15,
+    "passed_gate_count": 15
+  },
+  "runner_source_check": {
+    "command": "VesselForge python.exe -B run_saved_bridge_visual.py",
+    "exit_code": 0,
+    "response_status": "SOURCE_READY_RESULT_PINNED_NO_RENDER_REQUESTED",
+    "matplotlib_imported": false,
+    "numeric_or_provider_modules_imported": false,
+    "rendered": false
+  },
+  "authorization": {
+    "case_execution_authorized": false,
+    "pins_execution_authorized": false,
+    "root_go_authorized": false,
+    "root_go_token": null
+  },
+  "future_render_argv": [
+    "C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe",
+    "-B",
+    "pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/run_saved_bridge_visual.py",
+    "--render",
+    "--root-go",
+    "<ROOT_GO_TOKEN>"
+  ]
+}

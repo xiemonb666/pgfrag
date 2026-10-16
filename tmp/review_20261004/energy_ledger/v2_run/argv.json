@@ -1,0 +1,45 @@
+{
+  "launcher": "C:\\Users\\xiemo\\.local\\bin\\uv.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\.local\\bin\\uv.exe",
+    "run",
+    "--no-project",
+    "--with",
+    "pytest==8.4.2",
+    "--python",
+    "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "--",
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_energy_ledger.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml",
+    "tmp/review_20261004/energy_ledger/v2_run/junit.xml"
+  ],
+  "nested_test_argv": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_energy_ledger.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml",
+    "tmp/review_20261004/energy_ledger/v2_run/junit.xml"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "UV_CACHE_DIR": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\uv-cache"
+  },
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\stdout.txt",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\stderr.txt",
+  "junit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\junit.xml",
+  "exit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\v2_run\\exit.json"
+}

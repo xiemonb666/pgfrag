@@ -1,0 +1,588 @@
+{
+  "schema": "efgm_mls_patch_single_run_record.v1",
+  "run_id": "run_20261005_efgm_mls_patch_01",
+  "authorization": "One bounded uncracked MLS-to-elastic diagnostic authorized by root after source review.",
+  "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "python_no_bytecode_flag": "-B",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_mls_patch_20261005\\operator_diagnostic.py",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_mls_patch_20261005\\runs\\run_20261005_efgm_mls_patch_01\\operator_diagnostic.json"
+  ],
+  "raw_process_arguments": "-B \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_mls_patch_20261005\\operator_diagnostic.py\" --output \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_mls_patch_20261005\\runs\\run_20261005_efgm_mls_patch_01\\operator_diagnostic.json\"",
+  "started_at_utc": "2026-10-05T11:49:36.6471810+00:00",
+  "finished_at_utc": "2026-10-05T11:49:36.9943329+00:00",
+  "elapsed_seconds": 0.3428199,
+  "wall_limit_seconds": 30,
+  "finished_within_wall_limit": true,
+  "real_return_code": 0,
+  "source_freeze_manifest_sha256": "af70969d753d413bfcd3715d49d619416dcdafd2f1c3c25fc66b6c48fae96d25",
+  "pre_run_pins": [
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/fixed_case.json",
+      "sha256": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb",
+      "expected_sha256": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/mls_elastic_adapter.py",
+      "sha256": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a",
+      "expected_sha256": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/operator_diagnostic.py",
+      "sha256": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c",
+      "expected_sha256": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c"
+    },
+    {
+      "role": "owned_source",
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/README.md",
+      "sha256": "72c22e10ccf87800d56430c58438838b2b96f140db6fda0999e08de3435df7e8",
+      "expected_sha256": "72c22e10ccf87800d56430c58438838b2b96f140db6fda0999e08de3435df7e8"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/README.md",
+      "sha256": "ce3898b500d47354b9a65385024bf940e8ea9347ca49b1e3afee6d4b1034dd8a",
+      "expected_sha256": "ce3898b500d47354b9a65385024bf940e8ea9347ca49b1e3afee6d4b1034dd8a"
+    },
+    {
+      "role": "read_only_dependency",
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d"
+    },
+    {
+      "role": "provenance_contract",
+      "path": "pgfrag/experiments/explicit_crack_formulation_20261005/FORMULATION_CONTRACT.md",
+      "sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb",
+      "expected_sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb"
+    },
+    {
+      "role": "review_record",
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/SOURCE_REVIEW.md",
+      "sha256": "3d4cdf4e8ba3e279c41d503468e389137b36cf900b59770a4fa4ff70a8f65718",
+      "expected_sha256": "3d4cdf4e8ba3e279c41d503468e389137b36cf900b59770a4fa4ff70a8f65718"
+    },
+    {
+      "role": "review_record",
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/RUN_PLAN.md",
+      "sha256": "c8dbeba793c4370ec3f065d3c9142dc1b9f004c5452bcbe269cd4a40f995bf01",
+      "expected_sha256": "c8dbeba793c4370ec3f065d3c9142dc1b9f004c5452bcbe269cd4a40f995bf01"
+    }
+  ],
+  "post_run_pins": [
+    {
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/fixed_case.json",
+      "pre_sha256": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb",
+      "post_sha256": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/mls_elastic_adapter.py",
+      "pre_sha256": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a",
+      "post_sha256": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/operator_diagnostic.py",
+      "pre_sha256": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c",
+      "post_sha256": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_mls_patch_20261005/README.md",
+      "pre_sha256": "72c22e10ccf87800d56430c58438838b2b96f140db6fda0999e08de3435df7e8",
+      "post_sha256": "72c22e10ccf87800d56430c58438838b2b96f140db6fda0999e08de3435df7e8",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "pre_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "post_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "pre_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "post_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/README.md",
+      "pre_sha256": "ce3898b500d47354b9a65385024bf940e8ea9347ca49b1e3afee6d4b1034dd8a",
+      "post_sha256": "ce3898b500d47354b9a65385024bf940e8ea9347ca49b1e3afee6d4b1034dd8a",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "pre_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "post_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/experiments/explicit_crack_formulation_20261005/FORMULATION_CONTRACT.md",
+      "pre_sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb",
+      "post_sha256": "56e36e197985e4b829b95090f224e67c7b7a94bb6c977961b1dbb45f21b681eb",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/SOURCE_REVIEW.md",
+      "pre_sha256": "3d4cdf4e8ba3e279c41d503468e389137b36cf900b59770a4fa4ff70a8f65718",
+      "post_sha256": "3d4cdf4e8ba3e279c41d503468e389137b36cf900b59770a4fa4ff70a8f65718",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/efgm_mls_patch_20261005/RUN_PLAN.md",
+      "pre_sha256": "c8dbeba793c4370ec3f065d3c9142dc1b9f004c5452bcbe269cd4a40f995bf01",
+      "post_sha256": "c8dbeba793c4370ec3f065d3c9142dc1b9f004c5452bcbe269cd4a40f995bf01",
+      "matches_approved_pin": true,
+      "unchanged_during_run": true
+    }
+  ],
+  "stdout_path": "stdout.txt",
+  "stdout_sha256": "8e746d6ba0f1089c03b15c84c253447ffa4a10fba158079a623024b541bdb1b5",
+  "stdout_text": "{\"schema\": \"efgm_mls_patch_operator_diagnostic.v1\", \"case_id\": \"efgm_mls_patch_si_cube_20261005\", \"status\": \"OK\", \"started_at_utc\": \"2026-10-05T11:49:36.919383+00:00\", \"fixed_case\": {\"case_id\": \"efgm_mls_patch_si_cube_20261005\", \"status\": \"SOURCE_ONLY_AWAITING_REVIEW\", \"scope\": \"one bounded elastic-operator diagnostic; no solver, load, crack, or fracture\", \"units\": {\"coordinates\": \"m\", \"quadrature_volume\": \"m^3\", \"displacement_coefficients\": \"m\", \"young_modulus\": \"Pa\", \"stiffness\": \"N/m\", \"quadratic_energy\": \"J\"}, \"domain\": {\"bounds_m\": [[-1.0, 1.0], [-1.0, 1.0], [-1.0, 1.0]], \"side_length_m\": 2.0, \"coefficient_grid_shape\": [3, 3, 3], \"coefficient_axis_coordinates_m\": [-1.0, 0.0, 1.0], \"coefficient_count\": 27, \"displacement_dof_count\": 81}, \"volume_quadrature\": {\"layout\": \"one tensor-product Gauss-Legendre rule on the full cube\", \"points_per_axis\": 4, \"point_count\": 64, \"gauss_legendre_nodes_on_minus1_plus1\": [-0.8611363115940526, -0.3399810435848563, 0.3399810435848563, 0.8611363115940526], \"gauss_legendre_weights\": [0.3478548451374538, 0.6521451548625461, 0.6521451548625461, 0.3478548451374538], \"total_volume_m3\": 8.0}, \"material\": {\"model\": \"small-strain isotropic linear elasticity\", \"young_modulus_Pa\": 1000000.0, \"poisson_ratio\": 0.3}, \"mls\": {\"api\": \"shape_functions_3d\", \"basis\": \"linear 3-D MLS\", \"kernel\": \"Wendland C2 from the frozen MLS primitive\", \"reference_origin_m\": [0.0, 0.0, 0.0], \"reference_scale_m\": 1.0, \"support_radius_m\": 2.5, \"support_radius_role\": \"fixed numerical MLS support length; not a material parameter\", \"identity_visibility\": \"all sources considered; radial support still applies; no crack surface is loaded\", \"visibility_mask\": null, \"mask_locally_constant\": null, \"max_condition_number\": 1000000000000.0, \"rank_relative_tolerance\": 1e-12, \"switch_tolerance\": 1e-10, \"duplicate_tolerance\": 1e-12}, \"diagnostic\": {\"only_operator_assembly_call\": true, \"max_displacement_dofs\": 375, \"max_quadrature_points\": 256, \"max_estimated_numeric_array_bytes\": 33554432, \"wall_timeout_seconds\": 30, \"report_all_eigenvalues\": true, \"report_negative_eigenvalues\": true, \"report_extra_near_zero_modes_after_six_rigid_modes\": true, \"all_numerical_thresholds_are_diagnostic_only\": true, \"run_solver\": false, \"apply_load\": false, \"load_crack_surface\": false, \"render_output\": false}}, \"dimensions\": {\"source_count\": 27, \"quadrature_count\": 64, \"displacement_dof_count\": 81, \"volume_sum_m3\": 7.999999999999998}, \"identity_visibility\": {\"mode\": \"all candidate sources; no crack surface or visibility mask\", \"mask_locally_constant_asserted\": false, \"crack_surface_loaded\": false}, \"mls\": {\"api\": \"shape_functions_3d\", \"row_order_to_global_ids\": \"source row i maps to coefficient ID i, dense IDs 0..N-1\", \"shape_status_counts\": {\"OK\": 64, \"UNKNOWN_VISIBILITY_SWITCH\": 0, \"UNKNOWN_SUPPORT_BOUNDARY\": 0, \"UNKNOWN_POOR_SUPPORT\": 0, \"UNKNOWN_DUPLICATE_SOURCES\": 0, \"UNKNOWN_RANK_DEFICIENT\": 0, \"UNKNOWN_ILL_CONDITIONED\": 0, \"UNKNOWN_LINEAR_SOLVE_FAILED\": 0}, \"support_count_min\": 20, \"support_count_max\": 27, \"maximum_finite_condition_number\": 26.79567865862029, \"unknown_rows\": [], \"condition_numbers\": [26.79567865862029, 18.83711565681, 18.83711565681, 26.795678658620204, 18.837115656810017, 12.050187299771158, 12.050187299771158, 18.837115656810024, 18.837115656810038, 12.050187299771169, 12.050187299771169, 18.83711565681002, 26.7956786586202, 18.837115656810003, 18.83711565681002, 26.795678658620233, 18.83711565681005, 12.050187299771137, 12.050187299771146, 18.837115656810017, 12.050187299771148, 5.097029617467338, 5.097029617467338, 12.050187299771148, 12.050187299771148, 5.097029617467338, 5.09702961746734, 12.05018729977114, 18.83711565681011, 12.050187299771132, 12.050187299771142, 18.837115656810067, 18.83711565681004, 12.050187299771142, 12.050187299771142, 18.837115656810028, 12.050187299771135, 5.097029617467336, 5.097029617467336, 12.050187299771148, 12.050187299771148, 5.097029617467336, 5.097029617467337, 12.050187299771146, 18.83711565681007, 12.050187299771148, 12.050187299771146, 18.837115656810028, 26.795678658620215, 18.837115656810045, 18.837115656810038, 26.79567865862019, 18.837115656810035, 12.050187299771133, 12.05018729977114, 18.837115656810084, 18.837115656810056, 12.050187299771133, 12.050187299771142, 18.837115656810024, 26.79567865862024, 18.837115656810074, 18.83711565681002, 26.795678658620165]}, \"array_budget\": {\"explicit_array_estimate_bytes\": {\"source_positions\": 648, \"quadrature_positions\": 1536, \"quadrature_volume_weights\": 512, \"coefficient_displacements\": 648, \"mls_weights\": 13824, \"mls_gradients\": 41472, \"mls_ids_and_per_query_operator_copies\": 82944, \"operator_global_local_and_spectral_work_arrays\": 419904, \"rigid_modes_and_interpolated_fields\": 10032, \"estimated_explicit_array_bytes\": 571520}, \"estimated_explicit_array_bytes\": 571520, \"cap_bytes\": 33554432, \"excludes_python_runtime_and_vendor_blas_workspace\": true, \"within_estimate_cap\": true}, \"assembly\": {\"operator_calls\": 1, \"status\": \"OK\", \"blocked_quadrature_index\": null, \"shape_status\": null, \"diagnostic\": null}, \"affine_interpolation\": {\"status\": \"DIAGNOSTIC_ONLY\", \"displacement_max_absolute_error_m\": 6.938893903907228e-18, \"displacement_max_relative_error\": 3.4530922447975794e-16, \"gradient_max_absolute_error_per_m\": 2.4919709308221516e-17, \"gradient_max_relative_error\": 2.4919709308221516e-13, \"reference_relative_scale\": 5.6642437591419156e-12, \"reference_is_acceptance_gate\": false}, \"roundoff_references\": {\"binary64_epsilon\": 2.220446049250313e-16, \"unit_roundoff\": 1.1102230246251565e-16, \"conservative_operation_count\": 238, \"gamma_n\": 2.6423307986079423e-14, \"symmetry_relative_reference\": 1.0569323194431769e-13, \"rigid_residual_relative_reference_times_observed_condition\": 5.6642437591419156e-12, \"affine_relative_reference_times_observed_condition\": 5.6642437591419156e-12, \"eigenvalue_zero_absolute_reference_multiplier\": 1.0569323194431769e-13, \"interpretation\": \"roundoff-scale diagnostic references only; no pass/fail gate\"}, \"limitations\": [\"pure operator diagnostic; no solver, prescribed displacement, traction, or reaction\", \"no crack geometry, split support, visibility query, crack loading, SIF, or propagation\", \"support radius is a fixed numerical MLS support input, not a material parameter\", \"material values are an engineering fixture and are not ceramic calibration\", \"six rigid-mode residual checks establish presence only\", \"spectral extra-null count is diagnostic and does not prove EFGM stability\"], \"operator_diagnostics\": {\"K_shape\": [81, 81], \"K_units\": \"N/m\", \"K_finite\": true, \"K_frobenius_norm_N_per_m\": 2813900.124390745, \"symmetry\": {\"relative_frobenius_asymmetry\": 8.115685785403049e-17, \"roundoff_reference\": 1.0569323194431769e-13, \"reference_is_acceptance_gate\": false}, \"rigid_modes\": {\"expected_modes_checked\": 6, \"coefficient_mode_matrix_rank\": 6, \"scaled_residual\": 3.136438831179529e-17, \"mode_order\": [\"translation_x\", \"translation_y\", \"translation_z\", \"rotation_x\", \"rotation_y\", \"rotation_z\"], \"scaled_residual_by_mode\": [4.5472377269595497e-17, 3.655141836528487e-17, 3.236765515484184e-17, 2.287406314294569e-17, 2.330344898751663e-17, 2.7563122112044373e-17], \"roundoff_reference_times_observed_condition\": 5.6642437591419156e-12, \"interpretation\": \"presence of six physical rigid modes only; extra null modes remain possible\", \"reference_is_acceptance_gate\": false}, \"affine_patch_energy\": {\"operator_energy_J\": 0.0918461538463307, \"independent_tensor_energy_J\": 0.09184615384615386, \"relative_difference\": 1.9254442633624246e-12, \"roundoff_reference_times_observed_condition\": 5.6642437591419156e-12, \"reference_is_acceptance_gate\": false}, \"spectrum\": {\"matrix_used\": \"symmetric_part=(K+K.T)/2 for eigvalsh only; raw K is unchanged\", \"eigenvalues_N_per_m\": [-5.6165141076957276e-11, -4.086175286165674e-11, -7.16277259759136e-12, 1.8898412442824987e-11, 6.6278149637974e-11, 1.3077792130478175e-10, 8395.30609073315, 8395.306090733206, 8395.30609073322, 13449.756368657161, 13449.75636865719, 23842.47120339779, 23842.471203397818, 23842.471203397832, 29225.637622778006, 29225.637622778013, 29225.637622778082, 34188.55624824122, 35697.10399216847, 35697.10399216854, 35697.10399216859, 39229.862622899236, 42994.23241497693, 42994.23241497705, 42994.23241497713, 65230.85933356008, 65230.85933356019, 65230.85933356025, 70752.08841879442, 70752.08841879455, 79688.47682656566, 79688.47682656569, 79688.47682656582, 84285.7616450482, 84285.7616450483, 84285.76164504835, 86983.42770036083, 86983.42770036093, 96339.64996550516, 96339.64996550523, 96339.64996550526, 98585.47061423467, 98585.47061423477, 112186.63331171947, 112186.63331171958, 112186.63331171962, 117586.80028709065, 117586.80028709071, 117586.80028709084, 164727.0097750169, 164727.0097750169, 164727.009775017, 208815.81999315572, 208815.81999315586, 208815.8199931559, 216562.15446279082, 216562.15446279096, 216562.15446279114, 227131.51871870746, 237185.0725724022, 237185.0725724023, 286920.01532338077, 339465.64430652966, 339465.6443065297, 339465.6443065299, 341520.48235294205, 364298.5269000503, 364298.52690005064, 368586.2738011757, 368586.2738011758, 368586.2738011762, 393874.5640906731, 393874.56409067335, 393874.5640906737, 563297.2206983194, 563297.22069832, 563297.2206983202, 1027375.9063530503, 1027375.9063530504, 1027375.9063530507, 1173804.4853459275], \"raw_negative_eigenvalue_count\": 3, \"negative_beyond_roundoff_count\": 0, \"near_zero_count\": 6, \"additional_near_zero_after_six_rigid_count\": 0, \"absolute_near_zero_threshold_N_per_m\": 1.2406318972694757e-07, \"interpretation\": \"diagnostic spectrum only; no positive-definiteness enforcement\", \"reference_is_acceptance_gate\": false}}, \"timing\": {\"elapsed_seconds\": 0.015999999828636646, \"wall_budget_seconds\": 30.0, \"within_wall_budget\": true}, \"sha256\": {\"mls3d_shape.py\": \"66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5\", \"mls3d_mls.py\": \"404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63\", \"efgm_elastic_operator.py\": \"41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d\", \"mls_elastic_adapter.py\": \"c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a\", \"operator_diagnostic.py\": \"c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c\", \"fixed_case.json\": \"72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb\"}, \"finished_at_utc\": \"2026-10-05T11:49:36.950714+00:00\", \"parent_started_at_utc\": \"2026-10-05T11:49:36.771551+00:00\", \"parent_elapsed_seconds\": 0.20300000021234155, \"parent_wall_budget_seconds\": 30.0, \"parent_within_wall_budget\": true}\r\n",
+  "stderr_path": "stderr.txt",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_text": "",
+  "diagnostic_json_path": "operator_diagnostic.json",
+  "diagnostic_json_sha256": "c8fcd96bceae07426603e8d7e883f3d7f6b4e2786ad81caa19e97629d585958f",
+  "diagnostic_result": {
+    "schema": "efgm_mls_patch_operator_diagnostic.v1",
+    "case_id": "efgm_mls_patch_si_cube_20261005",
+    "status": "OK",
+    "started_at_utc": "2026-10-05T19:49:36.919383+08:00",
+    "fixed_case": {
+      "case_id": "efgm_mls_patch_si_cube_20261005",
+      "status": "SOURCE_ONLY_AWAITING_REVIEW",
+      "scope": "one bounded elastic-operator diagnostic; no solver, load, crack, or fracture",
+      "units": {
+        "coordinates": "m",
+        "quadrature_volume": "m^3",
+        "displacement_coefficients": "m",
+        "young_modulus": "Pa",
+        "stiffness": "N/m",
+        "quadratic_energy": "J"
+      },
+      "domain": {
+        "bounds_m": [
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ],
+          [
+            -1.0,
+            1.0
+          ]
+        ],
+        "side_length_m": 2.0,
+        "coefficient_grid_shape": [
+          3,
+          3,
+          3
+        ],
+        "coefficient_axis_coordinates_m": [
+          -1.0,
+          0.0,
+          1.0
+        ],
+        "coefficient_count": 27,
+        "displacement_dof_count": 81
+      },
+      "volume_quadrature": {
+        "layout": "one tensor-product Gauss-Legendre rule on the full cube",
+        "points_per_axis": 4,
+        "point_count": 64,
+        "gauss_legendre_nodes_on_minus1_plus1": [
+          -0.8611363115940526,
+          -0.3399810435848563,
+          0.3399810435848563,
+          0.8611363115940526
+        ],
+        "gauss_legendre_weights": [
+          0.3478548451374538,
+          0.6521451548625461,
+          0.6521451548625461,
+          0.3478548451374538
+        ],
+        "total_volume_m3": 8.0
+      },
+      "material": {
+        "model": "small-strain isotropic linear elasticity",
+        "young_modulus_Pa": 1000000.0,
+        "poisson_ratio": 0.3
+      },
+      "mls": {
+        "api": "shape_functions_3d",
+        "basis": "linear 3-D MLS",
+        "kernel": "Wendland C2 from the frozen MLS primitive",
+        "reference_origin_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_scale_m": 1.0,
+        "support_radius_m": 2.5,
+        "support_radius_role": "fixed numerical MLS support length; not a material parameter",
+        "identity_visibility": "all sources considered; radial support still applies; no crack surface is loaded",
+        "visibility_mask": null,
+        "mask_locally_constant": null,
+        "max_condition_number": 1000000000000.0,
+        "rank_relative_tolerance": 1E-12,
+        "switch_tolerance": 1E-10,
+        "duplicate_tolerance": 1E-12
+      },
+      "diagnostic": {
+        "only_operator_assembly_call": true,
+        "max_displacement_dofs": 375,
+        "max_quadrature_points": 256,
+        "max_estimated_numeric_array_bytes": 33554432,
+        "wall_timeout_seconds": 30,
+        "report_all_eigenvalues": true,
+        "report_negative_eigenvalues": true,
+        "report_extra_near_zero_modes_after_six_rigid_modes": true,
+        "all_numerical_thresholds_are_diagnostic_only": true,
+        "run_solver": false,
+        "apply_load": false,
+        "load_crack_surface": false,
+        "render_output": false
+      }
+    },
+    "dimensions": {
+      "source_count": 27,
+      "quadrature_count": 64,
+      "displacement_dof_count": 81,
+      "volume_sum_m3": 7.999999999999998
+    },
+    "identity_visibility": {
+      "mode": "all candidate sources; no crack surface or visibility mask",
+      "mask_locally_constant_asserted": false,
+      "crack_surface_loaded": false
+    },
+    "mls": {
+      "api": "shape_functions_3d",
+      "row_order_to_global_ids": "source row i maps to coefficient ID i, dense IDs 0..N-1",
+      "shape_status_counts": {
+        "OK": 64,
+        "UNKNOWN_VISIBILITY_SWITCH": 0,
+        "UNKNOWN_SUPPORT_BOUNDARY": 0,
+        "UNKNOWN_POOR_SUPPORT": 0,
+        "UNKNOWN_DUPLICATE_SOURCES": 0,
+        "UNKNOWN_RANK_DEFICIENT": 0,
+        "UNKNOWN_ILL_CONDITIONED": 0,
+        "UNKNOWN_LINEAR_SOLVE_FAILED": 0
+      },
+      "support_count_min": 20,
+      "support_count_max": 27,
+      "maximum_finite_condition_number": 26.79567865862029,
+      "unknown_rows": [],
+      "condition_numbers": [
+        26.79567865862029,
+        18.83711565681,
+        18.83711565681,
+        26.795678658620204,
+        18.837115656810017,
+        12.050187299771158,
+        12.050187299771158,
+        18.837115656810024,
+        18.837115656810038,
+        12.050187299771169,
+        12.050187299771169,
+        18.83711565681002,
+        26.7956786586202,
+        18.837115656810003,
+        18.83711565681002,
+        26.795678658620233,
+        18.83711565681005,
+        12.050187299771137,
+        12.050187299771146,
+        18.837115656810017,
+        12.050187299771148,
+        5.097029617467338,
+        5.097029617467338,
+        12.050187299771148,
+        12.050187299771148,
+        5.097029617467338,
+        5.09702961746734,
+        12.05018729977114,
+        18.83711565681011,
+        12.050187299771132,
+        12.050187299771142,
+        18.837115656810067,
+        18.83711565681004,
+        12.050187299771142,
+        12.050187299771142,
+        18.837115656810028,
+        12.050187299771135,
+        5.097029617467336,
+        5.097029617467336,
+        12.050187299771148,
+        12.050187299771148,
+        5.097029617467336,
+        5.097029617467337,
+        12.050187299771146,
+        18.83711565681007,
+        12.050187299771148,
+        12.050187299771146,
+        18.837115656810028,
+        26.795678658620215,
+        18.837115656810045,
+        18.837115656810038,
+        26.79567865862019,
+        18.837115656810035,
+        12.050187299771133,
+        12.05018729977114,
+        18.837115656810084,
+        18.837115656810056,
+        12.050187299771133,
+        12.050187299771142,
+        18.837115656810024,
+        26.79567865862024,
+        18.837115656810074,
+        18.83711565681002,
+        26.795678658620165
+      ]
+    },
+    "array_budget": {
+      "explicit_array_estimate_bytes": {
+        "source_positions": 648,
+        "quadrature_positions": 1536,
+        "quadrature_volume_weights": 512,
+        "coefficient_displacements": 648,
+        "mls_weights": 13824,
+        "mls_gradients": 41472,
+        "mls_ids_and_per_query_operator_copies": 82944,
+        "operator_global_local_and_spectral_work_arrays": 419904,
+        "rigid_modes_and_interpolated_fields": 10032,
+        "estimated_explicit_array_bytes": 571520
+      },
+      "estimated_explicit_array_bytes": 571520,
+      "cap_bytes": 33554432,
+      "excludes_python_runtime_and_vendor_blas_workspace": true,
+      "within_estimate_cap": true
+    },
+    "assembly": {
+      "operator_calls": 1,
+      "status": "OK",
+      "blocked_quadrature_index": null,
+      "shape_status": null,
+      "diagnostic": null
+    },
+    "affine_interpolation": {
+      "status": "DIAGNOSTIC_ONLY",
+      "displacement_max_absolute_error_m": 6.938893903907228E-18,
+      "displacement_max_relative_error": 3.4530922447975794E-16,
+      "gradient_max_absolute_error_per_m": 2.4919709308221516E-17,
+      "gradient_max_relative_error": 2.4919709308221516E-13,
+      "reference_relative_scale": 5.6642437591419156E-12,
+      "reference_is_acceptance_gate": false
+    },
+    "roundoff_references": {
+      "binary64_epsilon": 2.220446049250313E-16,
+      "unit_roundoff": 1.1102230246251565E-16,
+      "conservative_operation_count": 238,
+      "gamma_n": 2.6423307986079423E-14,
+      "symmetry_relative_reference": 1.0569323194431769E-13,
+      "rigid_residual_relative_reference_times_observed_condition": 5.6642437591419156E-12,
+      "affine_relative_reference_times_observed_condition": 5.6642437591419156E-12,
+      "eigenvalue_zero_absolute_reference_multiplier": 1.0569323194431769E-13,
+      "interpretation": "roundoff-scale diagnostic references only; no pass/fail gate"
+    },
+    "limitations": [
+      "pure operator diagnostic; no solver, prescribed displacement, traction, or reaction",
+      "no crack geometry, split support, visibility query, crack loading, SIF, or propagation",
+      "support radius is a fixed numerical MLS support input, not a material parameter",
+      "material values are an engineering fixture and are not ceramic calibration",
+      "six rigid-mode residual checks establish presence only",
+      "spectral extra-null count is diagnostic and does not prove EFGM stability"
+    ],
+    "operator_diagnostics": {
+      "K_shape": [
+        81,
+        81
+      ],
+      "K_units": "N/m",
+      "K_finite": true,
+      "K_frobenius_norm_N_per_m": 2813900.124390745,
+      "symmetry": {
+        "relative_frobenius_asymmetry": 8.115685785403049E-17,
+        "roundoff_reference": 1.0569323194431769E-13,
+        "reference_is_acceptance_gate": false
+      },
+      "rigid_modes": {
+        "expected_modes_checked": 6,
+        "coefficient_mode_matrix_rank": 6,
+        "scaled_residual": 3.136438831179529E-17,
+        "mode_order": [
+          "translation_x",
+          "translation_y",
+          "translation_z",
+          "rotation_x",
+          "rotation_y",
+          "rotation_z"
+        ],
+        "scaled_residual_by_mode": [
+          4.5472377269595497E-17,
+          3.655141836528487E-17,
+          3.236765515484184E-17,
+          2.287406314294569E-17,
+          2.330344898751663E-17,
+          2.7563122112044373E-17
+        ],
+        "roundoff_reference_times_observed_condition": 5.6642437591419156E-12,
+        "interpretation": "presence of six physical rigid modes only; extra null modes remain possible",
+        "reference_is_acceptance_gate": false
+      },
+      "affine_patch_energy": {
+        "operator_energy_J": 0.0918461538463307,
+        "independent_tensor_energy_J": 0.09184615384615386,
+        "relative_difference": 1.9254442633624246E-12,
+        "roundoff_reference_times_observed_condition": 5.6642437591419156E-12,
+        "reference_is_acceptance_gate": false
+      },
+      "spectrum": {
+        "matrix_used": "symmetric_part=(K+K.T)/2 for eigvalsh only; raw K is unchanged",
+        "eigenvalues_N_per_m": [
+          -5.6165141076957276E-11,
+          -4.086175286165674E-11,
+          -7.16277259759136E-12,
+          1.8898412442824987E-11,
+          6.6278149637974E-11,
+          1.3077792130478175E-10,
+          8395.30609073315,
+          8395.306090733206,
+          8395.30609073322,
+          13449.756368657161,
+          13449.75636865719,
+          23842.47120339779,
+          23842.471203397818,
+          23842.471203397832,
+          29225.637622778006,
+          29225.637622778013,
+          29225.637622778082,
+          34188.55624824122,
+          35697.10399216847,
+          35697.10399216854,
+          35697.10399216859,
+          39229.862622899236,
+          42994.23241497693,
+          42994.23241497705,
+          42994.23241497713,
+          65230.85933356008,
+          65230.85933356019,
+          65230.85933356025,
+          70752.08841879442,
+          70752.08841879455,
+          79688.47682656566,
+          79688.47682656569,
+          79688.47682656582,
+          84285.7616450482,
+          84285.7616450483,
+          84285.76164504835,
+          86983.42770036083,
+          86983.42770036093,
+          96339.64996550516,
+          96339.64996550523,
+          96339.64996550526,
+          98585.47061423467,
+          98585.47061423477,
+          112186.63331171947,
+          112186.63331171958,
+          112186.63331171962,
+          117586.80028709065,
+          117586.80028709071,
+          117586.80028709084,
+          164727.0097750169,
+          164727.0097750169,
+          164727.009775017,
+          208815.81999315572,
+          208815.81999315586,
+          208815.8199931559,
+          216562.15446279082,
+          216562.15446279096,
+          216562.15446279114,
+          227131.51871870746,
+          237185.0725724022,
+          237185.0725724023,
+          286920.01532338077,
+          339465.64430652966,
+          339465.6443065297,
+          339465.6443065299,
+          341520.48235294205,
+          364298.5269000503,
+          364298.52690005064,
+          368586.2738011757,
+          368586.2738011758,
+          368586.2738011762,
+          393874.5640906731,
+          393874.56409067335,
+          393874.5640906737,
+          563297.2206983194,
+          563297.22069832,
+          563297.2206983202,
+          1027375.9063530503,
+          1027375.9063530504,
+          1027375.9063530507,
+          1173804.4853459275
+        ],
+        "raw_negative_eigenvalue_count": 3,
+        "negative_beyond_roundoff_count": 0,
+        "near_zero_count": 6,
+        "additional_near_zero_after_six_rigid_count": 0,
+        "absolute_near_zero_threshold_N_per_m": 1.2406318972694757E-07,
+        "interpretation": "diagnostic spectrum only; no positive-definiteness enforcement",
+        "reference_is_acceptance_gate": false
+      }
+    },
+    "timing": {
+      "elapsed_seconds": 0.015999999828636646,
+      "wall_budget_seconds": 30.0,
+      "within_wall_budget": true
+    },
+    "sha256": {
+      "mls3d_shape.py": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "mls3d_mls.py": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "efgm_elastic_operator.py": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "mls_elastic_adapter.py": "c341d98dd53c9acfdfa4aa90bfbe3b06d3eb670c48d5f40b2fec6c033a55e44a",
+      "operator_diagnostic.py": "c1654c6d2079fedac155c1937925b15429e3891bc11ea7ce929cba17f2243a0c",
+      "fixed_case.json": "72b9ef4fb8a4130122a7aad683cc9e6f1fde5e3d1e55ce9001a02c8a2a792acb"
+    },
+    "finished_at_utc": "2026-10-05T19:49:36.950714+08:00",
+    "parent_started_at_utc": "2026-10-05T19:49:36.771551+08:00",
+    "parent_elapsed_seconds": 0.20300000021234155,
+    "parent_wall_budget_seconds": 30.0,
+    "parent_within_wall_budget": true
+  }
+}

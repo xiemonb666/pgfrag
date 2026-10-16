@@ -1,0 +1,5 @@
+┌ Error: precompilation errored
+│   exception =
+│    LoadError: ArgumentError: Peridynamics headless backend rejects file-output Job options; use the PGFrag CSV/NPZ result adapter
+│    in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\auxiliary\precompile_workload.jl:1
+└ @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\Peridynamics.jl:160

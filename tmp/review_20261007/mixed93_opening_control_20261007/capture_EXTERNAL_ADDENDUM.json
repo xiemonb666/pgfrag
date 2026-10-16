@@ -1,0 +1,82 @@
+{
+  "independent_run01_file_tally": {
+    "combined_bytes_including_receipt": 1738889,
+    "files": {
+      "receipt.json": {
+        "bytes": 15178,
+        "sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925"
+      },
+      "result.json": {
+        "bytes": 1723610,
+        "sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb"
+      },
+      "stderr.bin": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.bin": {
+        "bytes": 101,
+        "sha256": "be0120fc8236f9d234d657990d88b003e214e6fc6e5d9e045db50acc84550b2a"
+      }
+    },
+    "limit_bytes": 8388608,
+    "limit_pass": true,
+    "matches_receipt": true
+  },
+  "invocation": {
+    "arguments": [
+      "-B",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_opening_control_20261007\\capture_once.py"
+    ],
+    "checker_run": false,
+    "runtime": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "tool_exit_code": 0,
+    "tool_wall_time_seconds": 0.9539613,
+    "wrapper_actual_child_returncode": 0,
+    "wrapper_child_wall_seconds": 0.7339999999385327,
+    "wrapper_deadline_seconds": 20.0
+  },
+  "observed_utc": "2026-10-07T02:19:11Z",
+  "receipt": {
+    "pre_post_hashes_match": true,
+    "sha256": "09ad385652c18a02a7216c297f02e8fe20f981522d43c99410d7447bbec77925",
+    "status": "CAPTURED"
+  },
+  "result_summary": {
+    "Qstar_m": 3.79507750385027e-05,
+    "classification": "FIXED_FACE_GLOBAL_MODE_I_OPENING_CONTROL_TOY_HISTORY_DIAGNOSTIC_ONLY",
+    "counts": {
+      "bulk_unit_control_kkt_order": 100,
+      "bulk_unit_control_kkt_solves": 1,
+      "new_mls_queries": 0,
+      "npz_opened": false,
+      "primitive_assemblies": 12,
+      "primitive_successful_returns": 12,
+      "provider_calls": 0
+    },
+    "max_energy_balance_relative_error": 1.721980142804595e-15,
+    "max_primitive_vs_independent_law_relative_error": 5.2939559203393765e-17,
+    "result_bytes": 1723610,
+    "result_sha256": "1e83ecf628db8e30066dba287fa616b2e84fb6eb467e9ebf75c1cc57b2615bbb",
+    "result_status": "DIAGNOSTIC_ONLY",
+    "trajectory_states": 12,
+    "unit_control": {
+      "KKT_backward_error": 1.0914787240015012e-17,
+      "noncontrol_bulk_residual_inf": 3.637978807091713e-12,
+      "physical_gauge_residual_inf": 1.0061396160665481e-16,
+      "tangential_trace_per_Q_verified_zero": true,
+      "unit_control_value": 1.0
+    },
+    "zero_opening_corner": {
+      "assembly_tangent_status": "nondifferentiable",
+      "interpretation": "recorded primitive one-sided/corner status at Q=0; no tangent projection or solve uses it",
+      "point_statuses": [
+        "nondifferentiable"
+      ],
+      "reasons": [
+        "history maximum"
+      ]
+    }
+  },
+  "schema": "mixed93_opening_control_external_capture_addendum.v1"
+}

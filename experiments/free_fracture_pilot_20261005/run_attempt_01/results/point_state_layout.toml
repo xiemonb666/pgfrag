@@ -1,0 +1,26 @@
+active_bond_count_encoding = "Float64 with exact integer representability checked before writing"
+array_shape = [21, 4500, 97]
+byte_count = 73332000
+data_file = "point_state_history.f64le"
+field_count = 21
+field_names = ["ux_m", "uy_m", "uz_m", "vx_m_s", "vy_m_s", "vz_m_s", "vhalf_x_m_s", "vhalf_y_m_s", "vhalf_z_m_s", "accel_x_m_s2", "accel_y_m_s2", "accel_z_m_s2", "b_int_x_N_m3", "b_int_y_N_m3", "b_int_z_N_m3", "b_ext_x_N_m3", "b_ext_y_N_m3", "b_ext_z_N_m3", "osb_strain_energy_density_J_m3", "damage", "n_active_bonds_exact_float64"]
+field_units = ["m", "m", "m", "m/s", "m/s", "m/s", "m/s", "m/s", "m/s", "m/s^2", "m/s^2", "m/s^2", "N/m^3", "N/m^3", "N/m^3", "N/m^3", "N/m^3", "N/m^3", "J/m^3", "1", "count"]
+format = "IEEE-754 Float64, little-endian"
+point_count = 4500
+point_id_mapping = "point_id is 1..point_count; analytic reference coordinates and volumes are in point_reference.csv"
+schema = "pgfrag.free_fracture_pilot.point_state_binary.v1"
+sha256 = "2512eb66bebf85fed1d8d830b504f994fd5a01d6beab4af5ff3872543ecd7edf"
+state_count = 97
+state_index_mapping = "state_index = step + 1; step 0 is the reference state, step 1..n_steps are native VelocityVerlet output states"
+storage_order = "Julia column-major tensor [field_index, point_id, state_index]; field index varies fastest, then ascending point_id, then ascending state_index"
+time_step_s = 3.75e-8
+
+[state_time_levels]
+acceleration = "at t_n after native force update"
+damage_and_active_bond_count = "at t_n after native CriticalStretch evaluation"
+displacement = "at t_n"
+external_force_density = "at t_n"
+full_velocity = "at t_n"
+internal_force_density = "at t_n"
+osb_strain_energy_density = "at t_n from native export_field"
+velocity_half = "for n>=1 centered at t_(n-1/2), after BC evaluated at t_n; n=0 is the initialized zero placeholder"

@@ -1,0 +1,133 @@
+{
+  "schema": "pgfrag.free_evolution_coupon.postrun_audit.v1",
+  "launcher_shell_exit_code": 0,
+  "launcher_status": "COMPLETED_EXIT_0",
+  "native_exit_code": 0,
+  "duration_ms": 43035,
+  "timed_out": false,
+  "disk_cap_exceeded": false,
+  "attempt_bytes": 37623272,
+  "experiment_output_bytes": 37620554,
+  "point_count": 4500,
+  "grid_shape": [
+    20,
+    15,
+    15
+  ],
+  "steps": 48,
+  "states": 49,
+  "dt_s": 7.5e-08,
+  "native_raw_stability_bound_s": 3.4242302121147243e-07,
+  "accepted_dt_fraction": 0.21902732980584783,
+  "directed_bonds_each_state": [
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556,
+    409556
+  ],
+  "canonical_bond_count": 204778,
+  "complete_horizon_points": 1134,
+  "complete_horizon_ratio": 0.252,
+  "left_grip_points": 225,
+  "right_grip_points": 225,
+  "binary_finite_all_fields": true,
+  "binary_max_abs": 9670108309.440292,
+  "damage_nonzero_count": 0,
+  "active_bond_per_point_state_mismatches": 0,
+  "active_bond_exact_integer_failures": 0,
+  "csv_rows": 49,
+  "csv_nonfinite_or_non_numeric_cells": 0,
+  "max_free_dof_impulse_residual_N_s": 0.0,
+  "max_momentum_update_residual_reported_N_s": 2.640201696591654e-18,
+  "max_momentum_update_residual_recomputed_N_s": 2.640201696591654e-18,
+  "max_abs_displacement_m": 1.2917947492354597e-06,
+  "max_abs_free_interior_displacement_m": 1.2917947492354597e-06,
+  "max_abs_full_velocity_m_s": 1.7247935509806107,
+  "final_native_strain_energy_J": 0.00024345788925163157,
+  "final_kinetic_energy_J": 0.00025289129122172413,
+  "final_bc_discrete_kinetic_work_J": 0.0004606984761629457,
+  "final_actuator_work_trapezoid_surrogate_J": 0.0006047855000282772,
+  "final_energy_balance_residual_diagnostic_J": 3.565070431041004e-05,
+  "fracture_dissipation_inference": "NOT_PERMITTED; failure was disabled and this reversible elastic diagnostic has no fracture-energy ledger",
+  "calibration_status": "UNCALIBRATED prototype values; no material calibration was performed",
+  "real_object_physics_qualification": "UNKNOWN; no measured coupon or artifact data were supplied or fitted",
+  "artifacts": {
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\launcher_receipt.json": {
+      "bytes": 2448,
+      "sha256": "85af33a3ca1627f04cbc785549eddbffb9e987ac560af5c34ffe5431054e2cef"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\native_stdout.log": {
+      "bytes": 97,
+      "sha256": "35c4c5699dc0a7923dae6d8eca5ffb659ed7b7c08896e8142775c4f0f011b30f"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\native_stderr.log": {
+      "bytes": 227,
+      "sha256": "b87722a6adc7800d3eea59db8e3e633b3e2cb9e160eaf980b5772bce56980937"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\results\\summary.toml": {
+      "bytes": 19292,
+      "sha256": "1fdfec9875a954e45e9bfadc82e5cbede270ffcde2d31726562fcfd88209b87f"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\results\\point_reference.csv": {
+      "bytes": 520394,
+      "sha256": "7194fadbcd2af23b3205aa4349b471d6cb9457d24ee84b88e91404af35579257"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\results\\point_state_layout.toml": {
+      "bytes": 1811,
+      "sha256": "601bca974454cff68bb6e4a81e9a6e435fdcf7834e37f0640a45c25e8c0a513f"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\results\\point_state_history.f64le": {
+      "bytes": 37044000,
+      "sha256": "0f436e4d8cabd29f3f634334e2d1e00e920be098cafaea8a1e0a9df2b221be77"
+    },
+    "pgfrag\\experiments\\free_evolution_coupon_20261005\\run_attempt_01\\results\\energy_reaction_history.csv": {
+      "bytes": 35057,
+      "sha256": "14202f859f098527c148d1334508432a6d1bed7ce14f7f79aae6cc62fc7c6bd4"
+    }
+  }
+}

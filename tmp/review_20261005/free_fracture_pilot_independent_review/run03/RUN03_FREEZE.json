@@ -1,0 +1,128 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.run03_independent_review_freeze.v1",
+  "status": "FROZEN_READY_FOR_ONE_READONLY_RUN",
+  "authorization": "Parent authorized exactly one run03 read-only numeric audit; no Julia/native solver; child timeout 110 s, total maximum 120 s; stop after any failure.",
+  "run01_and_run02_preserved": true,
+  "run02_failure_preserved_hashes": {
+    "pilot_independent_review.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pilot_independent_review.py",
+      "bytes": 104983,
+      "sha256": "14179191572b25c7acdf50699c040a9493461f112d9a0b9305df0f6a2d162826"
+    },
+    "RUN02_FREEZE.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\RUN02_FREEZE.json",
+      "bytes": 5859,
+      "sha256": "c64c19ff195167a8fcdfe13379a7841b01ba57c801c7b9de3c6c3d244f247fcd"
+    },
+    "RUN02_STATIC_PREFLIGHT.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\RUN02_STATIC_PREFLIGHT.json",
+      "bytes": 2550,
+      "sha256": "78b9a15f7ff010e1f9eaba40f11c792d4ade1b258ccba98f940331ed0b107300"
+    },
+    "pre_execution_snapshot.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\pre_execution_snapshot.json",
+      "bytes": 29030,
+      "sha256": "15eb2005ec6cbe4acefab88024be61123070873e6db37606a8ae950bacb904eb"
+    },
+    "post_execution_snapshot.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\post_execution_snapshot.json",
+      "bytes": 29031,
+      "sha256": "9c5ab29e87650d1b9168ff53cf566074d65c81fb8f99a149afb61fd69b0dd1f4"
+    },
+    "bounded_runner_receipt.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\bounded_runner_receipt.json",
+      "bytes": 643,
+      "sha256": "a297d9d06404c4e2feaf4a1513cd7498e2cc3aa6c11299ca1be8c8beba499714"
+    },
+    "audit_output\\pilot_independent_review.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\audit_output\\pilot_independent_review.json",
+      "bytes": 23879,
+      "sha256": "6e7be91780f6f4d92256e3bda6ad44880cc703dde1762a8996430f93454ca9a4"
+    },
+    "audit_output\\PILOT_REVIEW_REPORT.md": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\audit_output\\PILOT_REVIEW_REPORT.md",
+      "bytes": 3243,
+      "sha256": "15d9ba96d85d5e87813c3dbcb29b2ef66cd974ed2fa9329432fc780e6a0c95a7"
+    },
+    "audit_output\\bounded_runner_stdout.txt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\audit_output\\bounded_runner_stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit_output\\bounded_runner_stderr.txt": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run02\\audit_output\\bounded_runner_stderr.txt",
+      "bytes": 762,
+      "sha256": "875cf7ae5e62ce7873c316ea5c74f5f2775690f09bd5cddac2deb0ba7d9ce7c9"
+    }
+  },
+  "declared_change": "Exact narrow correction only: in the right-grip layer association loop, convert each 1-based canonical point ID once to zero-based point_i0/point_j0 before grid_indexes access. No formula, threshold, tolerance, solver output, or native source changes.",
+  "static_preflight": {
+    "status": "PASS",
+    "invalid_numpy_ufunc_axis_calls": 0,
+    "reviewed_pairs_numpy_index_routes": 15,
+    "source_freeze_pin_count": 84,
+    "errors": []
+  },
+  "run03_artifacts": {
+    "pilot_independent_review.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pilot_independent_review.py",
+      "bytes": 105069,
+      "sha256": "36681a593d18b29b2fe5f30dab0761e1f5afece91bfb5e85130cccaa2621ab7e"
+    },
+    "run_bounded_review.ps1": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\run_bounded_review.ps1",
+      "bytes": 3716,
+      "sha256": "23287fe464830f8d2e43c9a4677c1e82b4dc3c1ecda1032b38af1a0bd53f203d"
+    },
+    "snapshot_bindings.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\snapshot_bindings.py",
+      "bytes": 8303,
+      "sha256": "3bf87b494232ce4cb7c546f2ae282faf21ae24a931f52f618045650d75e1b597"
+    },
+    "preflight_static.py": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\preflight_static.py",
+      "bytes": 7596,
+      "sha256": "b37b6a1ff4d3b7c97e01501753148ab253d40ab1c786f0cace2fca8be1c3f867"
+    },
+    "pilot_input_hash_inventory.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pilot_input_hash_inventory.json",
+      "bytes": 3041,
+      "sha256": "480696292e9dc58cb368ebdb35102b1d727f716a42a215a1759cf6b678fce87d"
+    },
+    "RUN03_STATIC_PREFLIGHT.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\RUN03_STATIC_PREFLIGHT.json",
+      "bytes": 4823,
+      "sha256": "ef32ff3ffc31f0067e8a887ccf7c91ad8389f0e6e75001c1645c1570d0eb1927"
+    },
+    "pre_execution_snapshot.json": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pre_execution_snapshot.json",
+      "bytes": 29030,
+      "sha256": "7f9893fbbf4c55a7ccc47aa5e1126f2cd9bedf72b3ba43416bdc2d9d42431495"
+    }
+  },
+  "pre_execution": {
+    "snapshot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\pre_execution_snapshot.json",
+    "source_freeze_sha256": "1f4c3e9b10a607d303bbc3435bf22ae8b591ce8f6b5651aacb6cba3c3bfd7217",
+    "source_pin_count": 84,
+    "all_84_source_pins_match": true,
+    "result_file_count": 10,
+    "all_10_result_files_match_input_inventory": true,
+    "mismatch_count": 0,
+    "attempt_tree_bytes": 88924268,
+    "result_tree_bytes": 88921168,
+    "attempt_tree_within_209715200B_cap": true,
+    "result_tree_within_199229440B_cap": true,
+    "result_tree_manifest_sha256": "819f533228e91cc28cccfcd926d1d91a6a2877291c9b6703fb5943e35550bde6",
+    "recorded_receipt_final_attempt_bytes": 88924215,
+    "observed_attempt_minus_receipt_bytes": 53,
+    "receipt_size_equality_check": "FAIL: exact mismatch; preserve as independent receipt discrepancy"
+  },
+  "exact_case_caps": {
+    "max_output_bytes": 199229440,
+    "max_attempt_bytes": 209715200,
+    "child_timeout_seconds": 110,
+    "total_max_seconds": 120
+  },
+  "expected_summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+  "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\run03\\audit_output"
+}

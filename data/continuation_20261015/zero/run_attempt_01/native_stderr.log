@@ -1,0 +1,81 @@
+ERROR: LoadError: ArgumentError: Package StaticArrays [90137ffa-7385-5640-81b9-e52037218182] is required but does not seem to be installed:
+ - Run `Pkg.instantiate()` to install all recorded dependencies.
+
+Stacktrace:
+  [1] _require(pkg::Base.PkgId, env::String)
+    @ Base .\loading.jl:2000
+  [2] __require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1886
+  [3] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+  [4] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+  [5] _require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1877
+  [6] macro expansion
+    @ .\loading.jl:1864 [inlined]
+  [7] macro expansion
+    @ .\lock.jl:270 [inlined]
+  [8] __require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1827
+  [9] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+ [10] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+ [11] require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1820
+ [12] include
+    @ .\Base.jl:495 [inlined]
+ [13] include_package_for_output(pkg::Base.PkgId, input::String, depot_path::Vector{String}, dl_load_path::Vector{String}, load_path::Vector{String}, concrete_deps::Vector{Pair{Base.PkgId, UInt128}}, source::String)
+    @ Base .\loading.jl:2306
+ [14] top-level scope
+    @ stdin:5
+in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\src\pgfrag\resources\julia\vendor\Peridynamics.jl\src\Peridynamics.jl:1
+in expression starting at stdin:5
+ERROR: LoadError: Failed to precompile Peridynamics [4dc47793-80f3-4232-b30e-ca78ca9d621b] to "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\third_party\\pgfrag-runtime\\depot\\compiled\\v1.10\\Peridynamics\\jl_14D8.tmp".
+Stacktrace:
+  [1] error(s::String)
+    @ Base .\error.jl:35
+  [2] compilecache(pkg::Base.PkgId, path::String, internal_stderr::IO, internal_stdout::IO, keep_loaded_modules::Bool; loadable_exts::Nothing)
+    @ Base .\loading.jl:2547
+  [3] compilecache
+    @ .\loading.jl:2414 [inlined]
+  [4] (::Base.var"#973#974"{Base.PkgId})()
+    @ Base .\loading.jl:2058
+  [5] mkpidlock(f::Base.var"#973#974"{Base.PkgId}, at::String, pid::Int32; kwopts::@Kwargs{stale_age::Int64, wait::Bool})
+    @ FileWatching.Pidfile C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\extract\julia-1.10.12\share\julia\stdlib\v1.10\FileWatching\src\pidfile.jl:93
+  [6] #mkpidlock#6
+    @ C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\extract\julia-1.10.12\share\julia\stdlib\v1.10\FileWatching\src\pidfile.jl:88 [inlined]
+  [7] trymkpidlock(::Function, ::Vararg{Any}; kwargs::@Kwargs{stale_age::Int64})
+    @ FileWatching.Pidfile C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\extract\julia-1.10.12\share\julia\stdlib\v1.10\FileWatching\src\pidfile.jl:111
+  [8] #invokelatest#2
+    @ .\essentials.jl:894 [inlined]
+  [9] invokelatest
+    @ .\essentials.jl:889 [inlined]
+ [10] maybe_cachefile_lock(f::Base.var"#973#974"{Base.PkgId}, pkg::Base.PkgId, srcpath::String; stale_age::Int64)
+    @ Base .\loading.jl:3062
+ [11] maybe_cachefile_lock
+    @ .\loading.jl:3059 [inlined]
+ [12] _require(pkg::Base.PkgId, env::String)
+    @ Base .\loading.jl:2044
+ [13] __require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1886
+ [14] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+ [15] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+ [16] _require_prelocked(uuidkey::Base.PkgId, env::String)
+    @ Base .\loading.jl:1877
+ [17] macro expansion
+    @ .\loading.jl:1864 [inlined]
+ [18] macro expansion
+    @ .\lock.jl:270 [inlined]
+ [19] __require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1827
+ [20] #invoke_in_world#3
+    @ .\essentials.jl:926 [inlined]
+ [21] invoke_in_world
+    @ .\essentials.jl:923 [inlined]
+ [22] require(into::Module, mod::Symbol)
+    @ Base .\loading.jl:1820
+in expression starting at C:\Users\xiemo\Desktop\ShardForge\pgfrag\data\continuation_20261015\zero\run_attempt_01\source_snapshot\run_bowl_dynamics.jl:1

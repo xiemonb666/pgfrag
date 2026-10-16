@@ -1,0 +1,22 @@
+{
+  "exit_code": 0,
+  "launcher": "C:\\Users\\xiemo\\.local\\bin\\uv.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\.local\\bin\\uv.exe",
+    "run",
+    "--no-project",
+    "--with",
+    "pytest==8.4.2",
+    "--python",
+    "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "--",
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_energy_ledger.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider"
+  ]
+}

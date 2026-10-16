@@ -1,0 +1,19 @@
+{
+  "schema": "modeiii_static_solver_independent_review.v1",
+  "status": "INTERIM_BLOCKER_SOURCE_NOT_FROZEN",
+  "captured_local_date": "2026-10-06",
+  "review_scope": "static source inspection only; no solver, tests, numerical assembly, integration, or Git",
+  "snapshot_sha256": {
+    "static_solve.py": "d5cbfa799e6a52135eef5059281e1d9729eedda379fb6e2b0a5dbbee97261286",
+    "static_solve_case.json": "93c51463d717ad2aa8e78bc163fb8915aaf26164f411c2b46a20d80492bda42d"
+  },
+  "findings": [
+    {
+      "severity": "blocker_for_this_snapshot",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py:46-48,101-115,1317",
+      "description": "The worker requires static_solve_case.json SHA-256 7a0311fa8fa8718b85cf1a70f8cfb9b843c923a734b49a1e85cd8f1540469c3d, while the captured on-disk case hashes to 93c51463d717ad2aa8e78bc163fb8915aaf26164f411c2b46a20d80492bda42d. Source pin validation necessarily fails before numerical imports or assembly.",
+      "scope_note": "Interim snapshot only; source was still changing. Recheck after root-issued source freeze."
+    }
+  ],
+  "final_review_pending_explicit_source_freeze": true
+}

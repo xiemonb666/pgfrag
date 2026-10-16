@@ -1,0 +1,297 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_modeiii_semantic_v2.py"
+  ],
+  "command": "& 'C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe' -B 'C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_modeiii_semantic_v2.py'",
+  "started_utc": "2026-10-05T17:04:45.9079547Z",
+  "finished_utc": "2026-10-05T17:04:46.1717999Z",
+  "wall_seconds": 0.2560233,
+  "timeout_limit_seconds": 30,
+  "timed_out": false,
+  "exit_code": 0,
+  "stdout": "{\"exit_code\":0,\"elapsed_seconds\":0.0,\"diagnostic_sha256_matches_supplied_pin\":true,\"matrix_sha256\":\"bb229305198d99b7aa654736eec0aec7d4197504be3f59fbecbaf12fbb368729\",\"eigenvalue_count\":54,\"raw_negative_eigenvalues\":[-5.485562961229083e-14],\"near_zero_count\":1,\"quotient_condition_number\":342691.2955572469,\"translation_residual_l2\":3.985292100131756e-12,\"quadratic_energy_J\":1.3e-06,\"mu_exact_Pa\":384615.3846153846,\"U_exact_J\":1.3e-06,\"output_json\":\"C:\\\\Users\\\\xiemo\\\\Desktop\\\\ShardForge\\\\pgfrag\\\\tmp\\\\review_20261005\\\\modeiii_pu_operator_independent_20261005\\\\audit_result_v2.json\"}\r\n",
+  "stdout_sha256_utf8": "a74e009edb679ff729f5ec7e1cdca6b655faa71175aab81497e0f47dc45d2b0e",
+  "stderr": "",
+  "stderr_sha256_utf8": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "v2_result_exists": true,
+  "v2_result_sha256": "930495dc9b4f8ed1c7a0a0bd5b496712cc883c4a3477765ad93137f1e8bfc8e6",
+  "v1_history_unchanged": true,
+  "source_primary_receipt_prepost": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+      "pre_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "post_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+      "pre_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "post_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+      "pre_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "post_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+      "pre_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "post_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+      "pre_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "post_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+      "pre_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "post_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+      "pre_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "post_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\modeiii_operator_diagnostic.py",
+      "pre_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "post_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\README.md",
+      "pre_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "post_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\runs\\run01\\operator_diagnostic.json",
+      "pre_sha256": "8a62d61384156921fecc585b2336f161dd572988eadae8bed46afadf105c22c2",
+      "post_sha256": "8a62d61384156921fecc585b2336f161dd572988eadae8bed46afadf105c22c2",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\runs\\run01\\post_run_pins.json",
+      "pre_sha256": "5ca7d691480d4c8e96e96c582e8b2fd7e5c5c929b77fe3c211c894718285c444",
+      "post_sha256": "5ca7d691480d4c8e96e96c582e8b2fd7e5c5c929b77fe3c211c894718285c444",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\runs\\run01\\pre_run_pins.json",
+      "pre_sha256": "112c95c0c79b75921db0cfd40f69fde3bbb02a0a28c00b9fe3f0d039e9e9dc7c",
+      "post_sha256": "112c95c0c79b75921db0cfd40f69fde3bbb02a0a28c00b9fe3f0d039e9e9dc7c",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\runs\\run01\\run_record.json",
+      "pre_sha256": "101f948ea40c40b63845c60df417efad84343d9fd41ad2ebf875a83cbab85f2a",
+      "post_sha256": "101f948ea40c40b63845c60df417efad84343d9fd41ad2ebf875a83cbab85f2a",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\source_freeze.json",
+      "pre_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "post_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_20261005\\SOURCE_REVIEW.md",
+      "pre_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "post_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_modeiii_semantic_v2.py",
+      "pre_sha256": "9c51b4a41dfb1b260c8d5876993282e4204f4658a3a0dbc95ec319a0c8bb7477",
+      "post_sha256": "9c51b4a41dfb1b260c8d5876993282e4204f4658a3a0dbc95ec319a0c8bb7477",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_modeiii.py",
+      "pre_sha256": "303edd02b03ef64c79cf220aeca241bc9232623063dfe1982dc32ba473ef6a5f",
+      "post_sha256": "303edd02b03ef64c79cf220aeca241bc9232623063dfe1982dc32ba473ef6a5f",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_result.json",
+      "pre_sha256": "38b0265db7b93e12bae5e6af61fdfa988b471a22541c55787f9f2593fac47555",
+      "post_sha256": "38b0265db7b93e12bae5e6af61fdfa988b471a22541c55787f9f2593fac47555",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_pu_operator_independent_20261005\\audit_result.md",
+      "pre_sha256": "a5f065b1b96bb466e636cf3e9b2cce2dc3bedde127e05594f607b2db3dec0905",
+      "post_sha256": "a5f065b1b96bb466e636cf3e9b2cce2dc3bedde127e05594f607b2db3dec0905",
+      "unchanged": true
+    }
+  ],
+  "pre_pin_manifest_all_pins_match": true,
+  "post_pin_manifest_all_unchanged": true,
+  "pre_pin_checks": [
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json",
+      "sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "expected_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py",
+      "sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "expected_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/modeiii_operator_diagnostic.py",
+      "sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "expected_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/README.md",
+      "sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "expected_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/SOURCE_REVIEW.md",
+      "sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "expected_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+      "sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "expected_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "expected_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "matches_approved_pin": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/source_freeze.json",
+      "sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "expected_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "matches_approved_pin": true
+    }
+  ],
+  "post_pin_checks": [
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/fixed_case.json",
+      "pre_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "post_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "current_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/mls_modeiii_provider.py",
+      "pre_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "post_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "current_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/modeiii_operator_diagnostic.py",
+      "pre_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "post_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "current_sha256": "aa8765b0e99dd22f474506ffc539e58a68e295ad7b9a1b4fb4f24eecea49491a",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_pu_operator_20261005/README.md",
+      "pre_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "post_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "current_sha256": "a398e2bad4f0b6342d74b0b89f9bd5f0996bada6a0109852b071c91178273623",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/SOURCE_REVIEW.md",
+      "pre_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "post_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "current_sha256": "47fd8c8f53e74d02f7c457c4a6e0371c9ea7fd5c672d594fafa29af82310cf03",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/enriched_dof_contract_20261005/enriched_dof_contract.py",
+      "pre_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "post_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "current_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/modeiii_field_reference_20261005/field_reference.py",
+      "pre_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "post_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "current_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+      "pre_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "post_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "current_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+      "pre_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "post_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "current_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/experiments/efgm_elastic_operator_20261005/efgm_elastic_operator.py",
+      "pre_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "post_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "current_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    },
+    {
+      "path": "pgfrag/tmp/review_20261005/modeiii_pu_operator_20261005/source_freeze.json",
+      "pre_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "post_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "current_sha256": "65197acaead31faacfad967ffda94ebac9991ff7a433c86fc133e699ad591780",
+      "unchanged_during_run": true,
+      "current_matches_post_pin": true
+    }
+  ]
+}

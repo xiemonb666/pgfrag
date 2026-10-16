@@ -1,0 +1,41 @@
+{
+  "artifact_id": "modeiii_j_integral_precopy_guard_v2",
+  "status": "PASS",
+  "legacy_source_unchanged": true,
+  "legacy_snapshot_matches": true,
+  "analytic_json_unchanged": true,
+  "analytic_png_unchanged": true,
+  "legacy_pin_path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/legacy_artifact_pins.json",
+  "items": [
+    {
+      "label": "legacy_source_snapshot",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_v1_legacy.py",
+      "sha256": "7404C6E59F8E6256407E059A948CFD9743F230DE5D949966525A4C3CEDC782CA"
+    },
+    {
+      "label": "guarded_source_v2",
+      "path": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral_precopy_guard_v2.py",
+      "sha256": "5E4E378929EDA39D8718A18957C998D5A33126C3F34B7A2964DFB0AE53CBCD92"
+    },
+    {
+      "label": "source_diff",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_v2.diff",
+      "sha256": "EB6E96D802B28B8F7936468B09E04B53EE1EE57251DC011B0364F5153865EEE1"
+    },
+    {
+      "label": "guard_receipt",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/precopy_guard_receipt.json",
+      "sha256": "B3B2CB6484826E4B9CD09E71FB3267D80A896363D7BE6339D763D135C808258B"
+    },
+    {
+      "label": "analytic_json_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.json",
+      "sha256": "A3C922D227D12861C3B6B84574CD58FF430D80D037C3AF582EAA0561C5A2A2D0"
+    },
+    {
+      "label": "analytic_png_224_samples",
+      "path": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.png",
+      "sha256": "D5882558B8F81360DFE1A7C6DFA58E3CB016AE2D0069850C8859B9A6CECE53E4"
+    }
+  ]
+}

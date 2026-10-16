@@ -1,0 +1,88 @@
+{
+  "status": "PLANNED_NOT_RUN",
+  "scope": "Independent arithmetic checks of the source-only mixed enrichment algebra helper. No MLS, provider, stiffness assembly, solver, or physical fracture behavior.",
+  "execution": {
+    "authorized": false,
+    "requires_parent_go": true,
+    "command_shape": "VFpython -B <this review directory>/arith_checker.py",
+    "wall_time_limit_seconds": 10,
+    "memory_limit_mib": 8,
+    "single_run_only": true,
+    "capture_once": ["JSON stdout", "stderr", "return code", "source pins"]
+  },
+  "budgets": {
+    "max_distinct_query_coordinates": 12,
+    "planned_distinct_query_coordinates": 11,
+    "max_helper_build_calls": 24,
+    "planned_helper_build_calls": 18,
+    "max_sources_in_general_arithmetic_cases": 2,
+    "one_27_source_semantic_inventory_case": true,
+    "semantic_inventory_expected_unique_ids": 405
+  },
+  "predeclared_tolerances": {
+    "central_difference_step_m": 0.00001,
+    "central_difference_relative_scaled": 2e-8,
+    "rotation_relative_scaled": 2e-11,
+    "radial_homogeneity_relative_scaled": 2e-12,
+    "direct_symmetric_gradient_B_relative_scaled": 2e-12,
+    "value_scale": "max(1, |a|, |b|)",
+    "gradient_scale_per_m": "max(1/reference_length_m, |a|, |b|)",
+    "threshold_policy": "Do not change thresholds after observing output; any failed check is reported for review."
+  },
+  "planned_checks": [
+    {
+      "name": "off_cut_central_differences",
+      "sources": 1,
+      "distinct_coordinates": 7,
+      "build_calls": 7,
+      "acceptance": "At one off-cut center and six +/- world-coordinate perturbations, central differences independently match all four branch gradients and all four N*F product-rule gradients; N is varied affinely with the perturbed coordinate."
+    },
+    {
+      "name": "proper_frame_rotation_covariance",
+      "sources": 1,
+      "distinct_coordinates": 1,
+      "build_calls": 1,
+      "acceptance": "Under one non-axis-aligned proper Q, branch values are invariant and all branch and enriched world gradients transform by Q."
+    },
+    {
+      "name": "radial_homogeneity",
+      "sources": 1,
+      "distinct_coordinates": 1,
+      "build_calls": 1,
+      "acceptance": "At fixed angle with r scaled by four, each branch value doubles and each analytic gradient halves."
+    },
+    {
+      "name": "direct_symmetric_gradient_B_columns",
+      "sources": 1,
+      "distinct_coordinates": 0,
+      "build_calls": 0,
+      "acceptance": "Every emitted ux, uy, uz B column matches an independently formed displacement-gradient tensor, symmetric strain tensor, and engineering Voigt order [xx, yy, zz, gamma_xy, gamma_yz, gamma_xz]. Reuses central-difference center row."
+    },
+    {
+      "name": "paired_permutation_and_27_source_semantic_inventory",
+      "sources": "2 for paired permutation; 27 once for semantic inventory only",
+      "distinct_coordinates": 0,
+      "build_calls": 3,
+      "acceptance": "Paired source-row permutation preserves sorted semantic IDs and contribution records. The 27-source row contains the exact expected set of 405 distinct source/component/base-or-branch IDs, not only a count-function result."
+    },
+    {
+      "name": "front_cut_and_explicit_traces",
+      "sources": 1,
+      "distinct_coordinates": 2,
+      "build_calls": 4,
+      "acceptance": "r=0 and an unselected local crack face return their UNKNOWN statuses with no partial rows; exact upper and lower local face traces both return complete rows with theta = +/-pi."
+    },
+    {
+      "name": "improper_frame_and_nonfinite_rejection",
+      "sources": 1,
+      "distinct_coordinates": 0,
+      "build_calls": 2,
+      "acceptance": "A determinant-negative frame and a NaN base value are rejected with the helper's documented input errors. Reuses the central-difference center coordinate."
+    }
+  ],
+  "planned_totals": {
+    "distinct_query_coordinates": 11,
+    "helper_build_calls": 18
+  },
+  "production_helper_sha256_at_plan": "466D0C01445F497E46A49314A03E89E92C62A204A9665CF01C3D2005F2DC99E3"
+}

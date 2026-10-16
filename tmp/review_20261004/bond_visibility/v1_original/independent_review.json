@@ -1,0 +1,79 @@
+{
+  "review": "bond_visibility_v1_independent_read_only_review",
+  "scope": {
+    "workspace": "C:/Users/xiemo/Desktop/ShardForge",
+    "execution_performed": false,
+    "forbidden_execution_respected": ["Python import", "CAD", "pytest", "STEP", "Julia", "solver", "Git"],
+    "reviewed_source_sha256": "7b87ffd1bb94f447de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86",
+    "reviewed_test_sha256": "533702781d8d27295260b108e2783949cdac1691709704fa96edfed6fccfa84a",
+    "reviewed_design_sha256": "1e943da11387344169d66350dbdb9740db18ed6b245f8e5643c318141884fe2",
+    "reviewed_cavity_design_sha256": "6035dfa7c3fdeade43a61ff653b03f55f002326ddebe95b5228db0d0b245e0b"
+  },
+  "findings": [
+    {
+      "id": "BV1-P1-CLUSTER-CHAIN-FAIL-OPEN",
+      "priority": "P1",
+      "kind": "supported_source_bug",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:446-497,568-626,750-773",
+      "finding": "Single-linkage grouping joins any neighboring parameters whose gap <= tolerance, but flags unresolved only when the full cluster span <= tolerance. A same-solid same-face chain can span > tolerance, avoid all ambiguity reasons, and be replaced by one mean event; short VOID intervals then vanish before occupancy classification, allowing IN_MATERIAL when the remaining interval midpoints are inside.",
+      "counterexample": "tol=1; same-face hit parameters [10.0,10.9,11.8,12.7] form one cluster with span=2.7 and no reason. Alternating occupancy has 0.9-wide void intervals that should be UNKNOWN under the interval width rule, but the mean event at 11.35 erases them.",
+      "recommendation": "Fail UNKNOWN for any cluster containing distinct parameters, or preserve individual events and prove every induced interval; retain raw hits. Add the pure-math chain regression before CAD execution."
+    },
+    {
+      "id": "BV1-P1-NATIVE-ASSET-GATE-ABSENT",
+      "priority": "P1",
+      "kind": "pre_integration_release_blocker",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:629-873; pgfrag/src/pgfrag/backend.py and assets.py",
+      "finding": "The module returns per-pair eligibility and explicitly marks whole_asset_physics_status=NOT_ASSESSED. No backend/assets/native path calls the classifier. There is no rule to reject the whole asset when UNKNOWN affects a declared critical region, nor proof that graph counts, IDs, corrections, kernels, and storage are built only after filtering.",
+      "recommendation": "Keep this module isolated. Before any real asset admission, implement and validate the asset-level UNKNOWN gate and pre-initialization native graph ordering, with post-filter degree/correction/storage assertions."
+    },
+    {
+      "id": "BV1-P2-PRECISION-AND-PROVENANCE-ASSERTIONS",
+      "priority": "P2",
+      "kind": "conditional_false_acceptance_risk",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:189-257,261-352,641-650,690-695",
+      "finding": "A nonnegative source accuracy and nonempty basis string are accepted without checking against actual STEP or OCC vertex/edge/face tolerances, coordinate scale, or candidate asset provenance. A digest is computed from actual bytes and compared correctly, but the expected digest is caller supplied and no trusted source manifest or candidate-to-STEP hash binding is included; a digest of the wrong STEP still matches. Hashing and CadQuery path import are separate reads, leaving a file-replacement TOCTOU window.",
+      "recommendation": "Bind candidates and canonical STEP through trusted asset metadata; incorporate measured OCC/STEP tolerance into the conservative uncertainty bound; import from the same immutable byte snapshot that was hashed."
+    },
+    {
+      "id": "BV1-P2-NUMERIC-EXTREMES-FAIL-STOP",
+      "priority": "P2",
+      "kind": "robustness_gap_not_confirmed_false_pass",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:481,691-695,701-706",
+      "finding": "Finite accuracy+tolerance can overflow to infinity; the resulting interval path should become UNKNOWN, but an infinite tolerance is still passed to OCC endpoint classification. Squared-distance fsum and positive hit-parameter fsum may overflow and escape as exceptions instead of producing a structured UNKNOWN record.",
+      "recommendation": "Check the combined band is finite before any OCC call; use math.hypot and a stable cluster midpoint; map arithmetic exceptions to UNKNOWN."
+    },
+    {
+      "id": "BV1-P2-OCC-DEGENERATE-HIT-COVERAGE",
+      "priority": "P2",
+      "kind": "unverified_runtime_dependency_and_test_gap",
+      "location": "pgfrag/src/pgfrag/bond_visibility.py:376-443,500-626,729-748; pgfrag/tests/test_bond_visibility.py:145-166",
+      "finding": "No source-level counterexample was established for OCC returning incomplete intersections. However, when IsDone=True and NbPnt=0, the segment is represented by one midpoint-only interval; endpoint IN plus midpoint IN can yield IN_MATERIAL. Tangency/overlap safety therefore relies on OCC reporting those events. The current sphere tangent test has endpoints outside the solid and has not been executed; there are no coincident/shared-edge/vertex controls.",
+      "recommendation": "In the minimal CAD pass, verify all-hit results and UNKNOWN behavior for tangent, coincident, and shared-edge/vertex paths, including a tangent path with endpoints inside material. Preserve incomplete/ambiguous results as UNKNOWN."
+    },
+    {
+      "id": "BV1-P2-NEGATIVE-CONTROL-AND-STEP-TESTS-MISSING",
+      "priority": "P2",
+      "kind": "test_coverage_gap",
+      "location": "pgfrag/tests/test_bond_visibility.py:63-239; design_and_freeze.md fixture plan",
+      "finding": "Tests are code-only and unrun. The planned solid-coupon negative control (geometry-blocked=0 and entire filtered pair set equal to the baseline graph) is not implemented; current coupon assertion checks only one pair. The SHA test checks a deliberately wrong expected hash against invalid bytes, but no valid STEP match/import or asset admission gate is exercised.",
+      "recommendation": "First execute hollow-shell and solid-coupon tests after the pure-math regression is fixed. Treat this only as a check of the isolated classifier; it does not approve a real vessel or native integration."
+    }
+  ],
+  "api_review": {
+    "cadquery": "Installed CadQuery 2.8.0 source importStep(fileName, unit=\"MM\") sets xstep.cascade.unit and documents OCCT scaling from the STEP-declared unit to the target. The mm-to-m and parameter-unit chain is consistent by source inspection.",
+    "ocp": "Installed metadata is cadquery-ocp 7.9.3.1.1; class bindings are binary-only in the package. The call shape is consistent with repository usage and OCCT IntCurvesFace_ShapeIntersector documentation, but runtime behavior under this exact build was not executed.",
+    "side_effect": "CadQuery sets the process-global Interface_Static xstep.cascade.unit; concurrent imports should be serialized or guarded."
+  },
+  "next_test_assessment": {
+    "pure_math_regression": "Necessary and sufficient to expose the identified cluster-chain defect, not sufficient to validate OCC.",
+    "minimal_cad_gate": "After fix, hollow shell plus solid coupon is the smallest useful executable gate: assert the four shell crossings, IN/OUT/IN intervals, AIR_PATH exclusion, eligible coupon pair, zero coupon geometry exclusions, and reciprocal output.",
+    "before_real_asset_solver_admission": [
+      "trusted STEP digest, unit, frame, and precision manifest tied to candidate data",
+      "valid hash-matched STEP import test",
+      "asset-level UNKNOWN/critical-region rejection behavior",
+      "tangent, coincident, shared-edge/vertex, same-face close-hit, and thin-interval controls",
+      "native pre-initialization integration with filtered n_neighbors, bond IDs, corrections, kernels, and storage verified on one graph"
+    ]
+  }
+}

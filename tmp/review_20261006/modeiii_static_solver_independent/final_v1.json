@@ -1,0 +1,52 @@
+{
+  "schema": "modeiii_static_solver_independent_review.v1",
+  "status": "FROZEN_V1_REVIEWED_V2_OUTPUT_REVIEW_REQUIRED_BEFORE_RUN",
+  "source_freeze": {
+    "manifest": "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_20261005/source_freeze.json",
+    "manifest_sha256": "24d1d07ec2d61036e77686b8cbecfb72260f30fdc31658385e09ccb4847445da",
+    "solver_sha256": "d9294d9a90d20505d6ecd01354a2d9e0897f56b5ff0bb98aad01a4fd31513787",
+    "case_sha256": "93c51463d717ad2aa8e78bc163fb8915aaf26164f411c2b46a20d80492bda42d",
+    "all_owned_source_pins_match": true,
+    "all_seven_read_only_dependency_pins_match": true,
+    "interim_case_pin_mismatch_corrected": true
+  },
+  "review_scope": "static source review only; no solver, tests, assembly, numerical integration, render, or Git",
+  "static_mechanics_assessment": {
+    "fixed_27_sources_54_canonical_uz_dofs": "consistent by inspection",
+    "manufactured_f1_coefficient_mapping": "consistent by inspection",
+    "engineering_strain_and_stiffness_assembly": "consistent by inspection",
+    "physical_mean_gauge_units_and_diagonal_scaling": "consistent by inspection",
+    "55_by_55_direct_solve": true,
+    "coefficient_pinning_or_pseudoinverse_or_ridge": false,
+    "independent_boundary_traction_rhs": true,
+    "endcap_scalar_tz_guard_and_full_traction_record": true,
+    "fixed_volume_levels": [128, 256],
+    "refined_dimension": "theta only",
+    "independent_offgrid_points": 256,
+    "false_convergence_claim_found": false,
+    "top_level_classification": "diagnostic only / unqualified"
+  },
+  "findings": [
+    {
+      "severity": "blocking_output_correctness_before_run",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py:853-900,968-979,1046-1062,1331-1334",
+      "description": "The JSON normalizer correctly converts nested NumPy generic scalars including np.bool_, but maps any nonfinite Python float to null. Post-solve residuals, energy/work, relative errors, and off-grid reductions do not all have explicit finite guards before the result retains a SOLVED status. A nonfinite diagnostic can therefore be silently written as null in a successful-looking receipt.",
+      "required_resolution": "The output-only v2 revision should explicitly reject nonfinite diagnostic scalars as UNKNOWN before serialization; do not promote null metrics as a solved receipt."
+    },
+    {
+      "severity": "reviewability_gap_before_run",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py:982-1035,1276-1327",
+      "description": "V1 publishes a stiffness hash rather than raw K and omits f, c, canonical coefficient IDs, and pointwise off-grid coordinates/reference/solution values. The result cannot be independently audited or visualized without reassembly.",
+      "required_resolution": "Review the requested distinct v2 output-only snapshots and their pins before any execution."
+    },
+    {
+      "severity": "nonblocking_diagnostic_gap",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_20261005/static_solve.py:590-600,853-900,1046-1062",
+      "description": "The side net force and Lagrange multiplier are reported separately, but no explicit translation-compatibility residual ties the load-vector translation projection to the integrated force and saddle reaction. V2 raw f and c snapshots can make this relation independently inspectable; no additional threshold was presumed."
+    }
+  ],
+  "render_path": "none",
+  "source_modified": false,
+  "execution_performed": false,
+  "final_review_of_v2_pending": true
+}

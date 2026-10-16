@@ -1,0 +1,239 @@
+{
+  "adapter_verify_inputs_case_normalization_path": {
+    "all_frozen_inputs_match": true,
+    "stage_file_names_match_freeze": true,
+    "summary_matches_freeze": true,
+    "uppercase_sha_probe_normalizes": true
+  },
+  "all_preflight_checks_pass": false,
+  "all_sha256_pins_64_hex_after_lowercase_normalization": true,
+  "all_sha256_pins_stored_lowercase": true,
+  "audit_invoked": false,
+  "corrected_cell_ledger_partial_sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+  "freeze_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_INPUT_FREEZE.json",
+  "freeze_sha256_before_execution": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60",
+  "schema": "pgfrag.forge_volume_ingress_corrected_freeze_validation.v1",
+  "sha256_pin_count": 12,
+  "sha256_pins": [
+    {
+      "json_path": "$.retained_stage_files.cell_in_progress.json.sha256",
+      "normalized_lowercase": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+      "raw_value": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.cell_ledger.json.sha256",
+      "normalized_lowercase": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d",
+      "raw_value": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.cell_ledger.partial.json.sha256",
+      "normalized_lowercase": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+      "raw_value": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.material_points.json.sha256",
+      "normalized_lowercase": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b",
+      "raw_value": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.parent_execution_receipt.json.sha256",
+      "normalized_lowercase": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+      "raw_value": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.request.json.sha256",
+      "normalized_lowercase": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+      "raw_value": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.retained_stage_files.worker_failure.json.sha256",
+      "normalized_lowercase": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e",
+      "raw_value": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.supervisor_summary.sha256",
+      "normalized_lowercase": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213",
+      "raw_value": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.analytic_source.sha256",
+      "normalized_lowercase": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d",
+      "raw_value": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.audit_adapter.sha256",
+      "normalized_lowercase": "f66da67ddfa71af83b25cb95c6160e0757a934a896a4880a847d8f7dda830203",
+      "raw_value": "f66da67ddfa71af83b25cb95c6160e0757a934a896a4880a847d8f7dda830203",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.method_review.sha256",
+      "normalized_lowercase": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4",
+      "raw_value": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4",
+      "valid_64_hex_after_normalization": true
+    },
+    {
+      "json_path": "$.prior_source_snapshot.sha256",
+      "normalized_lowercase": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e",
+      "raw_value": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e",
+      "valid_64_hex_after_normalization": true
+    }
+  ],
+  "source_and_preserved_artifact_checks": {
+    "adapter": {
+      "actual_sha256": "f66da67ddfa71af83b25cb95c6160e0757a934a896a4880a847d8f7dda830203",
+      "expected_sha256": "f66da67ddfa71af83b25cb95c6160e0757a934a896a4880a847d8f7dda830203",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit.py"
+    },
+    "analytic_source": {
+      "actual_sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d",
+      "expected_sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\analytic_roi_reference.py"
+    },
+    "canonicalization_receipt": {
+      "actual_sha256": "13cee0096e73234c87cb0af9886647ba4ac0fec4b1cce001bd3074febc28b29f",
+      "expected_sha256": "13cee0096e73234c87cb0af9886647ba4acf0ec4b1cce001bd3074febc28b29f",
+      "matches": false,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_FREEZE_CANONICALIZATION_rev3.json"
+    },
+    "method_review": {
+      "actual_sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4",
+      "expected_sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_ADAPTER_REVIEW.md"
+    },
+    "preserved_adapter_snapshot": {
+      "actual_sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5",
+      "expected_sha256": "06f1a1d3e64edb3f950c260f673999048ffa2584025ee77fd922af99a09f92b5",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\pilot_actual_audit_before_hashcase_fix_06F1A1D3E64EDB3F950C260F673999048FFA2584025EE77FD922AF99A09F92B5.py"
+    },
+    "preserved_case_normalization_receipt": {
+      "actual_sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b",
+      "expected_sha256": "3089d76acee64e3f64f23891922034cfc8a394e60606cd58037c7c73ad5e607b",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_PREFLIGHT_MISMATCH_RECEIPT.json"
+    },
+    "preserved_failed_audit_receipt": {
+      "actual_sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d",
+      "expected_sha256": "bc4f59a87836128b47d210ddb35ac78d259d35a9c04f80a222560f071891149d",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_EXECUTION_RECEIPT_corrected_freeze.json"
+    },
+    "preserved_failed_audit_stderr": {
+      "actual_sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5",
+      "expected_sha256": "4d41cc4b37ad49bbc2a872022acff8bbe4d7e3c814f665f44c038321a931eef5",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_STDERR_corrected_freeze.txt"
+    },
+    "preserved_failed_freeze": {
+      "actual_sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12",
+      "expected_sha256": "a566327eb68fbcba13e1dcec5f3ffbb0defb17b67f01f705765091571e540f12",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_INPUT_FREEZE_before_partial_pin_correction.json"
+    },
+    "preserved_failed_receipt": {
+      "actual_sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2",
+      "expected_sha256": "8680b247968a37f01f57f3f3487f1fffdb021f0c62a9262ff7c8d928d38dffd2",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\READONLY_AUDIT_EXECUTION_RECEIPT.json"
+    },
+    "preserved_precanonicalization_freeze": {
+      "actual_sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b",
+      "expected_sha256": "ef7a781d1fc0851f531c1cf61286a5c2786f908b997a9e7b31f10b2c5d581e1b",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_INPUT_FREEZE_before_sha_lowercase_canonicalization.json"
+    },
+    "preserved_rev2_validation": {
+      "actual_sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4",
+      "expected_sha256": "1c9c0326d44c1dd0cf1f5b763ba00601ca699e57b8e14199d641dc8a91a058b4",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_FREEZE_VALIDATION_rev2.json"
+    },
+    "previous_source_freeze": {
+      "actual_sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e",
+      "expected_sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e",
+      "matches": true,
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\forge_volume_ingress_independent_review\\PILOT_AUDIT_INPUT_FREEZE_before_centroid_gate.json"
+    }
+  },
+  "stage_directory_inventory_matches": true,
+  "stage_file_checks": [
+    {
+      "actual_bytes": 2372,
+      "actual_sha256_normalized": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+      "expected_bytes": 2372,
+      "expected_sha256_normalized": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+      "matches": true,
+      "name": "cell_in_progress.json"
+    },
+    {
+      "actual_bytes": 118930,
+      "actual_sha256_normalized": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d",
+      "expected_bytes": 118930,
+      "expected_sha256_normalized": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d",
+      "matches": true,
+      "name": "cell_ledger.json"
+    },
+    {
+      "actual_bytes": 119097,
+      "actual_sha256_normalized": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+      "expected_bytes": 119097,
+      "expected_sha256_normalized": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+      "matches": true,
+      "name": "cell_ledger.partial.json"
+    },
+    {
+      "actual_bytes": 77304,
+      "actual_sha256_normalized": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b",
+      "expected_bytes": 77304,
+      "expected_sha256_normalized": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b",
+      "matches": true,
+      "name": "material_points.json"
+    },
+    {
+      "actual_bytes": 2151,
+      "actual_sha256_normalized": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+      "expected_bytes": 2151,
+      "expected_sha256_normalized": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+      "matches": true,
+      "name": "parent_execution_receipt.json"
+    },
+    {
+      "actual_bytes": 1032,
+      "actual_sha256_normalized": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+      "expected_bytes": 1032,
+      "expected_sha256_normalized": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+      "matches": true,
+      "name": "request.json"
+    },
+    {
+      "actual_bytes": 4302,
+      "actual_sha256_normalized": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e",
+      "expected_bytes": 4302,
+      "expected_sha256_normalized": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e",
+      "matches": true,
+      "name": "worker_failure.json"
+    }
+  ],
+  "status": "PREFLIGHT_FAIL_NOT_EXECUTED",
+  "summary_check": {
+    "bytes": 9870,
+    "expected_bytes": 9870,
+    "expected_sha256_normalized": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213",
+    "matches": true,
+    "sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+  },
+  "summary_stage_inventory_matches_freeze": true
+}

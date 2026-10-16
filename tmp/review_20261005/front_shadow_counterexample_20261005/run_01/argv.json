@@ -1,0 +1,14 @@
+{
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\front_shadow_counterexample_20261005\\run_front_shadow_counterexample.py",
+    "--plot"
+  ],
+  "command_line": "\"C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe\" -B \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\front_shadow_counterexample_20261005\\run_front_shadow_counterexample.py\" --plot",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "timeout_seconds": 30,
+  "output_budget_bytes": 2097152,
+  "attempt": "single_run_01_no_retry"
+}

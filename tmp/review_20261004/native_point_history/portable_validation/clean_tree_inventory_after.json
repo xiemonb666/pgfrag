@@ -1,0 +1,173 @@
+{
+  "created_utc": "2026-10-04T14:13:24.686Z",
+  "files": [
+    {
+      "path": "experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "bytes": 23957,
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    },
+    {
+      "path": "src/pgfrag/__init__.py",
+      "bytes": 122,
+      "sha256": "d45c208386d910e5815546599533bd56c54e1154c3a8b7155092cb47322e43a1"
+    },
+    {
+      "path": "src/pgfrag/__pycache__/__init__.cpython-312.pyc",
+      "bytes": 386,
+      "sha256": "be9c5c5fbb63b6a204e022f160c8ef0675c993bd6149fb348d15ad4190d29f7e"
+    },
+    {
+      "path": "src/pgfrag/__pycache__/bond_events.cpython-312.pyc",
+      "bytes": 41542,
+      "sha256": "1041fe0ef01b30ebf8f00d5720b34546ebcac117a5d8f6e51ee39e9d2668e46c"
+    },
+    {
+      "path": "src/pgfrag/__pycache__/energy_ledger.cpython-312.pyc",
+      "bytes": 41467,
+      "sha256": "f9588ad860a95ce04e359c6c7f73a8418e3c98f18fab0bdcf38c02985dd353e6"
+    },
+    {
+      "path": "src/pgfrag/__pycache__/native_point_history.cpython-312.pyc",
+      "bytes": 64924,
+      "sha256": "f1996479732a3a688c2261a2263317a0af75991cf9e8e540d4984f6fddfa679f"
+    },
+    {
+      "path": "src/pgfrag/assets.py",
+      "bytes": 13625,
+      "sha256": "9e56b9f1f2ef289b061cf9a1f4241d473990f895d330e40cfc7b100caeaad889"
+    },
+    {
+      "path": "src/pgfrag/backend.py",
+      "bytes": 42840,
+      "sha256": "8b3577201e0e8e94e747b3c5c3529c2d117d8ceccb729f0d2d2510dd3fd834dc"
+    },
+    {
+      "path": "src/pgfrag/bias_protocol.py",
+      "bytes": 46259,
+      "sha256": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779"
+    },
+    {
+      "path": "src/pgfrag/bond_events.py",
+      "bytes": 34756,
+      "sha256": "48f2c8785527a84e5237270306fe68427be37f1e643780dd3331da51099a05db"
+    },
+    {
+      "path": "src/pgfrag/bond_visibility.py",
+      "bytes": 38074,
+      "sha256": "7b87ffd1bb94f4474de4ed379b9e047aa0da3cf02626629bb86b6ba8fe97eb86"
+    },
+    {
+      "path": "src/pgfrag/cli.py",
+      "bytes": 2569,
+      "sha256": "40129b7761bbbda378be0184987cc9db7de027d00a2a1b8c234bc2d3dd8fb14e"
+    },
+    {
+      "path": "src/pgfrag/energy_ledger.py",
+      "bytes": 37240,
+      "sha256": "6d7cea82c0e1bd105e143e3a3f5324595d2594c99201d9de7a0003d28496ad0e"
+    },
+    {
+      "path": "src/pgfrag/errors.py",
+      "bytes": 207,
+      "sha256": "924baceb63793ac5bdb53c7e0f4299aae649d8c8a67716f106bd287e0d5e3bfb"
+    },
+    {
+      "path": "src/pgfrag/hashing.py",
+      "bytes": 552,
+      "sha256": "3f2b4149fa382c0c5e7ac9aa6ead5b05996c992e9bbf7e6a8a625c03585d8590"
+    },
+    {
+      "path": "src/pgfrag/jobs.py",
+      "bytes": 10520,
+      "sha256": "c9d1e70ea063a47dea5136c59a65583a9fecd3cd1d44b1f94eaa2aaf8e32caad"
+    },
+    {
+      "path": "src/pgfrag/mesh_resolution_audit.py",
+      "bytes": 42919,
+      "sha256": "0b4fb0008d6f14342a5b20fd2eda6a7602d285b4f1497956b8578d7ce50f87a9"
+    },
+    {
+      "path": "src/pgfrag/native_point_history.py",
+      "bytes": 52774,
+      "sha256": "104a65afc0157b99d9a62ee6c455b8dff58b18e2b81b246124e0e50c61272845"
+    },
+    {
+      "path": "tests/__pycache__/test_bond_events.cpython-312-pytest-9.1.1.pyc",
+      "bytes": 28376,
+      "sha256": "464da034df44be7f36d415e51519f9fd0d469d609ce526a3aa73cbfed0bde1b3"
+    },
+    {
+      "path": "tests/__pycache__/test_energy_ledger.cpython-312-pytest-9.1.1.pyc",
+      "bytes": 27666,
+      "sha256": "3c890455deae23e1f2b16d6d8b1dc78e77b3b427672fa698dd34f405c840ee2d"
+    },
+    {
+      "path": "tests/__pycache__/test_native_point_history.cpython-312-pytest-9.1.1.pyc",
+      "bytes": 19486,
+      "sha256": "d0f42e16ccd8f94d150a85bc70e1bcb09e303b72ab3e39ede438a53c10d81c70"
+    },
+    {
+      "path": "tests/fixtures/bond_events/native_shaped_fixture.json",
+      "bytes": 2201,
+      "sha256": "817ebbd7d660e7083cea29e07950afdb7b586184cf9018ce5c9c10d246003c1f"
+    },
+    {
+      "path": "tests/fixtures/energy_ledger/audit_cases.json",
+      "bytes": 3707,
+      "sha256": "559ddce00f53217e0c0992248d4b9b4078566c0557cc0bf09018e991c12ab81e"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/input/metadata.toml",
+      "bytes": 853,
+      "sha256": "800ad7d5cfb1193795336199c0945141242277fcd95390a7a1d349b52b469c36"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/input/points.csv",
+      "bytes": 63,
+      "sha256": "041a985bbc2ba4d8610f5bd8f662ed6ede114c1aff4da478694df672b492b5a3"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/snapshot/canonical_bond_state_history.csv",
+      "bytes": 112,
+      "sha256": "1ebe77ed15a3831f37a2670ee0a432a11df4d2306497c45388614d28ee32200e"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/snapshot/directed_bond_state_history.csv",
+      "bytes": 344,
+      "sha256": "3b2439dc365052ca0ebf2263dd3b39ed189e8dd3722dcbced3a27d3122a201e0"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/snapshot/point_state_history.csv",
+      "bytes": 736,
+      "sha256": "bf5da4c95244bc99a9afd206746baa699562bf123092ec03f6a21ad18c1d00f9"
+    },
+    {
+      "path": "tests/fixtures/native_point_history/snapshot/summary.toml",
+      "bytes": 618,
+      "sha256": "4c1f0d1f4badd5d4a2100b0e5a06685710324e7de5fd86fe7f620f35efa9bf1a"
+    },
+    {
+      "path": "tests/test_bond_events.py",
+      "bytes": 15825,
+      "sha256": "ca2f7c1258cdd9607bc36b2745796122d8a7ff8c38dc431cb814d6d4b331f499"
+    },
+    {
+      "path": "tests/test_energy_ledger.py",
+      "bytes": 27925,
+      "sha256": "e647e819e79e6fedf4879314410c4327a88552dbc6aeb786b0d05c6d685f24cd"
+    },
+    {
+      "path": "tests/test_native_point_history.py",
+      "bytes": 10669,
+      "sha256": "fbfcfe162e1ce6420e773523790884b29e39532789a18e8afd4b309af83db785"
+    }
+  ],
+  "no_old_tmp_assertion": {
+    "checked_paths": [
+      "tmp",
+      "tmp/review_20261004"
+    ],
+    "exists": false,
+    "passed": true
+  }
+}

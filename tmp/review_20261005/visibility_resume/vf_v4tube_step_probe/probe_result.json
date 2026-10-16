@@ -1,0 +1,532 @@
+{
+  "probe": "vf_v4tube_canonical_step_two_pair_visibility",
+  "started_utc": "2026-10-04T19:01:06.159378+00:00",
+  "asset": {
+    "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+    "expected_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "pre_import_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+      "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "byte_length": 9412
+    },
+    "manifest_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\manifest.json",
+      "sha256": "31a6d35ff2ae28780a5c9ec8ca330398039f509ffc69c0f66522e7e0a4ac4d0f",
+      "byte_length": 5108
+    },
+    "wall_reference_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\metadata\\wall_reference.json",
+      "sha256": "a7033bc9f3742677931b6be142d5ed42fd871bc6cbb1f08a12682288e6d06b76",
+      "byte_length": 4717
+    },
+    "manifest_length_unit": "mm",
+    "manifest_frame": "right_handed_z_up",
+    "manifest_step_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "post_probe_pin": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+      "sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "byte_length": 9412
+    }
+  },
+  "declarations": {
+    "source_length_unit": "mm",
+    "frame": "right_handed_z_up",
+    "source_accuracy_mm": 1e-07,
+    "source_accuracy_basis": "declared modeler CAD test resolution 1e-7 mm for this loader probe only; not a measured physical material accuracy",
+    "distance_tolerance_mm": 0.0001,
+    "material_domain_id": "solid-0"
+  },
+  "runtime": {
+    "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cadquery_version": "2.8.0",
+    "ocp_version": "7.9.3.1",
+    "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+    "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+    "runner_argv": [
+      "C:\\Users\\xiemo\\.dsh\\dsh-runtimes\\dsh-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      ".\\pgfrag\\tmp\\review_20261005\\visibility_resume\\run_vf_v4tube_step_probe.py"
+    ],
+    "python_dont_write_bytecode": true
+  },
+  "source_test_pins_before": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "load_canonical_step_call_count": 1,
+  "classify_candidate_pairs_call_count": 1,
+  "probe_status": "EXPECTED_PAIR_CLASSIFICATIONS",
+  "source": {
+    "status": "READY",
+    "source_origin": "CANONICAL_STEP_FILE",
+    "source_geometry_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "expected_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+    "source_length_unit": "mm",
+    "frame": "right_handed_z_up",
+    "source_accuracy_mm": 1e-07,
+    "source_accuracy_basis": "declared modeler CAD test resolution 1e-7 mm for this loader probe only; not a measured physical material accuracy",
+    "solid_count": 1,
+    "solid_domain_ids": [
+      "solid-0"
+    ],
+    "unknown_reasons": [],
+    "backend_versions": {
+      "cadquery": "2.8.0",
+      "ocp": "7.9.3.1"
+    }
+  },
+  "result": {
+    "schema": "pgfrag.bond-visibility.v1",
+    "status": "STATIC_CLASSIFICATION_COMPLETE",
+    "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0",
+    "scope": "static reference-coordinate candidate classification only; native graph is not connected",
+    "source": {
+      "source_origin": "CANONICAL_STEP_FILE",
+      "source_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\tmp\\review_20261004\\wall_mesh_binding\\v4_run\\cylinder_asset_run01\\geometry\\solid.step",
+      "source_geometry_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "expected_sha256": "5c68bbc29b2b0bc684cc6c551c2769872c4c490d588b9a3ea2cbb98e7f74135e",
+      "sha256_status": "MATCHED_ACTUAL_FILE_BYTES",
+      "status": "READY",
+      "unknown_reasons": [],
+      "source_length_unit": "mm",
+      "si_conversion": {
+        "m_per_mm": 0.001,
+        "volume_m3_per_mm3": 1e-09
+      },
+      "frame": "right_handed_z_up",
+      "source_accuracy_mm": 1e-07,
+      "source_accuracy_basis": "declared modeler CAD test resolution 1e-7 mm for this loader probe only; not a measured physical material accuracy",
+      "backend_versions": {
+        "cadquery": "2.8.0",
+        "ocp": "7.9.3.1"
+      },
+      "solid_count": 1,
+      "material_domain_ids": [
+        "solid-0"
+      ]
+    },
+    "tolerances": {
+      "distance_tolerance_mm": 0.0001,
+      "source_accuracy_mm": 1e-07,
+      "combined_occupancy_uncertainty_band_mm": 0.00010010000000000001,
+      "thin_open_interval_unknown_at_or_below_mm": 0.00020020000000000001,
+      "thin_interval_rule": "interval length / 2 <= combined occupancy uncertainty band",
+      "numeric_range_status": "FINITE",
+      "basis": "explicit OCC distance tolerance plus caller-attested source accuracy; no tolerance is inferred"
+    },
+    "reference_coordinates": {
+      "coordinate_unit": "mm",
+      "frame": "right_handed_z_up",
+      "configuration": "fixed undeformed reference coordinates",
+      "point_count": 4
+    },
+    "initial_topology_ledger": {
+      "ledger_kind": "static material-visibility mask over Euclidean horizon candidates",
+      "candidate_directed_input_count": 2,
+      "candidate_undirected_pair_count": 2,
+      "classification_counts": {
+        "IN_MATERIAL": 1,
+        "OUT_OR_VOID": 1,
+        "UNKNOWN": 0
+      },
+      "initial_material_bond_candidate_count": 1,
+      "geometry_excluded_pair_count": 1,
+      "unknown_pair_count": 0,
+      "unknown_retained_separately": true,
+      "native_graph_mutated": false,
+      "native_neighbor_counts_recomputed": false,
+      "native_physics_initialized": false,
+      "whole_asset_physics_status": "NOT_ASSESSED"
+    },
+    "pairs": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "classification": "IN_MATERIAL",
+        "reason": "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN",
+        "reason_codes": [
+          "WHOLE_OPEN_SEGMENT_IN_DECLARED_MATERIAL_DOMAIN"
+        ],
+        "reciprocal": {
+          "directed_records": [
+            {
+              "source_point_id": 1,
+              "target_point_id": 2,
+              "state": "IN_MATERIAL"
+            },
+            {
+              "source_point_id": 2,
+              "target_point_id": 1,
+              "state": "IN_MATERIAL"
+            }
+          ],
+          "same_classification": true
+        },
+        "material_domain_ids": [
+          "solid-0",
+          "solid-0"
+        ],
+        "endpoints": [
+          {
+            "point_id": 1,
+            "position_mm": [
+              9.0,
+              0.0,
+              2.0
+            ],
+            "position_m": [
+              0.009000000000000001,
+              0.0,
+              0.002
+            ],
+            "state": "IN_MATERIAL",
+            "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+            "solid_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          },
+          {
+            "point_id": 2,
+            "position_mm": [
+              9.0,
+              0.0,
+              8.0
+            ],
+            "position_m": [
+              0.009000000000000001,
+              0.0,
+              0.008
+            ],
+            "state": "IN_MATERIAL",
+            "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+            "solid_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          }
+        ],
+        "segment_length_mm": 6.0,
+        "segment_length_m": 0.006,
+        "raw_hits": [],
+        "hit_events": [],
+        "open_intervals": [
+          {
+            "t_start_mm": 0.0,
+            "t_end_mm": 6.0,
+            "length_mm": 6.0,
+            "length_m": 0.006,
+            "midpoint_t_mm": 3.0,
+            "midpoint_mm": [
+              9.0,
+              0.0,
+              5.0
+            ],
+            "midpoint_m": [
+              0.009000000000000001,
+              0.0,
+              0.005
+            ],
+            "occupancy": "IN_MATERIAL",
+            "material_domain_id": "solid-0",
+            "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+            "diagnostic_only": false,
+            "solid_classifier_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          }
+        ],
+        "diagnostic_intervals_only": false,
+        "tangent_or_non_crossing_event_clusters": [],
+        "admissible_static_candidate": true
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "classification": "OUT_OR_VOID",
+        "reason": "AIR_PATH",
+        "reason_codes": [
+          "AIR_PATH"
+        ],
+        "reciprocal": {
+          "directed_records": [
+            {
+              "source_point_id": 3,
+              "target_point_id": 4,
+              "state": "OUT_OR_VOID"
+            },
+            {
+              "source_point_id": 4,
+              "target_point_id": 3,
+              "state": "OUT_OR_VOID"
+            }
+          ],
+          "same_classification": true
+        },
+        "material_domain_ids": [
+          "solid-0",
+          "solid-0"
+        ],
+        "endpoints": [
+          {
+            "point_id": 3,
+            "position_mm": [
+              9.0,
+              0.0,
+              5.0
+            ],
+            "position_m": [
+              0.009000000000000001,
+              0.0,
+              0.005
+            ],
+            "state": "IN_MATERIAL",
+            "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+            "solid_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          },
+          {
+            "point_id": 4,
+            "position_mm": [
+              -9.0,
+              0.0,
+              5.0
+            ],
+            "position_m": [
+              -0.009000000000000001,
+              0.0,
+              0.005
+            ],
+            "state": "IN_MATERIAL",
+            "reason": "ENDPOINT_IN_DECLARED_DOMAIN",
+            "solid_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          }
+        ],
+        "segment_length_mm": 18.0,
+        "segment_length_m": 0.018000000000000002,
+        "raw_hits": [
+          {
+            "solid_index": 0,
+            "material_domain_id": "solid-0",
+            "raw_hit_index": 1,
+            "face_index_zero_based": 1,
+            "parameter_mm_from_canonical_pair_start": 1.0,
+            "point_mm": [
+              8.0,
+              0.0,
+              5.0
+            ],
+            "point_m": [
+              0.008,
+              0.0,
+              0.005
+            ],
+            "point_status": "FINITE",
+            "face_identity_status": "MAPPED",
+            "cluster_index": 0
+          },
+          {
+            "solid_index": 0,
+            "material_domain_id": "solid-0",
+            "raw_hit_index": 2,
+            "face_index_zero_based": 1,
+            "parameter_mm_from_canonical_pair_start": 17.0,
+            "point_mm": [
+              -8.0,
+              0.0,
+              5.0
+            ],
+            "point_m": [
+              -0.008,
+              0.0,
+              0.005
+            ],
+            "point_status": "FINITE",
+            "face_identity_status": "MAPPED",
+            "cluster_index": 1
+          }
+        ],
+        "hit_events": [
+          {
+            "cluster_index": 0,
+            "parameter_mm": 1.0,
+            "parameter_span_mm": 0.0,
+            "raw_hit_count": 1,
+            "distinct_parameter_count": 1,
+            "unresolved": false,
+            "resolution_status": "EXACT_PARAMETER_CLUSTER",
+            "diagnostic_cut_only": false,
+            "solid_face_refs": [
+              {
+                "solid_index": 0,
+                "face_index_zero_based": 1
+              }
+            ]
+          },
+          {
+            "cluster_index": 1,
+            "parameter_mm": 17.0,
+            "parameter_span_mm": 0.0,
+            "raw_hit_count": 1,
+            "distinct_parameter_count": 1,
+            "unresolved": false,
+            "resolution_status": "EXACT_PARAMETER_CLUSTER",
+            "diagnostic_cut_only": false,
+            "solid_face_refs": [
+              {
+                "solid_index": 0,
+                "face_index_zero_based": 1
+              }
+            ]
+          }
+        ],
+        "open_intervals": [
+          {
+            "t_start_mm": 0.0,
+            "t_end_mm": 1.0,
+            "length_mm": 1.0,
+            "length_m": 0.001,
+            "midpoint_t_mm": 0.5,
+            "midpoint_mm": [
+              8.5,
+              0.0,
+              5.0
+            ],
+            "midpoint_m": [
+              0.0085,
+              0.0,
+              0.005
+            ],
+            "occupancy": "IN_MATERIAL",
+            "material_domain_id": "solid-0",
+            "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+            "diagnostic_only": false,
+            "solid_classifier_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          },
+          {
+            "t_start_mm": 1.0,
+            "t_end_mm": 17.0,
+            "length_mm": 16.0,
+            "length_m": 0.016,
+            "midpoint_t_mm": 9.0,
+            "midpoint_mm": [
+              0.0,
+              0.0,
+              5.0
+            ],
+            "midpoint_m": [
+              0.0,
+              0.0,
+              0.005
+            ],
+            "occupancy": "OUT_OR_VOID",
+            "material_domain_id": null,
+            "reason": "OPEN_INTERVAL_OUTSIDE_ALL_SOLIDS",
+            "diagnostic_only": false,
+            "solid_classifier_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "OUT"
+              }
+            ]
+          },
+          {
+            "t_start_mm": 17.0,
+            "t_end_mm": 18.0,
+            "length_mm": 1.0,
+            "length_m": 0.001,
+            "midpoint_t_mm": 17.5,
+            "midpoint_mm": [
+              -8.5,
+              0.0,
+              5.0
+            ],
+            "midpoint_m": [
+              -0.0085,
+              0.0,
+              0.005
+            ],
+            "occupancy": "IN_MATERIAL",
+            "material_domain_id": "solid-0",
+            "reason": "OPEN_INTERVAL_INSIDE_SOLID",
+            "diagnostic_only": false,
+            "solid_classifier_states": [
+              {
+                "solid_index": 0,
+                "material_domain_id": "solid-0",
+                "state": "IN"
+              }
+            ]
+          }
+        ],
+        "diagnostic_intervals_only": false,
+        "tangent_or_non_crossing_event_clusters": [],
+        "admissible_static_candidate": false
+      }
+    ]
+  },
+  "error": null,
+  "finished_utc": "2026-10-04T19:01:06.208925+00:00",
+  "source_test_pins_after": {
+    "source": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py",
+      "sha256": "3708afc01c265c3187f6fcec930f7f0cdbbc0427b3b616ed0ea28895628d7e24",
+      "byte_length": 47533
+    },
+    "test": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tests\\test_bond_visibility.py",
+      "sha256": "4db55621b470596226b91e3a8128c2cdb8c021a8039cbbb42f6964149362790d",
+      "byte_length": 24244
+    }
+  },
+  "scope": {
+    "step_import_count": 1,
+    "step_export_count": 0,
+    "mesh_tessellation_count": 0,
+    "native_solver_or_graph_mutation": false,
+    "pair_count_requested": 2,
+    "retry_count": 0
+  }
+}

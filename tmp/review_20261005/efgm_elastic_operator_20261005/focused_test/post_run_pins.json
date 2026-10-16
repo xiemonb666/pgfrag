@@ -1,0 +1,13 @@
+{
+  "finished_utc": "2026-10-05T10:46:44.238303+00:00",
+  "post_run_sha256": {
+    "live_source": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "live_test": "18d231f2e7286be4f214d3cee1383105283763bb44b0c48d3107c5e62b5f53d9",
+    "snapshot_source": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+    "snapshot_test": "18d231f2e7286be4f214d3cee1383105283763bb44b0c48d3107c5e62b5f53d9"
+  },
+  "snapshot_unchanged": {
+    "source": true,
+    "test": true
+  }
+}

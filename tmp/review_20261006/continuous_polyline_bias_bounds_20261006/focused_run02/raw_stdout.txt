@@ -1,0 +1,10 @@
+test_fixture_brackets_analytic_same_vertex_set_distance (test_convex_segment_upper.ConvexSegmentUpperTests.test_fixture_brackets_analytic_same_vertex_set_distance) ... ok
+test_non_dyadic_offset_and_tiny_tolerance_still_hit_cap (test_convex_segment_upper.ConvexSegmentUpperTests.test_non_dyadic_offset_and_tiny_tolerance_still_hit_cap) ... ok
+test_parallel_offset_is_exact_without_adaptive_splits (test_convex_segment_upper.ConvexSegmentUpperTests.test_parallel_offset_is_exact_without_adaptive_splits) ... ok
+test_proper_pose_and_reversed_order_preserve_tight_bounds (test_convex_segment_upper.ConvexSegmentUpperTests.test_proper_pose_and_reversed_order_preserve_tight_bounds) ... ok
+test_same_segment_and_millimetre_conversion_have_exact_zero (test_convex_segment_upper.ConvexSegmentUpperTests.test_same_segment_and_millimetre_conversion_have_exact_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.082s
+
+OK

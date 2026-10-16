@@ -1,0 +1,49 @@
+native_epsilon_c = 0.0016124515496597099
+point_csv_sha256 = "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+point_count = 125
+native_directed_bonds = 6124
+above_threshold_native_event_observed = true
+energy_ledger = "UNKNOWN_NOT_A_GATE"
+free_fracture_or_fragment_claim = "NONE"
+native_stable_dt_reference_s_not_integrated = 4.925124976599115e-7
+experiment_kind = "native constitutive branch diagnostic; no time integration"
+schema = "pgfrag.pd.affine_critical_stretch_result.v1"
+below_threshold_controls_clear = true
+contact = "NOT_RUN"
+input_id = "coupon_uniform_voxel_5cube_125_v1"
+reciprocal_pair_states_match = true
+native_canonical_bonds = 3062
+status = "PASS_NATIVE_BRANCH_DIAGNOSTIC_ONLY"
+native_time_integration = false
+manual_bond_activity_edits = false
+physical_qualification = "NONE; UNVALIDATED_PROTOTYPE parameters"
+
+[state_1]
+state_id = "rest"
+eta_over_epsilon_c = 0.0
+eta = 0.0
+directed_state_rows = 6124
+canonical_pairs = 3062
+directed_transition_count = 0
+canonical_transition_count = 0
+reciprocal_status = "PASS"
+
+[state_2]
+state_id = "below"
+eta_over_epsilon_c = 0.5
+eta = 0.0008062257748298549
+directed_state_rows = 6124
+canonical_pairs = 3062
+directed_transition_count = 0
+canonical_transition_count = 0
+reciprocal_status = "PASS"
+
+[state_3]
+state_id = "above"
+eta_over_epsilon_c = 1.5
+eta = 0.0024186773244895647
+directed_state_rows = 6124
+canonical_pairs = 3062
+directed_transition_count = 1264
+canonical_transition_count = 632
+reciprocal_status = "PASS"

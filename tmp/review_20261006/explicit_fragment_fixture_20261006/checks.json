@@ -1,0 +1,23 @@
+{
+  "closed_outward_manifold_meshes": true,
+  "piece_euler_characteristic_2": true,
+  "volume_sum_matches_original": true,
+  "mass_sum_matches_original": true,
+  "paired_coordinates_identical": true,
+  "pair_vertex_map_reciprocal": true,
+  "interface_outward_normals_opposed": true,
+  "interface_area_matches": true,
+  "interiors_disjoint_with_positive_thickness": true,
+  "all_output_faces_have_source_labels": true,
+  "bounded_geometry_caps_respected": {
+    "total_declared_vertices": 28,
+    "maximum_vertices": 64,
+    "total_declared_faces": 26,
+    "maximum_faces": 128
+  },
+  "numerical_errors": {
+    "volume_error_m3": 0,
+    "mass_error_kg": 0,
+    "interface_area_difference_m2": 0
+  }
+}

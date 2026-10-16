@@ -1,0 +1,446 @@
+"""
+    DynamicRelaxation(; kwargs...)
+
+Time integration solver for the adaptive dynamic relaxation algorithm used for quasi-static
+simulations.
+
+# Keywords
+- `steps::Int`: Number of calculated time steps. If this keyword is specified, the keyword
+    `time` is no longer allowed.
+- `stepsize::Real`: Manually specify the size of the time step. (default: `1.0`)
+- `damping_factor::Real`: Damping factor to increase the value in the mass matrix.
+    (default: `1.0`)
+
+# Throws
+- Error if `steps < 0`.
+- Error if `stepsize < 0`.
+- Error if `damping_factor < 0`.
+
+# Example
+
+```julia-repl
+julia> DynamicRelaxation(steps=1000)
+DynamicRelaxation:
+  n_steps  1000
+  Δt       1
+  Λ        1
+
+julia> DynamicRelaxation(steps=1000, damping_factor=2)
+DynamicRelaxation:
+  n_steps  1000
+  Δt       1
+  Λ        2
+```
+"""
+mutable struct DynamicRelaxation <: AbstractTimeSolver
+    n_steps::Int
+    Δt::Float64
+    Λ::Float64
+
+    function DynamicRelaxation(; steps::Int, stepsize::Real=1.0,
+                               damping_factor::Real=1.0)
+        if steps ≤ 0
+            msg = "`steps` should be larger than zero!\n"
+            throw(ArgumentError(msg))
+        end
+        if stepsize ≤ 0
+            msg = "`stepsize` should be larger than zero!\n"
+            throw(ArgumentError(msg))
+        end
+        if damping_factor ≤ 0
+            msg = "`damping_factor` should be larger than zero!\n"
+            throw(ArgumentError(msg))
+        end
+        new(steps, stepsize, damping_factor)
+    end
+end
+
+function Base.show(io::IO, @nospecialize(dr::DynamicRelaxation))
+    print(io, typeof(dr))
+    print(io, msg_fields_in_brackets(dr))
+    return nothing
+end
+
+function Base.show(io::IO, ::MIME"text/plain", @nospecialize(dr::DynamicRelaxation))
+    if get(io, :compact, false)
+        show(io, dr)
+    else
+        println(io, typeof(dr), ":")
+        print(io, msg_fields(dr))
+    end
+    return nothing
+end
+
+function init_time_solver!(dr::DynamicRelaxation, dh::AbstractDataHandler)
+    dynamic_relaxation_check(dr)
+    return nothing
+end
+
+function dynamic_relaxation_check(dr::DynamicRelaxation)
+    if dr.n_steps < 0
+        error("`n_steps` of DynamicRelaxation smaller than zero!\n")
+    end
+    if dr.Δt < 0
+        error("`Δt` of DynamicRelaxation smaller than zero!\n")
+    end
+    if dr.Λ < 0
+        error("`Λ` of DynamicRelaxation smaller than zero!\n")
+    end
+    return nothing
+end
+
+function solve!(dh::AbstractDataHandler, dr::DynamicRelaxation,
+                options::AbstractJobOptions)
+    export_reference_results(dh, options)
+    Δt = dr.Δt
+    init_density_matrix!(dh, dr)
+    if mpi_isroot()
+        p = Progress(dr.n_steps; dt=1, desc="TIME INTEGRATION LOOP", color=:normal,
+                     barlen=40, enabled=progress_bars())
+    end
+    for n in 1:dr.n_steps
+        relaxation_timestep!(dh, options, Δt, n)
+        mpi_isroot() && next!(p)
+    end
+    mpi_isroot() && finish!(p)
+    return nothing
+end
+
+function init_density_matrix!(dh::AbstractThreadsBodyDataHandler, dr::DynamicRelaxation)
+    @threads :static for chunk in dh.chunks
+        _init_density_matrix!(chunk, dr, chunk.paramsetup)
+    end
+    return nothing
+end
+
+function init_density_matrix!(dh::AbstractThreadsMultibodyDataHandler,
+                              dr::DynamicRelaxation)
+    for body_idx in each_body_idx(dh)
+        body_dh = get_body_dh(dh, body_idx)
+        @threads :static for chunk in body_dh.chunks
+            _init_density_matrix!(chunk, dr, chunk.paramsetup)
+        end
+    end
+    return nothing
+end
+
+function init_density_matrix!(dh::AbstractMPIBodyDataHandler, dr::DynamicRelaxation)
+    _init_density_matrix!(dh.chunk, dr, dh.chunk.paramsetup)
+    return nothing
+end
+
+function _init_density_matrix!(chunk::AbstractBodyChunk, dr::DynamicRelaxation,
+                               params::AbstractPointParameters)
+    system = chunk.system
+    density_matrix = chunk.storage.density_matrix
+    for i in each_point_idx(chunk)
+        calc_density_matrix!(density_matrix, system, params, dr, i)
+    end
+    return nothing
+end
+
+function _init_density_matrix!(chunk::AbstractBodyChunk, dr::DynamicRelaxation,
+                               paramsetup::AbstractParameterHandler)
+    system = chunk.system
+    density_matrix = chunk.storage.density_matrix
+    for i in each_point_idx(chunk)
+        params = get_params(paramsetup, i)
+        calc_density_matrix!(density_matrix, system, params, dr, i)
+    end
+    return nothing
+end
+
+@inline function calc_density_matrix!(density_matrix::Matrix{Float64}, system::BondSystem,
+                                      params::AbstractPointParameters,
+                                      dr::DynamicRelaxation, i::Int)
+    n_bonds = system.n_neighbors[i]
+    k = 5π * params.δ^2 * params.bc
+    Λ = dr.Λ * 1 / 4 * dr.Δt^2 * n_bonds * k
+    density_matrix[1, i] = Λ
+    density_matrix[2, i] = Λ
+    density_matrix[3, i] = Λ
+    return nothing
+end
+
+@inline function calc_density_matrix!(density_matrix::Matrix{Float64},
+                                      system::InteractionSystem,
+                                      params::AbstractPointParameters,
+                                      dr::DynamicRelaxation, i::Int)
+    n_one_nis = system.n_one_nis[i]
+    k = 5π * params.δ^2 * params.C1
+    Λ = dr.Λ * 1 / 4 * dr.Δt^2 * n_one_nis * k
+    for dim in each_dim(system)
+        @inbounds density_matrix[dim, i] = Λ
+    end
+    return nothing
+end
+
+@inline function calc_density_matrix!(density_matrix::Matrix{Float64},
+                                      system::BondAssociatedSystem,
+                                      params::AbstractPointParameters,
+                                      dr::DynamicRelaxation, i::Int)
+    n_bonds = system.n_neighbors[i]
+    k = 5π * params.δ^2 * params.bc
+    Λ = dr.Λ * 1 / 4 * dr.Δt^2 * n_bonds * k
+    for dim in each_dim(system)
+        @inbounds density_matrix[dim, i] = Λ
+    end
+    return nothing
+end
+
+function relaxation_timestep!(dh::AbstractThreadsBodyDataHandler,
+                              options::AbstractJobOptions, Δt, n)
+    t = n * Δt
+    @threads :static for chunk_id in eachindex(dh.chunks)
+        chunk = dh.chunks[chunk_id]
+        apply_boundary_conditions!(chunk, t)
+        update_disp_and_pos!(chunk, Δt)
+    end
+    calc_force_density!(dh, t, Δt)
+    cn = n == 1 ? 0.0 : calc_damping(dh.chunks, Δt)
+    @threads :static for chunk_id in eachindex(dh.chunks)
+        chunk = dh.chunks[chunk_id]
+        if n == 1
+            relaxation_first_step!(chunk, Δt)
+        else
+            relaxation_step!(chunk, Δt, cn)
+        end
+        export_results(dh, options, chunk_id, n, t)
+    end
+    return nothing
+end
+
+function relaxation_timestep!(dh::AbstractMPIBodyDataHandler,
+                              options::AbstractJobOptions, Δt, n)
+    t = n * Δt
+    (; chunk) = dh
+    @timeit_debug TO "apply_boundary_conditions!" apply_boundary_conditions!(chunk, t)
+    @timeit_debug TO "update_disp_and_pos!" update_disp_and_pos!(chunk, Δt)
+    calc_force_density!(dh, t, Δt)
+    @timeit_debug TO "relaxation_step!" if n == 1
+        relaxation_first_step!(chunk, Δt)
+    else
+        cn = calc_damping(dh, Δt)
+        relaxation_step!(chunk, Δt, cn)
+    end
+    @timeit_debug TO "export_results" export_results(dh, options, n, t)
+    return nothing
+end
+
+function relaxation_timestep!(dh::AbstractThreadsMultibodyDataHandler,
+                              options::AbstractJobOptions, Δt, n)
+    t = n * Δt
+    for body_idx in each_body_idx(dh)
+        body_dh = get_body_dh(dh, body_idx)
+        @threads :static for chunk_id in eachindex(body_dh.chunks)
+            chunk = body_dh.chunks[chunk_id]
+            apply_boundary_conditions!(chunk, t)
+            update_disp_and_pos!(chunk, Δt)
+        end
+    end
+    calc_force_density!(dh, t, Δt)
+    update_caches!(dh)
+    calc_contact_force_densities!(dh)
+    for body_idx in each_body_idx(dh)
+        body_dh = get_body_dh(dh, body_idx)
+        cn = n == 1 ? 0.0 : calc_damping(body_dh.chunks, Δt)
+        @threads :static for chunk_id in eachindex(body_dh.chunks)
+            chunk = body_dh.chunks[chunk_id]
+            if n == 1
+                relaxation_first_step!(chunk, Δt)
+            else
+                relaxation_step!(chunk, Δt, cn)
+            end
+            export_results(body_dh, options, chunk_id, n, t)
+        end
+    end
+    return nothing
+end
+
+# Partial sums of the damping Rayleigh quotient with their summation compensations
+struct DampingTerms{T}
+    cn1::T
+    cn1_c::T
+    cn2::T
+    cn2_c::T
+end
+
+# The error-free transformation of `a + b`: the rounded sum and the exact rounding error
+@inline function two_sum(a, b)
+    s = a + b
+    v = s - a
+    e = (a - (s - v)) + (b - v)
+    return s, e
+end
+
+function damping_terms(chunk::AbstractBodyChunk, Δt)
+    (; displacement, velocity_half, velocity_half_old,
+       b_int, b_int_old, density_matrix) = chunk.storage
+    cn1, cn1_c = 0.0, 0.0
+    cn2, cn2_c = 0.0, 0.0
+    for dof in each_loc_dof(chunk)
+        if velocity_half[dof] != 0.0
+            Δb_int = b_int[dof] - b_int_old[dof]
+            temp = Δt * density_matrix[dof] * velocity_half_old[dof]
+            cn1, e = two_sum(cn1, -displacement[dof]^2 * Δb_int / temp)
+            cn1_c += e
+        end
+        cn2, e = two_sum(cn2, displacement[dof]^2)
+        cn2_c += e
+    end
+    return DampingTerms(cn1, cn1_c, cn2, cn2_c)
+end
+
+# Combine two partial sums, keeping the compensations exact
+@inline function combine(a::DampingTerms, b::DampingTerms)
+    cn1, e1 = two_sum(a.cn1, b.cn1)
+    cn2, e2 = two_sum(a.cn2, b.cn2)
+    return DampingTerms(cn1, a.cn1_c + b.cn1_c + e1, cn2, a.cn2_c + b.cn2_c + e2)
+end
+
+finish_damping(t::DampingTerms) = finish_damping(t.cn1 + t.cn1_c, t.cn2 + t.cn2_c)
+
+function finish_damping(cn1, cn2)
+    if cn2 != 0.0
+        if cn1 / cn2 > 0.0
+            cn = 2.0 * sqrt(cn1 / cn2)
+        else
+            cn = 0.0
+        end
+    else
+        cn = 0.0
+    end
+    if cn > 2.0
+        cn = 1.9
+    end
+    return cn
+end
+
+function calc_damping(chunk::AbstractBodyChunk, Δt)
+    return finish_damping(damping_terms(chunk, Δt))
+end
+
+function calc_damping(chunks::AbstractVector{<:AbstractBodyChunk}, Δt)
+    terms = Vector{DampingTerms{Float64}}(undef, length(chunks)) # concrete: an abstract eltype boxes every store
+    @threads :static for chunk_id in eachindex(chunks)
+        terms[chunk_id] = damping_terms(chunks[chunk_id], Δt)
+    end
+    return finish_damping(reduce(combine, terms))
+end
+
+function calc_damping(dh::AbstractMPIBodyDataHandler, Δt)
+    loc_terms = damping_terms(dh.chunk, Δt)
+    all_terms = MPI.Allgather(loc_terms, mpi_comm()) # in rank order on every rank
+    return finish_damping(reduce(combine, all_terms))
+end
+
+function relaxation_first_step!(chunk::AbstractBodyChunk, Δt)
+    (; velocity_half, b_int, b_ext, density_matrix) = chunk.storage
+    for dof in each_loc_dof(chunk)
+        velocity_half[dof] = 0.5 * Δt * (b_int[dof] + b_ext[dof]) / density_matrix[dof]
+        relaxation_updates!(chunk.storage, dof)
+    end
+    return nothing
+end
+
+function relaxation_step!(chunk::AbstractBodyChunk, Δt, cn)
+    (; velocity_half, b_int, b_ext, density_matrix) = chunk.storage
+    for dof in each_loc_dof(chunk)
+        a = (b_int[dof] + b_ext[dof]) / density_matrix[dof]
+        v½_old = velocity_half[dof]
+        velocity_half[dof] = ((2 - cn * Δt) * v½_old + 2 * Δt * a) / (2 + cn * Δt)
+        relaxation_updates!(chunk.storage, dof)
+    end
+    return nothing
+end
+
+function relaxation_updates!(s::AbstractStorage, dof::Int)
+    s.velocity[dof] = 0.5 * (s.velocity_half_old[dof] + s.velocity_half[dof])
+    s.velocity_half_old[dof] = s.velocity_half[dof]
+    s.b_int_old[dof] = s.b_int[dof]
+    return nothing
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem, ::Val{:position})
+    return copy(system.position)
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem,
+                           ::Val{:displacement})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem, ::Val{:velocity})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem,
+                           ::Val{:velocity_half})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem,
+                           ::Val{:velocity_half_old})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::AbstractTimeSolver, ::AbstractSystem,
+                           ::Val{:velocity_half_old})
+    return Array{Float64,2}(undef, 0, 0)
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem,
+                           ::Val{:acceleration})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem, ::Val{:b_int})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem, ::Val{:b_int_old})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::AbstractTimeSolver, ::AbstractSystem, ::Val{:b_int_old})
+    return Array{Float64,2}(undef, 0, 0)
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem, ::Val{:b_ext})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::DynamicRelaxation, system::AbstractSystem,
+                           ::Val{:density_matrix})
+    return zeros(3, get_n_loc_points(system))
+end
+
+function init_field_solver(::AbstractTimeSolver, ::AbstractSystem, ::Val{:density_matrix})
+    return Array{Float64,2}(undef, 0, 0)
+end
+
+function req_point_data_fields_timesolver(::Type{<:DynamicRelaxation})
+    fields = (:position, :displacement, :velocity, :velocity_half, :velocity_half_old,
+              :b_int, :b_int_old, :b_ext, :density_matrix)
+    return fields
+end
+
+function req_bond_data_fields_timesolver(::Type{<:DynamicRelaxation})
+    return ()
+end
+
+function req_data_fields_timesolver(::Type{<:DynamicRelaxation})
+    return ()
+end
+
+function log_timesolver(options::AbstractJobOptions, dr::DynamicRelaxation)
+    msg = "DYNAMIC RELAXATION TIME SOLVER\n"
+    msg *= msg_qty("number of time steps", dr.n_steps)
+    msg *= msg_qty("relaxation time step size", dr.Δt)
+    msg *= msg_qty("damping factor", dr.Λ)
+    msg *= msg_qty("relaxation time", dr.n_steps * dr.Δt)
+    log_it(options, msg)
+    return nothing
+end
+
+register_solver!(DynamicRelaxation)

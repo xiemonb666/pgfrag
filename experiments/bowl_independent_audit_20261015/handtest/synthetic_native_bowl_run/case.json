@@ -1,0 +1,41 @@
+{
+  "geometry": {
+    "analytic_volume_m3": 2.546784444510125e-06,
+    "center_m": [
+      0.0,
+      0.0,
+      0.012
+    ],
+    "delta_m": 0.03,
+    "h_m": 0.012,
+    "inner_radius_m": 0.008,
+    "lattice_volume_m3": 6.912e-06,
+    "n_points": 4,
+    "outer_radius_m": 0.012,
+    "shape": "concentric_lower_hemisphere_shell"
+  },
+  "loading": {
+    "alpha_s_1": 0.0,
+    "gaussian_peak_m_s": 0.0,
+    "gaussian_sigma_m": 0.0,
+    "mode": "zero",
+    "momentum_constraint": "remove mass-mean translation and angular momentum"
+  },
+  "material": {
+    "E_pa": 70000000000.0,
+    "Gc_j_m2": 7.6,
+    "calibration_status": "UNVALIDATED_PROTOTYPE",
+    "nu": 0.25,
+    "point_mass_kg": 0.0158976,
+    "rho_kg_m3": 2300.0
+  },
+  "run_id": "synthetic_handtest",
+  "schema": "pgfrag.native_bowl_case.v1",
+  "solver": {
+    "safety_factor": 0.5,
+    "steps": 1,
+    "threads": 1
+  },
+  "source_forge_manifest_sha256": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0",
+  "source_manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run\\asset\\manifest.json"
+}

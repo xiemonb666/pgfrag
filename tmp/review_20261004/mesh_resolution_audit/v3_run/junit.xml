@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="0.196" timestamp="2026-10-04T22:04:33.838093+08:00" hostname="XieMo"><testcase classname="tests.test_mesh_resolution_audit" name="test_regular_tetrahedron_reports_si_volume_edges_and_heights" time="0.007" /><testcase classname="tests.test_mesh_resolution_audit" name="test_sliver_is_separately_reported_as_near_degenerate" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_negative_orientation_and_zero_volume_are_distinct" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_caller_declared_nearwall_candidate_screen_and_normal_resolution" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_tiny_regular_tetrahedron_keeps_scale_and_marks_volume_underflow_unknown" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_extreme_delta_to_h_and_h_to_delta_range_failures_are_reported" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_overflow_has_one_terminal_status_count_per_cell" time="0.001"><failure message="KeyError: 'unknown_numeric_range_cell_indices'">def test_overflow_has_one_terminal_status_count_per_cell():
+        edge_m = 1.0e104
+        expected_log_volume = math.log(math.sqrt(2.0) / 12.0) + 3.0 * math.log(edge_m)
+        assert expected_log_volume &gt; math.log(sys.float_info.max)
+        report = audit_tetra_mesh(regular_tetra(edge_m=edge_m), [[0, 1, 2, 3]])
+        geometry = report["tetra_geometry"]
+        assert geometry["per_cell"][0]["status"] == "UNKNOWN_NUMERIC_RANGE/OVERFLOW"
+        assert geometry["cell_status_counts"]["UNKNOWN_NUMERIC_RANGE/OVERFLOW"] == 1
+        assert sum(geometry["cell_status_counts"].values()) == 1
+        assert geometry["unknown_numeric_range_count"] == 1
+&gt;       assert geometry["unknown_numeric_range_cell_indices"] == [0]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'unknown_numeric_range_cell_indices'
+
+tests\test_mesh_resolution_audit.py:151: KeyError</failure></testcase><testcase classname="tests.test_mesh_resolution_audit" name="test_nonfinite_scale_ratios_are_unknown_and_keep_cell_indices" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_absent_normal_mapping_stays_unknown_without_edge_fallback" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_missing_process_zone_stays_unknown_and_does_not_reuse_pd_horizon" time="0.001" /><testcase classname="tests.test_mesh_resolution_audit" name="test_invalid_indices_and_nonfinite_coordinates_are_separate_and_json_safe" time="0.001" /></testsuite></testsuites>

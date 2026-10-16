@@ -1,0 +1,166 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_case.v1",
+  "classification": "COST_ESTIMATE_UNCALIBRATED",
+  "source_geometry": {
+    "status": "GEOMETRY_DIAGNOSTIC_ONLY",
+    "candidate": "daily_aberdeen_108x53_v5",
+    "vessel_reference": "Daily Aberdeen 108x53",
+    "source_step": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\solid.step",
+      "bytes": 43334,
+      "sha256": "b8b1a32a46390ef0038fc495bddd530f34f6af84ff8ba9599787fa7bb0794cd2"
+    },
+    "source_step_declared_unit": "mm",
+    "source_step_unit_conversion": "OCCTargetUnit=M set before import; no post-import scaling",
+    "surface_npz": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\surface.npz",
+      "bytes": 222386,
+      "sha256": "c283e03279d0458af19b3ffc37046ca2f6ab00412c1faa4814766b8e242a85e0"
+    },
+    "geometry_report": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry_report.json",
+      "bytes": 2871,
+      "sha256": "94a1031271e8be4e2dedc096ef42acce45e0d856c39537460f624d4d75166ee6"
+    },
+    "face_lineage": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\face_lineage.json",
+      "bytes": 4476,
+      "sha256": "1178098e6c661d998bb2abded2262eb839d9b6a45ebd4cd176584b9b58f364f0"
+    },
+    "mesh_msh": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\mesh.msh",
+      "bytes": 4410557,
+      "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+    },
+    "mesh_npz": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\mesh.npz",
+      "bytes": 1637422,
+      "sha256": "e39b6d838468b2ce5eaff39e33d370f93d62cfb68be70594d9e0ac9dc4b39822"
+    },
+    "mesh_result": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\result.json",
+      "bytes": 10041,
+      "sha256": "959a5334a4845fd36122e701c110615ae1229567565093d872d65eabcc50d039"
+    },
+    "mesh_counts": {
+      "source_faces": 17,
+      "source_volumes": 1,
+      "partition_volumes": 2,
+      "nodes": 18236,
+      "tetrahedra": 56139,
+      "interface_triangles": 541,
+      "exterior_triangles": 35784
+    },
+    "source_face_ancestry": {
+      "status": "PRESENT_BUT_UNBOUND",
+      "metadata_sha256": "1178098e6c661d998bb2abded2262eb839d9b6a45ebd4cd176584b9b58f364f0",
+      "metadata_name": "face_lineage.json",
+      "metadata_schema": "vf.native_meridian_face_lineage.v1",
+      "unbound_face_records": 17,
+      "reason": "metadata has no exact imported_surface_tag to source_face_id binding",
+      "propagation_method": "OCC fragment parent map from imported source surface entities to exterior descendants",
+      "spatial_or_nearest_face_matching_used": false,
+      "exterior_triangle_counts": {
+        "exact": 0,
+        "unknown": 35784,
+        "ambiguous": 0
+      },
+      "all_exterior_triangles_have_exact_source_face_ancestry": false
+    },
+    "qualification": {
+      "real_world_geometry_review": "NOT_ESTABLISHED_BY_MESHING",
+      "physical_material_validity": "NOT_ASSESSED",
+      "fracture_or_fragment_result": "NOT_CREATED",
+      "solver_qualification": "NOT_ESTABLISHED"
+    }
+  },
+  "bulk_material": {
+    "rho_kg_m3": 2300.0,
+    "E_pa": 70000000000.0,
+    "nu": 0.25,
+    "calibration": "PLACEHOLDER_COST_ESTIMATE_UNCALIBRATED",
+    "Gc_j_m2": 7.6
+  },
+  "interface": {
+    "sigma_c_Pa": 10000000.0,
+    "Gc_J_m2": 7.6,
+    "delta0_m": 1E-08,
+    "beta": 1,
+    "kappa": 1,
+    "calibration": "NONE_PLACEHOLDER_COST_ESTIMATE_UNCALIBRATED",
+    "predefined_plane": "x=0",
+    "penalty_Pa_m": 1000000000000000.0,
+    "contact_after_breaking": false
+  },
+  "loading": {
+    "peak_force_N": 0.0,
+    "pulse_duration_s": 2.5E-05,
+    "patch_x_threshold_m": 0.038,
+    "type": "REFERENCE_DIRECTION_POSITIVE_NODAL_PATCH_FORCES",
+    "profile": "peak*sin(pi*t/25us)^2 for 0<t<25us, else zero",
+    "force_line": "reference complete bulk lumped mass COM y,z; relative-entropy projection with strictly positive weights",
+    "constraints": "NONE; ALL NATIVE DOFS FREE",
+    "preflight_note": "peak_force_N=0; load patch is constructed and feasibility checked, with zero applied pulse magnitude"
+  },
+  "time": {
+    "total_s": 5E-05,
+    "initial_bound_fraction": 0.4,
+    "refinement_factor": 1,
+    "dt_policy": "T/(ceil(T/min(.4*independent total critical dt,.4*native bulk dt))*refinement)"
+  },
+  "limits": {
+    "max_steps": 100000,
+    "wall_time_s": 300,
+    "output_cap_bytes": 67108864
+  },
+  "output": {
+    "node_stride": 50,
+    "flush_stride": 250,
+    "all_native_qp_steps": true
+  },
+  "gates": {
+    "damage_tolerance": 1E-10,
+    "traction_zero_tolerance_Pa": 0.01,
+    "max_abs_principal_small_strain": 0.01,
+    "max_polar_rotation_rad": 0.05,
+    "min_det_F": 0.8,
+    "scope": "sampled each saved nodal state; small-strain numerical applicability, not ceramic elasticity/calibration"
+  },
+  "limitations": [
+    "geometry only; diagnostic v5 candidate, exterior source-face ancestry is unbound and does not qualify exterior fragments or surface paint",
+    "bulk and interface values are placeholders; no specimen physical data and no calibration",
+    "zero-step native preflight only; no solver evolution, tuning, or fracture outcome",
+    "native initial/fixed-normal positive stiffness bound is not a full-trajectory stability guarantee",
+    "full history cost is forecast from wrapper array specifications; no history arrays are allocated in preflight"
+  ],
+  "case_name": "reference_vessel_v5_zero_step_preflight_alias",
+  "input_hashes": {
+    "mesh.msh": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "mesh_alias_receipt.json": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+  },
+  "mesh_alias_receipt": {
+    "path": "mesh_alias_receipt.json",
+    "sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0",
+    "source_mesh_sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+    "executed_mesh_sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "group_map": [
+      {
+        "dimension": 2,
+        "physical_tag": 2,
+        "from": "cut_interface",
+        "to": "interface"
+      },
+      {
+        "dimension": 2,
+        "physical_tag": 3,
+        "from": "source_exterior",
+        "to": "exterior"
+      }
+    ],
+    "operation": "ONLY_TWO_PHYSICAL_NAMES_STRINGS_CHANGED"
+  }
+}

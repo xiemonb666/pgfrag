@@ -1,0 +1,210 @@
+{
+  "fields": {
+    "surface_fields_npz": "fields/surface.npz"
+  },
+  "files": {
+    "fields/surface.npz": {
+      "bytes": 1680599,
+      "sha256": "9452d7126510473b6a5ffbf435c9450e6b3f1036651d985278b4e8ceda932d65"
+    },
+    "geometry/mesh_lineage.npz": {
+      "bytes": 1246,
+      "sha256": "e32532c019cf6060393ad45bcbdcbdfcf4a0c8516427b75e1dabcbd394f0b439"
+    },
+    "geometry/solid.step": {
+      "bytes": 7151,
+      "sha256": "593b6f8b7dd72de69724348cb28056305660a852b8f44e67ca2a29e8ce77007c"
+    },
+    "geometry/surface.npz": {
+      "bytes": 2519080,
+      "sha256": "7589a1ca799c6b563c4db34d0a0e7b0ea26ffdd678d45354f794a9b3da073cdf"
+    },
+    "metadata/data_dictionary.json": {
+      "bytes": 2487,
+      "sha256": "5c36ae1eded7e3d797e8f3b02378d62b6bcc0dd3c9a66c4c4a95db959d576200"
+    },
+    "metadata/face_semantics.json": {
+      "bytes": 4369,
+      "sha256": "8eee0b9d1e871e844b83e6a92e2116440aaa463c300bcf84ad7e2ea3cf06bbfe"
+    },
+    "validation/geometry.json": {
+      "bytes": 7557,
+      "sha256": "b2c66583dd744b19b968b35347d1be21d496f8c9e856df6bc903d1c63467f0c4"
+    }
+  },
+  "frame": "right_handed_z_up",
+  "geometry": {
+    "solid_step": "geometry/solid.step",
+    "surface_npz": "geometry/surface.npz"
+  },
+  "material": {
+    "appearance": {
+      "base_albedo_linear_rgb": [
+        0.66,
+        0.49,
+        0.34
+      ],
+      "model": "constant_lambertian_preview",
+      "roughness": 0.78,
+      "source": "procedural display placeholder; not measured optical data"
+    },
+    "calibration_status": "UNVALIDATED_PROTOTYPE",
+    "id": "vf_prototype_matte_earth_01",
+    "mechanics": {
+      "E_pa": 70000000000.0,
+      "Gc_j_m2": 7.6,
+      "nu": 0.25,
+      "rho_kg_m3": 2300.0
+    },
+    "provenance": {
+      "appearance_source": "procedural preview palette; no spectrophotometry",
+      "mechanics_source": "root-selected native-case values; illustrative UNVALIDATED_PROTOTYPE placeholders with no specimen test or calibration"
+    }
+  },
+  "ornament": {
+    "kind": "painted",
+    "recipe": {
+      "bands": [
+        {
+          "center_z_mm": 3.8571428571428568,
+          "color": "red",
+          "width_mm": 0.42857142857142855
+        },
+        {
+          "center_z_mm": 6.2142857142857135,
+          "color": "dark",
+          "width_mm": 0.21428571428571427
+        },
+        {
+          "center_z_mm": 8.571428571428571,
+          "color": "red",
+          "width_mm": 0.42857142857142855
+        }
+      ],
+      "coordinate_map": "world_xyz_rest_mm; band centers use global Z",
+      "fracture_region_codes_excluded": [
+        255
+      ],
+      "geometry_relief_mm": 0.0,
+      "historical_style_validation": "NOT_VALIDATED",
+      "material_binding_id": "vf_prototype_matte_earth_01",
+      "palette_linear_rgb": {
+        "base": [
+          0.66,
+          0.49,
+          0.34
+        ],
+        "dark": [
+          0.095,
+          0.032,
+          0.018
+        ],
+        "red": [
+          0.48,
+          0.05,
+          0.025
+        ]
+      },
+      "pattern_id": "three_bands",
+      "seed": 20261015,
+      "source_note": "Deterministic procedural paint candidate; not matched to a dated or provenanced specimen.",
+      "surface_finish": {
+        "model": "constant_lambertian_preview",
+        "roughness": 0.78
+      },
+      "target_region_codes": [
+        1
+      ]
+    }
+  },
+  "provenance": {
+    "backend": "CadQuery/OpenCascade",
+    "backend_version": "2.8.0",
+    "missing_reason": "no specimen-specific geometry, material, pigment, impact or fracture data",
+    "producer": "VesselForge spherical bowl builder",
+    "seed": 20261015,
+    "spec": {
+      "brep_face_inventory": [
+        {
+          "area_mm2": 904.7786842337069,
+          "bbox_mm": [
+            -12.0,
+            11.999999999999996,
+            -12.0,
+            12.0,
+            0.0,
+            12.0
+          ],
+          "geom_type": "SPHERE",
+          "index_zero_based": 0
+        },
+        {
+          "area_mm2": 251.3274122871836,
+          "bbox_mm": [
+            -12.0,
+            12.0,
+            -12.0,
+            12.0,
+            12.0,
+            12.0
+          ],
+          "geom_type": "PLANE",
+          "index_zero_based": 1
+        },
+        {
+          "area_mm2": 402.1238596595199,
+          "bbox_mm": [
+            -8.0,
+            7.999999999999997,
+            -8.0,
+            8.0,
+            4.0,
+            12.0
+          ],
+          "geom_type": "SPHERE",
+          "index_zero_based": 2
+        }
+      ],
+      "canonical_step_sha256": "593b6f8b7dd72de69724348cb28056305660a852b8f44e67ca2a29e8ce77007c",
+      "center_xyz_mm": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "data_dictionary": "metadata/data_dictionary.json",
+      "face_semantics_classifier": "vf.canonical-step-face-semantics/1.1.0-spherical-bowl",
+      "face_semantics_report": "metadata/face_semantics.json",
+      "hemisphere": "z <= center_z; open annular rim lies at center_z",
+      "ideal_normal_wall_thickness_mm": 4.0,
+      "inner_radius_mm": 8.0,
+      "mesh_lineage_npz": "geometry/mesh_lineage.npz",
+      "outer_radius_mm": 12.0,
+      "prototype_form": "concentric_lower_hemisphere_bowl",
+      "shape": "concentric_lower_hemisphere",
+      "tessellation": {
+        "angular_tolerance_rad": 0.02,
+        "linear_chord_deflection_mm": 0.04
+      },
+      "tessellation_angular_rad": 0.02,
+      "tessellation_linear_mm": 0.04,
+      "units": {
+        "length": "mm"
+      },
+      "wall_status": "ANALYTIC_DESIGN_VALUE_NOT_MEASURED_OR_GLOBALLY_VERIFIED"
+    },
+    "upstream_dependencies": [],
+    "validity": "analytic geometry-only candidate; physical and historical validation absent",
+    "version": "0.1.1"
+  },
+  "schema": "forge.asset.v1",
+  "units": {
+    "length": "mm",
+    "mass": "kg",
+    "time": "s"
+  },
+  "validation": {
+    "report": "validation/geometry.json",
+    "scope": "geometry_only",
+    "status": "PASS"
+  }
+}

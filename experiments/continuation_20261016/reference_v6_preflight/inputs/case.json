@@ -1,0 +1,504 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_case.v1",
+  "classification": "COST_INITIALIZATION_ONLY_UNVALIDATED",
+  "source_geometry": {
+    "status": "GEOMETRY_DIAGNOSTIC_ONLY",
+    "candidate": "daily_aberdeen_108x53_v6_named_step_wall2mm_reference",
+    "vessel_reference": "Daily Aberdeen 108x53 reference candidate; wall profile is not measured or physically qualified",
+    "source_step": {
+      "path": "vesselforge/experiments/continuation_20261015/named_step/daily_witness_probe_20261016_v15/daily_native_named.step",
+      "bytes": 40870,
+      "sha256": "32b2735010a086eb809674ca07bc4cd0dc5ca499e3adc539eedeca7657e1df9d",
+      "declared_length_unit": "mm",
+      "unit_conversion": "Geometry.OCCTargetUnit=M set before import; no post-import scaling"
+    },
+    "upstream_original_v6_step_sha256": "1cd34bc5f5b3cf8b6b937afeb7345b982c9de01165f0d570ca11b83f3ea31c0e",
+    "source_face_lineage_sha256": "9e6c789989cb0f5f42ed9c37f0264bc02899a9c29f571254938a4781640bcfd2",
+    "witness_manifest_sha256": "f053759bc715758f99e1eb62e2c0da561a96b78e29259e925692b91583c4806d",
+    "source_step_declared_unit": "mm",
+    "source_step_unit_conversion": "Geometry.OCCTargetUnit=M set before import; no post-import scaling",
+    "mesh_msh": {
+      "path": "mesh.original.msh",
+      "bytes": 6422638,
+      "sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e"
+    },
+    "mesh_npz": {
+      "path": "source_mesh.npz",
+      "bytes": 2512088,
+      "sha256": "781cf815d05b9db7587ecde192f0b7c27a2947780f814d439a73fc0b24a0e820"
+    },
+    "mesh_result": {
+      "path": "source_mesh_result.json",
+      "bytes": 74760,
+      "sha256": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924"
+    },
+    "mesh_counts": {
+      "source_faces": 16,
+      "source_volumes": 1,
+      "partition_volumes": 2,
+      "mesh_nodes_reported_by_vf": 25748,
+      "msh_source_node_rows": 25579,
+      "T4": 86624,
+      "interface_Tri3": 356,
+      "exterior_Tri3": 44182
+    },
+    "node_inventory": {
+      "mesh_npz_total_nodes": 25748,
+      "mesh_npz_T4_referenced_nodes": 25579,
+      "mesh_npz_unused_node_count": 169,
+      "mesh_npz_unused_original_node_tags": [
+        25580,
+        25581,
+        25582,
+        25583,
+        25584,
+        25585,
+        25586,
+        25587,
+        25588,
+        25589,
+        25590,
+        25591,
+        25592,
+        25593,
+        25594,
+        25595,
+        25596,
+        25597,
+        25598,
+        25599,
+        25600,
+        25601,
+        25602,
+        25603,
+        25604,
+        25605,
+        25606,
+        25607,
+        25608,
+        25609,
+        25610,
+        25611,
+        25612,
+        25613,
+        25614,
+        25615,
+        25616,
+        25617,
+        25618,
+        25619,
+        25620,
+        25621,
+        25622,
+        25623,
+        25624,
+        25625,
+        25626,
+        25627,
+        25628,
+        25629,
+        25630,
+        25631,
+        25632,
+        25633,
+        25634,
+        25635,
+        25636,
+        25637,
+        25638,
+        25639,
+        25640,
+        25641,
+        25642,
+        25643,
+        25644,
+        25645,
+        25646,
+        25647,
+        25648,
+        25649,
+        25650,
+        25651,
+        25652,
+        25653,
+        25654,
+        25655,
+        25656,
+        25657,
+        25658,
+        25659,
+        25660,
+        25661,
+        25662,
+        25663,
+        25664,
+        25665,
+        25666,
+        25667,
+        25668,
+        25669,
+        25670,
+        25671,
+        25672,
+        25673,
+        25674,
+        25675,
+        25676,
+        25677,
+        25678,
+        25679,
+        25680,
+        25681,
+        25682,
+        25683,
+        25684,
+        25685,
+        25686,
+        25687,
+        25688,
+        25689,
+        25690,
+        25691,
+        25692,
+        25693,
+        25694,
+        25695,
+        25696,
+        25697,
+        25698,
+        25699,
+        25700,
+        25701,
+        25702,
+        25703,
+        25704,
+        25705,
+        25706,
+        25707,
+        25708,
+        25709,
+        25710,
+        25711,
+        25712,
+        25713,
+        25714,
+        25715,
+        25716,
+        25717,
+        25718,
+        25719,
+        25720,
+        25721,
+        25722,
+        25723,
+        25724,
+        25725,
+        25726,
+        25727,
+        25728,
+        25729,
+        25730,
+        25731,
+        25732,
+        25733,
+        25734,
+        25735,
+        25736,
+        25737,
+        25738,
+        25739,
+        25740,
+        25741,
+        25742,
+        25743,
+        25744,
+        25745,
+        25746,
+        25747,
+        25748
+      ],
+      "mesh_msh_node_rows": 25579,
+      "mesh_msh_tag_set_equals_npz_T4_referenced_tags": true,
+      "unused_npz_node_tags_present_in_original_msh": [],
+      "native_mesh_source": "preserved mesh.msh parsed by the frozen wrapper; no nodes are inserted, removed, renumbered, or filtered by this preflight package",
+      "native_retention_and_mass_status": "TO_BE_REPORTED_FROM_ACTUAL_AKANTU_INITIAL_STATE"
+    },
+    "source_face_ancestry": {
+      "status": "VERIFIED_OCC_WITNESS_ANCESTRY",
+      "identity_scope": "VERIFIED_OCC_WITNESS_ANCESTRY within declared CAD-kernel tolerances; not literal TopoDS identity across STEP or exact metrology",
+      "propagation_method": "native STEP face witnesses imprinted onto the exact canonical STEP solid, then OCC parent maps composed through the cut",
+      "spatial_or_nearest_face_matching_used": false,
+      "exterior_triangle_counts": {
+        "exact": 44182,
+        "unknown": 0,
+        "ambiguous": 0
+      },
+      "cut_surface_mapping_status": "VERIFIED_OCC_WITNESS_ANCESTRY",
+      "interface_has_zero_source_face_ancestry": true,
+      "every_exterior_surface_has_exactly_one_source_face": true,
+      "exact_msh_fid_role_arrays": {
+        "path": "known_exterior_fid_roles.npz",
+        "sha256": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+        "rows_path": "known_exterior_fid_role_rows.json",
+        "rows_sha256": "49d3d0b4a7546ff269d0d865c92d34b15a895db3406fc954b67817c9d6ac2fcf",
+        "rows": 44182,
+        "known_source_face_ids": [
+          {
+            "source_face_id": "original-brep-face-000",
+            "role": "base",
+            "source_surface_tag": 17,
+            "exterior_output_entity_tags": [
+              1,
+              31
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-001",
+            "role": "body_inner",
+            "source_surface_tag": 18,
+            "exterior_output_entity_tags": [
+              2,
+              4,
+              32
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-002",
+            "role": "rim",
+            "source_surface_tag": 19,
+            "exterior_output_entity_tags": [
+              5,
+              6,
+              33
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-003",
+            "role": "body_outer",
+            "source_surface_tag": 20,
+            "exterior_output_entity_tags": [
+              7,
+              30,
+              34
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-004",
+            "role": "body_outer",
+            "source_surface_tag": 21,
+            "exterior_output_entity_tags": [
+              8,
+              29,
+              35
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-005",
+            "role": "body_outer",
+            "source_surface_tag": 22,
+            "exterior_output_entity_tags": [
+              9,
+              28,
+              36
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-006",
+            "role": "body_outer",
+            "source_surface_tag": 23,
+            "exterior_output_entity_tags": [
+              10,
+              27,
+              37
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-007",
+            "role": "body_outer",
+            "source_surface_tag": 24,
+            "exterior_output_entity_tags": [
+              11,
+              26,
+              38
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-008",
+            "role": "foot",
+            "source_surface_tag": 25,
+            "exterior_output_entity_tags": [
+              12,
+              25,
+              39
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-009",
+            "role": "foot",
+            "source_surface_tag": 26,
+            "exterior_output_entity_tags": [
+              13,
+              24,
+              40
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-010",
+            "role": "foot",
+            "source_surface_tag": 27,
+            "exterior_output_entity_tags": [
+              14,
+              23,
+              41
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-011",
+            "role": "foot",
+            "source_surface_tag": 28,
+            "exterior_output_entity_tags": [
+              15,
+              22,
+              42
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-012",
+            "role": "foot",
+            "source_surface_tag": 29,
+            "exterior_output_entity_tags": [
+              16,
+              43
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-013",
+            "role": "foot",
+            "source_surface_tag": 30,
+            "exterior_output_entity_tags": [
+              17,
+              21,
+              44
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-014",
+            "role": "foot",
+            "source_surface_tag": 31,
+            "exterior_output_entity_tags": [
+              18,
+              20,
+              45
+            ]
+          },
+          {
+            "source_face_id": "original-brep-face-015",
+            "role": "base",
+            "source_surface_tag": 32,
+            "exterior_output_entity_tags": [
+              19,
+              46
+            ]
+          }
+        ],
+        "binding_method": "MSH2 physical/geometrical tags and exact sorted original nodeTags sourceTri keys; no nearest/order guess"
+      }
+    },
+    "mesh_geometry_diagnostics": {
+      "source_cad_volume_m3": 3.2987772829089536e-05,
+      "tetrahedral_mesh_volume_m3": 3.2908500572997336e-05,
+      "cad_mesh_volume_relative_error": 0.0024030799685359617,
+      "interface_area_m2": 0.0003831476523571684,
+      "occ_mesh_interface_area_relative_error": 0.0001395693071648457,
+      "min_tetrahedron_altitude_m": 0.00010383317691410174,
+      "foot_fillet_local_area_errors": "approximately -9.7%; retained as a local limitation and not treated as whole-feature qualification",
+      "full_feature_geometry_qualification": "NOT_ESTABLISHED"
+    },
+    "measured_profile_or_material_qualification": "NOT_ESTABLISHED"
+  },
+  "bulk_material": {
+    "rho_kg_m3": 2300.0,
+    "E_pa": 70000000000.0,
+    "nu": 0.25,
+    "calibration": "UNVALIDATED_COST_INITIALIZATION_ONLY_PLACEHOLDER; NO SPECIMEN DATA",
+    "Gc_j_m2": 7.6
+  },
+  "interface": {
+    "sigma_c_Pa": 10000000.0,
+    "Gc_J_m2": 7.6,
+    "delta0_m": 1e-08,
+    "beta": 1,
+    "kappa": 1,
+    "calibration": "UNVALIDATED_COST_INITIALIZATION_ONLY_PLACEHOLDER; NO SPECIMEN DATA",
+    "predefined_plane": "x=0",
+    "penalty_Pa_m": 1000000000000000.0,
+    "contact_after_breaking": false,
+    "weakplane_label": "PREINSERTED_WEAK_SEAM_UNCALIBRATED"
+  },
+  "loading": {
+    "peak_force_N": 0.0,
+    "pulse_duration_s": 2.5e-05,
+    "patch_x_threshold_m": 0.038,
+    "type": "REFERENCE_DIRECTION_POSITIVE_NODAL_PATCH_FORCES",
+    "profile": "peak*sin(pi*t/25us)^2 for 0<t<25us, else zero",
+    "force_line": "reference complete bulk lumped mass COM y,z; relative-entropy projection with strictly positive weights",
+    "constraints": "NONE; ALL NATIVE DOFS FREE",
+    "preflight_note": "peak_force_N=0; load patch is constructed and feasibility checked, with zero applied pulse magnitude"
+  },
+  "time": {
+    "total_s": 5e-05,
+    "initial_bound_fraction": 0.4,
+    "refinement_factor": 1,
+    "dt_policy": "T/(ceil(T/min(.4*independent total critical dt,.4*native bulk dt))*refinement)"
+  },
+  "limits": {
+    "max_steps": 100000,
+    "wall_time_s": 300,
+    "output_cap_bytes": 67108864
+  },
+  "output": {
+    "node_stride": 50,
+    "flush_stride": 250,
+    "all_native_qp_steps": true
+  },
+  "gates": {
+    "damage_tolerance": 1e-10,
+    "traction_zero_tolerance_Pa": 0.01,
+    "max_abs_principal_small_strain": 0.01,
+    "max_polar_rotation_rad": 0.05,
+    "min_det_F": 0.8,
+    "scope": "sampled each saved nodal state; small-strain numerical applicability, not ceramic elasticity/calibration"
+  },
+  "limitations": [
+    "v6 named-STEP reference candidate geometry only; wall profile and whole-feature shape are not measured or physically qualified",
+    "verified OCC witness ancestry is conditional within declared CAD tolerances and does not establish exact metrology; local foot-fillet mesh area errors are approximately -9.7%",
+    "bulk and interface material values remain UNVALIDATED cost-initialization placeholders with no specimen physical data",
+    "one native initialization-only preflight; no solver evolution, fracture, fragment result, training eligibility, or physical qualification",
+    "native initial positive-stiffness bound is not a full-trajectory stability guarantee",
+    "known exterior FID/role rows bind to exact original MSH sourceTri nodeTags and geometrical entity tags; no nearest or coordinate matching"
+  ],
+  "case_name": "reference_v6_zero_load_native_initialization_preflight",
+  "input_hashes": {
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "known_exterior_fid_role_rows.json": "49d3d0b4a7546ff269d0d865c92d34b15a895db3406fc954b67817c9d6ac2fcf",
+    "known_exterior_fid_roles.npz": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "mesh.msh": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+    "mesh.original.msh": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+    "mesh_alias_receipt.json": "a5d8e38f834d7b81a7da675d052ad24175787e2b2ed6314a02d04936964f0125",
+    "source_geometry_provenance.json": "3afe16a1b8adbd2b037295aa31cce00e2650a0f209319f7a0025ac15de66c5f5",
+    "source_mesh.npz": "781cf815d05b9db7587ecde192f0b7c27a2947780f814d439a73fc0b24a0e820",
+    "source_mesh_result.json": "11ca1bb3edb0c4fcf3b23fde9e29e6e6bfca64c154a6bf7b7e1daeab88cab924",
+    "t4_cell_row_correspondence.npz": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c"
+  },
+  "mesh_alias_receipt": {
+    "path": "mesh_alias_receipt.json",
+    "sha256": "a5d8e38f834d7b81a7da675d052ad24175787e2b2ed6314a02d04936964f0125",
+    "source_mesh_sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e",
+    "executed_mesh_sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490",
+    "operation": "REPLACE_TWO_PHYSICAL_NAME_STRINGS_ONLY",
+    "known_exterior_fid_role_mapping_sha256": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e"
+  }
+}

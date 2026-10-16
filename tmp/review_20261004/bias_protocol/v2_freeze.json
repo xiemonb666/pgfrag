@@ -1,0 +1,44 @@
+{
+  "schema": "pgfrag.bias-protocol-v2-review-freeze.v1",
+  "recorded_at_local": "2026-10-04T17:09:32.6248269+08:00",
+  "review_status": "AWAITING_ROOT_REVIEW",
+  "v2_pytest_status": "NOT_RUN_PENDING_ROOT_REVIEW",
+  "mechanics_solver_invoked": false,
+  "syntax_parse": "PASS",
+  "syntax_parse_argv": [
+    "python.exe",
+    "pgfrag/tmp/review_20261004/bias_protocol/build_v2_diff.py"
+  ],
+  "v1_evidence": {
+    "snapshot_hashes_match_v1_receipt": true,
+    "preserved_directory": "v1_freeze/",
+    "pytest_exit_code": 0,
+    "pytest_output": "......                                                                   [100%]\n6 passed in 0.04s",
+    "snapshot_integrity": {
+      "pgfrag\\tmp\\review_20261004\\bias_protocol\\protocol.md": {
+        "snapshot_sha256": "30cd4081cc92204856ef5584d00ea5bc4e58e81b6390853d7e07713cac1bf5b4",
+        "matches": true,
+        "v1_receipt_sha256": "30cd4081cc92204856ef5584d00ea5bc4e58e81b6390853d7e07713cac1bf5b4"
+      },
+      "pgfrag\\tests\\test_bias_protocol.py": {
+        "snapshot_sha256": "d2bcad04c13a3be3ceb8f7c58a74f4a8cc098cb3d2b3f91dcba8eaebd7c5e359",
+        "matches": true,
+        "v1_receipt_sha256": "d2bcad04c13a3be3ceb8f7c58a74f4a8cc098cb3d2b3f91dcba8eaebd7c5e359"
+      },
+      "pgfrag\\src\\pgfrag\\bias_protocol.py": {
+        "snapshot_sha256": "24608bbf9c19ed25550ddf1f8090921121deaa8eea8db30b305fc7f46e86e4ce",
+        "matches": true,
+        "v1_receipt_sha256": "24608bbf9c19ed25550ddf1f8090921121deaa8eea8db30b305fc7f46e86e4ce"
+      }
+    }
+  },
+  "v2_sha256": {
+    "pgfrag\\src\\pgfrag\\bias_protocol.py": "95dd958818cfdf44cc40f3c61b2a6eb60a68c10f99121d749876e6c1a4f26779",
+    "pgfrag\\tests\\test_bias_protocol.py": "6ccc0281ab3d818cb1f7cd2fd96351a83a128ddda8f593070cc40720b3b3c610",
+    "pgfrag\\tmp\\review_20261004\\bias_protocol\\protocol.md": "9dc91029aa69630fbd3e0971bea73ec9b5b32625ec800c39b81a00611b53e898",
+    "pgfrag\\tmp\\review_20261004\\bias_protocol\\v2_review.md": "5b8a10a57030318d689f18ee6e24c32a499a1d1afb5b019556790ce8dada36be",
+    "pgfrag\\tmp\\review_20261004\\bias_protocol\\v2.diff": "0b3233b9e5e8b27ddf0d70b60c952d1ff32c6362e3c4d449733802716cf4ec9c",
+    "pgfrag\\tmp\\review_20261004\\bias_protocol\\build_v2_diff.py": "86e8950d8158de642eb493ebc6129ffc058e536622cc62571c86afd07bffb534"
+  },
+  "diff_artifact": "v2.diff"
+}

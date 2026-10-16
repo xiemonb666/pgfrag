@@ -1,0 +1,8 @@
+{
+  "schema": "modeiii_solved_field_j_coupling_result.v1",
+  "case_id": "modeiii_solved_field_j_readback_coupling_20261006_v1",
+  "status": "UNKNOWN_WORKER_RESULT_CONTRACT",
+  "reason": "semantic_coefficient_binding_missing; staging output retained for review",
+  "source_solution_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+  "wall_cap_seconds": 60.0
+}

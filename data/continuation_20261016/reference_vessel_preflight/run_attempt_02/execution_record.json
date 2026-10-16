@@ -1,0 +1,423 @@
+{
+  "schema": "pgfrag.reference_vessel_zero_step_preflight_execution.v1",
+  "status": "ZERO_STEP_PREFLIGHT_PASS",
+  "classification": "COST_ESTIMATE_UNCALIBRATED",
+  "solver_steps": 0,
+  "native_process_exit_code": 0,
+  "case_sha256": "6c8bf83846642efbb8052593cabb406d95faaf1476973109d20c969880efd3f8",
+  "case_bytes": 7285,
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/inputs/case.json",
+    "--out",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/continuation_20261016/reference_vessel_preflight/run_attempt_02/native_preflight/run01",
+    "--preflight-only"
+  ],
+  "started_unix_s": 1792115636.494455,
+  "ended_unix_s": 1792115649.380653,
+  "elapsed_s": 12.886,
+  "python": "3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3 ]",
+  "runtime": "WSL Ubuntu; Akantu 5.0.7-post1; NumPy 2.5.3",
+  "native_cpu": "0",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_DYNAMIC": "FALSE"
+  },
+  "source_inputs_unchanged": true,
+  "runtime_hashes_verified_after_process": true,
+  "source_geometry_hashes_verified_after_process": true,
+  "source_geometry": {
+    "status": "GEOMETRY_DIAGNOSTIC_ONLY",
+    "candidate": "daily_aberdeen_108x53_v5",
+    "vessel_reference": "Daily Aberdeen 108x53",
+    "source_step": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\solid.step",
+      "bytes": 43334,
+      "sha256": "b8b1a32a46390ef0038fc495bddd530f34f6af84ff8ba9599787fa7bb0794cd2"
+    },
+    "source_step_declared_unit": "mm",
+    "source_step_unit_conversion": "OCCTargetUnit=M set before import; no post-import scaling",
+    "surface_npz": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\surface.npz",
+      "bytes": 222386,
+      "sha256": "c283e03279d0458af19b3ffc37046ca2f6ab00412c1faa4814766b8e242a85e0"
+    },
+    "geometry_report": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry_report.json",
+      "bytes": 2871,
+      "sha256": "94a1031271e8be4e2dedc096ef42acce45e0d856c39537460f624d4d75166ee6"
+    },
+    "face_lineage": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\face_lineage.json",
+      "bytes": 4476,
+      "sha256": "1178098e6c661d998bb2abded2262eb839d9b6a45ebd4cd176584b9b58f364f0"
+    },
+    "mesh_msh": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\mesh.msh",
+      "bytes": 4410557,
+      "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+    },
+    "mesh_npz": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\mesh.npz",
+      "bytes": 1637422,
+      "sha256": "e39b6d838468b2ce5eaff39e33d370f93d62cfb68be70594d9e0ac9dc4b39822"
+    },
+    "mesh_result": {
+      "path": "vesselforge\\experiments\\continuation_20261015\\reference_tetra\\daily_aberdeen_v5_diagnostic\\result.json",
+      "bytes": 10041,
+      "sha256": "959a5334a4845fd36122e701c110615ae1229567565093d872d65eabcc50d039"
+    },
+    "mesh_counts": {
+      "source_faces": 17,
+      "source_volumes": 1,
+      "partition_volumes": 2,
+      "nodes": 18236,
+      "tetrahedra": 56139,
+      "interface_triangles": 541,
+      "exterior_triangles": 35784
+    },
+    "source_face_ancestry": {
+      "status": "PRESENT_BUT_UNBOUND",
+      "metadata_sha256": "1178098e6c661d998bb2abded2262eb839d9b6a45ebd4cd176584b9b58f364f0",
+      "metadata_name": "face_lineage.json",
+      "metadata_schema": "vf.native_meridian_face_lineage.v1",
+      "unbound_face_records": 17,
+      "reason": "metadata has no exact imported_surface_tag to source_face_id binding",
+      "propagation_method": "OCC fragment parent map from imported source surface entities to exterior descendants",
+      "spatial_or_nearest_face_matching_used": false,
+      "exterior_triangle_counts": {
+        "exact": 0,
+        "unknown": 35784,
+        "ambiguous": 0
+      },
+      "all_exterior_triangles_have_exact_source_face_ancestry": false
+    },
+    "qualification": {
+      "real_world_geometry_review": "NOT_ESTABLISHED_BY_MESHING",
+      "physical_material_validity": "NOT_ASSESSED",
+      "fracture_or_fragment_result": "NOT_CREATED",
+      "solver_qualification": "NOT_ESTABLISHED"
+    }
+  },
+  "executed_mesh_alias": {
+    "path": "mesh_alias_receipt.json",
+    "sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0",
+    "source_mesh_sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+    "executed_mesh_sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "group_map": [
+      {
+        "dimension": 2,
+        "physical_tag": 2,
+        "from": "cut_interface",
+        "to": "interface"
+      },
+      {
+        "dimension": 2,
+        "physical_tag": 3,
+        "from": "source_exterior",
+        "to": "exterior"
+      }
+    ],
+    "operation": "ONLY_TWO_PHYSICAL_NAMES_STRINGS_CHANGED"
+  },
+  "alias_receipt_sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0",
+  "parser_equivalence": {
+    "status": "PASS_RAW_AND_PARSER_EQUIVALENCE",
+    "parser": "frozen cohesive_mesh.read_gmsh22",
+    "nodes_count": 18236,
+    "nodes_coordinates_and_order_equal": true,
+    "node_tags_order_equal": true,
+    "tetrahedra_count": 56139,
+    "tetrahedra_connectivity_element_ids_physical_tags_and_order_equal": true,
+    "triangles_count": 36325,
+    "triangles_connectivity_element_ids_physical_tags_and_order_equal": true,
+    "interface_triangles_original": 541,
+    "interface_triangles_derived": 541,
+    "exterior_triangles_original": 35784,
+    "exterior_triangles_derived": 35784,
+    "physical_names_original": [
+      {
+        "dimension": 2,
+        "physical_tag": 2,
+        "name": "cut_interface"
+      },
+      {
+        "dimension": 2,
+        "physical_tag": 3,
+        "name": "source_exterior"
+      },
+      {
+        "dimension": 3,
+        "physical_tag": 1,
+        "name": "partitioned_body"
+      }
+    ],
+    "physical_names_derived": [
+      {
+        "dimension": 2,
+        "physical_tag": 2,
+        "name": "interface"
+      },
+      {
+        "dimension": 2,
+        "physical_tag": 3,
+        "name": "exterior"
+      },
+      {
+        "dimension": 3,
+        "physical_tag": 1,
+        "name": "partitioned_body"
+      }
+    ],
+    "physical_dimension_tag_order_equal": true
+  },
+  "case_input_hashes": {
+    "mesh.msh": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+    "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+    "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "mesh_alias_receipt.json": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+  },
+  "native_counts": {
+    "nodes": 18634,
+    "bulk_tetrahedra": 56139,
+    "cohesive_tri3_facets": 541,
+    "native_qp_count": 1623
+  },
+  "native_mass_kg": 0.07478999938060947,
+  "native_interface_area_m2": 0.0003880800592225199,
+  "initial_independent_bound": {
+    "lambda_upper_bound_per_s2": 17884958584955120.0,
+    "critical_time_step_s": 1.4954986531981977E-08,
+    "bulk_only_native_dt_s": 5.554654749765396E-09,
+    "dt_s": 2.22182723071454E-09,
+    "steps": 22504,
+    "mass_kg": 0.07478999938060947,
+    "interface_area_m2": 0.0003880800592225199,
+    "scope": "INITIAL_LINEAR_BULK_PLUS_DECLARED_COHESIVE_TANGENT_AT_REST_FACE_NORMALS; NO_CURRENT_NORMAL_GEOMETRIC_DERIVATIVE; NO_FULL_SOFTENING_OR_CONTACT_CLAIM; FIXED_NORMAL_COMPRESSION_BRANCH_PENALTY_LE_KN_COVERED_BY_KN_ENVELOPE; NO_NONLINEAR_OR_FULL_TRAJECTORY_GUARANTEE",
+    "contact_penalty_Pa_per_m": 1000000000000000.0,
+    "all_dofs_free": true
+  },
+  "balanced_patch": {
+    "status": "FEASIBLE_POSITIVE_RELATIVE_ENTROPY_PROJECTION",
+    "force_peak_N": 0.0,
+    "unit_load_is_used_for_patch_feasibility_only": true,
+    "patch_node_count_total": 3708,
+    "negative_x_patch_nodes": 1822,
+    "positive_x_patch_nodes": 1886,
+    "min_positive_unit_weight": 1.6637279142265468E-07,
+    "target_reference_com_yz_m": [
+      1.3889908431751769E-06,
+      0.027199534424102646
+    ],
+    "negative_reference_force_line_yz_m": [
+      1.3889902723251576E-06,
+      0.027199534431183635
+    ],
+    "positive_reference_force_line_yz_m": [
+      1.3889914586388245E-06,
+      0.027199534427829086
+    ],
+    "reference_unit_force_sum_N_per_N": [
+      1.19522447494802E-15,
+      0.0,
+      0.0
+    ],
+    "reference_unit_torque_sum_Nm_per_N": [
+      0.0,
+      -3.3546278819032715E-12,
+      -1.186312289044476E-12
+    ],
+    "current_configuration_policy": "READ_ACTUAL_TORQUE_EACH_STEP; NO_FOLLOWER_REBALANCING"
+  },
+  "cost_forecast": {
+    "50": {
+      "node_stride": 50,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_state_frames": 452,
+      "qp_count": 1623,
+      "patch_node_count": 3708,
+      "raw_numeric_array_bytes": 5574225328,
+      "wrapper_raw_history_bytes_forecast": 5574228400,
+      "node_saved_steps_npy_bytes": 3744,
+      "layout_json_bytes": 1518,
+      "full_history_folder_estimate_bytes": 5574233662,
+      "actual_zero_step_preflight_output_bytes_excluding_receipt": 45659833,
+      "estimated_run_directory_bytes_before_safety_margin": 5619893495,
+      "wrapper_2mb_safety_margin_bytes": 2000000,
+      "configured_output_cap_bytes": 67108864,
+      "wrapper_history_cap_check_passes": false,
+      "bytes_over_configured_history_cap": 5509119536,
+      "recommended_minimum_bytes_with_20pct_margin": 6746272194,
+      "recommended_output_allocation_gib_rounded_up": 7
+    },
+    "1": {
+      "node_stride": 1,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_state_frames": 22505,
+      "qp_count": 1623,
+      "patch_node_count": 3708,
+      "raw_numeric_array_bytes": 45024043120,
+      "wrapper_raw_history_bytes_forecast": 45024046192,
+      "node_saved_steps_npy_bytes": 180168,
+      "layout_json_bytes": 1517,
+      "full_history_folder_estimate_bytes": 45024227877,
+      "actual_zero_step_preflight_output_bytes_excluding_receipt": 45659833,
+      "estimated_run_directory_bytes_before_safety_margin": 45069887710,
+      "wrapper_2mb_safety_margin_bytes": 2000000,
+      "configured_output_cap_bytes": 67108864,
+      "wrapper_history_cap_check_passes": false,
+      "bytes_over_configured_history_cap": 44958937328,
+      "recommended_minimum_bytes_with_20pct_margin": 54086265252,
+      "recommended_output_allocation_gib_rounded_up": 51
+    }
+  },
+  "preflight_persistent_bytes_excluding_receipt": 45659833,
+  "wrapper_receipt": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\receipt.json",
+    "bytes": 1515,
+    "sha256": "822023b1d8407290b6e620cfdf78dca84f10d0f4fb644b3af7db663aa3c8943b"
+  },
+  "stdout": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\stdout.log",
+    "bytes": 736,
+    "sha256": "df87aa312fb39594afa12c1516e5bd874dc398734b8aa437bdb9d1fb8ee5d5ee"
+  },
+  "stderr": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "exit_code_file": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\native_exit_code.txt",
+    "bytes": 2,
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "source_archive": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\source_archive\\mesh.msh.original",
+      "bytes": 4410557,
+      "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\source_archive\\result.json",
+      "bytes": 10041,
+      "sha256": "959a5334a4845fd36122e701c110615ae1229567565093d872d65eabcc50d039"
+    }
+  ],
+  "run_inputs": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\case.json",
+      "bytes": 7285,
+      "sha256": "6c8bf83846642efbb8052593cabb406d95faaf1476973109d20c969880efd3f8"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\cohesive_mesh.py",
+      "bytes": 26147,
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\cohesive_stability.py",
+      "bytes": 19680,
+      "sha256": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\cohesive_vessel.py",
+      "bytes": 29970,
+      "sha256": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\material.dat",
+      "bytes": 471,
+      "sha256": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\mesh_alias_receipt.json",
+      "bytes": 3051,
+      "sha256": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\mesh.msh",
+      "bytes": 4410546,
+      "sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c"
+    }
+  ],
+  "run_outputs": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\initial_bound.json",
+      "bytes": 637,
+      "sha256": "2715fadf00553ce80186970e4099e3cf6a754da13d4de93c0e3b79037fdd2b1f"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\initial_state.npz",
+      "bytes": 1346053,
+      "sha256": "a909b2f2dd6a8d651aea5505672a52ce2b255705e3ee932462413b75de13d7b1"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\lineage.json",
+      "bytes": 44140744,
+      "sha256": "5b2c5cbe7c1f2d403ac82e80306c0d89720d8d7670adb7a6a475bec5e908b330"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\loading.json",
+      "bytes": 170316,
+      "sha256": "3e1d0c0741fdc05aad124edd090fe954579e2c24e37f4bd1b22f37f8a5dbf86c"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\receipt.json",
+      "bytes": 1515,
+      "sha256": "822023b1d8407290b6e620cfdf78dca84f10d0f4fb644b3af7db663aa3c8943b"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\result.json",
+      "bytes": 782,
+      "sha256": "60b761f856050fe50bc9d6d2cf0aa72236e83f8e9e6936e855f8ba681adec2db"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\native_preflight\\run01\\started.json",
+      "bytes": 1301,
+      "sha256": "5de40b4ede9460635fe635ae45b8a28bdba65ee6b91156821523346040de9235"
+    }
+  ],
+  "supporting_data": [
+    {
+      "path": "pgfrag\\data\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\run_control.json",
+      "bytes": 2377,
+      "sha256": "0c2acfe49e98a2821572656a668fa559566d7847c71d5e8f2cd1e806da0d0904"
+    },
+    {
+      "path": "pgfrag\\data\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\mesh_alias_parser_audit.py",
+      "bytes": 3106,
+      "sha256": "fb7fa927ea874e0d0a8bdd80916510ef0bb3f3c092b9735ef976a636f61eee72"
+    },
+    {
+      "path": "pgfrag\\data\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\parser_equivalence.json",
+      "bytes": 1220,
+      "sha256": "ce8b4c7ba04e2d0f0e3d246bbbc6bc1eba3daa34004cad4698d53d310c2fd279"
+    },
+    {
+      "path": "pgfrag\\data\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\history_cost_forecast.py",
+      "bytes": 11542,
+      "sha256": "a6ad8fed61afafd3f711db68fed423c4cbb1566ef84a9e53982409116429a08a"
+    },
+    {
+      "path": "pgfrag\\data\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\history_cost_forecast.json",
+      "bytes": 5135,
+      "sha256": "570ad257d92a11e9a78a210b855e91d2d7a184736e8296461e938ed01b0a669c"
+    }
+  ],
+  "limitations": [
+    "geometry is v5 diagnostic candidate; exterior ancestry remains unbound",
+    "bulk/interface values are placeholders; no specimen data or calibration",
+    "zero-step preflight only; no dynamics or fracture evolution performed",
+    "storage forecast is not a wall-time prediction",
+    "configured output cap is 64 MiB and fails both history forecasts"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "C:/Users/xiemo/Desktop/ShardForge/relicweave-synlab/.venv/Scripts/python.exe",
+    "-c",
+    "import sys, pytest, numpy, pgfrag.native_point_history, pgfrag.bond_events, pgfrag.energy_ledger; print(\"python=\" + sys.version.split()[0]); print(\"pytest=\" + pytest.__version__); print(\"numpy=\" + numpy.__version__); print(\"target_modules=imported\")"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\native_point_history\\portable_validation\\minimal_clean_checkout",
+  "exit_code": 0,
+  "signal": null,
+  "error": null,
+  "stdout_bytes": 68,
+  "stderr_bytes": 0,
+  "stdout_sha256": "2a6dae95a6302efb754a45a710db4f9afcd4aeece2bcb60f46e3d1a69c54711d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "status": "DEPENDENCIES_AND_TARGET_MODULE_IMPORTS_OK"
+}

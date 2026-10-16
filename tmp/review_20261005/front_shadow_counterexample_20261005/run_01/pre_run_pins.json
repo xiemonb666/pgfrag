@@ -1,0 +1,72 @@
+[
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/fixedcase.json",
+    "sha256": "68AD13B3848BAF4867A00C8C7A991768A5EC05B18C61168A96D3FA741AC0DE90",
+    "bytes": 1471
+  },
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/math.json",
+    "sha256": "74EA7D47315216EF4347CA6BECEADF213D6FF1F0AF6F8AE2DB47E519B6262920",
+    "bytes": 4887
+  },
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/README.md",
+    "sha256": "22DD0A8798609E99A59AF44754E5338B8609BC850F32D8780EFD0FC0A73E722B",
+    "bytes": 1076
+  },
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/run_front_shadow_counterexample.py",
+    "sha256": "33CFB327363B73F4C0CC556B6C4B3A9472796DA8F16C4472F8ACAFC1947ABA7E",
+    "bytes": 11868
+  },
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/source_manifest.json",
+    "sha256": "34A034F2615F48444AB12099C9F742F900B89300932273BA42015C3A444ECD46",
+    "bytes": 663
+  },
+  {
+    "path": "pgfrag/experiments/front_shadow_counterexample_20261005/freeze_manifest.json",
+    "sha256": "674E1ED43ED384CD1212E9CF76943E0F90BB40D842BFADA1CA70896CF1B3925E",
+    "bytes": 1904
+  },
+  {
+    "path": "pgfrag/experiments/explicit_visibility_20261005/visibility3d.py",
+    "sha256": "9D5097CA33CE899CF788AD43EF0740A34296216A8FD7AA490868C27FFE1EBB03",
+    "bytes": 23190
+  },
+  {
+    "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_mls.py",
+    "sha256": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "bytes": 16461
+  },
+  {
+    "path": "pgfrag/experiments/mls3d_kernel_20261005/mls3d_shape.py",
+    "sha256": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "bytes": 11181
+  },
+  {
+    "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/source_snapshot/visibility3d.py",
+    "sha256": "9D5097CA33CE899CF788AD43EF0740A34296216A8FD7AA490868C27FFE1EBB03",
+    "bytes": 23190
+  },
+  {
+    "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/source_snapshot/mls3d_mls.py",
+    "sha256": "404256D9B7546361A5704C4C3CEC7C022069A9CF83A137C58A16E7A64F79EC63",
+    "bytes": 16461
+  },
+  {
+    "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/source_snapshot/mls3d_shape.py",
+    "sha256": "66E680616A988182875D17AEB84FADB541867AEE13FC15E0AE098F7C98839EF5",
+    "bytes": 11181
+  },
+  {
+    "path": "pgfrag/tmp/review_20261005/front_shadow_counterexample_20261005/source_snapshot/source_manifest.json",
+    "sha256": "34A034F2615F48444AB12099C9F742F900B89300932273BA42015C3A444ECD46",
+    "bytes": 663
+  },
+  {
+    "path": "third_party/vesselforge-runtime/venv/Scripts/python.exe",
+    "sha256": "2B83F3F84EA2F51132FA1AAE73815BE54126A799521DE85FF6EA70627CDE6DA7",
+    "bytes": 275432
+  }
+]

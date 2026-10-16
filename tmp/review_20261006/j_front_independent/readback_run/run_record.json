@@ -1,0 +1,15 @@
+{
+  "invocation_count": 1,
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\j_front_independent\\independent_readback.py"
+  ],
+  "timeout_seconds": 15,
+  "elapsed_seconds": 0.096737,
+  "timed_out": false,
+  "return_code": 0,
+  "input_sha256_unchanged": true,
+  "script_sha256_unchanged": true,
+  "output_json": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\j_front_independent\\independent_readback.json"
+}

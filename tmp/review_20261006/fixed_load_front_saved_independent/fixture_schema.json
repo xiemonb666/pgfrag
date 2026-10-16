@@ -1,0 +1,400 @@
+{
+  "schema": "fixed_load_front_stdlib_fixture_schema.v1",
+  "numeric_libraries_imported": false,
+  "fields": {
+    "fixed": {
+      "schema": {
+        "type": "str",
+        "value": "modeiii_pu_full3d_fixed_load_front_reanalysis_result.v1"
+      },
+      "status": {
+        "type": "str",
+        "value": "FINITE_CHANGE_RELEASE_DIAGNOSTIC_ONLY_NOT_COMMITTED"
+      },
+      "source_results.operator_sha256": {
+        "type": "str",
+        "value": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+      },
+      "source_results.baseline_static_solve_sha256": {
+        "type": "str",
+        "value": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3"
+      },
+      "front.delta_a_m": {
+        "type": "float",
+        "value": 0.0005
+      },
+      "fixed_data.query_rows_reused": {
+        "type": "int",
+        "value": 384
+      },
+      "fixed_data.additional_queries": {
+        "type": "int",
+        "value": 0
+      },
+      "fixed_data.traction_values_little_endian_f64_sha256": {
+        "type": "str",
+        "value": "a7083a28c92da9c527296a96a74d2a8e6d3570c666460e754ba03d4a5be05e91"
+      },
+      "fixed_data.quadrature_and_boundary_hash_sha256": {
+        "type": "str",
+        "value": "d37b939d3e6702d607f0da5b93c5d54498576a71086502a79cc4cd562a3b2d46"
+      },
+      "assembly.K_N_per_m": {
+        "type": "list",
+        "shape_or_size": [
+          162,
+          162
+        ]
+      },
+      "assembly.f_N": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "spectrum.scaled_eigenvalues": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "gauge.C_dimensionless": {
+        "type": "list",
+        "shape_or_size": [
+          6,
+          162
+        ]
+      },
+      "gauge.g_fixed_from_baseline_m": {
+        "type": "list",
+        "shape_or_size": [
+          6
+        ]
+      },
+      "solve.coefficients_m": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "solve.lagrange_multipliers_N": {
+        "type": "list",
+        "shape_or_size": [
+          6
+        ]
+      },
+      "solve.strain_energy_J": {
+        "type": "float",
+        "value": 1.3406843862152805e-06
+      },
+      "solve.external_work_J": {
+        "type": "float",
+        "value": 2.681368772430561e-06
+      },
+      "solve.g_dot_lambda_J": {
+        "type": "float",
+        "value": 3.704082183530438e-21
+      },
+      "solve.energy_identity_defect_2U_minus_W_plus_g_dot_lambda_J": {
+        "type": "float",
+        "value": 3.704082183530438e-21
+      },
+      "solve.post_solve_residual_gate_passed": {
+        "type": "bool",
+        "value": true
+      },
+      "potential_energy.baseline_Pi_J": {
+        "type": "float",
+        "value": -1.3133527026982128e-06
+      },
+      "potential_energy.extended_Pi_J": {
+        "type": "float",
+        "value": -1.3406843862152805e-06
+      },
+      "potential_energy.delta_Pi_J": {
+        "type": "float",
+        "value": -2.7331683517067647e-08
+      },
+      "potential_energy.one_sided_crack_extension_area_m2": {
+        "type": "float",
+        "value": 5e-06
+      },
+      "potential_energy.finite_change_release_diagnostic_J_per_m2": {
+        "type": "float",
+        "value": 0.005466336703413529
+      },
+      "potential_energy.Gc_compared": {
+        "type": "bool",
+        "value": false
+      },
+      "potential_energy.growth_committed": {
+        "type": "bool",
+        "value": false
+      },
+      "rigid_load_check.integrated_boundary_force_N": {
+        "type": "list",
+        "shape_or_size": [
+          3
+        ]
+      },
+      "rigid_load_check.integrated_moment_about_origin_Nm": {
+        "type": "list",
+        "shape_or_size": [
+          3
+        ]
+      },
+      "rigid_load_check.integrated_moment_about_rigid_center_Nm": {
+        "type": "list",
+        "shape_or_size": [
+          3
+        ]
+      }
+    },
+    "baseline": {
+      "schema": {
+        "type": "str",
+        "value": "modeiii_pu_full3d_static_solve_bridge_result.v1"
+      },
+      "status": {
+        "type": "str",
+        "value": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED"
+      },
+      "source_result.sha256": {
+        "type": "str",
+        "value": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+      },
+      "gauge.C_dimensionless": {
+        "type": "list",
+        "shape_or_size": [
+          6,
+          162
+        ]
+      },
+      "gauge.g_target_m": {
+        "type": "list",
+        "shape_or_size": [
+          6
+        ]
+      },
+      "solve.coefficients_m": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "solve.lagrange_multipliers_N": {
+        "type": "list",
+        "shape_or_size": [
+          6
+        ]
+      },
+      "solve.strain_energy_J": {
+        "type": "float",
+        "value": 1.3133527026982052e-06
+      },
+      "solve.external_work_J": {
+        "type": "float",
+        "value": 2.626705405396418e-06
+      },
+      "solve.g_dot_lambda_J": {
+        "type": "float",
+        "value": 4.236127247359188e-21
+      },
+      "solve.raw_K_sha256_float64_little_endian_C_order": {
+        "type": "str",
+        "value": "71ba46c3f5e13b8cd00d54985b0cdb4a0324b96d38e17d324c4eded8a2aaaf32"
+      }
+    },
+    "operator": {
+      "schema": {
+        "type": "str",
+        "value": "modeiii_pu_full3d_operator_diagnostic.v1"
+      },
+      "status": {
+        "type": "str",
+        "value": "OK_DIAGNOSTIC_ONLY_UNQUALIFIED"
+      },
+      "static_solve_replay.exact_field.statuses.0": {
+        "type": "str",
+        "value": "OK"
+      },
+      "static_solve_replay.exact_field.statuses.383": {
+        "type": "str",
+        "value": "OK"
+      },
+      "static_solve_replay.quadrature.positions_xyz_m": {
+        "type": "list",
+        "shape_or_size": [
+          384,
+          3
+        ]
+      },
+      "static_solve_replay.quadrature.volume_weights_m3": {
+        "type": "list",
+        "shape_or_size": [
+          256
+        ]
+      },
+      "static_solve_replay.quadrature.boundary_area_weights_m2": {
+        "type": "list",
+        "shape_or_size": [
+          128
+        ]
+      },
+      "static_solve_replay.quadrature.boundary_normals": {
+        "type": "list",
+        "shape_or_size": [
+          128,
+          3
+        ]
+      },
+      "static_solve_replay.basis.values": {
+        "type": "list",
+        "shape_or_size": [
+          384,
+          54
+        ]
+      },
+      "static_solve_replay.basis.gradients_per_m": {
+        "type": "list",
+        "shape_or_size": [
+          384,
+          54,
+          3
+        ]
+      },
+      "static_solve_replay.basis_row_ids": {
+        "type": "list",
+        "shape_or_size": [
+          54
+        ]
+      },
+      "static_solve_replay.basis_row_ids.0.source_id": {
+        "type": "str",
+        "value": "node-000"
+      },
+      "static_solve_replay.basis_row_ids.0.basis_kind": {
+        "type": "str",
+        "value": "base"
+      },
+      "static_solve_replay.basis_row_ids.53.source_id": {
+        "type": "str",
+        "value": "node-026"
+      },
+      "static_solve_replay.basis_row_ids.53.basis_kind": {
+        "type": "str",
+        "value": "front_f1_unshifted"
+      },
+      "static_solve_replay.registry.ordered_keys": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "static_solve_replay.registry.ordered_keys.0.slot": {
+        "type": "int",
+        "value": 0
+      },
+      "static_solve_replay.registry.ordered_keys.0.source_id": {
+        "type": "str",
+        "value": "node-000"
+      },
+      "static_solve_replay.registry.ordered_keys.0.component": {
+        "type": "str",
+        "value": "ux"
+      },
+      "static_solve_replay.registry.ordered_keys.0.basis_kind": {
+        "type": "str",
+        "value": "base"
+      },
+      "static_solve_replay.registry.ordered_keys.161.slot": {
+        "type": "int",
+        "value": 161
+      },
+      "static_solve_replay.registry.ordered_keys.161.source_id": {
+        "type": "str",
+        "value": "node-026"
+      },
+      "static_solve_replay.registry.ordered_keys.161.component": {
+        "type": "str",
+        "value": "uz"
+      },
+      "static_solve_replay.registry.ordered_keys.161.basis_kind": {
+        "type": "str",
+        "value": "front_f1_unshifted"
+      },
+      "static_solve_replay.registry.source_ids": {
+        "type": "list",
+        "shape_or_size": [
+          27
+        ]
+      },
+      "static_solve_replay.boundary.traction_Pa": {
+        "type": "list",
+        "shape_or_size": [
+          128,
+          3
+        ]
+      },
+      "static_solve_replay.operator.K_N_per_m": {
+        "type": "list",
+        "shape_or_size": [
+          162,
+          162
+        ]
+      },
+      "static_solve_replay.operator.boundary_load_N": {
+        "type": "list",
+        "shape_or_size": [
+          162
+        ]
+      },
+      "static_solve_replay.provider_evidence.volume.condition_numbers": {
+        "type": "list",
+        "shape_or_size": [
+          256
+        ]
+      },
+      "static_solve_replay.provider_evidence.boundary.condition_numbers": {
+        "type": "list",
+        "shape_or_size": [
+          128
+        ]
+      },
+      "static_solve_replay.sources.rigid_mode_center_xyz_m": {
+        "type": "list",
+        "shape_or_size": [
+          3
+        ]
+      },
+      "fixed_case.geometry.radius_m": {
+        "type": "float",
+        "value": 0.01
+      },
+      "fixed_case.geometry.length_m": {
+        "type": "float",
+        "value": 0.01
+      },
+      "fixed_case.material_and_manufactured_field.young_modulus_Pa": {
+        "type": "float",
+        "value": 1000000.0
+      },
+      "fixed_case.material_and_manufactured_field.poisson_ratio": {
+        "type": "float",
+        "value": 0.3
+      },
+      "fixed_case.material_and_manufactured_field.mu_Pa": {
+        "type": "str",
+        "value": "E/(2*(1+nu))"
+      },
+      "fixed_case.material_and_manufactured_field.lambda_Pa": {
+        "type": "str",
+        "value": "E*nu/((1+nu)*(1-2*nu))"
+      },
+      "fixed_case.material_and_manufactured_field.K_III_Pa_sqrt_m": {
+        "type": "float",
+        "value": 100.0
+      }
+    }
+  }
+}

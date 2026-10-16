@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261006\solved_j_stage_independent\independent_review.py", line 152, in <module>
+    axes = np.asarray(contour["ellipse_semiaxes_m"], dtype=np.float64)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'dict'

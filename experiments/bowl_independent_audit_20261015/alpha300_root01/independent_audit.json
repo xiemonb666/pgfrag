@@ -1,0 +1,7 @@
+{
+  "auditor_sha256": "cb7d5ab929cabcbcf8596d74af83e8ad3380a52185ec2f6dd5a0e516fad83300",
+  "error": "AuditInputError: matplotlib is required to render the requested standard audit figures",
+  "run_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\data\\continuation_20261015\\alpha300\\run_attempt_01",
+  "schema": "pgfrag.independent_bowl_audit.v1",
+  "status": "INPUT_ERROR"
+}

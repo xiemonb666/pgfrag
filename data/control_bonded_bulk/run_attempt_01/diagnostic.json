@@ -1,0 +1,60 @@
+{
+  "status": "NATIVE_BONDED_BULK_CONTROL_COMPLETE_DIAGNOSTIC",
+  "solver_steps_completed": 3244,
+  "mesh_counts": [
+    1212,
+    4342,
+    0
+  ],
+  "dt_s": 1.5413070283600494e-08,
+  "native_bulk_stable_dt_s": 3.854377218288659e-08,
+  "elapsed_s": 4.873796657,
+  "same_initial_node_and_t4_source_order": true,
+  "native_to_source_zero_based_arange": true,
+  "all_node_mass_pass": true,
+  "load_weight_reference_match": {
+    "reference_artifact": "cohesive_lowload_loading_reference.json",
+    "reference_sha256": "5b7981baf905ba92101250debc1957b7f17bfdf24da2f54f9c3a685fa6794b24",
+    "patches": [
+      {
+        "sign": -1,
+        "same_native_patch_node_ids": true,
+        "max_abs_weight_difference": 1.457167719820518e-16,
+        "weight_count_reference": 110,
+        "weight_count_bulk": 110
+      },
+      {
+        "sign": 1,
+        "same_native_patch_node_ids": true,
+        "max_abs_weight_difference": 1.457167719820518e-16,
+        "weight_count_reference": 102,
+        "weight_count_bulk": 102
+      }
+    ],
+    "max_abs_target_com_difference_m": 6.938893903907228e-18,
+    "same_weights_within_2e-12": true,
+    "target_com_equal_within_1e-12_m": true
+  },
+  "all_dofs_free": true,
+  "compliance_diagnostic": {
+    "definition": "right(+x) minus left(-x) force-weighted patch mean Ux / actual applied resultant force",
+    "classification": "transient secant compliance of the fully bonded finite bulk under this pulse; not interface compliance",
+    "peak_load_step": 811,
+    "peak_load_time_s": 1.25e-05,
+    "actual_peak_applied_force_N": 100.0,
+    "response_at_peak_load_m": 6.442884791215271e-07,
+    "response_divided_by_applied_force_m_per_N": 6.4428847912152714e-09,
+    "inverse_secant_stiffness_N_per_m": 155209976.9599291,
+    "max_abs_response_step": 1049,
+    "max_abs_response_time_s": 1.6168310727496916e-05,
+    "max_abs_response_m": 7.533827860826705e-07
+  },
+  "max_force_balance_residual_N": 1.1102230246251565e-16,
+  "max_abs_external_torque_Nm": [
+    0.0,
+    4.4671473440043713e-07,
+    6.254182817732332e-08
+  ],
+  "max_abs_energy_balance_residual_J": 1.4810111082251337e-10,
+  "qualification": "ACTUAL_NATIVE_BONDED_BULK_COMPLIANCE_DIAGNOSTIC_ONLY; NO_COHESIVE_INTERFACE; NO_PHYSICAL_OR_MATERIAL_CALIBRATION_QUALIFICATION"
+}

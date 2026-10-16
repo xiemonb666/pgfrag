@@ -1,0 +1,13 @@
+# Reference vessel native zero-step preflight
+
+The frozen wrapper completed a native preflight with zero solver steps. It initialized Akantu on the v5 reference-vessel mesh, inserted cohesive Tri3 facets, assembled native lumped mass, computed the independent bulk/interface stability bound, and verified a positive balanced loading patch. No solver evolution or fracture outcome was produced.
+
+The original mesh physical names did not match the wrapper contract. A new attempt used a byte-audited alias copy that changed only tag 2 from `cut_interface` to `interface` and tag 3 from `source_exterior` to `exterior`. The original mesh and its result report are preserved in `source_archive`; raw node and element blocks are unchanged, and the frozen parser confirms identical node, tetrahedron, triangle, physical-tag, and element order. Attempt 01 remains preserved with its failure record.
+
+Native results: 18634 nodes after seam insertion, 56139 bulk T4, 541 cohesive Tri3, 1623 interface quadrature points, and 0.07478999938 kg total mass. Interface area is 0.0003880800592 m². The stiffness upper bound is 1.788496E+16 s⁻²; critical dt is 1.495499E-08 s; native bulk dt is 5.554655E-09 s. The selected dt is 2.221827E-09 s, giving 22504 steps for 50 μs. The positive COM-yz patch uses 3708 nodes, with reference unit-force residual 1.195E-15 N/N and torque residual components [0.0,-3.3546278819032715E-12,-1.186312289044476E-12] N·m/N.
+
+The wrapper history forecast is 5574228400 bytes at node stride 50 and 45024046192 bytes at stride 1. The actual zero-step preflight artifacts already occupy 45659833 bytes before the receipt. With a 20% storage margin, rounded allocations are 7 GiB for stride 50 and 51 GiB for stride 1. Both forecasts exceed the configured 64 MiB history cap, so the current case cap would reject a future full-history run before allocating history. These are storage forecasts and do not predict runtime.
+
+The source is a diagnostic v5 geometry candidate. Exterior source-face ancestry is unbound, so this run does not qualify fragments or surface paint. Material and interface values remain placeholder, uncalibrated cost-estimate values with no specimen physical data.
+
+`execution_record.json` contains argv, hashes, exact source/derived mesh binding, raw/parser equivalence, native receipt, stdout/stderr hashes, mass/time-step evidence, balanced-patch metrics, and both cost forecasts. Its SHA-256 is `8aadcebdb25494c0d128fdef0392c960a54f8f711d7c6fa47fcd88d86beae302`.

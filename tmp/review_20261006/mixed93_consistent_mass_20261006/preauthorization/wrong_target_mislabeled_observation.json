@@ -1,0 +1,9 @@
+{
+  "schema": "pgfrag.mixed93_mass_outer_execution.v1",
+  "command": "third_party/vesselforge-runtime/venv/Scripts/python.exe -B mass_replay_audit.py",
+  "return_code": 1,
+  "wall_seconds": 0.0746307,
+  "stdout_path": "preauthorization/mass_audit.stdout.log",
+  "stderr_path": "preauthorization/mass_audit.stderr.log",
+  "started_utc": "2026-10-06T14:20:07Z"
+}

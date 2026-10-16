@@ -1,0 +1,89 @@
+{
+  "schema": "fixed_load_front_source_only_review.v1",
+  "status": "READY_FOR_DIAGNOSTIC_AFTER_PIN",
+  "scope": {
+    "sources_read": [
+      "pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis.py",
+      "pgfrag/experiments/fixed_load_front_reanalysis_20261006/fixed_load_front_reanalysis_case.json",
+      "pgfrag/experiments/fixed_load_front_reanalysis_20261006/README.md"
+    ],
+    "implementation_imported": false,
+    "provider_called": false,
+    "assembly_or_solve_called": false,
+    "CAD_tests_git_called": false,
+    "source_or_production_writes": false
+  },
+  "hashes": {
+    "module_sha256": "e939bc8121a9b62287b5749e75e1cc0e60823d38f327eb288d74f112884b567e",
+    "case_sha256": "c516eeb00588f063229fc7478cfd32ff3c9ebcc7a9b8f551a903de961331a140",
+    "readme_sha256": "f4d08663e37d36ad5cdcaba490b37ae733e1aa629ecee0bf1d372c5809c16d98",
+    "operator_result_actual_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+    "operator_result_expected_sha256_matches": true,
+    "source_pins_actual_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "source_pins_expected_sha256_matches": true
+  },
+  "pin_blocker": {
+    "baseline_path": "pgfrag/tmp/review_20261006/full3d_static_solve_bridge_20261006/run01/static_solve_bridge_result.json",
+    "baseline_sha256_in_case": null,
+    "baseline_file_currently_exists": false,
+    "execution_blocks_before_numeric_import_after_source_and_operator_pin_checks": true
+  },
+  "source_findings": {
+    "cached_base_row_mapping": "Explicit (source_id,basis_kind) mapping for saved rows and new registry rows; BASE values and gradients are copied unchanged.",
+    "shifted_basis": "front_f1_unshifted becomes phi*Fbar; gradient is Fbar*grad(phi)+phi*grad(Fbar); singular tip and shifted negative-x branch queries block as UNKNOWN.",
+    "basis_generation_hash_inputs": [
+      "algorithm identifier",
+      "front extension",
+      "operator result SHA-256",
+      "canonical IDs",
+      "transformed value bytes",
+      "transformed gradient bytes"
+    ],
+    "fixed_samples_and_load": {
+      "rest_sites": 27,
+      "semantic_dofs": 162,
+      "quadrature_rows_reused": 384,
+      "volume_rows": 256,
+      "boundary_rows": 128,
+      "new_queries": 0,
+      "traction_values_positions_normals_weights_reused": true,
+      "load_reintegrated_on_shifted_basis": true,
+      "old_load_only_used_for_reconstruction_comparison": true,
+      "old_coefficients_migrated": false,
+      "KIII_traction_updated": false
+    },
+    "operator": "New cached basis values/gradients are passed to the full-3D isotropic assembler; source result labels operator lambda+mu B.T D B. Dependency internals were outside this source-only scope.",
+    "gauge_and_solve": {
+      "physical_volume_moments": 6,
+      "rotation_center": "saved volume centroid",
+      "target_source": "six fixed baseline g_target_m values",
+      "positive_modeiii_r_rx_gate": "target[3] > 0",
+      "scaled_spectrum_gate": "6 near-zero, 156 positive, 0 significant negative",
+      "direct_scaled_kkt_dimension": 168,
+      "np_linalg_solve_calls_in_run": 1,
+      "pseudoinverse_ridge_load_repair_coefficient_pinning": false
+    },
+    "finite_change": {
+      "potential": "Pi=U-boundary_work",
+      "release": "-delta_Pi/(L*delta_a)",
+      "full_length_m": 0.01,
+      "delta_a_m": 0.0005,
+      "one_sided_area_m2": 5e-6,
+      "two_face_area_m2": 1e-5,
+      "Gc_comparison": false,
+      "growth_commit": false,
+      "autonomous_fracture_claim": false
+    }
+  },
+  "specific_source_issue": {
+    "severity": "P2 execution-budget guard gap",
+    "detail": "MAX_SECONDS timer begins inside _run after source/hash verification, JSON reads, and numerical imports. A distinct allowed --output also permits another invocation, so retry:false is not enforced across calls.",
+    "affects_front_formula": false,
+    "before_execution_action": "If the 60-second limit and one-attempt policy cover the whole invocation, extend the deadline to main entry and enforce an attempt lock/receipt or have the main reviewer explicitly operationalize one call."
+  },
+  "acceptance_limits": [
+    "No diagnostic values or solver behavior were validated because the baseline bridge artifact and SHA are absent.",
+    "This synthetic engineering diagnostic is not ceramic calibration or autonomous crack growth.",
+    "Full-3D B/D implementation internals were not read under the assigned scope."
+  ]
+}

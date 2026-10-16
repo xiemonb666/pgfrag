@@ -1,0 +1,976 @@
+{
+  "checks": [
+    {
+      "details": {
+        "native_status": "PASS"
+      },
+      "name": "native_status_pass",
+      "passed": true
+    },
+    {
+      "details": {
+        "case_schema": "pgfrag.native_bowl_case.v1"
+      },
+      "name": "case_schema",
+      "passed": true
+    },
+    {
+      "details": {
+        "case_run_id": "synthetic_handtest",
+        "result_run_id": "synthetic_handtest"
+      },
+      "name": "run_id_binding",
+      "passed": true
+    },
+    {
+      "details": {
+        "arrays_payload_bytes_recorded": 8422,
+        "arrays_payload_receipt_passed": true,
+        "arrays_payload_sha256_recorded": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131",
+        "output_receipts": [
+          {
+            "bytes_actual": 1160,
+            "bytes_recorded": 1160,
+            "passed": true,
+            "path": "case.json",
+            "sha256_actual": "52a4e892d8cd1c83f0eaf8daf34a60c8511355edfd3d4c47b8eeb120e697c7a9",
+            "sha256_recorded": "52a4e892d8cd1c83f0eaf8daf34a60c8511355edfd3d4c47b8eeb120e697c7a9"
+          },
+          {
+            "bytes_actual": 39,
+            "bytes_recorded": 39,
+            "passed": true,
+            "path": "case.toml",
+            "sha256_actual": "a1386a20da125e315524d9ca0e1fcee0972ea9f002a46599295762d16fd7397c",
+            "sha256_recorded": "a1386a20da125e315524d9ca0e1fcee0972ea9f002a46599295762d16fd7397c"
+          },
+          {
+            "bytes_actual": 8422,
+            "bytes_recorded": 8422,
+            "passed": true,
+            "path": "arrays.npz",
+            "sha256_actual": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131",
+            "sha256_recorded": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131"
+          }
+        ]
+      },
+      "name": "output_and_array_hashes",
+      "passed": true
+    },
+    {
+      "details": {
+        "external_asset_manifest_verified": true,
+        "source_receipts": [
+          {
+            "bytes_actual": 58,
+            "bytes_recorded": 58,
+            "passed": true,
+            "path": "source_snapshot/bowl_dynamics.py",
+            "sha256_actual": "11c89ae90b501afe74dcee18c4a4dbe04bc08d0645a6844c1db71030ff329cbd",
+            "sha256_recorded": "11c89ae90b501afe74dcee18c4a4dbe04bc08d0645a6844c1db71030ff329cbd"
+          },
+          {
+            "bytes_actual": 52,
+            "bytes_recorded": 52,
+            "passed": true,
+            "path": "source_snapshot/run_bowl_dynamics.jl",
+            "sha256_actual": "575f68f5207c9f52f3a3dbe1773ebe318c5394bc6dce66bbf74765bfd42e1cc9",
+            "sha256_recorded": "575f68f5207c9f52f3a3dbe1773ebe318c5394bc6dce66bbf74765bfd42e1cc9"
+          },
+          {
+            "bytes_actual": 34,
+            "bytes_recorded": 34,
+            "passed": true,
+            "path": "source_snapshot/Project.toml",
+            "sha256_actual": "575c1bcb747c90edc6d0c84648eab20f13334a4e039989fbe29869222c3edc87",
+            "sha256_recorded": "575c1bcb747c90edc6d0c84648eab20f13334a4e039989fbe29869222c3edc87"
+          },
+          {
+            "bytes_actual": 35,
+            "bytes_recorded": 35,
+            "passed": true,
+            "path": "source_snapshot/Manifest.toml",
+            "sha256_actual": "d3fdc30aa0c44d528fab6e051e4d672dbd7a02d876a175a11cbe7ba730f8f6f5",
+            "sha256_recorded": "d3fdc30aa0c44d528fab6e051e4d672dbd7a02d876a175a11cbe7ba730f8f6f5"
+          },
+          {
+            "bytes_actual": 53,
+            "passed": true,
+            "path": "asset/manifest.json",
+            "resolved_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run\\asset\\manifest.json",
+            "sha256_actual": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0"
+          }
+        ]
+      },
+      "name": "source_receipt_hashes_and_paths",
+      "passed": true
+    },
+    {
+      "details": {
+        "recorded_source_names": [
+          "Manifest.toml",
+          "Project.toml",
+          "bowl_dynamics.py",
+          "manifest.json",
+          "run_bowl_dynamics.jl"
+        ],
+        "required_source_names": [
+          "Manifest.toml",
+          "Project.toml",
+          "bowl_dynamics.py",
+          "manifest.json",
+          "run_bowl_dynamics.jl"
+        ]
+      },
+      "name": "source_receipt_coverage",
+      "passed": true
+    },
+    {
+      "details": {
+        "argv": [
+          "synthetic-julia",
+          "--project=synthetic",
+          "run_bowl_dynamics.jl",
+          "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run\\case.toml",
+          "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run"
+        ],
+        "argv_json_bytes": 1391,
+        "argv_json_sha256": "c71c414f7df1c2584b46c198efc79ab4f073dce609856b566bf8911d7fe04103",
+        "case_and_runner_paths_valid": true,
+        "run_id": "synthetic_handtest",
+        "source_receipts_match_result": true
+      },
+      "name": "execution_argv_binding",
+      "passed": true
+    },
+    {
+      "details": {
+        "external_manifest_verified": true,
+        "sha256": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0"
+      },
+      "name": "asset_manifest_hash_binding",
+      "passed": true
+    },
+    {
+      "details": {
+        "contract_units": "SI"
+      },
+      "name": "si_unit_contract",
+      "passed": true
+    },
+    {
+      "details": {
+        "array_count": 40
+      },
+      "name": "no_object_arrays",
+      "passed": true
+    },
+    {
+      "details": {
+        "nonfinite_counts": {}
+      },
+      "name": "all_native_numeric_arrays_finite",
+      "passed": true
+    },
+    {
+      "details": {
+        "center_m": [
+          0.0,
+          0.0,
+          0.012
+        ],
+        "inner_radius_m": 0.008,
+        "outer_radius_m": 0.012
+      },
+      "name": "frozen_geometry",
+      "passed": true
+    },
+    {
+      "details": {
+        "E_pa": 70000000000.0,
+        "Gc_j_m2": 7.6,
+        "calibration_status": "UNVALIDATED_PROTOTYPE",
+        "nu": 0.25,
+        "rho_kg_m3": 2300.0
+      },
+      "name": "prototype_material_parameters",
+      "passed": true
+    },
+    {
+      "details": {
+        "calibration_status": "UNVALIDATED_PROTOTYPE"
+      },
+      "name": "prototype_material_remains_unvalidated",
+      "passed": true
+    },
+    {
+      "details": {
+        "model_fields": "NoCorrection CriticalStretch VelocityVerlet BBMaterial BB BBMaterial{NoCorrection}, CriticalStretch, VelocityVerlet NATIVE_COMPLETE"
+      },
+      "name": "native_model_contract",
+      "passed": true
+    },
+    {
+      "details": {
+        "alpha_s_1": 0.0,
+        "boundary_conditions": "none declared",
+        "gaussian_peak_m_s": 0.0,
+        "gaussian_sigma_m": 0.0,
+        "mode": "zero",
+        "momentum_constraint": "remove mass-mean translation and angular momentum",
+        "rate_tensor_s_1": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "name": "frozen_free_loading",
+      "passed": true
+    },
+    {
+      "details": {
+        "delta_m": 0.03,
+        "delta_over_h": 2.5,
+        "h_m": 0.012
+      },
+      "name": "horizon_and_spacing_positive",
+      "passed": true
+    },
+    {
+      "details": {
+        "case_geometry": {
+          "analytic_volume_m3": 2.546784444510125e-06,
+          "center_m": [
+            0.0,
+            0.0,
+            0.012
+          ],
+          "delta_m": 0.03,
+          "h_m": 0.012,
+          "inner_radius_m": 0.008,
+          "lattice_volume_m3": 6.912e-06,
+          "n_points": 4,
+          "outer_radius_m": 0.012,
+          "shape": "concentric_lower_hemisphere_shell"
+        },
+        "result_geometry": {
+          "analytic_volume_m3": 2.546784444510125e-06,
+          "center_m": [
+            0.0,
+            0.0,
+            0.012
+          ],
+          "delta_m": 0.03,
+          "h_m": 0.012,
+          "inner_radius_m": 0.008,
+          "lattice_volume_m3": 6.912e-06,
+          "n_points": 4,
+          "outer_radius_m": 0.012,
+          "shape": "concentric_lower_hemisphere_shell"
+        }
+      },
+      "name": "case_result_geometry_binding",
+      "passed": true
+    },
+    {
+      "details": {
+        "point_count": 4,
+        "point_ids": "0..N-1"
+      },
+      "name": "complete_point_id_coverage",
+      "passed": true
+    },
+    {
+      "details": {
+        "n_points": 4
+      },
+      "name": "point_count_binding",
+      "passed": true
+    },
+    {
+      "details": {
+        "first_step": 0,
+        "last_step": 1,
+        "state_count": 2
+      },
+      "name": "state_step_coverage",
+      "passed": true
+    },
+    {
+      "details": {
+        "dt_s": 0.5,
+        "max_points": 12000,
+        "max_steps": 1000,
+        "reported_steps": 1,
+        "safety_factor": 0.5,
+        "saved_states": 2,
+        "stable_dt_s": 1.0,
+        "threads": 1
+      },
+      "name": "native_stable_dt_and_budget",
+      "passed": true
+    },
+    {
+      "details": {
+        "canonical_pair_count": 4,
+        "max_pairs": 2000000,
+        "max_persistent_output_bytes": 134217728,
+        "max_runtime_s": 120.0,
+        "peak_raw_plus_final_bytes": 9621,
+        "wall_runtime_s": 0.01
+      },
+      "name": "run_resource_budget",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 2e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 2e-12
+      },
+      "name": "time_grid_matches_native_dt",
+      "passed": true
+    },
+    {
+      "details": {
+        "coordinate_max_abs_m": 0.0,
+        "expected_points": 4,
+        "saved_points": 4
+      },
+      "name": "complete_reference_lattice",
+      "passed": true
+    },
+    {
+      "details": {
+        "inner_radius_m": 0.008,
+        "max_z_m": 0.006,
+        "maximum_radius_m": 0.010392304845413267,
+        "minimum_radius_m": 0.010392304845413263,
+        "outer_radius_m": 0.012
+      },
+      "name": "reference_points_inside_analytic_shell",
+      "passed": true
+    },
+    {
+      "details": {
+        "analytic_shell_volume_m3": 2.546784444510125e-06,
+        "expected_h3_m3": 1.728e-06,
+        "point_count": 4,
+        "relative_volume_quadrature_error": 1.7140106085144264,
+        "sum_volume_m3": 6.912e-06
+      },
+      "name": "all_point_volumes_including_isolated",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_total_mass_kg": 0.0158976,
+        "isolated_points_are_included": true,
+        "point_count": 4,
+        "reported_total_mass_kg": 0.0158976
+      },
+      "name": "complete_point_mass_coverage",
+      "passed": true
+    },
+    {
+      "details": {
+        "indices_0_based_i_lt_j": true,
+        "lexicographically_sorted_unique": true,
+        "pair_count": 4
+      },
+      "name": "canonical_pair_roster",
+      "passed": true
+    },
+    {
+      "details": {
+        "all_within_horizon_before_void_filter": 6,
+        "initial_geometric_exclusions": 2,
+        "native_canonical_pair_count": 4,
+        "retained_after_exact_inner_sphere_filter": 4
+      },
+      "name": "analytic_candidate_and_native_pair_sets_reciprocal",
+      "passed": true
+    },
+    {
+      "details": {
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "pair_count": 4
+      },
+      "name": "native_reference_rest_lengths",
+      "passed": true
+    },
+    {
+      "details": {
+        "independent_exclusion_count": 2,
+        "native_reported_exclusion_count": 2
+      },
+      "name": "initial_geometric_exclusion_count",
+      "passed": true
+    },
+    {
+      "details": {
+        "criterion": "closed-segment distance >= inner radius",
+        "tested_pairs": 4
+      },
+      "name": "reference_filter_reciprocal",
+      "passed": true
+    },
+    {
+      "details": {
+        "formula_sc": 5.4916964736527604e-05,
+        "native_epsilon_max": 5.4916964736527604e-05,
+        "native_epsilon_min": 5.4916964736527604e-05
+      },
+      "name": "uniform_critical_stretch_formula",
+      "passed": true
+    },
+    {
+      "details": {
+        "bitorder": "little; 1=active",
+        "padding_bits_zero": true,
+        "shape": [
+          2,
+          1
+        ]
+      },
+      "name": "packed_active_little_bitorder_and_padding",
+      "passed": true
+    },
+    {
+      "details": {
+        "event_count": 0,
+        "pair_count": 4,
+        "state_count": 2
+      },
+      "name": "event_indices_unique_and_in_range",
+      "passed": true
+    },
+    {
+      "details": {
+        "ordering": "step, then canonical pair index"
+      },
+      "name": "event_table_stable_order",
+      "passed": true
+    },
+    {
+      "details": {
+        "actual_active_one_to_zero_only": true,
+        "first_crossing_count": 0,
+        "independently_reconstructed_active_matches_native": true,
+        "native_event_count": 0,
+        "near_threshold_ulp_offsets_sample": [],
+        "strict_operator": "stretch > epsilon_c",
+        "threshold_breaks_disagreeing_with_native_active": 0,
+        "threshold_exact_evaluations": 0,
+        "threshold_near_pairs_over_states_within_4_ulp": 0,
+        "threshold_one_ulp_above_evaluations": 0,
+        "threshold_one_ulp_below_evaluations": 0
+      },
+      "name": "strict_threshold_and_irreversible_active_history",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 0
+      },
+      "name": "first_break_step_matches_threshold_reconstruction",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 3e-14,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 3e-10
+      },
+      "name": "first_break_stretch_matches_recorded_state",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected_event_count": 0,
+        "initial_state_events": 0,
+        "native_event_count": 0
+      },
+      "name": "event_table_equals_first_breaks",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 0,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 0
+      },
+      "name": "event_step_matches_first_break_array",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 2e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 2e-12
+      },
+      "name": "event_time_matches_state_time",
+      "passed": true
+    },
+    {
+      "details": {
+        "event_count": 0,
+        "independent_event_stretch_difference": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "minimum_stretch_margin": null
+      },
+      "name": "event_strict_threshold_and_recorded_positions",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-20,
+        "energy_is_pre_removal_at_actual_break_state": true,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 5e-10
+      },
+      "name": "event_pair_energy_recomputed_at_recorded_state",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 2e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 2e-12
+      },
+      "name": "first_break_time_matches_event_state",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 0,
+        "component_count": 1,
+        "includes_isolated_points": true,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 0,
+        "semantics": "minimum point ID representative of active graph component"
+      },
+      "name": "component_labels_union_find_state_0",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 0,
+        "component_count": 1,
+        "includes_isolated_points": true,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 0,
+        "semantics": "minimum point ID representative of active graph component"
+      },
+      "name": "component_labels_union_find_state_1",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 3e-07,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 3e-07,
+        "zero_initial_degree_damage": 0.0
+      },
+      "name": "damage_matches_broken_neighbor_fraction",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 3e-08
+      },
+      "name": "ledger_kinetic_energy",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 5e-07
+      },
+      "name": "ledger_pair_potential_energy",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 5e-07
+      },
+      "name": "ledger_break_dissipation_from_event_states",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 2e-05
+      },
+      "name": "native_strain_energy_matches_independent_pair_potential",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-18,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 3e-05
+      },
+      "name": "integrated_native_sed_matches_pair_potential",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-14,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 3e-08
+      },
+      "name": "ledger_linear_momentum",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-15,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "origin": "initial mass center of mass",
+        "rtol": 3e-08
+      },
+      "name": "ledger_angular_momentum",
+      "passed": true
+    },
+    {
+      "details": {
+        "atol": 1e-10,
+        "max_abs": 0.0,
+        "max_rel": 0.0,
+        "rtol": 5e-07
+      },
+      "name": "ledger_total_internal_force",
+      "passed": true
+    },
+    {
+      "details": {
+        "alpha_s_1": 0.0,
+        "initial_angular_momentum_norm_kg_m2_s": 0.0,
+        "initial_momentum_norm_kg_m_s": 0.0,
+        "velocity_max_abs_difference_mps": 0.0
+      },
+      "name": "initial_affine_velocity_and_P_L_removal",
+      "passed": true
+    },
+    {
+      "details": {
+        "L_norm_kg_m2_s": 0.0,
+        "P_norm_kg_m_s": 0.0,
+        "relative_L_residual": 0.0,
+        "relative_P_residual": 0.0
+      },
+      "name": "initial_zero_total_P_and_L",
+      "passed": true
+    },
+    {
+      "details": {
+        "L_characteristic_kg_m2_s": 0.0,
+        "P_characteristic_kg_m_s": 0.0,
+        "relative_L_drift": 0.0,
+        "relative_P_drift": 0.0
+      },
+      "name": "free_evolution_P_and_L_conservation",
+      "passed": true
+    },
+    {
+      "details": {
+        "event_count": 0,
+        "max_position_change_m": 0.0,
+        "max_speed_m_s": 0.0,
+        "zero_velocity_and_no_events": true
+      },
+      "name": "zero_load_rest_state",
+      "passed": true
+    },
+    {
+      "details": {
+        "checkpoint_steps": [
+          0,
+          1
+        ],
+        "state_count": 2
+      },
+      "name": "checkpoint_steps_valid",
+      "passed": true
+    },
+    {
+      "details": {
+        "checkpoints": [
+          {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "passed": true,
+            "step": 0
+          },
+          {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "passed": true,
+            "step": 1
+          }
+        ],
+        "formula": "c * stretch * Vi * Vj * unit_direction; equal and opposite pair forces"
+      },
+      "name": "checkpoint_native_internal_force",
+      "passed": true
+    },
+    {
+      "details": {
+        "checkpoints": [
+          {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "passed": true,
+            "step": 0
+          },
+          {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "passed": true,
+            "step": 1
+          }
+        ],
+        "formula": "internal_force / point_mass; no external force declared"
+      },
+      "name": "checkpoint_native_acceleration",
+      "passed": true
+    },
+    {
+      "details": {
+        "discrete_overshoot_is_retained": true,
+        "event_count": 0,
+        "event_energy_J_sum": 0.0,
+        "events_at_or_below_threshold_energy": 0,
+        "native_final_D_J": 0.0,
+        "ratio_max": null,
+        "ratio_mean": null,
+        "ratio_min": null
+      },
+      "name": "event_energy_overshoot",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "geometry_pair_audit": {
+    "all_within_horizon_before_void_filter": 6,
+    "horizon_boundary_policy": "candidate uses reference length <= delta; exact/near boundary count is reported separately",
+    "horizon_pair_lengths_within_4_ulp": 0,
+    "initial_geometric_exclusions": 2,
+    "inner_void_policy": "retain closed segment iff closest reference radius >= Ri",
+    "native_canonical_pair_count": 4,
+    "retained_after_exact_inner_sphere_filter": 4
+  },
+  "histories": {
+    "angular_momentum_independent_kg_m2_s": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "break_dissipation_independent_J": [
+      0.0,
+      0.0
+    ],
+    "break_dissipation_native_J": [
+      0.0,
+      0.0
+    ],
+    "components_active_graph": [
+      1,
+      1
+    ],
+    "damage_max": [
+      0.0,
+      0.0
+    ],
+    "damage_mean": [
+      0.0,
+      0.0
+    ],
+    "kinetic_independent_J": [
+      0.0,
+      0.0
+    ],
+    "kinetic_native_J": [
+      0.0,
+      0.0
+    ],
+    "largest_graph_component_mass_kg": [
+      0.0158976,
+      0.0158976
+    ],
+    "momentum_independent_kg_m_s": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "pair_potential_independent_J": [
+      0.0,
+      0.0
+    ],
+    "pair_potential_native_J": [
+      0.0,
+      0.0
+    ],
+    "step": [
+      0,
+      1
+    ],
+    "time_s": [
+      0.0,
+      0.5
+    ],
+    "total_internal_force_independent_N": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "total_mechanical_independent_J": [
+      0.0,
+      0.0
+    ],
+    "total_mechanical_relative_drift": [
+      0.0,
+      0.0
+    ]
+  },
+  "input": {
+    "arrays_npz": {
+      "bytes": 8422,
+      "path": "arrays.npz",
+      "sha256": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131"
+    },
+    "case_json": {
+      "bytes": 1160,
+      "path": "case.json",
+      "sha256": "52a4e892d8cd1c83f0eaf8daf34a60c8511355edfd3d4c47b8eeb120e697c7a9"
+    },
+    "result_json": {
+      "bytes": 3079,
+      "path": "result.json",
+      "sha256": "305a24082b1099a1664365f8ee8f3b135767b05604128d934eb401165bdff269"
+    },
+    "run_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run"
+  },
+  "interpretation": {
+    "break_dissipation": "discrete removed pair potential at recorded break states; it is not Gc times crack area",
+    "graph_components": "active-bond graph connectivity over all points, including isolated points; this does not establish physical shards, positive-area crack surfaces, or R2",
+    "initial_geometric_exclusion": "reference bonds whose closed segment enters the inner sphere are excluded before native initialization and are never fracture events",
+    "resolution_comparison": "half-dt and fixed-delta h comparisons are sensitivity studies; they do not establish asymptotic convergence"
+  },
+  "metrics": {
+    "K_pa": 46666666666.666664,
+    "L_final_norm_kg_m2_s": 0.0,
+    "L_initial_norm_kg_m2_s": 0.0,
+    "P_final_norm_kg_m_s": 0.0,
+    "P_initial_norm_kg_m_s": 0.0,
+    "analytic_volume_m3": 2.546784444510125e-06,
+    "c_N_m4": 3.300991412276348e+17,
+    "canonical_pair_count": 4,
+    "critical_stretch": 5.4916964736527604e-05,
+    "delta_m": 0.03,
+    "dt_s": 0.5,
+    "energy_total_relative_drift_max_abs": 0.0,
+    "event_count": 0,
+    "final_break_dissipation_J": 0.0,
+    "final_graph_component_count": 1,
+    "final_kinetic_energy_J": 0.0,
+    "final_largest_graph_component_mass_kg": 0.0158976,
+    "final_pair_potential_energy_J": 0.0,
+    "h_m": 0.012,
+    "initial_geometric_exclusion_count": 2,
+    "initial_kinetic_energy_J": 0.0,
+    "lattice_volume_m3": 6.912e-06,
+    "point_count": 4,
+    "relative_volume_quadrature_error": 1.7140106085144264,
+    "stable_dt_s": 1.0,
+    "total_point_mass_kg": 0.0158976
+  },
+  "native_schema": "pgfrag.native_bowl_result.v1",
+  "root_formula_values": {
+    "K_pa": 46666666666.666664,
+    "bond_constant_N_m6": 3.300991412276348e+17,
+    "critical_stretch": 5.4916964736527604e-05,
+    "formula": {
+      "K": "E/[3(1-2 nu)]",
+      "c": "18 K/(pi delta^4)",
+      "critical_stretch": "sqrt(5 Gc/(9 K delta))",
+      "pair_force_N": "c s Vi Vj e",
+      "pair_potential_J": "0.5 c Vi Vj L s^2"
+    }
+  },
+  "run_id": "synthetic_handtest",
+  "runtime": {
+    "argv": [
+      "pgfrag/experiments/bowl_independent_audit_20261015/audit_bowl_result.py",
+      "--self-test"
+    ],
+    "auditor_sha256": "23818b01fe01b91ce84b17f0dd34e08cfb668a7186a1b2d78fea3a47b1f1a2f0",
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "schema": "pgfrag.independent_bowl_audit.v1",
+  "status": "PASS",
+  "unverified_checks": []
+}

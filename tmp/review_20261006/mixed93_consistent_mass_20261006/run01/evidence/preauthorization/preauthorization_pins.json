@@ -1,0 +1,19 @@
+{
+  "schema": "pgfrag.mixed93_mass_preauthorization_snapshot.v1",
+  "execution_authorized": false,
+  "input_and_source_sha256": {
+    "pgfrag\\experiments\\mixed93_consistent_mass_20261006\\case.json": "5e985c3bd324cfd10e015b066996ecd448ff7a0abb369b634a54f3087e9ff244",
+    "pgfrag/tmp/review_20261006/mixed93_cached_lefm_solve_20261006/run01/arrays.npz": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+    "pgfrag/tmp/review_20261006/mixed93_saved_independent/audit.json": "b622b771f092768fc1dd73ef5fc4a7360b0f17329ff592639db48e5600ecd495",
+    "pgfrag\\experiments\\mixed93_consistent_mass_20261006\\README.md": "c7be101b6e9c5b0c06c9c7b4ea7304b99a0f38b9f1ce832fa3c05013dc23119a",
+    "pgfrag\\experiments\\mixed93_consistent_mass_20261006\\mass_replay_audit.py": "954f3f43a1a385c6540d2bc20562040d52c1c821c25b1566e68aa1c812352ffb",
+    "pgfrag\\experiments\\mixed93_consistent_mass_20261006\\mixed93_consistent_mass.py": "8887a9efbdf19a20b0d7890cff1acadeacc5923aecfb3b4f8695d24df33dfda2",
+    "pgfrag\\tmp\\review_20261006\\mixed93_consistent_mass_20261006\\SOURCE_FREEZE.json": "ae49a0f81e5eeeceb9f2b013b06194eeebd1ce9b419dc9662fc3788b9b3a18b4",
+    "pgfrag\\experiments\\mixed93_consistent_mass_20261006\\recovery_metadata_gate.py": "7e75e4e8e081cfbcb598a428bed0ed15b94016eeb607b75eaa1bc313cded6c5e"
+  },
+  "producer_result_json_present": false,
+  "snapshots": {
+    "source_freeze_sha256": "ae49a0f81e5eeeceb9f2b013b06194eeebd1ce9b419dc9662fc3788b9b3a18b4",
+    "case_sha256": "5e985c3bd324cfd10e015b066996ecd448ff7a0abb369b634a54f3087e9ff244"
+  }
+}

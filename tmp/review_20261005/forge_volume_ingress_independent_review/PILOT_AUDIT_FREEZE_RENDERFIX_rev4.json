@@ -1,0 +1,27 @@
+{
+  "adapter_sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32",
+  "adapter_sha256_matches_preserved_source_snapshot": true,
+  "all_sha256_pins_64_hex_lowercase": true,
+  "all_sha256_pins_count": 12,
+  "audit_invoked": false,
+  "freeze_sha256_pins": {
+    "$.analytic_source.sha256": "f2e8a7208e2522be69236de95c5b3de824feedab98ba4e840ca89d223349cc9d",
+    "$.audit_adapter.sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32",
+    "$.method_review.sha256": "948f3be5df0f07c8aa0c2a9fca8cf543dc46db3b39bda53eadf7427e014cfae4",
+    "$.prior_source_snapshot.sha256": "670afabf71f90d5bd9858ab3624dff8afa1666aa8507c3693126803e7e6bf16e",
+    "$.retained_stage_files.cell_in_progress.json.sha256": "5a166e9eef48a505b9bc00880d6bc264e87430aef1d748511e1059cc852e99e3",
+    "$.retained_stage_files.cell_ledger.json.sha256": "605ac46fa610141f45998cf66bb4cfe6381bc74c5c3e7e93c54fd22bfe44b56d",
+    "$.retained_stage_files.cell_ledger.partial.json.sha256": "544ed3557f0e24d68e91dd8ee5b566eede773d0f54b3f58633272ae2caac49b1",
+    "$.retained_stage_files.material_points.json.sha256": "ea0c64b996173735185368934c2bd6dfb7734ce1990813599c8f695b89bd1c0b",
+    "$.retained_stage_files.parent_execution_receipt.json.sha256": "97310270be5a002b78e24b75e61d3f8c301f66b8c3095ddef61caf475f2a6bb5",
+    "$.retained_stage_files.request.json.sha256": "ef3d3e668b183ecb2af98b02e0800ab93779e9a1ef91de9bfa151ca608334cbb",
+    "$.retained_stage_files.worker_failure.json.sha256": "5eb4c9739430bf1f9a26e8ce6f51d0d951e879791fe10a2f37fa586a8a6c5e1e",
+    "$.supervisor_summary.sha256": "391ae016166451f1135c0467cb90d24bfe751a3f39c199d1561705039d678213"
+  },
+  "new_freeze_sha256": "90a3ec268983453477f7a18a8d12b5e3323ead007bd4b0831bf60ad0d4635e50",
+  "preserved_adapter_snapshot_sha256": "827f429c141403a5e85c7c9a67376d38b0628f9904bf59a11e8dcfe883e2ec32",
+  "preserved_pre_render_freeze_sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60",
+  "prior_freeze_sha256": "52ed7e2e29f3024af461f2c938e164cb04dec4878d1d796537ef965248df3d60",
+  "schema": "pgfrag.forge_volume_ingress_renderretry_freeze_update.v1",
+  "status": "NEW_FREEZE_PINNED_NOT_EXECUTED"
+}

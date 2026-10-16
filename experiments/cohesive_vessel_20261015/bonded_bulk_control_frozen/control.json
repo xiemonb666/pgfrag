@@ -1,0 +1,38 @@
+{
+  "schema": "pgfrag.native_bonded_bulk_control.v1",
+  "case_name": "bonded_bulk_control",
+  "classification": "ACTUAL_NATIVE_BULK_COMPLIANCE_DIAGNOSTIC_ONLY",
+  "source_case": "weak_seam_v4",
+  "source_cohesive_reference": "bonded_cohesive_control_v1",
+  "material": {
+    "E_pa": 70000000000.0,
+    "Gc_j_m2": 7.6,
+    "nu": 0.25,
+    "rho_kg_m3": 2300.0
+  },
+  "loading": {
+    "peak_force_N": 100.0,
+    "pulse_duration_s": 2.5e-05,
+    "patch_x_threshold_m": 0.0085,
+    "type": "REFERENCE_DIRECTION_POSITIVE_NODAL_PATCH_FORCES",
+    "profile": "peak*sin(pi*t/25us)^2 for 0<t<25us, else zero",
+    "force_line": "reference complete bulk lumped mass COM y,z; source relative-entropy positive projection",
+    "constraints": "NONE; ALL NATIVE DOFS FREE"
+  },
+  "time": {
+    "total_s": 5.0e-05,
+    "steps": 3244,
+    "stable_dt_fraction": 0.4,
+    "dt_policy": "fixed exact same 50us/3244 baseline as bonded_cohesive_control_v1"
+  },
+  "output": {
+    "node_state_stride": 50,
+    "all_step_diagnostics": true,
+    "output_cap_bytes": 16777216
+  },
+  "limits": {
+    "wall_time_s": 120,
+    "max_steps": 4000
+  },
+  "qualification": "TRANSIENT PERFECTLY BONDED BULK COMPLIANCE DIAGNOSTIC; NOT INTERFACE COMPLIANCE, FRACTURE QUALIFICATION, OR MATERIAL CALIBRATION"
+}

@@ -1,0 +1,11 @@
+{
+  "lambda_upper_bound_per_s2": 2570520021463901.5,
+  "critical_time_step_s": 3.944750139695518e-08,
+  "bulk_only_native_dt_s": 3.854377218288659e-08,
+  "dt_s": 1.5413070283600494e-08,
+  "steps": 3244,
+  "mass_kg": 0.005841729055176267,
+  "interface_area_m2": 0.00012562331510181291,
+  "scope": "INITIAL_LINEAR_BULK_PLUS_DECLARED_COHESIVE_TANGENT_AT_REST_FACE_NORMALS; NO_CURRENT_NORMAL_GEOMETRIC_DERIVATIVE; NO_FULL_SOFTENING_OR_CONTACT_CLAIM",
+  "all_dofs_free": true
+}

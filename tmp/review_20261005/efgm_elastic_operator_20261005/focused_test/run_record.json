@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETED_PASS",
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_elastic_operator_20261005\\focused_test\\source_snapshot\\test_efgm_elastic_operator.py",
+    "--junitxml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_elastic_operator_20261005\\focused_test\\junit.xml"
+  ],
+  "python_version": "3.12.14",
+  "pytest_version": "8.4.2",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_elastic_operator_20261005\\focused_test\\source_snapshot",
+  "timeout_seconds": 30,
+  "elapsed_seconds": 0.5159999998286366,
+  "return_code": 0,
+  "junit": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\efgm_elastic_operator_20261005\\focused_test\\junit.xml",
+  "junit_counts": {
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pytest_invocations": 1
+}

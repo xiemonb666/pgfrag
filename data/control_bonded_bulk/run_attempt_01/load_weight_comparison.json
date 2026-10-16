@@ -1,0 +1,23 @@
+{
+  "reference_artifact": "cohesive_lowload_loading_reference.json",
+  "reference_sha256": "5b7981baf905ba92101250debc1957b7f17bfdf24da2f54f9c3a685fa6794b24",
+  "patches": [
+    {
+      "sign": -1,
+      "same_native_patch_node_ids": true,
+      "max_abs_weight_difference": 1.457167719820518e-16,
+      "weight_count_reference": 110,
+      "weight_count_bulk": 110
+    },
+    {
+      "sign": 1,
+      "same_native_patch_node_ids": true,
+      "max_abs_weight_difference": 1.457167719820518e-16,
+      "weight_count_reference": 102,
+      "weight_count_bulk": 102
+    }
+  ],
+  "max_abs_target_com_difference_m": 6.938893903907228e-18,
+  "same_weights_within_2e-12": true,
+  "target_com_equal_within_1e-12_m": true
+}

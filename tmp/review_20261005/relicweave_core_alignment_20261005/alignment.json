@@ -1,0 +1,52 @@
+{
+  "artifact": "PG-Frag to A12 core-alignment review",
+  "source_docx": "C:/Users/xiemo/Desktop/ShardForge/RelicWeave_V1.46_A12_VesselForge_PGFrag_Integrated_NavFixed.docx",
+  "source_sha256": "15978a3956fa33e8048cc54c1dad6878a7e19d9c71b84415dcaf8732f041a3b4",
+  "extraction": {
+    "method": "Read-only ZIP/XML extraction of word/document.xml; paragraph indices are one-based w:p order including empty paragraphs.",
+    "scope": "Relevant current A12, core-method, VesselForge, and PG-Frag roadmap/acceptance paragraphs only."
+  },
+  "current_state_supplied_by_parent": {
+    "qualified_complete_packs": 0,
+    "succeeded": "continuous MLS+PU prescribed crack operator, scalar UZ",
+    "under_review": "actual solver source",
+    "unknown_or_not_established": [
+      "crack growth",
+      "full 3D event",
+      "material calibration",
+      "physical shards",
+      "global vessel walls"
+    ],
+    "rejected_as_physical": "native OSB 4500 fixture: 6810 breaks, all-grip failure",
+    "vesselforge": "one production-handled family; smooth CAD experimental; two-cap mesh surface-only"
+  },
+  "stage_mapping": [
+    {
+      "stage": "Source/provenance review and minimal crack-growth benchmark; keep MLS+PU Experimental.",
+      "serves": "PG-Frag solver correctness/stability/physics benchmark, prerequisite evidence only; not fragment qualification.",
+      "doc_paragraphs": [6470, 6474, 6484, 6756, 6757, 6758, 6760, 6761, 6763]
+    },
+    {
+      "stage": "One reproducible PD backend, basic collision, fragment extraction; verify clean fracture surfaces and lineage.",
+      "serves": "PG-Frag v0.1 and A12 SY1 minimum exact-adjacency loop, generating trusted R2 and relation/hard-negative truth.",
+      "doc_paragraphs": [6719, 6721, 1104, 1193, 1194, 1456, 1457, 1458, 1459, 1282]
+    },
+    {
+      "stage": "Calibrate material and validate against independent physical/numerical reference before promotion or scale-up.",
+      "serves": "Physical credibility of complete fragment packs and later A12 controlled training/evaluation.",
+      "doc_paragraphs": [6427, 6756, 6761, 6765, 1481, 1483]
+    },
+    {
+      "stage": "A12 degradation/observation, high-recall retrieval, evidence deliberation, then selective local geometry/physics verification.",
+      "serves": "Observed fragment -> ranked candidates -> evidence/support/contradiction -> accept/reject/recapture/STOP.",
+      "doc_paragraphs": [474, 576, 688, 689, 690]
+    }
+  ],
+  "core_vs_backend": {
+    "core": "Iterative Evidence Deliberation; substrate may change without changing the scientific claim.",
+    "safe_engineering_alternative": "Reuse a mature PD backend through an adapter and unified benchmark; keep MLS+PU Experimental until reproducibly justified.",
+    "doc_paragraphs": [496, 6454, 6457, 6484, 6485, 6486, 6490, 690]
+  },
+  "physical_fragment_or_R2_qualification_claimed": false,
+  "document_edited": false
+}

@@ -1,0 +1,159 @@
+{
+  "checker_attempt": {
+    "capture_elapsed_seconds_after_preflight": 0.238401,
+    "classification": "FIXED_MODE_I_ELASTIC_COHESIVE_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+    "result_bytes": 4846,
+    "result_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent\\run02\\result.json",
+    "result_sha256": "06c3362a3ed405edb78edf201ae2e1520054cf59ba284fe007c2b819b9763e5c",
+    "return_code": 0,
+    "status": "PASS_DIAGNOSTIC_ONLY",
+    "timed_out": false
+  },
+  "checker_child_argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent\\check_saved_result.py",
+    "--execute",
+    "--root-go",
+    "ROOT_20261007_MIXED93_SAVED_INDEPENDENT_RETRY2",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent\\run02\\result.json"
+  ],
+  "checker_child_argv_source": "run02/external_receipt.json:argv",
+  "correction_note": "Postrun audit corrected its local argv token-position check; retained run02 bytes and checker outputs were not changed.",
+  "gate_status": {
+    "independent": {
+      "artifact_binding": "PASS",
+      "baseline_traction_force_energy": "PASS",
+      "cached_kkt": "PASS",
+      "coupled_kkt_and_energy": "PASS",
+      "interface_area_and_traces": "PASS",
+      "mechanical_change": "PASS",
+      "six_rigid_modes": "PASS",
+      "synthetic_zero_control": "PASS"
+    },
+    "producer": {
+      "cache_identity": "PASS",
+      "coupled_kkt": "PASS",
+      "coupled_spectrum": "PASS",
+      "energy": "PASS",
+      "exact_traces": "PASS",
+      "interface_quadrature": "PASS",
+      "mechanical_change": "PASS",
+      "mls": "PASS",
+      "primitive_baseline": "PASS",
+      "primitive_final": "PASS",
+      "raw_spectrum": "PASS",
+      "resource_budget": "PASS",
+      "rigid_traces": "PASS",
+      "scaled_cached_kkt": "PASS",
+      "zero_tangent_control": "PASS"
+    }
+  },
+  "independent_receipt_audit": {
+    "actual_run02_tree_bytes": 16671,
+    "authorized_pins_sha256": "0f0d35f06162db5ab2ac134793ed42701d1f18ac9f8873c81fb862884e000a53",
+    "disabled_pins_snapshot_sha256": "c1bf803738ea6d5315ffd840df57491d7f0f5fb66c0c772afd4ae32240de0f7d",
+    "errors": [],
+    "external_receipt_sha256": "d78e59ee22c4639a22a96ec7bf262d3094a1cca69f025d4ee747dc7a539ca9b2",
+    "pre_post_equal_map": {
+      "cached_case": true,
+      "cached_producer": true,
+      "cached_source_pins": true,
+      "capture_source": true,
+      "case": true,
+      "cohesive_derivative": true,
+      "cohesive_scalar_law": true,
+      "independent_case": true,
+      "independent_pins": true,
+      "independent_saved_checker": true,
+      "independent_source_contract": true,
+      "mixed_enriched_operator": true,
+      "mixed_lefm_field": true,
+      "mls3d_mls": true,
+      "mls3d_shape": true,
+      "numeric_supervisor": true,
+      "numeric_worker": true,
+      "producer_npz": true,
+      "producer_receipt": true,
+      "producer_result": true,
+      "readme": true,
+      "recovery_audit": true,
+      "recovery_receipt": true,
+      "static_checker": true,
+      "static_source_pins": true,
+      "trace_primitive": true,
+      "upstream_fixed_case": true,
+      "upstream_result": true
+    },
+    "producer_npz_post": {
+      "bytes": 1569232,
+      "exists": true,
+      "sha256": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41"
+    },
+    "receipt_tree_bytes": 16671,
+    "source_and_npz_snapshots_exist_and_stable": true,
+    "tracked_snapshot_count": 28,
+    "tree_tally_matches_receipt": true,
+    "within_4MiB": true
+  },
+  "limitations": [
+    "fixed crack; no growth",
+    "no incremental external-work claim",
+    "toy material fixture only; no calibration or qualification",
+    "zero-tangent control is synthetic",
+    "no solver/eigensolve/provider/author module call"
+  ],
+  "numeric_diagnostic_metrics": {
+    "all_producer_gates_PASS": true,
+    "analytic_KG_82_82_N_per_m": 20000.0,
+    "baseline": {
+      "area_m2": 9.999999999999996e-05,
+      "dissipated_energy_J": 0.0,
+      "max_local_force_residual_N": 0.0,
+      "max_rigid_residual_m": 4.440892098500626e-16,
+      "open_max_m": 2.801882423252551e-07,
+      "open_min_m": 7.653413248638166e-08,
+      "stored_energy_J": 2.1090731143189732e-10
+    },
+    "cache_bytes_match_npz": true,
+    "cache_q_lambda_kkt_relative_error": 4.044592626897382e-17,
+    "coupled_energy_identity_relative_error": 3.712114389010148e-16,
+    "coupled_gauge_relative_error": 2.3984993037735006e-17,
+    "coupled_weak_relative_error": 1.510346474698142e-17,
+    "final": {
+      "area_m2": 9.999999999999996e-05,
+      "dissipated_energy_J": 0.0,
+      "max_local_force_residual_N": 0.0,
+      "max_rigid_residual_m": 4.440892098500626e-16,
+      "open_max_m": 1.77109829542757e-08,
+      "open_min_m": 4.837800132644625e-09,
+      "stored_energy_J": 8.427080683251519e-13
+    },
+    "one_side_area_m2": 9.999999999999996e-05,
+    "producer_spectrum_gates_only": true,
+    "q_change_norm_m": 3.5865664297486785e-07,
+    "quadrature_points": 16,
+    "rigid_trace_checks_baseline_and_final": true,
+    "spectrum_recomputed": false,
+    "zero_tangent_control_is_synthetic": true
+  },
+  "outer_exec_command": {
+    "actual_tool_argv_if_not_captured": null,
+    "argv_capture_note": "The full tools.exec_command PowerShell argv was not retained as a structured field; the capture invocation above is known, and the exact checker child argv is recorded separately below from run02/external_receipt.json.",
+    "capture_invocation": {
+      "interpreter": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+      "python_options": [
+        "-B"
+      ],
+      "root_go_token": "ROOT_20261007_MIXED93_SAVED_INDEPENDENT_RETRY2",
+      "script": "capture_once.py"
+    },
+    "exit_code": 0,
+    "scope": "Whole PowerShell invocation of VF Python -B capture_once.py, including preflight, one checker child, post-capture, and capture output. Separate from capture_once elapsed_seconds, which starts after initial missing/hash preflight.",
+    "wall_time_seconds": 0.4743218
+  },
+  "recorded_utc": "2026-10-06T19:37:38Z",
+  "schema": "mixed93_saved_independent_run02_external_wall_addendum.v1",
+  "telemetry_correction": "Separated the known capture_once.py invocation from the exact checker child argv; wall-time values and all run02 outputs are unchanged."
+}

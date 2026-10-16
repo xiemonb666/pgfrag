@@ -1,0 +1,29 @@
+schema = "pgfrag.pd.pointset.v1"
+input_id = "coupon_uniform_voxel_5cube_125_v1"
+point_data_file = "coupon_uniform_voxel_5cube_125.points.csv"
+point_data_sha256 = "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+coordinate_units = "m"
+volume_units = "m^3"
+coordinate_frame = "Right-handed Cartesian xyz in metres; origin is the lower corner of the declared 5 mm coupon."
+point_id_semantics = "Positive source point identity; CSV row order defines native Body index and is preserved separately in outputs."
+point_count = 125
+declared_volume_sum_m3 = 1.2500000000000002E-07
+declared_com_m = [0.0024999999999999957, 0.0024999999999999957, 0.0024999999999999966]
+
+[source]
+kind = "declared_internal_fixture_generation"
+description = "Procedurally generated cell-center material points for a 5 mm cube; one positive 1 mm^3 voxel quadrature weight per cell."
+reference = "make_point_inputs.ps1 in this experiment directory; not a measured specimen or imported shell."
+source_sha256 = "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0"
+source_artifact_sha256 = "NOT_APPLICABLE_GENERATED_FIXTURE"
+
+[quadrature]
+method = "uniform_voxel_cell_center"
+volume_semantics = "Known 1 mm^3 cell volume assigned to each cell-center quadrature point."
+voronoi_claim = false
+real_shell_claim = false
+
+[load_sets]
+axis = 3
+bottom_point_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+top_point_ids = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]

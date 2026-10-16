@@ -1,0 +1,4 @@
+python=3.12.14
+pytest=9.1.1
+numpy=2.5.3
+target_modules=imported

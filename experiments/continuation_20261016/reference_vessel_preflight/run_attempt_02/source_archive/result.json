@@ -1,0 +1,268 @@
+{
+  "schema": "vesselforge.generic_step_tetra_partition.v1",
+  "status": "GEOMETRY_DIAGNOSTIC_ONLY",
+  "source_step": "C:\\Users\\xiemo\\Desktop\\ShardForge\\vesselforge\\experiments\\continuation_20261015\\reference_forms\\outputs\\daily_aberdeen_108x53_v5\\geometry\\solid.step",
+  "source_step_sha256": "b8b1a32a46390ef0038fc495bddd530f34f6af84ff8ba9599787fa7bb0794cd2",
+  "source_step_bytes": 43334,
+  "source_step_declared_length_unit": "mm",
+  "step_unit_conversion": "Geometry.OCCTargetUnit=M set before import; no post-import scaling",
+  "units": "SI",
+  "plane_x_m": 0.0,
+  "global_mesh_size_m": 0.0015,
+  "interface_size_m": null,
+  "mesh_size_from_curvature": false,
+  "boundary_size_by_source_face_m": {},
+  "boundary_size_by_role_m": {},
+  "resource_forecast": {
+    "forecast_method": "10*CAD_volume/global_size^3 plus 8*area*(local_size^-2-global_size^-2) refinement allowance",
+    "estimated_tetrahedra": 96942,
+    "estimated_peak_memory_bytes": 1588297728,
+    "base_volume_forecast_tetrahedra": 96941.17514320461,
+    "boundary_refinement_allowance_tetrahedra": 0.0,
+    "bytes_per_forecast_tetra": 16384,
+    "mesh_size_m": 0.0015,
+    "interface_size_m": 0.0015,
+    "boundary_mesh_size_by_imported_surface_tag_m": {
+      "1": 0.0015,
+      "2": 0.0015,
+      "3": 0.0015,
+      "4": 0.0015,
+      "5": 0.0015,
+      "6": 0.0015,
+      "7": 0.0015,
+      "8": 0.0015,
+      "9": 0.0015,
+      "10": 0.0015,
+      "11": 0.0015,
+      "12": 0.0015,
+      "13": 0.0015,
+      "14": 0.0015,
+      "15": 0.0015,
+      "16": 0.0015,
+      "17": 0.0015
+    },
+    "caps": {
+      "max_step_bytes": 33554432,
+      "max_tetrahedra": 100000,
+      "max_memory_bytes": 2147483648,
+      "max_source_faces": 250,
+      "tetrahedra_per_volume_cell": 10.0,
+      "boundary_refinement_factor": 8.0
+    },
+    "within_caps": true,
+    "step_bytes": 43334,
+    "source_face_count": 17,
+    "curvature_allowance_factor": 1.0
+  },
+  "counts": {
+    "source_faces": 17,
+    "source_volumes": 1,
+    "partition_volumes": 2,
+    "nodes": 18236,
+    "tetrahedra": 56139,
+    "interface_triangles": 541,
+    "exterior_triangles": 35784
+  },
+  "source_face_ancestry": {
+    "status": "PRESENT_BUT_UNBOUND",
+    "metadata_sha256": "1178098e6c661d998bb2abded2262eb839d9b6a45ebd4cd176584b9b58f364f0",
+    "metadata_name": "face_lineage.json",
+    "metadata_schema": "vf.native_meridian_face_lineage.v1",
+    "unbound_face_records": 17,
+    "reason": "metadata has no exact imported_surface_tag to source_face_id binding",
+    "propagation_method": "OCC fragment parent map from imported source surface entities to exterior descendants",
+    "spatial_or_nearest_face_matching_used": false,
+    "exterior_triangle_counts": {
+      "exact": 0,
+      "unknown": 35784,
+      "ambiguous": 0
+    },
+    "all_exterior_triangles_have_exact_source_face_ancestry": false
+  },
+  "cad": {
+    "source_volume_m3": 3.2717646610831555E-05,
+    "partition_volume_m3": [
+      1.6358822736067237E-05,
+      1.635882383214557E-05
+    ],
+    "partition_volume_conservation_relative_error": 1.302622644321275E-09,
+    "shared_surface_tags": [
+      3
+    ],
+    "shared_area_m2": 0.0003886735433721346,
+    "expected_volume_m3": 3.271764661083354E-05,
+    "expected_volume_relative_error": 6.068423111174062E-14,
+    "expected_meridian_section_area_m2": 0.00019433668590259053,
+    "expected_complete_cut_area_m2": 0.00038867337180518107,
+    "shared_area_vs_independent_section_relative_error": 4.4141679353621014E-07
+  },
+  "mesh": {
+    "tetrahedral_volume_m3": 3.25173910350476E-05,
+    "cad_mesh_volume_relative_error": 0.0061207206669216824,
+    "triangular_interface_area_m2": 0.00038808005922251975,
+    "occ_mesh_interface_area_relative_error": 0.0015269476395685733,
+    "partition_volume_entity_tags": [
+      2,
+      1
+    ],
+    "partition_label_to_entity_tag": {
+      "0": 2,
+      "1": 1
+    },
+    "audit": {
+      "schema": "vesselforge.independent_tetra_audit.v1",
+      "status": "PASS",
+      "counts": {
+        "nodes": 18236,
+        "referenced_nodes": 18236,
+        "unused_nodes": 0,
+        "tetrahedra": 56139,
+        "unique_faces": 130170,
+        "one_parent_boundary_faces": 35784,
+        "two_parent_internal_faces": 94386,
+        "cross_partition_faces": 541,
+        "partitions": 2,
+        "mesh_connected_components": 1
+      },
+      "checks": {
+        "finite_coordinates": true,
+        "positive_oriented_non_degenerate_tetrahedra": true,
+        "unique_tetrahedra": true,
+        "all_face_incidence_at_most_two": true,
+        "two_parent_face_windings_opposed": true,
+        "connected_tetrahedral_body": true,
+        "interface_matches_all_cross_partition_faces": true,
+        "whole_exterior_closed_oriented_vertex_manifold": true,
+        "partition_boundaries_closed_oriented_vertex_manifold": true,
+        "whole_boundary_volume_matches_cell_volume": true,
+        "partition_boundary_volumes_match_cell_volumes": true,
+        "stored_cell_volumes_match_determinants": true
+      },
+      "volume": {
+        "tetrahedral_volume_m3": 3.25173910350476E-05,
+        "exterior_boundary_signed_volume_m3": 3.2517391035047604E-05,
+        "exterior_boundary_relative_error": 2.0838890705379384E-16,
+        "expected_volume_m3": 3.2717646610831555E-05,
+        "analytic_relative_error": 0.0061207206669216824,
+        "partition_balance_relative_error": 5.3908042783247586E-05,
+        "partitions": {
+          "0": {
+            "tetrahedra": 27809,
+            "tetrahedral_volume_m3": 1.625781904307024E-05,
+            "expected_analytic_half_volume_m3": 1.6358823305415777E-05,
+            "analytic_half_volume_relative_error": 0.006174298753633354,
+            "surface": {
+              "faces": 18252,
+              "vertices": 9128,
+              "edges": 27378,
+              "edge_incidence_min": 2,
+              "edge_incidence_max": 2,
+              "edges_with_incidence_other_than_two": 0,
+              "edges_with_inconsistent_direction": 0,
+              "vertex_link_issues": 0,
+              "connected_components": 1,
+              "surface_area_m2": 0.016575118675382708,
+              "signed_volume_m3": 1.6257819043070254E-05,
+              "closed_oriented_vertex_manifold": true
+            },
+            "boundary_volume_relative_error": 8.336005659901509E-16
+          },
+          "1": {
+            "tetrahedra": 28330,
+            "tetrahedral_volume_m3": 1.6259571991977357E-05,
+            "expected_analytic_half_volume_m3": 1.6358823305415777E-05,
+            "analytic_half_volume_relative_error": 0.006067142580210012,
+            "surface": {
+              "faces": 18614,
+              "vertices": 9309,
+              "edges": 27921,
+              "edge_incidence_min": 2,
+              "edge_incidence_max": 2,
+              "edges_with_incidence_other_than_two": 0,
+              "edges_with_inconsistent_direction": 0,
+              "vertex_link_issues": 0,
+              "connected_components": 1,
+              "surface_area_m2": 0.016576458812004827,
+              "signed_volume_m3": 1.6259571991977354E-05,
+              "closed_oriented_vertex_manifold": true
+            },
+            "boundary_volume_relative_error": 2.083776738212384E-16
+          }
+        }
+      },
+      "quality": {
+        "signed_volume_m3": {
+          "min": 1.385881306526608E-11,
+          "median": 6.244314388462856E-10,
+          "p95": 7.359576473089069E-10,
+          "p99": 8.385730002182256E-10,
+          "max": 1.7439029863399312E-09
+        },
+        "minimum_altitude_m": {
+          "min": 5.8721631273936786E-05,
+          "median": 0.001139899153427911,
+          "p95": 0.0012939152581803181,
+          "p99": 0.0013473677943653909,
+          "max": 0.0018917304395626264
+        },
+        "maximum_edge_length_m": {
+          "min": 0.000905457535215687,
+          "median": 0.002416193901941556,
+          "p95": 0.0025725465391551855,
+          "p99": 0.0026840816580834346,
+          "max": 0.003022371894679669
+        },
+        "worst_vertex_edge_matrix_condition": {
+          "min": 2.0545898070256774,
+          "median": 3.7557348986138424,
+          "p95": 7.189047369224062,
+          "p99": 10.392782510609376,
+          "max": 85.71924534377604
+        }
+      },
+      "exterior_surface": {
+        "faces": 35784,
+        "vertices": 17894,
+        "edges": 53676,
+        "edge_incidence_min": 2,
+        "edge_incidence_max": 2,
+        "edges_with_incidence_other_than_two": 0,
+        "edges_with_inconsistent_direction": 0,
+        "vertex_link_issues": 0,
+        "connected_components": 1,
+        "surface_area_m2": 0.03237541736894249,
+        "signed_volume_m3": 3.2517391035047604E-05,
+        "closed_oriented_vertex_manifold": true
+      },
+      "interface": {
+        "triangles": 541,
+        "unique_nodes": 398,
+        "cross_partition_faces": 541,
+        "parent_pairs_exact": true,
+        "parents_from_distinct_partitions": true,
+        "area_m2": 0.00038808005922251975,
+        "expected_area_m2": 0.0003886735433721346,
+        "relative_area_error": 0.0015269476395685733,
+        "max_abs_x_plane_deviation_m": 9.872129494151304E-18
+      },
+      "geometry_sampling": null
+    }
+  },
+  "elapsed_s": 4.8439999999973224,
+  "qualification": {
+    "real_world_geometry_review": "NOT_ESTABLISHED_BY_MESHING",
+    "physical_material_validity": "NOT_ASSESSED",
+    "fracture_or_fragment_result": "NOT_CREATED",
+    "solver_qualification": "NOT_ESTABLISHED"
+  },
+  "files": {
+    "mesh.msh": {
+      "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+      "bytes": 4410557
+    },
+    "mesh.npz": {
+      "sha256": "e39b6d838468b2ce5eaff39e33d370f93d62cfb68be70594d9e0ac9dc4b39822",
+      "bytes": 1637422
+    }
+  }
+}

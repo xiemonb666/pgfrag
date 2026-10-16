@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\mixed_enriched_operator_20261006\\operator_arithmetic_check.py"
+  ],
+  "combined_process_output_bytes": 1257,
+  "combined_process_output_under_1MiB": true,
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "elapsed_seconds": 0.1076001999899745,
+  "post_pins_file": "post_source_pins.json",
+  "pre_pins_file": "pre_source_pins.json",
+  "pre_post_source_pins_identical": true,
+  "result_json_parse_error": null,
+  "returncode": 0,
+  "stderr_bytes": 0,
+  "stderr_file": "stderr.bin",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 1257,
+  "stdout_file": "stdout.bin",
+  "stdout_sha256": "8cfc039d0c8ac6ed126bea057b05758208dfe19c32f8db7c69728873344ea1fd",
+  "timed_out": false,
+  "timeout_seconds": 10
+}

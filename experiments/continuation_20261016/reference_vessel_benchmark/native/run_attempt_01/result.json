@@ -1,0 +1,20 @@
+{
+  "status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC",
+  "solver_steps": 46,
+  "counts": [
+    18634,
+    56139,
+    541
+  ],
+  "dt_s": 2.173913043478261e-09,
+  "elapsed_s": 18.758411692000003,
+  "all_qp_full_damage": false,
+  "raw_history_bytes_forecast": 94032400,
+  "deformation_maxima_sampled": {
+    "max_abs_principal_small_strain": 2.3346526812578337e-15,
+    "max_polar_rotation_rad": 2.9802322387695312e-08,
+    "min_det_F": 0.9999999999999982
+  },
+  "qualification": "PREINSERTED_WEAK_SEAM_UNCALIBRATED; NO_PHYSICAL_OR_TRAINING_QUALIFICATION",
+  "source_inputs_unchanged": true
+}

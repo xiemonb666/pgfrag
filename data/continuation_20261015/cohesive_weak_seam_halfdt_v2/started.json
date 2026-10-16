@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_vessel_20261015/weak_seam_halfdt_v2/cohesive_vessel.py",
+    "--case",
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/cohesive_vessel_20261015/weak_seam_halfdt_v2/case.json",
+    "--out",
+    "/home/xiemo/cohesive_vessel_20261015/weak_seam_halfdt_v2_run01"
+  ],
+  "started_unix_s": 1792059205.3873222,
+  "source_input_inventory": {
+    "case.json": "c481be4876bf33458d060a721eb6c3c37cfbe236177bc78b0014b36f1f2ad29e",
+    "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+    "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+    "cohesive_vessel.py": "f9ac3ba47b6a509c65751c5b8869e940fc3e0ba314f0013a28cf857f22ce2265",
+    "forge_manifest.json": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+    "material.dat": "aadf495e3f62ab7e46ca5718690156dceef4e7d96e191fce3ed603d61d2c9a91",
+    "mesh.msh": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+    "mesh_result.json": "7109d7f0adfd09e47be06dc0360dd2468f1d5f508cf8ed7b35a97014e2ffa567",
+    "source_freeze.json": "7609638f1e2cfcb7526646e04305787aa2bf73d14cc6fc4cc7b53bdecf2cf2a6"
+  },
+  "python": "3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3 ]"
+}

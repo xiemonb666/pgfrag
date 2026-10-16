@@ -1,0 +1,11 @@
+{"python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe", "python_version": "3.12.14 (main, Sep  1 2026, 14:17:39) [MSC v.1944 64 bit (AMD64)]", "platform": "Windows-11-10.0.26200-SP0", "pytest_version": "8.4.2", "cadquery_version": "2.8.0", "ocp_version": "7.9.3.1", "module_file": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\bond_visibility.py", "algorithm": "pgfrag/canonical-step-all-hits-interval-occupancy/1.0.0", "argv": ["-p", "no:cacheprovider", "-p", "capture_visibility", "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume\\v3_run\\junit.xml", "pgfrag/tests/test_bond_visibility.py::BondVisibilityPureMathRegressionTests", "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_endpoints_inside_but_segment_crosses_void", "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_hollow_shell_preserves_all_outer_and_inner_hits", "pgfrag/tests/test_bond_visibility.py::BondVisibilityGeometryTests::test_same_wall_and_solid_coupon_remain_inside_material"], "environment": {"PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src;C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\visibility_resume", "PYTHONDONTWRITEBYTECODE": "1", "pytest_cache_provider_disabled": true}}
+============================= test session starts =============================
+platform win32 -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\xiemo\Desktop\ShardForge\pgfrag
+configfile: pyproject.toml
+collected 10 items
+
+pgfrag\tests\test_bond_visibility.py ..........                          [100%]
+
+- generated xml file: C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261005\visibility_resume\v3_run\junit.xml -
+============================= 10 passed in 0.11s ==============================

@@ -1,0 +1,153 @@
+{
+  "record_id": "ceramic_fracture_benchmark_20261004",
+  "prepared_on": "2026-10-04",
+  "scope": "Primary-source evidence for a small pottery-relevant fracture benchmark. This record does not assert calibration of PG-Frag material parameters.",
+  "sources": [
+    {
+      "source_id": "muller_2015_kalami_rock_tempered",
+      "type": "primary_research_article",
+      "citation": "N. S. Müller, G. Vekinis, P. M. Day, V. Kilikoglou, The influence of microstructure and texture on the mechanical properties of rock tempered archaeological ceramics, Journal of the European Ceramic Society 35 (2015), 831-843.",
+      "doi": "10.1016/j.jeurceramsoc.2014.09.025",
+      "doi_url": "https://doi.org/10.1016/j.jeurceramsoc.2014.09.025",
+      "primary_pdf_url": "https://ltt.arizona.edu/sites/ltt.lab.arizona.edu/files/2015%20Mueller%20et%20al%20Mechanical%20of%20rock%20tempered_J%20Eur%20Cer%20Soc.pdf",
+      "evidence_pages": {
+        "materials_and_process": "832-834",
+        "porosity": "834-835, Figure 3",
+        "strength": "835-837, Figures 4-6",
+        "fracture_energy_and_E": "837-839, Figures 7-8 and Table 1",
+        "fracture_surface_images": "840-841, Figure 10"
+      },
+      "source_limit": "Controlled experimental briquettes made from pottery clays; not excavated sherds. The paper does not publish raw digitized curves or full support-span dimensions."
+    },
+    {
+      "source_id": "kilikoglou_1998_quartz_tempered_visual_only",
+      "type": "primary_research_article",
+      "citation": "V. Kilikoglou, G. Vekinis, Y. Maniatis, P. M. Day, Mechanical performance of quartz-tempered ceramics: Part I, strength and toughness, Archaeometry 40(2) (1998), 261-279.",
+      "doi": "10.1111/j.1475-4754.1998.tb00837.x",
+      "doi_url": "https://doi.org/10.1111/j.1475-4754.1998.tb00837.x",
+      "primary_pdf_url": "https://ltt.arizona.edu/sites/ltt.lab.arizona.edu/files/1998%20Kilikoglou%20et%20al.%20Mechanical%20Properties%20I%20%20Archaeometry.pdf",
+      "visual_evidence": {
+        "figure": "Figure 10, p. 273",
+        "recipe": "20 vol% quartz temper, mean grain size 450 um; the paper describes a step-like four-point-bend fracture surface.",
+        "scale": "No calibrated scale is given in the caption; no digitized crack path is provided.",
+        "qualification": "Qualitative surface morphology only. Do not combine this recipe with the 2015 Kalami material card."
+      }
+    }
+  ],
+  "candidate_material_condition": {
+    "source_id": "muller_2015_kalami_rock_tempered",
+    "condition_id": "kalami_low_calcareous_untempered_1050C",
+    "material_class": "experimental low-calcareous pottery clay ceramic; highly vitrified high-fire condition",
+    "archaeological_or_engineering_status": "Experimental pottery-relevant briquette, not excavated archaeological pottery and not dense engineering ceramic",
+    "material": {
+      "clay_origin": "Kalami, Crete, Greece",
+      "calcareousness": "low-calcareous; CaO < 0.5%",
+      "clay_particle_fraction": "<30 um fraction separated from raw clay",
+      "added_temper": "none for selected condition",
+      "briquette_mould_mm": [120, 70, 10],
+      "forming_pressure_mpa_approx": 0.02,
+      "drying": "over 10 days at ambient conditions under plaster plates",
+      "firing_temperature_c": 1050,
+      "firing_atmosphere": "air",
+      "firing_rate_c_per_h": 200,
+      "soak_h": 1,
+      "porosity_total_percent_approx": 11,
+      "porosity_note": "Mostly closed for untempered high-fired material; figure-derived rounded value. Paper states the high-fired untempered total porosity is comparatively low, about 11%.",
+      "true_density_g_cm3_estimate": {
+        "value": 2.77,
+        "uncertainty": 0.05,
+        "status": "Reported approximate true density from constituent mineral phases for raw Kalami material; not measured fired bulk density."
+      },
+      "bulk_density_fired_g_cm3": null,
+      "bulk_density_status": "MISSING as a measured fired-condition value"
+    },
+    "properties": {
+      "youngs_modulus_gpa": {
+        "mean": 68.4,
+        "sd": 7.5,
+        "method": "Bending modulus, compliance-corrected; mean of five independent load-displacement determinations",
+        "source_location": "Table 1, p. 838"
+      },
+      "poisson_ratio": null,
+      "poisson_ratio_status": "MISSING",
+      "transverse_rupture_strength_mpa_approx": 70,
+      "strength_qualification": "Approximate source-text value for untempered low-calcareous clay fired at 1050 C. Flaw-sensitive three-point-bend TRS, not intrinsic tensile strength.",
+      "k_ic_eff_mpa_sqrt_m_approx": 1.2,
+      "k_ic_qualification": "Approximate effective stress-intensity factor reported for highest-fired low-calcareous untempered brittle specimens; not independently verified plane-strain ASTM K_IC.",
+      "g_ic_eff_j_m2": {
+        "value_approx": 21.1,
+        "status": "DERIVED_FROM_REPORTED_VALUES; not quoted as an independently measured work-of-fracture value",
+        "input_k_ic_mpa_sqrt_m_approx": 1.2,
+        "input_e_gpa_mean": 68.4,
+        "source_paper_relation": "K_Ic = sqrt(E * G_Ic)",
+        "plane_stress_formula": "G = K^2 / E",
+        "plane_strain_formula": "G = K^2 * (1 - nu^2) / E",
+        "plane_strain_numeric_value": null,
+        "plane_strain_numeric_status": "MISSING because Poisson ratio is unreported; the source also does not establish a plane-strain size-validity condition."
+      },
+      "stable_growth_energy_g_t_j_m2": {
+        "value": null,
+        "status": "No stable-growth tail reported for selected brittle untempered condition; method reserves G_t for stable post-initiation growth. This is not an independent measured zero for total fracture energy."
+      }
+    },
+    "test_geometry_and_loading": {
+      "fracture_test": "four-point bending of a pre-notched beam (SENB-style specimen)",
+      "specimen_mm_approx": [10, 10, 70],
+      "notch_depth_mm": {
+        "mean": 1.0,
+        "tolerance": 0.1
+      },
+      "notch_blade_thickness_mm": 0.15,
+      "crosshead_speed_um_per_min": 54,
+      "bars_per_condition": 3,
+      "k_evaluated_at": "maximum load / fracture point, with finite-notch-width correction",
+      "support_spans_mm": null,
+      "support_spans_status": "MISSING",
+      "raw_load_displacement_curves": "Recorded for specimens according to methods, but per-specimen point series are not published in the article."
+    },
+    "fracture_images": {
+      "exact_selected_condition_crack_trace": null,
+      "status": "MISSING; no digitized crack path, shard set, or measured fracture-process-zone image for the selected untempered condition found",
+      "related_microstructure": "2015 Figure 2 shows SEM matrix microstructure by firing temperature; it is not a calibrated crack-path dataset."
+    }
+  },
+  "same_study_alternate_condition_not_to_merge": {
+    "condition_id": "kalami_low_calcareous_untempered_850C",
+    "e": {
+      "mean_gpa": 5.5,
+      "sd_gpa": 0.8,
+      "source_location": "Table 1, p. 838"
+    },
+    "total_porosity_percent_approx": 32,
+    "porosity_uncertainty_percent_approx": 2,
+    "k_ic_or_g_ic_numeric": null,
+    "qualification": "Potential lower-fire elastic/porosity comparator, but condition-matched numeric fracture toughness is unavailable in the article text/table. Do not transfer the 1050 C value."
+  },
+  "minimal_local_comparison": {
+    "name": "high-fired Kalami untempered brittle notched-beam initiation check",
+    "geometry_target_mm": [10, 10, 70],
+    "notch_depth_target_mm": 1.0,
+    "loading_target": "Four-point bending; exact support spans unavailable",
+    "inputs": {
+      "e_gpa": 68.4,
+      "k_ic_eff_mpa_sqrt_m_approx": 1.2,
+      "g_ic_eff_j_m2_derived_approx": 21.1,
+      "nu": null,
+      "bulk_density_g_cm3": null
+    },
+    "allowed_comparison": "Scalar initiation/energy-scale check; approximate geometry-informed case only unless support spans and original curves are recovered.",
+    "not_supported": [
+      "exact load-displacement replay",
+      "validated 3-D shard topology or crack trajectory",
+      "direct calibration of a general pottery material card",
+      "inference of a physical process-zone size or peridynamic horizon delta"
+    ],
+    "delta_note": "No process-zone length or delta-to-material relation is reported. Do not set delta to fit this energy or notch dimension."
+  },
+  "qualification_summary": [
+    "No fully complete self-consistent material dataset with density, E, nu, strength, fracture energy, complete fixture geometry, and scaled crack imagery was found in the focused primary-source search.",
+    "The 2015 Kalami series is the strongest single-study partial candidate because material preparation, firing, porosity, E, strength, fracture toughness method, notch and test speed are connected within one experimental programme.",
+    "Keep the lower-fire 850 C condition and high-fire 1050 C condition separate; values change substantially with firing.",
+    "Do not combine the 1998 quartz-tempered SEM image or properties with the 2015 Kalami untempered numeric condition."
+  ]
+}

@@ -1,0 +1,19 @@
+# Mixed93 actual cohesive saved-result visual
+
+This visual package is pinned to `pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json`, SHA-256 `e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2` (1,440,429 bytes). A standard-library JSON metadata check confirmed the expected schema, accepted diagnostic status, classification, and 15/15 gates. No numeric modules or Matplotlib were imported, and no figure was rendered. The case and source pins keep render authorization false pending root's separate GO.
+
+The reader follows the worker's frozen result schema `mixed93_actual_cohesive_bridge_numeric_result.v1` from `run_actual_cohesive_bridge.py` SHA-256 `36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236`: saved interface coordinates/weights are in `evidence.interface`, the two 16-point ledgers are in `evidence.baseline.points` and `evidence.coupled.points`, and the actual q-change/force summary is in `solution`. Point IDs are joined to the interface's saved `quadrature_id`; the renderer does not build new geometry, query a field, or reevaluate an interface point. It refuses any result that is not `ACCEPTED_DIAGNOSTIC_ONLY` with all gates passed, has a different point count/order, or leaves the declared virgin elastic opening interval.
+
+The future PNG has four panels. Two x/z views show baseline and coupled-final opening at the same 16 saved QPs, with equal spatial axes and one shared color scale from zero to 1.1 times the largest actual saved opening, in metres. This range follows the cached values so small coupled changes remain visible. The colorbar has its own GridSpec column. The traction-opening panel shows the actual baseline/coupled values and the virgin line `t=K0*delta` only from zero through the observed maximum opening; an adjacent no-data note prints numeric `delta0` and says that all actual points are below `delta0` and the line is virgin-only. The note also reports the saved `||q_c-q_0||` and internal-force norm. No post-`delta0` softening curve or threshold-crossing points are drawn. The sign panel uses saved point vectors and normal to show the internal bookkeeping share `+t n` beside physical upper-face `-t n` and lower-face `+t n`; the internal share is not mislabeled as an applied face traction.
+
+Visible title labels are `FIXED_CRACK_TOY_ELASTIC_DIAGNOSTIC`, `NO_GROWTH`, and `NO_MATERIAL_CALIBRATION`. A dedicated legend row and independent header/footer sit outside the data axes; constrained GridSpec layout avoids repositioning the colorbar after layout. All plotted quantities carry SI units. The footer states the saved-data and no-growth boundary. The output is one PNG, bounded to 15 seconds and 2 MiB combined output; the runner refuses overwrite and never retries.
+
+The runner is standard-library-only. Running it without flags performs source/hash/schema readiness checks and reports that the result is pinned but rendering has not been requested. Matplotlib is imported only inside `render_saved_bridge.py` after root authorization, matching result SHA, accepted status, saved-data checks, and exact GO-token checks. Root must review the pinned result and explicitly authorize one render with a root token. The source check does not grant that authorization.
+
+Use the configured VesselForge Python runtime for the future source check; do not render from this SOURCE_READY package:
+
+```powershell
+C:/Users/xiemo/Desktop/ShardForge/third_party/vesselforge-runtime/venv/Scripts/python.exe -B pgfrag/tmp/review_20261007/mixed93_actual_cohesive_saved_visual/run_saved_bridge_visual.py
+```
+
+This visual communicates only a fixed-crack toy elastic cohesive diagnostic. It does not establish real-material behavior, process-zone resolution, mixed-mode qualification, or physical crack growth.

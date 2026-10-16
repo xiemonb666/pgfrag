@@ -1,0 +1,1 @@
+& "C:\Users\xiemo\.local\bin\uv.exe" run --no-project --no-progress --with pytest --python "C:\Users\xiemo\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" python -m pytest -q tests/test_bond_events.py --junitxml "C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\review_20261004\bond_events\v2_pytest_junit.xml"

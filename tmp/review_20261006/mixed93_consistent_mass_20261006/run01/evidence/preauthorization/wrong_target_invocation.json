@@ -1,0 +1,10 @@
+{
+  "schema": "pgfrag.mixed93_mass_wrong_target_invocation.v1",
+  "command": "third_party/vesselforge-runtime/venv/Scripts/python.exe -B case.json",
+  "return_code": 1,
+  "wall_seconds": 0.0746307,
+  "started_utc": "2026-10-06T14:20:07Z",
+  "stdout_path": "preauthorization/wrong_target_invocation.stdout.log",
+  "stderr_path": "preauthorization/wrong_target_invocation.stderr.log",
+  "note": "Wrapper mistake: JSON case was passed as Python source; mass_replay_audit.py did not run."
+}

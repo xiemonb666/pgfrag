@@ -1,0 +1,5 @@
+Downloading pygments (1.2MiB)
+ Downloaded pygments
+Installed 6 packages in 69ms
+error: Failed to spawn: `-m`
+  cause: program not found

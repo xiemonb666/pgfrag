@@ -1,0 +1,83 @@
+{
+  "schema": "front-shadow-counterexample-math-v1",
+  "case_id": "front_shadow_counterexample_20261005",
+  "status": "SOURCE_ONLY_ALGEBRA_READY_FOR_ROOT_REVIEW",
+  "units": "m",
+  "source_order": ["s", "v1", "v2", "v3", "v4"],
+  "geometry": {
+    "facet_vertices_m": [[0.0, -1.0, 0.0], [0.0, 1.0, 0.0], [-2.0, 0.0, 0.0]],
+    "special_source_m": [-1.0, 0.0, -1.0],
+    "q0_m": [1.0, 0.0, 1.0],
+    "q_of_t_m": ["1+t", "0", "1"],
+    "segment_plane_hit_parameter": 0.5,
+    "segment_plane_hit_m": ["t/2", "0", "0"],
+    "triangle_cross_section_at_y0": "-2 <= x <= 0",
+    "classification": {
+      "t_negative_samples": "strict relative-interior crossing; s is BLOCKED",
+      "t_positive_samples": "strictly outside finite facet; s is VISIBLE",
+      "all_four_tetra_sources": "VISIBLE because each has z>0 and each query has z=1, so their connecting segments stay strictly in z>0",
+      "q0_special_source": "UNKNOWN_EDGE_CONTACT: the segment hits (0,0,0), in the relative interior of edge AB but on the facet boundary"
+    },
+    "physical_facet_clearance": {
+      "q0_distance_to_finite_triangle_m": "sqrt(2)",
+      "q0_is_on_or_near_facet": false,
+      "minimum_sample_query_distance_to_finite_triangle_m": "sqrt(1+0.99^2) = 1.4071602609511114"
+    },
+    "local_mask_stability_at_nonzero_samples": {
+      "status": "ESTABLISHED_BY_STRICT_GEOMETRIC_MARGIN",
+      "nearest_switching_surface_for_s": "plane x=z through s and edge AB",
+      "distance_from_q(t)_to_that_surface_m": "abs(t)/sqrt(2)",
+      "minimum_over_fixed_samples_m": "0.0001/sqrt(2) = 7.071067811865475e-5",
+      "other_facet_edge_supporting_planes_at_q(t)": "x+z-2y+2=0 and x+z+2y+2=0; distances are at least 3.99/sqrt(6), far above the AB switching surface over the fixed samples",
+      "scope_note": "At each supplied nonzero sample, strict interior crossing or strict separation from the finite triangle gives an open query neighborhood with the same visibility mask. q0 itself is not declared mask-stable."
+    }
+  },
+  "source_geometry": {
+    "q0_offsets_m": [[0.5, 0.5, 0.5], [0.5, -0.5, -0.5], [-0.5, 0.5, -0.5], [-0.5, -0.5, 0.5]],
+    "tetra_radius_m": "sqrt(3)/2",
+    "special_source_radius_m": "sqrt(8)",
+    "all_five_sources_inside_fixed_support_radius_m": 4.0,
+    "fixed_left_mask_source_order_s_v1_v2_v3_v4": [false, true, true, true, true],
+    "fixed_right_mask_source_order_s_v1_v2_v3_v4": [true, true, true, true, true]
+  },
+  "fixed_q0_mask_algebra_only": {
+    "label": "ONE_SIDED_ALGEBRAIC_TRACE_ONLY",
+    "true_q0_visibility": "UNKNOWN_EDGE_CONTACT",
+    "basis": "p(X)=[1,(X-q0)/1m]",
+    "tetra_weight": "w=(1-sqrt(3)/8)^4(1+sqrt(3)/2)=0.7031686074870903",
+    "special_weight": "alpha=(1-sqrt(2)/2)^4(1+2sqrt(2))=0.028174593052022752",
+    "special_basis_row": [1.0, -2.0, 0.0, -2.0],
+    "left_moment": "A0=diag(4w,w,w,w)",
+    "left_rank": 4,
+    "left_condition_number": 4.0,
+    "right_moment": "A+=A0+alpha*p_s*p_s^T",
+    "right_rank": 4,
+    "right_condition_number_formula": "lambda_plus; lambda_plus=(5+9*kappa+sqrt(9-42*kappa+81*kappa^2))/2, kappa=alpha/w",
+    "right_condition_number": 4.0447826083492755,
+    "sherman_morrison": {
+      "beta_special": "alpha/(4w+33alpha)=0.007528410117638756",
+      "left_q0_shape_row_s_v1_v2_v3_v4": [0.0, 0.25, 0.25, 0.25, 0.25],
+      "right_q0_shape_row_s_v1_v2_v3_v4": [0.007528410117638756, 0.263174717705868, 0.24811789747059, 0.233061077235313, 0.24811789747059],
+      "right_tetra_node_formula": "phi_i=1/4-beta*(1/4-epsilon_ix-epsilon_iz), with epsilon_i coordinate signs (+/-1) from offset 0.5*(epsilon_ix,epsilon_iy,epsilon_iz)",
+      "special_node_trace_is_strictly_positive": true,
+      "left_right_special_trace_jump": "0 -> beta_special > 0"
+    },
+    "affine_reproduction": {
+      "left_moment_invertible": true,
+      "right_moment_invertible": true,
+      "partition_of_unity_each_fixed_mask": true,
+      "linear_coordinate_reproduction_each_fixed_mask": true,
+      "scope": "This explains why an affine patch test can pass on both one-sided fixed masks while phi_s remains discontinuous across the visibility shadow boundary."
+    },
+    "gradient": {
+      "q0_gradient_well_defined": false,
+      "reason": "The visibility-selected shape row has distinct one-sided value traces. No q0 gradient is asserted or serialized; gradients are read only at the six nonzero, locally mask-stable sample queries."
+    }
+  },
+  "acceptance_scope": {
+    "counterexample_establishes": "sharp finite-facet visibility can make an MLS shape basis jump on a source-front shadow boundary away from the physical facet",
+    "counterexample_rejects": "the current sharp-visibility MLS basis as a globally continuous legal mechanical acceptance field across such a shadow switch",
+    "does_not_establish": ["physical fracture", "solver coupling", "R2 acceptance", "q0 gradient"],
+    "no_parameter_tuning": true
+  }
+}

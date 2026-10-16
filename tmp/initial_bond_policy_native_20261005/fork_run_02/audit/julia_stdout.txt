@@ -1,0 +1,38 @@
+MANIFEST_SEMANTIC_DELTA=Peridynamics.deps only; SHA/TOML existing stdlibs
+ACTIVE_PROJECT=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_02\project\Project.toml
+PACKAGE_SOURCE_PATH=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_02\project\vendor\Peridynamics.jl\src\Peridynamics.jl
+EXPECTED_PACKAGE_SOURCE_PATH=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_02\project\vendor\Peridynamics.jl\src\Peridynamics.jl
+Test Summary:                                   | Pass  Total  Time
+MPI body handler excludes policy-bearing bodies |    2      2  0.0s
+Test Summary:                         | Pass  Total  Time
+initial bond policy transport helpers |    9      9  0.3s
+full directed candidate comparison and canonical external IDs: Error During Test at C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\initial_bond_policy_native_20261005\tests\test_initial_bond_policy.jl:72
+  Got exception outside of a @test
+  MethodError: no method matching getindex(::@NamedTuple{source_cad_sha256::String, classifier_source_sha256::String}, ::String)
+  
+  Closest candidates are:
+    getindex(::NamedTuple, !Matched::Tuple{Static.StaticSymbol, Vararg{Static.StaticSymbol}})
+     @ Static C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\depot\packages\Static\WX7YF\src\Static.jl:190
+    getindex(::NamedTuple, !Matched::Static.StaticSymbol{N}) where N
+     @ Static C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\depot\packages\Static\WX7YF\src\Static.jl:189
+    getindex(::NamedTuple, !Matched::AbstractVector{Symbol})
+     @ Base namedtuple.jl:171
+    ...
+  
+  Stacktrace:
+   [1] _initial_policy_admission_receipt(policy::InitialBondPolicy, model::@NamedTuple{native_to_external::Vector{Int64}, decision_by_pair::Dict{Tuple{Int64, Int64}, String}, decisions::Vector{Tuple{Int64, Int64, String}}, expected_mask_pairs::Dict{String, Vector{Tuple{Int64, Int64}}}, source::@NamedTuple{source_cad_sha256::String, classifier_source_sha256::String}, points::@NamedTuple{payload_sha256::String}, evidence::@NamedTuple{classifier_result_sha256::String, raw_hit_interval_sidecar_sha256::String}, pair_map_sha256::String, mask_sha256::String}, raw_directed::Int64, included_directed::Int64)
+     @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_02\project\vendor\Peridynamics.jl\src\discretization\initial_bond_policy.jl:842
+   [2] _filter_initial_policy_candidates!(bonds::Vector{Peridynamics.Bond}, n_neighbors::Vector{Int64}, loc_points::Vector{Int64}, body::NativePolicyProbeBody, model::@NamedTuple{native_to_external::Vector{Int64}, decision_by_pair::Dict{Tuple{Int64, Int64}, String}, decisions::Vector{Tuple{Int64, Int64, String}}, expected_mask_pairs::Dict{String, Vector{Tuple{Int64, Int64}}}, source::@NamedTuple{source_cad_sha256::String, classifier_source_sha256::String}, points::@NamedTuple{payload_sha256::String}, evidence::@NamedTuple{classifier_result_sha256::String, raw_hit_interval_sidecar_sha256::String}, pair_map_sha256::String, mask_sha256::String}, policy::InitialBondPolicy)
+     @ Peridynamics C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_native_20261005\fork_run_02\project\vendor\Peridynamics.jl\src\discretization\initial_bond_policy.jl:962
+   [3] macro expansion
+     @ C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\initial_bond_policy_native_20261005\tests\test_initial_bond_policy.jl:78 [inlined]
+   [4] macro expansion
+     @ C:\Users\xiemo\Desktop\ShardForge\third_party\pgfrag-runtime\extract\julia-1.10.12\share\julia\stdlib\v1.10\Test\src\Test.jl:1582 [inlined]
+   [5] top-level scope
+     @ C:\Users\xiemo\Desktop\ShardForge\pgfrag\experiments\initial_bond_policy_native_20261005\tests\test_initial_bond_policy.jl:73
+   [6] include(fname::String)
+     @ Base.MainInclude .\client.jl:487
+   [7] top-level scope
+     @ none:1
+Test Summary:                                                 | Error  Total  Time
+full directed candidate comparison and canonical external IDs |     1      1  1.4s

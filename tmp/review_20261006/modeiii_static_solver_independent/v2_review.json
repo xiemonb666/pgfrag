@@ -1,0 +1,43 @@
+{
+  "schema": "modeiii_static_solver_independent_review.v2",
+  "status": "V2_OUTPUT_REVIEW_COMPLETE_ROOT_EXECUTION_DECISION_PENDING",
+  "source_freeze": {
+    "manifest": "pgfrag/tmp/review_20261005/modeiii_pu_static_solve_v2_20261005/source_freeze.json",
+    "manifest_sha256": "d8de9597d82e5db9a983f6be83f5c8407ec9cd56e9a8148ea22caf86d642b990",
+    "solver_sha256": "5369c9ff661959c93721ff2a4986cbeffeb9419b78d9dca0a018e64b31fecd2e",
+    "case_sha256": "d4246341d4e5c3c8cb38ff6caf681010393cb73bd589981eeb07cf6a55fbe3b1",
+    "all_owned_source_pins_match": true,
+    "all_seven_read_only_dependency_pins_match": true,
+    "preserved_v1_snapshot_still_matches": true
+  },
+  "core_numerics_delta": "reviewed assembly, coefficient mapping, spectrum and direct saddle function bodies are unchanged from v1",
+  "output_review": {
+    "raw_stiffness_matrices_saved": true,
+    "physical_mean_rows_saved": true,
+    "applied_force_vector_saved": true,
+    "ordered_canonical_ids_saved": true,
+    "offgrid_coordinates_and_exact_and_solved_fields_saved": true,
+    "dimensionless_gradient_units_corrected": true,
+    "saved_numeric_array_estimate_bytes": 78672,
+    "maximum_result_json_bytes": 4194304,
+    "numpy_generic_and_nested_boolean_serialization": "handled recursively",
+    "nonfinite_numeric_evidence": "raises and becomes UNKNOWN; not converted to null",
+    "render_path": "none"
+  },
+  "findings": [
+    {
+      "severity": "low_probability_receipt_integrity_edge",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py:1411-1432,1512-1560",
+      "description": "Worker writes staging JSON directly with Path.write_bytes. The parent promotes any existing staging file without validating JSON or requiring an expected worker return code. A partial file left by an I/O failure or abrupt non-timeout worker termination can be promoted.",
+      "scope_note": "Not observed; does not concern the numerical result path on successful writes."
+    },
+    {
+      "severity": "nonblocking_translation_compatibility_diagnostic_gap",
+      "location": "pgfrag/experiments/modeiii_pu_static_solve_v2_20261005/static_solve.py:590-600,860-909,1085-1133",
+      "description": "No single explicit translation-compatibility residual is reported, though the raw force and mean vectors, side resultant, and saddle multiplier are saved for an independent check."
+    }
+  ],
+  "source_modified": false,
+  "execution_performed": false,
+  "execution_authorized": false
+}

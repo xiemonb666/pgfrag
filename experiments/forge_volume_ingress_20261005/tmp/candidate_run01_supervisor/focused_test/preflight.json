@@ -1,0 +1,63 @@
+{
+  "status": "APPROVED_FOCUSED_TEST_STARTED_ONCE",
+  "started_utc": "2026-10-05T10:07:01.3896987Z",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\relicweave-synlab\\.venv\\Scripts\\python.exe",
+  "argv": [
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--color=no",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\candidate_run01_supervisor\\focused_test\\junit.xml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tests\\test_report_serialization.py"
+  ],
+  "outer_timeout_seconds": 30,
+  "worker_sha256_before": "10A53525D095715D53EEC16406C560FB42A37740E1C4E56CF5DB85E54F080E34",
+  "test_sha256_before": "52573AB3242375393627A873577FC4EC5E56125C48F290BE5AC945045E12EABF",
+  "historical_source_freeze_sha256": "3B29580E4470CFA3016968EB784CD5B1AB9C02E832A2CE1BF5DEE57C2A2A5538",
+  "retained_stage_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\forge_volume_ingress_20261005\\tmp\\.forge_ingress_stage__2srs6ad",
+  "retained_stage_bytes_before": 325188.0,
+  "retained_stage_inventory_before": [
+    {
+      "path": "cell_in_progress.json",
+      "bytes": 2372,
+      "sha256": "5A166E9EEF48A505B9BC00880D6BC264E87430AEF1D748511E1059CC852E99E3"
+    },
+    {
+      "path": "cell_ledger.json",
+      "bytes": 118930,
+      "sha256": "605AC46FA610141F45998CF66BB4CFE6381BC74C5C3E7E93C54FD22BFE44B56D"
+    },
+    {
+      "path": "cell_ledger.partial.json",
+      "bytes": 119097,
+      "sha256": "544ED3557F0E24D68E91DD8EE5B566EEDE773D0F54B3F58633272AE2CAAC49B1"
+    },
+    {
+      "path": "material_points.json",
+      "bytes": 77304,
+      "sha256": "EA0C64B996173735185368934C2BD6DFB7734CE1990813599C8F695B89BD1C0B"
+    },
+    {
+      "path": "parent_execution_receipt.json",
+      "bytes": 2151,
+      "sha256": "97310270BE5A002B78E24B75E61D3F8C301F66B8C3095DDEF61CAF475F2A6BB5"
+    },
+    {
+      "path": "request.json",
+      "bytes": 1032,
+      "sha256": "EF3D3E668B183ECB2AF98B02E0800AB93779E9A1EF91DE9BFA151CA608334CBB"
+    },
+    {
+      "path": "worker_failure.json",
+      "bytes": 4302,
+      "sha256": "5EB4C9739430BF1F9A26E8CE6F51D0D951E879791FE10A2F37FA586A8A6C5E1E"
+    }
+  ],
+  "pytest_plugin_autoload_disabled": true,
+  "no_cad_or_solver_authorized": true,
+  "rerun_allowed": false
+}

@@ -1,0 +1,662 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_benchmark_audit.v1",
+  "status": "ZERO_LOAD_NATIVE_EVOLUTION_NUMERICAL_PASS",
+  "classification": "ZERO_LOAD_NATIVE_COST_BENCHMARK_ONLY; PLACEHOLDER_UNCALIBRATED; NO_PHYSICAL_OR_FRACTURE_QUALIFICATION",
+  "checks": {
+    "frozen_input_hashes_match_preflight": true,
+    "wrapper_case_input_hashes_match": true,
+    "execution_input_hashes_unchanged": true,
+    "wrapper_started_inventory_matches_inputs": true,
+    "no_forge_manifest_used": true,
+    "source_geometry_ancestry_still_unbound": true,
+    "zero_load_case_parameters_preserved": true,
+    "execution_process_completed_once": true,
+    "result_reports_native_completion": true,
+    "native_mesh_counts_match_fullsize_v5": true,
+    "time_steps_match_preflight_forecast": true,
+    "completion_and_final_checkpoint_are_consistent": true,
+    "reported_history_forecast_matches_budget": true,
+    "native_receipt_inventory_matches_files": true,
+    "captured_native_stdout_stderr_match_execution_record": true,
+    "wrapper_receipt_status_matches_result": true,
+    "all_history_arrays_have_expected_shape_dtype_and_step_indices": true,
+    "all_history_arrays_are_finite": true,
+    "history_layout_preserves_native_qp_order_and_full_qps": true,
+    "all_quadrature_points_remain_unfailed": true,
+    "zero_load_qp_energetic_and_node_states_within_explicit_tolerances": true,
+    "independent_nodal_force_momentum_and_angular_momentum_audit_passes": true
+  },
+  "details": {
+    "frozen_input_hashes_match_preflight": {
+      "actual": {
+        "case.json": "98236bd6d0a8507d93bb80a7be8ce752835dd309b45043032b5d1ec88f009b5f",
+        "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+        "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+        "mesh.msh": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+        "mesh.original.msh": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+        "mesh_alias_receipt.json": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+      },
+      "expected": {
+        "case.json": "98236bd6d0a8507d93bb80a7be8ce752835dd309b45043032b5d1ec88f009b5f",
+        "cohesive_mesh.py": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d",
+        "cohesive_stability.py": "d3a1b3e33e459a5a905d2c7942cb8915f6052db4e69f61c973654e47d0efcff1",
+        "cohesive_vessel.py": "5872abe1235c5d9a5645666dfd40828d421531e4de95c3b05b85de5d52a9389b",
+        "material.dat": "7f0fc148dc92f7eec7ebb60c9236178fe45408ace237e0685574c03a6ccff3d1",
+        "mesh.msh": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c",
+        "mesh.original.msh": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627",
+        "mesh_alias_receipt.json": "cd07b84d6333ed23ab0ca0de0cf54bb35fca19fdae11a0e2b3960e6ec9b6e1c0"
+      }
+    },
+    "wrapper_case_input_hashes_match": {
+      "case_input_names": [
+        "cohesive_mesh.py",
+        "cohesive_stability.py",
+        "cohesive_vessel.py",
+        "material.dat",
+        "mesh.msh",
+        "mesh.original.msh",
+        "mesh_alias_receipt.json"
+      ],
+      "expected_noncase_input_names": [
+        "cohesive_mesh.py",
+        "cohesive_stability.py",
+        "cohesive_vessel.py",
+        "material.dat",
+        "mesh.msh",
+        "mesh.original.msh",
+        "mesh_alias_receipt.json"
+      ]
+    },
+    "execution_input_hashes_unchanged": {
+      "before_equals_after": true,
+      "returncode": 0,
+      "outer_elapsed_s": 23.753231219,
+      "timed_out": false
+    },
+    "wrapper_started_inventory_matches_inputs": {
+      "inventory_names": [
+        "case.json",
+        "cohesive_mesh.py",
+        "cohesive_stability.py",
+        "cohesive_vessel.py",
+        "material.dat",
+        "mesh.msh",
+        "mesh.original.msh",
+        "mesh_alias_receipt.json"
+      ],
+      "frozen_input_names": [
+        "case.json",
+        "cohesive_mesh.py",
+        "cohesive_stability.py",
+        "cohesive_vessel.py",
+        "material.dat",
+        "mesh.msh",
+        "mesh.original.msh",
+        "mesh_alias_receipt.json"
+      ]
+    },
+    "execution_process_completed_once": {
+      "status": "PROCESS_EXITED_PRESERVED",
+      "returncode": 0,
+      "outer_elapsed_s": 23.753231219,
+      "timed_out": false
+    },
+    "result_reports_native_completion": {
+      "status": "NATIVE_RUN_COMPLETE_DIAGNOSTIC",
+      "error": null,
+      "traceback": null
+    },
+    "native_mesh_counts_match_fullsize_v5": {
+      "counts": [
+        18634,
+        56139,
+        541
+      ],
+      "expected": [
+        18634,
+        56139,
+        541
+      ]
+    },
+    "time_steps_match_preflight_forecast": {
+      "steps": 46,
+      "dt_s": 2.173913043478261e-09,
+      "total_s": 1e-07,
+      "forecast_steps": 46,
+      "forecast_dt_s": 2.173913043478261e-09,
+      "initial_bound_steps": 46
+    },
+    "completion_and_final_checkpoint_are_consistent": {
+      "completion": {
+        "steps_completed": 46,
+        "qp_frames_written": 47,
+        "node_frames_written": 47,
+        "deformation_maxima_sampled": {
+          "max_abs_principal_small_strain": 2.3346526812578337e-15,
+          "max_polar_rotation_rad": 2.9802322387695312e-08,
+          "min_det_F": 0.9999999999999982
+        },
+        "last_metrics": {
+          "max_abs_principal_small_strain": 2.3346526812578337e-15,
+          "min_det_F": 0.9999999999999982,
+          "max_polar_rotation_rad": 2.9802322387695312e-08,
+          "min_principal_stretch": 0.9999999999999984,
+          "max_principal_stretch": 1.0000000000000016
+        }
+      },
+      "checkpoint": {
+        "completed_steps": 46,
+        "qp_frames_committed": 47,
+        "node_frames_committed": 47,
+        "elapsed_s": 18.745911624
+      }
+    },
+    "reported_history_forecast_matches_budget": {
+      "result_forecast_bytes": 94032400,
+      "budget_forecast_bytes": 94032400
+    },
+    "native_receipt_inventory_matches_files": {
+      "inventory_entries": 23,
+      "actual_entries": 23,
+      "persistent_bytes_before_receipt": 139706320,
+      "actual_persistent_bytes": 139706320
+    },
+    "captured_native_stdout_stderr_match_execution_record": {
+      "stdout": {
+        "path": "native_stdout.log",
+        "bytes": 959,
+        "sha256": "1e605a9684a4d98505473fdb3757975c2beab26b075c38aaa5f328b4f3b1ed3f"
+      },
+      "stderr": {
+        "path": "native_stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "all_history_arrays_have_expected_shape_dtype_and_step_indices": {
+      "arrays": {
+        "opening_m": {
+          "shape": [
+            47,
+            1623,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 1830872,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "traction_Pa": {
+          "shape": [
+            47,
+            1623,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 1830872,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "damage": {
+          "shape": [
+            47,
+            1623
+          ],
+          "dtype": "<f8",
+          "bytes": 610376,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "delta_max_m": {
+          "shape": [
+            47,
+            1623
+          ],
+          "dtype": "<f8",
+          "bytes": 610376,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "contact_traction_Pa": {
+          "shape": [
+            47,
+            1623,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 1830872,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "contact_opening_m": {
+          "shape": [
+            47,
+            1623,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 1830872,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "contact_energy_check": {
+          "shape": [
+            47,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 1256,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "interface_work_check": {
+          "shape": [
+            47,
+            4
+          ],
+          "dtype": "<f8",
+          "bytes": 1632,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "energy_J": {
+          "shape": [
+            47,
+            5
+          ],
+          "dtype": "<f8",
+          "bytes": 2008,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "ledger": {
+          "shape": [
+            47,
+            28
+          ],
+          "dtype": "<f8",
+          "bytes": 10656,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "patch_displacement_x_m": {
+          "shape": [
+            47,
+            3708
+          ],
+          "dtype": "<f8",
+          "bytes": 1394336,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "node_state": {
+          "shape": [
+            47,
+            18634,
+            4,
+            3
+          ],
+          "dtype": "<f8",
+          "bytes": 84076736,
+          "shape_dtype_match": true,
+          "all_finite": true
+        },
+        "node_saved_steps": {
+          "shape": [
+            47
+          ],
+          "dtype": "<i8",
+          "match_all_solver_steps": true
+        }
+      },
+      "expected_shapes": {
+        "opening_m": [
+          47,
+          1623,
+          3
+        ],
+        "traction_Pa": [
+          47,
+          1623,
+          3
+        ],
+        "damage": [
+          47,
+          1623
+        ],
+        "delta_max_m": [
+          47,
+          1623
+        ],
+        "contact_traction_Pa": [
+          47,
+          1623,
+          3
+        ],
+        "contact_opening_m": [
+          47,
+          1623,
+          3
+        ],
+        "contact_energy_check": [
+          47,
+          3
+        ],
+        "interface_work_check": [
+          47,
+          4
+        ],
+        "energy_J": [
+          47,
+          5
+        ],
+        "ledger": [
+          47,
+          28
+        ],
+        "patch_displacement_x_m": [
+          47,
+          3708
+        ],
+        "node_state": [
+          47,
+          18634,
+          4,
+          3
+        ]
+      },
+      "expected_step_indices": [
+        0,
+        46
+      ]
+    },
+    "all_history_arrays_are_finite": {
+      "array_finite": {
+        "opening_m": true,
+        "traction_Pa": true,
+        "damage": true,
+        "delta_max_m": true,
+        "contact_traction_Pa": true,
+        "contact_opening_m": true,
+        "contact_energy_check": true,
+        "interface_work_check": true,
+        "energy_J": true,
+        "ledger": true,
+        "patch_displacement_x_m": true,
+        "node_state": true,
+        "node_saved_steps": null
+      }
+    },
+    "history_layout_preserves_native_qp_order_and_full_qps": {
+      "qp_order": "native element-major, three quadrature points per cohesive_3d_6; no averaging",
+      "all_qp_states_retained": true,
+      "node_stride": 1,
+      "ledger_column_count": 28
+    },
+    "all_quadrature_points_remain_unfailed": {
+      "present": true,
+      "shape": [
+        1623
+      ],
+      "dtype": "<i8",
+      "unique_first_full_damage_steps": [
+        -1
+      ]
+    },
+    "zero_load_qp_energetic_and_node_states_within_explicit_tolerances": {
+      "maximum_absolute_by_array": {
+        "opening_m": 0.0,
+        "traction_Pa": 0.0,
+        "damage": 0.0,
+        "delta_max_m": 1e-08,
+        "contact_traction_Pa": 0.0,
+        "contact_opening_m": 0.0,
+        "contact_energy_check": 0.0,
+        "interface_work_check": 0.0,
+        "energy_J": 0.0,
+        "ledger": 1e-07,
+        "patch_displacement_x_m": 0.0,
+        "node_state": 0.0
+      },
+      "tolerances_by_array": {
+        "opening_m": 1e-12,
+        "traction_Pa": 0.01,
+        "damage": 1e-15,
+        "contact_traction_Pa": 0.01,
+        "contact_opening_m": 1e-12,
+        "contact_energy_check": 1e-15,
+        "interface_work_check": 1e-15,
+        "energy_J": 1e-15,
+        "patch_displacement_x_m": 1e-12,
+        "node_state": {
+          "displacement_m": 1e-12,
+          "velocity_mps": 1e-09,
+          "acceleration_mps2": 0.0001,
+          "internal_force_N": 1e-06
+        }
+      },
+      "node_state_channel_maxima": {
+        "displacement_m": 0.0,
+        "velocity_mps": 0.0,
+        "acceleration_mps2": 0.0,
+        "internal_force_N": 0.0
+      },
+      "delta_max_m_initial_threshold": 1e-08,
+      "delta_max_m_max_abs_difference_from_initial_threshold": 0.0,
+      "ledger_non_time_columns_max_abs": 0.0,
+      "ledger_time_column_is_checked_separately": true,
+      "per_array_pass": {
+        "opening_m": true,
+        "traction_Pa": true,
+        "damage": true,
+        "contact_traction_Pa": true,
+        "contact_opening_m": true,
+        "contact_energy_check": true,
+        "interface_work_check": true,
+        "energy_J": true,
+        "patch_displacement_x_m": true,
+        "node_state": true,
+        "delta_max_m_is_unchanged_initial_history_threshold": true,
+        "non_time_ledger_columns_zero": true
+      }
+    },
+    "independent_nodal_force_momentum_and_angular_momentum_audit_passes": {
+      "mass_state_shapes_ok": true,
+      "max_abs_nodal_force_balance_residual_N": 0.0,
+      "max_abs_momentum_vs_ledger_kg_m_s": 0.0,
+      "max_abs_angular_momentum_vs_ledger_kg_m2_s": 0.0,
+      "ledger_force_residual_matches_independent": true,
+      "momentum_limit_kg_m_s": 1e-12,
+      "angular_momentum_limit_kg_m2_s": 1e-12,
+      "force_balance_limit_N": 1e-06,
+      "reference_unit_load_sum_N": [
+        1.19522447494802e-15,
+        0.0,
+        0.0
+      ],
+      "reference_unit_torque_sum_m": [
+        0.0,
+        -3.3546278819032715e-12,
+        -1.186312289044476e-12
+      ],
+      "actual_external_load_is_zero": true,
+      "times_and_load_factor_match": true
+    },
+    "observed_native_cost": {
+      "native_result_elapsed_s": 18.758411692000003,
+      "outer_process_elapsed_s": 23.753231219,
+      "native_steps": 46,
+      "native_steps_per_second_observed": 2.4522332037108376,
+      "counts": [
+        18634,
+        56139,
+        541
+      ],
+      "dt_s": 2.173913043478261e-09,
+      "actual_native_run_bytes_ex_receipt": 139706320,
+      "receipt_bytes": 3941,
+      "output_bytes_across_benchmark_experiment_and_data": 148756872,
+      "declared_all_output_budget_bytes": 268435456,
+      "whole_benchmark_budget_remaining_before_audit_report": 119678584,
+      "no_full_run_eta_claim": true
+    }
+  },
+  "timings_and_cost": {
+    "native_result_elapsed_s": 18.758411692000003,
+    "outer_process_elapsed_s": 23.753231219,
+    "native_steps": 46,
+    "native_steps_per_second_observed": 2.4522332037108376,
+    "counts": [
+      18634,
+      56139,
+      541
+    ],
+    "dt_s": 2.173913043478261e-09,
+    "actual_native_run_bytes_ex_receipt": 139706320,
+    "receipt_bytes": 3941,
+    "output_bytes_across_benchmark_experiment_and_data": 148756872,
+    "declared_all_output_budget_bytes": 268435456,
+    "whole_benchmark_budget_remaining_before_audit_report": 119678584,
+    "no_full_run_eta_claim": true
+  },
+  "array_readback": {
+    "opening_m": {
+      "shape": [
+        47,
+        1623,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 1830872,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "traction_Pa": {
+      "shape": [
+        47,
+        1623,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 1830872,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "damage": {
+      "shape": [
+        47,
+        1623
+      ],
+      "dtype": "<f8",
+      "bytes": 610376,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "delta_max_m": {
+      "shape": [
+        47,
+        1623
+      ],
+      "dtype": "<f8",
+      "bytes": 610376,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "contact_traction_Pa": {
+      "shape": [
+        47,
+        1623,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 1830872,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "contact_opening_m": {
+      "shape": [
+        47,
+        1623,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 1830872,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "contact_energy_check": {
+      "shape": [
+        47,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 1256,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "interface_work_check": {
+      "shape": [
+        47,
+        4
+      ],
+      "dtype": "<f8",
+      "bytes": 1632,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "energy_J": {
+      "shape": [
+        47,
+        5
+      ],
+      "dtype": "<f8",
+      "bytes": 2008,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "ledger": {
+      "shape": [
+        47,
+        28
+      ],
+      "dtype": "<f8",
+      "bytes": 10656,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "patch_displacement_x_m": {
+      "shape": [
+        47,
+        3708
+      ],
+      "dtype": "<f8",
+      "bytes": 1394336,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "node_state": {
+      "shape": [
+        47,
+        18634,
+        4,
+        3
+      ],
+      "dtype": "<f8",
+      "bytes": 84076736,
+      "shape_dtype_match": true,
+      "all_finite": true
+    },
+    "node_saved_steps": {
+      "shape": [
+        47
+      ],
+      "dtype": "<i8",
+      "match_all_solver_steps": true
+    }
+  },
+  "output_bytes_across_benchmark_experiment_and_data_including_audit": 148756872,
+  "declared_all_output_budget_bytes": 268435456,
+  "all_output_budget_passes": true
+}

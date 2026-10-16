@@ -1,0 +1,363 @@
+{
+  "caps": {
+    "automatic_retry": false,
+    "currently_requested_steps_h_h2_h4": 4662,
+    "h_over_8_requires_separate_root_confirmation": true,
+    "max_campaign_wall_seconds": 1200.0,
+    "max_output_bytes_total": 268435456,
+    "max_solver_steps_total_if_all_four_runs_authorized": 9990,
+    "max_steps_per_run": 5328,
+    "max_wall_seconds_per_run": 300.0,
+    "one_attempt_per_resolution": true
+  },
+  "capture_plan": {
+    "after_insertion": "every native view is fetched again and copied after the operation; no pre-insertion AkaArray view is reused",
+    "bulk_stress": "MaterialLinearElastic3D.getStress(_tetrahedron_4,_not_ghost), copied at each A/B/C/D sample",
+    "connectivity_and_ancestry": "capture rest nodes/bulk T4/cohesive connectivity in event snapshots; hash/count and run generic exact source-cell-row/local-corner ancestry on every sample; declare unchanged bulk-row assumption",
+    "every_A_and_B": "capture state to memory; retain current A and a rolling four previous no-insertion B states; persist dense A/B/C only on a reported insertion step",
+    "every_C": "capture only after a positive insertion delta; preserve appended node/mass/force values as pre-solve, potentially stale",
+    "every_D": "capture all nodal displacement, velocity, acceleration, mass, internal/external force and blocked DOFs; bulk material stress; all cohesive fields; energies; scalar trace; snapshot-local ancestry check",
+    "native_cohesive_fields": [
+      "sigma_c_eff",
+      "delta_c_eff",
+      "insertion_stress",
+      "normal",
+      "delta max",
+      "damage",
+      "opening",
+      "tractions",
+      "contact_tractions",
+      "contact_opening",
+      "reversible_energy",
+      "total_energy"
+    ],
+    "native_energies": {
+      "bulk_potential_J": "potential",
+      "cohesive_contact_native_key_J": "cohesive contact",
+      "cohesive_dissipated_J": "dissipated",
+      "cohesive_reversible_J": "reversible",
+      "contact_alias_diagnostic_J": "contact",
+      "kinetic_J": "kinetic"
+    },
+    "no_observation_assembly": true,
+    "normals": "capture FacetsFEEngine native normals on pre-check candidate slots at B; capture cohesive internal `normal` after insertion; never infer cohesive orientation from MSH winding",
+    "preinsert_candidate_stress": "capture only check-mask candidate rows from getStressOnFacets at B; preserve native slot and QP shape; no cross-insertion QP ordinal join",
+    "shape_maps": "copy read-only public FEEngine getShapes for available T4/Tri3/cohesive types; actual wheel Python surface has no public integration-weight/Jacobian getter, so no nodal force reconstruction or fabricated QP weight ordering is allowed"
+  },
+  "comparison_outline": [
+    "compare first insertion physical clock step*dt and stable facet identity set across h/h2/h4",
+    "compute q_first only where native cohesive opening, actual native normal, and frozen beta=3 metric are populated; report q_first/h^2; retain missing evidence as UNKNOWN",
+    "evaluate direction compatibility against native insertion-stress vector only after its field semantics are confirmed from the cached native law; do not create a circular reconstruction",
+    "reconstruct signed QP work and native cohesive energy changes only with snapshot-local field lineage and independently supported area/weight mapping; preserve signed increments",
+    "compare force, opening, history, native mass, and energy at matched physical times; never compare row/QP ordinals across insertion transitions",
+    "report frozen post-insertion tangent/eigenvalue diagnostics separately; they are not onset CFL certification"
+  ],
+  "created_utc": "2026-10-16T08:51:30.596573+00:00",
+  "driver": {
+    "byte_count": 68021,
+    "exists": true,
+    "path": "pgfrag/experiments/continuation_20261016/extrinsic_onset_refinement/refinement_driver.py",
+    "sha256": "74a5913e243e8ef8bfee1fbd98b812a7ee4fba95087a19351c28b240ec230daa"
+  },
+  "frozen_model": {
+    "actual_interface_geometry": {
+      "method": "0.5 * norm(cross(x1-x0, x2-x0)); no nominal rectangle area substituted",
+      "source": "recomputed from frozen Gmsh 2.2 node coordinates and physical interface triangles",
+      "total_area_m2": 4e-06,
+      "triangle_areas_m2": [
+        5e-07,
+        5e-07,
+        5e-07,
+        5e-07,
+        5e-07,
+        5e-07,
+        5e-07,
+        5e-07
+      ],
+      "triangle_count": 8
+    },
+    "analysis_method": "_explicit_lumped_mass",
+    "eligible_interface_facets": 8,
+    "eligible_physical_surface": "interface",
+    "initial_cohesive_elements": 0,
+    "insertion_mode": "extrinsic",
+    "material_input": "frozen material.dat; no edits",
+    "material_values_from_frozen_manifest": {
+      "E_Pa": 70000000000.0,
+      "Gc_J_m2": 7.6,
+      "beta": 3.0,
+      "delta_c_m": 2.1714285714285712e-07,
+      "expected_energy_if_fully_debonded_J": 3.0399999999999997e-05,
+      "mass_density_volume_expected_kg": 4e-05,
+      "nu": 0.22,
+      "rho_kg_m3": 2500.0,
+      "sigma_c_Pa": 70000000.0,
+      "source_note": "illustrative values also shown in official Akantu examples; not ceramic properties",
+      "status": "UNVALIDATED_TOY"
+    },
+    "mesh_elements": 96,
+    "preinsert_nodes": 45,
+    "root_derivation": {
+      "byte_count": 4592,
+      "exists": true,
+      "path": "docs/continuation/20261016/EXTRINSIC_EVENT_MATH.md",
+      "sha256": "58f0f9424b7a1d61c00c34fd8d4b338982d468d0582df807b1221b96cc72679a"
+    }
+  },
+  "hash_inventory": {
+    "cached_source_material_cohesive.cc": {
+      "byte_count": 17941,
+      "exists": true,
+      "expected_sha256": "46bbb9639a975c04e1ca136bb2ecd26efccb80b21294ea98ade9aae9ac849b13",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/material_cohesive.cc",
+      "sha256": "46bbb9639a975c04e1ca136bb2ecd26efccb80b21294ea98ade9aae9ac849b13"
+    },
+    "cached_source_material_cohesive_linear.cc": {
+      "byte_count": 12273,
+      "exists": true,
+      "expected_sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.cc",
+      "sha256": "90dcef30fc1f60ad668f33a3756875d0bdeb87f4a354d157674051eb8494fda2"
+    },
+    "cached_source_material_cohesive_linear.hh": {
+      "byte_count": 6701,
+      "exists": true,
+      "expected_sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/materials/constitutive_laws/material_cohesive_linear.hh",
+      "sha256": "597e59fd02ca1853f1c861785684e69b9aa071dd380ab50c0a4c9d917e353bbc"
+    },
+    "cached_source_solid_mechanics_model.cc": {
+      "byte_count": 34669,
+      "exists": true,
+      "expected_sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model.cc",
+      "sha256": "fc7873c73f830381fd73b24bf80ad5fb07ca02258ba24d30241632835fcf0465"
+    },
+    "cached_source_solid_mechanics_model_cohesive.cc": {
+      "byte_count": 21074,
+      "exists": true,
+      "expected_sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/source-v5.0.7/src/model/solid_mechanics/solid_mechanics_model_cohesive/solid_mechanics_model_cohesive.cc",
+      "sha256": "b9a3b89ef9b1f17f82fb3d80c99666d292cd5e8615d56d4fa9ced648030f3d64"
+    },
+    "capture_preflight_driver": {
+      "byte_count": 32811,
+      "exists": true,
+      "path": "pgfrag/experiments/continuation_20261016/extrinsic_capture_preflight/capture_preflight.py",
+      "sha256": "097acee662d3fd890543e17db4f3fe955aa3007d3e2c68e359f812ea68c8a4a3"
+    },
+    "cohesive_mesh_reader": {
+      "byte_count": 26147,
+      "exists": true,
+      "path": "pgfrag/src/pgfrag/cohesive_mesh.py",
+      "sha256": "e7d89c9bc4f6b23eb85778f0945c129605ced23ab18418f1d1f75e41a601b41d"
+    },
+    "extrinsic_capture_preflight_result": {
+      "byte_count": 49673,
+      "exists": true,
+      "path": "pgfrag/data/continuation_20261016/extrinsic_capture_preflight/extrinsic_capture.json",
+      "sha256": "3b4661be80d29663791a1a3225fb6a952a40c12624f4a9e86d7630ba4343bfed"
+    },
+    "facet_ancestry_module": {
+      "byte_count": 25891,
+      "exists": true,
+      "path": "pgfrag/src/pgfrag/facet_ancestry.py",
+      "sha256": "c2efef1621bc3222a5fb7ea51cc84c7001fed2a9df54361207eff91495dea058"
+    },
+    "generated_geometry": {
+      "byte_count": 488,
+      "exists": true,
+      "expected_sha256": "eec01312e181581c1d433b2619b6fd8a4a42677769c4dbc25053d0a2c355188b",
+      "hash_matches_expected": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/generated_geometry.json",
+      "sha256": "eec01312e181581c1d433b2619b6fd8a4a42677769c4dbc25053d0a2c355188b"
+    },
+    "intrinsic_capability_preflight_result": {
+      "byte_count": 48136,
+      "exists": true,
+      "path": "pgfrag/data/continuation_20261016/extrinsic_capture_preflight/intrinsic_capability_capture.json",
+      "sha256": "27d4a6595746d53048b6cba3867269faf94717cf7b6fd32c2d5f757297c297bd"
+    },
+    "manifest": {
+      "byte_count": 4757,
+      "exists": true,
+      "expected_sha256": "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68",
+      "hash_matches_expected": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/manifest.json",
+      "sha256": "21b563069550e2091474fe94877bd3ceaae094ac4c92aed3900ecdd94702dd68"
+    },
+    "material_dat": {
+      "byte_count": 291,
+      "exists": true,
+      "expected_sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f",
+      "hash_matches_expected": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/material.dat",
+      "sha256": "c300c3091ac323eba756f2d7bfbf55e888c68d6b10f5fcb9763c0e6b6194305f"
+    },
+    "old_probe_driver": {
+      "byte_count": 46087,
+      "exists": true,
+      "path": "pgfrag/experiments/cohesive_event_probe_20261004/probe_driver.py",
+      "sha256": "65fb7e4a4590d1cbb0a015a4ff35a0b5261528926394c5a2cac692cf76e42be6"
+    },
+    "root_math_derivation": {
+      "byte_count": 4592,
+      "exists": true,
+      "path": "docs/continuation/20261016/EXTRINSIC_EVENT_MATH.md",
+      "sha256": "58f0f9424b7a1d61c00c34fd8d4b338982d468d0582df807b1221b96cc72679a"
+    },
+    "runtime_wheel": {
+      "byte_count": 6592004,
+      "exists": true,
+      "expected_sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b",
+      "hash_matches_expected": true,
+      "path": "third_party/akantu-runtime/downloads/akantu-5.0.7.post1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b"
+    },
+    "source_msh": {
+      "byte_count": 3605,
+      "exists": true,
+      "expected_sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638",
+      "hash_matches_expected": true,
+      "path": "relicweave-synlab/tmp/review_20261004/implementation/cohesive_event_probe_20261004/coarse654_20261004_01/snapshot/input/block_2x2x4mm.msh",
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    "wheel_feengine_api_evidence": {
+      "byte_count": 3449,
+      "exists": true,
+      "path": "pgfrag/data/continuation_20261016/extrinsic_onset_refinement/wheel_feengine_public_api.json",
+      "sha256": "24d941eac825e0529cf8b3c0949ed6d8c0e6d7f05b7754444d0ef0b7f15252cc"
+    }
+  },
+  "launch_gate": {
+    "campaign_was_launched_by_prepare": false,
+    "exact_commands": "README.md has the three currently planned h, h/2, h/4 commands and a separate h/8 root-confirmation gate; commands are emitted by --prepare",
+    "required_flag": "--launch",
+    "requires_reviewed_protocol_sha256": true
+  },
+  "ledger_and_native_limitations": {
+    "energy_ledger_pass": "forbidden unless actual actuator force and prescribed kinematic phase are proven; otherwise report exact missing quantity and leave status UNKNOWN",
+    "mass": "C mass/force arrays are captured but marked pre-solve potentially stale; D after solveStep is the operative candidate, not a mass pass by itself",
+    "native_insert_stress": "capture native per-QP sigma_c_eff, delta_c_eff, insertion_stress, normal, opening, traction, contact opening/traction and damage; no sigma inferred from traction",
+    "prescribed_boundary_work": "capture top displacement history, blocked DOFs, native internal/external forces and their phases; the top internal-reaction sign estimate remains an estimate, not a verified actuator force",
+    "weights": "actual triangle areas come from frozen mesh coordinates; per-QP native integration weights are not exposed by the wheel's public Python FEEngine surface"
+  },
+  "native_call_order": [
+    "parseInput(frozen material.dat)",
+    "read frozen MSH; construct SolidMechanicsModelCohesive",
+    "initFull(_analysis_method=_explicit_lumped_mass, _is_extrinsic=True)",
+    "assembleMassLumped() once at initial setup",
+    "addPhysicalSurface('interface'); updateAutomaticInsertion(); require 8 eligible and 0 inserted",
+    "apply zero-valued bottom z Dirichlet condition once",
+    "setTimeStep(dt)",
+    "per step A getter capture; set ramp time=step*dt; applyBC(ramp,'top'); B getter capture",
+    "checkCohesiveStress(); capture return and native cohesive count delta",
+    "if insertion occurred, immediately refetch/copy all state for C; no force/mass assembly for observation",
+    "solveStep(); immediately refetch/copy D state; capture every D through the common endpoint"
+  ],
+  "output_forecast": {
+    "ancestry_phase_metadata_allowance_bytes": 5114880,
+    "d_array_payload_bytes": 216413370,
+    "d_chunk_container_allowance_bytes": 5242880,
+    "d_chunk_count_at_128_steps": 80,
+    "d_snapshot_uncompressed_array_bytes_per_step": 21663,
+    "d_snapshots_across_h_h2_h4_h8": 9990,
+    "event_archive_allowance_bytes": 15728640,
+    "forecast_method": "uncompressed D array payload plus explicit conservative fixed allowances; no compression ratio assumed",
+    "logs_status_protocol_allowance_bytes": 8388608,
+    "output_cap_bytes": 268435456,
+    "output_cap_mib": 256.0,
+    "scalar_trace_allowance_bytes": 10229760,
+    "scope": "worst-case 4-resolution envelope; h/8 remains root-gated and is not in the current three-run authorization request",
+    "total_forecast_bytes": 261118138,
+    "total_forecast_mib": 249.02166175842285,
+    "under_cap": true,
+    "worst_case_cohesive_elements": 8,
+    "worst_case_cohesive_qps": 24,
+    "worst_case_node_rows": 69
+  },
+  "phase_clock": {
+    "driver_time": "exact Decimal(step)*Decimal(dt), stored with binary64 dt and scheduled BC value",
+    "native_getTime": "unavailable in actual wheel; never called or presented as measured",
+    "phase_A": "before the current step's applyBC; native state is copied immediately at that phase",
+    "phase_B": "after applyBC(step*dt), before checkCohesiveStress; bulk/facet stress are existing stress values",
+    "phase_C": "immediately after checkCohesiveStress and any insertion, before solveStep; mass/force may be stale",
+    "phase_D": "immediately after solveStep; no additional assembly before getters"
+  },
+  "provisional_numerical_screens": {
+    "all_screens": "numerical screens only; no physical calibration, material qualification, or onset CFL certificate",
+    "common_endpoint_s": "0.000039015817223198595444",
+    "energy_defect": {
+      "limit_fraction_of_GcA": 0.01,
+      "scale_J": 3.04e-05,
+      "status": "cannot be called PASS unless actuator work/kinematic phase and native energy ledger are independently verified",
+      "threshold_J": 3.04e-07
+    },
+    "force_scale_N": 280.0,
+    "matched_history_difference": {
+      "definition": "normalized pairwise history difference at matched physical times on common endpoint; exact observable list and normalization frozen by offline audit before interpretation",
+      "limit": 0.02,
+      "status": "numerical_screen_not_physical_calibration"
+    },
+    "opening_scale_m": 2.1714285714285712e-07
+  },
+  "runtime": {
+    "cached_native_source_tag": "v5.0.7",
+    "cached_source_is_exact_wheel_source": false,
+    "distribution": "akantu 5.0.7.post1",
+    "native_model_initialized_during_prepare": false,
+    "python_executable_expected": "/mnt/c/Users/xiemo/Desktop/ShardForge/third_party/akantu-runtime/venv/bin/python",
+    "solver_steps_during_prepare": 0,
+    "thread_limits": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "wheel_sha256": "f618c31bb4cdf23d86e74a10f7e94dac3dae7b0ae2cfd057d352c1b156c0654b"
+  },
+  "schema": "pgfrag.extrinsic_onset_refinement.protocol.v1",
+  "status": "FROZEN_FOR_ROOT_REVIEW_NO_CAMPAIGN_LAUNCHED",
+  "time_matrix": [
+    {
+      "common_endpoint_decimal_s": "0.000039015817223198595444",
+      "divisor": 1,
+      "dt_binary64_s": 5.8582308142940834e-08,
+      "dt_decimal_s": "5.8582308142940834E-8",
+      "resolution": "h",
+      "status": "PLANNED_ROOT_REVIEW",
+      "steps_to_common_endpoint": 666
+    },
+    {
+      "common_endpoint_decimal_s": "0.000039015817223198595444",
+      "divisor": 2,
+      "dt_binary64_s": 2.9291154071470417e-08,
+      "dt_decimal_s": "2.9291154071470417E-8",
+      "resolution": "h_over_2",
+      "status": "PLANNED_ROOT_REVIEW",
+      "steps_to_common_endpoint": 1332
+    },
+    {
+      "common_endpoint_decimal_s": "0.000039015817223198595444",
+      "divisor": 4,
+      "dt_binary64_s": 1.4645577035735208e-08,
+      "dt_decimal_s": "1.46455770357352085E-8",
+      "resolution": "h_over_4",
+      "status": "PLANNED_ROOT_REVIEW",
+      "steps_to_common_endpoint": 2664
+    },
+    {
+      "common_endpoint_decimal_s": "0.000039015817223198595444",
+      "divisor": 8,
+      "dt_binary64_s": 7.322788517867604e-09,
+      "dt_decimal_s": "7.32278851786760425E-9",
+      "resolution": "h_over_8_reserved",
+      "status": "RESERVED_REQUIRES_SEPARATE_ROOT_CONFIRMATION",
+      "steps_to_common_endpoint": 5328
+    }
+  ]
+}

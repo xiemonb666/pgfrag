@@ -1,0 +1,77 @@
+{
+  "schema": "pgfrag.free_fracture_pilot.one_shot_independent_review_execution.v1",
+  "status": "HALTED_BEFORE_BOND_EVENT_GRAPH_RECONSTRUCTION",
+  "authorization": {
+    "source": "root explicit message",
+    "pre_audit_freeze_sha256": "a6eaa3f0f4339b644a44d949e00fb220e85c4da1266dd149e94db88d29d437e3",
+    "expected_summary_sha256": "1e3396d30aa124a3371b47bcd6cc40eea4118312a18d685bbfbe3fdaa60a9c8c",
+    "runner_sha256": "ab74c6afbdea7ee9b938c0aea44a81243a099a529388f5dd04fe915dd1f4bc7d"
+  },
+  "execution": {
+    "adapter_exit_code": 2,
+    "adapter_process_status": "COMPLETED_NONZERO",
+    "wrapper_runtime_budget_seconds": 110,
+    "elapsed_ms": 1367,
+    "wrapper_receipt_last_write_utc": "2026-10-05T10:39:00.4653748Z",
+    "timeout_or_kill": false,
+    "solver_invoked": false,
+    "adapter_invocation_count": 1
+  },
+  "streams": {
+    "stdout": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\audit_output\\bounded_runner_stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\audit_output\\bounded_runner_stderr.txt",
+      "bytes": 788,
+      "sha256": "0895706de06cfd02b779ef0d5751ee81ac4865f23c2bf5d8bebaa6fe39f78949"
+    }
+  },
+  "source_output_prepost": {
+    "source_pin_count": 84,
+    "all_pre_source_pins_match_freeze": true,
+    "all_post_source_pins_match_freeze": true,
+    "source_pin_sha_bytes_identical_prepost": true,
+    "result_file_count": 10,
+    "all_pre_result_files_match_frozen_input_inventory": true,
+    "all_post_result_files_match_frozen_input_inventory": true,
+    "all_result_file_sha_bytes_identical_prepost": true,
+    "result_tree_bytes_pre": 88921168,
+    "result_tree_bytes_post": 88921168,
+    "result_snapshot_manifest_sha_pre": "819f533228e91cc28cccfcd926d1d91a6a2877291c9b6703fb5943e35550bde6",
+    "result_snapshot_manifest_sha_post": "819f533228e91cc28cccfcd926d1d91a6a2877291c9b6703fb5943e35550bde6",
+    "all_attempt_tree_file_sha_bytes_identical_prepost": true,
+    "attempt_tree_bytes_pre": 88924268,
+    "attempt_tree_bytes_post": 88924268,
+    "result_or_source_pin_mismatches": 0
+  },
+  "cap_check": {
+    "attempt_tree_bytes": 88924268,
+    "case_max_attempt_bytes": 209715200,
+    "results_tree_bytes": 88921168,
+    "case_max_output_bytes": 199229440,
+    "freeze_max_experiment_output_bytes": 199229440,
+    "within_exact_caps": true
+  },
+  "receipt_discrepancy": {
+    "recorded_final_attempt_bytes": 88924215,
+    "independently_counted_attempt_tree_bytes": 88924268,
+    "exact_delta_bytes": 53,
+    "zero_tolerance_failed_check_preserved": true,
+    "receipt_modified": false
+  },
+  "adapter_result": {
+    "audit_json_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\audit_output\\pilot_independent_review.json",
+    "audit_json_sha256": "cf0bed327dda9da0b5e05dc7f3ba13e9a4c9feff8f8dbe6f8bcbfae1bb96ea3a",
+    "audit_status": "FAIL",
+    "fatal_error": "TypeError: minimum() takes from 2 to 3 positional arguments but 1 was given\nTraceback (most recent call last):\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\pilot_independent_review.py\", line 1775, in main\n    report = audit_pilot(audit, receipt_info)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\free_fracture_pilot_independent_review\\pilot_independent_review.py\", line 722, in audit_pilot\n    clearance = np.minimum(lengths_m[None, :] / 2 - np.abs(xyz), axis=1)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: minimum() takes from 2 to 3 positional arguments but 1 was given\n",
+    "native_arithmetic_validation": "NOT_COMPLETED",
+    "bond_event_graph_reconstruction": "NOT_REACHED",
+    "threshold_roundoff_ambiguous_count": "NOT_COMPUTED",
+    "png_count": 0,
+    "generated_data_pngs": [],
+    "adaptive_retry": false
+  }
+}

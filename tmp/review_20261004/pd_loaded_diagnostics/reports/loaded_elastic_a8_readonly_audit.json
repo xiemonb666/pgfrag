@@ -1,0 +1,196 @@
+{
+  "schema": "pgfrag.pd.loaded_diagnostic.readonly_audit.v1",
+  "status": "PASS_NARROW_LOADED_RESPONSE_GATE",
+  "run_id": "loaded_elastic_a8_run01",
+  "scope": "Read-only audit of actual A loaded elastic observer run; no model qualification.",
+  "receipt": {
+    "status": "COMPLETED",
+    "wrapper_exit_code": 0,
+    "child_exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 120,
+    "started_utc": "2026-10-04T14:48:48.6850289Z",
+    "finished_utc": "2026-10-04T14:48:57.1990774Z",
+    "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+    "bytes": 2022,
+    "sha256": "fc5574661812d6d83fe7c19e1c24d10d96d46bf0436dddc7fb78e8567459706f"
+  },
+  "stdout": {
+    "bytes": 123,
+    "sha256": "338f9d32c39f07ce1bbfc500c81808173ac518ae42f9b9477d4bff397979efdf"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sampled_steps": 9,
+  "source_points_per_step": 125,
+  "directed_rows_per_step": 6124,
+  "canonical_rows_per_step": 3062,
+  "accepted_dt_s": 4.925124976599115E-07,
+  "total_time_s": 3.940099981279292E-06,
+  "max_coordinate_displacement_residual_m": 1.608322006572579E-18,
+  "max_time_step_residual_s": 0.0,
+  "total_mass_by_step_kg": [
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966,
+    0.00026249999999999966
+  ],
+  "nonzero_displacement": true,
+  "nonzero_velocity": true,
+  "nonzero_internal_body_force_density": true,
+  "transition_rows": {
+    "directed": 0,
+    "canonical": 0
+  },
+  "reciprocal_consistency": "PASS",
+  "per_step_extrema": [
+    {
+      "step": 0,
+      "time_s": 0.0,
+      "max_displacement_norm_m": 0.0,
+      "max_velocity_norm_m_s": 0.0,
+      "max_acceleration_norm_m_s2": 0.0,
+      "max_internal_body_force_density_norm_N_m3": 0.0,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 1,
+      "time_s": 4.925124976599115E-07,
+      "max_displacement_norm_m": 2.4625624882995573E-09,
+      "max_velocity_norm_m_s": 0.004028141550248144,
+      "max_acceleration_norm_m_s2": 5478.905298117008,
+      "max_internal_body_force_density_norm_N_m3": 11505701.126045717,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 2,
+      "time_s": 9.85024995319823E-07,
+      "max_displacement_norm_m": 4.951556827420822E-09,
+      "max_velocity_norm_m_s": 0.003539295692688497,
+      "max_acceleration_norm_m_s2": 9579.238800530029,
+      "max_internal_body_force_density_norm_N_m3": 20116401.48111306,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 3,
+      "time_s": 1.4775374929797345E-06,
+      "max_displacement_norm_m": 7.574028170196975E-09,
+      "max_velocity_norm_m_s": 0.003870608763636463,
+      "max_acceleration_norm_m_s2": 12549.744340051204,
+      "max_internal_body_force_density_norm_N_m3": 26354463.114107527,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 4,
+      "time_s": 1.970049990639646E-06,
+      "max_displacement_norm_m": 1.0351301975484324E-08,
+      "max_velocity_norm_m_s": 0.0043361548552972775,
+      "max_acceleration_norm_m_s2": 14982.730440447813,
+      "max_internal_body_force_density_norm_N_m3": 31463733.924940407,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 5,
+      "time_s": 2.4625624882995572E-06,
+      "max_displacement_norm_m": 1.3145410533947131E-08,
+      "max_velocity_norm_m_s": 0.0043977790001954575,
+      "max_acceleration_norm_m_s2": 17747.85060719483,
+      "max_internal_body_force_density_norm_N_m3": 37270486.27510914,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 6,
+      "time_s": 2.955074985959469E-06,
+      "max_displacement_norm_m": 1.583616376165113E-08,
+      "max_velocity_norm_m_s": 0.0039455672353794395,
+      "max_acceleration_norm_m_s2": 21459.943373916598,
+      "max_internal_body_force_density_norm_N_m3": 45065881.08522486,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 7,
+      "time_s": 3.4475874836193804E-06,
+      "max_displacement_norm_m": 1.8428769143081475E-08,
+      "max_velocity_norm_m_s": 0.0025146449749311487,
+      "max_acceleration_norm_m_s2": 25865.012676827646,
+      "max_internal_body_force_density_norm_N_m3": 54316526.62133806,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    },
+    {
+      "step": 8,
+      "time_s": 3.940099981279292E-06,
+      "max_displacement_norm_m": 2.09901797179731E-08,
+      "max_velocity_norm_m_s": 0.0028109163865159396,
+      "max_acceleration_norm_m_s2": 30283.800180122187,
+      "max_internal_body_force_density_norm_N_m3": 63595980.3782566,
+      "max_external_body_force_density_norm_N_m3": 0.0,
+      "active_directed_bonds": 6124,
+      "active_canonical_bonds": 3062,
+      "mass_kg": 0.00026249999999999966
+    }
+  ],
+  "raw_artifacts": {
+    "canonical_bond_state_history.csv": {
+      "bytes": 1475260,
+      "sha256": "92b6294e34eaf5dfdbd13c48ba62a5f23e7f46124ab0813e842da475b4c09cd4"
+    },
+    "canonical_bond_transitions.csv": {
+      "bytes": 70,
+      "sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692"
+    },
+    "directed_bond_transitions.csv": {
+      "bytes": 142,
+      "sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137"
+    },
+    "point_state_history.csv": {
+      "bytes": 458701,
+      "sha256": "9a0e032a3c411c9bd3b38b01ab458c7a38921b1a1461b2366ed4af48e25dfe3f"
+    },
+    "summary.toml": {
+      "bytes": 1750,
+      "sha256": "32c93b1b3dba408060b2b4a2909b1618962aa6337bd11c0ff1b0054b529d6d8a"
+    },
+    "directed_bond_state_history.csv": {
+      "bytes": 3567756,
+      "sha256": "5314389ae684dc552bf05423aecf7cc1ab6a311ff51b7ce7862339510ab82203"
+    }
+  },
+  "limits": [
+    "UNVALIDATED_PROTOTYPE only",
+    "no bond events: no fracture qualification",
+    "no contact / no full work-energy ledger",
+    "no physical fragment reconstruction or R2 eligibility"
+  ],
+  "errors": []
+}

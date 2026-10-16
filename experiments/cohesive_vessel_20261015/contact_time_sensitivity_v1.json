@@ -1,0 +1,49 @@
+{
+  "schema": "pgfrag.native_cohesive_time_sensitivity.v1",
+  "status": "TWO_LEVEL_FIXED_MESH_SENSITIVITY_ONLY",
+  "GcAh_J": 0.0009547371947737782,
+  "discrete_interface_area_m2": 0.00012562331510181291,
+  "runs": [
+    {
+      "run": "pgfrag\\data\\continuation_20261015\\cohesive_contact_weak_v1",
+      "receipt_sha256": "c1162285546963f5c7631531cc2530e61427d7ab46a5ffdb156a148a93f8cdb2",
+      "dt_s": 1.5413070283600494e-08,
+      "steps": 3244,
+      "all_qp_full_damage_first_time_s": 1.1035758323057953e-05,
+      "final_native_dissipation_J": 0.0009547816680805649,
+      "final_dissipation_relative_error_GcAh": 4.658172639565728e-05,
+      "peak_alg_external_balance_error_J": 2.7668839441830073e-16,
+      "peak_alg_external_balance_error_relative_GcAh": 2.89805818745609e-13,
+      "final_alg_external_balance_error_relative_total_work": -9.930659369204487e-16,
+      "contact_energy_max_abs_J": 7.074829968194872e-07,
+      "contact_energy_final_J": 0.0,
+      "contact_traction_max_Pa": 28255046.72059835
+    },
+    {
+      "run": "pgfrag\\data\\continuation_20261015\\cohesive_contact_weak_halfdt_v1_readback02",
+      "receipt_sha256": "d6fcc10b2bd9f33b532c5c5772d132d0dcba487f49fbcdfe1fa7f7e32fb79f05",
+      "dt_s": 7.706535141800247e-09,
+      "steps": 6488,
+      "all_qp_full_damage_first_time_s": 1.1035758323057953e-05,
+      "final_native_dissipation_J": 0.0009547483276152273,
+      "final_dissipation_relative_error_GcAh": 1.1660634476282814e-05,
+      "peak_alg_external_balance_error_J": 6.245004513516506e-16,
+      "peak_alg_external_balance_error_relative_GcAh": 6.541071771060767e-13,
+      "final_alg_external_balance_error_relative_total_work": -3.69148746249942e-15,
+      "contact_energy_max_abs_J": 7.076634147689431e-07,
+      "contact_energy_final_J": 0.0,
+      "contact_traction_max_Pa": 28349548.503869567
+    }
+  ],
+  "final_mass_weighted_displacement_difference_m": 5.51988994938769e-10,
+  "final_max_nodal_displacement_difference_m": 2.988566773976958e-09,
+  "final_mass_weighted_velocity_difference_mps": 0.0034545130931295377,
+  "final_mass_weighted_velocity_relative_difference": 0.0005790993308783726,
+  "native_dissipation_difference_relative_GcAh": -3.492109191937446e-05,
+  "limitations": [
+    "two dt levels do not establish asymptotic convergence",
+    "fixed h=1.5mm; mesh/orientation sensitivity outstanding",
+    "weak seam/material uncalibrated; large final K must not hide fracture-energy errors"
+  ],
+  "source_script_sha256": "b6c477dcf1fbb49b3a735e75a0244975d4a503f7a34fe78081c3f7310e9de209"
+}

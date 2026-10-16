@@ -1,0 +1,116 @@
+{
+  "status": "PREFLIGHT_PASS_ZERO_SOLVER_STEPS",
+  "actual_argv": [
+    "/mnt/c/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/free_cohesive_patch_20261015/preflight_native_shape.py"
+  ],
+  "solver_steps": 0,
+  "solve_step_calls_in_preflight_source": false,
+  "elapsed_wall_seconds": 2.046157358000002,
+  "wall_cap_seconds": 60.0,
+  "output_cap_bytes": 33554432,
+  "case_id": "free_native_intrinsic_modeI_patch_20261015_v1",
+  "counts": {
+    "input_nodes": 45,
+    "input_bulk_tetrahedra": 96,
+    "native_nodes": 54,
+    "native_bulk_tetrahedra": 96,
+    "native_cohesive_3d6": 8,
+    "native_quadrature_points_per_cohesive_element": 3,
+    "native_total_cohesive_quadrature_points": 24
+  },
+  "native_field_shapes": {
+    "opening": [
+      24,
+      3
+    ],
+    "tractions": [
+      24,
+      3
+    ],
+    "damage": [
+      24,
+      1
+    ],
+    "delta max": [
+      24,
+      1
+    ]
+  },
+  "native_initial_max_abs": {
+    "opening_m": 0.0,
+    "traction_Pa": 0.0,
+    "damage": 0.0,
+    "delta_max_m": 2.1714285714285712e-08
+  },
+  "mass": {
+    "shape": [
+      54,
+      3
+    ],
+    "component_sums_kg": [
+      4e-05,
+      4e-05,
+      4e-05
+    ],
+    "total_component_sum_kg": 4e-05
+  },
+  "bulk_only_get_stable_time_step_s": 7.326084549265489e-08,
+  "total_cohesive_plus_bulk_stability": "NOT_ESTABLISHED; native getStableTimeStep excludes cohesive elements",
+  "source_snapshot": [
+    {
+      "path": "case.json",
+      "bytes": 13686,
+      "sha256": "0a638c7d01d646639476a49a0aa13e6efed1e5b5d4dd6db62adb0f05df1465c8"
+    },
+    {
+      "path": "block_2x2x4mm.msh",
+      "bytes": 3605,
+      "sha256": "b98402c5a7b7af36b8e5e8a2a90c7db689cb1af86a089c8e1b9a0dbf07ba2638"
+    },
+    {
+      "path": "material.dat",
+      "bytes": 423,
+      "sha256": "ad92d6449b6ecc804ca73811806706e917c43c8b05f0f50625229e494853a666"
+    },
+    {
+      "path": "preflight_native_shape.py",
+      "bytes": 9103,
+      "sha256": "a3ed77bc420f86c5944a8327730a250c7da78d65f0ee1da34a6754720de14ed3"
+    },
+    {
+      "path": "run_native_free_patch.py",
+      "bytes": 31522,
+      "sha256": "86807d3c45b2fbf79141c1b10c36766993111502bf2bb8fa1629a48dc892dbc7"
+    },
+    {
+      "path": "analyze_native_free_patch.py",
+      "bytes": 20186,
+      "sha256": "204383555f12414ddcfa7ae7b9ae93706f37dc432f95ed98497a6b02f8d7ef91"
+    },
+    {
+      "path": "free_patch_contract.py",
+      "bytes": 15472,
+      "sha256": "6168d2c5f9ae7a6686bb78eae7d3654cfa26a3cd94f721a4443b48c4094ca59e"
+    },
+    {
+      "path": "test_source_contract.py",
+      "bytes": 6561,
+      "sha256": "6a942ff3d5c91a69b0386b31691733c114b99e66506f0cd5a646de402c33ae3e"
+    },
+    {
+      "path": "launch_free_patch.sh",
+      "bytes": 331,
+      "sha256": "0630511090ec7f49b870932aa06e90f6a0d2d6fadfd7c20673a999302c5c270f"
+    }
+  ],
+  "native_state_archive": {
+    "path": "native_zero_step_state.npz",
+    "bytes": 3273,
+    "sha256": "4e2b6f87560ee6b04eec3ae01a7e2f38becf7c6373f674e8bf3bd66f533e842d"
+  },
+  "runtime": {
+    "python": "3.12.15",
+    "akantu_version": "5.0.7-post1",
+    "backend": "isolated workspace WSL runtime"
+  }
+}

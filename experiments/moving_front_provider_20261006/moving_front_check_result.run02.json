@@ -1,0 +1,1035 @@
+{
+  "budget": {
+    "maximum_wall_seconds": 30.0,
+    "mls_batches": 2,
+    "provider_point_trace_rows": 50,
+    "pure_topology_controls": 4,
+    "record_hard_cap": 256,
+    "source_reclassifications": 200,
+    "total_records": 254
+  },
+  "case_pair_sha256": "2766245b25bf93eefcf6836befe81536917888936b4543666c86ebe9d6b72100",
+  "check_spec_sha256": "221042d97e584e62a032735129ed1505154ed7d783d54b98b0da448aa71e763f",
+  "cross_front_hashes_differ": true,
+  "cross_front_old_provenance_rejected": true,
+  "driver_source_sha256": "18a2fd462d227327fd61d10a94908cee2536126d272ce12d78c3154fa60d76d2",
+  "elapsed_wall_seconds": 0.26599999982863665,
+  "frozen_input_hashes": {
+    "case_pair": "2766245b25bf93eefcf6836befe81536917888936b4543666c86ebe9d6b72100",
+    "coordinate_manifest": "e5e318f80b5dfedbc8ba122f82df3cca1585e604272399d21bc35907d1d28f01",
+    "driver": "18a2fd462d227327fd61d10a94908cee2536126d272ce12d78c3154fa60d76d2",
+    "fixed_source_case": "0bdbb20032e105851d2909ff54850ebc54d3f2041c25ab5e42e9102244d90ca5",
+    "material_case": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+    "mls_core": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+    "mls_shape": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+    "provider": "40bb5c0812944ab24924cfc33825d66bf84f624aacce1d54cff0c84accc94d5a",
+    "registry": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+    "safe_v2": "919cb60a6d65ae6b55a0bd12b569ec6627066b2a72dfcca52145209336588664"
+  },
+  "memory_budget": {
+    "estimated_diagnostic_owned_bytes": 726489,
+    "interpreter_import_baseline_included": false,
+    "maximum_diagnostic_owned_bytes": 2097152,
+    "peak_owned_numpy_array_bytes": 171472,
+    "serialized_result_bytes": 30729,
+    "transient_reserve_bytes": 524288
+  },
+  "old_coefficients_read_or_migrated": false,
+  "operator_or_solver_run": false,
+  "provider_source_sha256": "40bb5c0812944ab24924cfc33825d66bf84f624aacce1d54cff0c84accc94d5a",
+  "schema": "moving-front-provider-check-result.v1",
+  "scope": "bounded source-provider diagnostic only; no loaded mechanical solution or growth claim",
+  "states": [
+    {
+      "affine_base_patch": {
+        "gradient_tolerance_abs_dimensionless": 1e-09,
+        "maximum_gradient_error_dimensionless": 2.856603842360528e-13,
+        "maximum_value_error_m": 1.3877787807814457e-16,
+        "valid_rows_checked": 17,
+        "value_tolerance_abs_m": 1e-10
+      },
+      "ahead_finite_sample_diagnostic": {
+        "heaviside_max_abs_value_or_gradient": 0.0,
+        "manufactured_field_gradient_component_spread_dimensionless": 8.024365493367395e-09,
+        "manufactured_field_value_spread_m": 3.139420116175731e-11,
+        "sample_rows": [
+          {
+            "field_gradient_dimensionless": [
+              4.0121827466365e-09,
+              0.001569710058079082,
+              5.421010862427522e-20
+            ],
+            "field_value_m": -1.5697100580958065e-11,
+            "label": "ahead-y-1e-08"
+          },
+          {
+            "field_gradient_dimensionless": [
+              6.018531076210112e-36,
+              0.0015697100580829497,
+              0.0
+            ],
+            "field_value_m": 0.0,
+            "label": "ahead-y+0e+00"
+          },
+          {
+            "field_gradient_dimensionless": [
+              -4.012182746730895e-09,
+              0.001569710058079082,
+              0.0
+            ],
+            "field_value_m": 1.5697100580799246e-11,
+            "label": "ahead-y+1e-08"
+          }
+        ],
+        "scope": "finite-sample diagnostic only; not a global continuity proof"
+      },
+      "basis_generation_sha256": "e1ecfccbf22c023f964d9395ec549abe18330ea2af4f7bfcc50a506c4170c3e4",
+      "case_id": "moving_front_baseline_x00000_20261006",
+      "collar_observations": [
+        {
+          "absolute_value_error_m": 3.868242989243714e-13,
+          "acceptance_threshold": null,
+          "analytic_gradient_dimensionless": [
+            0.002267357507782304,
+            0.0002791244644944404,
+            0.0
+          ],
+          "analytic_reference_m": -9.348554495623655e-06,
+          "label": "collar--1",
+          "manufactured_gradient_dimensionless": [
+            0.0022673328920639465,
+            0.0002791103135012478,
+            5.4210106249713065e-20
+          ],
+          "manufactured_value_m": -9.348554108799356e-06,
+          "maximum_gradient_error_dimensionless": 2.461571835732021e-08,
+          "point_m": [
+            -0.002,
+            -0.0005,
+            0.0
+          ]
+        },
+        {
+          "absolute_value_error_m": 3.8682430400656907e-13,
+          "acceptance_threshold": null,
+          "analytic_gradient_dimensionless": [
+            -0.002267357507782304,
+            0.0002791244644944404,
+            0.0
+          ],
+          "analytic_reference_m": 9.348554495623655e-06,
+          "label": "collar-+1",
+          "manufactured_gradient_dimensionless": [
+            -0.0022673328920639465,
+            0.0002791103135012443,
+            -1.1392592922226952e-19
+          ],
+          "manufactured_value_m": 9.34855410879935e-06,
+          "maximum_gradient_error_dimensionless": 2.461571835732021e-08,
+          "point_m": [
+            -0.002,
+            0.0005,
+            0.0
+          ]
+        }
+      ],
+      "core_probe_radii_m": [
+        0.00025,
+        0.0005
+      ],
+      "current_front_manufactured_core": {
+        "displacement_tolerance_abs_m": 1e-12,
+        "gradient_tolerance_abs_dimensionless": 1e-09,
+        "maximum_displacement_error_m": 2.117582368135751e-21,
+        "maximum_gradient_error_dimensionless": 1.734723475976807e-18,
+        "measured_core_radius_m": 0.001,
+        "points_checked": 8
+      },
+      "diagnostic_owned_array_bytes": 169072,
+      "exact_trace_basis": {
+        "basis_gradient_tolerance_abs_per_m": 1e-09,
+        "basis_value_tolerance_abs_dimensionless": 1e-12,
+        "complete_field_exactness_claimed": false,
+        "maximum_basis_gradient_residual_per_m": 2.220446049250313e-15,
+        "maximum_basis_value_residual": 0.0,
+        "trace_rows_checked": 4
+      },
+      "front_x_m": 0.0,
+      "measured_core_radius_m": 0.001,
+      "mechanical_solution_or_coefficient_transfer": false,
+      "mls_batch_count": 1,
+      "provider_batch_count": 1,
+      "provider_point_count": 25,
+      "query_audit": [
+        {
+          "expected": "OK",
+          "label": "core-r0-mm",
+          "point_m": [
+            -0.00017677669529663688,
+            -0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-mp",
+          "point_m": [
+            -0.00017677669529663688,
+            0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-pm",
+          "point_m": [
+            0.00017677669529663688,
+            -0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-pp",
+          "point_m": [
+            0.00017677669529663688,
+            0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-mm",
+          "point_m": [
+            -0.00035355339059327376,
+            -0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-mp",
+          "point_m": [
+            -0.00035355339059327376,
+            0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-pm",
+          "point_m": [
+            0.00035355339059327376,
+            -0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-pp",
+          "point_m": [
+            0.00035355339059327376,
+            0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.008-plus",
+          "point_m": [
+            -0.008,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.008-minus",
+          "point_m": [
+            -0.008,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.004-plus",
+          "point_m": [
+            -0.004,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.004-minus",
+          "point_m": [
+            -0.004,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "OK",
+          "label": "collar--1",
+          "point_m": [
+            -0.002,
+            -0.0005,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "collar-+1",
+          "point_m": [
+            -0.002,
+            0.0005,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y-1e-08",
+          "point_m": [
+            0.004,
+            -1e-08,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y+0e+00",
+          "point_m": [
+            0.004,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y+1e-08",
+          "point_m": [
+            0.004,
+            1e-08,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-interior",
+          "point_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-z-min-endpoint",
+          "point_m": [
+            0.0,
+            0.0,
+            -0.008
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-z-max-endpoint",
+          "point_m": [
+            0.0,
+            0.0,
+            0.008
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-x-start-edge",
+          "point_m": [
+            -0.01,
+            0.0,
+            0.0
+          ],
+          "reason": "finite_crack_end_or_edge",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-z-edge",
+          "point_m": [
+            -0.004,
+            0.0,
+            0.008
+          ],
+          "reason": "finite_crack_end_or_edge",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-missing-side",
+          "point_m": [
+            -0.004,
+            0.0,
+            0.0
+          ],
+          "reason": "explicit_plus_minus_trace_required",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-near-cut-band",
+          "point_m": [
+            -0.004,
+            5e-13,
+            0.0
+          ],
+          "reason": "ambiguous_crack_plane_tolerance_band",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "outside-box",
+          "point_m": [
+            0.0101,
+            0.003,
+            0.0
+          ],
+          "reason": "outside_closed_domain",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        }
+      ],
+      "role_and_dof_summary": {
+        "canonical_ids_sha256": "f33804a86075f5a99303f396d27914f5601c28dac4b4295921c73adc3af2dd42",
+        "geometric_role_counts": {
+          "BASE": 60,
+          "FRONT": 30,
+          "HEAVISIDE_ELIGIBLE": 10
+        },
+        "permutation_mls_batch_count": 0,
+        "permutation_reclassification_count": 0,
+        "scalar_dof_count": 140,
+        "semantic_ids_stable_under_reversed_classified_source_order": true,
+        "source_count": 100
+      },
+      "safe_classifier_sha256": "919cb60a6d65ae6b55a0bd12b569ec6627066b2a72dfcca52145209336588664",
+      "same_state_provenance_identity_accepted": true,
+      "sample_provenance_tags_checked": 25,
+      "source_coordinate_manifest_sha256": "a8687a23353b6465aa0cc3fcda49a57c240297c38c141a017a167f3c526b23bb",
+      "source_reclassifications": 100,
+      "surface_geometry_sha256": "a4eb47541da73009b4e6ef93a41eb986d99a78659155f80a54f8c7bd0c54554b",
+      "topology_tangency_controls": [
+        {
+          "control_id": "control-moving_front_baseline_x00000_20261006-exact",
+          "enters_material_source_set": false,
+          "enters_mls_batch": false,
+          "position_m": [
+            0.007,
+            0.0,
+            0.0
+          ],
+          "reason": "support_tangent_to_finite_front",
+          "status": "UNKNOWN"
+        },
+        {
+          "control_id": "control-moving_front_baseline_x00000_20261006-within-tolerance",
+          "enters_material_source_set": false,
+          "enters_mls_batch": false,
+          "position_m": [
+            0.0070000000005,
+            0.0,
+            0.0
+          ],
+          "reason": "support_tangent_to_finite_front",
+          "status": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "affine_base_patch": {
+        "gradient_tolerance_abs_dimensionless": 1e-09,
+        "maximum_gradient_error_dimensionless": 1.1843304115188857e-13,
+        "maximum_value_error_m": 8.326672684688674e-17,
+        "valid_rows_checked": 17,
+        "value_tolerance_abs_m": 1e-10
+      },
+      "ahead_finite_sample_diagnostic": {
+        "heaviside_max_abs_value_or_gradient": 0.0,
+        "manufactured_field_gradient_component_spread_dimensionless": 1.0811405160524327e-08,
+        "manufactured_field_value_spread_m": 2.8432366751565456e-11,
+        "sample_rows": [
+          {
+            "field_gradient_dimensionless": [
+              5.405702580265552e-09,
+              0.0014216183376670195,
+              0.0
+            ],
+            "field_value_m": -1.4216183375782728e-11,
+            "label": "ahead-y-1e-08"
+          },
+          {
+            "field_gradient_dimensionless": [
+              0.0,
+              0.0014216183376692861,
+              0.0
+            ],
+            "field_value_m": 0.0,
+            "label": "ahead-y+0e+00"
+          },
+          {
+            "field_gradient_dimensionless": [
+              -5.4057025802587756e-09,
+              0.0014216183376670195,
+              0.0
+            ],
+            "field_value_m": 1.4216183375782728e-11,
+            "label": "ahead-y+1e-08"
+          }
+        ],
+        "scope": "finite-sample diagnostic only; not a global continuity proof"
+      },
+      "basis_generation_sha256": "47248a5aa5e519bbe404c0a7a8415c0b8c053198f83e3c65ab67a16d6baf0b93",
+      "case_id": "moving_front_shifted_x00050_20261006",
+      "collar_observations": [
+        {
+          "absolute_value_error_m": 3.3881317890172014e-21,
+          "acceptance_threshold": null,
+          "analytic_gradient_dimensionless": [
+            0.002267357507782304,
+            0.0002791244644944404,
+            0.0
+          ],
+          "analytic_reference_m": -9.348554495623655e-06,
+          "label": "collar--1",
+          "manufactured_gradient_dimensionless": [
+            0.0022673575077823017,
+            0.0002791244644944407,
+            -3.103225291423066e-23
+          ],
+          "manufactured_value_m": -9.348554495623651e-06,
+          "maximum_gradient_error_dimensionless": 2.168404344971009e-18,
+          "point_m": [
+            -0.0015,
+            -0.0005,
+            0.0
+          ]
+        },
+        {
+          "absolute_value_error_m": 1.6940658945086007e-21,
+          "acceptance_threshold": null,
+          "analytic_gradient_dimensionless": [
+            -0.002267357507782304,
+            0.0002791244644944404,
+            0.0
+          ],
+          "analytic_reference_m": 9.348554495623655e-06,
+          "label": "collar-+1",
+          "manufactured_gradient_dimensionless": [
+            -0.002267357507782305,
+            0.0002791244644944422,
+            -1.3572126801076144e-20
+          ],
+          "manufactured_value_m": 9.348554495623656e-06,
+          "maximum_gradient_error_dimensionless": 1.7889335846010823e-18,
+          "point_m": [
+            -0.0015,
+            0.0005,
+            0.0
+          ]
+        }
+      ],
+      "core_probe_radii_m": [
+        0.00025,
+        0.0005
+      ],
+      "cross_front_stale_provenance_rejected": true,
+      "current_front_manufactured_core": {
+        "displacement_tolerance_abs_m": 1e-12,
+        "gradient_tolerance_abs_dimensionless": 1e-09,
+        "maximum_displacement_error_m": 1.6940658945086007e-21,
+        "maximum_gradient_error_dimensionless": 1.734723475976807e-18,
+        "measured_core_radius_m": 0.0010156097709406982,
+        "points_checked": 8
+      },
+      "diagnostic_owned_array_bytes": 171472,
+      "exact_trace_basis": {
+        "basis_gradient_tolerance_abs_per_m": 1e-09,
+        "basis_value_tolerance_abs_dimensionless": 1e-12,
+        "complete_field_exactness_claimed": false,
+        "maximum_basis_gradient_residual_per_m": 1.7763568394002505e-15,
+        "maximum_basis_value_residual": 0.0,
+        "trace_rows_checked": 4
+      },
+      "front_x_m": 0.0005,
+      "measured_core_radius_m": 0.0010156097709406982,
+      "mechanical_solution_or_coefficient_transfer": false,
+      "mls_batch_count": 1,
+      "no_coefficient_data_loaded": true,
+      "prior_basis_generation_sha256": "e1ecfccbf22c023f964d9395ec549abe18330ea2af4f7bfcc50a506c4170c3e4",
+      "prior_surface_geometry_sha256": "a4eb47541da73009b4e6ef93a41eb986d99a78659155f80a54f8c7bd0c54554b",
+      "provider_batch_count": 1,
+      "provider_point_count": 25,
+      "query_audit": [
+        {
+          "expected": "OK",
+          "label": "core-r0-mm",
+          "point_m": [
+            0.0003232233047033631,
+            -0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-mp",
+          "point_m": [
+            0.0003232233047033631,
+            0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-pm",
+          "point_m": [
+            0.0006767766952966369,
+            -0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r0-pp",
+          "point_m": [
+            0.0006767766952966369,
+            0.00017677669529663688,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-mm",
+          "point_m": [
+            0.00014644660940672625,
+            -0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-mp",
+          "point_m": [
+            0.00014644660940672625,
+            0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-pm",
+          "point_m": [
+            0.0008535533905932738,
+            -0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "core-r1-pp",
+          "point_m": [
+            0.0008535533905932738,
+            0.00035355339059327376,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.008-plus",
+          "point_m": [
+            -0.0075,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.008-minus",
+          "point_m": [
+            -0.0075,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.004-plus",
+          "point_m": [
+            -0.0035,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "OK",
+          "label": "trace--0.004-minus",
+          "point_m": [
+            -0.0035,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "OK",
+          "label": "collar--1",
+          "point_m": [
+            -0.0015,
+            -0.0005,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "collar-+1",
+          "point_m": [
+            -0.0015,
+            0.0005,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y-1e-08",
+          "point_m": [
+            0.0045000000000000005,
+            -1e-08,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y+0e+00",
+          "point_m": [
+            0.0045000000000000005,
+            0.0,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "OK",
+          "label": "ahead-y+1e-08",
+          "point_m": [
+            0.0045000000000000005,
+            1e-08,
+            0.0
+          ],
+          "reason": "OK",
+          "status": "OK",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-interior",
+          "point_m": [
+            0.0005,
+            0.0,
+            0.0
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-z-min-endpoint",
+          "point_m": [
+            0.0005,
+            0.0,
+            -0.008
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "front-z-max-endpoint",
+          "point_m": [
+            0.0005,
+            0.0,
+            0.008
+          ],
+          "reason": "front_or_finite_front_endpoint",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-x-start-edge",
+          "point_m": [
+            -0.01,
+            0.0,
+            0.0
+          ],
+          "reason": "finite_crack_end_or_edge",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": "PLUS"
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-z-edge",
+          "point_m": [
+            -0.0035,
+            0.0,
+            0.008
+          ],
+          "reason": "finite_crack_end_or_edge",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": "MINUS"
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-missing-side",
+          "point_m": [
+            -0.0035,
+            0.0,
+            0.0
+          ],
+          "reason": "explicit_plus_minus_trace_required",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "gamma-near-cut-band",
+          "point_m": [
+            -0.0035,
+            5e-13,
+            0.0
+          ],
+          "reason": "ambiguous_crack_plane_tolerance_band",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        },
+        {
+          "expected": "UNKNOWN",
+          "label": "outside-box",
+          "point_m": [
+            0.0101,
+            0.003,
+            0.0
+          ],
+          "reason": "outside_closed_domain",
+          "status": "UNKNOWN",
+          "tags_match_current_state": true,
+          "trace_side": null
+        }
+      ],
+      "role_and_dof_summary": {
+        "canonical_ids_sha256": "f33804a86075f5a99303f396d27914f5601c28dac4b4295921c73adc3af2dd42",
+        "geometric_role_counts": {
+          "BASE": 60,
+          "FRONT": 30,
+          "HEAVISIDE_ELIGIBLE": 10
+        },
+        "permutation_mls_batch_count": 0,
+        "permutation_reclassification_count": 0,
+        "scalar_dof_count": 140,
+        "semantic_ids_stable_under_reversed_classified_source_order": true,
+        "source_count": 100
+      },
+      "safe_classifier_sha256": "919cb60a6d65ae6b55a0bd12b569ec6627066b2a72dfcca52145209336588664",
+      "same_state_provenance_identity_accepted": true,
+      "sample_provenance_tags_checked": 25,
+      "source_coordinate_manifest_sha256": "a8687a23353b6465aa0cc3fcda49a57c240297c38c141a017a167f3c526b23bb",
+      "source_reclassifications": 100,
+      "surface_geometry_sha256": "149a6d0c29fcafdbae06b29869dcd5fc12f2e21db54f2d92015a6b58f87b9434",
+      "topology_tangency_controls": [
+        {
+          "control_id": "control-moving_front_shifted_x00050_20261006-exact",
+          "enters_material_source_set": false,
+          "enters_mls_batch": false,
+          "position_m": [
+            0.0075,
+            0.0,
+            0.0
+          ],
+          "reason": "support_tangent_to_finite_front",
+          "status": "UNKNOWN"
+        },
+        {
+          "control_id": "control-moving_front_shifted_x00050_20261006-within-tolerance",
+          "enters_material_source_set": false,
+          "enters_mls_batch": false,
+          "position_m": [
+            0.0075000000005,
+            0.0,
+            0.0
+          ],
+          "reason": "support_tangent_to_finite_front",
+          "status": "UNKNOWN"
+        }
+      ]
+    }
+  ],
+  "status": "PASS"
+}

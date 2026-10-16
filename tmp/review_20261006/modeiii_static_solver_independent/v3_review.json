@@ -1,0 +1,40 @@
+{
+  "schema": "modeiii_static_solver_independent_review.v3",
+  "status": "NO_BLOCKER_FOR_REQUESTED_STATIC_CRITERIA_ROOT_RUN_DECISION_PENDING",
+  "source_freeze": {
+    "manifest": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/source_freeze.json",
+    "manifest_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+    "solver_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+    "case_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+    "all_owned_hashes_match": true,
+    "all_seven_read_only_dependency_hashes_match": true,
+    "preserved_v1_v2_snapshots_match": true
+  },
+  "staging_promotion_review": {
+    "nonzero_worker_exit_promoted": false,
+    "timeout_worker_staging_promoted": false,
+    "missing_staging_promoted": false,
+    "invalid_or_oversize_json_promoted": false,
+    "wrong_schema_case_status_or_evidence_contract_promoted": false,
+    "finite_required_evidence_validated": true,
+    "staging_hash_rechecked_before_atomic_replace": true,
+    "failure_staging_preserved": true
+  },
+  "mechanics_comparison": {
+    "volume_and_boundary_rules_identical_to_v2": true,
+    "load_and_stiffness_assembly_identical_to_v2": true,
+    "manufactured_coefficients_identical_to_v2": true,
+    "scaled_spectrum_identical_to_v2": true,
+    "direct_saddle_solver_identical_to_v2": true,
+    "run_static_solve_identical_after_result_schema_normalization": true,
+    "case_changes_limited_to_schema_identity_and_staging_contract_documentation": true,
+    "numerical_thresholds_changed": false,
+    "pseudoinverse_or_ridge_or_coefficient_pin_added": false
+  },
+  "scope": {
+    "solver_run": false,
+    "tests_run": false,
+    "render_run": false,
+    "execution_authorized": false
+  }
+}

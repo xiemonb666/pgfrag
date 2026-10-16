@@ -1,0 +1,175 @@
+{
+  "schema": "mixed93_actual_cohesive_bridge_design.v1",
+  "status": "DESIGN_ONLY_PENDING_ROOT_DECISIONS_AND_RECOVERED_CACHE",
+  "classification": "FIXED_CRACK_ELASTIC_COHESIVE_MECHANICS_BRIDGE_ONLY_NOT_MATERIAL_OR_GROWTH_QUALIFICATION",
+  "reviewed_source_sha256": {
+    "mixed93_cached_lefm_solve.py": "9b9ab9cc02ec205ac123d04263e742441357eb6292dd9109fa0fecf26b35b97c",
+    "mixed93_cached_lefm_solve_README.md": "5201225dd5cdd327b8e82855dc8baaacaba2234e741a8edf8b620e1808ced094",
+    "enriched_cohesive_trace.py": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29",
+    "enriched_cohesive_trace_README.md": "865123193fca8b9ecd5bb81e6f5c5acc90007a47cbfd7728a872a39ea9f9a0b2",
+    "mls_full3d_enriched_provider.py": "53eb2e998e2d239f941e338375af2f7fd8b7a0d90d7d252a6d0b5f359ea093ce",
+    "full3d_provider_README.md": "52755885762868af1d794259db882955ea243b0aa075d98b88fb722a4b5e3d3d",
+    "tip_aligned_quadrature_README.md": "65e40ecfc7372ada5f81aaad0cb2de179ba6cfe8e72a15955c33fc5b35d18208",
+    "mixed_lefm_field.py": "ed90063029d69649fbb8b4a0785946cfdd7e7b6a22e483513ff27f447745dacd",
+    "cohesive_scalar_law.py": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17",
+    "cohesive_interface_assembly.py": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+  },
+  "frozen_case": {
+    "geometry": {
+      "crack_surface": "y=0, x in [-R,0], z in [-L/2,L/2]",
+      "R_m": 0.01,
+      "L_m": 0.01,
+      "center_xyz_m": [0.0, 0.0, 0.0],
+      "normal_upper_from_lower": [0.0, 1.0, 0.0],
+      "upper_trace": "theta=+pi",
+      "lower_trace": "theta=-pi"
+    },
+    "bulk": {
+      "dof_count": 93,
+      "base_dofs": 81,
+      "global_front_branch_dofs": 12,
+      "branch_order": ["F1", "F2", "F3", "F4"],
+      "component_order": ["ux", "uy", "uz"],
+      "zero_based_f1_uy_index": 82,
+      "cached_K_units": "N/m",
+      "cached_external_force_units": "N",
+      "cached_q_units": "m",
+      "constitutive_data": "E=1e6 Pa, nu=0.3, full 3D isotropic small-strain engineering Voigt"
+    },
+    "load": {
+      "case_id": "pure_I",
+      "cached_K_I_Pa_sqrt_m": 100.0,
+      "bridge_K_I_Pa_sqrt_m": 1.0,
+      "linear_scale_from_recovered_cached_q_force_g": 0.01,
+      "scale_only_after_recovered_q_solution_and_pinned_cache_are_verified": true,
+      "q_exact_must_not_replace_q_solution": true,
+      "scale_C_or_K": false
+    }
+  },
+  "trace_contract": {
+    "query_points": 16,
+    "quadrature": "4-point Gauss-Legendre in x times 4-point Gauss-Legendre in z",
+    "x_map": "x_i=(R/2)*(xi_i-1), xi_i in [-1,1]",
+    "z_map": "z_j=(L/2)*zeta_j, zeta_j in [-1,1]",
+    "one_side_area_weight_m2": "(R*L/4)*w_i*w_j",
+    "total_one_side_area_m2": 0.0001,
+    "double_count_area": false,
+    "base_mls_queries": 16,
+    "batch_limit": 256,
+    "provider_contract": "Reuse fixed continuous 27-source MLS configuration and BASE row semantics only; existing 162-DOF adapter FRONT_F1 rows are not the 93 registry and must not be relabeled as it.",
+    "per_qp_rows": {
+      "H_plus_shape": [3, 93],
+      "H_minus_shape": [3, 93],
+      "same_world_xyz_for_both_traces": true,
+      "same_continuous_base_mls_row": true,
+      "base_H_plus_minus": "identical",
+      "F1_plus": "sqrt(-x/R)",
+      "F1_minus": "-sqrt(-x/R)",
+      "F2_F3_F4_plus_minus": 0.0,
+      "J_nonzero_columns": "only global F1 ux,uy,uz; each component diagonal entry 2*sqrt(-x/R)",
+      "normal_projection_nonzero_column": "only zero-based F1_uy index 82, with value 2*sqrt(-x/R)"
+    },
+    "units": {
+      "H_J_normal": "dimensionless",
+      "coefficient_and_jump": "m",
+      "traction": "Pa",
+      "area": "m^2",
+      "generalized_internal_force": "N",
+      "tangent": "N/m",
+      "energy": "J"
+    },
+    "mls_gates": [
+      "all 16 statuses exactly OK; unsupported status fails closed",
+      "reuse frozen provider support/condition limits without relaxation",
+      "record partition-of-unity, first-moment, derivative and affine value/gradient reproduction at each query"
+    ]
+  },
+  "rigid_trace_evidence": {
+    "mode_order": ["Tx", "Ty", "Tz", "Rx", "Ry", "Rz"],
+    "translation_coefficients": "BASE nodal values 1 m in selected component, all other BASE and GLOBAL_FRONT coefficients zero",
+    "rotation_coefficients": "BASE nodal values omega cross (X_source - [0,0,0]) for unit-radian axis, all GLOBAL_FRONT coefficients zero",
+    "expected_point_displacement": "omega cross (x_q - [0,0,0])",
+    "source_of_actual_candidate_order": "pinned 93-DOF cached operator rigid_coefficient_modes with canonical semantic-ID equality check",
+    "per_mode_gate": "H_plus*qrigid and H_minus*qrigid reproduce expected point displacement; J*qrigid is zero",
+    "spectrum_baseline": "six null and 87 positive eigenvalues; zero/negative scale threshold 64*eps*93*max(abs(eigenvalues)); no significant negatives",
+    "spectrum_after_elastic_interface": "six physical null and 87 positive, no additional null or significant negative modes"
+  },
+  "cohesive_probe": {
+    "law": "existing bilinear scalar Mode-I law, virgin committed state at each unique (interface_id, quadrature_id), one final trial only",
+    "material_toy_values": {
+      "k0_pa_per_m": 100000000.0,
+      "tpeak_pa": 1000.0,
+      "gc_j_per_m2": 0.01,
+      "delta0_m": 0.00001,
+      "deltaf_m": 0.00002,
+      "interpretation": "illustrative scale-matched bridge values only, not a material or ceramic calibration"
+    },
+    "opening_gate": "for recovered and final coupled q at all 16 QPs require 0 < delta_n < delta0, damage=0, kappa<delta0, tangent exactly elastic K0 within predeclared roundoff gate",
+    "unsupported_gate": "normal n=(0,+1,0); compression or tangential jump above existing primitive tolerance is UNKNOWN and aborts; never project tangential jump away",
+    "analytic_interface_tangent": {
+      "formula": "K_G[82,82]=integral_Gamma 4*(-x/R)*K0 dA = 2*K0*R*L",
+      "expected_value_n_per_m": 20000.0,
+      "other_entries": "zero",
+      "rank": 1,
+      "quadrature_exactness": "integrand linear in x, constant in z on the elastic branch; 4x4 GL rule integrates the analytic matrix exactly up to roundoff",
+      "relative_matrix_error_max": 1e-12
+    },
+    "force_sign": {
+      "left_hand_internal_force": "f_Gamma = dU_Gamma/dq = +sum(A*J^T*n*t); add +K_Gamma to K on the left",
+      "physical_face_traction": "upper physical traction is -t*n; lower is +t*n for positive opening and n from lower to upper",
+      "primitive_field_warning": "positive_face_force_at_reference_n=+A*t*n is an internal-potential bookkeeping share, not the physical force applied to the upper face; action-reaction cancellation alone does not validate sign",
+      "sign_energy_check": "q dot f_Gamma = sum(A*delta_n*t) = 2*U_Gamma > 0 for virgin elastic opening"
+    }
+  },
+  "coupled_solve": {
+    "equation": "(K_raw + K_Gamma) q_c + C_phys^T lambda = f_external_scaled",
+    "gauge": "reuse cached six physical volume-moment constraints and target g scaled by 0.01; do not pin coefficients or change K/C",
+    "solve_count": 1,
+    "matrix_order": 99,
+    "mechanical_change_gates": [
+      "K_Gamma is nonzero and matches analytic matrix gate",
+      "K_Gamma*q_c and q_c-q0 are finite and above predeclared roundoff floor",
+      "full physical weak-equilibrium, gauge and KKT backward errors <= 1e-9",
+      "2*(U_bulk+U_Gamma) - q_c dot f_external_scaled + g_scaled dot lambda = 0 within 1e-9 relative energy scale",
+      "primitive U_Gamma equals 0.5*q_c^T*K_Gamma*q_c; dissipated energy is zero; primitive tangent/force equal analytic K_Gamma and K_Gamma*q_c"
+    ],
+    "bulk_energy": "U_bulk=0.5*q_c^T*K_raw*q_c",
+    "interface_energy": "U_Gamma=sum_i A_i*state_i.stored_energy_j_per_m2",
+    "external_work": "q_c^T*f_external_scaled",
+    "cohesive_work_ledger": "elastic virgin branch: stored energy equals external work per point, dissipation zero"
+  },
+  "execution_budget": {
+    "load_cases": 1,
+    "new_unique_mls_queries": 16,
+    "cohesive_quadrature_points": 16,
+    "provider_batch_rows_max": 256,
+    "coupled_kkt_solves": 1,
+    "max_wall_seconds": 60,
+    "max_explicit_memory_bytes": 67108864,
+    "max_combined_output_bytes": 12582912,
+    "parameter_sweep": false,
+    "candidate_B": false
+  },
+  "root_decisions_required": [
+    "Approve or revise the linearly scaled recovered pure-I q_solution/force/g as the KI=1 Pa*sqrt(m) input; if scaling is disallowed, supply a direct frozen low-load q_solution.",
+    "Approve a truthful MIXED93 trace-family contract extension in enriched_cohesive_trace; current BASE/GLOBALFRONT enum cannot express the mixed registry, so do not run by silently relabeling it.",
+    "Approve the illustrative K0/tpeak/Gc probe values and elastic-only scope, or replace them with specified values; these do not qualify a real material."
+  ],
+  "hard_blockers": [
+    "Recover and independently pin the actual cached arrays/result, including q_solution, raw K, boundary force, C_phys, g and rigid coefficient modes. Never substitute q_exact.",
+    "No actual 93-trace interface assembly, coupled 99-system equilibrium or committed-state history has yet been performed.",
+    "The current primitive supports Mode I normal opening only; any actual shear/tangential slip or compression returns UNKNOWN."
+  ],
+  "future_front_update_missing": [
+    "validated physical resistance data and a mixed-mode/contact-capable interface law",
+    "energy-release-rate evaluation for candidate front increments and direction selection against resistance",
+    "surface/front advance discretization, cohesive history transfer, updated integration and equilibrium convergence",
+    "energy ledger including newly created surface and a resolution/convergence criterion"
+  ],
+  "nonclaims": [
+    "No physical crack growth or autonomous front update",
+    "No ceramic or other real-material calibration",
+    "No process-zone resolution or full mixed-mode fracture qualification",
+    "No claim that one cohesive primitive call or a changed K alone proves traction-free physics"
+  ]
+}

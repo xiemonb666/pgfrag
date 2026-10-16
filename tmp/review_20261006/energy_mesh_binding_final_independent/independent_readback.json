@@ -1,0 +1,142 @@
+{
+  "schema_version": "pgfrag.final_energy_mesh_independent_review.v1",
+  "review_scope": "read-only source, saved receipt/state, bounded JSON/OBJ arithmetic; no tests, solver, CAD, imports of audited modules, or Git operations",
+  "source_hashes": {
+    "pgfrag/experiments/griffith_front_energy_gate_v2_20261006/griffith_front_energy_gate_v2.py": "442426684ffa776ea24a877ce30e368a8795608aefc82883a91701281fb144b3",
+    "pgfrag/experiments/griffith_front_energy_gate_v2_20261006/run_fixture.py": "5bb595cf7cc35f113dcda5483ea7299d4e407b7278fb2ed3644a8a552ea130fc",
+    "pgfrag/experiments/griffith_front_energy_gate_v2_20261006/test_griffith_front_energy_gate_v2.py": "3bcf3282d518e284a1b5b92e3283dbdbcd2d9d559d8ce97d6bfc45ee95e78309",
+    "pgfrag/tmp/review_20261006/griffith_front_energy_gate_v2_20261006/fixture_states.json": "0884d424a404adc918555dff95afc3f2b1b9ee773f728d53f62d6bad54aeeb08",
+    "pgfrag/tmp/review_20261006/griffith_front_energy_gate_v2_20261006/ACTUAL_TEST_RECEIPT.json": "29c66ffd20d4e349f33e64fb9c992e7ffa6adf5ba679cdaa6b04c4c745fb4c00",
+    "pgfrag/experiments/fracture_artifact_contract_20261006/mesh_binding_validator.py": "3cd8018456c8be1e8a17cdbac9cfb4d7b227f09bb3170f8a04083ede2db8d51f",
+    "pgfrag/experiments/fracture_artifact_contract_20261006/test_mesh_binding_validator.py": "d21fd672bf799b24d6bd4a8fabc78346a4936be2036067552e47a23a085c4a0b",
+    "pgfrag/experiments/fracture_artifact_contract_20261006/fixtures/planar_box_mesh_binding_manifest.json": "6c490acb9ac1f54b045373e633d1db441361b46669d9b1b559a65e6a19b058b3",
+    "pgfrag/tmp/review_20261006/explicit_fragment_fixture_20261006/explicit_fragment_fixture_output.json": "0b18a24b8f58d1df516743c55cc0cb4c4a3629e5288fbcd920be3c4afecebe16",
+    "pgfrag/tmp/review_20261006/explicit_fragment_fixture_20261006/interface_pair_ledger.json": "b5e2d578d7f56f28cdf0edf988f0755ff4002b2f3a3b9b6fe96a337672bfd9fe",
+    "pgfrag/tmp/review_20261006/explicit_fragment_fixture_20261006/piece_negative.obj": "5f5e8e3556173f7f214b98d0e1cf87ec3f0ff84898d127e60ecd4b78a3e4a083",
+    "pgfrag/tmp/review_20261006/explicit_fragment_fixture_20261006/piece_positive.obj": "342e18222e59ce3e1863b606cab77841bd8035adb6da326573eba73512eec42f"
+  },
+  "energy": {
+    "test_count": 11,
+    "failure_count": 0,
+    "error_count": 0,
+    "saved_state_count": 9,
+    "states": [
+      {
+        "name": "proposed_geometry_waiting_for_energy_gate",
+        "status": null,
+        "energy_entry": null
+      },
+      {
+        "name": "balanced_fixture_committed_fixture_only",
+        "status": "COMMITTED_FIXTURE_ONLY",
+        "residual_J": 0,
+        "allowed_J": 0,
+        "arithmetic_recalc_J": 0,
+        "agrees": true,
+        "stored_delta_total_potential_J": -0.01
+      },
+      {
+        "name": "external_api_branch_synthetic_test_only",
+        "status": "COMMITTED_EXPERIMENTAL_REANALYSIS",
+        "residual_J": 0,
+        "allowed_J": 0,
+        "arithmetic_recalc_J": 0,
+        "agrees": true,
+        "stored_delta_total_potential_J": -0.01
+      },
+      {
+        "name": "large_positive_residual_rejected",
+        "status": "NEEDS_RECOMPUTE",
+        "residual_J": 999999.99,
+        "allowed_J": 0.000001,
+        "arithmetic_recalc_J": 999999.99,
+        "agrees": true,
+        "stored_delta_total_potential_J": -1000000
+      },
+      {
+        "name": "large_negative_residual_rejected",
+        "status": "NEEDS_RECOMPUTE",
+        "residual_J": -1000000,
+        "allowed_J": 0.000001,
+        "arithmetic_recalc_J": -1000000,
+        "agrees": true,
+        "stored_delta_total_potential_J": 999999.99
+      },
+      {
+        "name": "missing_tolerance_rejected",
+        "status": "NEEDS_RECOMPUTE",
+        "residual_J": null,
+        "allowed_J": null,
+        "arithmetic_recalc_J": 0,
+        "agrees": false,
+        "stored_delta_total_potential_J": null
+      },
+      {
+        "name": "legacy_total_potential_not_bridged",
+        "status": "NEEDS_RECOMPUTE",
+        "residual_J": null,
+        "allowed_J": null,
+        "arithmetic_recalc_J": null,
+        "agrees": true,
+        "stored_delta_total_potential_J": null
+      },
+      {
+        "name": "dynamic_mode_unknown",
+        "status": "UNKNOWN",
+        "residual_J": null,
+        "allowed_J": null,
+        "arithmetic_recalc_J": 0,
+        "agrees": false,
+        "stored_delta_total_potential_J": null
+      },
+      {
+        "name": "wrong_parent_binding_rejected",
+        "status": "NEEDS_RECOMPUTE",
+        "residual_J": null,
+        "allowed_J": null,
+        "arithmetic_recalc_J": 0,
+        "agrees": false,
+        "stored_delta_total_potential_J": null
+      }
+    ],
+    "equation": "W_increment - delta_stored_elastic_energy - Gc_delta_area",
+    "tolerance": "abs_tol + relative_tol * reference_energy; caller basis/hash present but calibration and external caller provenance are not verified"
+  },
+  "mesh": {
+    "qualification": "FIXTURE_GEOMETRY_ONLY",
+    "meshes": {
+      "negative": {
+        "vertex_count": 8,
+        "triangle_count": 12,
+        "signed_volume_m3": 4.4399999999999995
+      },
+      "positive": {
+        "vertex_count": 8,
+        "triangle_count": 12,
+        "signed_volume_m3": 3.56
+      }
+    },
+    "volume_sum_m3": 8,
+    "paired_faces": [
+      {
+        "pair_id": "explicit_cut_surface_01:triangle:0",
+        "negative_face_index": 10,
+        "positive_face_index": 10,
+        "negative_area_m2": 2.1774296773948865,
+        "positive_area_m2": 2.1774296773948865,
+        "normal_dot": -1
+      },
+      {
+        "pair_id": "explicit_cut_surface_01:triangle:1",
+        "negative_face_index": 11,
+        "positive_face_index": 11,
+        "negative_area_m2": 2.1774296773948865,
+        "positive_area_m2": 2.1774296773948865,
+        "normal_dot": -0.9999999999999999
+      }
+    ],
+    "limitation": "positive aggregate signed volume is not a generic per-connected-shell orientation/self-intersection/full-coverage/non-overlap proof; current frozen fixture receipt and parent topology review cover its two connected box pieces",
+    "face_index_convention": "zero-based OBJ triangle-array indices; pair indices 10 and 11 address the two cut triangles in a 12-face mesh"
+  },
+  "disposition": "NARROW_ACCEPT_FOR_FIXTURE_PLUMBING_ONLY; no physical energy/J-integral coupling established"
+}

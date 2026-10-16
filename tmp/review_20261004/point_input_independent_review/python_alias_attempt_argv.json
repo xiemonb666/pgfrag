@@ -1,0 +1,10 @@
+{
+  "executable": "C:\\Users\\xiemo\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\audit_point_inputs.py",
+    "--experiment",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004",
+    "--prefreeze",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\point_input_independent_review\\prefreeze_sha256.txt"
+  ]
+}

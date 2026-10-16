@@ -1,0 +1,69 @@
+{
+  "schema": "mixed93_opening_control_source_pins.v1",
+  "status": "SOURCE_READY_EXECUTION_DISABLED",
+  "execution_authorized": false,
+  "root_go": {
+    "authorized": false,
+    "token": null,
+    "authorized_by": null,
+    "authorized_utc": null
+  },
+  "frozen_contract": {
+    "case_path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+    "case_sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c",
+    "driver_path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+    "driver_sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291",
+    "execution_disabled_when_frozen": true
+  },
+  "references": {
+    "saved_elastic_result": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/numeric_runs/run01/result.json",
+      "sha256": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2"
+    },
+    "original_elastic_numeric_pins": {
+      "path": "pgfrag/tmp/review_20261006/mixed93_actual_cohesive_bridge_20261006/NUMERIC_SOURCE_PINS.json",
+      "sha256": "f10c95d0943ee0d2fd5020e4bfddba91c9f4af4f182d2849769dc664cc7d6140"
+    },
+    "elastic_worker": {
+      "path": "pgfrag/experiments/mixed93_actual_cohesive_bridge_20261006/run_actual_cohesive_bridge.py",
+      "sha256": "36ac1710286b0abf607bda5b1c6ffab893f8191830eae091517e2acd41d62236"
+    },
+    "trace_primitive": {
+      "path": "pgfrag/experiments/enriched_cohesive_trace_20261006/enriched_cohesive_trace.py",
+      "sha256": "13050baf07a896396d1e6fc809a4eb4a309865900f4a30c42fa23e2bf7184b29"
+    },
+    "cohesive_scalar_law": {
+      "path": "pgfrag/experiments/cohesive_scalar_law_20261006/cohesive_scalar_law.py",
+      "sha256": "78433638608ad4216979607412fe0d4966f1423706c47f734f50dd2a8121fa17"
+    },
+    "cohesive_derivative": {
+      "path": "pgfrag/experiments/cohesive_interface_assembly_20261006/cohesive_interface_assembly.py",
+      "sha256": "d2bf0dd79507e5ab26efe69b5489c3284b7c9118656ab49fffe942303ba11854"
+    },
+    "mixed_enriched_operator": {
+      "path": "pgfrag/experiments/mixed_enriched_operator_20261006/mixed_enriched_operator.py",
+      "sha256": "f28f3b55e1ee15212c72ffba75bfe5a4b4f324a7fd4921d63dd47cbd840d7e6f"
+    },
+    "case": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/case.json",
+      "sha256": "49bec605348679ae6fbc105c4944a08efcdfcd44ee193cbd8c8c1546161fef6c"
+    },
+    "driver": {
+      "path": "pgfrag/experiments/mixed93_opening_control_20261007/run_mixed93_opening_control.py",
+      "sha256": "ba00de0d635d2daecfd113ab28c9518d196655c89406a09472fbcf0af5fcd291"
+    }
+  },
+  "numeric_contract": {
+    "saved_json_only": true,
+    "npz_opened": false,
+    "new_mls_queries": 0,
+    "provider_calls": 0,
+    "bulk_unit_control_kkt_order": 100,
+    "bulk_unit_control_kkt_solves": 1,
+    "primitive_assemblies_exact": 12,
+    "wall_timeout_seconds": 20,
+    "result_output_limit_bytes": 8388608,
+    "retry_count": 0,
+    "requires_exact_root_go_token": true
+  }
+}

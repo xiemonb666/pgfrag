@@ -1,0 +1,93 @@
+{
+  "review_schema": "physics_primitives_independent_review.v1",
+  "review_kind": "read-only independent algebraic readback",
+  "scope": {
+    "csv_data_rows_read": 1067,
+    "csv_data_row_limit": 2000,
+    "implementation_imported_or_called": false,
+    "solver_or_cad_called": false,
+    "trajectory_rerun": false,
+    "random_fixture_created": false,
+    "git_commands_used": false,
+    "writes_outside_review_directory": false
+  },
+  "modules": {
+    "cohesive_scalar_law": {
+      "bug_found_within_review_scope": false,
+      "acceptance": "accept isolated scalar Mode-I opening-law energy ledger only",
+      "evidence": {
+        "history_rows": 149,
+        "max_abs_kappa_reconstruction_error_m": 0.0,
+        "max_abs_damage_reconstruction_error": 0.0,
+        "max_abs_stored_energy_reconstruction_error_J_m2": 0.0,
+        "max_abs_dissipation_reconstruction_error_J_m2": 1.4210854715202004e-14,
+        "max_abs_traction_reconstruction_error_Pa": 0.0,
+        "max_abs_psi_plus_dissipation_minus_work_J_m2": 8.526512829121202e-14,
+        "minimum_damage_increment": 0.0,
+        "minimum_dissipation_increment_J_m2": 0.0,
+        "final_kappa_m": 1.9200000000000003e-5,
+        "final_damage": 0.9583333333333334,
+        "final_dissipation_J_m2": 92.0
+      },
+      "limitations": [
+        "scalar Mode-I opening only; compression and mixed mode are unsupported/unknown",
+        "no rate dependence, crack-front coupling, or solver integration",
+        "illustrative software parameters are not a ceramic calibration or evidence of real ceramic fracture"
+      ]
+    },
+    "rest_material_field": {
+      "bug_found_within_review_scope": false,
+      "acceptance": "accept deterministic rest-coordinate synthetic field contract only",
+      "evidence": {
+        "saved_sample_rows": 196,
+        "fourier_modes": 24,
+        "max_abs_csv_minus_manifest_fourier_sum": 1.3877787807814457e-17,
+        "unique_x_count": 14,
+        "unique_y_count": 14,
+        "all_samples_z_zero": true,
+        "k_times_ell": 2.199123071161498,
+        "sin_q_over_q": 0.3678794411714423,
+        "exp_minus_one": 0.36787944117144233,
+        "rest_mapping": "x_rest = R^T (x_frame - t)",
+        "field_depends_on_physical_rest_coordinates_and_frozen_modes": true
+      },
+      "limitations": [
+        "e-fold length describes the isotropic random-phase ensemble covariance C(r)=sin(k r)/(k r), not a fitted or guaranteed finite-realization empirical length",
+        "finite fixed modes form an anisotropic oscillatory discrete spectrum",
+        "UNCALIBRATED synthetic heterogeneity is not a measured/calibrated ceramic material or real defect field"
+      ]
+    },
+    "rigid_plane_contact": {
+      "bug_found_within_review_scope": false,
+      "acceptance": "accept one frictionless point-mass/fixed-infinite-plane primitive and its bounded toy result with provenance qualification",
+      "sign_convention": {
+        "gap": "g=(x-x0) dot n; positive is free space, negative is penetration",
+        "potential": "U=0.5*K*min(g,0)^2",
+        "force_on_point": "F=-K*min(g,0)*n; penetration force points along +n into free space"
+      },
+      "evidence": {
+        "trajectory_rows": 722,
+        "focused_readonly_check_passed_groups": 6,
+        "current_sources_match_focused_snapshot_pins": true,
+        "saved_trajectory_artifacts_match_current_pins": true,
+        "momentum_impulse_balance_error_abs_Ns_max": 2.6645352591003757e-15,
+        "coarse_dt_s": 0.002,
+        "coarse_max_energy_residual_J": 0.00020000296217004276,
+        "fine_dt_s": 0.001,
+        "fine_max_energy_residual_J": 5.0001218842243844e-5,
+        "fine_over_coarse_energy_residual_ratio": 0.25000239146324615,
+        "rotated_normal_changed": true,
+        "focused_rotation_covariance_force_error_N": 0.0,
+        "focused_rotation_covariance_potential_error_J": 0.0,
+        "plane_point_and_normal_backing_is_immutable": true
+      },
+      "limitations_and_provenance": [
+        "no friction, damping, moving plane, finite-surface collision, body rotation, broad phase, or multibody resolution",
+        "energy residual is nonzero and reported as a Verlet discretization error, not a conservation pass",
+        "original toy-run source snapshot/hash was not saved; current focused snapshot is not proof of historical run source",
+        "comparison_errors.csv was corrected after the first run and original bytes are unavailable; trajectory was not rerun"
+      ]
+    }
+  },
+  "independent_readback_artifact": "independent_readback.json"
+}

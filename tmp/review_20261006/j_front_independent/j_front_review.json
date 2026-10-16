@@ -1,0 +1,98 @@
+{
+  "review_id": "j_front_independent_20261006",
+  "classification": "INDEPENDENT_ANALYTIC_READBACK_NOT_GT",
+  "targets": {
+    "j_integral_source": "pgfrag/experiments/modeiii_j_integral_20261006/j_integral.py",
+    "j_integral_saved_samples": "pgfrag/tmp/review_20261006/modeiii_j_integral_20261006/modeiii_j_integral_analytic_validation.json"
+  },
+  "readback": {
+    "status": "INDEPENDENT_READBACK_OK",
+    "method": "Recomputed from saved global coordinate, normal, gradient, and ds rows using plain Python math.fsum; no integrator, field provider, or solver import",
+    "samples": 224,
+    "reference_J_J_per_m2": 0.013,
+    "maximum_absolute_relative_error": 8.679744315207977e-05,
+    "relative_error_limit_declared_by_artifact": 0.0001,
+    "maximum_relative_difference_from_saved_J": 1.33440323226758e-16,
+    "maximum_abs_gradient_reconstruction_error": 4.84869951806108e-19,
+    "maximum_abs_rotated_normal_error": 3.1401849173675503e-16,
+    "branch_upper_samples": 56,
+    "branch_lower_samples": 56,
+    "maximum_relative_weighted_normal_closure": 1.75e-16,
+    "winding": "2*pi for each contour",
+    "quadrature_order_16_improves_over_12_for_all_pairs": true
+  },
+  "source_findings": [
+    {
+      "severity": "REQUIRED_BEFORE_BOUNDED_INTERFACE_ACCEPTANCE",
+      "location": "j_integral.py:_numeric_array and integrate_modeiii_j sample-count guard",
+      "finding": "Inputs are copied to float64 before MAX_SAMPLES is enforced; np.asarray can also allocate for list-like values.",
+      "acceptance": "Check each row/byte count and shared sample count before any conversion/copy; reject 257 rows before an allocation/copy hook runs."
+    },
+    {
+      "severity": "NARROW_LIMITATION",
+      "location": "one_sided_crack_face batch argument",
+      "finding": "One scalar upper/lower trace label cannot distinguish a batch containing exact branch-face samples from both crack lips.",
+      "acceptance": "Keep exact branch samples UNKNOWN, or use and test a per-row side label before supporting exact cut samples."
+    }
+  ],
+  "interpretation": {
+    "passes": [
+      "Mode III integrand and global-frame component conventions on the supplied exact field samples",
+      "rotated contour point/normal frame agreement",
+      "finite planar geometry, outward orientation, closure, winding, and no exact front/branch quadrature sample",
+      "declared contour quadrature tolerance and monotonic order improvement"
+    ],
+    "does_not_establish": [
+      "solver field validity",
+      "measured or physical G",
+      "material calibration",
+      "finite curved-front validity",
+      "crack advance or fracture outcome"
+    ]
+  },
+  "front_step_acceptance": {
+    "threshold_crossing": "proposal_only",
+    "commit_requirement": "reanalyze candidate geometry, mechanics, and energy balance",
+    "unknown_inputs": "must remain UNKNOWN; no fabricated growth, branching, or passed energy check"
+  },
+  "front_step_review": {
+    "classification": "SOURCE_ONLY_STATE_MACHINE_REVIEW_WITH_LIMITATIONS",
+    "receipt": {
+      "path": "pgfrag/tmp/review_20261006/griffith_front_step_20261006/ACTUAL_TEST_RECEIPT.json",
+      "sha256": "9713d48a663f057837b1ed4595f0f7ba9bbd6429776393d3ee90fb9ca6b179d2",
+      "test_count": 15,
+      "fixture_state_count": 4,
+      "solver_invoked": false,
+      "native_runtime_invoked": false,
+      "production_writes": false,
+      "all_recorded_hashes_match_current_artifacts": true,
+      "verified_hashes": {
+        "griffith_front_step.py": "3576a2aa6a68771578ed93e70d618f893b3465db476006f98e811ab12b44fba2",
+        "test_griffith_front_step.py": "d7bcb8b51ce596133aecb8e17c3ef57084d16db49b9429241c3b9046097cc4c5",
+        "run_fixture.py": "7d2b1ee0d90cfdf90589145180529d2aad13b18c51741cc7a1266b3c898242f5",
+        "fixture_states.json": "e46e3cb66b95132f590c6c2931168c19e92bcf4d3d6ef729ee118db996cef227",
+        "proposed_vs_committed.svg": "ae593fb7b69d594a8efe52ef55671546980446b75a4b2b76e352e6031985343d"
+      }
+    },
+    "passes": [
+      "G below Gc arrests; equality does not propose; G above Gc produces only a pending geometry candidate",
+      "proposal leaves the prior active surface unchanged",
+      "confirmation requires a candidate-bound reanalyzed surface and geometry/state hashes plus reviewed energy receipt fields",
+      "missing energy evidence retains the old active version",
+      "the only saved successful transition is COMMITTED_FIXTURE_ONLY / EXPLICIT_FIXTURE_NOT_SOLVER and remains NOT_COUPLED",
+      "no turning, branching, or front splitting is represented"
+    ],
+    "limitations": [
+      "Hashes, solver/status labels, and REVIEWED receipts are caller declarations; this source has no authenticity verifier or mechanics solver.",
+      "Energy closure residual is recorded without a tolerance or pass/fail criterion; no energy-balance validation is established.",
+      "All states remain NOT_COUPLED / EXPERIMENTAL_UNCALIBRATED; no real physical front advance is qualified.",
+      "Only a finite straight +x front is supported; turning and branching remain unsupported."
+    ],
+    "review_scope": "Static review and hash readback only; no front-step tests were rerun."
+  },
+  "evidence_paths": [
+    "pgfrag/tmp/review_20261006/j_front_independent/independent_readback.json",
+    "pgfrag/tmp/review_20261006/j_front_independent/readback_run/run_record.json",
+    "pgfrag/tmp/review_20261006/j_front_independent/J_REVIEW.md"
+  ]
+}

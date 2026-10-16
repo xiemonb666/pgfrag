@@ -1,0 +1,16 @@
+{
+  "executable": "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "argv": [
+    "-m",
+    "pgfrag.mesh_resolution_audit",
+    "--input-json",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\mesh_resolution_audit\\fixture_cases.json",
+    "--output-json",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\mesh_resolution_audit\\fixture_report.json"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

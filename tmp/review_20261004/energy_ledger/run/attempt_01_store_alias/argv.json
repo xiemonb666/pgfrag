@@ -1,0 +1,21 @@
+{
+  "executable": "C:\\Users\\xiemo\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+  "argv": [
+    "C:\\Users\\xiemo\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_energy_ledger.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\run\\stdout.txt",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\run\\stderr.txt",
+  "exit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\energy_ledger\\run\\exit.json"
+}

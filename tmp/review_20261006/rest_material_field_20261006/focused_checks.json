@@ -1,0 +1,13 @@
+{
+  "assertion_groups": 5,
+  "checks": [
+    "node_order_and_repeated_point_are_invariant",
+    "resampling_at_same_physical_point_is_invariant",
+    "rigid_frame_transform_preserves_rest_binding",
+    "zero_amplitude_and_bounded_positive_map",
+    "invalid_units_lengths_amplitude_and_coordinates_are_rejected"
+  ],
+  "invalid_query_attempts_included": true,
+  "point_evaluation_attempts": 31,
+  "status": "PASS"
+}

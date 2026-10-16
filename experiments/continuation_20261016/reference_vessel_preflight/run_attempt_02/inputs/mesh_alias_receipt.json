@@ -1,0 +1,90 @@
+{
+  "schema": "pgfrag.physical_name_alias_receipt.v1",
+  "operation": "REPLACE_TWO_PHYSICAL_NAME_STRINGS_ONLY",
+  "source_mesh": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\source_archive\\mesh.msh.original",
+    "bytes": 4410557,
+    "sha256": "c9c6d697371d61873fae3dcde19e7a48404725480918231471cf77817b3c3627"
+  },
+  "executed_mesh": {
+    "path": "pgfrag\\experiments\\continuation_20261016\\reference_vessel_preflight\\run_attempt_02\\inputs\\mesh.msh",
+    "bytes": 4410546,
+    "sha256": "595065ad62304a36ccd7d037e21a79b0c4c340bc34b545c44ce24a225c801b7c"
+  },
+  "group_map": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "from": "cut_interface",
+      "to": "interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "from": "source_exterior",
+      "to": "exterior"
+    }
+  ],
+  "unchanged_group": {
+    "dimension": 3,
+    "physical_tag": 1,
+    "name": "partitioned_body"
+  },
+  "physical_names_original": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "cut_interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "source_exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "physical_names_derived": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "physical_names_block_original_sha256": "c5630d5fc26a544f8dab2867331d9eab11283e1035e6b81b268cc3ca8729e303",
+  "physical_names_block_derived_sha256": "3ba9017e06719e50fee224753eaa38603c9f3cd4372faaaf6e6c161bafbab917",
+  "nodes_block_sha256_original": "8e3319f6817a7657894f5583ab16e7b69260ee423804f30fd4c79caf69c85200",
+  "nodes_block_sha256_derived": "8e3319f6817a7657894f5583ab16e7b69260ee423804f30fd4c79caf69c85200",
+  "elements_block_sha256_original": "f659843cfec5449dd114c0512b1aac22f38eab53082636a8eca62dc590b0378e",
+  "elements_block_sha256_derived": "f659843cfec5449dd114c0512b1aac22f38eab53082636a8eca62dc590b0378e",
+  "nodes_block_byte_equal": true,
+  "elements_block_byte_equal": true,
+  "all_bytes_outside_physical_names_byte_equal": true,
+  "physical_integer_tags_and_order_equal": true,
+  "body_bytes_changed": false,
+  "physical_names_block_original_exact": "$PhysicalNames\r\n3\r\n2 2 \"cut_interface\"\r\n2 3 \"source_exterior\"\r\n3 1 \"partitioned_body\"\r\n$EndPhysicalNames\r\n",
+  "physical_names_block_derived_exact": "$PhysicalNames\r\n3\r\n2 2 \"interface\"\r\n2 3 \"exterior\"\r\n3 1 \"partitioned_body\"\r\n$EndPhysicalNames\r\n",
+  "exact_text_replacements": [
+    {
+      "before": "2 2 \"cut_interface\"",
+      "after": "2 2 \"interface\""
+    },
+    {
+      "before": "2 3 \"source_exterior\"",
+      "after": "2 3 \"exterior\""
+    }
+  ]
+}

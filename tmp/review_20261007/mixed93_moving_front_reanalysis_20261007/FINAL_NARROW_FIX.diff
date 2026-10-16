@@ -1,0 +1,71 @@
+--- a/pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py
++++ b/pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py
+@@ -448,15 +448,16 @@
+             for label, cap in caps.items():
+                 cap_basis[label] = _basis(np, cap['xyz'], *cap_base[label], front, field, radius)
+             cphys, volume_measure = _physical_moment_matrix(np, vol_values, vol_xyz, vol_weights, radius)
++            _record_checkpoint(checkpoint, f'{state_name}_volume_and_gauge_built', {'volume_measure_m3': volume_measure}, {f'{state_name}_volume_xyz_m': vol_xyz, f'{state_name}_volume_weights_m3': vol_weights, f'{state_name}_volume_values': vol_values, f'{state_name}_volume_gradients_per_m': vol_gradients, f'{state_name}_C_physical': cphys})
+             if abs(volume_measure - math.pi * radius * radius * length) > 1e-10 * math.pi * radius * radius * length:
+                 raise StudyError(f'{state_name} front-aligned volume rule misses cylinder measure')
+-            _record_checkpoint(checkpoint, f'{state_name}_volume_and_gauge_built', {'volume_measure_m3': volume_measure}, {f'{state_name}_volume_xyz_m': vol_xyz, f'{state_name}_volume_weights_m3': vol_weights, f'{state_name}_volume_values': vol_values, f'{state_name}_volume_gradients_per_m': vol_gradients, f'{state_name}_C_physical': cphys})
+             kraw, kbatches = _assemble_k(np, elastic, source_xyz, front, vol_xyz, vol_weights, vol_values, vol_gradients, elastic.IsotropicMaterial(material['E_Pa'], material['nu']))
+             _record_checkpoint(checkpoint, f'{state_name}_raw_K_assembled', {'K_assembly_batches': kbatches}, {f'{state_name}_K_raw_N_per_m': kraw})
+             kscaled, scale_vector, eigenvalues, spectrum = _spectrum_gate(np, kraw)
++            _record_checkpoint(checkpoint, f'{state_name}_spectrum_gate_complete', {f'{state_name}_spectrum': spectrum}, {f'{state_name}_K_scaled_raw': kscaled, f'{state_name}_K_scale_sqrt_m_per_sqrt_N': scale_vector, f'{state_name}_eigenvalues_scaled': eigenvalues})
+             rigid, rigid_ids = _mode_matrices(np, semantic, source_ids, source_xyz, semantic_ids, radius)
+             coupling, coupling_singular, null_residuals, coupling_rank, rigid_ok = _rigid_spectrum_checks(np, kscaled, scale_vector, rigid, cphys)
+-            _record_checkpoint(checkpoint, f'{state_name}_spectrum_and_rigid_checks_complete', {f'{state_name}_spectrum': spectrum, f'{state_name}_rigid_null_relative_residuals': null_residuals, f'{state_name}_physical_gauge_rigid_rank': coupling_rank, f'{state_name}_mechanical_gate_passed': bool(spectrum['passed'] and rigid_ok)}, {f'{state_name}_K_scaled_raw': kscaled, f'{state_name}_eigenvalues_scaled': eigenvalues, f'{state_name}_rigid_mode_coefficients': rigid, f'{state_name}_rigid_gauge_coupling': coupling})
++            _record_checkpoint(checkpoint, f'{state_name}_rigid_checks_complete', {f'{state_name}_rigid_null_relative_residuals': null_residuals, f'{state_name}_physical_gauge_rigid_rank': coupling_rank, f'{state_name}_mechanical_gate_passed': bool(spectrum['passed'] and rigid_ok)}, {f'{state_name}_rigid_mode_coefficients': rigid, f'{state_name}_rigid_gauge_coupling': coupling, f'{state_name}_rigid_coupling_singular_values': coupling_singular})
+             states.append({'name': state_name, 'front_x_m': front, 'xyz': vol_xyz, 'weights': vol_weights, 'values': vol_values, 'gradients': vol_gradients, 'C': cphys, 'volume_m3': volume_measure, 'K': kraw, 'Kscaled': kscaled, 'scale': scale_vector, 'eigenvalues': eigenvalues, 'spectrum': spectrum, 'rigid': rigid, 'rigid_ids': rigid_ids, 'coupling': coupling, 'coupling_singular': coupling_singular, 'null_residuals': null_residuals, 'coupling_rank': coupling_rank, 'mechanical_gate': bool(spectrum['passed'] and rigid_ok), 'K_batches': kbatches, 'side_values': side_values, 'side_gradients': side_gradients, 'cap_basis': cap_basis})
+         if not all((state['mechanical_gate'] for state in states)):
+             raise StudyError('one or both raw scaled spectrum/rigid gates failed; no KKT solve attempted')
+@@ -562,10 +563,12 @@
+                     if not label_wrench['passed']:
+                         raise StudyError(f'{name} fine generalized load violates rigid wrench gate')
+                     q, lam, solve_metrics, solve_arrays = _solve_kkt(np, state['K'], state['Kscaled'], state['C'], force, state['scale'])
++                    solve_checkpoint_arrays = {f'{name}_{key}': value for key, value in solve_arrays.items()}
++                    solve_checkpoint_arrays.update({f'{name}_q_solution': q, f'{name}_lambda_physical': lam})
++                    _record_checkpoint(checkpoint, f'{name}_fine_solve_returned', {'solve_gates': {name: solve_metrics}}, solve_checkpoint_arrays)
+                     if not state['mechanical_gate'] or not solve_metrics['passed']:
+                         raise StudyError(f'{name} solve gate blocked: {solve_metrics}')
+                     state_metrics['solve'] = {**solve_metrics, 'q_solution': q.tolist(), 'lagrange_multipliers_physical': lam.tolist(), 'constraint_target_m': [0.0] * 6}
+-                    _record_checkpoint(checkpoint, f'{name}_fine_solve_complete', {'solve_gates': {name: solve_metrics}}, {f'{name}_q_solution': q, f'{name}_lambda_physical': lam})
+                     for key, value in solve_arrays.items():
+                         arrays[f'{name}_{key}'] = value
+                     arrays[f'{name}_q_solution'] = q; arrays[f'{name}_lambda_physical'] = lam
+@@ -625,7 +628,7 @@
+     output.parent.mkdir(parents=True, exist_ok=False); array_path = output.with_name('failure_arrays.npz')
+     np.savez_compressed(array_path, **checkpoint['arrays'])
+     failure_path = output.with_name('failure.json')
+-    document = {'schema': 'mixed93_moving_front_failure_checkpoint.v1', 'status': 'FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT', 'primary_result_written': False, 'actual_return_code': 2, 'error_type': type(error).__name__, 'error': str(error), 'last_completed_phase': checkpoint['phase'], 'completed_phases': checkpoint['completed_phases'], 'provider_batches': checkpoint['provider_batches'], 'provider_rows_returned': checkpoint['provider_rows_returned'], 'provider_statuses': checkpoint['provider_statuses'], 'checkpoint_arrays_uncompressed_bytes': sum((np.asarray(value).nbytes for value in checkpoint['arrays'].values())), 'input_sha256': checkpoint['input_sha256'], 'metrics': checkpoint['metrics'], 'replay_arrays_npz': {'path': array_path.name, 'sha256': _sha(array_path), 'bytes': array_path.stat().st_size}}
++    document = {'schema': 'mixed93_moving_front_failure_checkpoint.v1', 'status': 'FAILURE_DIAGNOSTIC_NO_PRIMARY_RESULT', 'primary_result_written': False, 'expected_driver_return_code': 2, 'error_type': type(error).__name__, 'error': str(error), 'last_completed_phase': checkpoint['phase'], 'completed_phases': checkpoint['completed_phases'], 'provider_batches': checkpoint['provider_batches'], 'provider_rows_returned': checkpoint['provider_rows_returned'], 'provider_statuses': checkpoint['provider_statuses'], 'checkpoint_arrays_uncompressed_bytes': sum((np.asarray(value).nbytes for value in checkpoint['arrays'].values())), 'input_sha256': checkpoint['input_sha256'], 'metrics': checkpoint['metrics'], 'replay_arrays_npz': {'path': array_path.name, 'sha256': _sha(array_path), 'bytes': array_path.stat().st_size}}
+     def json_default(value):
+         if isinstance(value, np.generic): return value.item()
+         raise TypeError(f'unsupported JSON value: {type(value).__name__}')
+
+--- a/pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/SOURCE_PINS.json
++++ b/pgfrag/tmp/review_20261007/mixed93_moving_front_reanalysis_20261007/SOURCE_PINS.json
+@@ -19,10 +19,10 @@
+       "sha256": "e73e4d5a2dfc5357ef4e6e9a70b79df1833d9adfb8cb9e0741586e998165f9f6"
+     },
+     "entry": {
+-      "bytes": 56168,
+-      "lines": 662,
++      "bytes": 56564,
++      "lines": 665,
+       "path": "pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py",
+-      "sha256": "9432b3ac91706676eab02db98d1230313f6175f03a50a4691200d87994e4fcc1"
++      "sha256": "8c662a69e7b4c60b0ce70fcde2b53fd3547a23e1e00f6e19adfa2f6801b0b9c4"
+     },
+     "readme": {
+       "bytes": 2223,
+@@ -40,7 +40,7 @@
+   },
+   "current_case_sha256": "89024e62b006224819a0331796b5c3bce55cbea4e9bd732309d2bac1069acbf4",
+   "entry_path": "pgfrag/experiments/mixed93_moving_front_reanalysis_20261007/mixed93_moving_front_reanalysis.py",
+-  "entry_sha256": "9432b3ac91706676eab02db98d1230313f6175f03a50a4691200d87994e4fcc1",
++  "entry_sha256": "8c662a69e7b4c60b0ce70fcde2b53fd3547a23e1e00f6e19adfa2f6801b0b9c4",
+   "execution_authorized": false,
+   "history": {
+     "pre_checkpoint_snapshot": {
+

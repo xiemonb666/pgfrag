@@ -1,0 +1,69 @@
+{
+  "captured_utc": "2026-10-05T12:12:31.8633987+00:00",
+  "protected_pin_status": "ALL_PINNED_FILES_UNCHANGED",
+  "tree_integrity_status": "ALL_PROTECTED_TREES_UNCHANGED",
+  "protected_single_files": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Project.toml",
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae",
+      "equal_to_expected": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Manifest.toml",
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594",
+      "equal_to_expected": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+      "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+      "equal_to_expected": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a",
+      "equal_to_expected": true
+    }
+  ],
+  "protected_tree_comparisons": [
+    {
+      "label": "original_vendor",
+      "before_sha256": "d83340d3d6812afd1df64b5beb19d9ef4c53d9b5d3f4a23f823a078a4ffcddc8",
+      "after_sha256": "d83340d3d6812afd1df64b5beb19d9ef4c53d9b5d3f4a23f823a078a4ffcddc8",
+      "equal": true,
+      "before_file_count": 65,
+      "after_file_count": 65,
+      "before_total_bytes": 554702,
+      "after_total_bytes": 554702
+    },
+    {
+      "label": "shared_depot",
+      "before_sha256": "67bf5caaa3d43c3a311f79ef148cd208f35ade303a14ea345677825478d7306b",
+      "after_sha256": "67bf5caaa3d43c3a311f79ef148cd208f35ade303a14ea345677825478d7306b",
+      "equal": true,
+      "before_file_count": 2974,
+      "after_file_count": 2974,
+      "before_total_bytes": 144737124,
+      "after_total_bytes": 144737124
+    },
+    {
+      "label": "run03_project",
+      "before_sha256": "0f092e13c51c7d32905a7623948dc43857164e0b2b5de4eed3be3c4c78307da2",
+      "after_sha256": "0f092e13c51c7d32905a7623948dc43857164e0b2b5de4eed3be3c4c78307da2",
+      "equal": true,
+      "before_file_count": 68,
+      "after_file_count": 68,
+      "before_total_bytes": 628946,
+      "after_total_bytes": 628946
+    },
+    {
+      "label": "run03_depot",
+      "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true,
+      "before_file_count": 0,
+      "after_file_count": 0,
+      "before_total_bytes": 0,
+      "after_total_bytes": 0
+    }
+  ]
+}

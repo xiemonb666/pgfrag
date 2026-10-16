@@ -1,0 +1,113 @@
+{
+  "array_contract": {
+    "bond_active_packed_bitorder": "little; 1=active",
+    "format": "NumPy npz",
+    "units": "SI"
+  },
+  "geometry": {
+    "analytic_volume_m3": 2.546784444510125e-06,
+    "center_m": [
+      0.0,
+      0.0,
+      0.012
+    ],
+    "delta_m": 0.03,
+    "h_m": 0.012,
+    "inner_radius_m": 0.008,
+    "lattice_volume_m3": 6.912e-06,
+    "n_points": 4,
+    "outer_radius_m": 0.012,
+    "shape": "concentric_lower_hemisphere_shell"
+  },
+  "loading": {
+    "alpha_s_1": 0.0,
+    "gaussian_peak_m_s": 0.0,
+    "gaussian_sigma_m": 0.0,
+    "mode": "zero",
+    "momentum_constraint": "remove mass-mean translation and angular momentum"
+  },
+  "material": {
+    "E_pa": 70000000000.0,
+    "Gc_j_m2": 7.6,
+    "calibration_status": "UNVALIDATED_PROTOTYPE",
+    "nu": 0.25,
+    "point_mass_kg": 0.0158976,
+    "rho_kg_m3": 2300.0,
+    "total_mass_kg": 0.0158976
+  },
+  "outputs": [
+    {
+      "bytes": 1160,
+      "path": "case.json",
+      "sha256": "52a4e892d8cd1c83f0eaf8daf34a60c8511355edfd3d4c47b8eeb120e697c7a9"
+    },
+    {
+      "bytes": 39,
+      "path": "case.toml",
+      "sha256": "a1386a20da125e315524d9ca0e1fcee0972ea9f002a46599295762d16fd7397c"
+    },
+    {
+      "bytes": 8422,
+      "path": "arrays.npz",
+      "sha256": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131"
+    }
+  ],
+  "payloads": {
+    "arrays": {
+      "bytes": 8422,
+      "path": "arrays.npz",
+      "sha256": "7d4b3e5a045aa8b14f8f4681d904a2aba3c5b2350ad779f5b6baebdf5caf8131"
+    }
+  },
+  "results": {
+    "peak_raw_plus_final_bytes": 9621,
+    "point_count": 4
+  },
+  "run_id": "synthetic_handtest",
+  "schema": "pgfrag.native_bowl_result.v1",
+  "solver": {
+    "correction": "NoCorrection",
+    "damage_model": "CriticalStretch",
+    "dt_s": 0.5,
+    "initial_geometric_exclusion_count": 2,
+    "integrator": "VelocityVerlet",
+    "material": "BBMaterial",
+    "model": "BB",
+    "name": "BBMaterial{NoCorrection}, CriticalStretch, VelocityVerlet",
+    "safety_factor": 0.5,
+    "stable_dt_s": 1.0,
+    "status": "NATIVE_COMPLETE",
+    "steps": 1,
+    "threads": 1,
+    "wall_runtime_s": 0.01
+  },
+  "source_forge_manifest_sha256": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0",
+  "source_receipts": [
+    {
+      "bytes": 58,
+      "path": "source_snapshot/bowl_dynamics.py",
+      "sha256": "11c89ae90b501afe74dcee18c4a4dbe04bc08d0645a6844c1db71030ff329cbd"
+    },
+    {
+      "bytes": 52,
+      "path": "source_snapshot/run_bowl_dynamics.jl",
+      "sha256": "575f68f5207c9f52f3a3dbe1773ebe318c5394bc6dce66bbf74765bfd42e1cc9"
+    },
+    {
+      "bytes": 34,
+      "path": "source_snapshot/Project.toml",
+      "sha256": "575c1bcb747c90edc6d0c84648eab20f13334a4e039989fbe29869222c3edc87"
+    },
+    {
+      "bytes": 35,
+      "path": "source_snapshot/Manifest.toml",
+      "sha256": "d3fdc30aa0c44d528fab6e051e4d672dbd7a02d876a175a11cbe7ba730f8f6f5"
+    },
+    {
+      "bytes": 53,
+      "path": "asset/manifest.json",
+      "sha256": "aff155c0ee7a8921368a52b273c990785d665ce96e852cb1cf2d5c20ecd732a0"
+    }
+  ],
+  "status": "PASS"
+}

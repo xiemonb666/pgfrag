@@ -1,0 +1,159 @@
+{
+  "schema": "pgfrag.pd.loaded_diagnostic.B_preflight.v1",
+  "status": "PREFLIGHT_PASS_SINGLE_RUN_ARMED",
+  "run_id": "affine_threshold_b_run01",
+  "launcher_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\launch_b_affine_threshold.ps1",
+  "launcher_sha256": "d54d93d55f9842147885d9aada43af234339cd32ad3e85f4c7649a639c7b67db",
+  "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\manifest.json",
+  "manifest_sha256": "cd6bccb40afbcd74ff84ebe4e80c027a5d10eed3477d766695b37880fbc358ef",
+  "source_pin_count": 26,
+  "source_pins": [
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/run_pd_point_event_probe.jl",
+      "bytes": 23957,
+      "sha256": "cb3ba390b3223d588fd203261a363e9c80b6cd6830583780ff195dcacd5be290"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.points.csv",
+      "bytes": 4923,
+      "sha256": "9b9207727364c667ecc0b592ccff34405eaab75a0992e057a2d8a7a121b706da"
+    },
+    {
+      "path": "pgfrag/experiments/pd_point_event_probe_20261004/input/coupon_uniform_voxel_5cube_125.metadata.toml",
+      "bytes": 1587,
+      "sha256": "8f6235661f7ba1ff4a8ac03e08be84284b214ce089118f83381abeb5abda10d0"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/common_loaded_case.toml",
+      "bytes": 491,
+      "sha256": "381ac4564a3df101e8070ce0159c3b6d88c2a6834ca372a8e3a7ce486fdea062"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_a_loaded_elastic.toml",
+      "bytes": 166,
+      "sha256": "98797bc6feeffcca2aac7ff54e671b23587b342140b94691b68e8948b33ccf26"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/case_b_affine_threshold.toml",
+      "bytes": 955,
+      "sha256": "baab83193430e09af79a1306292972033483f757da445d1cc53bf185676362ff"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe.jl",
+      "bytes": 12838,
+      "sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/launch_a_loaded_elastic.ps1",
+      "bytes": 6261,
+      "sha256": "ac51620610649ffef9bec043c5d3f1f422126b4bf86f98c6d269314af62883b5"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/run_affine_critical_stretch_probe_pre_scopefix_d7c8.jl",
+      "bytes": 12438,
+      "sha256": "d7c8c11fe9d24ff3bd395240942d625bae0e17e6cbf70619b2d87aade09f03aa"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/manifest_pre_scopefix_2c246c38.json",
+      "bytes": 10170,
+      "sha256": "2c246c38f5f298bc33d069307a8ff908a1f6a4157fc533bf152ab6632ec2a01b"
+    },
+    {
+      "path": "pgfrag/experiments/pd_loaded_diagnostics_20261004/b_driver_scopefix.diff.md",
+      "bytes": 1475,
+      "sha256": "c6f4029369fec8b52f7cbb70d5a4cc94a6e5e015e77a72399f7d86de7d74fa49"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Project.toml",
+      "bytes": 107,
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/Manifest.toml",
+      "bytes": 22753,
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/backend_provenance.json",
+      "bytes": 8223,
+      "sha256": "7e8a4638224ca61d9fca5153a60a47c217989b6070e414229ec8e9bc0afe942d"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/material_parameters.jl",
+      "bytes": 8596,
+      "sha256": "4a032a539214e3d1f1291d6e63b19ff6254533f849950c10d5a8e4b98fde96ab"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/parameters.jl",
+      "bytes": 4157,
+      "sha256": "92d49f659a4f2c76a0c391c33372fed1770f297ecd27868e1ad466e016286847"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/fracture.jl",
+      "bytes": 6507,
+      "sha256": "d8b0381584ca33a5ef33071d2e31abb66b96ed3c639facda2cd3bec80ca67075"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/ordinary_state_based.jl",
+      "bytes": 11286,
+      "sha256": "65ffd614270c8f409a28f83e5def1ea1abc5f94ddcb29eac7b2cd7320e720846"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/bond_system.jl",
+      "bytes": 14917,
+      "sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body.jl",
+      "bytes": 18152,
+      "sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/discretization/body_chunk.jl",
+      "bytes": 3795,
+      "sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/threads_body_data_handler.jl",
+      "bytes": 8327,
+      "sha256": "38d01769f5d75eb594a984a74d1feea1ecd553f762876e25e1e4c2ce3d19f116"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/data_handler.jl",
+      "bytes": 426,
+      "sha256": "de1dba3e5d4425f181fb478692ac654077f1c55674236aedb45d963a59a93388"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/core/storages.jl",
+      "bytes": 15633,
+      "sha256": "187ab62dba76a040dd61c3cb5ae638b9ad64b55c2ce2b5a97376fef6821ad43c"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/physics/boundary_conditions.jl",
+      "bytes": 26235,
+      "sha256": "eca99fbf67cf5169a0ea8e34f72b949f3b607155b4a5837cfea1b2a000d2649b"
+    },
+    {
+      "path": "pgfrag/src/pgfrag/resources/julia/vendor/Peridynamics.jl/src/time_solvers/velocity_verlet.jl",
+      "bytes": 12397,
+      "sha256": "584f0afbb1d0cd9808bfeb56d128327d28f7eca486666ffe2a7bbc6feeea48d6"
+    }
+  ],
+  "runtime_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+  "driver_sha256": "2ea0ce90831ec1a9d299a02fc7a223b8bbff1cd411991ce80a0ddbf40e408c2c",
+  "case_sha256": "baab83193430e09af79a1306292972033483f757da445d1cc53bf185676362ff",
+  "julia_threads": 1,
+  "timeout_seconds": 120,
+  "argv": [
+    "--project=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia --startup-file=no --history-file=no C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\run_affine_critical_stretch_probe.jl C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.points.csv C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_point_event_probe_20261004\\input\\coupon_uniform_voxel_5cube_125.metadata.toml C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\common_loaded_case.toml C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\pd_loaded_diagnostics_20261004\\case_b_affine_threshold.toml C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\affine_threshold_b_run01"
+  ],
+  "output_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\OUT_B",
+  "snapshot_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_loaded_diagnostics\\snapshots\\affine_threshold_b_run01",
+  "states": [
+    "rest: eta/epsilon_c=0",
+    "below: eta/epsilon_c=0.5",
+    "above: eta/epsilon_c=1.5"
+  ],
+  "execution_contract": "Three pristine handlers; native force/failure evaluation only; no time integration; no manual bond activity edits; one attempt only.",
+  "materials": "Frozen UNVALIDATED_PROTOTYPE values; no calibration or physical qualification."
+}

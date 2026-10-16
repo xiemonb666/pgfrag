@@ -1,0 +1,538 @@
+{
+  "schema": "pgfrag.physical_name_alias_receipt.v1",
+  "operation": "REPLACE_TWO_PHYSICAL_NAME_STRINGS_ONLY",
+  "source_mesh": {
+    "path": "mesh.original.msh",
+    "bytes": 6422638,
+    "sha256": "0642d607b600c9e556ebde01286476d0526c2963c7d0a6543975883e06fa210e"
+  },
+  "executed_mesh": {
+    "path": "mesh.msh",
+    "bytes": 6422627,
+    "sha256": "d8565decf79b4fec56a56a20200f69f283abd01d88cdfae1ed1743390adec490"
+  },
+  "physical_name_replacements": {
+    "2 2 \"cut_interface\"": 1,
+    "2 3 \"source_exterior\"": 1
+  },
+  "physical_names_original": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "cut_interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "source_exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "physical_names_derived": [
+    {
+      "dimension": 2,
+      "physical_tag": 2,
+      "name": "interface"
+    },
+    {
+      "dimension": 2,
+      "physical_tag": 3,
+      "name": "exterior"
+    },
+    {
+      "dimension": 3,
+      "physical_tag": 1,
+      "name": "partitioned_body"
+    }
+  ],
+  "nodes_block_byte_equal": true,
+  "elements_block_byte_equal": true,
+  "all_bytes_outside_physical_names_byte_equal": true,
+  "raw_element_records_and_order_equal": true,
+  "physical_integer_tags_and_order_equal": true,
+  "parsed_node_coordinates_and_order_equal": true,
+  "parsed_node_tag_order_equal": true,
+  "parsed_connectivity_element_ids_physical_tags_and_order_equal": true,
+  "volume_physical_group_unchanged": true,
+  "source_node_count": 25579,
+  "source_tetrahedron_count": 86624,
+  "source_triangle_count": 44538,
+  "source_interface_triangle_count": 356,
+  "source_exterior_triangle_count": 44182,
+  "known_exterior_fid_role_rows": 44182,
+  "known_exterior_fid_count": 16,
+  "run05_npz_total_nodes": 25748,
+  "run05_npz_tet_referenced_nodes": 25579,
+  "run05_npz_unused_node_count": 169,
+  "run05_npz_unused_original_node_tags": [
+    25580,
+    25581,
+    25582,
+    25583,
+    25584,
+    25585,
+    25586,
+    25587,
+    25588,
+    25589,
+    25590,
+    25591,
+    25592,
+    25593,
+    25594,
+    25595,
+    25596,
+    25597,
+    25598,
+    25599,
+    25600,
+    25601,
+    25602,
+    25603,
+    25604,
+    25605,
+    25606,
+    25607,
+    25608,
+    25609,
+    25610,
+    25611,
+    25612,
+    25613,
+    25614,
+    25615,
+    25616,
+    25617,
+    25618,
+    25619,
+    25620,
+    25621,
+    25622,
+    25623,
+    25624,
+    25625,
+    25626,
+    25627,
+    25628,
+    25629,
+    25630,
+    25631,
+    25632,
+    25633,
+    25634,
+    25635,
+    25636,
+    25637,
+    25638,
+    25639,
+    25640,
+    25641,
+    25642,
+    25643,
+    25644,
+    25645,
+    25646,
+    25647,
+    25648,
+    25649,
+    25650,
+    25651,
+    25652,
+    25653,
+    25654,
+    25655,
+    25656,
+    25657,
+    25658,
+    25659,
+    25660,
+    25661,
+    25662,
+    25663,
+    25664,
+    25665,
+    25666,
+    25667,
+    25668,
+    25669,
+    25670,
+    25671,
+    25672,
+    25673,
+    25674,
+    25675,
+    25676,
+    25677,
+    25678,
+    25679,
+    25680,
+    25681,
+    25682,
+    25683,
+    25684,
+    25685,
+    25686,
+    25687,
+    25688,
+    25689,
+    25690,
+    25691,
+    25692,
+    25693,
+    25694,
+    25695,
+    25696,
+    25697,
+    25698,
+    25699,
+    25700,
+    25701,
+    25702,
+    25703,
+    25704,
+    25705,
+    25706,
+    25707,
+    25708,
+    25709,
+    25710,
+    25711,
+    25712,
+    25713,
+    25714,
+    25715,
+    25716,
+    25717,
+    25718,
+    25719,
+    25720,
+    25721,
+    25722,
+    25723,
+    25724,
+    25725,
+    25726,
+    25727,
+    25728,
+    25729,
+    25730,
+    25731,
+    25732,
+    25733,
+    25734,
+    25735,
+    25736,
+    25737,
+    25738,
+    25739,
+    25740,
+    25741,
+    25742,
+    25743,
+    25744,
+    25745,
+    25746,
+    25747,
+    25748
+  ],
+  "run05_npz_unused_tags_present_in_msh": [],
+  "run05_npz_to_msh_coordinate_roundtrip_max_abs_error_m": 6.938893903907228e-18,
+  "run05_npz_to_msh_coordinate_roundtrip_max_relative_error": 4.70357545215146e-16,
+  "run05_npz_to_msh_coordinate_roundtrip_tolerance": {
+    "rtol": 8e-16,
+    "atol_m": 1e-30
+  },
+  "msh_node_tags_equal_npz_tet_referenced_node_tags": true,
+  "run05_npz_and_msh_tetra_row_local_order_equal": false,
+  "run05_npz_and_msh_tetra_correspondence": "EXACT_ORIGINAL_CELL_TAG_AND_ORDERED_CORNER_NODE_TAGS",
+  "run05_npz_tet_original_cell_tags_unique": true,
+  "run05_npz_msh_tet_exact_cell_tag_set_equal": true,
+  "run05_npz_tet_local_corner_order_matches_msh_after_original_cell_tag_map": true,
+  "run05_npz_tet_original_cell_tag_mapping_is_identity": false,
+  "msh_t4_to_npz_row_correspondence_path": "t4_cell_row_correspondence.npz",
+  "msh_t4_to_npz_row_correspondence_sha256": "a044b5c676c28a40a6aa371f1212079e3dda99cb8d97b51c652585d734880b7c",
+  "msh_t4_to_npz_row_correspondence_count": 86624,
+  "msh_t4_to_npz_row_correspondence_is_identity": false,
+  "run05_npz_and_msh_interface_sourceTri_key_sets_equal": true,
+  "run05_npz_and_msh_exterior_sourceTri_key_sets_equal": true,
+  "run05_npz_all_exterior_ancestry_exact": true,
+  "known_exterior_fid_mapping_path": "known_exterior_fid_roles.npz",
+  "known_exterior_fid_mapping_sha256": "63aefffb8dbec95e29cd8848b38128860a2b5f91af909f043f0b64c5126d359e",
+  "fid_entity_mapping": [
+    {
+      "geometrical_entity_tag": 1,
+      "source_surface_tag": 17,
+      "source_face_id": "original-brep-face-000",
+      "role": "base"
+    },
+    {
+      "geometrical_entity_tag": 2,
+      "source_surface_tag": 18,
+      "source_face_id": "original-brep-face-001",
+      "role": "body_inner"
+    },
+    {
+      "geometrical_entity_tag": 4,
+      "source_surface_tag": 18,
+      "source_face_id": "original-brep-face-001",
+      "role": "body_inner"
+    },
+    {
+      "geometrical_entity_tag": 5,
+      "source_surface_tag": 19,
+      "source_face_id": "original-brep-face-002",
+      "role": "rim"
+    },
+    {
+      "geometrical_entity_tag": 6,
+      "source_surface_tag": 19,
+      "source_face_id": "original-brep-face-002",
+      "role": "rim"
+    },
+    {
+      "geometrical_entity_tag": 7,
+      "source_surface_tag": 20,
+      "source_face_id": "original-brep-face-003",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 8,
+      "source_surface_tag": 21,
+      "source_face_id": "original-brep-face-004",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 9,
+      "source_surface_tag": 22,
+      "source_face_id": "original-brep-face-005",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 10,
+      "source_surface_tag": 23,
+      "source_face_id": "original-brep-face-006",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 11,
+      "source_surface_tag": 24,
+      "source_face_id": "original-brep-face-007",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 12,
+      "source_surface_tag": 25,
+      "source_face_id": "original-brep-face-008",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 13,
+      "source_surface_tag": 26,
+      "source_face_id": "original-brep-face-009",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 14,
+      "source_surface_tag": 27,
+      "source_face_id": "original-brep-face-010",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 15,
+      "source_surface_tag": 28,
+      "source_face_id": "original-brep-face-011",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 16,
+      "source_surface_tag": 29,
+      "source_face_id": "original-brep-face-012",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 17,
+      "source_surface_tag": 30,
+      "source_face_id": "original-brep-face-013",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 18,
+      "source_surface_tag": 31,
+      "source_face_id": "original-brep-face-014",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 19,
+      "source_surface_tag": 32,
+      "source_face_id": "original-brep-face-015",
+      "role": "base"
+    },
+    {
+      "geometrical_entity_tag": 20,
+      "source_surface_tag": 31,
+      "source_face_id": "original-brep-face-014",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 21,
+      "source_surface_tag": 30,
+      "source_face_id": "original-brep-face-013",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 22,
+      "source_surface_tag": 28,
+      "source_face_id": "original-brep-face-011",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 23,
+      "source_surface_tag": 27,
+      "source_face_id": "original-brep-face-010",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 24,
+      "source_surface_tag": 26,
+      "source_face_id": "original-brep-face-009",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 25,
+      "source_surface_tag": 25,
+      "source_face_id": "original-brep-face-008",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 26,
+      "source_surface_tag": 24,
+      "source_face_id": "original-brep-face-007",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 27,
+      "source_surface_tag": 23,
+      "source_face_id": "original-brep-face-006",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 28,
+      "source_surface_tag": 22,
+      "source_face_id": "original-brep-face-005",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 29,
+      "source_surface_tag": 21,
+      "source_face_id": "original-brep-face-004",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 30,
+      "source_surface_tag": 20,
+      "source_face_id": "original-brep-face-003",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 31,
+      "source_surface_tag": 17,
+      "source_face_id": "original-brep-face-000",
+      "role": "base"
+    },
+    {
+      "geometrical_entity_tag": 32,
+      "source_surface_tag": 18,
+      "source_face_id": "original-brep-face-001",
+      "role": "body_inner"
+    },
+    {
+      "geometrical_entity_tag": 33,
+      "source_surface_tag": 19,
+      "source_face_id": "original-brep-face-002",
+      "role": "rim"
+    },
+    {
+      "geometrical_entity_tag": 34,
+      "source_surface_tag": 20,
+      "source_face_id": "original-brep-face-003",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 35,
+      "source_surface_tag": 21,
+      "source_face_id": "original-brep-face-004",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 36,
+      "source_surface_tag": 22,
+      "source_face_id": "original-brep-face-005",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 37,
+      "source_surface_tag": 23,
+      "source_face_id": "original-brep-face-006",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 38,
+      "source_surface_tag": 24,
+      "source_face_id": "original-brep-face-007",
+      "role": "body_outer"
+    },
+    {
+      "geometrical_entity_tag": 39,
+      "source_surface_tag": 25,
+      "source_face_id": "original-brep-face-008",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 40,
+      "source_surface_tag": 26,
+      "source_face_id": "original-brep-face-009",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 41,
+      "source_surface_tag": 27,
+      "source_face_id": "original-brep-face-010",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 42,
+      "source_surface_tag": 28,
+      "source_face_id": "original-brep-face-011",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 43,
+      "source_surface_tag": 29,
+      "source_face_id": "original-brep-face-012",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 44,
+      "source_surface_tag": 30,
+      "source_face_id": "original-brep-face-013",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 45,
+      "source_surface_tag": 31,
+      "source_face_id": "original-brep-face-014",
+      "role": "foot"
+    },
+    {
+      "geometrical_entity_tag": 46,
+      "source_surface_tag": 32,
+      "source_face_id": "original-brep-face-015",
+      "role": "base"
+    }
+  ],
+  "exact_binding_method": "MSH2 physical/geometrical tags plus exact sorted original nodeTags sourceTri keys; no coordinate or nearest matching"
+}

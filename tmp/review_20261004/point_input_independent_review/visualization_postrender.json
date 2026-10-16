@@ -1,0 +1,84 @@
+{
+  "schema": "pgfrag.zero_load_visualization.postrender.v1",
+  "checked_utc": "2026-10-04T09:22:40.9789457Z",
+  "all_frozen_inputs_match": true,
+  "input_checks": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\point_state_history.csv",
+      "prefreeze_sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175",
+      "postrender_sha256": "9726372d415bbf8201b3dcde659dcacdff06b43777cee20705ec03019fbe6175",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\canonical_bond_state_history.csv",
+      "prefreeze_sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3",
+      "postrender_sha256": "8596a6739608c2ba06d5d8d3b92997c317a45a7056c9b9cb5a31018e9ab5dba3",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\canonical_bond_transitions.csv",
+      "prefreeze_sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692",
+      "postrender_sha256": "9add03bb7e2c69d5e20543e6fedc0b385f240b20f43445abacc9769032589692",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\directed_bond_state_history.csv",
+      "prefreeze_sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845",
+      "postrender_sha256": "416c6dfb33e500c198612f2c793250fa5eebb9d607bc09d1a3b6d229f99c2845",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\directed_bond_transitions.csv",
+      "prefreeze_sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137",
+      "postrender_sha256": "2bf1e245bd8d29e1fb69c631a7a5101943690176eccaa6ec20c84999bf983137",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\snapshots\\zero_load_control_run01\\summary.toml",
+      "prefreeze_sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7",
+      "postrender_sha256": "e69c85dd07a6e42da4efc7f48520d81e57ea79524e87919b7318e683488ae9c7",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.launch_receipt.json",
+      "prefreeze_sha256": "dcdfed856d6d78eb8d0a97be44bac504a275832505836af8e2147e35607c5bfa",
+      "postrender_sha256": "dcdfed856d6d78eb8d0a97be44bac504a275832505836af8e2147e35607c5bfa",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.freeze_receipt.json",
+      "prefreeze_sha256": "99406070711a077bea3bbf10a283421c54691aa9717a9a6274a56ee82907c0ba",
+      "postrender_sha256": "99406070711a077bea3bbf10a283421c54691aa9717a9a6274a56ee82907c0ba",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stdout.log",
+      "prefreeze_sha256": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8",
+      "postrender_sha256": "8d48230adaa75446bc8069848e0e00eb49deff8750efc62ee0a4ad0657b9fff8",
+      "matches": true
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261004\\pd_point_event_probe\\receipts\\zero_load_control_run01.stderr.log",
+      "prefreeze_sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee",
+      "postrender_sha256": "212e034693d4035986be206b89e1c89de402bc2b8ee0f0a0ce326451d0853bee",
+      "matches": true
+    }
+  ],
+  "render_script_prefreeze_sha256": "b2aeb8bf40d918118e71a3dda2b692bb1697a640de51adc9b0e0a3abfaca8d51",
+  "render_script_postrender_sha256": "b2aeb8bf40d918118e71a3dda2b692bb1697a640de51adc9b0e0a3abfaca8d51",
+  "render_script_unchanged": true,
+  "python_prefreeze_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+  "python_postrender_sha256": "2b83f3f84ea2f51132fa1aae73815be54126a799521de85ff6ea70627cde6da7",
+  "python_unchanged": true,
+  "matplotlib_init_prefreeze_sha256": "37abb78e74e9e0085a4e306a919606ffa8ff3c263def80ae2f4d938cfa79cd32",
+  "matplotlib_init_postrender_sha256": "37abb78e74e9e0085a4e306a919606ffa8ff3c263def80ae2f4d938cfa79cd32",
+  "matplotlib_init_unchanged": true,
+  "render_process_exit_code": 3,
+  "render_stdout_status": "RENDERED",
+  "render_stderr_bytes": 0,
+  "png_exists": true,
+  "png_bytes": 222414,
+  "png_sha256": "ef0b1a2eada77ccbc7866462844d98c937bb9c57bb956aee96aa8d5d10e36a11",
+  "png_sha_matches_stdout": true,
+  "png_within_200000_byte_target": false
+}

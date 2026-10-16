@@ -1,0 +1,3067 @@
+{
+  "method": "input tetrahedron element ID + local vertex ordinal + native cohesive connectivity; no coordinate node matching",
+  "native_node_to_input_node_zero_based": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 11,
+    "12": 12,
+    "13": 13,
+    "14": 14,
+    "15": 15,
+    "16": 16,
+    "17": 17,
+    "18": 18,
+    "19": 19,
+    "20": 20,
+    "21": 21,
+    "22": 22,
+    "23": 23,
+    "24": 24,
+    "25": 25,
+    "26": 26,
+    "27": 27,
+    "28": 28,
+    "29": 29,
+    "30": 30,
+    "31": 31,
+    "32": 32,
+    "33": 33,
+    "34": 34,
+    "35": 35,
+    "36": 36,
+    "37": 37,
+    "38": 38,
+    "39": 39,
+    "40": 40,
+    "41": 41,
+    "42": 42,
+    "43": 43,
+    "44": 44,
+    "45": 22,
+    "46": 19,
+    "47": 18,
+    "48": 21,
+    "49": 23,
+    "50": 20,
+    "51": 25,
+    "52": 24,
+    "53": 26
+  },
+  "native_bulk_local_ordinal_lineage_rows": [
+    {
+      "native_bulk_element_row": 0,
+      "input_tetrahedron_id": 25,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 0,
+      "input_tetrahedron_id": 25,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 0,
+      "input_tetrahedron_id": 25,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 0,
+      "input_tetrahedron_id": 25,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 1,
+      "input_tetrahedron_id": 26,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 1,
+      "input_tetrahedron_id": 26,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 1,
+      "input_tetrahedron_id": 26,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 1,
+      "input_tetrahedron_id": 26,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 2,
+      "input_tetrahedron_id": 27,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 2,
+      "input_tetrahedron_id": 27,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 2,
+      "input_tetrahedron_id": 27,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 2,
+      "input_tetrahedron_id": 27,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 3,
+      "input_tetrahedron_id": 28,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 3,
+      "input_tetrahedron_id": 28,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 3,
+      "input_tetrahedron_id": 28,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 3,
+      "input_tetrahedron_id": 28,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 4,
+      "input_tetrahedron_id": 29,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 4,
+      "input_tetrahedron_id": 29,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 4,
+      "input_tetrahedron_id": 29,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 4,
+      "input_tetrahedron_id": 29,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 5,
+      "input_tetrahedron_id": 30,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 0,
+      "native_node_id": 0
+    },
+    {
+      "native_bulk_element_row": 5,
+      "input_tetrahedron_id": 30,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 5,
+      "input_tetrahedron_id": 30,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 5,
+      "input_tetrahedron_id": 30,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 6,
+      "input_tetrahedron_id": 31,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 6,
+      "input_tetrahedron_id": 31,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 2,
+      "native_node_id": 2
+    },
+    {
+      "native_bulk_element_row": 6,
+      "input_tetrahedron_id": 31,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 5,
+      "native_node_id": 5
+    },
+    {
+      "native_bulk_element_row": 6,
+      "input_tetrahedron_id": 31,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 7,
+      "input_tetrahedron_id": 32,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 7,
+      "input_tetrahedron_id": 32,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 11,
+      "native_node_id": 11
+    },
+    {
+      "native_bulk_element_row": 7,
+      "input_tetrahedron_id": 32,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 2,
+      "native_node_id": 2
+    },
+    {
+      "native_bulk_element_row": 7,
+      "input_tetrahedron_id": 32,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 8,
+      "input_tetrahedron_id": 33,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 8,
+      "input_tetrahedron_id": 33,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 5,
+      "native_node_id": 5
+    },
+    {
+      "native_bulk_element_row": 8,
+      "input_tetrahedron_id": 33,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 8,
+      "input_tetrahedron_id": 33,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 9,
+      "input_tetrahedron_id": 34,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 9,
+      "input_tetrahedron_id": 34,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 9,
+      "input_tetrahedron_id": 34,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 9,
+      "input_tetrahedron_id": 34,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 10,
+      "input_tetrahedron_id": 35,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 10,
+      "input_tetrahedron_id": 35,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 10,
+      "input_tetrahedron_id": 35,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 11,
+      "native_node_id": 11
+    },
+    {
+      "native_bulk_element_row": 10,
+      "input_tetrahedron_id": 35,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 11,
+      "input_tetrahedron_id": 36,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 1,
+      "native_node_id": 1
+    },
+    {
+      "native_bulk_element_row": 11,
+      "input_tetrahedron_id": 36,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 11,
+      "input_tetrahedron_id": 36,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 11,
+      "input_tetrahedron_id": 36,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 12,
+      "input_tetrahedron_id": 37,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 12,
+      "input_tetrahedron_id": 37,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 12,
+      "input_tetrahedron_id": 37,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 7,
+      "native_node_id": 7
+    },
+    {
+      "native_bulk_element_row": 12,
+      "input_tetrahedron_id": 37,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 13,
+      "input_tetrahedron_id": 38,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 13,
+      "input_tetrahedron_id": 38,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 13,
+      "input_tetrahedron_id": 38,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 13,
+      "input_tetrahedron_id": 38,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 14,
+      "input_tetrahedron_id": 39,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 14,
+      "input_tetrahedron_id": 39,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 7,
+      "native_node_id": 7
+    },
+    {
+      "native_bulk_element_row": 14,
+      "input_tetrahedron_id": 39,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 6,
+      "native_node_id": 6
+    },
+    {
+      "native_bulk_element_row": 14,
+      "input_tetrahedron_id": 39,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 15,
+      "input_tetrahedron_id": 40,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 15,
+      "input_tetrahedron_id": 40,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 6,
+      "native_node_id": 6
+    },
+    {
+      "native_bulk_element_row": 15,
+      "input_tetrahedron_id": 40,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 15,
+      "native_node_id": 15
+    },
+    {
+      "native_bulk_element_row": 15,
+      "input_tetrahedron_id": 40,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 16,
+      "input_tetrahedron_id": 41,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 16,
+      "input_tetrahedron_id": 41,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 16,
+      "input_tetrahedron_id": 41,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 16,
+      "input_tetrahedron_id": 41,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 17,
+      "input_tetrahedron_id": 42,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 3,
+      "native_node_id": 3
+    },
+    {
+      "native_bulk_element_row": 17,
+      "input_tetrahedron_id": 42,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 15,
+      "native_node_id": 15
+    },
+    {
+      "native_bulk_element_row": 17,
+      "input_tetrahedron_id": 42,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 17,
+      "input_tetrahedron_id": 42,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 18,
+      "input_tetrahedron_id": 43,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 18,
+      "input_tetrahedron_id": 43,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 5,
+      "native_node_id": 5
+    },
+    {
+      "native_bulk_element_row": 18,
+      "input_tetrahedron_id": 43,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 8,
+      "native_node_id": 8
+    },
+    {
+      "native_bulk_element_row": 18,
+      "input_tetrahedron_id": 43,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 19,
+      "input_tetrahedron_id": 44,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 19,
+      "input_tetrahedron_id": 44,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 19,
+      "input_tetrahedron_id": 44,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 5,
+      "native_node_id": 5
+    },
+    {
+      "native_bulk_element_row": 19,
+      "input_tetrahedron_id": 44,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 20,
+      "input_tetrahedron_id": 45,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 20,
+      "input_tetrahedron_id": 45,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 8,
+      "native_node_id": 8
+    },
+    {
+      "native_bulk_element_row": 20,
+      "input_tetrahedron_id": 45,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 7,
+      "native_node_id": 7
+    },
+    {
+      "native_bulk_element_row": 20,
+      "input_tetrahedron_id": 45,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 21,
+      "input_tetrahedron_id": 46,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 21,
+      "input_tetrahedron_id": 46,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 7,
+      "native_node_id": 7
+    },
+    {
+      "native_bulk_element_row": 21,
+      "input_tetrahedron_id": 46,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 21,
+      "input_tetrahedron_id": 46,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 22,
+      "input_tetrahedron_id": 47,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 22,
+      "input_tetrahedron_id": 47,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 22,
+      "input_tetrahedron_id": 47,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 22,
+      "input_tetrahedron_id": 47,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 23,
+      "input_tetrahedron_id": 48,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 4,
+      "native_node_id": 4
+    },
+    {
+      "native_bulk_element_row": 23,
+      "input_tetrahedron_id": 48,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 23,
+      "input_tetrahedron_id": 48,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 23,
+      "input_tetrahedron_id": 48,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 24,
+      "input_tetrahedron_id": 49,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 24,
+      "input_tetrahedron_id": 49,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 24,
+      "input_tetrahedron_id": 49,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 24,
+      "input_tetrahedron_id": 49,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 25,
+      "input_tetrahedron_id": 50,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 25,
+      "input_tetrahedron_id": 50,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 19
+    },
+    {
+      "native_bulk_element_row": 25,
+      "input_tetrahedron_id": 50,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 25,
+      "input_tetrahedron_id": 50,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 26,
+      "input_tetrahedron_id": 51,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 26,
+      "input_tetrahedron_id": 51,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 26,
+      "input_tetrahedron_id": 51,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 26,
+      "input_tetrahedron_id": 51,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 27,
+      "input_tetrahedron_id": 52,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 27,
+      "input_tetrahedron_id": 52,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 27,
+      "input_tetrahedron_id": 52,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 21
+    },
+    {
+      "native_bulk_element_row": 27,
+      "input_tetrahedron_id": 52,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 28,
+      "input_tetrahedron_id": 53,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 28,
+      "input_tetrahedron_id": 53,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 18
+    },
+    {
+      "native_bulk_element_row": 28,
+      "input_tetrahedron_id": 53,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 19
+    },
+    {
+      "native_bulk_element_row": 28,
+      "input_tetrahedron_id": 53,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 29,
+      "input_tetrahedron_id": 54,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 9,
+      "native_node_id": 9
+    },
+    {
+      "native_bulk_element_row": 29,
+      "input_tetrahedron_id": 54,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 21
+    },
+    {
+      "native_bulk_element_row": 29,
+      "input_tetrahedron_id": 54,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 18
+    },
+    {
+      "native_bulk_element_row": 29,
+      "input_tetrahedron_id": 54,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 30,
+      "input_tetrahedron_id": 55,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 30,
+      "input_tetrahedron_id": 55,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 11,
+      "native_node_id": 11
+    },
+    {
+      "native_bulk_element_row": 30,
+      "input_tetrahedron_id": 55,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 30,
+      "input_tetrahedron_id": 55,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 31,
+      "input_tetrahedron_id": 56,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 31,
+      "input_tetrahedron_id": 56,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 20,
+      "native_node_id": 20
+    },
+    {
+      "native_bulk_element_row": 31,
+      "input_tetrahedron_id": 56,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 11,
+      "native_node_id": 11
+    },
+    {
+      "native_bulk_element_row": 31,
+      "input_tetrahedron_id": 56,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 32,
+      "input_tetrahedron_id": 57,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 32,
+      "input_tetrahedron_id": 57,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 32,
+      "input_tetrahedron_id": 57,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 32,
+      "input_tetrahedron_id": 57,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 33,
+      "input_tetrahedron_id": 58,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 33,
+      "input_tetrahedron_id": 58,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 33,
+      "input_tetrahedron_id": 58,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 33,
+      "input_tetrahedron_id": 58,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 34,
+      "input_tetrahedron_id": 59,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 34,
+      "input_tetrahedron_id": 59,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 19
+    },
+    {
+      "native_bulk_element_row": 34,
+      "input_tetrahedron_id": 59,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 20,
+      "native_node_id": 20
+    },
+    {
+      "native_bulk_element_row": 34,
+      "input_tetrahedron_id": 59,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 35,
+      "input_tetrahedron_id": 60,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 10,
+      "native_node_id": 10
+    },
+    {
+      "native_bulk_element_row": 35,
+      "input_tetrahedron_id": 60,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 35,
+      "input_tetrahedron_id": 60,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 19
+    },
+    {
+      "native_bulk_element_row": 35,
+      "input_tetrahedron_id": 60,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 36,
+      "input_tetrahedron_id": 61,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 36,
+      "input_tetrahedron_id": 61,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 36,
+      "input_tetrahedron_id": 61,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 36,
+      "input_tetrahedron_id": 61,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 37,
+      "input_tetrahedron_id": 62,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 37,
+      "input_tetrahedron_id": 62,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 37,
+      "input_tetrahedron_id": 62,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 37,
+      "input_tetrahedron_id": 62,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 38,
+      "input_tetrahedron_id": 63,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 38,
+      "input_tetrahedron_id": 63,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 38,
+      "input_tetrahedron_id": 63,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 15,
+      "native_node_id": 15
+    },
+    {
+      "native_bulk_element_row": 38,
+      "input_tetrahedron_id": 63,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 39,
+      "input_tetrahedron_id": 64,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 39,
+      "input_tetrahedron_id": 64,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 15,
+      "native_node_id": 15
+    },
+    {
+      "native_bulk_element_row": 39,
+      "input_tetrahedron_id": 64,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 24,
+      "native_node_id": 24
+    },
+    {
+      "native_bulk_element_row": 39,
+      "input_tetrahedron_id": 64,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 40,
+      "input_tetrahedron_id": 65,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 40,
+      "input_tetrahedron_id": 65,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 21
+    },
+    {
+      "native_bulk_element_row": 40,
+      "input_tetrahedron_id": 65,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 40,
+      "input_tetrahedron_id": 65,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 41,
+      "input_tetrahedron_id": 66,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 12,
+      "native_node_id": 12
+    },
+    {
+      "native_bulk_element_row": 41,
+      "input_tetrahedron_id": 66,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 24,
+      "native_node_id": 24
+    },
+    {
+      "native_bulk_element_row": 41,
+      "input_tetrahedron_id": 66,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 21
+    },
+    {
+      "native_bulk_element_row": 41,
+      "input_tetrahedron_id": 66,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 42,
+      "input_tetrahedron_id": 67,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 42,
+      "input_tetrahedron_id": 67,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 42,
+      "input_tetrahedron_id": 67,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 42,
+      "input_tetrahedron_id": 67,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 43,
+      "input_tetrahedron_id": 68,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 43,
+      "input_tetrahedron_id": 68,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 43,
+      "input_tetrahedron_id": 68,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 14,
+      "native_node_id": 14
+    },
+    {
+      "native_bulk_element_row": 43,
+      "input_tetrahedron_id": 68,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 44,
+      "input_tetrahedron_id": 69,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 44,
+      "input_tetrahedron_id": 69,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 17,
+      "native_node_id": 17
+    },
+    {
+      "native_bulk_element_row": 44,
+      "input_tetrahedron_id": 69,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 44,
+      "input_tetrahedron_id": 69,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 45,
+      "input_tetrahedron_id": 70,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 45,
+      "input_tetrahedron_id": 70,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 16,
+      "native_node_id": 16
+    },
+    {
+      "native_bulk_element_row": 45,
+      "input_tetrahedron_id": 70,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 45,
+      "input_tetrahedron_id": 70,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 46,
+      "input_tetrahedron_id": 71,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 46,
+      "input_tetrahedron_id": 71,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 46,
+      "input_tetrahedron_id": 71,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 23
+    },
+    {
+      "native_bulk_element_row": 46,
+      "input_tetrahedron_id": 71,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 47,
+      "input_tetrahedron_id": 72,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 13,
+      "native_node_id": 13
+    },
+    {
+      "native_bulk_element_row": 47,
+      "input_tetrahedron_id": 72,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 25
+    },
+    {
+      "native_bulk_element_row": 47,
+      "input_tetrahedron_id": 72,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 22
+    },
+    {
+      "native_bulk_element_row": 47,
+      "input_tetrahedron_id": 72,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 26
+    },
+    {
+      "native_bulk_element_row": 48,
+      "input_tetrahedron_id": 73,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 48,
+      "input_tetrahedron_id": 73,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 48,
+      "input_tetrahedron_id": 73,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 48,
+      "input_tetrahedron_id": 73,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 49,
+      "input_tetrahedron_id": 74,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 49,
+      "input_tetrahedron_id": 74,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 49,
+      "input_tetrahedron_id": 74,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 49,
+      "input_tetrahedron_id": 74,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 50,
+      "input_tetrahedron_id": 75,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 50,
+      "input_tetrahedron_id": 75,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 50,
+      "input_tetrahedron_id": 75,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 50,
+      "input_tetrahedron_id": 75,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 51,
+      "input_tetrahedron_id": 76,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 51,
+      "input_tetrahedron_id": 76,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 51,
+      "input_tetrahedron_id": 76,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 51,
+      "input_tetrahedron_id": 76,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 52,
+      "input_tetrahedron_id": 77,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 52,
+      "input_tetrahedron_id": 77,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 52,
+      "input_tetrahedron_id": 77,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 52,
+      "input_tetrahedron_id": 77,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 53,
+      "input_tetrahedron_id": 78,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 18,
+      "native_node_id": 47
+    },
+    {
+      "native_bulk_element_row": 53,
+      "input_tetrahedron_id": 78,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 53,
+      "input_tetrahedron_id": 78,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 53,
+      "input_tetrahedron_id": 78,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 54,
+      "input_tetrahedron_id": 79,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 54,
+      "input_tetrahedron_id": 79,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 20,
+      "native_node_id": 50
+    },
+    {
+      "native_bulk_element_row": 54,
+      "input_tetrahedron_id": 79,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 49
+    },
+    {
+      "native_bulk_element_row": 54,
+      "input_tetrahedron_id": 79,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 55,
+      "input_tetrahedron_id": 80,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 55,
+      "input_tetrahedron_id": 80,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 29,
+      "native_node_id": 29
+    },
+    {
+      "native_bulk_element_row": 55,
+      "input_tetrahedron_id": 80,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 20,
+      "native_node_id": 50
+    },
+    {
+      "native_bulk_element_row": 55,
+      "input_tetrahedron_id": 80,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 56,
+      "input_tetrahedron_id": 81,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 56,
+      "input_tetrahedron_id": 81,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 49
+    },
+    {
+      "native_bulk_element_row": 56,
+      "input_tetrahedron_id": 81,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 56,
+      "input_tetrahedron_id": 81,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 57,
+      "input_tetrahedron_id": 82,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 57,
+      "input_tetrahedron_id": 82,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 57,
+      "input_tetrahedron_id": 82,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 57,
+      "input_tetrahedron_id": 82,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 58,
+      "input_tetrahedron_id": 83,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 58,
+      "input_tetrahedron_id": 83,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 58,
+      "input_tetrahedron_id": 83,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 29,
+      "native_node_id": 29
+    },
+    {
+      "native_bulk_element_row": 58,
+      "input_tetrahedron_id": 83,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 59,
+      "input_tetrahedron_id": 84,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 19,
+      "native_node_id": 46
+    },
+    {
+      "native_bulk_element_row": 59,
+      "input_tetrahedron_id": 84,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 59,
+      "input_tetrahedron_id": 84,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 59,
+      "input_tetrahedron_id": 84,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 60,
+      "input_tetrahedron_id": 85,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 60,
+      "input_tetrahedron_id": 85,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 60,
+      "input_tetrahedron_id": 85,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 51
+    },
+    {
+      "native_bulk_element_row": 60,
+      "input_tetrahedron_id": 85,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 61,
+      "input_tetrahedron_id": 86,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 61,
+      "input_tetrahedron_id": 86,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 61,
+      "input_tetrahedron_id": 86,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 61,
+      "input_tetrahedron_id": 86,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 62,
+      "input_tetrahedron_id": 87,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 62,
+      "input_tetrahedron_id": 87,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 51
+    },
+    {
+      "native_bulk_element_row": 62,
+      "input_tetrahedron_id": 87,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 24,
+      "native_node_id": 52
+    },
+    {
+      "native_bulk_element_row": 62,
+      "input_tetrahedron_id": 87,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 63,
+      "input_tetrahedron_id": 88,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 63,
+      "input_tetrahedron_id": 88,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 24,
+      "native_node_id": 52
+    },
+    {
+      "native_bulk_element_row": 63,
+      "input_tetrahedron_id": 88,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 33,
+      "native_node_id": 33
+    },
+    {
+      "native_bulk_element_row": 63,
+      "input_tetrahedron_id": 88,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 64,
+      "input_tetrahedron_id": 89,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 64,
+      "input_tetrahedron_id": 89,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 64,
+      "input_tetrahedron_id": 89,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 64,
+      "input_tetrahedron_id": 89,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 65,
+      "input_tetrahedron_id": 90,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 21,
+      "native_node_id": 48
+    },
+    {
+      "native_bulk_element_row": 65,
+      "input_tetrahedron_id": 90,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 33,
+      "native_node_id": 33
+    },
+    {
+      "native_bulk_element_row": 65,
+      "input_tetrahedron_id": 90,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 65,
+      "input_tetrahedron_id": 90,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 66,
+      "input_tetrahedron_id": 91,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 66,
+      "input_tetrahedron_id": 91,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 49
+    },
+    {
+      "native_bulk_element_row": 66,
+      "input_tetrahedron_id": 91,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 53
+    },
+    {
+      "native_bulk_element_row": 66,
+      "input_tetrahedron_id": 91,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 67,
+      "input_tetrahedron_id": 92,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 67,
+      "input_tetrahedron_id": 92,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 67,
+      "input_tetrahedron_id": 92,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 23,
+      "native_node_id": 49
+    },
+    {
+      "native_bulk_element_row": 67,
+      "input_tetrahedron_id": 92,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 68,
+      "input_tetrahedron_id": 93,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 68,
+      "input_tetrahedron_id": 93,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 26,
+      "native_node_id": 53
+    },
+    {
+      "native_bulk_element_row": 68,
+      "input_tetrahedron_id": 93,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 51
+    },
+    {
+      "native_bulk_element_row": 68,
+      "input_tetrahedron_id": 93,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 69,
+      "input_tetrahedron_id": 94,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 69,
+      "input_tetrahedron_id": 94,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 25,
+      "native_node_id": 51
+    },
+    {
+      "native_bulk_element_row": 69,
+      "input_tetrahedron_id": 94,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 69,
+      "input_tetrahedron_id": 94,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 70,
+      "input_tetrahedron_id": 95,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 70,
+      "input_tetrahedron_id": 95,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 70,
+      "input_tetrahedron_id": 95,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 70,
+      "input_tetrahedron_id": 95,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 71,
+      "input_tetrahedron_id": 96,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 22,
+      "native_node_id": 45
+    },
+    {
+      "native_bulk_element_row": 71,
+      "input_tetrahedron_id": 96,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 71,
+      "input_tetrahedron_id": 96,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 71,
+      "input_tetrahedron_id": 96,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 72,
+      "input_tetrahedron_id": 97,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 72,
+      "input_tetrahedron_id": 97,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 72,
+      "input_tetrahedron_id": 97,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 72,
+      "input_tetrahedron_id": 97,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 73,
+      "input_tetrahedron_id": 98,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 73,
+      "input_tetrahedron_id": 98,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 37,
+      "native_node_id": 37
+    },
+    {
+      "native_bulk_element_row": 73,
+      "input_tetrahedron_id": 98,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 73,
+      "input_tetrahedron_id": 98,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 74,
+      "input_tetrahedron_id": 99,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 74,
+      "input_tetrahedron_id": 99,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 74,
+      "input_tetrahedron_id": 99,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 74,
+      "input_tetrahedron_id": 99,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 75,
+      "input_tetrahedron_id": 100,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 75,
+      "input_tetrahedron_id": 100,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 75,
+      "input_tetrahedron_id": 100,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 39,
+      "native_node_id": 39
+    },
+    {
+      "native_bulk_element_row": 75,
+      "input_tetrahedron_id": 100,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 76,
+      "input_tetrahedron_id": 101,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 76,
+      "input_tetrahedron_id": 101,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 36,
+      "native_node_id": 36
+    },
+    {
+      "native_bulk_element_row": 76,
+      "input_tetrahedron_id": 101,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 37,
+      "native_node_id": 37
+    },
+    {
+      "native_bulk_element_row": 76,
+      "input_tetrahedron_id": 101,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 77,
+      "input_tetrahedron_id": 102,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 27,
+      "native_node_id": 27
+    },
+    {
+      "native_bulk_element_row": 77,
+      "input_tetrahedron_id": 102,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 39,
+      "native_node_id": 39
+    },
+    {
+      "native_bulk_element_row": 77,
+      "input_tetrahedron_id": 102,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 36,
+      "native_node_id": 36
+    },
+    {
+      "native_bulk_element_row": 77,
+      "input_tetrahedron_id": 102,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 78,
+      "input_tetrahedron_id": 103,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 78,
+      "input_tetrahedron_id": 103,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 29,
+      "native_node_id": 29
+    },
+    {
+      "native_bulk_element_row": 78,
+      "input_tetrahedron_id": 103,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 78,
+      "input_tetrahedron_id": 103,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 79,
+      "input_tetrahedron_id": 104,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 79,
+      "input_tetrahedron_id": 104,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 38,
+      "native_node_id": 38
+    },
+    {
+      "native_bulk_element_row": 79,
+      "input_tetrahedron_id": 104,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 29,
+      "native_node_id": 29
+    },
+    {
+      "native_bulk_element_row": 79,
+      "input_tetrahedron_id": 104,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 80,
+      "input_tetrahedron_id": 105,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 80,
+      "input_tetrahedron_id": 105,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 80,
+      "input_tetrahedron_id": 105,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 80,
+      "input_tetrahedron_id": 105,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 81,
+      "input_tetrahedron_id": 106,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 81,
+      "input_tetrahedron_id": 106,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 81,
+      "input_tetrahedron_id": 106,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 81,
+      "input_tetrahedron_id": 106,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 82,
+      "input_tetrahedron_id": 107,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 82,
+      "input_tetrahedron_id": 107,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 37,
+      "native_node_id": 37
+    },
+    {
+      "native_bulk_element_row": 82,
+      "input_tetrahedron_id": 107,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 38,
+      "native_node_id": 38
+    },
+    {
+      "native_bulk_element_row": 82,
+      "input_tetrahedron_id": 107,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 83,
+      "input_tetrahedron_id": 108,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 28,
+      "native_node_id": 28
+    },
+    {
+      "native_bulk_element_row": 83,
+      "input_tetrahedron_id": 108,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 83,
+      "input_tetrahedron_id": 108,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 37,
+      "native_node_id": 37
+    },
+    {
+      "native_bulk_element_row": 83,
+      "input_tetrahedron_id": 108,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 84,
+      "input_tetrahedron_id": 109,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 84,
+      "input_tetrahedron_id": 109,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 84,
+      "input_tetrahedron_id": 109,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 84,
+      "input_tetrahedron_id": 109,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 85,
+      "input_tetrahedron_id": 110,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 85,
+      "input_tetrahedron_id": 110,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 85,
+      "input_tetrahedron_id": 110,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 85,
+      "input_tetrahedron_id": 110,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 86,
+      "input_tetrahedron_id": 111,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 86,
+      "input_tetrahedron_id": 111,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 86,
+      "input_tetrahedron_id": 111,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 33,
+      "native_node_id": 33
+    },
+    {
+      "native_bulk_element_row": 86,
+      "input_tetrahedron_id": 111,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 87,
+      "input_tetrahedron_id": 112,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 87,
+      "input_tetrahedron_id": 112,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 33,
+      "native_node_id": 33
+    },
+    {
+      "native_bulk_element_row": 87,
+      "input_tetrahedron_id": 112,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 42,
+      "native_node_id": 42
+    },
+    {
+      "native_bulk_element_row": 87,
+      "input_tetrahedron_id": 112,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 88,
+      "input_tetrahedron_id": 113,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 88,
+      "input_tetrahedron_id": 113,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 39,
+      "native_node_id": 39
+    },
+    {
+      "native_bulk_element_row": 88,
+      "input_tetrahedron_id": 113,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 88,
+      "input_tetrahedron_id": 113,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 89,
+      "input_tetrahedron_id": 114,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 30,
+      "native_node_id": 30
+    },
+    {
+      "native_bulk_element_row": 89,
+      "input_tetrahedron_id": 114,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 42,
+      "native_node_id": 42
+    },
+    {
+      "native_bulk_element_row": 89,
+      "input_tetrahedron_id": 114,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 39,
+      "native_node_id": 39
+    },
+    {
+      "native_bulk_element_row": 89,
+      "input_tetrahedron_id": 114,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 90,
+      "input_tetrahedron_id": 115,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 90,
+      "input_tetrahedron_id": 115,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 90,
+      "input_tetrahedron_id": 115,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 90,
+      "input_tetrahedron_id": 115,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    },
+    {
+      "native_bulk_element_row": 91,
+      "input_tetrahedron_id": 116,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 91,
+      "input_tetrahedron_id": 116,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 91,
+      "input_tetrahedron_id": 116,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 32,
+      "native_node_id": 32
+    },
+    {
+      "native_bulk_element_row": 91,
+      "input_tetrahedron_id": 116,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    },
+    {
+      "native_bulk_element_row": 92,
+      "input_tetrahedron_id": 117,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 92,
+      "input_tetrahedron_id": 117,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 35,
+      "native_node_id": 35
+    },
+    {
+      "native_bulk_element_row": 92,
+      "input_tetrahedron_id": 117,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 92,
+      "input_tetrahedron_id": 117,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    },
+    {
+      "native_bulk_element_row": 93,
+      "input_tetrahedron_id": 118,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 93,
+      "input_tetrahedron_id": 118,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 34,
+      "native_node_id": 34
+    },
+    {
+      "native_bulk_element_row": 93,
+      "input_tetrahedron_id": 118,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 93,
+      "input_tetrahedron_id": 118,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    },
+    {
+      "native_bulk_element_row": 94,
+      "input_tetrahedron_id": 119,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 94,
+      "input_tetrahedron_id": 119,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 94,
+      "input_tetrahedron_id": 119,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 41,
+      "native_node_id": 41
+    },
+    {
+      "native_bulk_element_row": 94,
+      "input_tetrahedron_id": 119,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    },
+    {
+      "native_bulk_element_row": 95,
+      "input_tetrahedron_id": 120,
+      "local_vertex_ordinal": 0,
+      "input_node_id_zero_based": 31,
+      "native_node_id": 31
+    },
+    {
+      "native_bulk_element_row": 95,
+      "input_tetrahedron_id": 120,
+      "local_vertex_ordinal": 1,
+      "input_node_id_zero_based": 43,
+      "native_node_id": 43
+    },
+    {
+      "native_bulk_element_row": 95,
+      "input_tetrahedron_id": 120,
+      "local_vertex_ordinal": 2,
+      "input_node_id_zero_based": 40,
+      "native_node_id": 40
+    },
+    {
+      "native_bulk_element_row": 95,
+      "input_tetrahedron_id": 120,
+      "local_vertex_ordinal": 3,
+      "input_node_id_zero_based": 44,
+      "native_node_id": 44
+    }
+  ],
+  "parent_facets": [
+    {
+      "input_face_id": 1,
+      "input_face_node_ids": [
+        18,
+        19,
+        22
+      ],
+      "parent_input_tetrahedron_ids": [
+        53,
+        73
+      ],
+      "native_cohesive_element_id": 0,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        47,
+        46,
+        45
+      ],
+      "side_b_native_node_ids": [
+        18,
+        19,
+        22
+      ],
+      "side_parent_tetrahedron_ids": [
+        73,
+        53
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 73,
+        "lower": 53
+      },
+      "post_insertion_bulk_parent_rows": [
+        48,
+        28
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 2,
+      "input_face_node_ids": [
+        18,
+        21,
+        22
+      ],
+      "parent_input_tetrahedron_ids": [
+        54,
+        75
+      ],
+      "native_cohesive_element_id": 1,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        48,
+        47,
+        45
+      ],
+      "side_b_native_node_ids": [
+        21,
+        18,
+        22
+      ],
+      "side_parent_tetrahedron_ids": [
+        75,
+        54
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 75,
+        "lower": 54
+      },
+      "post_insertion_bulk_parent_rows": [
+        50,
+        29
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 3,
+      "input_face_node_ids": [
+        19,
+        20,
+        23
+      ],
+      "parent_input_tetrahedron_ids": [
+        59,
+        79
+      ],
+      "native_cohesive_element_id": 2,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        46,
+        50,
+        49
+      ],
+      "side_b_native_node_ids": [
+        19,
+        20,
+        23
+      ],
+      "side_parent_tetrahedron_ids": [
+        79,
+        59
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 79,
+        "lower": 59
+      },
+      "post_insertion_bulk_parent_rows": [
+        54,
+        34
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 4,
+      "input_face_node_ids": [
+        19,
+        22,
+        23
+      ],
+      "parent_input_tetrahedron_ids": [
+        60,
+        81
+      ],
+      "native_cohesive_element_id": 3,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        45,
+        46,
+        49
+      ],
+      "side_b_native_node_ids": [
+        22,
+        19,
+        23
+      ],
+      "side_parent_tetrahedron_ids": [
+        81,
+        60
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 81,
+        "lower": 60
+      },
+      "post_insertion_bulk_parent_rows": [
+        56,
+        35
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 5,
+      "input_face_node_ids": [
+        21,
+        22,
+        25
+      ],
+      "parent_input_tetrahedron_ids": [
+        65,
+        85
+      ],
+      "native_cohesive_element_id": 4,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        48,
+        45,
+        51
+      ],
+      "side_b_native_node_ids": [
+        21,
+        22,
+        25
+      ],
+      "side_parent_tetrahedron_ids": [
+        85,
+        65
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 85,
+        "lower": 65
+      },
+      "post_insertion_bulk_parent_rows": [
+        60,
+        40
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 6,
+      "input_face_node_ids": [
+        21,
+        24,
+        25
+      ],
+      "parent_input_tetrahedron_ids": [
+        66,
+        87
+      ],
+      "native_cohesive_element_id": 5,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        52,
+        48,
+        51
+      ],
+      "side_b_native_node_ids": [
+        24,
+        21,
+        25
+      ],
+      "side_parent_tetrahedron_ids": [
+        87,
+        66
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 87,
+        "lower": 66
+      },
+      "post_insertion_bulk_parent_rows": [
+        62,
+        41
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 7,
+      "input_face_node_ids": [
+        22,
+        23,
+        26
+      ],
+      "parent_input_tetrahedron_ids": [
+        71,
+        91
+      ],
+      "native_cohesive_element_id": 6,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        45,
+        49,
+        53
+      ],
+      "side_b_native_node_ids": [
+        22,
+        23,
+        26
+      ],
+      "side_parent_tetrahedron_ids": [
+        91,
+        71
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 91,
+        "lower": 71
+      },
+      "post_insertion_bulk_parent_rows": [
+        66,
+        46
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    },
+    {
+      "input_face_id": 8,
+      "input_face_node_ids": [
+        22,
+        25,
+        26
+      ],
+      "parent_input_tetrahedron_ids": [
+        72,
+        93
+      ],
+      "native_cohesive_element_id": 7,
+      "native_cohesive_element_id_semantics": "local row index returned by getConnectivity; no persistent global cohesive ID is exposed",
+      "side_a_native_node_ids": [
+        51,
+        45,
+        53
+      ],
+      "side_b_native_node_ids": [
+        25,
+        22,
+        26
+      ],
+      "side_parent_tetrahedron_ids": [
+        93,
+        72
+      ],
+      "side_parent_by_geometric_side": {
+        "upper": 93,
+        "lower": 72
+      },
+      "post_insertion_bulk_parent_rows": [
+        68,
+        47
+      ],
+      "positive_rest_area_m2": 5e-07,
+      "side_a_positive_rest_area_m2": 5e-07,
+      "side_b_positive_rest_area_m2": 5e-07
+    }
+  ],
+  "input_face_count": 8,
+  "native_cohesive_element_count": 8,
+  "input_rest_area_sum_m2": 4e-06,
+  "positive_rest_area_sum_m2": 4e-06
+}

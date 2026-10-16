@@ -1,0 +1,10 @@
+case_id = "zero_load_control"
+case_status = "FIRST_RUNTIME_GATE_PENDING_ROOT_FINAL_FREEZE"
+
+[load]
+kind = "zero_load"
+speed_m_s = 0.0
+axis = 3
+
+[solver]
+steps = 1

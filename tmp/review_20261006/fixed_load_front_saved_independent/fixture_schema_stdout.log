@@ -1,0 +1,1 @@
+{"status": "SCHEMA_INSPECTED_STDLIB_ONLY", "material": {"young_modulus_Pa": {"type": "float", "value": 1000000.0}, "poisson_ratio": {"type": "float", "value": 0.3}, "mu_Pa": {"type": "str", "value": "E/(2*(1+nu))"}, "lambda_Pa": {"type": "str", "value": "E*nu/((1+nu)*(1-2*nu))"}, "K_III_Pa_sqrt_m": {"type": "float", "value": 100.0}}}

@@ -1,0 +1,639 @@
+{
+  "audit": {
+    "inputs": {
+      "primary_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+      "primary_bytes": 369684,
+      "primary_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+      "primary_pin_matches": true,
+      "input_receipt_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\run_receipt.json",
+      "input_receipt_bytes": 7033,
+      "input_receipt_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+      "source_freeze_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\source_freeze.json",
+      "source_freeze_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+      "fixed_case_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+      "fixed_case_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+      "base_fixed_case_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+      "base_fixed_case_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+      "source_freeze_pin_count": 11,
+      "source_pin_checks": [
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve.py",
+          "expected_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+          "current_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+          "expected_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+          "current_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\README.md",
+          "expected_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+          "current_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\SOURCE_REVIEW.md",
+          "expected_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+          "current_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+          "expected_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+          "current_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+          "expected_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+          "current_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+          "expected_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+          "current_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+          "expected_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+          "current_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+          "expected_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+          "current_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+          "expected_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+          "current_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+          "matches": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+          "expected_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+          "current_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+          "matches": true
+        }
+      ],
+      "all_source_pins_match": true,
+      "run_receipt_pin_checks": [
+        {
+          "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/static_solve_diagnostic.json",
+          "stage": "sha256",
+          "sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+          "current_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+          "matches": true
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/stderr.log",
+          "stage": "sha256",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "matches": true
+        },
+        {
+          "path": "pgfrag/tmp/review_20261006/modeiii_pu_static_solve_v3_20261006/runs/run01/stdout.log",
+          "stage": "sha256",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "matches": true
+        }
+      ],
+      "all_resolvable_run_receipt_pins_match": true,
+      "source_primary_receipt_prepost": [
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\efgm_elastic_operator_20261005\\efgm_elastic_operator.py",
+          "pre_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+          "post_sha256": "41a5ac6ef6359ed1640ee681c94a3496c18652b29cc72c679b3e37c20dd9ac0d",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\enriched_dof_contract_20261005\\enriched_dof_contract.py",
+          "pre_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+          "post_sha256": "e3ddb3b067465bb5b269576a1b8a5100e2bb92c9c924bc09c949702c19efa9d8",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_mls.py",
+          "pre_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+          "post_sha256": "404256d9b7546361a5704c4c3cec7c022069a9cf83a137c58a16e7a64f79ec63",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\mls3d_kernel_20261005\\mls3d_shape.py",
+          "pre_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+          "post_sha256": "66e680616a988182875d17aeb84fadb541867aee13fc15e0ae098f7c98839ef5",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_field_reference_20261005\\field_reference.py",
+          "pre_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+          "post_sha256": "7b07dfb30a64c50734dc18de2778b7725320de6d5a8f275c55f301c453ef18d7",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\mls_modeiii_provider.py",
+          "pre_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+          "post_sha256": "6025642fdd119a95c76d693d3edbc4785d982731560e556ce7b13bad109c6034",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\README.md",
+          "pre_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+          "post_sha256": "f257ce8e173f1867badf358a4dcd696734b3e674bfa7868b6a981a0a7e923ae4",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve.py",
+          "pre_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+          "post_sha256": "7a8ac7076a788a29d7f1bcae34bcede80b1481030910c37da1af673a2a370a9f",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\stderr.log",
+          "pre_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "post_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\stdout.log",
+          "pre_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "post_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\SOURCE_REVIEW.md",
+          "pre_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+          "post_sha256": "5e2bff119031201056092fd565521d80cef22fda0495d4c7e77f85ca8a68340c",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\static_solve_diagnostic.json",
+          "pre_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+          "post_sha256": "39cb2dabe767998baf5e84b038f39510d6ef7db10bcd6c77298b480045cb24d3",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\runs\\run01\\run_receipt.json",
+          "pre_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+          "post_sha256": "6c34ffb0269424038061c1785f26104f45fabb980772e55d87c69af17deb301f",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_pu_static_solve_v3_20261006\\source_freeze.json",
+          "pre_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+          "post_sha256": "1e57fe4e81fca80789550aec376934f3ac450b819ce7963744d30009c901c5a0",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_static_solve_v3_20261006\\static_solve_case.json",
+          "pre_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+          "post_sha256": "13ca46e05b520624d903be5d71c55e58b4d23db621423b47da4b2a0c174a38a9",
+          "unchanged": true
+        },
+        {
+          "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\modeiii_pu_operator_20261005\\fixed_case.json",
+          "pre_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+          "post_sha256": "dce0a1f3009246a52198bc0ed833ed67998144549a653e7bce9bcc17babd71b9",
+          "unchanged": true
+        }
+      ],
+      "all_source_primary_receipt_hashes_unchanged": true
+    },
+    "canonical_dofs": {
+      "path": "registry.ordered_canonical_coefficient_ids",
+      "count": 54,
+      "family_counts": {
+        "BASE": 27,
+        "FRONT": 27
+      },
+      "translation_definition": "BASE=1, FRONT=0",
+      "translation_vector": [
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "fixed_case_analytic_reference": {
+      "parameters": {
+        "E_Pa": 1000000.0,
+        "nu": 0.3,
+        "KIII_Pa_sqrt_m": 100.0,
+        "R_m": 0.01,
+        "L_m": 0.01
+      },
+      "paths": {
+        "E": "material_and_manufactured_field.young_modulus_Pa",
+        "nu": "material_and_manufactured_field.poisson_ratio",
+        "KIII": "material_and_manufactured_field.K_III_Pa_sqrt_m",
+        "R": "geometry.radius_m",
+        "L": "geometry.length_m"
+      },
+      "mu_Pa": 384615.3846153846,
+      "U_J": 1.3e-06
+    },
+    "volume_levels": [
+      {
+        "name": "volume_gl4x8x4",
+        "volume_quadrature_points": 128,
+        "status": "OK",
+        "matrix": {
+          "sha256_float64_c_order": "bb229305198d99b7aa654736eec0aec7d4197504be3f59fbecbaf12fbb368729",
+          "max_abs_asymmetry": 2.2737367544323206e-13,
+          "eigenvalues_symmetric_part_sorted_N_per_m": [
+            -5.485562961229083e-14,
+            0.030622595766352987,
+            0.03489347279710927,
+            0.07132252317116734,
+            0.11463460059475743,
+            0.17606555448146294,
+            0.18448978122301882,
+            0.2190851287720824,
+            0.26087938307094216,
+            0.627962024916961,
+            0.9356195663917599,
+            1.0154404080262807,
+            1.4856140305281682,
+            1.6137179069633065,
+            1.8717151589967773,
+            3.0880755232826376,
+            3.1459011194532556,
+            4.764523898587491,
+            7.932076009165051,
+            8.531002585850427,
+            10.719267698378786,
+            13.695627718117734,
+            13.827280242243097,
+            16.494369490419345,
+            21.637100141750462,
+            25.966833024789864,
+            40.856547858583475,
+            40.87298333540139,
+            50.093140633849565,
+            64.69392600745296,
+            74.47138712813761,
+            109.16550803279355,
+            143.66156752638454,
+            172.0417853739394,
+            198.4528509153367,
+            222.4408960000208,
+            232.97710208663844,
+            354.8109137652572,
+            381.8188067681904,
+            556.8861917874129,
+            745.4126091270917,
+            764.6931969247447,
+            982.5918467625883,
+            1154.0913195183202,
+            1212.6775152016621,
+            1341.5617219761439,
+            2258.332368250248,
+            2540.4146465057797,
+            3153.6418934508606,
+            3384.410161642192,
+            3586.787697021765,
+            4644.109459930865,
+            7425.168510012234,
+            10494.09701649737
+          ],
+          "raw_negative_eigenvalues": [
+            -5.485562961229083e-14
+          ],
+          "minimum": -5.485562961229083e-14,
+          "second": 0.030622595766352987,
+          "maximum": 10494.09701649737
+        },
+        "saddle": {
+          "residual_vector_N": [
+            -1.734723475976807e-18,
+            1.214306433183765e-17,
+            6.938893903907228e-18,
+            0.0,
+            6.938893903907228e-18,
+            -1.5612511283791264e-17,
+            -6.846838935450408e-18,
+            1.734723475976807e-18,
+            3.5949233023510035e-18,
+            5.204170427930421e-18,
+            -7.6328855105024e-18,
+            -1.3877787807814457e-17,
+            -1.3877787807814457e-17,
+            8.673617379884035e-18,
+            1.3877787807814457e-17,
+            3.469446951953614e-17,
+            -6.938893903907228e-18,
+            -1.3877787807814457e-17,
+            0.0,
+            -3.469446951953614e-18,
+            1.734723475976807e-18,
+            5.637851296924623e-18,
+            -5.204170427930421e-18,
+            -1.1709383462843448e-17,
+            -1.1632413409632954e-17,
+            -6.938893903907228e-18,
+            4.548548340020091e-18,
+            3.469446951953614e-18,
+            -6.877170443747312e-18,
+            1.734723475976807e-18,
+            -8.673617379884035e-18,
+            -3.0357660829594124e-18,
+            1.214306433183765e-17,
+            1.3010426069826053e-17,
+            0.0,
+            9.540979117872439e-18,
+            8.673617379884035e-18,
+            4.336808689942018e-19,
+            -5.204170427930421e-18,
+            1.0842021724855044e-18,
+            0.0,
+            2.168404344971009e-19,
+            3.047996551955549e-18,
+            -3.0357660829594124e-18,
+            -5.431568936564021e-18,
+            4.336808689942018e-18,
+            5.373908962938027e-19,
+            4.336808689942018e-19,
+            0.0,
+            -6.938893903907228e-18,
+            -5.204170427930421e-18,
+            2.8189256484623115e-18,
+            8.673617379884035e-18,
+            3.2526065174565133e-18
+          ],
+          "residual_l2_N": 6.360701476242631e-17,
+          "residual_max_abs_N": 3.469446951953614e-17,
+          "residual_relative_to_term_norms": 4.664453852882238e-16,
+          "c_dot_d_m": 1.4206223347255066e-21,
+          "lambda_N": -3.031921692512259e-17,
+          "translation_dot_f_N": 1.214306433183765e-17,
+          "translation_dot_c": 1.0,
+          "translation_load_compatibility_N": 4.246228125696024e-17,
+          "half_dKd_J": 1.309651343292637e-06,
+          "analytic_reference_energy_J": 1.3e-06,
+          "energy_relative_error_percent": 0.7424110225105428,
+          "d_dot_f_J": 2.619302686585273e-06,
+          "saddle_energy_work_defect_J": 1.2705494208814505e-21,
+          "analytic_coefficient_weak_defect_l2_N": 0.00030850383939143766,
+          "analytic_coefficient_weak_defect_max_abs_N": 0.00010433573578116397
+        },
+        "offgrid_error": {
+          "finite_sample_count": 256,
+          "uz_error_max_abs_m": 7.551248640345905e-07,
+          "uz_error_rms_m": 3.1794463178670685e-07,
+          "uz_reference_scaled_max_error": 0.03928683652148327,
+          "gradient_error_max_euclidean_dimensionless": 0.000360158030704686,
+          "gradient_error_rms_euclidean_dimensionless": 0.0001405524746849885,
+          "gradient_reference_max_euclidean_dimensionless": 0.0028023548691087662,
+          "gradient_error_max_reference_scaled": 0.1285197798019161
+        }
+      },
+      {
+        "name": "volume_gl4x16x4",
+        "volume_quadrature_points": 256,
+        "status": "OK",
+        "matrix": {
+          "sha256_float64_c_order": "61a9d269a09bdd072c66b1156619c61e28197ad986aa7cceef9d5552226036b8",
+          "max_abs_asymmetry": 2.2737367544323206e-13,
+          "eigenvalues_symmetric_part_sorted_N_per_m": [
+            1.1136000662877599e-13,
+            0.034504641039288145,
+            0.08440324962170809,
+            0.12573589481558792,
+            0.14056673086192054,
+            0.24186266650016192,
+            0.3032817169013121,
+            0.32542660426119285,
+            0.34740933014656583,
+            0.7087526484554193,
+            1.0745436653997702,
+            1.6555779587651835,
+            1.915159058147144,
+            2.018150684719447,
+            2.332803720636408,
+            2.83269319886237,
+            4.059770103769053,
+            5.262731073883688,
+            6.220403082729373,
+            11.22653595637827,
+            11.472191183864602,
+            12.709286300105855,
+            17.01706551120688,
+            17.735306302597632,
+            24.918196220732316,
+            32.435305477964214,
+            36.932702813056245,
+            42.85199637354456,
+            45.749864174859326,
+            66.36534641582162,
+            73.48023505721899,
+            102.70745418535297,
+            160.98054340413603,
+            179.07455755681403,
+            196.56709052955975,
+            221.96413396318226,
+            245.39515594647602,
+            375.92543589401384,
+            378.17361436266356,
+            517.4160277165647,
+            729.5982039466517,
+            764.919551826107,
+            984.2320223010609,
+            1159.9124660626235,
+            1228.8740582451976,
+            1341.3176030318134,
+            2252.0856165418954,
+            2533.5195677440865,
+            3150.149155093645,
+            3385.1740948957968,
+            3582.7653937052,
+            4645.138896923072,
+            7420.804933455267,
+            10492.373946193075
+          ],
+          "raw_negative_eigenvalues": [],
+          "minimum": 1.1136000662877599e-13,
+          "second": 0.034504641039288145,
+          "maximum": 10492.373946193075
+        },
+        "saddle": {
+          "residual_vector_N": [
+            -8.673617379884035e-18,
+            8.673617379884035e-18,
+            -1.3877787807814457e-17,
+            1.3877787807814457e-17,
+            -1.214306433183765e-17,
+            0.0,
+            5.779161941801708e-18,
+            3.469446951953614e-18,
+            -4.409812904906781e-18,
+            -3.469446951953614e-18,
+            -3.5720817958857675e-18,
+            5.204170427930421e-18,
+            1.3877787807814457e-17,
+            1.3877787807814457e-17,
+            -3.469446951953614e-18,
+            3.469446951953614e-18,
+            6.938893903907228e-18,
+            1.734723475976807e-17,
+            1.734723475976807e-18,
+            0.0,
+            -5.204170427930421e-18,
+            9.107298248878237e-18,
+            -5.204170427930421e-18,
+            6.5052130349130266e-18,
+            2.9712554380530152e-18,
+            -4.336808689942018e-19,
+            1.8096990526054215e-18,
+            -2.6020852139652106e-18,
+            1.8718066725169334e-18,
+            -7.37257477290143e-18,
+            1.734723475976807e-18,
+            6.938893903907228e-18,
+            5.204170427930421e-18,
+            -8.673617379884035e-19,
+            8.673617379884035e-18,
+            9.107298248878237e-18,
+            -5.204170427930421e-18,
+            -7.15573433840433e-18,
+            5.204170427930421e-18,
+            6.5052130349130266e-18,
+            3.469446951953614e-18,
+            4.7704895589362195e-18,
+            5.260779688334332e-18,
+            4.336808689942018e-19,
+            2.169942020722875e-18,
+            -2.6020852139652106e-18,
+            -1.1529537882752309e-18,
+            -8.673617379884035e-19,
+            3.469446951953614e-18,
+            -2.168404344971009e-19,
+            1.734723475976807e-18,
+            2.168404344971009e-18,
+            -3.469446951953614e-18,
+            4.336808689942018e-19
+          ],
+          "residual_l2_N": 4.806927420139756e-17,
+          "residual_max_abs_N": 1.734723475976807e-17,
+          "residual_relative_to_term_norms": 3.5250343392378495e-16,
+          "c_dot_d_m": -1.3670849570957617e-21,
+          "lambda_N": -2.3053300876302508e-18,
+          "translation_dot_f_N": 1.214306433183765e-17,
+          "translation_dot_c": 1.0,
+          "translation_load_compatibility_N": 1.44483944194679e-17,
+          "half_dKd_J": 1.3000232729364773e-06,
+          "analytic_reference_energy_J": 1.3e-06,
+          "energy_relative_error_percent": 0.001790225882863434,
+          "d_dot_f_J": 2.6000465458729524e-06,
+          "saddle_energy_work_defect_J": 2.117582368135751e-21,
+          "analytic_coefficient_weak_defect_l2_N": 8.921049459978219e-05,
+          "analytic_coefficient_weak_defect_max_abs_N": 2.8266175883267033e-05
+        },
+        "offgrid_error": {
+          "finite_sample_count": 256,
+          "uz_error_max_abs_m": 4.210277965392215e-08,
+          "uz_error_rms_m": 1.4151308110578081e-08,
+          "uz_reference_scaled_max_error": 0.002190478820318519,
+          "gradient_error_max_euclidean_dimensionless": 1.7660675131886825e-05,
+          "gradient_error_rms_euclidean_dimensionless": 7.318148175328916e-06,
+          "gradient_reference_max_euclidean_dimensionless": 0.0028023548691087662,
+          "gradient_error_max_reference_scaled": 0.006302083767679093
+        }
+      }
+    ],
+    "plot": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\modeiii_static_solve_independent\\static_solve_fields_q256_zslice.png",
+      "level": "volume_gl4x16x4",
+      "z_layer_m": -0.0010299999999999999,
+      "point_count": 64,
+      "physical_xy_limits_m": {
+        "x": [
+          -0.00853906316658816,
+          0.00853906316658816
+        ],
+        "y": [
+          -0.00853906316658816,
+          0.008539063166588161
+        ]
+      },
+      "interpolation": "none; saved samples plotted with scatter"
+    },
+    "input_run_receipt_scope": {
+      "claims": [
+        {
+          "path": "$.authorized_once",
+          "value": true
+        },
+        {
+          "path": "$.target_process_return_code_observed",
+          "value": false
+        }
+      ],
+      "caveat": "The primary run receipt's post-command authorized_once assignment had a missing-$ PowerShell error. Its observed flag is false; rc 0 is inferred from success/promotion acceptance, not directly measured by that snippet."
+    },
+    "scope": [
+      "Saved arrays only; no provider, assembly, integrals, or solver.",
+      "Small saddle residual is an algebraic check, not a physical field or fracture-growth qualification.",
+      "Quadrature-dependent errors are reported as sensitivities without a pass/fail threshold."
+    ],
+    "elapsed_seconds": 0.46899999980814755
+  }
+}

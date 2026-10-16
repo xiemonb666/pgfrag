@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "details": {
+        "K": 4.0,
+        "c": 22.91831180523293,
+        "sc": 0.125
+      },
+      "name": "root_material_formulas",
+      "passed": true
+    },
+    {
+      "details": {
+        "exact": 0.125,
+        "one_ulp_above": 0.12500000000000003,
+        "one_ulp_below": 0.12499999999999999,
+        "operator": "stretch > epsilon_c"
+      },
+      "name": "strict_threshold_and_adjacent_ulp",
+      "passed": true
+    },
+    {
+      "details": {
+        "energy_ratio": 1.0000000000000036,
+        "pair_energy_at_threshold_J": 0.04476232774459556,
+        "removed_event_energy_J": 0.04476232774459572,
+        "stretches": [
+          0.0,
+          0.125,
+          0.12500000000000022
+        ]
+      },
+      "name": "analytic_bond_stretch_energy_force",
+      "passed": true
+    },
+    {
+      "details": {
+        "force_on_i_N": [
+          0.7161972439135302,
+          0.0,
+          0.0
+        ],
+        "force_on_j_N": [
+          -0.7161972439135302,
+          0.0,
+          0.0
+        ]
+      },
+      "name": "equal_and_opposite_pair_force",
+      "passed": true
+    },
+    {
+      "details": {
+        "broken_components": 3,
+        "broken_labels": [
+          0,
+          1,
+          2
+        ],
+        "intact_components": 2,
+        "intact_labels": [
+          0,
+          0,
+          2
+        ]
+      },
+      "name": "union_find_keeps_isolated_point",
+      "passed": true
+    },
+    {
+      "details": {
+        "D_by_state_J": [
+          0.0,
+          0.0,
+          0.04476232774459572
+        ],
+        "removed_event_energy_J": 0.04476232774459572,
+        "threshold_energy_J": 0.04476232774459556
+      },
+      "name": "discrete_D_is_event_state_pair_energy",
+      "passed": true
+    },
+    {
+      "details": {
+        "crossing_segment_min_radius_m": 0.0,
+        "inner_radius_m": 0.008,
+        "tangent_segment_min_radius_m": 0.008
+      },
+      "name": "analytic_inner_sphere_segment_filter",
+      "passed": true
+    }
+  ],
+  "failed_checks": [],
+  "schema": "pgfrag.independent_bowl_handtest.v1",
+  "scope": "analytic algebra/geometry/threshold/energy/force/union-find only; no solver launched",
+  "status": "PASS",
+  "synthetic_schema_fixture": {
+    "audit_json": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\bowl_independent_audit_20261015\\handtest\\synthetic_native_bowl_run\\independent_audit.json",
+    "canonical_pair_count": 4,
+    "check_count": 65,
+    "failed_checks": [],
+    "graph_component_count": 1,
+    "initial_geometric_exclusion_count": 2,
+    "point_count": 4,
+    "scope": "synthetic static schema fixture; no solver launched",
+    "status": "PASS"
+  }
+}

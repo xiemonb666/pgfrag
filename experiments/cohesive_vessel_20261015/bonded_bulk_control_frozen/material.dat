@@ -1,0 +1,9 @@
+model solid_mechanics_model [
+  material elastic [
+    name = body
+    rho = 2300
+    E = 70000000000
+    nu = 0.25
+    finite_deformation = false
+  ]
+]

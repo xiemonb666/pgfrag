@@ -1,0 +1,42 @@
+{
+  "schema": "forge.conformal_tetra_partition.v1",
+  "status": "GEOMETRY_DIAGNOSTIC_ONLY",
+  "source_forge_manifest_sha256": "0b33ba3dc1bdd12c05b65f73c4c570ab6e4b566702dcb5b33958b426e756ee67",
+  "source_step_sha256": "593b6f8b7dd72de69724348cb28056305660a852b8f44e67ca2a29e8ce77007c",
+  "units": "SI",
+  "mesh_size_m": 0.0015,
+  "nodes": 1212,
+  "tetrahedra": 4342,
+  "step_unit_conversion": "Geometry.OCCTargetUnit=M at import; no post-import geometric dilation",
+  "interface_triangles": 158,
+  "analytic_volume_m3": 2.546784444510125e-06,
+  "occ_source_volume_m3": 2.5467844445096345e-06,
+  "occ_partition_volumes_m3": [
+    1.2733922222547705e-06,
+    1.2733922222550627e-06
+  ],
+  "tetrahedral_volume_m3": 2.5398821979027247e-06,
+  "tetrahedral_volume_relative_error": 0.002710180919425229,
+  "analytic_interface_area_m2": 0.00012566370614359174,
+  "occ_interface_area_m2": 0.0001256637061435917,
+  "triangular_interface_area_m2": 0.0001256233151018129,
+  "centroids_in_material": true,
+  "all_interface_triangles_have_two_distinct_volume_parents": true,
+  "material_mass_kg": 0.005841729055176267,
+  "elapsed_s": 0.18700000000171713,
+  "limitations": [
+    "linear boundary geometry is approximate; finite centroid checks are not a global containment certificate",
+    "predefined plane is geometry input, not a damage event or fragment partition",
+    "no material calibration, cohesive failure, dynamics, or R2 qualification"
+  ],
+  "files": {
+    "mesh.msh": {
+      "sha256": "09a998802881bea5227c50ea67c2e3042e5d533193e9212a757085a4e678b97d",
+      "bytes": 267172
+    },
+    "mesh.npz": {
+      "sha256": "690d3128887277c3686713e48220c815931b9a25529887b52c191ca766eb7151",
+      "bytes": 94556
+    }
+  }
+}

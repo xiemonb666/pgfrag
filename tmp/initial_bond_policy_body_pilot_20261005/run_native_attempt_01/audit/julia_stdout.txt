@@ -1,0 +1,7 @@
+PILOT_RESULT_TEXT=C:\Users\xiemo\Desktop\ShardForge\pgfrag\tmp\initial_bond_policy_body_pilot_20261005\run_native_attempt_01\bundles\positive_mask\native_graph_readback.txt
+PILOT_LABEL=GEOMETRY_FILTER_FIXTURE_ONLY
+PILOT_RAW_DIRECTED=120
+PILOT_INCLUDED_DIRECTED=112
+PILOT_GRAPH_READBACK=PASS
+PILOT_PHYSICAL_FAILURE=NOT_RUN
+PILOT_CAD_VERIFICATION=NOT_RUN

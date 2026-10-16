@@ -1,0 +1,216 @@
+{
+  "captured_utc": "2026-10-05T12:12:03.9233034+00:00",
+  "overlay_source_pin_count": 23,
+  "overlay_source_pins": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl",
+      "expected_sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb",
+      "actual_sha256": "195127ad9eaaafea064c9b7087c83d7b80b3330b3a46f62b38e3838b00b1f4cb"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\Peridynamics.jl",
+      "expected_sha256": "87cd708d01b2d766a8da1bce28d19b22262a2ab1b9b001ccbdc96674b0bc30ca",
+      "actual_sha256": "87cd708d01b2d766a8da1bce28d19b22262a2ab1b9b001ccbdc96674b0bc30ca"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\discretization\\body.jl",
+      "expected_sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421",
+      "actual_sha256": "60762a4f52c9b6c0b8f23d295b266c15bc697b1e2a356ddd759a561236bd3421"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\discretization\\body.jl",
+      "expected_sha256": "e1b79560030e2675c40c7127d1e237edda64fcbe562e443ed5f2d21cd3ca8ed8",
+      "actual_sha256": "e1b79560030e2675c40c7127d1e237edda64fcbe562e443ed5f2d21cd3ca8ed8"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\discretization\\bond_system.jl",
+      "expected_sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa",
+      "actual_sha256": "c98bed960c6b6789f015f02e400d6b3a99e09df22c529f386c384a1564bb69aa"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\discretization\\bond_system.jl",
+      "expected_sha256": "544de92a6611f5ba9ca906c54145cd5e720715a8fb9b8d7fa4a07e4b33cabfda",
+      "actual_sha256": "544de92a6611f5ba9ca906c54145cd5e720715a8fb9b8d7fa4a07e4b33cabfda"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\core\\threads_multibody_data_handler.jl",
+      "expected_sha256": "245eb4e3d8ab28c3b89f3f97df09996bee51e44520587cde14c669c7ff165bee",
+      "actual_sha256": "245eb4e3d8ab28c3b89f3f97df09996bee51e44520587cde14c669c7ff165bee"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\core\\threads_multibody_data_handler.jl",
+      "expected_sha256": "e2bc105098eb766d0eb7683d56e0848ff39666fb1aa297c5baa91d4700e177a7",
+      "actual_sha256": "e2bc105098eb766d0eb7683d56e0848ff39666fb1aa297c5baa91d4700e177a7"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\core\\mpi_multibody_data_handler.jl",
+      "expected_sha256": "e32b0c3c83dab0657fcf9b6219f9b10a16b1aa52d84232533f710efb56082272",
+      "actual_sha256": "e32b0c3c83dab0657fcf9b6219f9b10a16b1aa52d84232533f710efb56082272"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\core\\mpi_multibody_data_handler.jl",
+      "expected_sha256": "1f480688a354869aaf8527d0883e44cc436c87140c28f6bdb03e75e01910f627",
+      "actual_sha256": "1f480688a354869aaf8527d0883e44cc436c87140c28f6bdb03e75e01910f627"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\core\\mpi_body_data_handler.jl",
+      "expected_sha256": "84b8303ddeaa18902d40904b2e540591678a81566df38c72303e0585eefb9150",
+      "actual_sha256": "84b8303ddeaa18902d40904b2e540591678a81566df38c72303e0585eefb9150"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\core\\mpi_body_data_handler.jl",
+      "expected_sha256": "60397cd45c1da41c4829d0d9d8be0ba85ed085d5a216f43d5ce91c89d663cf83",
+      "actual_sha256": "60397cd45c1da41c4829d0d9d8be0ba85ed085d5a216f43d5ce91c89d663cf83"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\LICENSE",
+      "expected_sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e",
+      "actual_sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\LICENSE",
+      "expected_sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e",
+      "actual_sha256": "0dc42bc9160a936d5fa5ec6f622e94d2baa1e02d13a675e9080795c156da483e"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\Project.toml",
+      "expected_sha256": "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986",
+      "actual_sha256": "b888cd311dad495d5c1283ce2972a184f04ed42b8b180c907be2bb12e20cc986"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl\\src\\discretization\\body_chunk.jl",
+      "expected_sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4",
+      "actual_sha256": "e076d40b5e39d2154ab341342987ff7addb4d75bd375109477acd6de7a804cf4"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\overlay\\src\\discretization\\initial_bond_policy.jl",
+      "expected_sha256": "7057585eb58b6ef3d005d0988586b659e54a28b01911187b3cbafc05afc2ec17",
+      "actual_sha256": "7057585eb58b6ef3d005d0988586b659e54a28b01911187b3cbafc05afc2ec17"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\tests\\test_initial_bond_policy.jl",
+      "expected_sha256": "5c40945c0a31460fad662487fa513b3a724e2b4275912906ce5e2adb79d4ef74",
+      "actual_sha256": "5c40945c0a31460fad662487fa513b3a724e2b4275912906ce5e2adb79d4ef74"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\initial_bond_policy_overlay.patch",
+      "expected_sha256": "68748b1cebe261b76f4adc8d1056e7319ee8c69176700bdd34f8008830dcc557",
+      "actual_sha256": "68748b1cebe261b76f4adc8d1056e7319ee8c69176700bdd34f8008830dcc557"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\isolated_fork_compile_test_plan.md",
+      "expected_sha256": "11d7fc4f2181c994a72c56a5dca7a1358f888438eb919b15467524fbb4954ed0",
+      "actual_sha256": "11d7fc4f2181c994a72c56a5dca7a1358f888438eb919b15467524fbb4954ed0"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_native_20261005\\architecture_report.md",
+      "expected_sha256": "65f6114cb5f92a2b06f13fb479039d2534ba6454c7229021ce4b9869cba90c83",
+      "actual_sha256": "65f6114cb5f92a2b06f13fb479039d2534ba6454c7229021ce4b9869cba90c83"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\bridge_independent_review\\initial_bond_policy_native_static_review.md",
+      "expected_sha256": "3624d6d2299090d0bf9929fc6f03a7200f9c83e6c31a62f82fe2a4765410de00",
+      "actual_sha256": "3624d6d2299090d0bf9929fc6f03a7200f9c83e6c31a62f82fe2a4765410de00"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\material_visibility_native_bridge_20261005\\native_mask_transport.py",
+      "expected_sha256": "6779b3242ef87c13d5626a1e6d89414e1cdd7d6ed8f7e264fb01ed83edef7ea9",
+      "actual_sha256": "6779b3242ef87c13d5626a1e6d89414e1cdd7d6ed8f7e264fb01ed83edef7ea9"
+    }
+  ],
+  "pilot_source_pins": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\README.md",
+      "expected_sha256": "7f4468532784369efe981854f38f30790f8742f288a830929a75b5e90153e6ca",
+      "actual_sha256": "7f4468532784369efe981854f38f30790f8742f288a830929a75b5e90153e6ca"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\planned_assertions.md",
+      "expected_sha256": "f1a3e3b96213d05f3b318e48f96f0eed55c6e6cc7b21cb631703de4ef45c9d2f",
+      "actual_sha256": "f1a3e3b96213d05f3b318e48f96f0eed55c6e6cc7b21cb631703de4ef45c9d2f"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\fixedcase_points.csv",
+      "expected_sha256": "0f635481d102e98c4ace79dc880e3cdfc5cbe80fe5a1ee73eac463c113c5fab7",
+      "actual_sha256": "0f635481d102e98c4ace79dc880e3cdfc5cbe80fe5a1ee73eac463c113c5fab7"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\fixedcase_components.csv",
+      "expected_sha256": "1f55f30c2803618fa689b541c79757834d7dd86945f5c614a4c4b3802d541940",
+      "actual_sha256": "1f55f30c2803618fa689b541c79757834d7dd86945f5c614a4c4b3802d541940"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\fixedcase_source_marker.txt",
+      "expected_sha256": "2091ec6772be7411e42efa37038017460050c26cbd977fc1cab9edbdcbb830fe",
+      "actual_sha256": "2091ec6772be7411e42efa37038017460050c26cbd977fc1cab9edbdcbb830fe"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\generate_fixture_policy.py",
+      "expected_sha256": "570dba4a4360b1d22b9aea336c4ee4539364c8c7acb9282900c5258bb1488a5d",
+      "actual_sha256": "570dba4a4360b1d22b9aea336c4ee4539364c8c7acb9282900c5258bb1488a5d"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\experiments\\initial_bond_policy_body_pilot_20261005\\native_body_pilot.jl",
+      "expected_sha256": "038f289af08b91f5d4cbee599aaab0e1e37061d5f1615316c62d15343faae4bf",
+      "actual_sha256": "038f289af08b91f5d4cbee599aaab0e1e37061d5f1615316c62d15343faae4bf"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\initial_bond_policy_body_pilot\\static_review.md",
+      "expected_sha256": "37e0f6577f7baa24fc1558948a13b93a8631648928ea92eb1cad1fb5e08dd016",
+      "actual_sha256": "37e0f6577f7baa24fc1558948a13b93a8631648928ea92eb1cad1fb5e08dd016"
+    }
+  ],
+  "protected_single_files": [
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Project.toml",
+      "sha256": "eebff26de1f99a56b29a43ad767d2877bba5b6a0e4a03de1f909eab00f59f4ae"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\Manifest.toml",
+      "sha256": "eb7d8902b84cfc64faaa0d45b0e6a3ae8534a252d06399f3db074da5a738e594"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+      "sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103"
+    },
+    {
+      "path": "C:\\Users\\xiemo\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "sha256": "372c2eae555b344520bf147be0096e009069aeca4e7f78d6aecea6d53158056a"
+    }
+  ],
+  "protected_trees": [
+    {
+      "label": "original_vendor",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\src\\pgfrag\\resources\\julia\\vendor\\Peridynamics.jl",
+      "file_count": 65,
+      "total_bytes": 554702,
+      "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\before_tree_original_vendor.tsv",
+      "manifest_sha256": "d83340d3d6812afd1df64b5beb19d9ef4c53d9b5d3f4a23f823a078a4ffcddc8"
+    },
+    {
+      "label": "shared_depot",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\depot",
+      "file_count": 2974,
+      "total_bytes": 144737124,
+      "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\before_tree_shared_depot.tsv",
+      "manifest_sha256": "67bf5caaa3d43c3a311f79ef148cd208f35ade303a14ea345677825478d7306b"
+    },
+    {
+      "label": "run03_project",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\project",
+      "file_count": 68,
+      "total_bytes": 628946,
+      "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\before_tree_run03_project.tsv",
+      "manifest_sha256": "0f092e13c51c7d32905a7623948dc43857164e0b2b5de4eed3be3c4c78307da2"
+    },
+    {
+      "label": "run03_depot",
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_03\\depot",
+      "file_count": 0,
+      "total_bytes": 0,
+      "manifest_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_body_pilot_20261005\\run_native_attempt_01\\audit\\before_tree_run03_depot.tsv",
+      "manifest_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "protected_pin_manifest_sha256": "fd9f1278577ee8266d1a9767c6f4cedcc17dff716c2debbb69ed7921c844466f"
+}

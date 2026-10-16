@@ -1,0 +1,36 @@
+{
+  "schema": "rigid_plane_contact_focused_pins.v1",
+  "focused_source_snapshot_dir": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\rigid_plane_contact_20261006\\focused_readonly_check\\source_snapshot",
+  "focused_sources_sha256": {
+    "rigid_plane_contact.py": "d13309f3866bf65ee3f7aa3b52a2fe6c8eeccc4813abfa88746f7798bbed4723",
+    "run_toy_diagnostic.py": "1cf5198a39c137a1bd08bb079afd56ee5bf8d7ccdf44f5f3fd369eb359368c78",
+    "run_focused_checks.py": "c637e31a0865bd8c2c905d2b2a433bd237d452c3f5aedc169001f219cdab9b9d"
+  },
+  "prior_run_artifacts_current_sha256": {
+    "actual_trajectory_force_energy_impulse.csv": {
+      "sha256_at_focused_check": "2d06b4d7692a383532ad32f9189b0145f7d0d363681dae931bdbc8a4900b5e08",
+      "present": true,
+      "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+    },
+    "comparison_errors.csv": {
+      "sha256_at_focused_check": "af9a4521c7ea3298a98387054877d57fa11ad9e6b456d1a8fdaa2c7c7a4c6be6",
+      "present": true,
+      "history_note": "comparison_errors.csv was post-run corrected for metric-column semantics; its pre-correction bytes were not preserved"
+    },
+    "contact_trajectory_energy.png": {
+      "sha256_at_focused_check": "bad2b705ae0d0f781d32f3f281fae440a748746ad32fc21da4013cc86f336cd2",
+      "present": true,
+      "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+    },
+    "diagnostic_summary.json": {
+      "sha256_at_focused_check": "a2a94350d61ceeca07ab8331438f690cedd062b2c1bfc5cf818525e83bebb854",
+      "present": true,
+      "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+    },
+    "check_receipt.json": {
+      "sha256_at_focused_check": "e535ba8371fade2cf93fde2df38d3a44e73d4da0d1b9c8533475b93a8d66550a",
+      "present": true,
+      "history_note": "existing bounded-run artifact; pinned in its current post-run state"
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "schema": "independent_cached_mass_bridge_audit.v1",
+  "status": "CACHED_ARRAYS_AUDIT_PASS_UNQUALIFIED",
+  "classification": "NUMERICAL_DIAGNOSTIC_ONLY_NOT_PHYSICAL_FRACTURE_OR_MATERIAL_PASS",
+  "checks": {
+    "mass_rebuild_matches_saved": true,
+    "mass_symmetry": true,
+    "mass_spectrum_matches_saved": true,
+    "unmodified_mass_cholesky": true,
+    "rigid_field_reconstruction": true,
+    "all_six_kinetic_forms": true,
+    "analytic_cylinder_six_form": true,
+    "volume_matches_cylinder": true,
+    "bridge_raw_K_pin": true,
+    "bridge_weak_equilibrium": true,
+    "bridge_physical_gauge": true,
+    "bridge_energy_identity": true,
+    "bridge_field_reconstruction": true,
+    "exact_field_reconstruction": true,
+    "exact_stress_full_voigt": true,
+    "generalized_six_rigid_modes": true
+  },
+  "inputs": {
+    "mass_result": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\full3d_consistent_mass_replay_20261006\\run01\\mass_result.json",
+      "sha256": "326df86f867eec47141fce58a748eb68403853adce3a2d8b3b59d8f992ff15e1"
+    },
+    "operator_result": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\tmp\\review_20261006\\full3d_cracked_elastic_operator_20261006\\run01\\result.json",
+      "sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2"
+    },
+    "bridge_result": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\full3d_static_solve_bridge_20261006\\run02\\static_solve_bridge_result.json",
+      "sha256": "ef66783e2961dd77f34785a99e1b397210ccc0beb6e8fa2979678aa4992a0ce3"
+    },
+    "bridge_run_receipt_sha256": "e9589175cbe76739c75d04e56a774aff032a85b80a52300640c2ffc0afde1296",
+    "bridge_script_sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5",
+    "bridge_case_sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728",
+    "operator_source_pins_sha256": "16355c781749fb4940a187afb3d985d9f1362fd3a33c1e6cc425cffdf9ed0ac7",
+    "mass_case_sha256": "a4780655f0bf78a55576bf3f63eb75aa133a065b50a104683df614d92218570a",
+    "bridge_outer_execution": {
+      "return_code": 0,
+      "elapsed_seconds": 0.7541543,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "input_sha256": "3b31e7d40c1d8e4b5d829f0b093fee4edadc966bde4086a4b3f4ba48fdf89cd2",
+      "source_sha256": "2a5d60bb77c3ea178dcda086830270262391e954513076317da6ddff7b4a42e5",
+      "case_sha256": "08af8e11fff102c52dbc40ceb43ad610faad3c4462f1492739d2f5e198378728"
+    },
+    "script": {
+      "path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\audit_cached_arrays.py",
+      "sha256": "d4c107cea4963a041f58be1ba076ce28762dad883935c28f3c672d8a6c296e50"
+    }
+  },
+  "mass": {
+    "density_kg_per_m3": 1.0,
+    "density_role": "fixed toy diagnostic only; not calibrated material data",
+    "volume_m3": 3.1415926535897933e-06,
+    "rhoV_kg": 3.1415926535897933e-06,
+    "independent_matrix_sha256_float64_le_C": "90a723f630f411053899260bed57a6e3614f212730d98e8ccb733378048aa6b9",
+    "relative_frobenius_error_vs_saved": 1.8430105204580147e-16,
+    "relative_asymmetry": 8.206437429105502e-17,
+    "eigen_min_M_over_rhoV": 3.1420955830783745e-09,
+    "eigen_max_M_over_rhoV": 0.07198812461323441,
+    "condition_estimate": 22910864.01092426,
+    "spectrum_saved_max_relative_error": 1.7350096414008845e-15,
+    "translation_mass_diagonal_kg": [
+      3.141592653589794e-06,
+      3.141592653589794e-06,
+      3.141592653589794e-06
+    ],
+    "rigid_kinetic_direct_6x6": [
+      [
+        3.141592653589794e-06,
+        0.0,
+        0.0,
+        0.0,
+        6.013590607688322e-26,
+        -1.593991087484302e-26
+      ],
+      [
+        0.0,
+        3.141592653589794e-06,
+        0.0,
+        -6.013590607688322e-26,
+        0.0,
+        1.2839344043799622e-24
+      ],
+      [
+        0.0,
+        0.0,
+        3.141592653589794e-06,
+        1.593991087484302e-26,
+        -1.2839344043799622e-24,
+        0.0
+      ],
+      [
+        0.0,
+        4.8467614016778965e-27,
+        1.9720260453076942e-25,
+        1.0471975511965977e-10,
+        -3.6231944793934535e-28,
+        5.95508715763949e-29
+      ],
+      [
+        -4.8467614016778965e-27,
+        0.0,
+        -1.945166909206729e-24,
+        4.1805835766754564e-29,
+        1.0471975511965979e-10,
+        -7.147686617872244e-29
+      ],
+      [
+        -1.9720260453076942e-25,
+        1.945166909206729e-24,
+        0.0,
+        6.787838002896024e-29,
+        2.052417043999708e-28,
+        1.5707963267948977e-10
+      ]
+    ],
+    "rigid_kinetic_from_coefficients_6x6": [
+      [
+        3.141592653589793e-06,
+        0.0,
+        0.0,
+        0.0,
+        -3.400788220269356e-26,
+        3.400788220269356e-26
+      ],
+      [
+        0.0,
+        3.141592653589793e-06,
+        0.0,
+        3.400788220269356e-26,
+        0.0,
+        3.688304874285931e-24
+      ],
+      [
+        0.0,
+        0.0,
+        3.141592653589793e-06,
+        -3.400788220269356e-26,
+        -3.688304874285931e-24,
+        0.0
+      ],
+      [
+        0.0,
+        5.169878828456423e-26,
+        2.0679515313825692e-25,
+        1.0471975511965977e-10,
+        5.7643038765197144e-27,
+        1.1157419762241831e-27
+      ],
+      [
+        -5.169878828456423e-26,
+        0.0,
+        -5.0664812518872945e-24,
+        2.9531830904041863e-27,
+        1.047197551196598e-10,
+        -2.9789676593187014e-28
+      ],
+      [
+        -2.0679515313825692e-25,
+        5.0664812518872945e-24,
+        0.0,
+        -1.8935783112737103e-27,
+        -6.980446590508146e-28,
+        1.5707963267948967e-10
+      ]
+    ],
+    "analytic_cylinder_inertia_kg_m2": [
+      1.0471975511965979e-10,
+      1.0471975511965979e-10,
+      1.5707963267948967e-10
+    ],
+    "analytic_six_form_scaled_max_error": 3.291247082939906e-16,
+    "rigid_reconstruction_scaled_max_error": 1.3322676295501878e-15,
+    "six_kinetic_forms_scaled_max_error": 4.0442844155165566e-16,
+    "source_center_error_m": 0.0,
+    "volume_relative_error": 0.0
+  },
+  "cached_K_over_M_spectrum": {
+    "units": "s^-2",
+    "method": "A=L^-1 K L^-T from raw K and unmodified Cholesky(M); no truncation/regularization",
+    "relative_asymmetry_A": 1.1597787565381485e-12,
+    "eigen_min": -0.0249673783348528,
+    "eigen_max": 4784429790249.391,
+    "near_zero_tolerance": 11.014515536379594,
+    "near_zero_count": 6,
+    "significant_negative_count": 0,
+    "first_12_signed_eigenvalues_s^-2": [
+      -0.0249673783348528,
+      -0.0072156760759216265,
+      -0.0003799651691243589,
+      -0.00012452053734418958,
+      0.0003209483904374134,
+      0.007966065073979135,
+      1947124219.2354074,
+      2498140512.3522,
+      5793538046.109808,
+      9873545102.986698,
+      12641059871.829254,
+      17171800824.534567
+    ],
+    "rigid_mode_residuals": [
+      1.1212550408387296e-15,
+      6.940599502094169e-16,
+      1.0140185191077115e-15,
+      1.4920288264531042e-15,
+      5.93480014817654e-16,
+      6.489152166313046e-16
+    ],
+    "omega_max_rad_per_s": 2187333.945754372,
+    "central_difference_dt_upper_bound_s": 9.143551234515478e-07,
+    "dimensionless_omega_R_over_sqrt_E_over_rho": 21.873339457543718,
+    "dt_interpretation": "toy rho and synthetic E only; not a physical time-step recommendation"
+  },
+  "bridge_cached_readback": {
+    "status": "SOLVED_DIAGNOSTIC_ONLY_UNQUALIFIED",
+    "weak_equilibrium_relative": 8.860356825409718e-16,
+    "gauge_relative": 1.0624709076688799e-15,
+    "energy_U_J": 1.3133527026982052e-06,
+    "external_work_J": 2.626705405396418e-06,
+    "g_dot_lambda_J": 4.236127247359188e-21,
+    "energy_identity_defect_J": -3.387169277929515e-21,
+    "recorded_energy_identity_defect_J": -3.387169277929515e-21,
+    "displacement_reconstruction_relative": 0.0,
+    "strain_reconstruction_relative": 0.0,
+    "exact_displacement_reconstruction_relative": 1.1853074810413e-15,
+    "exact_strain_reconstruction_relative": 2.313905877993394e-15,
+    "exact_full_tensor_stress_relative_error": 0.0,
+    "solved_vs_exact_stress_relative_error": 0.08091461857613695,
+    "images": [
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\mass_spectrum_rigid_kinetic.png",
+      "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261006\\bridge_mass_independent\\bridge_strain_stress_scatter.png"
+    ]
+  },
+  "array_budget": {
+    "conservative_explicit_peak_including_one_plot_raster_bytes": 8102016,
+    "cap_bytes": 8388608,
+    "JSON_objects_and_BLAS_workspace_excluded": true
+  },
+  "elapsed_seconds": 1.452999999979511,
+  "limitations": [
+    "one fixed quadrature rule is not a convergence study",
+    "rho=1 kg/m3 and synthetic E are not calibrated ceramic properties",
+    "generalized spectrum and time-step bound are cached linear diagnostics, not a dynamics simulation",
+    "bridge output remains an unqualified manufactured-field diagnostic"
+  ]
+}

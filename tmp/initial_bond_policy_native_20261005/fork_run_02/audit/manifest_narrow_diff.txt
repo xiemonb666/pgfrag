@@ -1,0 +1,3 @@
+@@ 418 @@
+-deps = ["AbaqusReader", "Dates", "IterativeSolvers", "LibGit2", "LinearAlgebra", "LinearMaps", "MPI", "PointNeighbors", "PrecompileTools", "Printf", "ProgressMeter", "StaticArrays", "ThreadPinning", "TimerOutputs"]
++deps = ["AbaqusReader", "Dates", "IterativeSolvers", "LibGit2", "LinearAlgebra", "LinearMaps", "MPI", "PointNeighbors", "PrecompileTools", "Printf", "ProgressMeter", "SHA", "StaticArrays", "TOML", "ThreadPinning", "TimerOutputs"]

@@ -1,0 +1,34 @@
+{
+  "freeze_id": "modeiii_field_reference_source_20261005_v2",
+  "invocation_count": 1,
+  "command": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--junitxml=C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_field_reference_20261005\\focused_test_v2\\junit.xml",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_field_reference_20261005\\focused_test_v2\\source_snapshot\\test_field_reference.py"
+  ],
+  "python_alias": "VFpython",
+  "python_executable": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+  "working_directory": "C:\\Users\\xiemo\\Desktop\\ShardForge",
+  "test_source": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_field_reference_20261005\\focused_test_v2\\source_snapshot\\test_field_reference.py",
+  "started_utc": "2026-10-05T12:02:46.9817541+00:00",
+  "finished_utc": "2026-10-05T12:02:47.5144558+00:00",
+  "timeout_seconds": 30,
+  "elapsed_seconds": 0.50088,
+  "timed_out": false,
+  "return_code": 0,
+  "junit_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261005\\modeiii_field_reference_20261005\\focused_test_v2\\junit.xml",
+  "junit_counts": {
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_unchanged": true,
+  "pre_post_pins_match": true
+}

@@ -1,0 +1,29 @@
+schema = "pgfrag.pd.pointset.v1"
+input_id = "coupon_cell_jitter_5cube_seed17_v1"
+point_data_file = "coupon_cell_jitter_5cube_seed17.points.csv"
+point_data_sha256 = "2adc7cf3f8a825a6b964cf6e5dc3cba099634054b9a10d60abee8b4590813ee5"
+coordinate_units = "m"
+volume_units = "m^3"
+coordinate_frame = "Right-handed Cartesian xyz in metres; origin is the lower corner of the declared 5 mm coupon."
+point_id_semantics = "Positive source point identity; CSV row order defines native Body index and is preserved separately in outputs."
+point_count = 125
+declared_volume_sum_m3 = 1.2500000000000002E-07
+declared_com_m = [0.0025, 0.0025, 0.002499999999999999]
+
+[source]
+kind = "declared_internal_fixture_generation"
+description = "Procedurally generated 5 mm cube voxel quadrature candidate; fixed integer pattern seed 17 jitters each sample inside its original cell by at most 0.2 cell widths while retaining that cell volume."
+reference = "make_point_inputs.ps1 in this experiment directory; not a measured specimen or imported shell."
+source_sha256 = "f218b55964634631fccdaf33ca24649c5c64bc0c2c89c38e7800942fa531b0a0"
+source_artifact_sha256 = "NOT_APPLICABLE_GENERATED_FIXTURE"
+
+[quadrature]
+method = "uniform_voxel_quadrature_with_deterministic_in_cell_jitter_candidate"
+volume_semantics = "The original 1 mm^3 voxel cell quadrature weight is retained after positional jitter; this is not an exact arbitrary Voronoi volume."
+voronoi_claim = false
+real_shell_claim = false
+
+[load_sets]
+axis = 3
+bottom_point_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+top_point_ids = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]

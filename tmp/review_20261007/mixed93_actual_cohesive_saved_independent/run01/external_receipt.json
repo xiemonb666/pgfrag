@@ -1,0 +1,350 @@
+{
+  "argv": [
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\vesselforge-runtime\\venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent\\check_saved_result.py",
+    "--execute",
+    "--root-go",
+    "ROOT_20261007_MIXED93_SAVED_INDEPENDENT_ONCE",
+    "--output",
+    "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent\\run01\\result.json"
+  ],
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\review_20261007\\mixed93_actual_cohesive_saved_independent",
+  "deadline_seconds": 15.0,
+  "elapsed_seconds": 0.181798,
+  "launch_error": null,
+  "output_tree_bytes": 8789,
+  "output_tree_within_cap": true,
+  "post": {
+    "cached_case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cached_producer": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cached_source_pins": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cohesive_derivative": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cohesive_scalar_law": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "independent_case": {
+      "bytes": 7108,
+      "exists": true,
+      "sha256": "9ea0e6ffb241f10f3e9f38ef545e26f5a2a4427ae20771e258832b6a86d336b7"
+    },
+    "independent_output": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "independent_pins": {
+      "bytes": 1575,
+      "exists": true,
+      "sha256": "e9f4cd1a7ad636dc54cca0b16d51040af52c2ab1a8be185b820db8548b33ce5b"
+    },
+    "independent_saved_checker": {
+      "bytes": 25844,
+      "exists": true,
+      "sha256": "1b6a201d28bcd33b1d1bce14c594ead8ae3cafb39233a4e1a0ba4e323d6385f7"
+    },
+    "independent_source_contract": {
+      "bytes": 6585,
+      "exists": true,
+      "sha256": "a8e38b4fe408a9472838181e6b4300a9bbc4e27c0dd1aea7f89ba9aa94bc43d4"
+    },
+    "mixed_enriched_operator": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mixed_lefm_field": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mls3d_mls": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mls3d_shape": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "numeric_supervisor": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "numeric_worker": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_npz": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_receipt": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_result": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "readme": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "recovery_audit": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "recovery_receipt": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "static_checker": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "static_source_pins": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "trace_primitive": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "upstream_fixed_case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "upstream_result": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "pre": {
+    "cached_case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cached_producer": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cached_source_pins": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cohesive_derivative": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "cohesive_scalar_law": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "independent_case": {
+      "bytes": 7108,
+      "exists": true,
+      "sha256": "9ea0e6ffb241f10f3e9f38ef545e26f5a2a4427ae20771e258832b6a86d336b7"
+    },
+    "independent_output": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "independent_pins": {
+      "bytes": 1575,
+      "exists": true,
+      "sha256": "e9f4cd1a7ad636dc54cca0b16d51040af52c2ab1a8be185b820db8548b33ce5b"
+    },
+    "independent_saved_checker": {
+      "bytes": 25844,
+      "exists": true,
+      "sha256": "1b6a201d28bcd33b1d1bce14c594ead8ae3cafb39233a4e1a0ba4e323d6385f7"
+    },
+    "independent_source_contract": {
+      "bytes": 6585,
+      "exists": true,
+      "sha256": "a8e38b4fe408a9472838181e6b4300a9bbc4e27c0dd1aea7f89ba9aa94bc43d4"
+    },
+    "mixed_enriched_operator": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mixed_lefm_field": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mls3d_mls": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "mls3d_shape": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "numeric_supervisor": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "numeric_worker": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_npz": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_receipt": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "producer_result": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "readme": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "recovery_audit": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "recovery_receipt": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "static_checker": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "static_source_pins": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "trace_primitive": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "upstream_fixed_case": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    },
+    "upstream_result": {
+      "bytes": null,
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "pre_post_equal": {
+    "cached_case": true,
+    "cached_producer": true,
+    "cached_source_pins": true,
+    "case": true,
+    "cohesive_derivative": true,
+    "cohesive_scalar_law": true,
+    "independent_case": true,
+    "independent_pins": true,
+    "independent_saved_checker": true,
+    "independent_source_contract": true,
+    "mixed_enriched_operator": true,
+    "mixed_lefm_field": true,
+    "mls3d_mls": true,
+    "mls3d_shape": true,
+    "numeric_supervisor": true,
+    "numeric_worker": true,
+    "producer_npz": true,
+    "producer_receipt": true,
+    "producer_result": true,
+    "readme": true,
+    "recovery_audit": true,
+    "recovery_receipt": true,
+    "static_checker": true,
+    "static_source_pins": true,
+    "trace_primitive": true,
+    "upstream_fixed_case": true,
+    "upstream_result": true
+  },
+  "producer_npz_sha256_expected": "3e1e6fd17751e4e06113010f20ea33c7b69914ca90431e26bbf76124951b5d41",
+  "producer_receipt_sha256_expected": "eccd3510fa0c1281484b7ea97a57e226551e5c7d400dbd5da60b6d9772aa6474",
+  "producer_result_sha256_expected": "e0819a792789fe8fdada86a75983e7cb8465c5d0aa78140ca93a84c4440159f2",
+  "result_matches_pinned": null,
+  "return_code": 3,
+  "schema": "mixed93_actual_cohesive_saved_independent_external_receipt.v1",
+  "started_utc": "2026-10-06T19:26:59Z",
+  "stderr": {
+    "bytes": 0,
+    "path": "stderr.bin",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 83,
+    "path": "stdout.bin",
+    "sha256": "14b854136f4fc2dcb275dd76295337d9407fff6e64d563dce8e01ee8c0208862"
+  },
+  "timed_out": false,
+  "tree_cap_bytes": 4194304
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "mixed93_moving_front_fix_review.v1",
+  "status": "NARROW_SOURCE_FIX_ACCEPTED_NUMERICS_UNKNOWN",
+  "pins": {
+    "entry_sha256": "a124f68a4e605a244123c30f9256838c343816531d7cda78445d9a755f39442f",
+    "entry_bytes": 49479,
+    "entry_lines": 617,
+    "case_sha256": "1c967f9b7a7ed8d786e93ecb4c90e7ef57e8e8a10eaefa80ff4c49265e7b6662",
+    "source_pins_sha256": "604d484b534ab16d7b0c151816b04ea35f2a17e35d0dac436897193465dac311",
+    "entry_and_case_match_pins": true,
+    "references_verified": 9,
+    "case_dependencies_verified": 14,
+    "execution_authorized": false
+  },
+  "batch_review": {
+    "coarse_rows": 448,
+    "coarse_batches": [256, 192],
+    "fine_rows": 896,
+    "fine_batches": [256, 256, 256, 128],
+    "total_unique_rows": 1344,
+    "actual_asserted_batches": [256, 192, 256, 256, 256, 128],
+    "boundary_respected": true,
+    "batch_blocker_cleared": true
+  },
+  "energy_semantics": {
+    "field_key_retained": "external_work_J",
+    "interpretation": "q dot f pairing under the fixed dead load, not path-integrated work",
+    "potential_unchanged": "Pi=U-qTf",
+    "result_case_schema_compatible": true
+  },
+  "api_and_case_compatibility": "reviewed; no incompatible access found in narrow diff",
+  "source_blocker_found_in_narrow_diff": false,
+  "numerical_gates": "UNKNOWN_NOT_RUN",
+  "npz_payload_read": false,
+  "numeric_modules_or_solver_called": false,
+  "numeric_go_inferred": false,
+  "operational_prerequisite": "separate root authorization with case and source-pin authorization states updated consistently"
+}

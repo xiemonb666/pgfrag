@@ -1,0 +1,23 @@
+{
+  "status": "NONZERO_EXIT",
+  "started_utc": "2026-10-05T10:36:13.8021320Z",
+  "ended_utc": "2026-10-05T10:36:39.0046160Z",
+  "duration_ms": 25189,
+  "max_runtime_ms": 180000,
+  "timed_out": false,
+  "child_exit_code": 1,
+  "process_id": 26640,
+  "julia_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\extract\\julia-1.10.12\\bin\\julia.exe",
+  "julia_sha256": "29a5cb5bde6a3f4a151f6e714591ca9344638303d9ed2a893ab31ada3de5d103",
+  "active_project": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_02\\project\\Project.toml",
+  "package_source_expected": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_02\\project\\vendor\\Peridynamics.jl\\src\\Peridynamics.jl",
+  "depot_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_02\\depot;C:\\Users\\xiemo\\Desktop\\ShardForge\\third_party\\pgfrag-runtime\\depot",
+  "package_manager_commands": "none",
+  "solver_cad_native_body_or_job": "none",
+  "manifest_semantic_check": "TOML parsed tree equality except Peridynamics.deps; SHA/TOML UUID assertions",
+  "focused_test_source": "C:/Users/xiemo/Desktop/ShardForge/pgfrag/experiments/initial_bond_policy_native_20261005/tests/test_initial_bond_policy.jl",
+  "stdout_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_02\\audit\\julia_stdout.txt",
+  "stderr_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\tmp\\initial_bond_policy_native_20261005\\fork_run_02\\audit\\julia_stderr.txt",
+  "stdout_sha256": "7e6c6ebd5917128c2dd3078942bedd72950fd406ee0b662b285be864d1ef4383",
+  "stderr_sha256": "6369af9b704d1d5c1179ac4d58b7ed0e60ad40d9a8aee549d5cd5bb950f714a5"
+}

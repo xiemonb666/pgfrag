@@ -23,3 +23,27 @@
 /docs/evidence/20261005/** -text
 
 /docs/backup/20261007/raw_source/** -text
+
+# 2026-10-16: preserve byte-bound evidence and captured project sources across clones.
+/experiments/continuation_20261015/** -text
+/experiments/continuation_20261016/** -text
+/data/continuation_20261015/** -text
+/data/continuation_20261016/** -text
+/docs/handover/20261016/** -text
+/docs/continuation/** -text
+/src/pgfrag/bowl_dynamics.py -text
+/src/pgfrag/cohesive_fragments.py -text
+/src/pgfrag/cohesive_mesh.py -text
+/src/pgfrag/cohesive_stability.py -text
+/src/pgfrag/cohesive_vessel.py -text
+/src/pgfrag/facet_ancestry.py -text
+/src/pgfrag/mother_binding.py -text
+/src/pgfrag/resources/julia/run_bowl_dynamics.jl -text
+/tests/test_audit_native_vessel.py -text
+/tests/test_bowl_dynamics.py -text
+/tests/test_cohesive_fragments.py -text
+/tests/test_cohesive_mesh.py -text
+/tests/test_cohesive_stability.py -text
+/tests/test_cohesive_vessel.py -text
+/tests/test_facet_ancestry.py -text
+/tests/test_mother_binding.py -text

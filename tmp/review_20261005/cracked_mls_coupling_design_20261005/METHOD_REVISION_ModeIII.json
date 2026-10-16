@@ -1,0 +1,116 @@
+{
+  "schema": "continuous_mls_front_pu_modeiii_method_revision.v1",
+  "date": "2026-10-05",
+  "status": "DESIGN_ONLY_NOT_RUN",
+  "decision_source": {
+    "path": "pgfrag/tmp/review_20261005/astra_front_shadow_decision_20261005/DECISION.md",
+    "sha256": "66b327667d0f7cf8468632a80b720d2b384409eb272446c2be34f6470cce4606"
+  },
+  "historical_design_preserved": [
+    "pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/COUPLING_PILOT_DESIGN.md",
+    "pgfrag/tmp/review_20261005/cracked_mls_coupling_design_20261005/COUPLING_PILOT_DESIGN.json"
+  ],
+  "method_decision": {
+    "selected": "continuous MLS base multiplied by explicit crack/front PU enrichment",
+    "sharp_boolean_visibility_mechanics_basis": "STOPPED",
+    "front_chart": "single global straight-front frame; no nearest-triangle-frame switching",
+    "stage_one_branch_functions": ["F1 = sqrt(r) * sin(theta/2) * e_z (pure Mode III only)"],
+    "heaviside_set_rule": "J_H only where the entire MLS support is split into two nonempty components by actual Gamma and the support does not meet the front; otherwise exclude",
+    "front_set_rule": "T_F comprises supports meeting the straight front; if this includes all sites in the small case, exact reproduction is algebraic bridge only, not local convergence"
+  },
+  "benchmark": {
+    "geometry": {
+      "domain": "cylinder r <= R, 0 <= z <= L",
+      "R_m": 0.01,
+      "L_m": 0.01,
+      "front": "z axis, one straight front",
+      "crack_surface": "negative-x radial sheet y=0, x<0, extending to cylinder wall and both end caps",
+      "theta_branch": "(-pi, pi), branch cut only on the actual negative-x crack sheet"
+    },
+    "material": {"E_Pa": 1000000.0, "nu": 0.3},
+    "loading": {"KIII_Pa_sqrt_m": 100.0, "body_force": [0, 0, 0]},
+    "mu_Pa": "E/(2*(1+nu))",
+    "exact_field": {
+      "ux": 0,
+      "uy": 0,
+      "uz": "A*sqrt(r)*sin(theta/2)",
+      "A": "(KIII/mu)*sqrt(2/pi)",
+      "stress_nonzero": ["sigma_xz=mu*d(uz)/dx", "sigma_yz=mu*d(uz)/dy"],
+      "crack_face_jump": "[[uz]]=2*A*sqrt(-x) on y=0,x<0; zero trace jump ahead of front x>0",
+      "exact_energy_J": "KIII^2*R*L/(2*mu)"
+    },
+    "boundary_contract": {
+      "cylindrical_wall": "apply exact t=sigma*n from the analytical stress; t_z=sigma_xz*cos(theta)+sigma_yz*sin(theta)",
+      "z_equals_0_endcap": "apply exact traction (-sigma_xz,-sigma_yz,0), n=-e_z",
+      "z_equals_L_endcap": "apply exact traction (sigma_xz,sigma_yz,0), n=+e_z",
+      "crack_faces": "zero traction; no cohesive/contact term",
+      "rigid_gauge": "six integral constraints"
+    },
+    "interpretation": "manufactured mathematical benchmark only; strain diverges as r->0, so no physical/whole-domain small-strain claim"
+  },
+  "shared_api_contract": {
+    "basis_registry_fields": [
+      "base_mls_ids",
+      "eligible_J_H_ids",
+      "eligible_T_F_ids",
+      "unique_global_dof_ids",
+      "basis_kind_per_dof",
+      "component_map",
+      "parent_site_provenance"
+    ],
+    "shape_row_fields": [
+      "physical_basis_values[dof]",
+      "material_gradients[dof,xyz]",
+      "active_dof_ids",
+      "J_H/T_F_membership_evidence",
+      "rank_condition_status",
+      "diagnostic"
+    ],
+    "constraints": [
+      "continuous base MLS has no Boolean visibility source deletion",
+      "H(y)=+1 for y>0 and -1 for y<0; use only for strictly eligible J_H supports",
+      "J_H support closure must have two nonempty components separated by the true Gamma and positive distance from the front",
+      "F1=sqrt(r)*sin(theta/2)*e_z uses the fixed global straight-front chart and only z displacement DOFs",
+      "enrichment DOFs are not physical particles and do not alias 3*node_count",
+      "F1 gradient uses product rule: grad(phi*F1)=F1*grad(phi)+phi*grad(F1)",
+      "do not silently regularize enrichment dependence or hide extra null modes"
+    ]
+  },
+  "quadrature_and_rmin": {
+    "requirements": [
+      "front-aware volume integration split at Gamma",
+      "both end caps and cylindrical wall use exact analytical tractions",
+      "resolve the integrable r^(-1/2) strain gradient with front-aware quadrature",
+      "record r_min_m actually reached by quadrature, any evaluation cap, integration regions, points, and weights",
+      "no field clipping in a passing exact-energy comparison"
+    ],
+    "radial_exclusion_rule": "if excluding 0<r<r_min, account for exact missing energy fraction r_min/R or report omitted contribution; never interpret r_min as process-zone calibration",
+    "r_min_value": "UNKNOWN_PENDING_ROOT_FREEZE",
+    "stress_or_strain_clip": "NONE_ALLOWED_FOR_PASS",
+    "quadrature_order": "UNKNOWN_PENDING_ROOT_FREEZE"
+  },
+  "acceptance_gates": [
+    "analytic displacement, gradient, and stress agree away from r=0",
+    "crack-face traction is zero and both end caps plus sidewall receive exact tractions",
+    "Mode III jump is nonzero on the negative-x sheet, closes as sqrt(r), and the field is continuous ahead of the front",
+    "force and moment balance",
+    "exactly six physical rigid modes with no unexplained additional null modes",
+    "energy approaches KIII^2*R*L/(2*mu) and displacement/energy converge under quadrature refinement at fixed geometry",
+    "then refine point cloud/support and test a rotated nonsymmetric layout",
+    "small-case all-sites-in-T_F reproduction is labeled algebraic bridge only"
+  ],
+  "root_must_freeze_before_run": [
+    "point layout and h",
+    "support radius and continuous MLS configuration",
+    "J_H/T_F membership algorithm and DOF bounds",
+    "front-aware volume and boundary quadrature order",
+    "r_min and any evaluation cap policy",
+    "error norms, tolerances, independent reference and precision budget",
+    "DOF, memory, wall-time, and retry/stop limits"
+  ],
+  "not_authorized_or_claimed": [
+    "solver/CAD/pytest/Git run",
+    "penny-crack reproduction, mixed modes, curved-front chart, SIF extraction, or crack growth",
+    "material calibration, process-zone physics, physical fracture, fragmentation, R2, or GT promotion"
+  ]
+}

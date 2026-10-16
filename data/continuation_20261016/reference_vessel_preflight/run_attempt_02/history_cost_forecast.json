@@ -1,0 +1,127 @@
+{
+  "schema": "pgfrag.native_cohesive_vessel_history_cost_forecast.v1",
+  "status": "COST_FORECAST_FROM_ZERO_STEP_NATIVE_PREFLIGHT",
+  "classification": "PLACEHOLDER_COST_ESTIMATE_UNCALIBRATED; NO SPECIMEN PHYSICAL DATA",
+  "solver_evolution_performed": false,
+  "native_preflight_status": "ZERO_STEP_PREFLIGHT_PASS",
+  "native_counts_nodes_tets_cohesive_facets": [
+    18634,
+    56139,
+    541
+  ],
+  "native_quadrature_points": 1623,
+  "native_source_nodes_after_seam_insertion": 18634,
+  "unique_source_ancestor_nodes": 18236,
+  "mass_kg": 0.07478999938060946,
+  "interface_area_m2": 0.0003880800592225199,
+  "qp_area_sum_m2": 0.00038808005922251986,
+  "balanced_patch": {
+    "status": "FEASIBLE_POSITIVE_RELATIVE_ENTROPY_PROJECTION",
+    "force_peak_N": 0.0,
+    "unit_load_is_used_for_patch_feasibility_only": true,
+    "patch_node_count_total": 3708,
+    "negative_x_patch_nodes": 1822,
+    "positive_x_patch_nodes": 1886,
+    "min_positive_unit_weight": 1.6637279142265468e-07,
+    "target_reference_com_yz_m": [
+      1.3889908431751769e-06,
+      0.027199534424102646
+    ],
+    "negative_reference_force_line_yz_m": [
+      1.3889902723251576e-06,
+      0.027199534431183635
+    ],
+    "positive_reference_force_line_yz_m": [
+      1.3889914586388245e-06,
+      0.027199534427829086
+    ],
+    "reference_unit_force_sum_N_per_N": [
+      1.19522447494802e-15,
+      0.0,
+      0.0
+    ],
+    "reference_unit_torque_sum_Nm_per_N": [
+      0.0,
+      -3.3546278819032715e-12,
+      -1.186312289044476e-12
+    ],
+    "current_configuration_policy": "READ_ACTUAL_TORQUE_EACH_STEP; NO_FOLLOWER_REBALANCING"
+  },
+  "stability_and_time": {
+    "lambda_upper_bound_per_s2": 1.788495858495512e+16,
+    "critical_time_step_s": 1.4954986531981977e-08,
+    "bulk_only_native_dt_s": 5.554654749765396e-09,
+    "selected_dt_s": 2.22182723071454e-09,
+    "selected_steps_for_50us": 22504,
+    "limiting_bound": "0.4 * bulk-only native dt",
+    "scope": "INITIAL_LINEAR_BULK_PLUS_DECLARED_COHESIVE_TANGENT_AT_REST_FACE_NORMALS; NO_CURRENT_NORMAL_GEOMETRIC_DERIVATIVE; NO_FULL_SOFTENING_OR_CONTACT_CLAIM; FIXED_NORMAL_COMPRESSION_BRANCH_PENALTY_LE_KN_COVERED_BY_KN_ENVELOPE; NO_NONLINEAR_OR_FULL_TRAJECTORY_GUARANTEE",
+    "all_dofs_free": true
+  },
+  "per_frame_history_cost": {
+    "native_qp_count": 1623,
+    "qp_field_doubles_per_point": 14,
+    "qp_field_bytes_per_time_frame": 181776,
+    "energy_work_ledger_doubles_per_time_frame": 40,
+    "energy_work_ledger_bytes_per_time_frame": 320,
+    "patch_displacement_bytes_per_time_frame": 29664,
+    "node_state_bytes_per_saved_frame": 1788864,
+    "wrapper_array_header_allowance_bytes": 3072
+  },
+  "node_stride_forecasts": {
+    "50": {
+      "node_stride": 50,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_state_frames": 452,
+      "qp_count": 1623,
+      "patch_node_count": 3708,
+      "raw_numeric_array_bytes": 5574225328,
+      "wrapper_raw_history_bytes_forecast": 5574228400,
+      "node_saved_steps_npy_bytes": 3744,
+      "layout_json_bytes": 1518,
+      "full_history_folder_estimate_bytes": 5574233662,
+      "actual_zero_step_preflight_output_bytes_excluding_receipt": 45659833,
+      "estimated_run_directory_bytes_before_safety_margin": 5619893495,
+      "wrapper_2mb_safety_margin_bytes": 2000000,
+      "configured_output_cap_bytes": 67108864,
+      "wrapper_history_cap_check_passes": false,
+      "bytes_over_configured_history_cap": 5509119536,
+      "recommended_minimum_bytes_with_20pct_margin": 6746272194,
+      "recommended_output_allocation_gib_rounded_up": 7
+    },
+    "1": {
+      "node_stride": 1,
+      "steps": 22504,
+      "time_frames": 22505,
+      "node_state_frames": 22505,
+      "qp_count": 1623,
+      "patch_node_count": 3708,
+      "raw_numeric_array_bytes": 45024043120,
+      "wrapper_raw_history_bytes_forecast": 45024046192,
+      "node_saved_steps_npy_bytes": 180168,
+      "layout_json_bytes": 1517,
+      "full_history_folder_estimate_bytes": 45024227877,
+      "actual_zero_step_preflight_output_bytes_excluding_receipt": 45659833,
+      "estimated_run_directory_bytes_before_safety_margin": 45069887710,
+      "wrapper_2mb_safety_margin_bytes": 2000000,
+      "configured_output_cap_bytes": 67108864,
+      "wrapper_history_cap_check_passes": false,
+      "bytes_over_configured_history_cap": 44958937328,
+      "recommended_minimum_bytes_with_20pct_margin": 54086265252,
+      "recommended_output_allocation_gib_rounded_up": 51
+    }
+  },
+  "resource_recommendation": {
+    "storage_only": true,
+    "node_stride_50_allocation_gib": 7,
+    "node_stride_1_allocation_gib": 51,
+    "configured_64mib_cap_supports_either_forecast": false,
+    "recommendation": "For the next solver-capacity review, reserve the rounded allocation shown for the chosen nodal stride plus the existing preflight artifacts; these are storage forecasts only and provide no wall-time prediction."
+  },
+  "source_geometry_limitations": {
+    "candidate": "daily_aberdeen_108x53_v5",
+    "exterior_source_face_ancestry": "PRESENT_BUT_UNBOUND",
+    "unknown_exterior_triangles": 35784,
+    "qualified_fragments_or_surface_paint": false
+  }
+}

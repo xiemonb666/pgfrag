@@ -1,0 +1,9 @@
+{
+  "status": "NOT_STARTED_MISSING_REQUESTED_INTERPRETER",
+  "recorded_utc": "2026-10-04",
+  "cwd": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag",
+  "checked_path": "C:\\Users\\xiemo\\Desktop\\ShardForge\\pgfrag\\.venv\\Scripts\\python.exe",
+  "test_path_result": false,
+  "pytest_started": false,
+  "note": "Previous execution authorization was not exercised because the then-specified pgfrag/.venv/Scripts/python.exe path did not exist. No pytest process was started."
+}
